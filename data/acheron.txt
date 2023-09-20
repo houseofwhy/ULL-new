@@ -1,11 +1,11 @@
 {
-    "id": ,
-    "name": "",
-    "author": "",
-    "creators": [],
-    "verifier": "",
+    "id": 73667628,
+    "name": "Acheron",
+    "author": "Ryami",
+    "creators": ["Riot and Ryami"],
+    "verifier": "Zoink",
     "verification": "",
     "showcase": "",
-    "percentToQualify": ,
+    "percentToQualify": 100,
     "records": []
 }
