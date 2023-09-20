@@ -1,0 +1,11 @@
+{
+    "id": ,
+    "name": "",
+    "author": "",
+    "creators": [],
+    "verifier": "",
+    "verification": "",
+    "showcase": "",
+    "percentToQualify": ,
+    "records": []
+}

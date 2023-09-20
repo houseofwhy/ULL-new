@@ -1,72 +1,37 @@
 [
     {
         "role": "owner",
-        "name": "Microwaveee",
-        "link": "https://www.youtube.com/channel/UC4BZvLEre3SrihXXL-eItWg"
+        "name": "QwidziT",
+        "link": "https://www.youtube.com/channel/UC72Ceml55mVisJNEByLBHPA"
     },
     {
         "role": "owner",
-        "name": "JustCrust",
-        "link": "#"
-    },
-    {
-        "role": "owner",
-        "name": "Prometheus",
-        "link": "https://www.youtube.com/c/PrometheusAlt"
-    },
-    {
-        "role": "admin",
-        "name": "TravelChimp",
-        "link": "https://youtube.com/channel/UC_iEmvCmkuJWqoRbGM49GOA"
-    },
-    {
-        "role": "seniormod",
-        "name": "SarcasticMuch",
-        "link": "https://www.youtube.com/channel/UCH4iSascx58Bfue2cfpWKJQ"
-    },
-    {
-        "role": "seniormod",
-        "name": "SorryM8",
+        "name": "NikoYakorem",
         "link": "#"
     },
     {
         "role": "seniormod",
-        "name": "KylashTheKiller",
-        "link": "https://youtube.com/@KylashTheKiller"
+        "name": "no one",
+        "link": "#"
     },
     {
         "role": "mod",
-        "name": "homegrowntag",
-        "link": "https://www.youtube.com/channel/UCtPsZ68MCked5rgimzzX7Hw"
-    },
-    {
-        "role": "mod",
-        "name": "lucap123",
-        "link": "https://www.youtube.com/@lucap123gd8"
-    },
-    {
-        "role": "mod",
-        "name": "srus",
-        "link": "https://www.youtube.com/channel/UCZWCsnRMKs7VSyO094YeyJw"
-    },
-    {
-        "role": "mod",
-        "name": "urban",
-        "link": "https://www.youtube.com/channel/UCV3Y98U07Opb6E9V__mrBNQ"
+        "name": "no one",
+        "link": "#"
     },
     {
         "role": "dev",
-        "name": "Prometheus",
+        "name": "TSL Devs",
         "link": "https://www.youtube.com/c/PrometheusAlt"
     },
     {
         "role": "dev",
-        "name": "Emonadeo",
-        "link": "https://github.com/Emonadeo"
+        "name": "QwidziT",
+        "link": "https://www.youtube.com/channel/UC72Ceml55mVisJNEByLBHPA"
     },
     {
         "role": "dev",
-        "name": "KrisGra",
-        "link": "https://www.youtube.com/channel/UCrB80p9IxnDthH551FpqlwQ"
+        "name": "NikoYakorem",
+        "link": "#"
     }
 ]
