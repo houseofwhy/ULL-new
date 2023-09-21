@@ -14,7 +14,7 @@ export default {
         },
         isVerified:{
           type: Boolean,
-          required: false
+          required: true
         }
     },
     template: `
