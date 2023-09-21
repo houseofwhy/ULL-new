@@ -1,7 +1,7 @@
 .nav {
     --color-background: white;
     --color-on-background: black;
-    --color-primary: #0066ff;
+    --color-primary: #ff00ff;
     --color-on-primary: white;
 
     display: flex;
