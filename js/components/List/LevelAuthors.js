@@ -12,6 +12,10 @@ export default {
             type: String,
             required: true,
         },
+        isVerified:{
+          type: Boolean,
+          required: false
+        }
     },
     template: `
         <div class="level-authors">
