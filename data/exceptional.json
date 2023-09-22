@@ -4,9 +4,9 @@
     "author": "SlendStone",
     "creators": ["SlendStone and Hollow"],
     "verifier": "ultracaualHD",
-    "isVerified": true,
+    "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=eidDDRwLr84",
-    "percentToQualify": 10,
+    "percentToQualify": 1,
     "records": []
 }
