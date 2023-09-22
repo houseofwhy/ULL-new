@@ -4,6 +4,7 @@
     "author": "",
     "creators": [],
     "verifier": "",
+    "isVerified": true,
     "verification": "",
     "showcase": "",
     "percentToQualify": ,
