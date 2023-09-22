@@ -44,9 +44,11 @@ export default {
 												<button class="tab" :class="{selected: toggledShowcase}" @click="toggledShowcase = true">
 														<span class="type-label-lg">Showcase</span>
 												</button>
+												<template v-if="level.isVerified">
                         <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
-                            <span class="type-label-lg">Record Video</span>
+                            <span class="type-label-lg">Verification</span>
                         </button>
+												</template>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">

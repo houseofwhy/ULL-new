@@ -183,7 +183,7 @@ export default {
                 rank: i + 1,
                 id: lvl.id,
                 name: lvl.name,
-                video: lvl.verification,
+                video: lvl.showcase,
             }));
             const list = [];
             if (this.useMainList) list.push(...fullListMapped.slice(0, 75));

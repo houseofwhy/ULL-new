@@ -7,6 +7,6 @@
     "isVerified": true,
     "verification": "",
     "showcase": "",
-    "percentToQualify": ,
+    "percentToQualify": 100,
     "records": []
 }
