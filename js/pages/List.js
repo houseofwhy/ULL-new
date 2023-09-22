@@ -139,7 +139,7 @@ export default {
 			}
 
 			return embed(
-				this.toggledShowcase ? this.level.showcase : this.level.verification,
+				(this.toggledShowcase || !level.isVerified) ? this.level.showcase : this.level.verification,
 			);
 		},
 	},
