@@ -1,12 +1,12 @@
 {
-    "id": ,
+    "id": "private",
     "name": "",
     "author": "",
     "creators": [],
     "verifier": "",
-    "isVerified": true,
+    "isVerified": false,
     "verification": "",
     "showcase": "",
-    "percentToQualify": 100,
+    "percentToQualify": 1,
     "records": []
 }
