@@ -1,0 +1,12 @@
+{
+    "id": "private",
+    "name": "Aeternus",
+    "author": "Riot",
+    "creators": ["Riot and more"],
+    "verifier": "open verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=BDAE3y_fXBI",
+    "percentToQualify": 1,
+    "records": []
+}
