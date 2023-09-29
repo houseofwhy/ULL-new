@@ -57,8 +57,8 @@ body,
 header,
 main {
     display: grid;
-    grid-template-columns: minmax(18rem, 1fr) minmax(18rem, 2fr) minmax(
-            18em,
+    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
+            16em,
             1fr
         );
     column-gap: 2rem;
