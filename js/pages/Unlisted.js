@@ -25,13 +25,9 @@ export default {
             </div>
             <div class="level-container surface">
 								<table class="list" v-if="unlisted">
-										<tr v-for="([level, err], i) in unlisted">
-												<td class="rank">
-														<p v-if="i + 1 <= 150" class="type-label-lg">#{{ i + 1 }}</p>
-														<p v-else class="type-label-lg">Legacy</p>
-												</td>
-												<td class="level" :class="{ 'active': selected == i, 'error': !level }">
-												{{level?.name}}
+										<tr v-for="level in unlisted">
+												<td>
+												{{level.name}}
 												</td>
 										</tr>
 								</table>
