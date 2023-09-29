@@ -70,6 +70,7 @@ export default {
 	data: () => ({
 		list: [],
 		editors: [],
+		unlisted: [],
 		loading: true,
 		selected: 0,
 		errors: [],
