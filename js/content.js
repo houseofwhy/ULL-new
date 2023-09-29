@@ -49,7 +49,7 @@ export async function fetchEditors() {
 export async function fetchUnlisted() {
 //    try {
         const unlistedResults = await fetch(`${dir}/_unlisted.json`);
-        const unlisted = await unlisttedResults.json();
+        const unlisted = await unlistedResults.json();
         return unlisted;
 //    } catch {
 //        return null;
