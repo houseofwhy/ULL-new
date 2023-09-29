@@ -46,6 +46,16 @@ export async function fetchEditors() {
     }
 }
 
+export async function fetchUnlisted() {
+    try {
+        const unlistedResults = await fetch(`${dir}/_unlisted.json`);
+        const unlisted = await unlisttedResults.json();
+        return unlisted;
+    } catch {
+        return null;
+    }
+}
+
 export async function fetchLeaderboard() {
     const list = await fetchList();
 
