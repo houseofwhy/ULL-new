@@ -1,0 +1,12 @@
+{
+    "id": "private",
+    "name": "Spectre",
+    "author": "xander",
+    "creators": ["xander and more"],
+    "verifier": "ezvie",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=GeoLikgHBt8",
+    "percentToQualify": 1,
+    "records": []
+}
