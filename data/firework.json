@@ -1,0 +1,12 @@
+{
+    "id": "private",
+    "name": "Firework",
+    "author": "CherryTeam",
+    "creators": ["Viprin and more"],
+    "verifier": "Trick",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=QBe5x2o9v2w",
+    "showcase": "https://www.youtube.com/watch?v=SuaAscUC8UM",
+    "percentToQualify": 100,
+    "records": []
+}
