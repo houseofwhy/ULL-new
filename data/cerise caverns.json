@@ -1,12 +1,12 @@
 {
     "id": "private",
     "name": "Cerise Caverns",
-    "author": "",
-    "creators": [],
-    "verifier": "",
+    "author": "Monkee",
+    "creators": ["LordVaderCraft and more"],
+    "verifier": "LordVaderCraft",
     "isVerified": false,
     "verification": "",
-    "showcase": "",
+    "showcase": "https://www.youtube.com/watch?v=gL0BWXAEpx8",
     "percentToQualify": 1,
     "records": []
 }
