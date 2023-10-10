@@ -42,7 +42,7 @@ export default {
 										<tr v-for="level in unlisted">
 												<td>
 														<div class="unlisted-name type-h3">
-																<a href="{{level.link}}">{{level.name}}</a>
+																<a href="level.link">{{ level.name }}</a>
 														</div>
 														<div class="unlisted-creator type-label-lg">
 																{{level.creator}}
