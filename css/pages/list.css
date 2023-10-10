@@ -147,7 +147,7 @@
 }
 
 .unlisted-name {
-    margin: .5rem 0;
+    margin: .5rem 0 !important;
 }
 
 .unlisted-td {
