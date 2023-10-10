@@ -40,7 +40,7 @@ export default {
             <div class="level-container surface">
 								<table class="list" v-if="unlisted">
 										<tr v-for="level in unlisted">
-												<td>
+												<td class="unlisted-td">
 														<div class="unlisted-name type-h3">
 																<a :href="level.link">{{ level.name }}</a>
 														</div>
