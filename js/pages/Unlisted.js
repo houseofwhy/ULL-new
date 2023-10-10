@@ -22,6 +22,7 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container surface">
+								<div class="meta">
 								<h3> Submission Requirements </h3>
 								<p> When submitting a record, please ensure that you have the following:</p>
 								<p> - A complete playthrough of the record with no cuts (if you make cuts in your submitted video, include raw footage that doesn't have them) </p>
