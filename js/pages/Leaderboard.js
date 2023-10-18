@@ -44,7 +44,7 @@ export default {
                 <div class="player-container surface">
                     <div class="player">
                         <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
-                        <h3>{{ localize(ientry.totalScore) }}</h3>
+                        <h3>{{ localize(entry.totalScore) }}</h3>
                         <h2 v-if="entry.created.length > 0">Created ({{ entry.created.length}})</h2>
                         <table v-if="entry.created.length > 0" class="table">
                             <tr v-for="score in entry.created">
