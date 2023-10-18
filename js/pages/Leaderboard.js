@@ -42,7 +42,24 @@ export default {
                     </table>
                 </div>
                 <div class="player-container surface">
-
+                    <div class="player">
+                        <h1>#{{ selected + 1 }} {{ entry.user }}</h1>
+                        <h3>{{ entry.totalScore }}</h3>
+                        <h2 v-if="entry.created.length > 0">Created ({{ entry.created.length}})</h2>
+                        <table v-if="entry.created.length > 0" class="table">
+                            <tr v-for="score in entry.created">
+                                <td class="rank">
+                                    <p>#{{ score.rank }}</p>
+                                </td>
+                                <td class="level">
+                                    <a class="type-label-lg" target="_blank" :href="score.link">{{ score.level }}</a>
+                                </td>
+                                <td class="score">
+                                    <p>+{{ localize(score.score) }}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
