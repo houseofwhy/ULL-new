@@ -114,7 +114,7 @@ export async function fetchLeaderboard() {
         //});
     });
 
-    Wrap in extra Object containing the user and total score
+    //Wrap in extra Object containing the user and total score
     const res = Object.entries(scoreMap).map(([user, scores]) => {
       scores.user = user;
       return scores;
