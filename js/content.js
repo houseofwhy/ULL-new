@@ -129,8 +129,8 @@ export async function fetchLeaderboard() {
         //     ...scores,
         // };
     });
-
+    for (var i in res) console.log(res[i])
     // Sort by total score
-    return [res.sort((a, b) => b.totalScore - a.totalScore), errs];
+    //return [res.sort((a, b) => b.totalScore - a.totalScore), errs];
     return[[],errs];
 }
