@@ -131,6 +131,6 @@ export async function fetchLeaderboard() {
     });
 
     // Sort by total score
-    // return [res.sort((a, b) => b.totalScore - a.totalScore), errs];
+    return [res.sort((a, b) => b.totalScore - a.totalScore), errs];
     return[[],errs];
 }
