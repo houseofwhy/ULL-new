@@ -31,7 +31,7 @@ export default {
                                 <p class="type-label-lg">#{{ i + 1 }}</p>
                             </td>
                             <td class="total">
-                                <p class="type-label-lg">{{ localize(ientry.total) }}</p>
+                                <p class="type-label-lg">{{ localize(ientry.totalScore) }}</p>
                             </td>
                             <td class="user" :class="{ 'active': selected == i }">
                                 <button @click="selected = i">
@@ -42,7 +42,7 @@ export default {
                     </table>
                 </div>
                 <div class="player-container surface">
-                    
+
                 </div>
             </div>
         </main>
