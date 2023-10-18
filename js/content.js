@@ -130,7 +130,7 @@ export async function fetchLeaderboard() {
         // };
     });
     for (var i in res) console.log(res[i])
+    var sortFunce = function(a,b) { return b.totalScore-a.totalScore }
     // Sort by total score
-    //return [res.sort((a, b) => b.totalScore - a.totalScore), errs];
-    return[[],errs];
+    return [res.sort(sortFunce), errs]
 }
