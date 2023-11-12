@@ -1,12 +1,12 @@
 {
     "id": "private",
     "name": "Taron",
-    "author": "",
-    "creators": [],
-    "verifier": "",
+    "author": "burgada",
+    "creators": ["burgada, teologist and more"],
+    "verifier": "Dosh7t",
     "isVerified": false,
     "verification": "",
-    "showcase": "",
+    "showcase": "https://www.youtube.com/watch?v=L2AYM7lgeMo",
     "percentToQualify": 1,
     "records": []
 }
