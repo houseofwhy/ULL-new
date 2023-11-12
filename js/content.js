@@ -56,7 +56,7 @@ export async function fetchUnlisted() {
     }
 }
 
-export asycn function fetchUnlistedPairs() {
+export async function fetchUnlistedPairs() {
     const unlisted = await fetchUnlisted();
     if (unlisted === null){
         return null;
