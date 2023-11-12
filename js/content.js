@@ -56,6 +56,25 @@ export async function fetchUnlisted() {
     }
 }
 
+export asycn function fetchUnlistedPairs() {
+    const unlisted = await fetchUnlisted();
+    if (unlisted === null){
+        return null;
+    }
+    var pairs = [];
+    var pair = [];
+    for (var i=0; i<unlisted.length; i++){
+        if (i%2===1){
+            pair = [unlisted[i-1], unlisted[i]];
+            pairs.push(pair);
+          }
+        if (i === unlisted.length-1 && unlisted.length%2===1){
+            pair = [unlisted[i], null];
+            pairs.push(pair);
+        }
+    }
+}
+
 export async function fetchLeaderboard() {
     const list = await fetchList();
 

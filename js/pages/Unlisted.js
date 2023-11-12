@@ -39,8 +39,8 @@ export default {
             </div>
             <div class="level-container surface">
 								<table class="list" v-if="unlisted">
-										<tr v-for="level in unlisted">
-												<td class="unlisted-td">
+										<tr v-for="pair in unlisted">
+												<td v-for="level in pair" class="unlisted-td">
 														<div class="unlisted-name type-h3">
 																<a :href="level.link">{{ level.name }}</a>
 														</div>
@@ -99,7 +99,7 @@ export default {
 		// Hide loading spinner
 		this.list = await fetchList();
 		this.editors = await fetchEditors();
-		this.unlisted = await fetchUnlisted();
+		this.unlisted = await fetchUnlistedPairs();
 
 		// Error handling
 		if (!this.list) {
