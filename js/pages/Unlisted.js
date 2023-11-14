@@ -38,7 +38,7 @@ export default {
 								</div>
             </div>
             <div class="level-container surface">
-								<table class="list" v-if="unlisted">
+								<table class="list unlisted-table" v-if="unlisted">
 										<tr v-for="pair in unlisted">
 												<td v-for="level in pair" class="unlisted-td">
 														<div class="unlisted-name type-h3">

@@ -151,7 +151,12 @@
 }
 
 .unlisted-td {
-    padding: 1.8rem 1.8rem;
+    padding: 1.8rem 0;
     border-bottom: 1px solid black;
     width: 50%;
+    margin: 0 1.8rem;
+}
+
+.unlisted-table {
+    width: 100%
 }
