@@ -73,6 +73,7 @@ export async function fetchUnlistedPairs() {
             pairs.push(pair);
         }
     }
+    return pairs; 
 }
 
 export async function fetchLeaderboard() {
