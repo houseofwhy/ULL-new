@@ -1,12 +1,12 @@
 {
     "id": "private",
-    "name": "",
-    "author": "",
-    "creators": [],
-    "verifier": "",
+    "name": "Natural Disaster",
+    "author": "AVGR",
+    "creators": ["AVGR and more"],
+    "verifier": "Helix",
     "isVerified": false,
     "verification": "",
-    "showcase": "",
+    "showcase": "https://www.youtube.com/watch?v=GXfIVmblEZQ",
     "percentToQualify": 1,
     "records": []
 }

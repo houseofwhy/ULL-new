@@ -150,9 +150,13 @@
     margin: 0 0 1.3rem 0;
 }
 
+.unlisted-author {
+    margin-right: 1.8rem;
+    border-bottom: 1px solid black;    
+}
+
 .unlisted-td {
     padding: 1.8rem 0;
-    border-bottom: 1px solid black;
     width: 50%;
     margin: 0 1.8rem;
 }
