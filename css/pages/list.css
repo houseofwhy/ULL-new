@@ -152,7 +152,7 @@
 
 .unlisted-author {
     margin-right: 1.8rem;
-    border-bottom: 1px solid black;    
+    border-bottom: 1px solid black;
 }
 
 .unlisted-td {
@@ -162,5 +162,6 @@
 }
 
 .unlisted-table {
-    width: 100%
+    width: 100%;
+    margin-top: -1.8rem;
 }
