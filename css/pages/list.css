@@ -153,10 +153,11 @@
 .unlisted-creator {
     margin-right: 1.8rem;
     border-bottom: 1px solid black;
+    padding-bottom: 1.8rem;    
 }
 
 .unlisted-td {
-    padding: 1.8rem 0;
+    padding: 1.8rem 0 0 0;
     width: 50%;
     margin: 0 1.8rem;
 }
