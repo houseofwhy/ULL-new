@@ -73,7 +73,7 @@ export async function fetchUnlistedPairs() {
             pairs.push(pair);
         }
     }
-    return pairs; 
+    return pairs;
 }
 
 export async function fetchLeaderboard() {
@@ -88,6 +88,7 @@ export async function fetchLeaderboard() {
         }
 
         // Verification
+        const scoreE = level.percentFinished*level.rating*level.length*10
         const author = Object.keys(scoreMap).find(
             (u) => u.toLowerCase() === level.author.toLowerCase(),
         ) || level.author;
@@ -98,10 +99,10 @@ export async function fetchLeaderboard() {
         scoreMap[author].created.push({
             rank: rank + 1,
             level: level.name,
-            score: score(rank + 1, 100, level.percentToQualify),
+            score: scoreE,
             link: level.showcase
         });
-        scoreMap[author].totalScore += score(rank + 1, 100, level.percentToQualify)
+        scoreMap[author].totalScore += scoreE
 
         // // Records
         // level.records.forEach((record) => {
