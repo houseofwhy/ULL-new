@@ -3,10 +3,13 @@
     "name": "Vehemence",
     "author": "TBT",
     "creators": [],
-    "verifier": "Polterghast",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=qpqZ2ngUZiU",
     "percentToQualify": 1,
-    "records": []
+    "records": [],
+    "length": 146,
+    "rating": 9.75,
+    "percentFinished": 100
 }
