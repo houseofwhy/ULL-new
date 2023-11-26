@@ -53,8 +53,8 @@ export default {
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
-                            <div class="type-title-sm">Points on WR</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                            <div class="type-title-sm">Coolness Score</div>
+                            <p>{{ level.percentFinished*level.rating*level.length/1000*3.141592356*1000)/1000 }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
