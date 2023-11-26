@@ -59,7 +59,7 @@ export default {
                             <div class="meta">
                                 <p>#{{ currentLevel.rank }}</p>
                                 <h2>{{ currentLevel.name }}</h2>
-                                <p>{{ currentLevel.id }}</p>
+                                <p>{{ (currentLevel.id === "private" && currentLevel.leakID != null) ? currentLevel.leakID : currentLevel.id }}</p>
                             </div>
                             <form class="actions" v-if="!givenUp">
                                 <input type="number" v-model="percentage" :placeholder="placeholder" :min="currentPercentage + 1" max=100>
