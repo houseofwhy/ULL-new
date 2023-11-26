@@ -184,6 +184,7 @@ export default {
                 id: lvl.id,
                 name: lvl.name,
                 video: lvl.showcase,
+                leakID: lvl.leakID
             }));
             const list = [];
             if (this.useMainList) list.push(...fullListMapped.slice(0, 75));
