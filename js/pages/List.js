@@ -54,7 +54,7 @@ export default {
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Coolness Score</div>
-                            <p>{{ (level.percentFinished*level.rating*level.length/1000*3.141592356*1000)/1000 }}</p>
+                            <p>{{ Math.floor(level.percentFinished*level.rating*level.length/1000*3.141592356*1000)/1000 }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
