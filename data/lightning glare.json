@@ -1,15 +1,15 @@
 {
     "id": "private",
     "name": "Lightning Glare",
-    "author": "",
+    "author": "Lisp",
     "creators": ["Kriz and More"],
-    "verifier": "",
-    "isVerified": false,
-    "verification": "",
+    "verifier": "unknown",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=8muuRmCiYrM",
     "showcase": "https://youtu.be/WcDFXR_4OuM?si=rjasuY7aQKw15Usi",
-    "percentToQualify": 1,
+    "percentToQualify": 100,
     "records": [],
-    "length": 0,
-    "rating": 1,
-    "percentFinished": 1
+    "length": 63,
+    "rating": 6,
+    "percentFinished": 100
 }
