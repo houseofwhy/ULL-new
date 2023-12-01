@@ -3,10 +3,17 @@
     "name": "Time Lapse",
     "author": "Panya",
     "creators": ["Panya and more"],
-    "verifier": "Sardxx",
+    "verifier": "Arshadow",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=SGlmK7YVLGY",
     "percentToQualify": 1,
-    "records": []
+    "records": [
+      {
+          "user": "Arshadow",
+          "link": "https://www.youtube.com/watch?v=rmg0WiqDWRM",
+          "percent": 42,
+          "hz": 360
+      }
+    ]
 }
