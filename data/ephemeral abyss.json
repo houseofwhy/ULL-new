@@ -8,7 +8,14 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=RRvLG6G_i5M",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+      {
+          "user": "purplekirbl",
+          "link": "https://youtu.be/pH6_jMrFPXI?feature=shared",
+          "percent": 2,
+          "hz": 120
+      }
+    ],
     "length": 31,
     "rating": 7,
     "percentFinished": 100

@@ -7,6 +7,16 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=gNKE9wa7u14",
-    "percentToQualify": 1,
-    "records": []
+    "percentToQualify": 36,
+    "records": [
+      {
+          "user": "Arshadow",
+          "link": "https://youtu.be/pH6_jMrFPXI?feature=shared",
+          "percent": 35,
+          "hz": 360
+      }
+    ],
+    "length": 88,
+    "rating": 9,
+    "percentFinished": 20
 }
