@@ -7,6 +7,16 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=K4GIyvjWr04",
-    "percentToQualify": 1,
-    "records": []
+    "percentToQualify": 31,
+    "records": [
+      {
+          "user": "Watchpiggy",
+          "link": "https://www.youtube.com/watch?v=ZrPJG4wQFHA",
+          "percent": 30,
+          "hz": 360
+      }],
+    "length": 242,
+    "rating": 6,
+    "percentFinished": 95,
+    "leakID": 79341857
 }
