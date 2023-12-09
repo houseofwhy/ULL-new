@@ -1,5 +1,5 @@
 {
-    "id": 92954845,
+    "id": 96494789,
     "name": "Escalator",
     "author": "Neomarbilan",
     "creators": ["NeoMarBilan"],
@@ -8,5 +8,8 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=_NzYIMkoeKc",
     "percentToQualify": 1,
-    "records": []
+    "records": [],
+    "length": 91,
+    "rating": 7.5,
+    "percentFinished": 100
 }

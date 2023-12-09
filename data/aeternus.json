@@ -8,7 +8,14 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=WIjuyPd3kck",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+      {
+          "user": "Diamond",
+          "link": "https://www.youtube.com/watch?v=JH6En8KxRPQ",
+          "percent": 6,
+          "hz": 360
+      }
+    ],
     "length": 71,
     "rating": 8,
     "percentFinished": 100
