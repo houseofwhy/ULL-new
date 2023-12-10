@@ -88,7 +88,7 @@ export async function fetchLeaderboard() {
         }
 
         // Verification
-        const scoreE = Math.floor(Math.sqrt(level.percentFinished)*level.rating*level.rating*Math.sqrt(level.length)*Math.sqrt(level.rating)/15/1000*3.141592356/Math.E*1000)/1000
+        const scoreE = Math.floor(Math.sqrt(level.percentFinished)*level.rating*level.rating*Math.sqrt(level.length)*Math.sqrt(level.rating)*350/1000*3.141592356/Math.E*1000)/1000
         const author = Object.keys(scoreMap).find(
             (u) => u.toLowerCase() === level.author.toLowerCase(),
         ) || level.author;
