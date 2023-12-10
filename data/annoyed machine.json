@@ -8,7 +8,14 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=qV_ub5oQWSs",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+      {
+          "user": "ExpiredHam",
+          "link": "https://www.youtube.com/watch?v=ya7EDLbzCOo",
+          "percent": 7,
+          "hz": 360
+      }
+    ],
     "length": 88,
     "rating": 7.5,
     "percentFinished": 100
