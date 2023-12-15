@@ -6,7 +6,17 @@
     "verifier": "Taiago",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=7nYG4FdCWTE",
-    "percentToQualify": 43,
-    "records": []
+    "showcase": "https://www.youtube.com/watch?v=eOcZDKZDjdQ",
+    "percentToQualify": 71,
+    "records": [
+      {
+          "user": "Spcreat",
+          "link": "https://www.youtube.com/watch?v=eOcZDKZDjdQ",
+          "percent": 70,
+          "hz": 360
+      }
+    ],
+    "length": 90,
+    "rating": 8,
+    "percentFinished": 100
 }
