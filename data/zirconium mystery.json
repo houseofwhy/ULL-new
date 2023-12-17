@@ -1,12 +1,15 @@
 {
-    "id": "private",
+    "id": 97380378,
     "name": "Zirconium Mystery",
     "author": "SaturMan",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "BONN",
     "isVerified": false,
-    "verification": "",
+    "verification": "https://www.youtube.com/watch?v=iZWpNF3zicc",
     "showcase": "https://youtube.com/watch?v=LkxccmzIYi8",
-    "percentToQualify": 1,
-    "records": []
+    "percentToQualify": 100,
+    "records": [],
+    "length": 91,
+    "rating": 7.5,
+    "percentFinished": 100
 }
