@@ -7,6 +7,9 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=w1CgkPspXwM",
-    "percentToQualify": 1,
-    "records": []
+    "percentToQualify": 25,
+    "records": [],
+    "length": 71,
+    "rating": 8.5,
+    "percentFinished": 100
 }
