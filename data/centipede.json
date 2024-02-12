@@ -6,7 +6,17 @@
     "verifier": "LordVaderCraft",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=HFM3LfmvKzw",
-    "percentToQualify": 43,
-    "records": []
+    "showcase": "https://www.youtube.com/watch?v=PdeCmhJk3Vg",
+    "percentToQualify": 46,
+    "records": [
+      {
+          "user": "LordVaderCraft",
+          "link": "https://www.youtube.com/watch?v=HFM3LfmvKzw",
+          "percent": 45,
+          "hz": 480
+      }
+    ],
+    "length": 109,
+    "rating": 8.2,
+    "percentFinished": 100
 }
