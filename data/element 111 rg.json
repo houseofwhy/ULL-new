@@ -1,0 +1,22 @@
+{
+    "id": 61775814,
+    "name": "Element 111 RG",
+    "author": "DarkX",
+    "creators": [],
+    "verifier": "TheRealMike",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=tkFyam-Zy0E",
+    "percentToQualify": 53,
+    "records": [
+      {
+          "user": "TheRealMike",
+          "link": "https://www.youtube.com/watch?v=sY64XuY7B3Y",
+          "percent": 52,
+          "hz": 300
+      }
+    ],
+    "length": 0,
+    "rating": 2,
+    "percentFinished": 100
+}
