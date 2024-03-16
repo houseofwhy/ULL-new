@@ -10,17 +10,11 @@ export async function fetchList() {
     try {
         const list = await listResult.json();
         var currentLevelRank = 1;
-        return await Promise.all(
+        const result = await Promise.all(
             list.map(async (path, rank) => {
                 const levelResult = await fetch(`${dir}/${path}.json`);
                 try {
                     const level = await levelResult.json();
-                    if (level.isVerified) {
-                        level.rankNum = "-"
-                    }
-                    else {
-                      level.rankNum = currentLevelRank++;
-                    }
                     return [
                         {
                             ...level,
@@ -37,6 +31,15 @@ export async function fetchList() {
                 }
             }),
         );
+        for (var i = 0; i++; i<result.length){
+          if (result[i].isVerified) {
+            result[i].rankNum = "-";
+          }
+          else {
+            result[i].rankNum = currentLevelRank++;
+          }
+        }
+        return result;
     } catch {
         console.error(`Failed to load list.`);
         return null;
