@@ -40,7 +40,7 @@ export async function fetchList() {
           }
           console.log(result[i][0]);
         }
-          console.log(result);
+          console.log(result.length);
         return result;
     } catch {
         console.error(`Failed to load list.`);
