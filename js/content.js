@@ -36,7 +36,8 @@ export async function fetchList() {
             result[i][0].rankNum = "-";
           }
           else {
-            result[i][0].rankNum = currentLevelRank++;
+            result[i][0].rankNum = "#" + currentLevelRank;
+            currentLevelRank++;
           }
           console.log(result[i][0]);
         }
