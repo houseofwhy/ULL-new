@@ -32,12 +32,12 @@ export async function fetchList() {
             }),
         );
         for (var i = 0; i<result.length; i++){
-          // if (result[i][0].level.isVerified) {
-          //   // result[i][0].level.rankNum = "-";
-          // }
-          // else {
-          //   // result[i][0].level.rankNum = currentLevelRank++;
-          // }
+          if (result[i][0].isVerified) {
+            result[i][0].rankNum = "-";
+          }
+          else {
+            result[i][0].rankNum = currentLevelRank++;
+          }
           console.log(result[i][0]);
         }
           console.log(result);
