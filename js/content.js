@@ -38,6 +38,7 @@ export async function fetchList() {
           else {
             result[i].level.rankNum = currentLevelRank++;
           }
+          console.log(result[i]);
         }
         return result;
     } catch {
