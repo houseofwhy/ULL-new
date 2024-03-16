@@ -9,11 +9,18 @@ export async function fetchList() {
     const listResult = await fetch(`${dir}/_list.json`);
     try {
         const list = await listResult.json();
+        var currentLevelRank = 1;
         return await Promise.all(
             list.map(async (path, rank) => {
                 const levelResult = await fetch(`${dir}/${path}.json`);
                 try {
                     const level = await levelResult.json();
+                    if (level.isVerified) {
+                        level.rankNum = "-"
+                    }
+                    else {
+                      level.rankNum = currentLevelRank++;
+                    }
                     return [
                         {
                             ...level,
