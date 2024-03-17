@@ -39,9 +39,7 @@ export async function fetchList() {
             result[i][0].rankNum = "#" + currentLevelRank;
             currentLevelRank++;
           }
-          console.log(result[i][0]);
         }
-          console.log(result);
         return result;
     } catch {
         console.error(`Failed to load list.`);
