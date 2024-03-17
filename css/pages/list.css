@@ -19,11 +19,11 @@
 }
 
 .page-list .list .active .rank-verified {
-    color: #808080;
+    color: #FFFFFF;
 }
 
 .page-list .list .rank-verified {
-    color: #FFFFFF;
+    color: #808080;
 }
 
 .page-list .list .level {
