@@ -17,6 +17,11 @@
     text-align: end;
     padding-right: 1rem;
 }
+
+.page-list .list .rank-verified {
+    color: #808080;
+}
+
 .page-list .list .level {
     width: 100%;
 }
