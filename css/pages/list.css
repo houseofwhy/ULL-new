@@ -18,8 +18,12 @@
     padding-right: 1rem;
 }
 
-.page-list .list .rank-verified {
+.page-list .list .active .rank-verified {
     color: #808080;
+}
+
+.page-list .list .rank-verified {
+    color: #FFFFFF;
 }
 
 .page-list .list .level {
