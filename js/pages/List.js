@@ -31,9 +31,11 @@ export default {
 														</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-                            </button>
+														<span :class="{ 'rank-verified': level?.isVerified}">
+	                            <button @click="selected = i">
+	                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+	                            </button>
+														</span>
                         </td>
                     </tr>
                 </table>
