@@ -1,6 +1,6 @@
 {
     "id": 94858072,
-    "name": "The Wonder of You ⭐️",
+    "name": "The Wonder of You",
     "author": "HangerLord",
     "creators": [],
     "verifier": "Helix",
@@ -8,5 +8,8 @@
     "verification": "https://www.youtube.com/watch?v=iQ3RzYCvLvA",
     "showcase": "https://www.youtube.com/watch?v=xtS4ibDPGxE",
     "percentToQualify": 100,
-    "records": []
+    "records": [],
+    "length": 64,
+    "rating": 8,
+    "percentFinished": 100,
 }
