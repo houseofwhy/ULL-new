@@ -82,7 +82,7 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
+                            <p>{{ (level.id === "private" && level.leakID != null) ? level.leakID : level.id }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Length</div>
