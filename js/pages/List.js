@@ -85,8 +85,8 @@ export default {
                             <p>{{ level.id }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Password</div>
-                            <p>{{ level.password || 'Free to Copy' }}</p>
+                            <div class="type-title-sm">Length</div>
+                            <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
                         </li>
                     </ul>
                     <h2>World Record</h2>
