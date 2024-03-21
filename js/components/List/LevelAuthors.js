@@ -25,10 +25,10 @@ export default {
             </p>
             <div class="type-title-sm">
                 <template v-if="isVerified == true">
-                    Level Verifier
+                    Verified By
                 </template>
                 <template v-else>
-                    To be verified by
+                    To Be Verified By
                 </template>
             </div>
             <p class="type-body">
