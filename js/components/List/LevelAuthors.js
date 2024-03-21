@@ -21,7 +21,7 @@ export default {
         <div class="level-authors">
             <div class="type-title-sm">
                 <template v-if="isVerified == true">
-                    Verifier
+                    Level Verifier
                 </template>
                 <template v-else>
                     To be verified by
@@ -30,7 +30,7 @@ export default {
             <p class="type-body">
                 <span>{{ verifier }}</span>
             </p>
-            <div class="type-title-sm">Author</div>
+            <div class="type-title-sm">Level Author</div>
             <p class="type-body">
                 <span>{{ author }}</span>
             </p>
