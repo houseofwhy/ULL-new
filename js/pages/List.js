@@ -52,7 +52,15 @@ export default {
 												</div>
 												<div class="lvlstatus">
 														<p class="type-body">
-																Status: {{level.percentFinished-10}}% of deco is finished
+																<template v-if="level.isVerified">
+																		Status: Verified
+																</template>
+																<template v-if="level.percentFinished == 100 && !level.isVerified">
+																		Status: On Verification
+																</template>
+																<template v-if="level.percentFinished != 100 && !level.isVerified">
+																		Status: Deco in Progress ({{Math.floor(level.percentFinished-level.percentFinished/8)}}% finished)
+																</template>
 														</p>
 												</div>
 										</div>
