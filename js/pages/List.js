@@ -44,9 +44,9 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
-										<div class="worldrecord">
+										<div v-if="level.isVerified" class="worldrecord">
 												<p class="type-body">
-														World Record: 0% by UnknownPerson
+														World Record: {{level.percentToQualify-1}} by {{level.wrman}}
 												</p>
 										</div>
                     <div v-if="level.showcase" class="tabs">
