@@ -117,6 +117,10 @@ input[type="checkbox"] {
     margin: 0;
 }
 
+.lvlstatus {
+    margin-top: 1rem;
+}
+
 /* Shitty */
 
 .shitty .surface {
