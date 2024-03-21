@@ -43,7 +43,7 @@ export default {
             <div class="level-container surface">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-                    <LevelAuthors :author="level.author" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
+                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
                     <div v-if="level.showcase" class="tabs">
 												<button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
 														<span class="type-label-lg">Showcase</span>
