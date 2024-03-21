@@ -19,6 +19,10 @@ export default {
     },
     template: `
         <div class="level-authors">
+            <div class="type-title-sm">Level Author</div>
+            <p class="type-body">
+                <span>{{ author }}</span>
+            </p>
             <div class="type-title-sm">
                 <template v-if="isVerified == true">
                     Level Verifier
@@ -29,10 +33,6 @@ export default {
             </div>
             <p class="type-body">
                 <span>{{ verifier }}</span>
-            </p>
-            <div class="type-title-sm">Level Author</div>
-            <p class="type-body">
-                <span>{{ author }}</span>
             </p>
         </div>
     `,
