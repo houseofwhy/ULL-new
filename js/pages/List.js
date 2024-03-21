@@ -49,6 +49,11 @@ export default {
 														World Record: {{level.percentToQualify-1}}% by {{level.wrman}}
 												</p>
 										</div>
+										<div class="lvlstatus">
+												<p class="type-body">
+														Status: {{level.percentFinished-10}}% of deco is finished
+												</p>
+										</div>
                     <div v-if="level.showcase" class="tabs">
 												<button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
 														<span class="type-label-lg">Showcase</span>
