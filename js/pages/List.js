@@ -45,8 +45,10 @@ export default {
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
 										<div class="worldrecord">
-												World Record: 0% by UnknownPerson
-										</div>		
+												<p class="type-body">
+														World Record: 0% by UnknownPerson
+												</p>
+										</div>
                     <div v-if="level.showcase" class="tabs">
 												<button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
 														<span class="type-label-lg">Showcase</span>
