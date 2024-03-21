@@ -44,15 +44,17 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
-										<div v-if="!level.isVerified && level.wrman" class="worldrecord">
-												<p class="type-body">
-														World Record: {{level.percentToQualify-1}}% by {{level.wrman}}
-												</p>
-										</div>
-										<div class="lvlstatus">
-												<p class="type-body">
-														Status: {{level.percentFinished-10}}% of deco is finished
-												</p>
+										<div>
+												<div v-if="!level.isVerified && level.wrman" class="worldrecord">
+														<p class="type-body">
+																World Record: {{level.percentToQualify-1}}% by {{level.wrman}}
+														</p>
+												</div>
+												<div class="lvlstatus">
+														<p class="type-body">
+																Status: {{level.percentFinished-10}}% of deco is finished
+														</p>
+												</div>
 										</div>
                     <div v-if="level.showcase" class="tabs">
 												<button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
