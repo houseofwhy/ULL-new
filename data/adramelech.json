@@ -6,7 +6,7 @@
     "verifier": "open verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=mVkuEKicliw",
+    "showcase": "https://www.youtube.com/watch?v=eIsJFPUXt7A",
     "percentToQualify": 12,
     "records": [
       {
@@ -17,6 +17,7 @@
       }
     ],
     "length": 290,
-    "rating": 7,
-    "percentFinished": 30
+    "rating": 7.5,
+    "percentFinished": 40,
+    "wrman": "Airi"
 }
