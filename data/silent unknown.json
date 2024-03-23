@@ -7,9 +7,10 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Pq6fMb8DhKA",
-    "percentToQualify": 1,
+    "percentToQualify": 5,
     "records": [],
     "length": 46,
     "rating": 9,
-    "percentFinished": 100
+    "percentFinished": 100,
+    "wrman": "Meperr"
 }
