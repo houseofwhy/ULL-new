@@ -7,9 +7,10 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=J4qPDVPMPaU",
-    "percentToQualify": 1,
+    "percentToQualify": "58 - 100",
     "records": [],
     "length": 145,
     "rating": 9,
-    "percentFinished": 55
+    "percentFinished": 55,
+    "wrman": "wPopoff"
 }
