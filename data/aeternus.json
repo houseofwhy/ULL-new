@@ -7,12 +7,12 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=oH_KZGJgkFw",
-    "percentToQualify": 7,
+    "percentToQualify": 10,
     "records": [
       {
           "user": "Diamond",
           "link": "https://www.youtube.com/watch?v=JH6En8KxRPQ",
-          "percent": 6,
+          "percent": 9,
           "hz": 360
       }
     ],
