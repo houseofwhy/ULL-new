@@ -3,13 +3,14 @@
     "name": "Lightning Glare",
     "author": "Lisp",
     "creators": ["Kriz and More"],
-    "verifier": "unknown",
-    "isVerified": true,
+    "verifier": "DashY",
+    "isVerified": false,
     "verification": "https://www.youtube.com/watch?v=8muuRmCiYrM",
     "showcase": "https://youtu.be/WcDFXR_4OuM?si=rjasuY7aQKw15Usi",
-    "percentToQualify": 100,
+    "percentToQualify":"65-100",
     "records": [],
     "length": 63,
     "rating": 6,
-    "percentFinished": 100
+    "percentFinished": 100,
+    "wrman": "DashY"
 }
