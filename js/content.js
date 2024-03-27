@@ -7,6 +7,7 @@ const dir = '/data';
 
 export async function fetchList() {
     const listResult = await fetch(`${dir}/_list.json`);
+    console.log("fetching...")
     try {
         const list = await listResult.json();
         var currentLevelRank = 1;
