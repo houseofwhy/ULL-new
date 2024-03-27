@@ -12,6 +12,7 @@ export async function fetchList() {
         var currentLevelRank = 1;
         const result = await Promise.all(
             list.map(async (path, rank) => {
+                console.log(dir, path);
                 const levelResult = await fetch(`${dir}/${path}.json`);
                 try {
                     const level = await levelResult.json();
