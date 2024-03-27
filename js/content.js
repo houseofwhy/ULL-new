@@ -9,6 +9,7 @@ export async function fetchList() {
     const listResult = await fetch(`${dir}/_list.json`);
     console.log("Fetching List...")
     console.log(await listResult.text())
+    console.log(await listResult.json())
     try {
         const list = await listResult.json();
         var currentLevelRank = 1;
