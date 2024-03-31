@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=tkFyam-Zy0E",
-    "percentToQualify": 53,
+    "percentToQualify": "27-100",
     "records": [
       {
           "user": "TheRealMike",
@@ -18,5 +18,6 @@
     ],
     "length": 96,
     "rating": 2,
-    "percentFinished": 100
+    "percentFinished": 100,
+    "wrman": "TheRealMike"
 }
