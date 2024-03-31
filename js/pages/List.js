@@ -94,24 +94,6 @@ export default {
                             <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
                         </li>
                     </ul>
-                    <h2>World Record</h2>
-                    <p><strong>{{ level.percentToQualify }}%</strong> or better to accept</p>
-                    <table class="records">
-                        <tr v-for="record in level.records" class="record">
-                            <td class="percent">
-                                <p>{{ record.percent }}%</p>
-                            </td>
-                            <td class="user">
-                                <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
-                            </td>
-                            <td class="mobile">
-                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
-                            </td>
-                            <td class="hz">
-                                <p>{{ record.hz }}Hz</p>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
