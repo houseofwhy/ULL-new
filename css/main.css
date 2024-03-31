@@ -67,8 +67,8 @@ main {
 header.surface {
     padding: 0;
     display: flex;
-    padding-inline: calc(25vw - 10rem);
-    height: 4rem;
+    padding-inline: 2rem;
+    height: 5rem;
     background-color: var(--color-primary);
     color: var(--color-on-primary);
 }
