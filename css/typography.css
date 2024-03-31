@@ -156,12 +156,16 @@ input[type="text"],
 input[type="number"],
 .type-label-lg {
     font-family: "Lexend Deca", sans-serif;
-    /* font-size: 17.1428571429px; */
-    font-size: 22px;
+    font-size: 17.1428571429px;
     line-height: 20px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
+.nav .type-label-lg {
+    font-size: 21.1221317px;
+}
+
 .type-label-lg::before {
     content: "";
     margin-bottom: -0.2583333333em;
