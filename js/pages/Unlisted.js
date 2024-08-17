@@ -34,6 +34,7 @@ export default {
 										<p> - The level must be at least 30 seconds long</p>
 										<p> - The level must have any progress made in the last 2 years </p>
                                         <p> <p>
+                                        <p> <p>
 								</div>
 								<div class="meta">
 										<h3> WR Submission Requirements </h3>
