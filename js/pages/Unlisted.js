@@ -22,8 +22,20 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container surface">
+                                <div class="meta">
+										<h3> Level Standards </h3>
+										<p> For main list levels:</p>
+										<p> - The level must be at least rate worthy. If there is no deco, only projects with high quality layouts or famous hosts will be added </p>
+										<p> - The level should be at least 45 seconds long, since levels shorter very rarely get rated </p>
+										<p> - The level must be easier than the current Top-1 of this list and harder than the lowest level of this list </p>
+										<p> - The level must have any progress made in the last year </p>
+										<p> For unlisted levels: </p>
+										<p> - The level must be at least close to rate worthy or have sugnificant verification progress </p>
+										<p> - The level must be at least 30 seconds long</p>
+										<p> - The level must have any progress made in the last 2 years </p>
+								</div>
 								<div class="meta">
-										<h3> Submission Requirements </h3>
+										<h3> WR Submission Requirements </h3>
 										<p> When submitting a record, please ensure that you have the following:</p>
 										<p> - A complete playthrough of the record with no cuts (if you make cuts in your submitted video, include raw footage that doesn't have them) </p>
 										<p> - A decent amount of previous attempts (A single death at 1% is not sufficient, try to get somewhat far into the level. Everplay records are exempt from this.) </p>
