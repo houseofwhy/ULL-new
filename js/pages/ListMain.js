@@ -25,7 +25,7 @@ export default {
                 <router-link class="nav__tab" to="/listmain">
                     <span class="type-label-lg">Main List</span>
                 </router-link>
-                <router-link class="nav__tab" to="/roulette">
+                <router-link class="nav__tab" to="/listfuture">
                     <span class="type-label-lg">Future List</span>
                 </router-link>
             </nav>

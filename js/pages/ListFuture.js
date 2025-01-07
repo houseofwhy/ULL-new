@@ -17,12 +17,7 @@ const roleIconMap = {
 export default {
 	components: { Spinner, LevelAuthors },
 	template: `
-	<style>
-		.list__home{
-			border-color: var(--color-on-primary);
-		}
-	</style> 
-	<header class="new">
+        <header class="new">
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">All Levels</span>
@@ -43,17 +38,17 @@ export default {
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
-														<span :class="{ 'rank-verified': level?.isVerified}">
-                            		<p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
-                            		<p v-else class="type-label-lg">Legacy</p>
-														</span>
+                                                        <span :class="{ 'rank-verified': level?.isVerified}">
+                                    <p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
+                                    <p v-else class="type-label-lg">Legacy</p>
+                                                        </span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-	                            <button @click="selected = i">
-																	<span :class="{ 'rank-verified': level?.isVerified}">
-	                                		<span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-																	</span>
-	                            </button>
+                                <button @click="selected = i">
+                                                                    <span :class="{ 'rank-verified': level?.isVerified}">
+                                            <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                                                    </span>
+                                </button>
                         </td>
                     </tr>
                 </table>
@@ -190,7 +185,14 @@ export default {
 	},
 	async mounted() {
 		// Hide loading spinner
-		this.list = await fetchList();
+		this.list1 = await fetchList();
+        this.list = []
+        for (const key in this.list1) {
+            if (this.list1[key][0].isFuture){
+                this.list[this.list.length] = this.list1[key]
+            }
+        }
+        console.log(this.list1)
 		this.editors = await fetchEditors();
 
 		// Error handling
