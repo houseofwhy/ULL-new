@@ -16,8 +16,8 @@ const roleIconMap = {
 
 export default {
 	components: { Spinner, LevelAuthors },
-	template: `
-        <header class="new">
+	template: ` 
+	<header class="new">
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">All Levels</span>

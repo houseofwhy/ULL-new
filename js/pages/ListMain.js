@@ -17,6 +17,11 @@ const roleIconMap = {
 export default {
 	components: { Spinner, LevelAuthors },
 	template: `
+    <script>
+		window.unload = function(){
+			document.getElementById("hack_list").className = "nav__tab selected"
+		}
+	</script>   
         <header class="new">
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
