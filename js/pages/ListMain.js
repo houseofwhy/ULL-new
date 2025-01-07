@@ -183,7 +183,7 @@ export default {
 			);
 		},
         isLinkSelected() {
-            return this.$route.name=="listmain"
+            return true
         }
 	},
 	async mounted() {
