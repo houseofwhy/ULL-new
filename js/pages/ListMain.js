@@ -19,7 +19,7 @@ export default {
 	template: `
         <header class="new">
             <nav class="nav">
-                <router-link class="nav__tab" to="/list">
+                <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">All Levels</span>
                 </router-link>
                 <router-link class="nav__tab" to="/listmain">
