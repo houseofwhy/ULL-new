@@ -13,6 +13,6 @@
     "rating": 9.75,
     "percentFinished": 100,
 
-    "isMain": true,
+    "isMain": false,
     "isFuture": false
 }

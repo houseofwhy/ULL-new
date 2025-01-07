@@ -21,6 +21,6 @@
     "percentFinished": 100,
     "wrman": "WatchPiggy    ",
 
-    "isMain": true,
+    "isMain": false,
     "isFuture": false
 }
