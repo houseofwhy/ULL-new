@@ -17,11 +17,23 @@ const roleIconMap = {
 export default {
 	components: { Spinner, LevelAuthors },
 	template: `
-        <main v-if="loading" class="surface">
+        <header class="new">
+            <nav class="nav">
+                <router-link class="nav__tab" to="/list">
+                    <span class="type-label-lg">All Levels</span>
+                </router-link>
+                <router-link class="nav__tab" to="/leaderboard">
+                    <span class="type-label-lg">Main List</span>
+                </router-link>
+                <router-link class="nav__tab" to="/roulette">
+                    <span class="type-label-lg">Future List</span>
+                </router-link>
+            </nav>
+        </header>    
+		<main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
         <main v-else class="page-list">
-
             <div class="list-container surface">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
