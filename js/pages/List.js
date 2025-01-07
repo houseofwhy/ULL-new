@@ -22,61 +22,6 @@ export default {
         </main>
         <main v-else class="page-list">
 
-		
-		 <header class="surface">
-            <div class="logo">
-                <img v-if="store.shitty" src="assets/april-logo.png" alt="TSL Logo" />
-                <div v-else class="logo">
-                    <h2>ULL</h2>
-                    <p>v1.0.0</p>
-                </div>
-            </div>
-            <nav class="nav">
-                <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/leaderboard">
-                    <span class="type-label-lg">Leaderboard</span>
-                </router-link>
-                <router-link class="nav__tab" to="/roulette">
-                    <span class="type-label-lg">Roulette</span>
-                </router-link>
-                <router-link class="nav__tab" to="/unlisted">
-                    <span class="type-label-lg">Unlisted</span>
-                </router-link>
-                <div class="nav__actions">
-                    <button
-                        class="nav__icon toggle-shitty"
-                        @click.prevent="store.toggleShitty()"
-                    >
-                        <img
-                            src="https://cdn.discordapp.com/attachments/715267286004531283/1091275438308982825/emoji.png"
-                            alt="Shitty Mode"
-                        />
-                    </button>
-                    <button
-                        class="nav__icon"
-                        @click.prevent="store.toggleDark()"
-                    >
-                        <img
-                            :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'"
-                            alt=""
-                        />
-                    </button>
-                    <a class="nav__icon" href="https://discord.gg/HQzjUJ9ZBm">
-                        <img src="/assets/discord.svg" alt="Discord Logo" />
-                    </a>
-                    <!-- <a class="nav__cta type-label-lg"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSev8GuHqq-00YRlr9iY4Xg5ttt-FaXWLb9JLI9eRTYHKdhk0Q/viewform?usp=sf_link"
-                        target="_blank">Submit Record</a>
-                    <a class="nav__cta type-label-lg"
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSetN4Gsdhmpsom2zqJWYDTzedJ3YdcVdNw4SJAk8BIfGZXO1Q/viewform?usp=sf_link"
-                        target="_blank">Submit Opinion</a> -->
-                </div>
-            </nav>
-        </header>
-
-
             <div class="list-container surface">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
