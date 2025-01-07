@@ -182,9 +182,6 @@ export default {
 				(this.toggledShowcase || !this.level.isVerified) ? this.level.showcase : this.level.verification,
 			);
 		},
-        isLinkSelected() {
-            return true
-        }
 	},
 	async mounted() {
 		// Hide loading spinner

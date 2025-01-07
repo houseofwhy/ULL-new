@@ -16,7 +16,12 @@ const roleIconMap = {
 
 export default {
 	components: { Spinner, LevelAuthors },
-	template: ` 
+	template: `
+	<style>
+		.list__home{
+			border-color: var(--color-on-primary);
+		}
+	</style> 
 	<header class="new">
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
