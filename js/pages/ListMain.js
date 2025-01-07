@@ -37,13 +37,13 @@ export default {
             <div class="list-container surface">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
-                        <td class="rank"  v-if="level.isMain">
+                        <td class="rank">
                                                         <span :class="{ 'rank-verified': level?.isVerified}">
                                     <p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
                                     <p v-else class="type-label-lg">Legacy</p>
                                                         </span>
                         </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }"  v-if="level.isMain">
+                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                                 <button @click="selected = i">
                                                                     <span :class="{ 'rank-verified': level?.isVerified}">
                                             <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
@@ -185,7 +185,13 @@ export default {
 	},
 	async mounted() {
 		// Hide loading spinner
-		this.list = await fetchList();
+		this.list1 = await fetchList();
+        this.list = []
+        for (const key in this.list1) {
+            if (this.list1[key].isMain){
+                this.list[this.list.length] = this.list1[key]
+            }
+        }
 		this.editors = await fetchEditors();
 
 		// Error handling
