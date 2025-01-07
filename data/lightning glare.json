@@ -12,5 +12,8 @@
     "length": 63,
     "rating": 6,
     "percentFinished": 100,
-    "wrman": "DashY"
+    "wrman": "DashY    ",
+
+    "isMain": true,
+    "isFuture": false
 }

@@ -12,5 +12,8 @@
     "length": 175,
     "rating": 7.2,
     "percentFinished": 100,
-    "wrman": "YoFridayGamer"
+    "wrman": "YoFridayGamer    ",
+
+    "isMain": true,
+    "isFuture": false
 }

@@ -19,5 +19,8 @@
     "length": 290,
     "rating": 7.5,
     "percentFinished": 40,
-    "wrman": "Airi"
+    "wrman": "Airi    ",
+
+    "isMain": true,
+    "isFuture": false
 }

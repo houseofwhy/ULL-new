@@ -19,5 +19,8 @@
     "length": 96,
     "rating": 2,
     "percentFinished": 100,
-    "wrman": "TheRealMike"
+    "wrman": "TheRealMike    ",
+
+    "isMain": true,
+    "isFuture": false
 }

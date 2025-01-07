@@ -19,5 +19,8 @@
     "length": 175,
     "rating": 7.5,
     "percentFinished": 100,
-    "wrman": "WatchPiggy"
+    "wrman": "WatchPiggy    ",
+
+    "isMain": true,
+    "isFuture": false
 }

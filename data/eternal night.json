@@ -13,5 +13,8 @@
     "rating": 10,
     "percentFinished": 100,
     "leakID": 73011766,
-    "wrman": "Cursed"
+    "wrman": "Cursed    ",
+
+    "isMain": true,
+    "isFuture": false
 }

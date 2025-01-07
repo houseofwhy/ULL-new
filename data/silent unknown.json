@@ -12,5 +12,8 @@
     "length": 46,
     "rating": 9,
     "percentFinished": 100,
-    "wrman": "Meperr"
+    "wrman": "Meperr    ",
+
+    "isMain": true,
+    "isFuture": false
 }

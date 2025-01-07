@@ -19,5 +19,8 @@
     "length": 90,
     "rating": 8,
     "percentFinished": 100,
-    "wrman": "spcreat"
+    "wrman": "spcreat    ",
+
+    "isMain": true,
+    "isFuture": false
 }

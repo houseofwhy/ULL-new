@@ -19,5 +19,8 @@
     "length": 31,
     "rating": 7,
     "percentFinished": 100,
-    "wrman": "Akuriserv"
+    "wrman": "Akuriserv    ",
+
+    "isMain": true,
+    "isFuture": false
 }
