@@ -22,7 +22,7 @@ export default {
                 <router-link class="nav__tab" to="/list">
                     <span class="type-label-lg">All Levels</span>
                 </router-link>
-                <router-link class="nav__tab" to="/leaderboard">
+                <router-link class="nav__tab" to="/listmain">
                     <span class="type-label-lg">Main List</span>
                 </router-link>
                 <router-link class="nav__tab" to="/roulette">
