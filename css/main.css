@@ -148,3 +148,12 @@ input[type="checkbox"] {
 .toggle-shitty:not(:hover) img {
     display: none;
 }
+
+header.new {
+    padding: 0;
+    display: flex;
+    padding-inline: 2rem;
+    height: 3rem;
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+}
