@@ -12,4 +12,8 @@
     "length": 63,
     "rating": 9,
     "percentFinished": 100,
-    "wrman": "Axinity"}
+    "wrman": "Axinity",
+
+    "isMain": true,
+    "isFuture": false
+}
