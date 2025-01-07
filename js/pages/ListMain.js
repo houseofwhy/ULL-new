@@ -188,7 +188,7 @@ export default {
 		this.list1 = await fetchList();
         this.list = []
         for (const key in this.list1) {
-            if (this.list1[key].isMain){
+            if (this.list1[key][0].isMain){
                 this.list[this.list.length] = this.list1[key]
             }
         }
