@@ -192,7 +192,7 @@ export default {
                 this.list[this.list.length] = this.list1[key]
             }
         }
-        console.log(this.list)
+        console.log(this.list1)
 		this.editors = await fetchEditors();
 
 		// Error handling
