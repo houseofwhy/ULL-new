@@ -154,6 +154,6 @@ header.new {
     display: flex;
     padding-inline: 2rem;
     height: 3rem;
-    background-color: var(--color-background);
-    color: var(--color-on-background);
+    background-color: var(--color-on-background);
+    color: var(--color-background);
 }
