@@ -11,5 +11,8 @@
     "records": [],
     "length": 193,
     "rating": 7.5,
-    "percentFinished": 50
+    "percentFinished": 50,
+
+    "isMain": true,
+    "isFuture": false
 }

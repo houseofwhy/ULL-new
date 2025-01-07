@@ -18,5 +18,8 @@
     ],
     "length": 155,
     "rating": 8,
-    "percentFinished": 100
+    "percentFinished": 100,
+
+    "isMain": true,
+    "isFuture": false
 }
