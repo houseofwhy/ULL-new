@@ -12,5 +12,8 @@
     "length": 343,
     "rating": 7,
     "percentFinished": 40,
-    "leakID": 60284876
+    "leakID": 60284876,
+
+    "isMain": true,
+    "isFuture": false
 }

@@ -13,5 +13,8 @@
     "rating": 9,
     "percentFinished": 55,
     "wrman": "wPopoff",
-    "leakID": 95974030
+    "leakID": 95974030,
+
+    "isMain": true,
+    "isFuture": false
 }
