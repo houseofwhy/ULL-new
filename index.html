@@ -28,11 +28,7 @@
     <script type="module" src="/js/main.js"></script>
 </head>
 <body id="app"
-    onclick="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        }
-    ">
+    onclick="">
     <div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
         <header class="surface">
             <div class="logo">
