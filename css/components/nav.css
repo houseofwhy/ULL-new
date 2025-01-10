@@ -15,11 +15,15 @@
     padding-inline: 0.5rem;
     transition: border-color 100ms ease;
 }
-
-.nav .nav__tab.router-link-active {
+.nav .nav__tab.router-link-active:not(:has(+ .router-link-active), :has(+ .nav__tab + .router-link-active), :has(+ .nav__tab + .nav__tab + .router-link-active)) {
     border-color: var(--color-on-primary);
 }
 
+/*
+.nav .nav__tab.router-link-active {
+    border-color: var(--color-on-primary);
+}
+*/
 .nav .nav__tab:hover {
     border-color: var(--color-on-primary);
 }
