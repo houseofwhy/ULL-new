@@ -27,7 +27,12 @@
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
 </head>
-<body id="app">
+<body id="app"
+    onclick="
+        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture') {
+            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
+        }
+    ">
     <div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
         <header class="surface">
             <div class="logo">
