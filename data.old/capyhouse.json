@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Capyhouse",
+    "author": "niroi",
+    "creators": ["niroi and more"],
+    "verifier": "Hyperlith",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=3QGHwpmFx2s",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 137,
+    "rating": 6,
+    "percentFinished": 45,
+
+    "isMain": true,
+    "isFuture": true
+}

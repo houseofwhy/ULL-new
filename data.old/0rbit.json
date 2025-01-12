@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "0rbit",
+    "author": "MindCap",
+    "creators": ["MindCap and more"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=5lUT0rCXUe8",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 118,
+    "rating": 9.5,
+    "percentFinished": 70,
+
+    "isMain": true,
+    "isFuture": true
+}

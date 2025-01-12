@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Waterfall",
+    "author": "Cherryteam",
+    "creators": ["Vernam and others"],
+    "verifier": "LordVaderCraft",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/aIaDB8NnXhg?si=3dE_5gcmNJXPJOVj",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 100,
+    "rating": 11,
+    "percentFinished": 90,
+
+    "isMain": true,
+    "isFuture": true
+}

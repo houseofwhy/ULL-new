@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Yggdrasil",
+    "author": "Lisp",
+    "creators": ["Lisp and more"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=6A2Kl1ll8qM",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 121,
+    "rating": 9,
+    "percentFinished": 60,
+
+    "isMain": true,
+    "isFuture": true
+}

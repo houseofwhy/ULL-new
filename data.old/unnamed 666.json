@@ -1,0 +1,26 @@
+{
+    "id": 75284290,
+    "name": "Unnamed 666",
+    "author": "TMco",
+    "creators": ["TMco and more"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=LfdfBC3ajXk",
+    "percentToQualify": 10,
+    "records": [
+      {
+          "user": "WatchPiggy",
+          "link": "https://www.youtube.com/watch?v=xWQEFwhfTLQ",
+          "percent": 9,
+          "hz": 360
+      }
+    ],
+    "length": 175,
+    "rating": 7.5,
+    "percentFinished": 100,
+    "wrman": "WatchPiggy    ",
+
+    "isMain": false,
+    "isFuture": false
+}

@@ -1,25 +1,17 @@
 {
     "id": "private",
     "name": "Adramelech",
-    "author": "Davych",
-    "creators": ["Davych and more"],
-    "verifier": "open verification",
+    "author": "Gxterne",
+    "creators": [],
+    "verifier": "Unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=eIsJFPUXt7A",
-    "percentToQualify": 12,
-    "records": [
-      {
-          "user": "Airi",
-          "link": "https://www.youtube.com/watch?v=rGuHeMa8qVU",
-          "percent": 11,
-          "hz": 360
-      }
-    ],
-    "length": 290,
-    "rating": 7.5,
-    "percentFinished": 40,
-    "wrman": "Airi    ",
+    "showcase": "https://m.youtube.com/watch?v=9cC-r1Az450&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=59&pp=gAQBiAQB",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 0,
+    "rating": 1,
+    "percentFinished": 45,
 
     "isMain": true,
     "isFuture": true

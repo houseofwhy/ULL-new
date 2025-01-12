@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "POW",
+    "author": "Trusta",
+    "creators": ["Trusta and more"],
+    "verifier": "Doggie",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=FzQT2bJm_AM",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 139,
+    "rating": 9,
+    "percentFinished": 95,
+
+    "isMain": true,
+    "isFuture": true
+}

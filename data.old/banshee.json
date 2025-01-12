@@ -1,0 +1,26 @@
+{
+    "id": "private",
+    "name": "Banshee",
+    "author": "nikrodox",
+    "creators": [],
+    "verifier": "Taiago",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=eOcZDKZDjdQ",
+    "percentToQualify": 71,
+    "records": [
+      {
+          "user": "Spcreat",
+          "link": "https://www.youtube.com/watch?v=eOcZDKZDjdQ",
+          "percent": 70,
+          "hz": 360
+      }
+    ],
+    "length": 90,
+    "rating": 8,
+    "percentFinished": 100,
+    "wrman": "spcreat    ",
+
+    "isMain": true,
+    "isFuture": true
+}

@@ -1,0 +1,26 @@
+{
+    "id": "private",
+    "name": "Adramelech",
+    "author": "Davych",
+    "creators": ["Davych and more"],
+    "verifier": "open verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=eIsJFPUXt7A",
+    "percentToQualify": 12,
+    "records": [
+      {
+          "user": "Airi",
+          "link": "https://www.youtube.com/watch?v=rGuHeMa8qVU",
+          "percent": 11,
+          "hz": 360
+      }
+    ],
+    "length": 290,
+    "rating": 7.5,
+    "percentFinished": 40,
+    "wrman": "Airi    ",
+
+    "isMain": true,
+    "isFuture": true
+}

@@ -1,0 +1,26 @@
+{
+    "id": "private",
+    "name": "Water",
+    "author": "Marramix",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=7f0LBhu4WsA",
+    "percentToQualify": 11,
+    "records": [
+      {
+          "user": "Lighttt",
+          "link": "https://youtube.com/shorts/R9tLoHiWqNk?si=S4dshnzGB5eHx_1A",
+          "percent": 10,
+          "hz": 120
+      }
+    ],
+    "length": 84,
+    "rating": 7.5,
+    "percentFinished": 60,
+    "leakID": 96835129,
+
+    "isMain": true,
+    "isFuture": true
+}

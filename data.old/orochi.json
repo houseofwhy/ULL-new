@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Orochi",
+    "author": "Knobbelboy",
+    "creators": ["Knobbelboy and more"],
+    "verifier": "Septagon7",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=Xhp34MllH0w",
+    "percentToQualify": 32,
+    "records": [],
+    "length": 193,
+    "rating": 7.5,
+    "percentFinished": 50,
+
+    "isMain": true,
+    "isFuture": true
+}

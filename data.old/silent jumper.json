@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Silent Jumper",
+    "author": "luminovsky",
+    "creators": ["luminovsky and more"],
+    "verifier": "luminovsky",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=wJ9zFwJa1ec",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 88,
+    "rating": 8,
+    "percentFinished": 35,
+
+    "isMain": true,
+    "isFuture": true
+}

@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "FLAMEWALL",
+    "author": "Narwall",
+    "creators": ["Narwall and more"],
+    "verifier": "OneAlphaHelix",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=wZbqwUv5NI8",
+    "percentToQualify": 47,
+    "records": [],
+    "length": 406,
+    "rating": 9,
+    "percentFinished": 100,
+
+    "isMain": true,
+    "isFuture": true
+}

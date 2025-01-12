@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Flashbang",
+    "author": "LordVaderCraft",
+    "creators": ["LordVaderCraft, NoctaL and more"],
+    "verifier": "NoctaL",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=Agp_1pBre5c",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 156,
+    "rating": 10,
+    "percentFinished": 80,
+
+    "isMain": true,
+    "isFuture": true
+}

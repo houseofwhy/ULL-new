@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Ouroborous",
+    "author": "CherryTeam",
+    "creators": ["qmystic"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=rvzSin5N4Rk",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 96,
+    "rating": 9.5,
+    "percentFinished": 70,
+
+    "isMain": true,
+    "isFuture": true
+}

@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Ranshin",
+    "author": "Frenzy",
+    "creators": ["Frenzy, shodai"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/NYUbvjOMtWc?si=6eqV0GDHCZbpE8Oq",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 63,
+    "rating": 8,
+    "percentFinished": 20,
+
+    "isMain": true,
+    "isFuture": true
+}

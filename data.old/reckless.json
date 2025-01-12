@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Reckless",
+    "author": "Surjaco",
+    "creators": ["Surjaco and more"],
+    "verifier": "HSW",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=KI71XXKDxKg",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 149,
+    "rating": 9.75,
+    "percentFinished": 35,
+
+    "isMain": true,
+    "isFuture": true
+}

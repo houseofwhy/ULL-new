@@ -1,0 +1,25 @@
+{
+    "id": "private",
+    "name": "Teeth Fortress II",
+    "author": "Koko",
+    "creators": [],
+    "verifier": "Noxiom",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=QbrkUUSW_H0",
+    "percentToQualify": 19,
+    "records": [
+      {
+          "user": "Noxiom",
+          "link": "https://www.youtube.com/watch?v=uReeQ-fUnYA",
+          "percent": 19,
+          "hz": 240
+      }
+    ],
+    "length": 155,
+    "rating": 8,
+    "percentFinished": 100,
+
+    "isMain": true,
+    "isFuture": true
+}

@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "Twisted Titanium",
+    "author": "ItsHybrid",
+    "creators": ["ItsHybrid and more"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=h9FJZHoPJE4",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 92,
+    "rating": 6.25,
+    "percentFinished": 90,
+
+    "isMain": true,
+    "isFuture": true
+}

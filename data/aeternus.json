@@ -1,27 +1,18 @@
 {
-    "id": 102646977,
+    "id": "102647436",
     "name": "Aeternus",
     "author": "Riot",
-    "creators": ["Riot and more"],
-    "verifier": "open verification",
+    "creators": [],
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=oH_KZGJgkFw",
-    "percentToQualify": 10,
-    "records": [
-      {
-          "user": "Diamond",
-          "link": "https://www.youtube.com/watch?v=JH6En8KxRPQ",
-          "percent": 9,
-          "hz": 360
-      }
-    ],
-    "length": 71,
-    "rating": 8,
+    "showcase": "https://www.youtube.com/watch?v=WIjuyPd3kck",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 77,
+    "rating": 1,
     "percentFinished": 100,
-    "leakID": 94444865,
-    "wrman": "Diamond    ",
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": true
 }

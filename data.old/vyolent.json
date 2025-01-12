@@ -1,0 +1,18 @@
+{
+    "id": "private",
+    "name": "VYOLENT",
+    "author": "Lisp",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=AraeRisIk2c",
+    "percentToQualify": 1,
+    "records": [],
+    "length": 80,
+    "rating": 9.5,
+    "percentFinished": 40,
+
+    "isMain": true,
+    "isFuture": true
+}
