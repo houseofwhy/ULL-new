@@ -65,7 +65,7 @@
 }
 
 .filters-text {
-    padding: 18px 20px 18px 50px;
+    padding: 16px 20px 16px 50px;
     border-bottom: 4px solid transparent;
     font-family: "Lexend Deca", sans-serif;
     font-size: 20px;
@@ -86,7 +86,8 @@
     line-height: 18px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
-    padding: 6px 20px 6px 50px;
+    padding: 7px 20px 7px 50px;
+    outline: 1px dotted black;
 }
 
 /* Shitty */
