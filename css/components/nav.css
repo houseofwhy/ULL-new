@@ -65,7 +65,7 @@
 }
 
 .filters-text {
-    padding: 15px 20px 15px 40px;
+    padding: 18px 20px 18px 50px;
     outline: 1px dotted red;
     border-bottom: 4px solid transparent;
     font-family: "Lexend Deca", sans-serif;
@@ -73,13 +73,13 @@
     line-height: 20px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
-    padding-inline: .5rem;
 }
 
 .filters-menu {
     width:250px;
     background:rgba(0, 0, 0, 1); 
-    position: absolute
+    position: absolute;
+    display: none
 }
 
 .filters-one {
