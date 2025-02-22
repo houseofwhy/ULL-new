@@ -59,6 +59,37 @@
     transform: translateY(-2px);
 }
 
+
+.filters {
+    width:250px
+}
+
+.filters-text {
+    padding-top: 4px;
+    padding-left: 20px;
+    border-bottom: 4px solid transparent;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 17.1428571429px;
+    line-height: 20px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.filters-menu {
+    width:250px;
+    background:rgba(0, 0, 0, 1); 
+    position: absolute
+}
+
+.filters-one {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 15.4428571429px;
+    line-height: 18px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+    padding: 5px 20xp 5px 20px
+}
+
 /* Shitty */
 
 .shity .nav .nav__tab.router-link-active {
