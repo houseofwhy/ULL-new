@@ -61,7 +61,8 @@
 
 
 .filters {
-    width:250px
+    width:250px;
+    display: flex;
 }
 
 .filters-text {
@@ -74,7 +75,6 @@
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
     padding-inline: .5rem;
-    display: flex;
 }
 
 .filters-menu {
