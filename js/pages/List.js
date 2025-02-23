@@ -43,6 +43,15 @@ export default {
 						<div class="filters-one">
 							Finished
 						</div>
+						<div class="filters-one">
+							Being verified
+						</div>
+						<div class="filters-one">
+							Rated
+						</div>
+						<div class="filters-one">
+							Unfinished
+						</div>
 					</div>
 				</div>
             </nav>
@@ -93,7 +102,10 @@ export default {
 																<template v-if="level.percentFinished == 100 && !level.isVerified">
 																		Status: On Verification
 																</template>
-																<template v-if="level.percentFinished != 100 && !level.isVerified">
+																<template v-if="level.percentFinished == 100 && !level.isVerified && level.percentFinished == 0">
+																		Status: On Layout State
+																</template>
+																<template v-if="level.percentFinished != 100 && !level.isVerified && level.percentFinished != 0">
 																		Status: Deco in Progress ({{Math.floor(level.percentFinished-level.percentFinished/8)}}% finished)
 																</template>
 														</p>
