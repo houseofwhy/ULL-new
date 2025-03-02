@@ -78,6 +78,7 @@
     width:250px;
     background:rgba(0, 0, 0, 1); 
     position: absolute;
+    display: none;
 }
 
 .filters-one {
@@ -87,6 +88,10 @@
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
     padding: 7px 20px 7px 50px;
+}
+
+.filters-selected .filters-menu {
+    display: block;
 }
 
 /* Shitty */
