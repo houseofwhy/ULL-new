@@ -56,6 +56,9 @@ export default {
 							
 						</div>	
 						<div class="filters-one">
+							
+						</div>						
+						<div class="filters-one">
 							Medium
 						</div>
 						<div class="filters-one">
@@ -71,6 +74,9 @@ export default {
 							
 						</div>
 						<div class="filters-one">
+							
+						</div>						
+						<div class="filters-one">
 							NC Level
 						</div>
 						<div class="filters-one">
@@ -81,7 +87,10 @@ export default {
 						</div>
 						<div class="filters-one">
 							Uses NoNG
-						</div>												
+						</div>	
+						<div class="filters-one">
+							
+						</div>																	
 					</div>
 				</div>
             </nav>
