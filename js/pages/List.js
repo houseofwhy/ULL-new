@@ -52,6 +52,36 @@ export default {
 						<div class="filters-one">
 							Unfinished
 						</div>
+						<div class="filters-one">
+							
+						</div>	
+						<div class="filters-one">
+							Medium
+						</div>
+						<div class="filters-one">
+							Long
+						</div>
+						<div class="filters-one">
+							XL
+						</div>
+						<div class="filters-one">
+							XXL
+						</div>
+						<div class="filters-one">
+							
+						</div>
+						<div class="filters-one">
+							NC Level
+						</div>
+						<div class="filters-one">
+							Top Quality
+						</div>
+						<div class="filters-one">
+							Remake
+						</div>
+						<div class="filters-one">
+							Uses NoNG
+						</div>												
 					</div>
 				</div>
             </nav>
