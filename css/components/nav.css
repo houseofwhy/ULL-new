@@ -92,6 +92,7 @@
 
 .filters-selected .filters-menu {
     display: block;
+    cursor: pointer;
 }
 
 /* Shitty */
