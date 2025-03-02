@@ -79,7 +79,6 @@
     width:250px;
     background:rgba(0, 0, 0, 1); 
     position: absolute;
-    overflow: hidden;
 }
 
 .filters-one {
@@ -92,14 +91,13 @@
 }
 
 .filters-selected .filters-collapse {
-    max-height: 1000;
+    display: block;
 
 }
 
 .filters-collapse {
-    overflow: hidden;
+    display: none;
     transition: grid-template-rows 0.3s ease-out;
-    max-height: 0;
 }
 
 /* Shitty */
