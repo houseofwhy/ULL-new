@@ -45,9 +45,8 @@ export default {
 					<div class="filters-collapse">
 						<div class="filters-menu">
 							<div class="filters-one"
-								v-for="(item,index) in filtersList"		
-								:key="index"
-      							:class="{ active: item.active }">	
+
+								>	
 
 								<span @click="useFilter(index)">✓</span> Public
 							</div>																					
@@ -247,6 +246,6 @@ export default {
 		},
 		useFilter(index) {
 			this.filtersList[index].active = !this.filtersList[index].active;
-		  }
+		}
 	},
 };

@@ -58,3 +58,14 @@
 							<div class="filters-one">
 								
 							</div>	
+
+
+
+
+
+
+
+
+ 								v-for="(item,index) in filtersList"		
+								:key="index"
+      							:class="{ active: item.active }"                           
