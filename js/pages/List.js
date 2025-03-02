@@ -46,10 +46,11 @@ export default {
 							<div class="filters-one"
  								v-for="(item,index) in filtersList"		
 								:key="index"
-      							:class="{ active: item.active }"       
+      							:class="{ active: item.active }"   
+                                 @click="useFilter(index)"
 								>	
 
-								<span @click="useFilter(index)">✓</span> {{item.name}}
+								<span >✓</span> {{item.name}}
 							</div>																					
 						</div>
 					</div>
