@@ -49,7 +49,7 @@ export default {
       							:class="{ active: item.active }"       
 								>	
 
-								<span @click="useFilter(index)">✓</span> Public
+								<span @click="useFilter(index)">✓</span> {{item.name}}
 							</div>																					
 						</div>
 					</div>
