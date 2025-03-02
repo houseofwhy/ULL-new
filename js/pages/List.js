@@ -34,7 +34,7 @@ export default {
                     <span class="type-label-lg">Future List</span>
                 </router-link>
 								<div style="flex-grow:1"></div>
-				<div class="{ 'filters-selected': isFiltersActive }" class="filters">
+				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
 					<div class="filters-text" @click="filtersToggle">Filters</div>
 					<div class="filters-menu">
 						<div class="filters-one">
