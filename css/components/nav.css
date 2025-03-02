@@ -72,13 +72,14 @@
     line-height: 20px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
+    cursor: pointer;
 }
 
 .filters-menu {
     width:250px;
     background:rgba(0, 0, 0, 1); 
     position: absolute;
-    display: none;
+    overflow: hidden;
 }
 
 .filters-one {
@@ -90,9 +91,15 @@
     padding: 7px 20px 7px 50px;
 }
 
-.filters-selected .filters-menu {
-    display: block;
-    cursor: pointer;
+.filters-selected .filters-collapse {
+    grid-template-rows: 1fr;
+
+}
+
+.filters-collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
 }
 
 /* Shitty */

@@ -36,67 +36,69 @@ export default {
 								<div style="flex-grow:1"></div>
 				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
 					<div class="filters-text" @click="filtersToggle">Filters</div>
-					<div class="filters-menu">
-						<div class="filters-one">
-							
-						</div>						
-						<div class="filters-one">
-							Public
+					<div class="filters-collapse">
+						<div class="filters-menu">
+							<div class="filters-one">
+								
+							</div>						
+							<div class="filters-one">
+								Public
+							</div>
+							<div class="filters-one">
+								Finished
+							</div>
+							<div class="filters-one">
+								Being verified
+							</div>
+							<div class="filters-one">
+								Rated
+							</div>
+							<div class="filters-one">
+								Unfinished
+							</div>
+							<div class="filters-one">
+								
+							</div>	
+							<div class="filters-one">
+								
+							</div>						
+							<div class="filters-one">
+								Medium
+							</div>
+							<div class="filters-one">
+								Long
+							</div>
+							<div class="filters-one">
+								XL
+							</div>
+							<div class="filters-one">
+								XXL
+							</div>
+							<div class="filters-one">
+								
+							</div>
+							<div class="filters-one">
+								
+							</div>						
+							<div class="filters-one">
+								NC Level
+							</div>
+							<div class="filters-one">
+								Top Quality
+							</div>
+							<div class="filters-one">
+								Remake
+							</div>
+							<div class="filters-one">
+								Uses NoNG
+							</div>	
+							<div class="filters-one">
+								
+							</div>
+							<div class="filters-one">
+								
+							</div>																								
 						</div>
-						<div class="filters-one">
-							Finished
-						</div>
-						<div class="filters-one">
-							Being verified
-						</div>
-						<div class="filters-one">
-							Rated
-						</div>
-						<div class="filters-one">
-							Unfinished
-						</div>
-						<div class="filters-one">
-							
-						</div>	
-						<div class="filters-one">
-							
-						</div>						
-						<div class="filters-one">
-							Medium
-						</div>
-						<div class="filters-one">
-							Long
-						</div>
-						<div class="filters-one">
-							XL
-						</div>
-						<div class="filters-one">
-							XXL
-						</div>
-						<div class="filters-one">
-							
-						</div>
-						<div class="filters-one">
-							
-						</div>						
-						<div class="filters-one">
-							NC Level
-						</div>
-						<div class="filters-one">
-							Top Quality
-						</div>
-						<div class="filters-one">
-							Remake
-						</div>
-						<div class="filters-one">
-							Uses NoNG
-						</div>	
-						<div class="filters-one">
-							
-						</div>
-						<div class="filters-one">
-							
-						</div>																								
 					</div>
 				</div>
             </nav>
