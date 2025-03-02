@@ -1,0 +1,60 @@
+							<div class="filters-one">
+								
+							</div>						
+							<div class="filters-one" id="filter-public">
+								<span @click="useFilter('public')">✓</span> Public
+							</div>
+							<div class="filters-one">
+								Finished
+							</div>
+							<div class="filters-one">
+								Being verified
+							</div>
+							<div class="filters-one">
+								Rated
+							</div>
+							<div class="filters-one">
+								Unfinished
+							</div>
+							<div class="filters-one">
+								
+							</div>	
+							<div class="filters-one">
+								
+							</div>						
+							<div class="filters-one">
+								Medium
+							</div>
+							<div class="filters-one">
+								Long
+							</div>
+							<div class="filters-one">
+								XL
+							</div>
+							<div class="filters-one">
+								XXL
+							</div>
+							<div class="filters-one">
+								
+							</div>
+							<div class="filters-one">
+								
+							</div>						
+							<div class="filters-one">
+								NC Level
+							</div>
+							<div class="filters-one">
+								Top Quality
+							</div>
+							<div class="filters-one">
+								Remake
+							</div>
+							<div class="filters-one">
+								Uses NoNG
+							</div>	
+							<div class="filters-one">
+								
+							</div>
+							<div class="filters-one">
+								
+							</div>	

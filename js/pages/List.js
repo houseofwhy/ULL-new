@@ -2,6 +2,7 @@ import { store } from '../main.js';
 import { embed } from '../util.js';
 import { score } from '../score.js';
 import { fetchEditors, fetchList } from '../content.js';
+import { ref } from 'vue'
 
 import Spinner from '../components/Spinner.js';
 import LevelAuthors from '../components/List/LevelAuthors.js';
@@ -13,6 +14,11 @@ const roleIconMap = {
 	mod: 'user-lock',
 	dev: 'code'
 };
+
+const filtersList = [
+	{ active: false, name: "Public", key: "public"},
+	{ active: false, name: "Finished", key: "finished"}
+]
 
 export default {
 	components: { Spinner, LevelAuthors },
@@ -38,66 +44,13 @@ export default {
 					<div class="filters-text" @click="filtersToggle">Filters</div>
 					<div class="filters-collapse">
 						<div class="filters-menu">
-							<div class="filters-one">
-								
-							</div>						
-							<div class="filters-one">
-								Public
-							</div>
-							<div class="filters-one">
-								Finished
-							</div>
-							<div class="filters-one">
-								Being verified
-							</div>
-							<div class="filters-one">
-								Rated
-							</div>
-							<div class="filters-one">
-								Unfinished
-							</div>
-							<div class="filters-one">
-								
-							</div>	
-							<div class="filters-one">
-								
-							</div>						
-							<div class="filters-one">
-								Medium
-							</div>
-							<div class="filters-one">
-								Long
-							</div>
-							<div class="filters-one">
-								XL
-							</div>
-							<div class="filters-one">
-								XXL
-							</div>
-							<div class="filters-one">
-								
-							</div>
-							<div class="filters-one">
-								
-							</div>						
-							<div class="filters-one">
-								NC Level
-							</div>
-							<div class="filters-one">
-								Top Quality
-							</div>
-							<div class="filters-one">
-								Remake
-							</div>
-							<div class="filters-one">
-								Uses NoNG
-							</div>	
-							<div class="filters-one">
-								
-							</div>
-							<div class="filters-one">
-								
-							</div>																								
+							<div class="filters-one"
+								v-for="(item,index) in filtersList"		
+								:key="index"
+      							:class="{ active: item.active }">	
+
+								<span @click="useFilter(index)">✓</span> Public
+							</div>																					
 						</div>
 					</div>
 				</div>
@@ -244,7 +197,8 @@ export default {
 		roleIconMap,
 		store,
 		toggledShowcase: false,
-		isFiltersActive: false
+		isFiltersActive: false,
+		filtersList: filtersList
 	}),
 	computed: {
 		level() {
@@ -290,6 +244,9 @@ export default {
 		score,
 		filtersToggle() {
 			this.isFiltersActive = !this.isFiltersActive
-		}
+		},
+		useFilter(index) {
+			this.filtersList[index].active = !this.filtersList[index].active;
+		  }
 	},
 };

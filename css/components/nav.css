@@ -87,7 +87,16 @@
     line-height: 18px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
-    padding: 7px 20px 7px 50px;
+    padding: 7px 20px 7px 20px;
+}
+
+.filters-one span {
+    display: inline-block;
+    opacity: 0;
+}
+
+.filters-one.active span {
+    opacity:1
 }
 
 .filters-selected .filters-collapse {
