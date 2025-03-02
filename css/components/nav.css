@@ -92,14 +92,14 @@
 }
 
 .filters-selected .filters-collapse {
-    grid-template-rows: 1fr;
+    max-height: 1000;
 
 }
 
 .filters-collapse {
-    display: grid;
-    grid-template-rows: 0fr;
+    overflow: hidden;
     transition: grid-template-rows 0.3s ease-out;
+    max-height: 0;
 }
 
 /* Shitty */
