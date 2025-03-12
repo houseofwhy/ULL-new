@@ -227,7 +227,7 @@ export default {
 			];
 		} else {
 			this.currentHash = location.hash
-			if(this.currentHash.indexOF('?')>=0){
+			if(this.currentHash.indexOf('?')>=0){
 				this.tagsStr = this.currentHash.slice(this.currentHash.indexOf('?')+1)
 				this.tagsList = this.tagsStr.split("-")
 				this.list = this.list.filter(level => (tagsList.filter(item => level.tags.includes(item))).length > 0)
