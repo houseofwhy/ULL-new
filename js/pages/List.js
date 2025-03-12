@@ -226,12 +226,7 @@ export default {
 				'Failed to load list. Retry in a few minutes or notify list staff.',
 			];
 		} else {
-			this.currentHash = location.hash
-			if(this.currentHash.indexOf('?')>=0){
-				this.tagsStr = this.currentHash.slice(this.currentHash.indexOf('?')+1)
-				this.tagsList = this.tagsStr.split("-")
-				console.log(this.list)
-			}
+
 			this.errors.push(
 				...this.list
 					.filter(([_, err]) => err)
@@ -255,7 +250,7 @@ export default {
 		useFilter(index) {
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.list = this.list.map(level => {
-				level[0].isVerified=(this.tagsList.filter(item => level[0].tags != undefined && level[0].tags.includes(item))).length > 0
+				level[0].isVerified=(this.filtersList.filter(item => level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
 			})
 		}
 	},
