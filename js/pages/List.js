@@ -230,7 +230,6 @@ export default {
 			if(this.currentHash.indexOf('?')>=0){
 				this.tagsStr = this.currentHash.slice(this.currentHash.indexOf('?')+1)
 				this.tagsList = this.tagsStr.split("-")
-				this.list = this.list.filter(level => (this.tagsList.filter(item => level[0].tags != undefined && level[0].tags.includes(item))).length > 0)
 				console.log(this.list)
 			}
 			this.errors.push(
@@ -255,16 +254,9 @@ export default {
 		},
 		useFilter(index) {
 			this.filtersList[index].active = !this.filtersList[index].active;
-			this.locatStr = location.hash
-			this.positionStr = this.locatStr.slice(0,this.locatStr.indexOf("?"))
-			this.positionStr+='?'
-			for(let filter of this.filtersList){
-				if(filter.active){
-					this.positionStr+=filter.key+"-"
-				}
+			this.list = this.list.map((level) => {
+				level[0].isVerified=(this.tagsList.filter(item => level[0].tags != undefined && level[0].tags.includes(item))).length > 0
 			}
-			location.hash=this.positionStr
-			document.querySelectorAll('.list__home').click()
 		}
 	},
 };
