@@ -250,7 +250,7 @@ export default {
 		useFilter(index) {
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.list.map(level => {
-				level[0].isVerified=(this.filtersList.filter(item => level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
+				level[0].isVerified=(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
 			})
 		}
 	},
