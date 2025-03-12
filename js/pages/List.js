@@ -248,6 +248,7 @@ export default {
 		},
 		useFilter(index) {
 			this.filtersList[index].active = !this.filtersList[index].active;
+			location.href+="?"+index
 		}
 	},
 };
