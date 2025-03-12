@@ -16,7 +16,7 @@ const roleIconMap = {
 
 const filtersList = [
 	{ active: true, name: "Public", key: "public"},
-	{ active: true name: "Finished", key: "finished"}
+	{ active: true, name: "Finished", key: "finished"}
 ]
 
 export default {
