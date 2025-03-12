@@ -15,8 +15,20 @@ const roleIconMap = {
 };
 
 const filtersList = [
-	{ active: true, name: "Public", key: "public"},
-	{ active: true, name: "Finished", key: "finished"}
+	{ active: false, name: "Public", key: "public"},
+	{ active: false, name: "Finished", key: "finished"},
+	{ active: false, name: "Being Verified", key: "verifying"},
+	{ active: false, name: "Layout State", key: "layout"}, 
+	{ active: false, name: "Unrated", key: "unrated"},
+	{ active: false, name: "Rated", key: "rated"},
+	{ active: false, name: "Medium", key: "medium"},
+	{ active: false, name: "Long", key: "long"},
+	{ active: false, name: "XL", key: "xl"},
+	{ active: false, name: "XXL+", key: "xxl"},
+	{ active: false, name: "NC Level", key: "nc"},
+	{ active: false, name: "Remake", key: "remake"},
+	{ active: false, name: "Uses NoNG", key: "nong"},
+	{ active: false, name: "Top Quality", key: "quality"}
 ]
 
 export default {
