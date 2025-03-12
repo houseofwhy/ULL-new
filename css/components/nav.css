@@ -65,7 +65,7 @@
 }
 
 .filters-text {
-    padding: 16px 20px 16px 50px;
+    padding: 16px 0px 16px 50px;
     border-bottom: 4px solid transparent;
     font-family: "Lexend Deca", sans-serif;
     font-size: 20px;
@@ -76,7 +76,7 @@
 }
 
 .filters-menu {
-    width:250px;
+    width:200px;
     background:rgba(0, 0, 0, 1); 
     position: absolute;
 }
