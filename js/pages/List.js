@@ -226,6 +226,12 @@ export default {
 				'Failed to load list. Retry in a few minutes or notify list staff.',
 			];
 		} else {
+			this.currentHash = location.hash
+			if(this.currentHash.indexOF('?')>=0){
+				this.tagsStr = this.currentHash.slice(this.currentHash.indexOF('?')+1)
+				this.tagsList = this.tagsStr.split("-")
+				this.list = this.list.filter(level => (tagsList.filter(item => level.tags.includes(item))).length > 0)
+			}
 			this.errors.push(
 				...this.list
 					.filter(([_, err]) => err)
@@ -248,7 +254,15 @@ export default {
 		},
 		useFilter(index) {
 			this.filtersList[index].active = !this.filtersList[index].active;
-			location.href+="?"+index
+			this.locatStr = location.hash
+			this.positionStr = this.locatStr.slice(0,this.locatStr.indexOf("?"))
+			this.positionStr+='?'
+			for(let filter of this.filtersList){
+				if(filter.active){
+					this.positionStr+=filter.key+"-"
+				}
+			}
+			location.hash=this.positionStr
 		}
 	},
 };
