@@ -230,7 +230,7 @@ export default {
 			if(this.currentHash.indexOf('?')>=0){
 				this.tagsStr = this.currentHash.slice(this.currentHash.indexOf('?')+1)
 				this.tagsList = this.tagsStr.split("-")
-				this.list = this.list.filter(level => (this.tagsList.filter(item => level.tags && level.tags.includes(item))).length > 0)
+				this.list = this.list.filter(level => (this.tagsList.filter(item => level.tags != undefined && level.tags.includes(item))).length > 0)
 			}
 			this.errors.push(
 				...this.list
