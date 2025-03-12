@@ -264,6 +264,7 @@ export default {
 				}
 			}
 			location.hash=this.positionStr
+			document.querySelectorAll('.list__home').click()
 		}
 	},
 };
