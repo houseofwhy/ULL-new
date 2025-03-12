@@ -231,6 +231,7 @@ export default {
 				this.tagsStr = this.currentHash.slice(this.currentHash.indexOf('?')+1)
 				this.tagsList = this.tagsStr.split("-")
 				this.list = this.list.filter(level => (this.tagsList.filter(item => level[0].tags != undefined && level[0].tags.includes(item))).length > 0)
+				console.log(this.list)
 			}
 			this.errors.push(
 				...this.list
