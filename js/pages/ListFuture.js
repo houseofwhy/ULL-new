@@ -1,5 +1,5 @@
 import { store } from '../main.js';
-import { embed } from '../util.js';
+import { embed, filtersList, filtersSetup } from '../util.js';
 import { score } from '../score.js';
 import { fetchEditors, fetchList } from '../content.js';
 
@@ -28,6 +28,7 @@ export default {
                 <router-link class="nav__tab" to="/listfuture">
                     <span class="type-label-lg">Future List</span>
                 </router-link>
+								`+filtersSetup+`
             </nav>
         </header>    
 		<main v-if="loading" class="surface">
@@ -168,6 +169,8 @@ export default {
 		roleIconMap,
 		store,
 		toggledShowcase: false,
+        isFiltersActive: false,
+		filtersList: filtersList
 	}),
 	computed: {
 		level() {
@@ -218,5 +221,15 @@ export default {
 	methods: {
 		embed,
 		score,
+        filtersToggle() {
+                    this.isFiltersActive = !this.isFiltersActive
+        },
+        useFilter(index) {
+            if(filtersList[index].separator) return
+            this.filtersList[index].active = !this.filtersList[index].active;
+            this.list.map(level => {
+                level[0].isVerified=(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
+            })
+        }
 	},
 };
