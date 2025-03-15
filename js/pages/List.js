@@ -21,14 +21,17 @@ const filtersList = [
 	{ active: false, name: "Layout State", key: "layout"}, 
 	{ active: false, name: "Unrated", key: "unrated"},
 	{ active: false, name: "Rated", key: "rated"},
+	{ separator: true},
 	{ active: false, name: "Medium", key: "medium"},
 	{ active: false, name: "Long", key: "long"},
 	{ active: false, name: "XL", key: "xl"},
 	{ active: false, name: "XXL+", key: "xxl"},
+	{ separator: true},
 	{ active: false, name: "NC Level", key: "nc"},
 	{ active: false, name: "Remake", key: "remake"},
 	{ active: false, name: "Uses NoNG", key: "nong"},
-	{ active: false, name: "Top Quality", key: "quality"}
+	{ active: false, name: "Top Quality", key: "quality"},
+	{ separator: true}
 ]
 
 export default {
@@ -59,10 +62,14 @@ export default {
  								v-for="(item,index) in filtersList"		
 								:key="index"
       							:class="{ active: item.active }"   
-                                 @click="useFilter(index)"
+                                 @click="if (!item.separator) useFilter(index)"
 								>	
 
-								<span >✓</span> {{item.name}}
+								<div class="separator-filter" v-if="item.separator">
+								</div>
+								<div v-else>
+									<span>✓</span> {{item.name}}
+								</div>
 							</div>																					
 						</div>
 					</div>

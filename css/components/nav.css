@@ -109,6 +109,10 @@
     transition: grid-template-rows 0.3s ease-out;
 }
 
+.separator-filter {
+    line-height: 18px;
+}
+
 /* Shitty */
 
 .shity .nav .nav__tab.router-link-active {
