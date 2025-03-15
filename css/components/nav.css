@@ -102,19 +102,10 @@
     opacity:1
 }
 
-.filters-selected .filters-collapse {
-    display: block;
-
-}
-
 .filters-selected .filters-menu {
     max-height: 1000px;
 }
 
-.filters-collapse {
-    display: none;
-    transition: grid-template-rows 3s ease-out;
-}
 
 .separator-filter {
     line-height: 18px;
