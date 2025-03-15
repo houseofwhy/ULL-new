@@ -14,5 +14,7 @@
     "percentFinished": 0,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+
+    "tags": ["layout", "long", "quality"]
 }
