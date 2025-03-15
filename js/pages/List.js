@@ -62,7 +62,7 @@ export default {
  								v-for="(item,index) in filtersList"		
 								:key="index"
       							:class="{ active: item.active }"   
-                                 @click="if (!item.separator) useFilter(index)"
+                                 @click="useFilter(index)"
 								>	
 
 								<div class="separator-filter" v-if="item.separator">
@@ -267,6 +267,7 @@ export default {
 			this.isFiltersActive = !this.isFiltersActive
 		},
 		useFilter(index) {
+			if(filtersList[index].separator) return
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.list.map(level => {
 				level[0].isVerified=(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
