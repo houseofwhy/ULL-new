@@ -38,7 +38,7 @@ export function shuffle(array) {
 }
 
 
-const filtersList = [
+export const filtersList = [
 	{ active: false, name: "Public", key: "public"},
 	{ active: false, name: "Finished", key: "finished"},
 	{ active: false, name: "Being Verified", key: "verifying"},
@@ -59,7 +59,7 @@ const filtersList = [
 ]
 
 
-const filtersSetup = `<div style="flex-grow:1"></div>
+export const filtersSetup = `<div style="flex-grow:1"></div>
 				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
 					<div class="filters-text" @click="filtersToggle">Filters</div>
 					<div class="filters-collapse">
