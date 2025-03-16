@@ -231,9 +231,9 @@ export default {
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.filtersToggled = 0
 			for(let filter of filtersList) {
-				if(filter.active) filtersToggled++
+				if(filter.active) this.filtersToggled++
 			}
-			if (!filtersToggled==0){
+			if (!this.filtersToggled==0){
 				this.list.map(level => {
 					for(let filter of filtersList) {
 						if(!filter.active){
