@@ -233,7 +233,7 @@ export default {
 			for(let filter of filtersList) {
 				if(filter.active) this.filtersToggled++
 			}
-			if (!this.filtersToggled==0){
+			if (this.filtersToggled!=0){
 				this.list.map(level => {
 					for(let filter of filtersList) {
 						if(!filter.active){
@@ -249,6 +249,11 @@ export default {
 					}
 	//				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
 				})
+			}
+			else{
+				for(let level of this.list){
+					level[0].isHidden=false
+				}
 			}
 		}
 	},
