@@ -7,12 +7,21 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/bEjIIO_VCUA?si=7lbGhE0d9SCPlAou",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 32,
+    "records": [
+        {
+            "user": "loovi",
+            "link": "https://youtu.be/xzOikULCo7A?si=NBFZr8aTH-XnfLYq",
+            "percent": 31,
+            "hz": 240
+        }
+    ],
     "length": 71,
     "rating": 1,
     "percentFinished": 35,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+
+    "tags": ["long", "remake", "nong"]
 }

@@ -7,12 +7,29 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=2djt_p6OQsg&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=11&ab_channel=Neiro",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 44,
+    "records": [
+        {
+            "user": "Septagon7",
+            "link": "https://youtu.be/WywIdSovVmM?si=LXW_90tq030CLEI2",
+            "percent": 43,
+            "hz": 240
+        }
+    ],
     "length": 88,
     "rating": 1,
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+
+    "run": [
+        {
+            "user": "bop",
+            "link": "https://youtu.be/c2pc6LSqBl8?si=OqttiBJ7dFz60gGy",
+            "percent": "31-100",
+            "hz": 240
+        }        
+    ],
+    "tags": ["public", "finished", "verifying", "long", "remake", "quality"]
 }
