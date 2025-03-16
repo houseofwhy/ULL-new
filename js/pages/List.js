@@ -42,7 +42,7 @@ export default {
         <main v-else class="page-list">
             <div class="list-container surface">
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 														<span :class="{ 'rank-verified': level?.isVerified}">
                             		<p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
@@ -230,7 +230,7 @@ export default {
 			if(filtersList[index].separator) return
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.list.map(level => {
-				level[0].isVerified=(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
+				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
 			})
 		}
 	},

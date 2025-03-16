@@ -106,9 +106,13 @@
     max-height: 1000px;
 }
 
-
 .separator-filter {
     line-height: 18px;
+}
+
+
+.level-hidden {
+    display: none;
 }
 
 /* Shitty */
