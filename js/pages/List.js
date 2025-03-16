@@ -231,6 +231,9 @@ export default {
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.list.map(level => {
 				for(let filter of filtersList) {
+					if(!filter.active){
+						continue
+					}
 					if(level[0].tags == undefined || !level[0].tags.includes(filter.key)){
 						level[0].isHidden=true
 						break
