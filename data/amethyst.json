@@ -21,5 +21,7 @@
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+
+    "tags": ["finished", "verifying", "long", "remake"]
 }

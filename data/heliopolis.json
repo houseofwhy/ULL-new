@@ -7,12 +7,30 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://m.youtube.com/watch?v=7yaKGl_2Dsw&pp=ygUNaGVsaW9wb2xpcyBnZA%3D%3D",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 20,
+    "records": [
+        {
+            "user": "Thnnder",
+            "link": "#",
+            "percent": 19,
+            "hz": 240
+        }
+    ],
     "length": 131,
     "rating": 1,
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+
+    "run": [
+        {
+            "user": "Abdiedevil",
+            "link": "https://youtu.be/cOvrkgWrGHU?si=7boYKGKuqjuoxKZ7",
+            "percent": "48-100",
+            "hz": 670
+        }        
+    ],
+
+    "tags": ["finished", "verifying", "long", "quality"]
 }

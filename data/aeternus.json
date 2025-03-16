@@ -7,14 +7,28 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=WIjuyPd3kck",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 16,
+    "records": [
+        {
+            "user": "Chill Guy",
+            "link": "https://youtu.be/oWaLfIH1hwk?si=cQ8yttpPbrLVNr8O",
+            "percent": 15,
+            "hz": 240
+        }
+    ],
     "length": 77,
     "rating": 1,
     "percentFinished": 100,
 
     "isMain": true,
     "isFuture": true,
-
-    "tags": ["public", "finished", "long", "remake"]
+    "run": [
+        {
+            "user": "Chill Guy",
+            "link": "https://youtu.be/AL5CvuYJn0o?si=Ofw-2niJ3pGKXhVr",
+            "percent": "84-100",
+            "hz": 240
+        }        
+    ],
+    "tags": ["public", "finished", "long", "remake", "nong"]
 }
