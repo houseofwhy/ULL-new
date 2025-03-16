@@ -8,7 +8,14 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=I6BL1e9XxMU&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=6&pp=gAQBiAQB",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+        {
+            "user": "wPopoff",
+            "link": "#",
+            "percent": 52,
+            "hz": 360
+        }
+    ],
     "length": 104,
     "rating": 1,
     "percentFinished": 100,
