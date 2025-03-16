@@ -11,21 +11,25 @@ const scale = 3;
  * @returns {Number}
  */
 export function score(rank, percent, minPercent) {
-    if (rank > 150) {
-        return 0;
-    }
-    if (rank > 75 && percent < 100) {
-        return 0;
-    }
+    // if (rank > 150) {
+    //     return 0;
+    // }
+    // if (rank > 75 && percent < 100) {
+    //     return 0;
+    // }
 
-    // Old formula
+    // Old TSL formula
     /*
     let score = (100 / Math.sqrt((rank - 1) / 50 + 0.444444) - 50) *
         ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
     */
-    // New formula
-    let score = (-24.9975*Math.pow(rank-1, 0.4) + 200) *
-        ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
+    // New TSL formula
+    // let score = (-24.9975*Math.pow(rank-1, 0.4) + 200) *
+    //     ((percent - (minPercent - 1)) / (100 - (minPercent - 1)));
+
+    // ULL Formula
+    let score = 159*(0.996773**rank)*Math.sqrt(percent)
+    
 
     score = Math.max(0, score);
 
