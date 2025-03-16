@@ -230,7 +230,16 @@ export default {
 			if(filtersList[index].separator) return
 			this.filtersList[index].active = !this.filtersList[index].active;
 			this.list.map(level => {
-				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
+				for(let filter of filtersList) {
+					if(level[0].tags == undefined || !level[0].tags.includes(filter.key)){
+						level[0].isHidden=true
+						break
+					}
+					else{
+						level[0].isHidden=false
+					}
+				}
+//				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
 			})
 		}
 	},
