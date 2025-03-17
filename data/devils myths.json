@@ -8,7 +8,22 @@
     "verification": "",
     "showcase": "https://youtu.be/tKtD8lYKqRI?si=Jrm4jFg_v3ZHmJXO",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
     "length": 168,
     "rating": 1,
     "percentFinished": 70,

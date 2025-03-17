@@ -16,6 +16,14 @@
             "hz": 360
         }
     ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
     "length": 104,
     "rating": 1,
     "percentFinished": 100,
