@@ -14,5 +14,6 @@
     "percentFinished": 20,
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["layout", "xl"]
 }

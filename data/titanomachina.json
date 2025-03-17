@@ -7,12 +7,28 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/K4GIyvjWr04?si=MJ7EUQW0rT-2TYZG",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 31,
+    "records": [
+        {
+            "user": "WatchPiggy",
+            "link": "https://youtu.be/ZrPJG4wQFHA?si=a5SCmlGDEfp5EgJS",
+            "percent": 30,
+            "hz": 240
+        }
+    ],
     "length": 239,
     "rating": 1,
     "percentFinished": 90,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["xl"],
+    "run": [
+        {
+            "user": "WatchPiggy",
+            "link": "https://youtu.be/AL5CvuYJn0o?si=Ofw-2niJ3pGKXhVr",
+            "percent": "60-99",
+            "hz": 240
+        }        
+    ]
 }

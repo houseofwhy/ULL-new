@@ -3,7 +3,7 @@
     "name": "ONIGISHIMA",
     "author": "SaYZoX93",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=nIu2XNB9fC0&lc=Ugzj_b4EeVmzrPIXgxF4AaABAg&ab_channel=SaYZoX93",
@@ -14,5 +14,6 @@
     "percentFinished": 29,
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["xl"]
 }

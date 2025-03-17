@@ -3,16 +3,32 @@
     "name": "Vehemence",
     "author": "TBT",
     "creators": [],
-    "verifier": "Wpopoff",
+    "verifier": "wPopoff",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/FPXryrqOrdw?si=p4U-GYu5pbayXjFy",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 8,
+    "records": [
+        {
+            "user": "Trick",
+            "link": "https://youtu.be/p2kDVUNLCFw?si=EP9dN4WNtZTTtIbC",
+            "percent": 7,
+            "hz": 240
+        }
+    ],
     "length": 146,
     "rating": 1,
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+    "tags": ["finished", "verifying", "xl"],
+    "run": [
+        {
+            "user": "wPopoff",
+            "link": "https://youtu.be/Zd-C6L9AlD0?si=Uzs-H_0ZqkNpslct",
+            "percent": "53-100",
+            "hz": 240
+        }        
+    ]
 }

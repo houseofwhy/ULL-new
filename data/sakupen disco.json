@@ -14,5 +14,7 @@
     "percentFinished": 100,
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+
+    "tags": ["medium", "public", "finished"]
 }

@@ -14,5 +14,6 @@
     "percentFinished": 50,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["long", "remake", "nong"]
 }

@@ -3,7 +3,7 @@
     "name": "Nekravol",
     "author": "Burgadahz17",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=1h_XBg2r2LI&pp=ygULbmVrcmF2b2wgZ2Q%3D",
@@ -11,7 +11,7 @@
     "records": [],
     "length": 287,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": "layout",
 
     "isMain": true,
     "isFuture": false,
