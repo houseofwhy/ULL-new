@@ -89,7 +89,7 @@ export default {
 																<template v-if="level.percentFinished == 'layout'">
 																		Status: On Layout State
 																</template>
-																<template v-if="level.percentFinished != 100 && !level.isVerified && level.percentFinished != 0">
+																<template v-if="level.percentFinished != 100 && !level.isVerified && level.percentFinished != "layout">
 																		Status: Deco in Progress ({{Math.floor(level.percentFinished-level.percentFinished/8)}}% finished)
 																</template>
 														</p>
