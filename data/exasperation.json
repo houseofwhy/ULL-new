@@ -7,12 +7,29 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=6AxgWd-JXvA&t=65s",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 49,
+    "records": [
+        {
+            "user": "Zoink",
+            "link": "https://youtu.be/j-_1d13vhBQ?si=ABpRELfcLjsLhAKR",
+            "percent": 48,
+            "hz": 480
+        }
+    ],
     "length": 300,
     "rating": 1,
     "percentFinished": 95,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+
+    "tags": ["xxl", "nong", "verifying"],
+    "run": [
+        {
+            "user": "Zoink",
+            "link": "https://youtu.be/kQ-j2Uq3ec8?si=znpL3TVP3_FVb-oy",
+            "percent": "67-100",
+            "hz": 480
+        }        
+    ]
 }

@@ -7,12 +7,26 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/RRvLG6G_i5M?si=kqinlzYwWBfyHGKA",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 7,
+    "records": [
+        {
+            "user": "MoonFrost",
+            "link": "https://www.youtube.com/watch?v=vyohE-AB10A",
+            "percent": 6,
+            "hz": 60
+        }
+      ],
     "length": 30,
     "rating": 1,
     "percentFinished": 100,
-
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+    "run": [
+        {
+            "user": "Akuriserv",
+            "link": "https://youtu.be/u3dufflH9LA?si=g6osIsl56e-TcTj5",
+            "percent": "84-100",
+            "hz": 360
+        }        
+    ]
 }

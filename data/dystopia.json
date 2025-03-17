@@ -5,7 +5,7 @@
     "creators": [],
     "verifier": "",
     "isVerified": false,
-    "verification": "Open Verification",
+    "verification": "open verification",
     "showcase": "https://www.youtube.com/watch?v=-zpNpJBnmlo",
     "percentToQualify": 1,
     "records": [],
@@ -14,5 +14,16 @@
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+    
+    "run": [
+        {
+            "user": "Thnnder",
+            "link": "https://youtu.be/suauULpn4y4?si=EstqqnuRIjW3WH3E",
+            "percent": "84-100",
+            "hz": 360
+        }        
+    ],
+
+    "tags": ["public", "finished", "long"]
 }

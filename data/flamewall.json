@@ -7,12 +7,29 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/T8Z2Hx8QnFc?si=mwZMLL9AtC36tnEk",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 63,
+    "records": [
+        {
+            "user": "Cuatrocientos",
+            "link": "https://youtu.be/MV9wSXitcSc?si=Em8_crWiuTdtFJbH",
+            "percent": 62,
+            "hz": 240
+        }
+    ],
     "length": 413,
     "rating": 1,
     "percentFinished": 100,
 
+    "run": [
+        {
+            "user": "Cuatrocientos",
+            "link": "https://youtu.be/dlVnGdWRLeQ?si=kFFpgTp4ZJIuOCK6",
+            "percent": "3-86",
+            "hz": 240
+        }        
+    ],
+
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+    "tags": ["xxl", "quality", "finished", "verifying"] 
 } 

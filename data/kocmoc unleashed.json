@@ -7,12 +7,29 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/F52eon-irts?si=sXnwHHUxZSbUDXfM",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 48,
+    "records": [
+        {
+            "user": "Arshadow",
+            "link": "https://youtu.be/dQ5mCVI9aiY?si=JvnF-CRqwARYlTyK",
+            "percent": 47,
+            "hz": 240
+        }
+    ],
     "length": 103,
     "rating": 1,
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+    "tags": ["quality", "long", "finished", "remake", "verifying"],
+
+    "run": [
+        {
+            "user": "Arshadow",
+            "link": "https://youtu.be/F9P_T1c2bAQ?si=V9oWoFajYEdCzpNR",
+            "percent": "48-89",
+            "hz": 240
+        }        
+    ]
 }

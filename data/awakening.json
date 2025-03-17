@@ -3,7 +3,7 @@
     "name": "Awakening",
     "author": "XenoTeam",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=E2QDAQvh42I&pp=ygUMYXdha2VuaW5nIGdk",
@@ -14,5 +14,7 @@
     "percentFinished": 60,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+
+    "tags": ["long", "nong", "remake"]
 }

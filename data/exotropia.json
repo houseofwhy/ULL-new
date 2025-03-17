@@ -14,5 +14,6 @@
     "percentFinished": 30,
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["long"]
 }

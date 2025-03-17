@@ -14,5 +14,6 @@
     "percentFinished": 25,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["xl"]
 }

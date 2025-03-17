@@ -7,12 +7,20 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=uFwhOXQ0f74&pp=ygUMbmliZWxoZWltIGdk",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 21,
+    "records": [
+        {
+            "user": "Beastular",
+            "link": "https://youtu.be/iqKX_5aMwM8?si=n_kDSZhRC7TH2ul9",
+            "percent": 20,
+            "hz": 240
+        }
+    ],
     "length": 72,
     "rating": 1,
     "percentFinished": 35,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+    "tags": ["long", "quality"]
 }

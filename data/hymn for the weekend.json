@@ -7,12 +7,28 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://m.youtube.com/watch?v=j-Ws1146kbA&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=129&pp=gAQBiAQB",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 33,
+    "records": [
+        {
+            "user": "Meper",
+            "link": "#",
+            "percent": 32,
+            "hz": 240
+        }
+    ],
     "length": 50,
     "rating": 1,
     "percentFinished": 100,
 
     "isMain": true,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["finished", "public", "medium", "nong"],
+    "run": [
+        {
+            "user": "Meper",
+            "link": "https://youtu.be/sQgOuexu1tc?si=fPFx2uYekrSEV675",
+            "percent": "81-100",
+            "hz": 240
+        }        
+    ]
 } 

@@ -7,8 +7,15 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Q-0k5m4UEfk",
-    "percentToQualify": 1,
-    "records": [],
+    "percentToQualify": 11,
+    "records": [
+        {
+            "user": "Kaza",
+            "link": "https://youtu.be/62D9C6F-80w?si=aX8QV4kD2LAhV7Vy",
+            "percent": 10,
+            "hz": 360
+        }
+    ],
     "length": 93,
     "rating": 1,
     "percentFinished": 100,
@@ -16,5 +23,14 @@
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["public", "finished", "long"]
+    "tags": ["public", "finished", "long"],
+
+    "run": [
+        {
+            "user": "Kaza",
+            "link": "https://youtu.be/aariou1bow0?si=LnzLIMkRJrEmLJQ7",
+            "percent": "37-48",
+            "hz": 360
+        }        
+    ]
 }

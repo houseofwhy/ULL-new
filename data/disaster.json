@@ -3,7 +3,7 @@
     "name": "distater",
     "author": "KeyNom",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=tqQ8vGRGMi4",
@@ -14,5 +14,6 @@
     "percentFinished": 100,
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+    "tags": ["public", "finished", "long"]
 }

@@ -8,11 +8,27 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=1fFU8HhOHw8&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=16&pp=gAQBiAQB",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+        {
+            "user": "Laser",
+            "link": "https://youtu.be/CZBL9ypGTIE?si=HhZtgpLF2b0nLWg8",
+            "percent": 33,
+            "hz": 240
+        }
+    ],
     "length": 342,
     "rating": 1,
     "percentFinished": 50,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+    "tags": ["verifying", "xxl"],
+    "run": [
+        {
+            "user": "BigMac",
+            "link": "https://youtu.be/HkZFGcPWwQw?si=zaZfSspqWzBAY9U1",
+            "percent": "44-100",
+            "hz": 240
+        }        
+    ]
 }

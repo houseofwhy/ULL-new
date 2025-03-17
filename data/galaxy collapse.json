@@ -14,5 +14,14 @@
     "percentFinished": 90,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+    "tags": ["long"],
+    "run": [
+        {
+            "user": "Trusta",
+            "link": "https://youtu.be/rH3-VxO13os?si=Qbdun-7rlJDaxeqw",
+            "percent": "9-23",
+            "hz": 240
+        }        
+    ]
 } 
