@@ -82,7 +82,7 @@ export default {
 																<template v-if="level.percentFinished == 100 && !level.isVerified">
 																		Status: On Verification
 																</template>
-																<template v-if="level.percentFinished == 100 && !level.isVerified && level.percentFinished == 0">
+																<template v-if="level.percentFinished == 'layout'">
 																		Status: On Layout State
 																</template>
 																<template v-if="level.percentFinished != 100 && !level.isVerified && level.percentFinished != 0">
@@ -103,10 +103,7 @@ export default {
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
-                        <li>
-                            <div class="type-title-sm">Coolness Score</div>
-                            <p>{{ Math.floor(Math.sqrt(level.percentFinished)*level.rating*level.rating*Math.sqrt(level.length)*Math.sqrt(level.rating)*45/1000*3.141592356/Math.E*1000)/1000 }}</p>
-                        </li>
+
                         <li>
                             <div class="type-title-sm">ID</div>
                             <p>{{ (level.id === "private" && level.leakID != null) ? level.leakID : level.id }}</p>
