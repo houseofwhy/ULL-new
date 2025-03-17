@@ -3,7 +3,7 @@
     "name": "Starfruit supernova",
     "author": "Minecrazy418",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=t3AgkKJPUJY&ab_channel=Retrocat",
@@ -14,5 +14,8 @@
     "percentFinished": 0,
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+
+    "tags": ["xxl"]
+
 } 

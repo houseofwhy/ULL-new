@@ -3,16 +3,26 @@
     "name": "Adramelech",
     "author": "Gxterne",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://m.youtube.com/watch?v=9cC-r1Az450&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=59&pp=gAQBiAQB",
     "percentToQualify": 1,
-    "records": [],
-    "length": 0,
+    "records": [
+        {
+            "user": "Airi",
+            "link": "https://youtu.be/rGuHeMa8qVU?si=NMtHx6VYqNVJb5mR",
+            "percent": 11,
+            "hz": 360
+        }
+    ],
+    "length": 560,
     "rating": 1,
     "percentFinished": 45,
 
     "isMain": true,
-    "isFuture": true
+    "isFuture": true,
+
+    "tags": ["xxl", "quality"]
+
 }

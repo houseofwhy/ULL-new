@@ -11,8 +11,11 @@
     "records": [],
     "length": 73,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": "layout",
 
     "isMain": false,
-    "isFuture": false
+    "isFuture": false,
+
+    "tags": ["layout", "long"]
+
 }
