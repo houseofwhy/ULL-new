@@ -8,7 +8,14 @@
     "verification": "",
     "showcase": "https://youtu.be/Ts5ZDH6ueX4?si=pkxyMgBY21BBkqDb",
     "percentToQualify": 1,
-    "records": [],
+    "records": [
+        {
+            "user": "Surrounded",
+            "link": "https://youtu.be/_FMtLUGt9Y0?si=nuhyTHsP37BbMqMs",
+            "percent": 11,
+            "hz": 240
+        }
+    ],
     "length": 230,
     "rating": 1,
     "percentFinished": 100,
@@ -16,5 +23,14 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["public", "finished", "xl"]
+    "tags": ["public", "finished", "xl"],
+
+    "run": [
+        {
+            "user": "Surrounded",
+            "link": "https://youtu.be/_FMtLUGt9Y0?si=nuhyTHsP37BbMqMs",
+            "percent": "84-100",
+            "hz": 240
+        }        
+    ]
 }
