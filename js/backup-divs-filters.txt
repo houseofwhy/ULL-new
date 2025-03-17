@@ -64,6 +64,14 @@
 
 
 
+																<template v-if="typeof level.percentToQualify == 'number'">
+																		World Record: {{level.percentToQualify-1}}% by {{level.wrman}}
+																</template>
+																<template v-if="typeof level.percentToQualify == 'string'">
+																		World Record: {{level.percentToQualify}}% by {{level.wrman}}
+																</template>
 
-
-                    
+                        <li>
+                            <div class="type-title-sm">Coolness Score</div>
+                            <p>{{ Math.floor(Math.sqrt(level.percentFinished)*level.rating*level.rating*Math.sqrt(level.length)*Math.sqrt(level.rating)*45/1000*3.141592356/Math.E*1000)/1000 }}</p>
+                        </li>

@@ -66,11 +66,11 @@ export default {
 										<div>
 												<div v-if="!level.isVerified && level.wrman" class="worldrecord">
 														<p class="type-body">
-																<template v-if="typeof level.percentToQualify == 'number'">
-																		World Record: {{level.percentToQualify-1}}% by {{level.wrman}}
+																<template>
+																		World Record (from 0): {{level.records.percent}}% by {{level.records.user}}
 																</template>
-																<template v-if="typeof level.percentToQualify == 'string'">
-																		World Record: {{level.percentToQualify}}% by {{level.wrman}}
+																<template>
+																		World Record (run): {{level.run.percent}}% by {{level.run.user}}
 																</template>
 														</p>
 												</div>
