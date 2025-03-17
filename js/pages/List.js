@@ -64,6 +64,7 @@ export default {
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
 										<div>
+										
 												<div class="lvlstatus">
 														<p class="type-body">
 																<template v-if="level.isVerified">
@@ -72,12 +73,7 @@ export default {
 																<template v-if="level.percentFinished == 100 && !level.isVerified">
 																		Status: On Verification
 																</template>
-																<template v-if="level.percentFinished == 'layout'">
-																		Status: On Layout State
-																</template>
-																<template v-if="level.percentFinished != 100 && !level.isVerified && level.percentFinished != "layout">
-																		Status: Deco in Progress ({{Math.floor(level.percentFinished-level.percentFinished/8)}}% finished)
-																</template>
+
 														</p>
 												</div>
 										</div>
