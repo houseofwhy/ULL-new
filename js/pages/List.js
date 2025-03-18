@@ -64,14 +64,14 @@ export default {
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
 										<div>
-											<div v-if="!level.isVerified && level.records.percent != 0" class="worldrecord">
+											<div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
 												<p class="type-body">
-														World Record - From 0: {{level.records.percent}}% by {{level.records.user}}
+														World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
 												</p>
 											</div>
-											<div v-if="!level.isVerified && level.run.percent != '0'" class="worldrecord">
+											<div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
 												<p class="type-body">																
-														World Record - Run: {{level.run.percent}}% by {{level.run.user}}
+														World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
 												</p>
 											</div>
 											<div class="lvlstatus">
