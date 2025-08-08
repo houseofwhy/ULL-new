@@ -122,6 +122,10 @@ export default {
                             <div class="type-title-sm">Length</div>
                             <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
                         </li>
+						<li>
+                            <div class="type-title-sm">Last Update</div>
+                            <p>{{level.lastUpd}}</p>
+                        </li>
                     </ul>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
