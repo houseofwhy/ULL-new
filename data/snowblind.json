@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "",
+    "author": "",
+    "creators": [],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 0,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": []
+}
+
+// LAST UPDATE: DD.MM.YYYY

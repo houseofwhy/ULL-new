@@ -1,0 +1,65 @@
+{
+    "id": either "private" WITH QUOTES / or just the number without them,
+    "name": just the name of the level with quotes
+    "author": hosts name with quotes
+    "creators": just keep this as it is in the template
+    "verifier": verifier name in quotes
+    "isVerified": either false or true with no quotes
+    "verification": youtube link in quotes, put ONLY IF VERIFIED
+    "showcase": youtube link in quotes of the latest FULL PREVIEW, dont put single deco parts here
+    "percentToQualify": current WR from zero + 1, put just a number with no quotes
+    "records": look on the bottom
+    "run": look on the bottom
+    "length": put level length in seconds as a single int with no quotes
+    "rating": leave this as in the template
+    "percentFinished": count the amount of seconds that are fully finished and divide by level length, put  asingle int with no quotes
+
+    "isMain": leave as it is
+    "isFuture": leave as it is
+
+    "tags": look on the bottom
+}
+
+// LAST UPDATE: DD.MM.YYYY <--- change this to todays date when there's new prog on the level (even just info from the host)
+
+IMPORTANT: AFTER EACH LINE (except tags and those things: [] {} ) KEEP A COMMA
+
+HOW TO FILL RECORDS AND RUNS:
+
+    "records/run depending on which one it is": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+
+where:
+- IF THE WR IS 0% YOU LEAVE IT AS IT IS
+- in user you put the name of the WR inside quotes
+- in link you paste a YT link for their WR in quotes (if none paste "#")
+- IN RECORDS (from zero) in percent you put one integer with no quotes which is the current WR FROM ZERO
+- IN RUNS (from startpos) you put the WR run in quotes, for example: "14-78"
+- in hz you put the hz that the record was done in as an int with no quotes
+
+HOW TO FILL TAGS:
+
+example: "tags": ["long", "nong", "remake"]
+so, you put square brackets and inside them all tags in quotes in lowercase with commas between them
+
+ALL TAGS:
+Public - "public" - the level is uploaded publicly on the gd servers
+Finished - "finished" - the level is fully finished
+Being Verified - "verifying" - the level has sugnificant verification prog (30%+ runs)
+Layout State - "layout" - the level doesnt have any deco prog
+Unrated - "unrated" - the level is verified but not rated
+Rated - "rated" - ...
+Medium - "medium" - the level is less than a minute long
+Long - "long" - the level is 60-120 seconds long
+XL - "xl" - the level is 120-180 seconds long
+XXL+ - "xxl" - ...
+NC Level - "nc" - ...
+Remake - "remake" - the level is a remake of another level
+Uses NoNG - "nong" - ...
+Top Quality - "quality" - the level is insanely high quality (like legenday-mythic qual)
