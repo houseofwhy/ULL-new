@@ -89,11 +89,11 @@ export default {
 															<template v-if="level.isVerified">
 																	Status: Verified
 															</template>
-															<template v-if="level.percentFinished == 100 && !level.isVerified">
-																	Status: On Verification
-															</template>
 															<template v-if="level.percentFinished == 0">
 																	Status: On Layout State
+															</template>
+															<template v-if="level.percentFinished == 100 && !level.isVerified">
+																	Status: On Verification
 															</template>
 															<template v-else">
 																	Status: On Deco State: {{level.percentFinished}}% done
