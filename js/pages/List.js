@@ -111,6 +111,11 @@ export default {
                             <span class="type-label-lg">Verification</span>
                         </button>
 												</template>
+												<template v-if="level.records.percent!=0 && !level.isVerified">
+                        <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
+                            <span class="type-label-lg">WR</span>
+                        </button>
+												</template>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
