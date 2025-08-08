@@ -69,7 +69,7 @@ export default {
 														World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
 												</p>
 											</div>
-											<div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
+											<div v-else" class="worldrecord">
 												<p class="type-body">
 														World Record - From 0: None
 												</p>
@@ -79,7 +79,7 @@ export default {
 														World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
 												</p>
 											</div>
-											<div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
+											<div v-else" class="worldrecord">
 												<p class="type-body">																
 														World Record - Run: None
 												</p>
