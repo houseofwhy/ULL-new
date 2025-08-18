@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "",
-    "lastUpd": ""
+    "lastUpd": "",
 
     "percentToQualify": 1,
     "records": [
