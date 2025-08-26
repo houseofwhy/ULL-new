@@ -42,7 +42,7 @@ export const filtersList = [
 	{ active: false, name: "Public", key: "public"},
 	{ active: false, name: "Finished", key: "finished"},
 	{ active: false, name: "Being Verified", key: "verifying"},
-	{ active: false, name: "Layout State", key: "layout"}, 
+	{ active: false, name: "Layout State", key: "layout"},
 	{ active: false, name: "Unrated", key: "unrated"},
 	{ active: false, name: "Rated", key: "rated"},
 	{ separator: true},
@@ -59,24 +59,25 @@ export const filtersList = [
 ]
 
 
+
 export const filtersSetup = `<div style="flex-grow:1"></div>
 				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
-					<div class="filters-text" @click="filtersToggle">Filters</div>
+					<div class="filters-text" @click="filtersToggle">Filters <img :src="\`/assets/arrow-down\${store.dark ? '-dark' : ''}.svg\`" style="display:inline; vertical-align: middle;"></div>
 					<div class="filters-collapse">
 						<div class="filters-menu">
 							<div class="filters-one"
- 								v-for="(item,index) in filtersList"		
+ 								v-for="(item,index) in filtersList"
 								:key="index"
-      							:class="{ active: item.active }"   
+      								:class="{ active: item.active }"
                                  @click="useFilter(index)"
-								>	
+								>
 
 								<div class="separator-filter" v-if="item.separator">
 								</div>
 								<div v-else>
 									<span>✓</span> {{item.name}}
 								</div>
-							</div>																					
+							</div>
 						</div>
 					</div>
 				</div>`
