@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "secular",
+    "author": "kagu",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/Y3IcGFPRUK0?si=cx9NArHxDhyhxjrk",
+    "lastUpd": "08.09.2024",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 90,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["long", "nong","layout" ]
+}
