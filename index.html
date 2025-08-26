@@ -7,10 +7,11 @@
     <meta property="og:title" content="Future Demonlist" />
     <meta property="og:description"
         content="The Future of the Extreme Demons - Demonlist in 2030" />
-    <meta property="og:url" content="https://tsl.pages.dev" />
-    <meta property="og:image" content="/tsl_icon.png" />
+    <meta property="og:url" content="https://ull.pages.dev" />
+    <meta property="og:image" content="/ull_icon.png" />
     <title>Future DemonList</title>
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/ull_icon.png" />
+    <meta name="theme-color" content="#c031c7">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap" rel="stylesheet" />
@@ -19,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
     <link rel="stylesheet" type="text/css" href="/css/pages/leaderboard.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/roulette.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
@@ -57,9 +57,6 @@
                 <router-link class="nav__tab" to="/leaderboard">
                     <span class="type-label-lg">Leaderboard</span>
                 </router-link>
-                <router-link class="nav__tab" to="/roulette">
-                    <span class="type-label-lg">Roulette</span>
-                </router-link>
                 <router-link class="nav__tab" to="/unlisted">
                     <span class="type-label-lg">Unlisted</span>
                 </router-link>
@@ -86,20 +83,6 @@
             </nav>
         </header>
 
-
-        <!-- <header class="new">
-            <nav class="nav">
-                <router-link class="nav__tab" to="/list">
-                    <span class="type-label-lg">All Levels</span>
-                </router-link>
-                <router-link class="nav__tab" to="/leaderboard">
-                    <span class="type-label-lg">Main List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/roulette">
-                    <span class="type-label-lg">Future List</span>
-                </router-link>
-            </nav>
-        </header> -->
 
 
         <router-view></router-view>

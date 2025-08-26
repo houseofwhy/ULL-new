@@ -1,27 +1,28 @@
-import { store } from '../main.js';
-import { embed, filtersList, filtersSetup } from '../util.js';
-import { score } from '../score.js';
-import { fetchEditors, fetchList } from '../content.js';
+import { store } from "../main.js";
+import { embed, filtersList, filtersSetup } from "../util.js";
+import { score } from "../score.js";
+import { fetchEditors, fetchList } from "../content.js";
 
-import Spinner from '../components/Spinner.js';
-import LevelAuthors from '../components/List/LevelAuthors.js';
+import Spinner from "../components/Spinner.js";
+import LevelAuthors from "../components/List/LevelAuthors.js";
 
 const roleIconMap = {
-	owner: 'crown',
-	admin: 'user-gear',
-	seniormod: 'user-shield',
-	mod: 'user-lock',
-	dev: 'code'
+    owner: "crown",
+    admin: "user-gear",
+    seniormod: "user-shield",
+    mod: "user-lock",
+    dev: "code",
 };
 
 export default {
-	components: { Spinner, LevelAuthors },
-	template: `
+    components: { Spinner, LevelAuthors },
+    template:
+        `
 	<style>
 		.list__home{
 			border-color: var(--color-on-primary);
 		}
-	</style> 
+	</style>
 	<header class="new">
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
@@ -33,9 +34,11 @@ export default {
                 <router-link class="nav__tab" to="/listfuture">
                     <span class="type-label-lg">Future List</span>
                 </router-link>
-								`+filtersSetup+`
+								` +
+        filtersSetup +
+        `
             </nav>
-        </header>    
+        </header>
 		<main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
@@ -75,12 +78,12 @@ export default {
 												</p>
 											</div>
 											<div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
-												<p class="type-body">																
+												<p class="type-body">
 														World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
 												</p>
 											</div>
 											<div v-else" class="worldrecord">
-												<p class="type-body">																
+												<p class="type-body">
 														World Record - Run: None
 												</p>
 											</div>
@@ -179,93 +182,95 @@ export default {
             </div>
         </main>
     `,
-	data: () => ({
-		list: [],
-		editors: [],
-		loading: true,
-		selected: 0,
-		errors: [],
-		roleIconMap,
-		store,
-		toggledShowcase: false,
-		isFiltersActive: false,
-		filtersList: filtersList
-	}),
-	computed: {
-		level() {
-			return this.list[this.selected][0];
-		},
-		video() {
-			if (!this.level.showcase) {
-				return embed(this.level.verification);
-			}
+    data: () => ({
+        list: [],
+        editors: [],
+        loading: true,
+        selected: 0,
+        errors: [],
+        roleIconMap,
+        store,
+        toggledShowcase: false,
+        isFiltersActive: false,
+        filtersList: filtersList,
+    }),
+    computed: {
+        level() {
+            return this.list[this.selected][0];
+        },
+        video() {
+            if (!this.level.showcase) {
+                return embed(this.level.verification);
+            }
 
-			return embed(
-				(this.toggledShowcase || !this.level.isVerified) ? this.level.showcase : this.level.verification,
-			);
-		},
-	},
-	async mounted() {
-		// Hide loading spinner
-		this.list = await fetchList();
-		this.editors = await fetchEditors();
+            return embed(
+                this.toggledShowcase || !this.level.isVerified
+                    ? this.level.showcase
+                    : this.level.verification
+            );
+        },
+    },
+    async mounted() {
+        // Hide loading spinner
+        this.list = await fetchList();
+        this.editors = await fetchEditors();
 
-		// Error handling
-		if (!this.list) {
-			this.errors = [
-				'Failed to load list. Retry in a few minutes or notify list staff.',
-			];
-		} else {
+        // Error handling
+        if (!this.list) {
+            this.errors = [
+                "Failed to load list. Retry in a few minutes or notify list staff.",
+            ];
+        } else {
+            this.errors.push(
+                ...this.list
+                    .filter(([_, err]) => err)
+                    .map(([_, err]) => {
+                        return `Failed to load level. (${err}.json)`;
+                    })
+            );
+            if (!this.editors) {
+                this.errors.push("Failed to load list editors.");
+            }
+        }
 
-			this.errors.push(
-				...this.list
-					.filter(([_, err]) => err)
-					.map(([_, err]) => {
-						return `Failed to load level. (${err}.json)`;
-					}),
-			);
-			if (!this.editors) {
-				this.errors.push('Failed to load list editors.');
-			}
-		}
-
-		this.loading = false;
-	},
-	methods: {
-		embed,
-		score,
-		filtersToggle() {
-			this.isFiltersActive = !this.isFiltersActive
-		},
-		useFilter(index) {
-			if(filtersList[index].separator) return
-			this.filtersList[index].active = !this.filtersList[index].active;
-			this.filtersToggled = 0
-			for(let filter of filtersList) {
-				if(filter.active) this.filtersToggled++
-			}
-			if (this.filtersToggled!=0){
-				this.list.map(level => {
-					for(let filter of filtersList) {
-						if(!filter.active){
-							continue
-						}
-						if(level[0].tags == undefined || !level[0].tags.includes(filter.key)){
-							level[0].isHidden=true
-							break
-						}
-						else{
-							level[0].isHidden=false
-						}
-					}
-	//				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
-				})
-			}
-			else{
-				for(let level of this.list){
-					level[0].isHidden=false
-				}
-			}
-		}
-	},
+        this.loading = false;
+    },
+    methods: {
+        embed,
+        score,
+        filtersToggle() {
+            this.isFiltersActive = !this.isFiltersActive;
+        },
+        useFilter(index) {
+            if (filtersList[index].separator) return;
+            this.filtersList[index].active = !this.filtersList[index].active;
+            this.filtersToggled = 0;
+            for (let filter of filtersList) {
+                if (filter.active) this.filtersToggled++;
+            }
+            if (this.filtersToggled != 0) {
+                this.list.map((level) => {
+                    for (let filter of filtersList) {
+                        if (!filter.active) {
+                            continue;
+                        }
+                        if (
+                            level[0].tags == undefined ||
+                            !level[0].tags.includes(filter.key)
+                        ) {
+                            level[0].isHidden = true;
+                            break;
+                        } else {
+                            level[0].isHidden = false;
+                        }
+                    }
+                    //				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
+                });
+            } else {
+                for (let level of this.list) {
+                    level[0].isHidden = false;
+                }
+            }
+        },
+    },
 };
