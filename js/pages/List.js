@@ -47,17 +47,17 @@ export default {
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
-														<span :class="{ 'rank-verified': level?.isVerified}">
-                            		<p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
-                            		<p v-else class="type-label-lg">Legacy</p>
-														</span>
+							<span :class="{ 'rank-verified': level?.isVerified}">
+                                <p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg">Legacy</p>
+							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-	                            <button @click="selected = i">
-																	<span :class="{ 'rank-verified': level?.isVerified}">
-	                                		<span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-																	</span>
-	                            </button>
+                            <button @click="selected = i">
+                                <span :class="{ 'rank-verified': level?.isVerified}">
+                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                </span>
+                            </button>
                         </td>
                     </tr>
                 </table>
@@ -66,53 +66,52 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
-										<div>
-											<div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
-												<p class="type-body">
-														World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
-												</p>
-											</div>
-											<div v-else" class="worldrecord">
-												<p class="type-body">
-														World Record - From 0: None
-												</p>
-											</div>
-											<div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
-												<p class="type-body">
-														World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
-												</p>
-											</div>
-											<div v-else" class="worldrecord">
-												<p class="type-body">
-														World Record - Run: None
-												</p>
-											</div>
-											<div class="lvlstatus">
-													<p class="type-body">
-															<template v-if="level.isVerified">
-																	Status: Verified
-															</template>
-															<template v-if="level.percentFinished == 0">
-																	Status: On Layout State
-															</template>
-															<template v-if="level.percentFinished == 100 && !level.isVerified">
-																	Status: On Verification
-															</template>
-															<template v-if="level.percentFinished != 0 && level.percentFinished != 100">
-																	Status: On Deco State: {{level.percentFinished}}% done
-															</template>
-
-													</p>
-											</div>
-										</div>
+                        <div>
+                            <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
+                                <p class="type-body">
+                                        World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
+                                </p>
+                            </div>
+                            <div v-else" class="worldrecord">
+                                <p class="type-body">
+                                        World Record - From 0: None
+                                </p>
+                            </div>
+                            <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
+                                <p class="type-body">
+                                        World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
+                                </p>
+                            </div>
+                            <div v-else" class="worldrecord">
+                                <p class="type-body">
+                                        World Record - Run: None
+                                </p>
+                            </div>
+                            <div class="lvlstatus">
+                                <p class="type-body">
+                                    <template v-if="level.isVerified">
+                                            Status: Verified
+                                    </template>
+                                    <template v-if="level.percentFinished == 0">
+                                            Status: On Layout State
+                                    </template>
+                                    <template v-if="level.percentFinished == 100 && !level.isVerified">
+                                            Status: On Verification
+                                    </template>
+                                    <template v-if="level.percentFinished != 0 && level.percentFinished != 100">
+                                            Status: On Deco State: {{level.percentFinished}}% done
+                                    </template>
+                                </p>
+                            </div>
+                        </div>
                     <div v-if="level.showcase" class="tabs">
-												<button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
-														<span class="type-label-lg">Showcase</span>
-												</button>
-												<template v-if="level.isVerified">
-                        <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
-                            <span class="type-label-lg">Verification</span>
+                        <button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
+                                <span class="type-label-lg">Showcase</span>
                         </button>
+                        <template v-if="level.isVerified">
+                            <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
+                                <span class="type-label-lg">Verification</span>
+                            </button>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
