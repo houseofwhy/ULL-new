@@ -28,9 +28,9 @@ export default {
                 <router-link class="nav__tab" to="/listfuture">
                     <span class="type-label-lg">Future List</span>
                 </router-link>
-								`+filtersSetup+`                
+								`+filtersSetup+`
             </nav>
-        </header>    
+        </header>
 		<main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
@@ -83,7 +83,7 @@ export default {
 														</p>
 												</div>
 										</div>
-                    <div v-if="level.showcase" class="tabs">
+                    <div v-if="level.isVerified" class="tabs">
 												<button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
 														<span class="type-label-lg">Showcase</span>
 												</button>
@@ -253,6 +253,6 @@ export default {
                     level[0].isHidden=false
                 }
             }
-        }      
+        }
 	},
 };

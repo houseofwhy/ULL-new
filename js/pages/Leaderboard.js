@@ -48,7 +48,7 @@ export default {
                             Best run: <a :href="bestRun.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
                         </p>
                     </div>
-                    <div v-if="level.showcase" class="tabs">
+                    <div v-if="level.isVerified" class="tabs">
                         <button class="tab" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
                             <span class="type-label-lg">Verification</span>
                         </button>
@@ -175,7 +175,7 @@ export default {
                 level.rankingScore = Math.max(maxPercent, maxRunDifference);
             });
 
-            const filteredList = list.filter(([level, err]) => level && level.rankingScore > 0);
+            const filteredList = list.filter(([level, err]) => level && !level.isVerified &&level.rankingScore > 0);
             this.list = filteredList.sort((a, b) => b[0].rankingScore - a[0].rankingScore);
 
             if (!this.editors) {
