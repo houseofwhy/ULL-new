@@ -1,0 +1,37 @@
+{
+    "id": "124259165",
+    "name": "true metal crusher",
+    "author": "upcastdapopcorn",
+    "creators": [],
+    "verifier": "open verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=xPrlCgg73rc",
+    "lastUpd": "18.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 109,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["long", "public", "finished"]
+}
