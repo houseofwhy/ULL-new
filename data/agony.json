@@ -1,0 +1,37 @@
+{
+    "id": "121639703",
+    "name": "AGONY",
+    "author": "Sevant",
+    "creators": [],
+    "verifier": "open verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=oz53pxx-8HU&ab_channel=Sevant",
+    "lastUpd": "31.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 201,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": []
+}
