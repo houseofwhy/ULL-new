@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Six paths of pain",
-    "author": "Th3Pot4toBOI",
+    "name": "Society",
+    "author": "Neomarbilan",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=ORSx2YOABAU&t=18s&ab_channel=Th3Pot4toBOI",
-    "lastUpd": "18.07.2025",
+    "showcase": "https://youtu.be/Dp4p3mVk5EI?si=oFYfmc__l06RxUoV",
+    "lastUpd": "27.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 184,
+    "length": 98,
     "rating": 1,
-    "percentFinished": 30,
+    "percentFinished": 45,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
     "tags": []
 }
