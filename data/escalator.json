@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "escalator",
+    "author": "neomarbilan",
+    "creators": [],
+    "verifier": "teraaa",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://m.youtube.com/watch?v=HzNplCtsVxU",
+    "lastUpd": "26.07.2024",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "teraaa",
+            "link": "https://youtu.be/pqQGfeerxFk?si=29U9eu7RbhD70MKF",
+            "percent": "61-100",
+            "hz": 0
+        }        
+    ],
+
+    "length": 109,
+    "rating": 1,
+    "percentFinished": 90,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["long", "nong"]
+}

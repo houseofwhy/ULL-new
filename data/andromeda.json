@@ -1,0 +1,37 @@
+{
+    "id": "114283297",
+    "name": "andromeda",
+    "author": "insxne",
+    "creators": [],
+    "verifier": "taiago",
+    "isVerified": true,
+    "verification": "https://youtu.be/mk3TDemdkC0",
+    "showcase": "https://www.youtube.com/watch?v=xqQNv-Puq44",
+    "lastUpd": "04.07.2023",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 74,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["long", "nong", "public", "finished", "rated"]
+}
