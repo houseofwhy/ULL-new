@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "clandestine",
+    "author": "PyroGD",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://m.youtube.com/watch?v=7sjuRoxlMqg",
+    "lastUpd": "17.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 57,
+    "rating": 1,
+    "percentFinished": 52,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["medium", "nong"]
+}
