@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Ascension to heaven",
+    "author": "The Purgatory/blueskii",
+    "creators": [],
+    "verifier": "Denii/unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=a9CejN1JuJU&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=15&pp=gAQBiAQB",
+    "lastUpd": "15.05.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 300,
+    "rating": 1,
+    "percentFinished": 60,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["xxl","quality"]
+}

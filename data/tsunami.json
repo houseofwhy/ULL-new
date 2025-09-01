@@ -1,0 +1,37 @@
+{
+    "id": "123680258",
+    "name": "Tsunami",
+    "author": "OniLink",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=Tx5GdRHkMBg&ab_channel=OniLink",
+    "lastUpd": "27.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 212,
+    "rating": 1,
+    "percentFinished": 35,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["xxl","public"]
+}
