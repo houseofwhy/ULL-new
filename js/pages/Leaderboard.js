@@ -98,8 +98,8 @@ export default {
         },
         video() {
             if (!this.level) return;
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
+            if (!this.level.verification) {
+                return embed(this.level.showcase);
             }
             return embed(
                 this.toggledShowcase
