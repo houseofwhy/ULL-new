@@ -66,6 +66,9 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
+                    <div style="display:flex">
+                        <div v-for="tag in level.tags" class="tag">{{tag}}</div>
+                    </div>
                         <div>
                             <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
                                 <p class="type-body">
