@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "VANISH",
+    "author": "Iconic [GD]",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://m.youtube.com/watch?v=RGskD4lhl2g&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=529&pp=gAQBiAQB",
+    "lastUpd": "25.02.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 37,
+    "rating": 1,
+    "percentFinished": 95,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["medium"]
+}
