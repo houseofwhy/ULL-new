@@ -1,12 +1,12 @@
 {
-    "id": "private",
+    "id": 119550490,
     "name": "Amethyst",
     "author": "Mist",
     "creators": [],
-    "verifier": "Trick",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=I6BL1e9XxMU&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=6&pp=gAQBiAQB",
+    "verifier": "wPopoff",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=4lfkzz1VCbA",
+    "showcase": "https://www.youtube.com/watch?v=bcxqTbxhOe0",
     "percentToQualify": 53,
     "records": [
         {
@@ -31,5 +31,6 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["finished", "verifying", "long", "remake"]
+    "tags": ["finished", "quality", "long", "remake"],
+    "lastUpd": "25.05.2025"
 }

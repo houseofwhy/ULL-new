@@ -6,8 +6,9 @@
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://m.youtube.com/watch?v=9cC-r1Az450&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=59&pp=gAQBiAQB",
+    "showcase": "https://www.youtube.com/watch?v=M4gwoGhgqZU",
     "percentToQualify": 1,
+    "lastUpd": "11.07.2025",
     "records": [
         {
             "user": "Airi",
@@ -29,7 +30,7 @@
     "percentFinished": 45,
 
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["xxl", "quality"]
 
