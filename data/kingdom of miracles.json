@@ -6,7 +6,7 @@
     "verifier": "wPopoff",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=J4qPDVPMPaU",
+    "showcase": "https://www.youtube.com/watch?v=2HC07n1g6AU",
     "percentToQualify": 1,
     "records": [
         {
@@ -22,7 +22,7 @@
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["xl", "nong", "remake"],
+    "tags": ["xl", "remake"],
     "run": [
         {
             "user": "wPopoff",
