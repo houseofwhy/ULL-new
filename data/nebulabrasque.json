@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Nebulabrasque",
+    "author": "CherryTeam",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=x2t0jBxlNmg",
+    "lastUpd": "24.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 261,
+    "rating": 1,
+    "percentFinished": 40,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["xxl","quality"]
+}

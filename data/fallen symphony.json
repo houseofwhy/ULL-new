@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Nebulabresque",
-    "author": "CherryTeam",
+    "name": "Fallen Symphony",
+    "author": "Alias & Diamond",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=x2t0jBxlNmg",
-    "lastUpd": "",
+    "showcase": "https://www.youtube.com/watch?v=xjISyzYYhsM&ab_channel=Diamond",
+    "lastUpd": "28.07.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 261,
+    "length": 146,
     "rating": 1,
-    "percentFinished": 40,
+    "percentFinished": 60,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["xxl","quality"]
+    "tags": ["xl","quality"]
 }

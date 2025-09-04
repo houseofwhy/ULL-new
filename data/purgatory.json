@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "PURGATORY",
+    "author": "Team Pegasus",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=YyvjU-1QuaQ&ab_channel=RamssesGD",
+    "lastUpd": "31.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 353,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["xxl","layout"]
+}
