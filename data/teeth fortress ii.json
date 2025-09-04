@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "TEETH FORTRESS II",
+    "author": "Koko",
+    "creators": [],
+    "verifier": "Whizkid05",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=QbrkUUSW_H0&pp=ygURdGVldGggZm9ydHJlc3MgaWk=",
+    "lastUpd": "17.09.2023",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Noxiom",
+            "link": "https://www.youtube.com/watch?v=hOIdWTTNm2E&pp=ygURdGVldGggZm9ydHJlc3MgaWk%3D",
+            "percent": 23,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "JohnLikesDiamond",
+            "link": "https://youtu.be/YOHOnOGwsoM?si=kLZEMrBFFYR3VAGe",
+            "percent": "58-100",
+            "hz": 0
+        }        
+    ],
+
+    "length": 152,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["xl", "finished"]
+}
