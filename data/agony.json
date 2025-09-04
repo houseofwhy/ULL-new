@@ -30,8 +30,8 @@
     "length": 201,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["xl","Finished","Public"]
 }

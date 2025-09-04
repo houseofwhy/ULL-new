@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "Galaxy Collapse",
-    "author": "Surjaco",
+    "author": "Xolarzz",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
@@ -18,10 +18,10 @@
     ],
     "length": 107,
     "rating": 1,
-    "percentFinished": 90,
+    "percentFinished": 80,
 
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": ["long"],
     "run": [
         {

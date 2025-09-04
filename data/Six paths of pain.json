@@ -30,7 +30,7 @@
     "length": 184,
     "rating": 1,
     "percentFinished": 30,
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
     "tags": ["xxl"]
