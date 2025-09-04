@@ -1,6 +1,6 @@
 {
     "id": "private",
-    "name": "Six paths of pain",
+    "name": "Six Paths of pain",
     "author": "Th3Pot4toBOI",
     "creators": [],
     "verifier": "unknown",
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["xxl"]
+    "tags": ["xxl", "remake"]
 }
