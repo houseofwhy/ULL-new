@@ -1,13 +1,13 @@
 {
-    "id": "124259165",
-    "name": "TRUE METAL CRUSHER",
-    "author": "upcastdapopcorn",
+    "id": "89496627",
+    "name": "Avernus",
+    "author": "PockeWindfish",
     "creators": [],
-    "verifier": "open verification",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=xPrlCgg73rc",
-    "lastUpd": "18.07.2025",
+    "verifier": "Zoink",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=16Zh8jssanc",
+    "showcase": "https://www.youtube.com/watch?v=JL30R7f-iBE&pp=ygUHQXZlcm51cw%3D%3D",
+    "lastUpd": "22.03.2023",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 109,
+    "length": 82,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["long", "public", "finished"]
+    "tags": ["Public", "Finished", "Rated", "Long", "Remake"]
 }

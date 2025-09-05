@@ -1,13 +1,13 @@
 {
-    "id": "124259165",
-    "name": "TRUE METAL CRUSHER",
-    "author": "upcastdapopcorn",
+    "id": "private",
+    "name": "Cruel World",
+    "author": "Apple Team",
     "creators": [],
-    "verifier": "open verification",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=xPrlCgg73rc",
-    "lastUpd": "18.07.2025",
+    "showcase": "https://youtu.be/jhk1yXpvR2s?si=AmXPBis2S_1rLt28",
+    "lastUpd": "04.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 109,
+    "length": 150,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 35,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["long", "public", "finished"]
+    "tags": ["XL"]
 }

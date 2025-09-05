@@ -1,13 +1,13 @@
 {
-    "id": "124259165",
-    "name": "TRUE METAL CRUSHER",
-    "author": "upcastdapopcorn",
+    "id": "private",
+    "name": "A.G.I.T.E",
+    "author": "[cherry] team",
     "creators": [],
-    "verifier": "open verification",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=xPrlCgg73rc",
-    "lastUpd": "18.07.2025",
+    "showcase": "https://youtu.be/OpznD9sCJB8?si=_kMOipT3zwufiQun",
+    "lastUpd": "17.06.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 109,
+    "length": 66,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 30,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["long", "public", "finished"]
+    "tags": ["long", "Nong"]
 }

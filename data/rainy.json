@@ -1,0 +1,37 @@
+{
+    "id": "110566657",
+    "name": "Rainy",
+    "author": "DemOne",
+    "creators": [],
+    "verifier": "Open Verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=qDXCBRs8BGc&pp=ygUIcmFpbnkgZ2Q=",
+    "lastUpd": "",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Shurikon",
+            "link": "https://www.youtube.com/watch?v=cMSX4le97I4&pp=0gcJCcYJAYcqIYzv",
+            "percent": 20,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Shurikon",
+            "link": "https://www.youtube.com/watch?v=S09NlADp5Hk",
+            "percent": "80-100",
+            "hz": 0
+        }        
+    ],
+
+    "length": 87,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Public", "Finished", "Long", "Nong", "Quality"]
+}
