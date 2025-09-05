@@ -44,7 +44,7 @@ export default {
 										<p> - Cheat Indicator (Not necessary but desirable) </p>
 										<p> - Fps/tps indicator (For mod menus that support one) </p>
 										<p> - In-game source audio/Clicks (Either is fine, however both are strongly recommended. If you don't have either in your submission video, attach raw footage that does) </p>
-										<p> Refer to <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit#gid=0">this sheet</a> for a complete list of allowed mods.</p>
+										<p> Refer to <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit#gid=0"><b>this sheet</b></a> for a complete list of allowed mods.</p>
 										<p> Please also check for the following:</p>
 										<p> - Make sure you beat the level displayed on the site (for reference, check the level ID to ensure you're playing the correct level</p>
 										<p> - Do not use secret routes or bug routes</p>
