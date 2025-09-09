@@ -25,12 +25,17 @@
         "link": "https://www.youtube.com/@TheGarbageMann"
     },
     {
-        "role": "seniormod",
+        "role": "admin",
         "name": "Gosdas",
         "link": "https://youtube.com/@gosdasgaming"
     },
     {
-        "role": "seniormod",
+        "role": "admin",
+        "name": "ExiledShade",
+        "link": "https://www.youtube.com/@exiled_shadegd"
+    },
+    {
+        "role": "admin",
         "name": "MrMarcus",
         "link": "https://www.youtube.com/@MrMarcusGD"
     },
