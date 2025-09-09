@@ -12,12 +12,17 @@
     {
         "role": "owner",
         "name": "Keres",
-        "link": "https://youtube.com/@keres9580?si=H4GhslS9cwivyRQY"
+        "link": "https://youtube.com/@keres9580"
     },
     {
-        "role": "seniormod",
-        "name": "MAFFEFFE",
-        "link": "https://www.youtube.com/@maffeffe"
+        "role": "owner",
+        "name": "LeefAteCheese",
+        "link": "https://www.youtube.com/@VivisectionGD"
+    },
+    {
+        "role": "owner",
+        "name": "TheGarbageMann",
+        "link": "https://www.youtube.com/@TheGarbageMann"
     },
     {
         "role": "seniormod",
@@ -26,48 +31,38 @@
     },
     {
         "role": "seniormod",
+        "name": "MrMarcus",
+        "link": "https://www.youtube.com/@MrMarcusGD"
+    },
+    {
+        "role": "seniormod",
+        "name": "_terragaming_",
+        "link": "https://www.youtube.com/@terragaminggeometrydash"
+    },
+    {
+        "role": "seniormod",
         "name": "LukeLGamer",
         "link": "https://www.youtube.com/@LukeLGamer34"
     },
     {
-        "role": "seniormod",
-        "name": "LeefAteCheese",
-        "link": "https://m.youtube.com/@VivisectionGD"
-    },
-    {
-        "role": "seniormod",
-        "name": "TheBlueElephant",
-        "link": "https://www.youtube.com/@TheBlueElephant111"
-    },
-    {
-        "role": "seniormod",
+        "role": "mod",
         "name": "Injur3dGX",
         "link": "https://www.youtube.com/@Injured_666"
     },
     {
-        "role": "seniormod",
-        "name": "scared683",
-        "link": "https://www.youtube.com/@scared683"
-    },
-    {
         "role": "mod",
         "name": "SixHunnid",
-        "link": "https://youtube.com/@sixhunnidfl?si=jpP9kJXmIDJnTWjJ"
+        "link": "https://youtube.com/@sixhunnidfl"
     },
     {
         "role": "mod",
-        "name": "Martdemon3",
-        "link": "https://www.youtube.com/@demonmobile3"
+        "name": "TheGopherGuy",
+        "link": "#"
     },
     {
         "role": "mod",
-        "name": "Fr0sty",
-        "link": "https://youtube.com/@frost9172?si=szPnESmCd67DHYNr"
-    },
-    {
-        "role": "mod",
-        "name": "GD!Frisk",
-        "link": "https://youtube.com/@warcoraguy?si=p9GM1MrICzIUQCcO" 
+        "name": "TheBlueElephant",
+        "link": "https://www.youtube.com/@TheBlueElephant111"
     },
     {
         "role": "dev",
