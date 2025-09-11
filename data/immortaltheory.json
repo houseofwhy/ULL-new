@@ -1,18 +1,18 @@
 {
-    "id": "private",
+    "id": "110996625",
     "name": "IMMORTALtheory",
     "author": "fusion425",
     "creators": [],
-    "verifier": "Lyra771",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=K9lHhXjMndI&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=490&pp=gAQBiAQB",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "ToesJammed",
+            "link": "https://www.youtube.com/watch?v=Hbu90lpWWH8",
+            "percent": 10,
             "hz": 0
         }
     ],
@@ -27,8 +27,9 @@
     "length": 88,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "08.07.2025", 
 
     "isMain": false,
     "isFuture": false,
-    "tags": ["finished", "long", "remake"]
+    "tags": ["Finished", "Public", "Long", "Remake"]
 }

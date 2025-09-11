@@ -10,19 +10,20 @@
     "percentToQualify": 8,
     "records": [
         {
-            "user": "Trick",
-            "link": "https://youtu.be/p2kDVUNLCFw?si=EP9dN4WNtZTTtIbC",
-            "percent": 7,
+            "user": "wPopoff",
+            "link": "https://www.youtube.com/watch?v=JZ10Un4EXYo",
+            "percent": 40,
             "hz": 240
         }
     ],
     "length": 146,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "10.08.2025", 
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["finished", "verifying", "xl"],
+    "tags": ["Finished", "Verifying", "XL"],
     "run": [
         {
             "user": "wPopoff",

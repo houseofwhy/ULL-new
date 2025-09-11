@@ -1,6 +1,6 @@
 {
     "id": "112093362",
-    "name": "River cocytus",
+    "name": "RIVER COCYTUS",
     "author": "Reshi",
     "creators": [],
     "verifier": "unknown",
@@ -27,9 +27,10 @@
     "length": 100,
     "rating": 1,
     "percentFinished": 40,
+    "lastUpd": "19.07.2025",
 
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["long", "public"]
+    "tags": ["Long", "Public"]
 }

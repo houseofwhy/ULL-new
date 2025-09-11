@@ -1,6 +1,6 @@
 {
     "id": "111680151",
-    "name": "Fairy Knife Hell",
+    "name": "FAIRY KNIFE HELL",
     "author": "EternaswipVMAX",
     "creators": [],
     "verifier": "open verification",
@@ -19,11 +19,12 @@
     "length": 230,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "25.04.2025",
 
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["public", "finished", "xl"],
+    "tags": ["Public", "Finished", "XL"],
 
     "run": [
         {

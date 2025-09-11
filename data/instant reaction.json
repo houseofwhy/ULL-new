@@ -1,6 +1,6 @@
 {
     "id": "private",
-    "name": "Instant Reaction",
+    "name": "INSTANT REACTION",
     "author": "Hawkyre",
     "creators": [],
     "verifier": "unknown",
@@ -29,9 +29,9 @@
 
     "length": 63,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["layout","long"]
+    "tags": ["Layout","Long"]
 }

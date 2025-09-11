@@ -27,8 +27,9 @@
     "length": 110,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "28.01.2025", 
 
     "isMain": false,
     "isFuture": false,
-    "tags": ["public", "long", "finished"]
+    "tags": ["Public", "Long", "Finished"]
 }

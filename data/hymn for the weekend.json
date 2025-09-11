@@ -19,10 +19,11 @@
     "length": 50,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "25.07.2025", 
 
     "isMain": true,
     "isFuture": false,
-    "tags": ["finished", "public", "medium", "nong"],
+    "tags": ["Finished", "Public", "Medium", "NoNG"],
     "run": [
         {
             "user": "Meper",

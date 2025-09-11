@@ -10,15 +10,16 @@
     "percentToQualify": 20,
     "records": [
         {
-            "user": "Thnnder",
-            "link": "#",
-            "percent": 19,
+            "user": "garbag",
+            "link": "https://youtu.be/CSgBQm2GFHU?si=QS8-uGE8IxjI96gQ",
+            "percent": 22,
             "hz": 240
         }
     ],
     "length": 131,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "06.09.2025",
 
     "isMain": true,
     "isFuture": true,

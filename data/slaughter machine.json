@@ -19,10 +19,11 @@
     "length": 66,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "20.04.2025", 
 
     "isMain": false,
     "isFuture": false,
-    "tags": ["long", "finished", "public"],
+    "tags": ["Long", "Finished", "Public"],
     "run": [
         {
             "user": "HaloZombies",

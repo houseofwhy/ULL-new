@@ -19,10 +19,11 @@
     "length": 103,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "19.08.2025", 
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["quality", "long", "finished", "remake", "verifying"],
+    "tags": ["Quality", "Long", "Finished", "Remake", "Verifying"],
 
     "run": [
         {

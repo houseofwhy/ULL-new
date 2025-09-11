@@ -6,7 +6,7 @@
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=MTeL6PbGz8Q&pp=ygUSZ2FsYXh5IGNvbGxhcHNlIGdk",
+    "showcase": "https://m.youtube.com/watch?v=KGa7FXGcVH0",
     "percentToQualify": 1,
     "records": [
         {
@@ -19,6 +19,7 @@
     "length": 107,
     "rating": 1,
     "percentFinished": 80,
+    "lastUpd": "07.09.2025", 
 
     "isMain": true,
     "isFuture": false,
