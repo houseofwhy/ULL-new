@@ -1,5 +1,5 @@
 {
-    "id": "private",
+    "id": "111237270",
     "name": "Silent Acropolis",
     "author": "The Purgatory",
     "creators": [],
@@ -31,5 +31,6 @@
             "hz": 240
         }        
     ],
-    "tags": ["Public", "Finished", "Verifying", "Long", "Remake", "Quality"]
+    "tags": ["Public", "Finished", "Verifying", "Long", "Remake", "Quality"],
+    "lastUpd": "04.08.2025"
 }
