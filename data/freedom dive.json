@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Freedom Dive",
+    "author": "EclypseGD",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/nFey4XhG0S4?si=oEm-eHlA6p4MaYx9",
+    "lastUpd": "25.01.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 246,
+    "rating": 1,
+    "percentFinished": 30,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XXL", "NoNG"]
+}
