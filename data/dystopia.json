@@ -19,6 +19,7 @@
     "length": 107,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "23.09.2024", 
 
     "isMain": true,
     "isFuture": false,
@@ -32,5 +33,5 @@
         }        
     ],
 
-    "tags": ["public", "finished", "long"]
+    "tags": ["Public", "Finished", "Long"]
 }

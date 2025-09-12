@@ -19,17 +19,18 @@
     "length": 93,
     "rating": 1,
     "percentFinished": 100,
+    "lastUpd": "10.09.2025",
 
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["public", "finished", "long"],
+    "tags": ["Public", "Finished", "Long"],
 
     "run": [
         {
             "user": "Kaza",
-            "link": "https://youtu.be/aariou1bow0?si=LnzLIMkRJrEmLJQ7",
-            "percent": "37-48",
+            "link": "https://fxtwitter.com/kaza_gd/status/1965758590481997944?s=46",
+            "percent": "79-100",
             "hz": 360
         }        
     ]

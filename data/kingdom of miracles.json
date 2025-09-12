@@ -19,10 +19,11 @@
     "length": 148,
     "rating": 1,
     "percentFinished": 70,
+    "lastUpd": "13.08.2025",
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["xl", "remake"],
+    "tags": ["XL", "Remake"],
     "run": [
         {
             "user": "wPopoff",
