@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Society",
-    "author": "Neomarbilan",
+    "name": "Burn Victim",
+    "author": "MonuGD",
     "creators": [],
-    "verifier": "Swiborg",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/Dp4p3mVk5EI?si=oFYfmc__l06RxUoV",
-    "lastUpd": "27.08.2025",
+    "showcase": "https://youtu.be/mnZLmeVFHEA?si=jakODsM7R_-DpF52",
+    "lastUpd": "17.10.2024",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 98,
+    "length": 120,
     "rating": 1,
-    "percentFinished": 95,
+    "percentFinished": 35,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NoNG"]
+    "tags": ["XL", "NoNG"]
 }

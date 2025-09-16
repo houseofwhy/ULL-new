@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Society",
-    "author": "Neomarbilan",
+    "name": "The Final Theory",
+    "author": "wesselgd",
     "creators": [],
-    "verifier": "Swiborg",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/Dp4p3mVk5EI?si=oFYfmc__l06RxUoV",
-    "lastUpd": "27.08.2025",
+    "showcase": "https://www.youtube.com/watch?v=PCFrUm7wRt0",
+    "lastUpd": "08.01.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 98,
+    "length": 32,
     "rating": 1,
-    "percentFinished": 95,
+    "percentFinished": 50,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NoNG"]
+    "tags": ["Medium", "Remake"]
 }
