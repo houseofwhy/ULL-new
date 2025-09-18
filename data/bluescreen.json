@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "BLUESCREEN",
+    "author": "Zephlin",
+    "creators": [],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=tDyz8vTFbTo",
+    "lastUpd": "01.02.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 260,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XXL", "Layout"]
+}

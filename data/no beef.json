@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "NO BEEF",
+    "author": "Zoink Doink",
+    "creators": [],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=18h4mVEwvWk",
+    "lastUpd": "19.03.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 228,
+    "rating": 1,
+    "percentFinished": 15,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XXL", "Layout"]
+}

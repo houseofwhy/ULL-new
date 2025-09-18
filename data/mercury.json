@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Mercury",
+    "author": "kwipkat",
+    "creators": [],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/Q9IplfOr2VI",
+    "lastUpd": "22.06.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 363,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XXL", "NONG"]
+}
