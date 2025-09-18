@@ -42,7 +42,7 @@ export const filtersList = [
 	{ active: false, name: "Public", key: "Public"},
 	{ active: false, name: "Finished", key: "Finished"},
 	{ active: false, name: "Being Verified", key: "Verifying"},
-	{ active: false, name: "Layout State", key: "Layout"},
+	{ active: false, name: "Layout State", key: "Layout".toUpperCase()},
 	{ active: false, name: "Unrated", key: "Unrated"},
 	{ active: false, name: "Rated", key: "Rated"},
 	{ separator: true},
