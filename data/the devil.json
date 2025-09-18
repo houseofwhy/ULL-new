@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "The Devil",
+    "author": "HeroZombie80",
+    "creators": [],
+    "verifier": "Jenath/Open verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=ynFCKsoSROk",
+    "lastUpd": "01.08.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 65,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["long", "Finished", "Public", "Being Verified"]
+}
