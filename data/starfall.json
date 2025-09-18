@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Asteroid",
-    "author": "NetherPortal2 and Unnamed",
+    "name": "STARFALL",
+    "author": "Triforce & More",
     "creators": [],
     "verifier": "Unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=5w29YqoSWdE",
-    "lastUpd": "05.05.2025",
+    "showcase": "https://www.youtube.com/watch?v=DR3TQoaGsMA",
+    "lastUpd": "24.11.2024",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 110,
+    "length": 125,
     "rating": 1,
-    "percentFinished": 30,
+    "percentFinished": 50,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Layout State"]
+    "tags": ["xl"]
 }

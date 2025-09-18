@@ -41,7 +41,7 @@ export function shuffle(array) {
 export const filtersList = [
 	{ active: false, name: "Public", key: "public"},
 	{ active: false, name: "Finished", key: "finished"},
-	{ active: false, name: "Being Verified", key: "verifying"},
+	{ active: false, name: "Being Verified", key: "Verifying"},
 	{ active: false, name: "Layout State", key: "layout"},
 	{ active: false, name: "Unrated", key: "unrated"},
 	{ active: false, name: "Rated", key: "rated"},

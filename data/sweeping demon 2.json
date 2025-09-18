@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Asteroid",
-    "author": "NetherPortal2 and Unnamed",
+    "id": "Private",
+    "name": "Sweeping Demon 2",
+    "author": "Tempgd",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "Taiago",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=5w29YqoSWdE",
-    "lastUpd": "05.05.2025",
+    "showcase": "https://youtu.be/xzUjqgYItkQ",
+    "lastUpd": "17.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 110,
+    "length": 77,
     "rating": 1,
-    "percentFinished": 30,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Layout State"]
+    "tags": ["Long", "Finished", "Being Verified"]
 }

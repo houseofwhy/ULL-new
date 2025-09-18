@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "ThE FoRTrEsS",
-    "author": "waru",
+    "name": "Gates of God",
+    "author": "spikespike_sm",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=kaBr-uifcIo",
-    "lastUpd": "2.6.2025",
+    "showcase": "https://youtu.be/ck3e4IuH5jA",
+    "lastUpd": "31.01.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 58,
+    "length": 67,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 15,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium", "Layout"]
+    "tags": ["Long"]
 }
