@@ -23,7 +23,7 @@
 
     "isMain": true,
     "isFuture": false,
-    "tags": ["long"],
+    "tags": ["Long"],
     "run": [
         {
             "user": "Trusta",

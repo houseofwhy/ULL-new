@@ -24,7 +24,7 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "NoNG", "Verifying"],
+    "tags": ["XXL", "NONG", "Verifying"],
     "run": [
         {
             "user": "Zoink",

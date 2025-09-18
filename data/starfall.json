@@ -1,8 +1,8 @@
 {
     "id": "private",
     "name": "STARFALL",
-    "author": "Triforce & More",
-    "creators": [],
+    "author": "Triforce",
+    "creators": ["Hi I'm more!"],
     "verifier": "Unknown",
     "isVerified": false,
     "verification": "",
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["xl"]
+    "tags": ["XL"]
 }

@@ -48,19 +48,19 @@ HOW TO FILL TAGS:
 example: "tags": ["long", "nong", "remake"]
 so, you put square brackets and inside them all tags in quotes in lowercase with commas between them
 
-ALL TAGS:
-Public - "public" - the level is uploaded publicly on the gd servers
-Finished - "finished" - the level is fully finished
-Being Verified - "verifying" - the level has sugnificant verification prog (30%+ runs)
-Layout State - "layout" - the level doesnt have any deco prog
-Unrated - "unrated" - the level is verified but not rated
-Rated - "rated" - ...
-Medium - "medium" - the level is less than a minute long
-Long - "long" - the level is 60-120 seconds long
-XL - "xl" - the level is 120-180 seconds long
-XXL+ - "xxl" - ...
-NC Level - "nc" - ...
-Remake - "remake" - the level is a remake of another level
-Uses NoNG - "nong" - ...
-Top Quality - "quality" - the level is insanely high quality (like legenday-mythic qual)
-you can actually make your own tags but they wont have a filter for them - Luke
+ALL TAGS (THEY ARE CASE SENSITIVE): 
+Public - "Public" - the level is uploaded publicly on the gd servers
+Finished - "Finished" - the level is fully finished
+Being Verified - "Verifying" - the level has sugnificant verification prog (30%+ runs)
+Layout State - "Layout" - the level doesnt have any deco prog
+Unrated - "Unrated" - the level is verified but not rated
+Rated - "Rated" - ...
+Medium - "Medium" - the level is less than a minute long
+Long - "Long" - the level is 60-120 seconds long
+XL - "XL" - the level is 120-180 seconds long
+XXL+ - "XXL" - ...
+NC Level - "NC" - ...
+Remake - "Remake" - the level is a remake of another level
+Uses NoNG - "NONG" - ...
+Top Quality - "Quality" - the level is insanely high quality (like legenday-mythic qual)
+You can put a tag in with whatever you want (like "weofijwe" would display correctly), however it wont show up in the filter section because that isn't coded in - Luke
