@@ -1,13 +1,13 @@
 {
-    "id": "87390648",
-    "name": "The Devil",
-    "author": "HeroZombie80",
+    "id": "private",
+    "name": "Silent Club Plus",
+    "author": "Whizkid05 & More",
     "creators": [],
-    "verifier": "Jenath/Open verification",
+    "verifier": "Whizkid05",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=ynFCKsoSROk",
-    "lastUpd": "01.08.2025",
+    "showcase": "https://www.youtube.com/watch?v=8k7B_UJicnA",
+    "lastUpd": "14.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 65,
+    "length": 90,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Public", "Being Verified"]
+    "tags": ["Long", "Being Verified", "Remake", "Finished"]
 }

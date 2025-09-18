@@ -1,13 +1,13 @@
 {
-    "id": "87390648",
-    "name": "The Devil",
-    "author": "HeroZombie80",
+    "id": "private",
+    "name": "Asteroid",
+    "author": "NetherPortal2 and Unnamed",
     "creators": [],
-    "verifier": "Jenath/Open verification",
+    "verifier": "",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=ynFCKsoSROk",
-    "lastUpd": "01.08.2025",
+    "showcase": "https://www.youtube.com/watch?v=5w29YqoSWdE",
+    "lastUpd": "05.05.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 65,
+    "length": 110,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 30,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Public", "Being Verified"]
+    "tags": ["Long", "Layout State"]
 }

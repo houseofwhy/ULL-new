@@ -1,13 +1,13 @@
 {
-    "id": "87390648",
-    "name": "The Devil",
-    "author": "HeroZombie80",
+    "id": "114860771",
+    "name": "KEROSENE",
+    "author": "Aimbot1933",
     "creators": [],
-    "verifier": "Jenath/Open verification",
+    "verifier": "",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=ynFCKsoSROk",
-    "lastUpd": "01.08.2025",
+    "showcase": "https://www.youtube.com/watch?v=VT6K8mfm1E0",
+    "lastUpd": "08.02.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 65,
+    "length": 44,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Public", "Being Verified"]
+    "tags": ["Finished", "Medium", "Public"]
 }
