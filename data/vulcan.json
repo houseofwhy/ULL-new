@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "V.U.L.C.A.N",
+    "author": "Team StormSect",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=kH3W1jLS4ZI",
+    "lastUpd": "15.06.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 162,
+    "rating": 1,
+    "percentFinished": 30,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XL", "Layout"]
+}
