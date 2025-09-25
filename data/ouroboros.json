@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Servax",
+            "link": "https://youtu.be/olWPDI0M5A4?si=8pYWYJvHiymijoWJ",
+            "percent": 73,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Servax",
+            "link": "https://www.youtube.com/watch?v=t5TWB9uA8kU",
+            "percent": "27-100",
             "hz": 0
         }        
     ],

@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "GGonop",
+            "link": "https://www.youtube.com/watch?v=5yaDI3qfg9Q",
+            "percent": 21,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "GGonop",
+            "link": "https://www.youtube.com/watch?v=5yaDI3qfg9Q",
+            "percent": "61-92",
             "hz": 0
         }        
     ],
