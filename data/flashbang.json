@@ -12,18 +12,18 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Noctal",
+            "link": "https://youtu.be/4tyRrH6jb00?si=cZ8z8_OTSgW_ZF3U",
+            "percent": 46,
+            "hz": 240
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
+            "user": "Noctal",
+            "link": "https://www.youtube.com/watch?v=VQzQ7F-BcJc",
+            "percent": "45-100",
+            "hz": 240
         }        
     ],
 

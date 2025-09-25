@@ -3,7 +3,7 @@
     "name": "ECHO",
     "author": "Zeptoz",
     "creators": [],
-    "verifier": "Diamond?",
+    "verifier": "Hqmy",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=AcHPzjdFS4A",
@@ -20,10 +20,10 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
+            "user": "Hqmy",
+            "link": "https://fxtwitter.com/HamiltonHqmy/status/1970377525965791399",
+            "percent": "33-81",
+            "hz": 240
         }        
     ],
 

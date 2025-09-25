@@ -12,18 +12,18 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Hover",
+            "link": "https://youtu.be/rAxT71yjkcU?si=lxG4cN_TUYs_y1DT",
+            "percent": 50,
+            "hz": 240
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
+            "user": "Hover",
+            "link": "https://youtu.be/rAxT71yjkcU?si=lxG4cN_TUYs_y1DT",
+            "percent": "48-100",
+            "hz": 240
         }        
     ],
 

@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Abstract [cherry]",
+            "link": "https://youtu.be/DAlL40Ccnz4?si=YoQceu-k4YCeomFL",
+            "percent": 56,
+            "hz": 240
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Abstract [cherry]",
+            "link": "https://youtu.be/N6jV8_c1QO0?si=O3r_-ocpIo8HmX-c",
+            "percent": "39-100",
             "hz": 0
         }        
     ],

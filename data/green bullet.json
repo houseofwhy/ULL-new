@@ -3,7 +3,7 @@
     "name": "GREEN BULLET",
     "author": "Cherryteam",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "nickname",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/mHg2jrzpkxs",
@@ -20,10 +20,10 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
+            "user": "nickname",
+            "link": "https://www.youtube.com/watch?v=5PpEhBdPBjw",
+            "percent": "43-100",
+            "hz": 240
         }        
     ],
 

@@ -12,10 +12,10 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Helix",
+            "link": "https://m.youtube.com/watch?v=b2HJzB2Acek",
+            "percent": 13,
+            "hz": 240
         }
     ],
     "run": [
