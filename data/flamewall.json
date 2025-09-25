@@ -1,12 +1,12 @@
 {
-    "id": "private",
+    "id": "126242564",
     "name": "Flamewall",
     "author": "Narwall",
     "creators": [],
     "verifier": "Cuatrocientos",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://youtu.be/T8Z2Hx8QnFc?si=mwZMLL9AtC36tnEk",
+    "isVerified": true,
+    "verification": "https://youtu.be/x4Io4zkWVRw",
+    "showcase": "https://youtu.be/wZbqwUv5NI8",
     "percentToQualify": 63,
     "records": [
         {
@@ -31,6 +31,6 @@
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["XXL", "Quality", "Finished", "Verifying"],
+    "tags": ["Public","Unrated","XXL", "Quality", "Finished"],
     "lastUpd": "07.09.2025"
 } 

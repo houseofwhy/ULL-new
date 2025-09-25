@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Taiago",
+            "link": "https://www.youtube.com/live/xybJnkcmwjg?t=1749",
+            "percent": 62,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Taiago",
+            "link": "https://youtu.be/0tFBzVMAORQ?si=Jw57aurz-BHu0hPv",
+            "percent": "21-87",
             "hz": 0
         }        
     ],

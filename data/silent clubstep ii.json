@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Skittle Catastrophe",
+            "link": "https://www.youtube.com/watch?v=OeuT_ZZ60Ug",
+            "percent": 26,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Skittle Catastrophe",
+            "link": "https://youtu.be/suXpr39rcDU",
+            "percent": "43-100",
             "hz": 0
         }        
     ],

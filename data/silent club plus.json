@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Whizkid05",
+            "link": "https://youtu.be/JBGDHHXUDFU?si=PvVwVLg_QAz8o-U3",
+            "percent": 58,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Whizkid05",
+            "link": "https://youtu.be/JBGDHHXUDFU?si=PvVwVLg_QAz8o-U3",
+            "percent": "55-100",
             "hz": 0
         }        
     ],

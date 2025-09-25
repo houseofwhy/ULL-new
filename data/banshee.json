@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "spcreat",
+            "link": "https://m.youtube.com/watch?v=AkAcvx32BII&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=112&pp=iAQB",
+            "percent": 86,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "spcreat",
+            "link": "https://www.youtube.com/watch?v=hGRJKeBB14k",
+            "percent": "21-100",
             "hz": 0
         }        
     ],

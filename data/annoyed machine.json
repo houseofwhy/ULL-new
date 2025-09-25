@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "BlueGamer",
+            "link": "https://www.youtube.com/watch?v=m36xBHnSr8Q",
+            "percent": 9,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "ExpiredPork",
+            "link": "https://www.youtube.com/watch?v=aE91CGKBYCY",
+            "percent": "67-84",
             "hz": 0
         }        
     ],
