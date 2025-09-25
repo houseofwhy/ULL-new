@@ -1,0 +1,37 @@
+{
+    "id": "113599729",
+    "name": "Subterminal Point",
+    "author": "SyQual",
+    "creators": [],
+    "verifier": "PoCle",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=h2wmRMgACH4",
+    "showcase": "https://www.youtube.com/watch?v=VShFEgk6Z7U",
+    "lastUpd": "29.12.2024",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 71,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Public", "Rated"]
+}

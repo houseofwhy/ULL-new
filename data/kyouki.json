@@ -1,0 +1,37 @@
+{
+    "id": "86018142",
+    "name": "Kyouki",
+    "author": "Demishio",
+    "creators": [],
+    "verifier": "Demishio",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=KDa5c0CJTHs",
+    "showcase": "https://www.youtube.com/watch?v=RBeyMGug3J0",
+    "lastUpd": "02.01.2023",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 95,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Quality", "Rated", "Finished", "Public"]
+}

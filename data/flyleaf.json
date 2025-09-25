@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Flyleaf",
+    "author": "lolwut",
+    "creators": [],
+    "verifier": "lolwut",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://m.youtube.com/watch?v=p2Xk5O-n_FM",
+    "lastUpd": "09.03.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "lolwut",
+            "link": "https://m.youtube.com/watch?v=p2Xk5O-n_FM",
+            "percent": "71-100",
+            "hz": 240
+        }        
+    ],
+
+    "length": 71,
+    "rating": 1,
+    "percentFinished": 29,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Verifying"]
+}

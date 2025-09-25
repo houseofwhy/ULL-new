@@ -1,0 +1,37 @@
+{
+    "id": "121936643 ",
+    "name": "Maniacal Chains",
+    "author": "LordDivinity",
+    "creators": [],
+    "verifier": "open verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=EbGiIG8j2A0",
+    "lastUpd": "14.07.2025",
+
+    "percentToQualify": 43,
+    "records": [
+        {
+            "user": "WatchPiggy",
+            "link": "https://www.youtube.com/watch?v=bEgwb3iQg-A",
+            "percent": 43,
+            "hz": 360
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 146,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XL", "Finished", "Public", "Verifying"]
+}

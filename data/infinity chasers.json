@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Infinity Chasers",
+    "author": "GeoGamer",
+    "creators": [],
+    "verifier": "bladed",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=2r6h6Bgr5UE",
+    "lastUpd": "13.09.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 225,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XXL", "Layout"]
+}

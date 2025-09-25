@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "DIDYOUMESSUP",
+    "author": "Noxiom",
+    "creators": [],
+    "verifier": "zilucy",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=AXzROtRyyQo",
+    "lastUpd": "28.10.2024",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 68,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Verifying"]
+}

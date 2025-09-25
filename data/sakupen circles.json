@@ -1,0 +1,37 @@
+{
+    "id": "76962930",
+    "name": "Sakupen Circles",
+    "author": "nick24",
+    "creators": [],
+    "verifier": "Diamond",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=ofG2mJi9kEA",
+    "showcase": "https://www.youtube.com/watch?v=b66_Oe4Xo1w",
+    "lastUpd": "29.12.2021",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 52,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Medium", "Rated", "Finished", "Public"]
+}

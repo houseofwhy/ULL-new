@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Bad Tr1p",
+    "author": "kapycta999",
+    "creators": [],
+    "verifier": "exsii",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=qUzdJUbnijg",
+    "lastUpd": "01.02.2025",
+
+    "percentToQualify": 60,
+    "records": [
+        {
+            "user": "exsii",
+            "link": "https://www.youtube.com/watch?v=XGN7VcSLY2E",
+            "percent": 60,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 62,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Verifying"]
+}

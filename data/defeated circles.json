@@ -1,0 +1,37 @@
+{
+    "id": "120012581",
+    "name": "DEFEATED CIRCLES",
+    "author": "Galaxium",
+    "creators": [],
+    "verifier": "Zoink",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=nU5AQPzd2YA",
+    "showcase": "https://www.youtube.com/watch?v=XBqppWEb1mY",
+    "lastUpd": "31.05.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 64,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Public", "Unrated"]
+}

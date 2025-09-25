@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "PigStep",
+    "author": "MiniShoey",
+    "creators": [],
+    "verifier": "BlueGamer",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/15wb7RLledU",
+    "lastUpd": "17.04.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "BlueGamer",
+            "link": "https://www.youtube.com/watch?v=upD0e1qnzgY",
+            "percent": "65-100",
+            "hz": 240
+        }        
+    ],
+
+    "length": 138,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XL", "Finished", "Verifying"]
+}
