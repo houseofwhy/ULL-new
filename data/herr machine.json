@@ -1,0 +1,37 @@
+{
+    "id": "in your dreams",
+    "name": "HERR machine",
+    "author": "people",
+    "creators": [],
+    "verifier": "BONN gd",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=gj_3z4VZees",
+    "lastUpd": "02.10.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "BONN GD",
+            "link": "https://www.youtube.com/watch?v=nQlpFNC6eeA",
+            "percent": "64-100",
+            "hz": 240
+        }        
+    ],
+
+    "length": 108,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Remake", "Verifying", "Finished", "Luke's least favorite level"]
+}

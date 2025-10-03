@@ -49,7 +49,7 @@ export default {
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
                                 <p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg">Legacy</p>
+                                <p v-else class="type-label-lg">soapy niroi feet</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
