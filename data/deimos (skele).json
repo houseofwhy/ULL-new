@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Deimos (Skele)",
+    "author": "Skele",
+    "creators": [],
+    "verifier": "swiborg hell (he dropped)",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=QewMw5wtXoQ",
+    "lastUpd": "22.05.2023",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 180,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XL", "Finished", "Verifying"]
+}
