@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "126413844",
     "name": "BLOOM",
     "author": "MikeGD",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=d2OWnp7ivUY",
-    "lastUpd": "24.09.2025",
+    "showcase": "https://youtu.be/g2uAP0iBeGI?si=5_j-88FopkoWz5Od",
+    "lastUpd": "04.10.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "wLeo",
+            "link": "https://youtu.be/sViexrumZ4Y?si=83JTDrEZ_lA19yQh",
+            "percent": "82-100",
             "hz": 0
         }        
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long"]
+    "tags": ["Public","Long"]
 }
