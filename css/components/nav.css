@@ -1,9 +1,9 @@
 .nav {
     --color-background: white;
     --color-on-background: black;
-    --color-primary: #ff00ff;
+    --color-primary: #1900ff;
     --color-on-primary: white;
-
+/* old color is #ff00ff */
     display: flex;
     column-gap: 2rem;
 }

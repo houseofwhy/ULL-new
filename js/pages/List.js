@@ -48,7 +48,7 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 204" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-if="i + 1 <= 370" class="type-label-lg">#{{ i + 1 }}</p>
                                 <p v-else class="type-label-lg">soapy niroi feet</p>
 							</span>
                         </td>
@@ -96,13 +96,13 @@ export default {
                                             Status: Verified
                                     </template>
                                     <template v-if="level.percentFinished == 0">
-                                            Status: On Layout State
+                                            Status: Layout
                                     </template>
                                     <template v-if="level.percentFinished == 100 && !level.isVerified">
-                                            Status: On Verification
+                                            Status: Being Verified
                                     </template>
                                     <template v-if="level.percentFinished != 0 && level.percentFinished != 100">
-                                            Status: On Deco State {{level.percentFinished}}% done
+                                            Status: Decoration being made {{level.percentFinished}}% done
                                     </template>
                                 </p>
                             </div>
