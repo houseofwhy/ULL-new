@@ -20,29 +20,19 @@
         "link": "https://www.youtube.com/@VivisectionGD"
     },
     {
-        "role": "owner",
-        "name": "TheGarbageMann",
-        "link": "https://www.youtube.com/@TheGarbageMann"
-    },
-    {
-        "role": "admin",
-        "name": "Gosdas",
-        "link": "https://youtube.com/@gosdasgaming"
-    },
-    {
         "role": "admin",
         "name": "ExiledShade",
         "link": "https://www.youtube.com/@exiled_shadegd"
     },
     {
-        "role": "seniormod",
-        "name": "_terragaming_",
-        "link": "https://www.youtube.com/@terragaminggeometrydash"
+        "role": "admin",
+        "name": "LukeLGamer",
+        "link": "https://www.youtube.com/@LukeLGamer34"
     },
     {
         "role": "seniormod",
-        "name": "LukeLGamer",
-        "link": "https://www.youtube.com/@LukeLGamer34"
+        "name": "_terragaming_",
+        "link": "https://www.youtube.com/@terragaminggeometrydash"
     },
     {
         "role": "mod",
@@ -53,16 +43,6 @@
         "role": "mod",
         "name": "SixHunnid",
         "link": "https://youtube.com/@sixhunnidfl"
-    },
-    {
-        "role": "mod",
-        "name": "TheGopherGuy",
-        "link": "#"
-    },
-    {
-        "role": "mod",
-        "name": "TheBlueElephant",
-        "link": "https://www.youtube.com/@TheBlueElephant111"
     },
     {
         "role": "dev",
