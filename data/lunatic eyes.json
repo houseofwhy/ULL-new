@@ -1,0 +1,37 @@
+{
+    "id": "123417713",
+    "name": "Lunatic Eyes",
+    "author": "SyQual",
+    "creators": [],
+    "verifier": "DNM121",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=keE9sVbx0GY",
+    "showcase": "https://www.youtube.com/watch?v=q3M4_gezvLc",
+    "lastUpd": "23.07.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 86,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Public", "Unrated", "Remake", "Verified"]
+}

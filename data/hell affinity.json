@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Hell Affinity",
+    "author": "icedcave",
+    "creators": [],
+    "verifier": "NordstromUSA",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=5Jgwp0XuxS8",
+    "lastUpd": "03.23.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 60,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished"]
+}
