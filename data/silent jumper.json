@@ -1,13 +1,13 @@
 {
-    "id": "61775814",
-    "name": "Element 111 Rg",
-    "author": "DarkX",
+    "id": "private",
+    "name": "Silent Jumper",
+    "author": "ItzAley",
     "creators": [],
-    "verifier": "paqoe",
-    "isVerified": true,
-    "verification": "https://www.youtube.com/watch?v=ZcdiTGuIJ1k",
-    "showcase": "https://www.youtube.com/watch?v=F45adtmC6NU",
-    "lastUpd": "11.04.2024",
+    "verifier": "Tawer",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=dZooKH_pkn4",
+    "lastUpd": "14.03.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 96,
+    "length": 90,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Verified", "Remake", "Unrated"]
+    "tags": ["Long", "Remake"]
 }
