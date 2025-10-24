@@ -4,7 +4,7 @@
     "author": "GdSkele",
     "creators": [],
     "verifier": "TFIBB",
-    "isVerified": false,
+    "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=O-IQeUdEGvI",
     "showcase": "https://www.youtube.com/watch?v=WOX_MVBVmJc",
     "lastUpd": "07.01.2025",
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Remake", "Finished", "Public", "Unrated"]
+    "tags": ["Long", "Remake", "Finished", "Public", "Unrated", "Verified"]
 }
