@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=LHccqdHXzAM",
-    "lastUpd": "04.10.2025",
+    "lastUpd": "25.10.2025",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
+            "user": "Dramel",
             "link": "",
-            "percent": 0,
+            "percent": 32,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
+            "user": "Dramel",
             "link": "",
-            "percent": "0",
+            "percent": "28-60",
             "hz": 0
         }        
     ],
