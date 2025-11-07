@@ -3,11 +3,11 @@
     "name": "Voltage",
     "author": "ThePurgatory",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Maybee",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=VnyACTDTHuQ",
-    "lastUpd": "09.08.2025",
+    "lastUpd": "07.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 0,
+    "length": 61,
     "rating": 1,
-    "percentFinished": 5,
+    "percentFinished": 90,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Little to no information"]
+    "tags": ["Long"]
 }
