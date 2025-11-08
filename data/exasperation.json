@@ -1,12 +1,13 @@
 {
     "id": "private",
     "name": "EXASPERATION",
-    "author": "Thycket",
+    "author": "Akunakun",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Zoink",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=6AxgWd-JXvA&t=65s",
+    "lastUpd": "04.11.2025", 
     "percentToQualify": 49,
     "records": [
         {
@@ -19,7 +20,6 @@
     "length": 300,
     "rating": 1,
     "percentFinished": 95,
-    "lastUpd": "21.08.2025",
 
     "isMain": true,
     "isFuture": true,
