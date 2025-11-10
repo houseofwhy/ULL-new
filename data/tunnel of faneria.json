@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "ANGELBURN",
-    "author": "Kaza_GD",
+    "name": "",
+    "author": "",
     "creators": [],
-    "verifier": "Kaza_GD",
+    "verifier": "",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/aMr4WNLMiXE",
-    "lastUpd": "5.10.2025",
+    "showcase": "",
+    "lastUpd": "",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 92,
+    "length": 0,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Layout", "NONG"]
+    "tags": ["no video, i don't have a way to glean information, Ping luke sometime later when the link works and i can fix it :)"]
 }

@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "ANGELBURN",
-    "author": "Kaza_GD",
+    "name": "Cyberpsychosis",
+    "author": "Sobeann",
     "creators": [],
-    "verifier": "Kaza_GD",
+    "verifier": "Sobeann",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/aMr4WNLMiXE",
-    "lastUpd": "5.10.2025",
+    "showcase": "https://www.youtube.com/watch?v=prdJRdhkdwA",
+    "lastUpd": "Needs updated info",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 92,
+    "length": 91,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Layout", "NONG"]
+    "tags": ["Long", "Finished"]
 }

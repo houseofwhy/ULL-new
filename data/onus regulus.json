@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "ANGELBURN",
-    "author": "Kaza_GD",
+    "name": "ONUS RĒGULUS",
+    "author": "Silence",
     "creators": [],
-    "verifier": "Kaza_GD",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/aMr4WNLMiXE",
-    "lastUpd": "5.10.2025",
+    "showcase": "https://youtu.be/Ah9ieP2StVI",
+    "lastUpd": "21.09.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 92,
+    "length": 91,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Layout", "NONG"]
+    "tags": ["Long", "Layout"]
 }
