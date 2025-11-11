@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Tunnel of Faneria",
-    "author": "Demi",
+    "id": "108732162",
+    "name": "Radiation Core",
+    "author": "excuse_me_What?",
     "creators": [],
-    "verifier": "faner1els",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=fr8RLieEcrA",
-    "lastUpd": "10.11.2025",
+    "showcase": "https://youtu.be/QYYlseyVT-g",
+    "lastUpd": "06.08.2024",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 83,
+    "length": 75,
     "rating": 1,
-    "percentFinished": 13,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long"]
+    "tags": ["Long", "Open Verification"]
 }

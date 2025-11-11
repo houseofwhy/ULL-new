@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Tunnel of Faneria",
-    "author": "Demi",
+    "name": "Down Bass Incarnate",
+    "author": "Wespdx",
     "creators": [],
-    "verifier": "faner1els",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=fr8RLieEcrA",
-    "lastUpd": "10.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=eKrymdjxeC4",
+    "lastUpd": "12.08.2024 (not accurate)",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 83,
+    "length": 145,
     "rating": 1,
-    "percentFinished": 13,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long"]
+    "tags": ["XL", "double check info"]
 }

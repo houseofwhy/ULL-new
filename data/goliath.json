@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Tunnel of Faneria",
-    "author": "Demi",
+    "name": "Goliath",
+    "author": "Aurorae",
     "creators": [],
-    "verifier": "faner1els",
+    "verifier": "Aurorae",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=fr8RLieEcrA",
-    "lastUpd": "10.11.2025",
+    "showcase": "https://youtu.be/rzAmgyfsfz0",
+    "lastUpd": "01.09.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 83,
+    "length": 128,
     "rating": 1,
-    "percentFinished": 13,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long"]
+    "tags": ["XL", "Layout"]
 }
