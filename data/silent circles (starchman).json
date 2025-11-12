@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=6RCgII1G4Kw&list=RD6RCgII1G4Kw&start_radio=1&pp=ygUYc2lsZW50IGNpcmNsZXMgc3RhcmNobWFuoAcB",
-    "lastUpd": "04.08.2025",
+    "lastUpd": "09.11.2025",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "ImJuls",
-            "link": "https://youtu.be/CpQoGed3mfU?si=vhadZw-ahmafS8Vd",
-            "percent": 15,
+            "link": "https://www.youtube.com/watch?v=JMPTi_Utnao&pp=ugUEEgJlbtIHCQkDCgGHKiGM7w%3D%3D",
+            "percent": 31,
             "hz": 240
         }
     ],
     "run": [
         {
             "user": "ImJuls",
-            "link": "https://youtu.be/xUU9L_e1heo?si=mVG4Pst9OP99Z_1I",
-            "percent": "82-100",
+            "link": "https://www.youtube.com/watch?v=JMPTi_Utnao&pp=ugUEEgJlbtIHCQkDCgGHKiGM7w%3D%3D",
+            "percent": "62-100",
             "hz": 240
         }        
     ],
