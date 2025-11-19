@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "ENDLESS NIGHTS",
+    "author": "CairoX",
+    "creators": [],
+    "verifier": "Trick (as if)",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=-lx49RrEzZ0",
+    "lastUpd": "07.11.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 92,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Remake"]
+}
