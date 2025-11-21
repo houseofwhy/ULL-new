@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "name": "Fatebreaker",
+    "author": "Fluxite",
     "creators": [],
-    "verifier": "manuw09",
+    "verifier": "Xurido",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=7uN6U45L_nQ",
+    "lastUpd": "25.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 92,
     "rating": 1,
     "percentFinished": 10,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["Long", "Remake"]
 }

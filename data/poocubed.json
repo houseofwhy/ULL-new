@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "id": " 85133223",
+    "name": "Poocubed",
+    "author": "Lisp",
     "creators": [],
-    "verifier": "manuw09",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "verifier": "kyass",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=fzL31vai1ms",
+    "showcase": "https://www.youtube.com/watch?v=VdVQkK3G234",
+    "lastUpd": "01.11.2022",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 80,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["Long", "Finished", "Public", "Rated", "Verified"]
 }

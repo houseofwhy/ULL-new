@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "id": "120289520",
+    "name": "Snowbound",
+    "author": "Amplitron",
     "creators": [],
-    "verifier": "manuw09",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "verifier": "Amplitron",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=cjHwgbtAkXU",
+    "showcase": "https://www.youtube.com/watch?v=MRLOwBhYk0A",
+    "lastUpd": "04.06.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 141,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["XL", "Finished", "Verified", "Public", "Unrated"]
 }

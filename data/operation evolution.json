@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "id": "114999625",
+    "name": "Operation Evolution",
+    "author": "xHalzion",
     "creators": [],
-    "verifier": "manuw09",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "verifier": "cobrablitz",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=WsVF-ayipvY",
+    "showcase": "https://youtu.be/_eGGS6pEJrc",
+    "lastUpd": "09.02.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 333,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["XXL", "Finished", "Public", "Rated", "Verified"]
 }

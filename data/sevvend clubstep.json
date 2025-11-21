@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "id": "120255728",
+    "name": "Sevvend Clubstep",
+    "author": "[cherry] team",
     "creators": [],
-    "verifier": "manuw09",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "verifier": "Vorten",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=TvA8EJTJFCc",
+    "showcase": "https://www.youtube.com/watch?v=sbQH3Xtpl-A",
+    "lastUpd": "04.06.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 71,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["Long", "Finished", "Rated", "Verified", "Public", "Quality"]
 }

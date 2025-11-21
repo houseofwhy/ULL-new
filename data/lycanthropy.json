@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "name": "Lycanthropy",
+    "author": "xStxrr",
     "creators": [],
-    "verifier": "manuw09",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=xX_WQgj8NQg",
+    "lastUpd": "28.12.2024",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 0,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["Deco and layout made at the same time"]
 }

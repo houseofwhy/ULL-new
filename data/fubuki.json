@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "name": "FUBUKI",
+    "author": "fwe",
     "creators": [],
-    "verifier": "manuw09",
+    "verifier": "Taiago",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=85nZPttveNg",
+    "lastUpd": "10.02.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 78,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["Long", "Layout"]
 }

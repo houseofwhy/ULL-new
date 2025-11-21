@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Killstealer",
-    "author": "Asterion",
+    "id": "106646765",
+    "name": "Centipede",
+    "author": "zander12",
     "creators": [],
-    "verifier": "private",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://youtu.be/XKNXzRtxgsM",
-    "lastUpd": "16.11.2025",
+    "verifier": "LordVadercraft",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=eLGr383CmyM",
+    "showcase": "https://www.youtube.com/watch?v=UPPSMAqTA2w",
+    "lastUpd": "20.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 240,
+    "length": 98,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "Verifying"]
+    "tags": ["Long", "NC", "Remake", "Finished", "Verified", "Verifying", "Public", "Unrated"]
 }

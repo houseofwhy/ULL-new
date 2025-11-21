@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Graveyard",
-    "author": "demi",
+    "name": "diviners sage",
+    "author": "kwipkat",
     "creators": [],
-    "verifier": "manuw09",
+    "verifier": "kwipkat",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=Bptre_ypSa4",
-    "lastUpd": "14.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=TiPJQlSVp0U",
+    "lastUpd": "04.09.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 46,
+    "length": 148,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium"]
+    "tags": ["XL", "Layout"]
 }
