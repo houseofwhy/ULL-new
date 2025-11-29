@@ -1,0 +1,37 @@
+{
+    "id": "96314787",
+    "name": "Deadlier Clubstep",
+    "author": "HeroZombie80",
+    "creators": [],
+    "verifier": "jenath",
+    "isVerified": true,
+    "verification": "https://youtu.be/eRhgaF0r5Q0?si=RMJ9qrJ92Wkq5Og-",
+    "showcase": "https://youtu.be/guAFFTTnXcM?si=L7JJfuXH0IAMROFK",
+    "lastUpd": "20/10/2023",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 104,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long","Rated","Public","Remake"]
+}
