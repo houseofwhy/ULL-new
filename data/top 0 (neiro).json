@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "CONTAXIT",
-    "author": "fnm04",
+    "id": "98327676",
+    "name": "TOP-0 (Human Limit)",
+    "author": "Neiro",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/jgc8iwF5qzA",
-    "lastUpd": "24.02.2025",
+    "showcase": "https://www.youtube.com/watch?v=OFY08yZZfDY",
+    "lastUpd": "01.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 110,
+    "length": 183,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 40,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Layout"]
+    "tags": ["XL"]
 }

@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "GRYPHON",
-    "author": "CherryTeam",
+    "name": "TAPIOCA",
+    "author": "Pump",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=JAUseCmxlY8",
-    "lastUpd": "",
+    "showcase": "https://www.youtube.com/watch?v=Wo9Oph5470I",
+    "lastUpd": "16.09.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }        
     ],
 
-    "length": 71,
+    "length": 80,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 10,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Layout", "Being Revived"]
+    "tags": ["Long"]
 }
