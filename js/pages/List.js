@@ -48,8 +48,8 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 370" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg">soapy niroi feet</p>
+                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg">Legacy</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
@@ -146,7 +146,7 @@ export default {
                         <h3>List Editors</h3>
                         <ol class="editors">
                             <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${(store.dark || store.shitty) ? '-dark' : ''}.svg\`" :alt="editor.role">
+                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${(!store.dark || store.shitty) ? '-dark' : ''}.svg\`" :alt="editor.role">
                                 <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
                                 <p v-else>{{ editor.name }}</p>
                             </li>
