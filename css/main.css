@@ -27,7 +27,7 @@
     --color-on-error: white;
 }
 
-html.dark.root {
+.dark.root {
     --color-background: white;
     --color-on-background: black;
     --color-background-hover: #eee;
