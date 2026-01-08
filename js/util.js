@@ -64,16 +64,19 @@ export const filtersSetup = `<div style="flex-grow:1"></div>
 				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
 					<div class="filters-text" @click="filtersToggle">Filters <img :src="\`/assets/arrow-down\${!store.dark ? '-dark' : ''}.svg\`" style="display:inline; vertical-align: middle;"></div>
 					<div class="filters-collapse">
-						<div class="filters-menu surface">
+						<div class="filters-menu"
+							:style="{
+								backgroundColor: store.dark ? 'white' : '#1c1b1f',
+								color: store.dark ? 'black' : 'white'
+							}"
+						>
 							<div class="filters-one"
  								v-for="(item,index) in filtersList"
 								:key="index"
       								:class="{ active: item.active }"
                                  @click="useFilter(index)"
 								>
-
-								<div class="separator-filter" v-if="item.separator">
-								</div>
+								<div class="separator-filter" v-if="item.separator"></div>
 								<div v-else>
 									<span>✓</span> {{item.name}}
 								</div>
