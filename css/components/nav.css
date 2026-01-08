@@ -92,7 +92,7 @@
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
     padding: 7px 20px 7px 20px;
-    color: var(--color-on-background);
+/*    color: var(--color-on-background); */
 }
 .filters-one:hover {
     background: rgba(255, 255, 255, 0.1);
