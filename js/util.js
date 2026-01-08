@@ -66,7 +66,7 @@ export const filtersSetup = `<div style="flex-grow:1"></div>
 					<div class="filters-collapse">
 						<div class="filters-menu"
 							:style="{
-								backgroundColor: store.dark ? 'white' : '#1c1b1f',
+								backgroundColor: !store.dark ? 'white' : '#1c1b1f',
 								color: store.dark ? 'black' : 'white'
 							}"
 						>
