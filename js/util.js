@@ -67,7 +67,7 @@ export const filtersSetup = `<div style="flex-grow:1"></div>
 						<div class="filters-menu"
 							:style="{
 								backgroundColor: !store.dark ? 'white' : 'black',
-								color: store.dark ? 'black' : 'white'
+								color: !store.dark ? 'black' : 'white'
 							}"
 						>
 							<div class="filters-one"
