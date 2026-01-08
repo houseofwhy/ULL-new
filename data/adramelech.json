@@ -8,7 +8,7 @@
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=M4gwoGhgqZU",
     "percentToQualify": 1,
-    "lastUpd": "11.07.2025",
+    "lastUpd": "05.10.2025",
     "records": [
         {
             "user": "Airi",
@@ -23,7 +23,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 560,
     "rating": 1,
@@ -32,7 +32,7 @@
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["XXL", "Quality"]
+    "tags": ["XXL"]
 
 
 }
