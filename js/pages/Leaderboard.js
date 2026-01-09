@@ -19,11 +19,11 @@ export default {
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
-        <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px; letter-spacing: 2px; padding: 0 1rem;">
-            The leaderboard shows closest to verification upcoming levels
-        </h2>
         <main v-else class="page-list">
-            <div class="list-container surface" style="padding-block: 0rem;">
+            <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px 0 20px 0; letter-spacing: 0.45px; padding: 0 1rem;">
+                The leaderboard shows closest to verification upcoming levels
+            </h2>
+            <div class="list-container surface" style="padding-block: 2rem;">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
@@ -37,14 +37,14 @@ export default {
                     </tr>
                 </table>
             </div>
-            <div class="level-container surface">
+            <div class="level-container surface" style="padding-block: 2rem;">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <div>
                         <div v-if="bestRecord" class="best-record">
                             <p class="type-body">
-                                Best progress from 0: <a :href="bestRecord.link" target="_blank"style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
+                                Best progress from 0: <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
                             </p>
                         </div>
                         <div v-if="bestRun" class="best-run">
@@ -67,7 +67,7 @@ export default {
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
-            <div class="meta-container surface">
+            <div class="meta-container surface" style="padding-block: 2rem;">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
@@ -180,7 +180,7 @@ export default {
                 level.rankingScore = Math.max(maxPercent, maxRunDifference);
             });
 
-            const filteredList = list.filter(([level, err]) => level && !level.isVerified &&level.rankingScore > 0);
+            const filteredList = list.filter(([level, err]) => level && !level.isVerified && level.rankingScore > 0);
             this.list = filteredList.sort((a, b) => b[0].rankingScore - a[0].rankingScore);
 
             if (!this.editors) {
