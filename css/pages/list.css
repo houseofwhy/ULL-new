@@ -7,12 +7,6 @@
     padding-inline: 1rem;
 }
 
-.verification-priority-page .list-container,
-.verification-priority-page .level-container,
-.verification-priority-page .meta-container {
-    padding-block: 2rem;
-}
-
 .page-list .meta-container {
     padding-right: 2rem;
 }
