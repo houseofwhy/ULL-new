@@ -20,10 +20,10 @@ export default {
             <Spinner></Spinner>
         </main>
         <main v-else class="page-list">
+            <div class="list-container surface" style="padding-block: 2rem;">
             <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px 0 20px 0; letter-spacing: 0.45px; padding: 0 1rem;">
                 The leaderboard shows closest to verification upcoming levels
             </h2>
-            <div class="list-container surface" style="padding-block: 2rem;">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
