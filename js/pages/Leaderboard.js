@@ -16,77 +16,75 @@ const roleIconMap = {
 export default {
     components: { Spinner, LevelAuthors },
     template: `
-        <div>
-            <main v-if="loading" class="surface">
-                <Spinner></Spinner>
-            </main>
-            <h2 class="type-label-lg" style="font-weight: normal; font-size: 25px; margin: 30px; padding: 0 1rem;">
-                Levels closest to verification
-            </h2>
-            <main v-else class="page-list">
-                <div class="list-container surface" style="padding-block: 0rem;">
-                    <table class="list" v-if="list">
-                        <tr v-for="([level, err], i) in list">
-                            <td class="rank">
-                                <p class="type-label-lg">#{{ i + 1 }}</p>
-                            </td>
-                            <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                                <button @click="selected = i">
-                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="level-container surface">
-                    <div class="level" v-if="level">
-                        <h1>{{ level.name }}</h1>
-                        <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                        <div>
-                            <div v-if="bestRecord" class="best-record">
-                                <p class="type-body">
-                                    Best progress from 0: <a :href="bestRecord.link" target="_blank"style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
-                                </p>
-                            </div>
-                            <div v-if="bestRun" class="best-run">
-                                <p class="type-body">
-                                    Best run: <a :href="bestRun.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div v-if="level.isVerified" class="tabs">
-                            <button class="tab" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
-                                <span class="type-label-lg">Verification</span>
+        <main v-if="loading" class="surface">
+            <Spinner></Spinner>
+        </main>
+        <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 20px; padding: 0 1rem;">
+            Levels closest to verification
+        </h2>
+        <main v-else class="page-list">
+            <div class="list-container surface" style="padding-block: 0rem;">
+                <table class="list" v-if="list">
+                    <tr v-for="([level, err], i) in list">
+                        <td class="rank">
+                            <p class="type-label-lg">#{{ i + 1 }}</p>
+                        </td>
+                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                            <button @click="selected = i">
+                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
-                            <button class="tab" :class="{selected: toggledShowcase}" @click="toggledShowcase = true">
-                                <span class="type-label-lg">Showcase</span>
-                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="level-container surface">
+                <div class="level" v-if="level">
+                    <h1>{{ level.name }}</h1>
+                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
+                    <div>
+                        <div v-if="bestRecord" class="best-record">
+                            <p class="type-body">
+                                Best progress from 0: <a :href="bestRecord.link" target="_blank"style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
+                            </p>
                         </div>
-                        <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                    </div>
-                    <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                        <p>(ノಠ益ಠ)ノ彡┻━┻</p>
-                    </div>
-                </div>
-                <div class="meta-container surface">
-                    <div class="meta">
-                        <div class="errors" v-show="errors.length > 0">
-                            <p class="error" v-for="error of errors">{{ error }}</p>
+                        <div v-if="bestRun" class="best-run">
+                            <p class="type-body">
+                                Best run: <a :href="bestRun.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
+                            </p>
                         </div>
-                        <template v-if="editors">
-                            <h3>List Editors</h3>
-                            <ol class="editors">
-                                <li v-for="editor in editors">
-                                    <img :src="\`/assets/\${roleIconMap[editor.role]}\${(!store.dark || store.shitty) ? '-dark' : ''}.svg\`" :alt="editor.role">
-                                    <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
-                                    <p v-else>{{ editor.name }}</p>
-                                </li>
-                            </ol>
-                        </template>
                     </div>
+                    <div v-if="level.isVerified" class="tabs">
+                        <button class="tab" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
+                            <span class="type-label-lg">Verification</span>
+                        </button>
+                        <button class="tab" :class="{selected: toggledShowcase}" @click="toggledShowcase = true">
+                            <span class="type-label-lg">Showcase</span>
+                        </button>
+                    </div>
+                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                 </div>
-            </main>
-        </div>
+                <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
+                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
+                </div>
+            </div>
+            <div class="meta-container surface">
+                <div class="meta">
+                    <div class="errors" v-show="errors.length > 0">
+                        <p class="error" v-for="error of errors">{{ error }}</p>
+                    </div>
+                    <template v-if="editors">
+                        <h3>List Editors</h3>
+                        <ol class="editors">
+                            <li v-for="editor in editors">
+                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${(!store.dark || store.shitty) ? '-dark' : ''}.svg\`" :alt="editor.role">
+                                <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
+                                <p v-else>{{ editor.name }}</p>
+                            </li>
+                        </ol>
+                    </template>
+                </div>
+            </div>
+        </main>
     `,
     data: () => ({
         list: [],
