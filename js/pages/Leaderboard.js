@@ -19,12 +19,10 @@ export default {
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
-    <div class="list-container surface">
         <main v-else class="page-list">
-        <h2 class="type-label-lg" style="font-weight: normal; margin: 0 0 1rem 0; padding: 0 1rem;">
-            Levels closest to verification
-        </h2>
-        <main v-else class="page-list">
+            <h2 class="type-label-lg" style="font-weight: normal; margin: 0 0 1rem 0; padding: 0 1rem;">
+                Levels closest to verification
+            </h2>
             <div class="list-container surface">
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
