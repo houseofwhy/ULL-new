@@ -53,7 +53,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div v-if="level.isVerified" class="tabs">
+                    <div v-if="level.isVerified" class="tabs; height: 45px;">
                         <button class="tab" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
                             <span class="type-label-lg">Verification</span>
                         </button>
