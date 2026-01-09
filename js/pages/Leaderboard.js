@@ -19,7 +19,7 @@ export default {
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
-        <h2 v-if="!loading" class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px 0 30px 0; letter-spacing: 0.45px; padding: 0 1rem;">
+        <h2 v-if="!loading" class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px 0 30px 0; letter-spacing: 0.35px; padding: 0 1rem;">
             The leaderboard shows closest to verification upcoming levels
         </h2>
         <main v-if="!loading" class="page-list">
@@ -62,7 +62,7 @@ export default {
                         </button>
                     </div>
                     <div>
-                        <p class="type-body">
+                        <p class="type-body-2">
                             Showcase
                         </p>
                         <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
