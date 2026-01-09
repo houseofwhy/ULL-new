@@ -38,12 +38,12 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <div v-if="bestRecord" class="worldrecord">
+                    <div v-if="bestRecord" class="best-record">
                         <p class="type-body">
                             Best progress from 0: <a :href="bestRecord.link" target="_blank"style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
                         </p>
                     </div>
-                    <div v-if="bestRun" class="worldrecord">
+                    <div v-if="bestRun" class="best-run">
                         <p class="type-body">
                             Best run: <a :href="bestRun.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
                         </p>

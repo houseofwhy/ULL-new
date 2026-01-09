@@ -157,7 +157,11 @@ input[type="checkbox"] {
     margin-bottom: 1rem;
 }
 
-
+.best-record .type-body,
+.best-run .type-body {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 /* Shitty */
 
