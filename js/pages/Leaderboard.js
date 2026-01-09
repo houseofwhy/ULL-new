@@ -179,7 +179,7 @@ export default {
 
                 level.maxPercent = maxPercent;
                 level.maxRunDifference = maxRunDifference;
-                level.rankingScore = Math.max(maxPercent, maxRunDifference);
+                level.rankingScore = Math.max(maxPercent, maxRunDifference) + 0.5*Math.min(maxPercent, maxRunDifference);
             });
 
             const filteredList = list.filter(([level, err]) => level && !level.isVerified && level.rankingScore > 0);
