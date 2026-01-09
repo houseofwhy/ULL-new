@@ -20,7 +20,7 @@ export default {
             <Spinner></Spinner>
         </main>
         <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px; padding: 0 1rem;">
-            Levels closest to verification
+            The leaderboard shows closest to verification levels
         </h2>
         <main v-else class="page-list">
             <div class="list-container surface" style="padding-block: 0rem;">
