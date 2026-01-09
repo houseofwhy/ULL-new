@@ -19,7 +19,7 @@ export default {
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
-        <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 20px; padding: 0 1rem;">
+        <h2 class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px; padding: 0 1rem;">
             Levels closest to verification
         </h2>
         <main v-else class="page-list">
