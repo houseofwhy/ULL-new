@@ -61,10 +61,12 @@ export default {
                             <span class="type-label-lg">Showcase</span>
                         </button>
                     </div>
-                    <button class="tab">
-                        <span class="type-label-lg">Showcase</span>
-                    </button>
-                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                    <div>
+                        <p class="type-body">
+                            Showcase
+                        </p>
+                        <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                    </div>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
