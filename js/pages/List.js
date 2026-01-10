@@ -48,8 +48,8 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg">Legacy</p>
+                                <p v-if="i + 1 <= 280" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg">Londenberg</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
