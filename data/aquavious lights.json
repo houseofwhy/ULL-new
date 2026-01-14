@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 48,
     "rating": 1,
     "percentFinished": 40,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Medium", "NC", "inaccurate info"]
 }

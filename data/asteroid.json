@@ -30,8 +30,8 @@
     "length": 110,
     "rating": 1,
     "percentFinished": 0,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Long", "Layout"]
 }
