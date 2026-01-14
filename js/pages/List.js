@@ -102,7 +102,7 @@ export default {
                                             Status: Being Verified
                                     </template>
                                     <template v-if="level.percentFinished != 0 && level.percentFinished != 100">
-                                            Status: Decoration being made {{level.percentFinished}}% done
+                                            Status: Decoration being made - {{level.percentFinished}}% done
                                     </template>
                                 </p>
                             </div>

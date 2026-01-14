@@ -24,12 +24,12 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 110,
     "rating": 1,
-    "percentFinished": 30,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": true,
 
