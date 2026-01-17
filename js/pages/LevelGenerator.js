@@ -70,6 +70,38 @@ export default {
                             <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Use "private" (with quotes) or a number (without quotes).</small>
                         </div>
 
+                        <!-- Records -->
+                        <div class="form-group">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <label>Records (from 0%)</label>
+                                <button type="button" @click="addRecord" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8em; width: auto;">+ Add Record</button>
+                            </div>
+                            <div v-for="(rec, i) in level.records" :key="i" style="display: flex; gap: 10px; margin-top: 10px;">
+                                <input v-model="rec.user" placeholder="User" style="flex: 2" />
+                                <input v-model="rec.link" placeholder="Link" style="flex: 2" />
+                                <input v-model.number="rec.percent" type="number" placeholder="%" style="flex: 1" />
+                                <input v-model.number="rec.hz" type="number" placeholder="Hz" style="flex: 1" />
+                                <button type="button" @click="removeRecord(i)" class="btn" style="background: var(--color-error); padding: 0 1rem; width: auto;">X</button>
+                            </div>
+                            <p v-if="level.records.length === 0" class="type-body" style="font-size: 0.8em; opacity: 0.5; margin-top: 5px;">No records added (default "none" will be used).</p>
+                        </div>
+
+                        <!-- Runs -->
+                        <div class="form-group">
+                             <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <label>Runs</label>
+                                <button type="button" @click="addRun" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8em; width: auto;">+ Add Run</button>
+                            </div>
+                            <div v-for="(run, i) in level.run" :key="i" style="display: flex; gap: 10px; margin-top: 10px;">
+                                <input v-model="run.user" placeholder="User" style="flex: 2" />
+                                <input v-model="run.link" placeholder="Link" style="flex: 2" />
+                                <input v-model="run.percent" placeholder="Run (e.g. 50-100)" style="flex: 1" />
+                                <input v-model.number="run.hz" type="number" placeholder="Hz" style="flex: 1" />
+                                <button type="button" @click="removeRun(i)" class="btn" style="background: var(--color-error); padding: 0 1rem; width: auto;">X</button>
+                            </div>
+                             <p v-if="level.run.length === 0" class="type-body" style="font-size: 0.8em; opacity: 0.5; margin-top: 5px;">No runs added (default "none" will be used).</p>
+                        </div>
+
                         <!-- Checkboxes -->
                         <div class="form-group row" style="display: flex; gap: 20px; align-items: center;">
                             <label style="display: flex; align-items: center; gap: 5px;">
@@ -160,23 +192,9 @@ export default {
                 verification: "",
                 showcase: "",
                 lastUpd: "",
-                percentToQualify: 0,
-                records: [
-                    {
-                        "user": "none",
-                        "link": "",
-                        "percent": 0,
-                        "hz": 0
-                    }
-                ],
-                run: [
-                    {
-                        "user": "none",
-                        "link": "",
-                        "percent": "0",
-                        "hz": 0
-                    }
-                ],
+                percentToQualify: 1,
+                records: [],
+                run: [],
                 length: 0,
                 rating: 1,
                 percentFinished: 100,
@@ -198,6 +216,18 @@ export default {
         }
     },
     methods: {
+        addRecord() {
+            this.level.records.push({ user: "", link: "", percent: 0, hz: 0 });
+        },
+        removeRecord(i) {
+            this.level.records.splice(i, 1);
+        },
+        addRun() {
+            this.level.run.push({ user: "", link: "", percent: "", hz: 0 });
+        },
+        removeRun(i) {
+            this.level.run.splice(i, 1);
+        },
         generateJson() {
             this.errors = [];
 
@@ -221,6 +251,15 @@ export default {
             // Handle ID: if it's a number string, convert to number, else keep string
             if (!isNaN(Number(data.id))) {
                 data.id = Number(data.id);
+            }
+
+            // Handle Records defaults
+            if (data.records.length === 0) {
+                data.records.push({ user: "none", link: "", percent: 0, hz: 0 });
+            }
+            // Handle Runs defaults
+            if (data.run.length === 0) {
+                data.run.push({ user: "none", link: "", percent: "0", hz: 0 });
             }
 
             // Create file blob
