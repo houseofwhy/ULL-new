@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1024" />
     <meta property="og:title" content="Future Demonlist" />
-    <meta property="og:description"
-        content="The Future of the Extreme Demons - Demonlist in 2030" />
+    <meta property="og:description" content="The Future of the Extreme Demons - Demonlist in 2030" />
     <meta property="og:url" content="https://ull.pages.dev" />
     <meta property="og:image" content="/ull_icon.png" />
     <title>Future DemonList</title>
@@ -27,20 +26,18 @@
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
 </head>
-<body id="app"
-    onload="
+
+<body id="app" onload="
         if (location.hash == '#/listmain' ||  location.hash == '#/listfuture' ||  location.hash == '#/') {
             document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
         } else {
             document.querySelectorAll('.list__home')[0].classList.remove('router-link-active')
         }
-    "
-    onclick="
+    " onclick="
         if (location.hash == '#/listmain' ||  location.hash == '#/listfuture') {
             document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
         }
-    "
-    >
+    ">
     <div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
         <header class="surface">
             <div class="logo">
@@ -60,14 +57,8 @@
                     <span class="type-label-lg">Unlisted</span>
                 </router-link>
                 <div class="nav__actions">
-                    <button
-                        class="nav__icon"
-                        @click.prevent="store.toggleDark()"
-                    >
-                        <img
-                            :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'"
-                            alt=""
-                        />
+                    <button class="nav__icon" @click.prevent="store.toggleDark()">
+                        <img :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'" alt="" />
                     </button>
                     <a class="nav__icon" href="https://discord.gg/HQzjUJ9ZBm">
                         <img src="/assets/discord.svg" alt="Discord Logo" />
