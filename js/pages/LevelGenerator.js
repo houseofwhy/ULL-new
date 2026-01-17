@@ -223,7 +223,7 @@ export default {
             this.level.records.splice(i, 1);
         },
         addRun() {
-            this.level.run.push({ user: "", link: "", percent: "", hz: 0 });
+            this.level.run.push({ user: "", link: "", percent: "", hz: 240 });
         },
         removeRun(i) {
             this.level.run.splice(i, 1);
