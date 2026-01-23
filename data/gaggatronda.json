@@ -1,0 +1,40 @@
+{
+    "id": 114990369,
+    "name": "Gaggatronda",
+    "author": "JCMoon",
+    "creators": [],
+    "verifier": "Zeronium",
+    "isVerified": true,
+    "verification": "https://youtu.be/A4G41vw6Cf0?si=ksjop9_xkbRB1Q-q",
+    "showcase": "https://youtu.be/z_EkJcLJz2g?si=y498Qqrryaif-vfe",
+    "lastUpd": "10.02.2025",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "Zeronium",
+            "link": "https://youtu.be/A4G41vw6Cf0?si=ksjop9_xkbRB1Q-q",
+            "percent": 100,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 60,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Long",
+        "NONG",
+        "Rated"
+    ]
+}
