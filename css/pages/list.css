@@ -1,3 +1,6 @@
+main.page-list--pending {
+    grid-template-columns: minmax(16rem, 3fr) minmax(16rem, 3fr) minmax(16em, 2fr);
+}
 .page-list .list-container,
 .page-list .level-container,
 .page-list .meta-container {

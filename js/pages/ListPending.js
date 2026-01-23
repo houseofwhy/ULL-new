@@ -34,7 +34,7 @@ export default {
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
-        <main v-else class="page-list">
+        <main v-else class="page-list page-list--pending">
             <div class="list-container surface">
                 <h3 style="margin-bottom: 1rem;">Pending Placements</h3>
                 <table class="list" v-if="pendingPlacements.length > 0">
