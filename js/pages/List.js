@@ -23,6 +23,16 @@ export default {
 		.list__home{
 			border-color: var(--color-on-primary);
 		}
+		header.new .nav__tab.router-link-active {
+			background-color: var(--color-on-background);
+			color: var(--color-background);
+			border-color: transparent;
+		}
+		header.new.dark .nav__tab.router-link-active {
+			background-color: var(--color-background);
+			color: var(--color-on-background);
+			border-color: transparent;
+		}
 	</style>
 	<header class="new" :class="{ dark: store.dark }">
             <nav class="nav">
