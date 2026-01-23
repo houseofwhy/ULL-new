@@ -30,6 +30,13 @@ export default {
                 </li>
             </ol>
         </template>
+
+        <div class="meta">
+            <h3> List Guidelines </h3>
+            <p> Currently in works </p>
+            <p> ggogle docs link </p>
+        </div>
+<!--
         <div class="meta">
             <h3> Level Standards </h3>
             <p> For main list levels:</p>
@@ -57,6 +64,6 @@ export default {
             <p> - Make sure you beat the level displayed on the site (for reference, check the level ID to ensure you're playing the correct level</p>
             <p> - Do not use secret routes or bug routes</p>
             <p> - Do not use easy modes, only a record of the unmodified level qualifies</p>
-        </div>
+        </div>-->
     `
 };
