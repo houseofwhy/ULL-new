@@ -1,6 +1,11 @@
 main.page-list--pending {
     grid-template-columns: minmax(16rem, 3fr) minmax(16rem, 3fr) minmax(16em, 2fr);
 }
+main.page-list--pending .list-container,
+main.page-list--pending .level-container {
+    overflow-y: scroll; /* Always shows scrollbar */
+}
+
 .page-list .list-container,
 .page-list .level-container,
 .page-list .meta-container {
