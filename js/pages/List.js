@@ -23,16 +23,8 @@ export default {
 		.list__home{
 			border-color: var(--color-on-primary);
 		}
-		.dark header.new .nav__tab.router-link-active {
-			background-color: var(--color-background);
-			color: var(--color-on-background);
-		}
-		header.new .nav__tab.router-link-active {
-			background-color: var(--color-on-background);
-			color: var(--color-background);
-		}
 	</style>
-	<header class="new">
+	<header class="new" :class="{ dark: store.dark }">
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">All Levels</span>
