@@ -8,28 +8,28 @@
         "placement": "down"
     },
     {
-        "name": "Pending Top 1",
-        "placement": "1"
-    },
-    {
-        "name": "Pending Top 10",
+        "name": "Soulless",
         "placement": "10"
     },
     {
-        "name": "Pending Top 20",
+        "name": "Carsion",
+        "placement": "10"
+    },
+    {
+        "name": "V S C",
+        "placement": "10"
+    },
+    {
+        "name": "Outcast",
         "placement": "20"
     },
     {
-        "name": "Pending Top 30",
+        "name": "The Fire and Flames",
+        "placement": "20"
+    },
+    {
+        "name": "Ground Fella",
         "placement": "30"
-    },
-    {
-        "name": "Pending Top 50",
-        "placement": "50"
-    },
-    {
-        "name": "Pending Top 75",
-        "placement": "75"
     },
     {
         "name": "Unknown Placement",
