@@ -23,6 +23,14 @@ export default {
 		.list__home{
 			border-color: var(--color-on-primary);
 		}
+		.dark header.new .nav__tab.router-link-active {
+			background-color: var(--color-background);
+			color: var(--color-on-background);
+		}
+		header.new .nav__tab.router-link-active {
+			background-color: var(--color-on-background);
+			color: var(--color-background);
+		}
 	</style>
 	<header class="new">
             <nav class="nav">
@@ -116,6 +124,7 @@ export default {
                             <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
                                 <span class="type-label-lg">Verification</span>
                             </button>
+                        </template>
                     </div>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">

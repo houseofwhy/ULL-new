@@ -23,6 +23,14 @@ export default {
 		.list__home{
 			border-color: var(--color-on-primary);
 		}
+		.dark header.new .nav__tab.router-link-active {
+			background-color: var(--color-background);
+			color: var(--color-on-background);
+		}
+		header.new .nav__tab.router-link-active {
+			background-color: var(--color-on-background);
+			color: var(--color-background);
+		}
 	</style>
 	<header class="new">
             <nav class="nav">
