@@ -33,8 +33,7 @@ export default {
 
         <div class="meta">
             <h3> List Guidelines </h3>
-            <p> Currently in works </p>
-            <p> ggogle docs link </p>
+            <p> Currently in works: https://docs.google.com/document/d/13dmRfx2OCiLEaM2EcgEd-mKdok11_k8k7HsA5a-K6nY/edit?usp=sharing </p>
         </div>
 <!--
         <div class="meta">
