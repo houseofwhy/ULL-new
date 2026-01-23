@@ -15,22 +15,6 @@ const roleIconMap = {
 export default {
     components: { Spinner, ListEditors },
     template: `
-        <header class="new">
-            <nav class="nav">
-                <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">All Levels</span>
-                </router-link>
-                <router-link class="nav__tab" to="/listmain">
-                    <span class="type-label-lg">Main List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/listfuture">
-                    <span class="type-label-lg">Future List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/pending">
-                    <span class="type-label-lg">Pending List</span>
-                </router-link>
-            </nav>
-        </header>
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
         </main>
