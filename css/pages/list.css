@@ -1,9 +1,26 @@
 main.page-list--pending {
     grid-template-columns: minmax(16rem, 3fr) minmax(16rem, 3fr) minmax(16em, 2fr);
 }
+
+/*main.page-list--pending .list-container,
+main.page-list--pending .level-container {
+    overflow-y: scroll; !* Always shows scrollbar *!
+}*/
+/* Allow scrolling but hide the scrollbar: */
+
 main.page-list--pending .list-container,
 main.page-list--pending .level-container {
-    overflow-y: scroll; /* Always shows scrollbar */
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+main.page-list--pending .list-container::-webkit-scrollbar,
+main.page-list--pending .level-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
+main.page-list--pending .list-container {
+    padding-left: 3rem;
 }
 
 .page-list .list-container,
