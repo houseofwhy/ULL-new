@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "ARE",
+    "author": "Cinemat",
+    "creators": [],
+    "verifier": "Unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=S1PgaOoJwbE",
+    "lastUpd": "26.06.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 0,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Not a lot of information"]
+}
