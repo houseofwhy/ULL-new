@@ -4,6 +4,7 @@ import { fetchEditors, fetchList } from '../content.js';
 
 import Spinner from '../components/Spinner.js';
 import LevelAuthors from '../components/List/LevelAuthors.js';
+import ListEditors from "../components/ListEditors.js";
 
 const roleIconMap = {
     owner: 'crown',
@@ -14,7 +15,7 @@ const roleIconMap = {
 };
 
 export default {
-    components: { Spinner, LevelAuthors },
+    components: { Spinner, LevelAuthors, ListEditors },
     template: `
         <main v-if="loading" class="surface">
             <Spinner></Spinner>
@@ -74,16 +75,7 @@ export default {
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
-                    <template v-if="editors">
-                        <h3>List Editors</h3>
-                        <ol class="editors">
-                            <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${(!store.dark || store.shitty) ? '-dark' : ''}.svg\`" :alt="editor.role">
-                                <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
-                                <p v-else>{{ editor.name }}</p>
-                            </li>
-                        </ol>
-                    </template>
+                    <ListEditors :editors="editors" />
                 </div>
             </div>
         </main>
@@ -179,7 +171,7 @@ export default {
 
                 level.maxPercent = maxPercent;
                 level.maxRunDifference = maxRunDifference;
-                level.rankingScore = Math.max(maxPercent, maxRunDifference)**2 + Math.min(maxPercent, maxRunDifference)**1.8;
+                level.rankingScore = Math.max(maxPercent, maxRunDifference) ** 2 + Math.min(maxPercent, maxRunDifference) ** 1.8;
             });
 
             const filteredList = list.filter(([level, err]) => level && !level.isVerified && level.rankingScore > 0);

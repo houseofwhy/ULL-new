@@ -4,6 +4,7 @@ import Unlisted from './pages/Unlisted.js';
 import ListMain from './pages/ListMain.js';
 import ListFuture from './pages/ListFuture.js';
 import LevelGenerator from './pages/LevelGenerator.js';
+import ListPending from './pages/ListPending.js';
 
 export default [
     { path: '/', component: List },
@@ -11,5 +12,6 @@ export default [
     { path: '/unlisted', component: Unlisted },
     { path: '/listmain', component: ListMain },
     { path: '/listfuture', component: ListFuture },
-    { path: '/generator', component: LevelGenerator }
+    { path: '/generator', component: LevelGenerator },
+    { path: '/pending', component: ListPending }
 ];
