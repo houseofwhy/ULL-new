@@ -1,0 +1,39 @@
+{
+    "id": "private",
+    "name": "Thinking space II (legacy)",
+    "author": "Sebi",
+    "creators": [],
+    "verifier": "Cocy group",
+    "isVerified": true,
+    "verification": "",
+    "showcase": "https://youtu.be/7EXwNGmphGM?si=8taw8mtBYSfMkVHr",
+    "lastUpd": "25.09.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 66,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Long",
+        "Verifying",
+        "Remake"
+    ]
+}

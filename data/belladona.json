@@ -1,0 +1,39 @@
+{
+    "id": 94969889,
+    "name": "Belladona",
+    "author": "CherryTeam",
+    "creators": [],
+    "verifier": "exsii",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=saHSgoU1JQQ",
+    "showcase": "https://www.youtube.com/watch?v=lhS5t25yQ8A",
+    "lastUpd": "26.09.2023",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 106,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Long"
+    ]
+}
