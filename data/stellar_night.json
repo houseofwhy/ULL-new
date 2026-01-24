@@ -1,0 +1,39 @@
+{
+    "id": 83244159,
+    "name": "Stellar night",
+    "author": "icedcave",
+    "creators": [],
+    "verifier": "Tuggy",
+    "isVerified": true,
+    "verification": "https://youtu.be/XpBY-eMYZTE?si=kz_xKx0BW7HYBOh4",
+    "showcase": "https://youtu.be/cjX_vt2DOAs?si=hUUVnHJWL_DCBmKf",
+    "lastUpd": "29.08.2022",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 62,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Finished",
+        "Long",
+        "Unrated",
+        "Public"
+    ]
+}

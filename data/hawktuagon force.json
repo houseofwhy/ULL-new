@@ -1,0 +1,39 @@
+{
+    "id": "private",
+    "name": "Hawktuagon force",
+    "author": "Artos",
+    "creators": [],
+    "verifier": "Zoink",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=9mJLHrcOfCw",
+    "lastUpd": "30.11.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 87,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Verifying",
+        "Long",
+        "Remake"
+    ]
+}
