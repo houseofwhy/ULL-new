@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 70,
     "rating": 1,
     "percentFinished": 50,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "Remake", "NONG"]
 }

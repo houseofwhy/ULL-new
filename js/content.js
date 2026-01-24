@@ -72,6 +72,16 @@ export async function fetchUnlisted() {
     }
 }
 
+export async function fetchPending() {
+    try {
+        const pendingResults = await fetch(`${dir}/_pending.json`);
+        const pending = await pendingResults.json();
+        return pending;
+    } catch {
+        return null;
+    }
+}
+
 export async function fetchUnlistedPairs() {
     const unlisted = await fetchUnlisted();
     if (unlisted === null){

@@ -1,0 +1,37 @@
+{
+    "id": "114281093",
+    "name": "CHIL",
+    "author": "McCoco",
+    "creators": [],
+    "verifier": "McCoco",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=DROMiCc2ZRM",
+    "showcase": "https://www.youtube.com/watch?v=C3QNk_rBsaY",
+    "lastUpd": "26.12.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 65,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Verified", "Rated", "Finished"]
+}

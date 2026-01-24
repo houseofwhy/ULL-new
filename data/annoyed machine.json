@@ -24,14 +24,14 @@
             "link": "https://www.youtube.com/watch?v=aE91CGKBYCY",
             "percent": "67-84",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 87,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Long", "Finished", "Public", "Verifying"]
 }

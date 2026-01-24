@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Moving Up",
+        "placement": "up"
+    },
+    {
+        "name": "Moving Down",
+        "placement": "down"
+    },
+    {
+        "name": "Pending Top 1",
+        "placement": "1"
+    },
+    {
+        "name": "Pending Top 10",
+        "placement": "10"
+    },
+    {
+        "name": "Pending Top 20",
+        "placement": "20"
+    },
+    {
+        "name": "Pending Top 30",
+        "placement": "30"
+    },
+    {
+        "name": "Pending Top 50",
+        "placement": "50"
+    },
+    {
+        "name": "Pending Top 75",
+        "placement": "75"
+    },
+    {
+        "name": "Unknown Placement",
+        "placement": "?"
+    }
+]

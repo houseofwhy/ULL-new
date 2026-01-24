@@ -24,14 +24,14 @@
             "link": "https://youtu.be/sViexrumZ4Y?si=83JTDrEZ_lA19yQh",
             "percent": "82-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 70,
     "rating": 1,
     "percentFinished": 6,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Public","Long"]
 }

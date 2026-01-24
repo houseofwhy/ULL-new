@@ -51,7 +51,7 @@ so, you put square brackets and inside them all tags in quotes in lowercase with
 ALL TAGS (THEY ARE CASE SENSITIVE):
 Public - "Public" - the level is uploaded publicly on the gd servers
 Finished - "Finished" - the level is fully finished
-Being Verified - "Verifying" - the level has sugnificant verification prog (30%+ runs)
+Being Verified - "Verifying" - the level has significant verification prog (40%+ runs)
 Layout State - "Layout" - the level doesnt have any deco prog
 Unrated - "Unrated" - the level is verified but not rated
 Rated - "Rated" - ...

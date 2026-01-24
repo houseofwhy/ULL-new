@@ -1,0 +1,40 @@
+{
+    "id": 86084399,
+    "name": "LIMBO",
+    "author": "MindCap",
+    "creators": [],
+    "verifier": "BGram",
+    "isVerified": true,
+    "verification": "https://youtu.be/kXYMbaMVOZg?si=3tg5_DC476uSxPW0",
+    "showcase": "https://youtu.be/ryBbuH_SPbs?si=XXm2E6cGIDaUXYAz",
+    "lastUpd": "26.11.2022",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 209,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "XL",
+        "Quality"
+    ]
+}
