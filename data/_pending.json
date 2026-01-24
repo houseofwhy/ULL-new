@@ -8,6 +8,14 @@
         "placement": "down"
     },
     {
+        "name": "WRATH",
+        "placement": "down"
+    },
+    {
+        "name": "CYBERPSYCHOSIS",
+        "placement": "up"
+    },
+    {
         "name": "Soulless",
         "placement": "10"
     },
