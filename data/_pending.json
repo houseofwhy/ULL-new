@@ -1,5 +1,9 @@
 [
     {
+        "name": "CYBERPSYCHOSIS",
+        "placement": "up"
+    },
+    {
         "name": "Angelicide",
         "placement": "down"
     },
@@ -10,10 +14,6 @@
     {
         "name": "WRATH",
         "placement": "down"
-    },
-    {
-        "name": "CYBERPSYCHOSIS",
-        "placement": "up"
     },
     {
         "name": "Soulless",
