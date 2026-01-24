@@ -21,6 +21,14 @@
 .nav .nav__tab:hover {
     border-color: var(--color-on-primary);
 }
+
+header.new .nav .nav__tab.router-link-active {
+    border-color: var(--color-on-background);
+}
+header.new .nav .nav__tab:hover {
+    border-color: var(--color-on-background);
+}
+
 .nav .nav__actions {
     flex: 1;
     display: flex;
