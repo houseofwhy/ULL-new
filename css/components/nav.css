@@ -23,10 +23,10 @@
 }
 
 header.new .nav .nav__tab.router-link-active {
-    border-color: var(--color-on-background);
+    border-color: var(--color-background);
 }
 header.new .nav .nav__tab:hover {
-    border-color: var(--color-on-background);
+    border-color: var(--color-background);
 }
 
 .nav .nav__actions {
