@@ -1,0 +1,39 @@
+{
+    "id": 62556400,
+    "name": "Codependance (2p)",
+    "author": "TCTeam",
+    "creators": [],
+    "verifier": "Pukklez",
+    "isVerified": true,
+    "verification": "https://youtu.be/IKGk41hSnDo?si=qbPDHCMwLrpKtBT0",
+    "showcase": "https://www.youtube.com/watch?v=MBZaa1lCf1I",
+    "lastUpd": "05.06.2023",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 125,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Public",
+        "Rated",
+        "XL"
+    ]
+}
