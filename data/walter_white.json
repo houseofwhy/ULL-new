@@ -1,0 +1,39 @@
+{
+    "id": 81011195,
+    "name": "Walter White",
+    "author": "Renn241",
+    "creators": [],
+    "verifier": "iliLaserili",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=KzK62PkWOJ0",
+    "showcase": "https://www.youtube.com/watch?v=xg93mOaaG5I",
+    "lastUpd": "10.07.2022",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 124,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "XL"
+    ]
+}

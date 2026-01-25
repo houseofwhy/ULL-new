@@ -1,0 +1,39 @@
+{
+    "id": 82544060,
+    "name": "Mayhem",
+    "author": "CherryTeam",
+    "creators": [],
+    "verifier": "LordVadercraft",
+    "isVerified": true,
+    "verification": "https://youtu.be/U6e6DD32noM?si=od1S-o_PXI2RO97q",
+    "showcase": "https://www.youtube.com/watch?v=pKJUmSJR22Y",
+    "lastUpd": "08.08.2022",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 88,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Long"
+    ]
+}
