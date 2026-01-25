@@ -1,0 +1,40 @@
+{
+    "id": 10007988,
+    "name": "Infinite Chaos",
+    "author": "CairoX",
+    "creators": [],
+    "verifier": "Victurkey",
+    "isVerified": true,
+    "verification": "https://youtu.be/wOMVERxU5IA?si=9cr7j1hhVQ1pammF",
+    "showcase": "https://youtu.be/z_H_eCKYp_0?si=YsdhhdcaMxgSdid7",
+    "lastUpd": "03.12.2025",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 193,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "XL",
+        "Remake"
+    ]
+}
