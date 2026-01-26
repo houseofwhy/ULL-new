@@ -1,12 +1,12 @@
 {
     "id": "private",
     "name": "Absolute End",
-    "author": "Maxdash07",
+    "author": "MAXDASH",
     "creators": [],
-    "verifier": "Maxdash07",
+    "verifier": "MAXDASH",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=kILJ9gBpKj4",
+    "showcase": "https://youtu.be/kILJ9gBpKj4?si=zQ30fHj31t6FAwOi",
     "lastUpd": "18.12.2025",
 
     "percentToQualify": 1,
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 82,

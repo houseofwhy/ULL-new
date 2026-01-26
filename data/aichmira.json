@@ -1,6 +1,6 @@
 {
     "id": "private",
-    "name": "Aichmira",
+    "name": "AICHMIRA",
     "author": "Team OMEGA",
     "creators": [],
     "verifier": "unknown",
@@ -20,11 +20,11 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
-        }        
+            "user": "QwidziT",
+            "link": "https://youtu.be/4sr3efq5Pr8?si=ZyYvZBPQ3QZHVj0o&t=83",
+            "percent": "66-85",
+            "hz": 165
+        }
     ],
 
     "length": 106,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long"]
+    "tags": ["Long", "NC", "Quality"]
 }

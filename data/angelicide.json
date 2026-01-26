@@ -7,31 +7,31 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Q-0k5m4UEfk",
-    "percentToQualify": 11,
+    "percentToQualify": 31,
     "records": [
         {
-            "user": "Kaza",
-            "link": "https://youtu.be/62D9C6F-80w?si=aX8QV4kD2LAhV7Vy",
-            "percent": 10,
-            "hz": 360
+            "user": "Xtra8nuggies",
+            "link": "https://youtu.be/f2OU5eGfSZM?si=6RKeqljwOqADaoHf",
+            "percent": 30,
+            "hz": 240
         }
     ],
     "length": 93,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "10.09.2025",
+    "lastUpd": "26.01.2026",
 
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Public", "Finished", "Long"],
+    "tags": ["Public", "Finished", "Long", "Verifying"],
 
     "run": [
         {
-            "user": "Kaza",
-            "link": "https://fxtwitter.com/kaza_gd/status/1965758590481997944?s=46",
-            "percent": "79-100",
-            "hz": 360
-        }        
+            "user": "Xtra8nuggies",
+            "link": "https://youtu.be/PVJyUcjq6VI?si=-49a7W_s5bWyxg9n",
+            "percent": "37-73",
+            "hz": 240
+        }
     ]
 }

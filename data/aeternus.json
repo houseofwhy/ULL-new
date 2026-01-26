@@ -7,12 +7,12 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=WIjuyPd3kck",
-    "percentToQualify": 16,
+    "percentToQualify": 17,
     "records": [
         {
-            "user": "Chill Guy",
-            "link": "https://youtu.be/oWaLfIH1hwk?si=cQ8yttpPbrLVNr8O",
-            "percent": 15,
+            "user": "dewbbs",
+            "link": "https://www.youtube.com/watch?v=2mLfnalCSZ0",
+            "percent": 16,
             "hz": 240
         }
     ],
@@ -25,11 +25,11 @@
     "run": [
         {
             "user": "Chill Guy",
-            "link": "https://youtu.be/AL5CvuYJn0o?si=Ofw-2niJ3pGKXhVr",
-            "percent": "84-100",
+            "link": "https://youtu.be/NAUFsUGdCJw?si=_MKelQC90pWmiHQ5",
+            "percent": "77-100",
             "hz": 240
-        }        
+        }
     ],
     "tags": ["Public", "Finished", "Long", "Remake", "NONG"],
-    "lastUpd": "19.06.2025"
+    "lastUpd": "23.01.2026"
 }

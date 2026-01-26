@@ -7,24 +7,24 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/oZfKkZ36L9Q",
-    "lastUpd": "14.02.2025",
+    "lastUpd": "25.11.2025",
 
-    "percentToQualify": 1,
+    "percentToQualify": 71,
     "records": [
         {
             "user": "Axinity",
-            "link": "https://youtu.be/yVJvDeNMm6E?si=frAv-LTwmugb7yib",
-            "percent": 39,
+            "link": "https://youtu.be/CNM2m9YF82c?si=U1MeDgW8vtsP3nfV",
+            "percent": 70,
             "hz": 240
         }
     ],
     "run": [
         {
             "user": "Axinity",
-            "link": "https://youtu.be/oZfKkZ36L9Q?si=4ML1kf0TpdjxuNay",
-            "percent": "49-100",
+            "link": "https://youtu.be/DoCLqk1Q2Ac?si=4KkZZbkrfZEwYWOW",
+            "percent": "39-100",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 58,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium", "Finished", "Verifying"]
+    "tags": ["Medium", "Finished", "Verifying", "NC"]
 }

@@ -1,9 +1,9 @@
 {
-    "id": "104757556",
+    "id": "private",
     "name": "A LIKE SUPREME",
-    "author": "Starchman8758",
+    "author": "Starchman",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=2R8QdoeAsag",
@@ -22,13 +22,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 86,
     "rating": 1,
     "percentFinished": 0,
+    "lastUpd": "13.11.2025",
 
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
     "tags": ["Long"]

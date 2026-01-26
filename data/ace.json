@@ -9,29 +9,29 @@
     "showcase": "https://youtu.be/Y-amw14icK0",
     "lastUpd": "25.10.2025",
 
-    "percentToQualify": 1,
+    "percentToQualify": 93,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Aidsen",
+            "link": "https://youtu.be/k2-0_CCz7ik?si=9RTJ2R_ezx7v2vW8",
+            "percent": 92,
+            "hz": 240
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
+            "user": "Aidsen",
+            "link": "https://youtu.be/k2-0_CCz7ik?si=9RTJ2R_ezx7v2vW8",
+            "percent": "30-100",
+            "hz": 240
         }
     ],
 
     "length": 70,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": false,
-    "isFuture": false,
+    "isMain": true,
+    "isFuture": true,
 
     "tags": ["Long", "Finished", "Verifying"]
 }
