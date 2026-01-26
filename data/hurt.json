@@ -1,0 +1,39 @@
+{
+    "id": 116548933,
+    "name": "H U R T",
+    "author": "kaapycatz",
+    "creators": [],
+    "verifier": "Serpentical",
+    "isVerified": true,
+    "verification": "https://youtu.be/F6fe7LugwdY?si=ODaqX6S8Q_xaYMoo",
+    "showcase": "https://youtu.be/YZ_ad0HV3ok?si=hCUvmvQRexe5ew69",
+    "lastUpd": "26.05.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 66,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Unrated",
+        "Long"
+    ]
+}
