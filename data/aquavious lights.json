@@ -3,11 +3,11 @@
     "name": "Aquavious Lights",
     "author": "fusion425",
     "creators": [],
-    "verifier": "unknown, likely fusion425",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/fXDbenmvGck",
-    "lastUpd": "06.12.2024",
+    "lastUpd": "26.09.2024",
 
     "percentToQualify": 1,
     "records": [
@@ -30,8 +30,8 @@
     "length": 48,
     "rating": 1,
     "percentFinished": 40,
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
-    "tags": ["Medium", "NC", "inaccurate info"]
+    "tags": ["Medium", "NC"]
 }

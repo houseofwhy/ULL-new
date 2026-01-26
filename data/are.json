@@ -3,11 +3,11 @@
     "name": "ARE",
     "author": "Cinemat",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=S1PgaOoJwbE",
-    "lastUpd": "26.06.2025",
+    "showcase": "https://www.youtube.com/watch?v=qnKzHnXnQzg",
+    "lastUpd": "24.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 0,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 55,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Not a lot of information"]
+    "tags": ["Long", "Quality", "NONG"]
 }

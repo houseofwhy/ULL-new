@@ -3,11 +3,11 @@
     "name": "APOLLYON",
     "author": "RicoLP",
     "creators": [],
-    "verifier": "RicoLP?",
+    "verifier": "RicoLP",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=zSh6NIRN1ps",
-    "lastUpd": "31.10.2025",
+    "showcase": "https://www.youtube.com/watch?v=POcwUZOTckU",
+    "lastUpd": "27.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 768,
     "rating": 1,
-    "percentFinished": 3,
+    "percentFinished": 20,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["XXL", "Layout"]
+    "tags": ["XXL"]
 }
