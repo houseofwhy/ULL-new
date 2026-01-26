@@ -1,0 +1,55 @@
+{
+    "id": "private",
+    "name": "Theta",
+    "author": "YouKnowWhoGD",
+    "creators": [
+        "Wohazas",
+        "YouKnowWhoGD",
+        "Rinjello",
+        "Celestia",
+        "Triforce",
+        "Anglified",
+        "zyronix",
+        "aerstarr343",
+        "Blinddattler",
+        "LordVaderCraft",
+        "xenith",
+        "DoSh7t",
+        "DMQ",
+        "DolaBill",
+        "BiboxGD",
+        "Diamond",
+        "finleyy"
+    ],
+    "verifier": "ItzMiraGD",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?app=desktop&v=BLzQ6QhjHGM",
+    "lastUpd": "5.2.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 182,
+    "rating": 1,
+    "percentFinished": 5,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XL",
+        "Layout"
+    ]
+}
