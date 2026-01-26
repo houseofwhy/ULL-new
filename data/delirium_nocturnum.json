@@ -1,0 +1,40 @@
+{
+    "id": "private",
+    "name": " DELIRIUM NOCTURNUM",
+    "author": "Yakuza",
+    "creators": [
+        "Yakuza",
+        "Drewch",
+        "and more"
+    ],
+    "verifier": "Unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=Qszq2ziOuig",
+    "lastUpd": "10.2.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 68,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long"
+    ]
+}
