@@ -1,0 +1,40 @@
+{
+    "id": 71025973,
+    "name": "Oblivion",
+    "author": "benji8080",
+    "creators": [],
+    "verifier": "Dice88",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=ZcmDAm50BB0&source_ve_path=MTc4NDI0",
+    "showcase": "https://youtu.be/B-NVomgtcOg?si=wIvaU99TRWY_HrIo",
+    "lastUpd": "06.07.2021",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 75,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Long",
+        "Remake"
+    ]
+}
