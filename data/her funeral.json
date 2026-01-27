@@ -3,11 +3,11 @@
     "name": "Her Funeral",
     "author": "injur3dGX",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Delu",
     "isVerified": false,
     "verification": "",
     "showcase": "https://m.youtube.com/watch?v=CTK03Uz-4j0&pp=ygUOaGVyIGZ1bmVyYWwgZ2Q=",
-    "lastUpd": "29.07.2025",
+    "lastUpd": "29.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -20,18 +20,18 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "QwidziT",
+            "link": "https://www.youtube.com/watch?v=FK4TERiWztg",
+            "percent": "18-30",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 67,
     "rating": 1,
     "percentFinished": 0,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Layout", "Long", "NONG"]
 }

@@ -3,7 +3,7 @@
     "name": "Kintetsu",
     "author": "Dundermuffin",
     "creators": [],
-    "verifier": "jupibun",
+    "verifier": "jupi",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=f-keY28Ad3I",
@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "jupi",
+            "link": https://x.com/jupibun_/status/1928874313999913451,
+            "percent": 89,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 67,

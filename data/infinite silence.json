@@ -3,18 +3,18 @@
     "name": "Infinite Silence",
     "author": "2A0L0I3",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/-frQRpDUy44?si=_-fGc8eI7xfA3hyq",
     "lastUpd": "01.09.2025",
 
-    "percentToQualify": 1,
+    "percentToQualify": 14,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "makia",
+            "link": "https://www.youtube.com/watch?v=VfucVK5L3G0",
+            "percent": 13,
             "hz": 0
         }
     ],
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 97,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Public", "Finished", "Long"]
 }

@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/tevl27ehNT0",
-    "lastUpd": "22.01.2025",
+    "lastUpd": "29.01.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 229,
     "rating": 1,
     "percentFinished": 0,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XL", "Layout"]
 }

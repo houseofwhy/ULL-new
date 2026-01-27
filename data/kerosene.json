@@ -3,7 +3,7 @@
     "name": "KEROSENE",
     "author": "Aimbot1933",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=VT6K8mfm1E0",
@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Waltty",
+            "link": "https://www.youtube.com/watch?v=bLrhB7T0H4Q",
+            "percent": 23,
             "hz": 0
         }
     ],
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 44,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Finished", "Medium", "Public"]
 }

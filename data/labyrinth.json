@@ -7,24 +7,24 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/hcZWawS26hU",
-    "lastUpd": "10.08.2025",
+    "lastUpd": "12.12.2025",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "GGonop",
-            "link": "https://www.youtube.com/watch?v=5yaDI3qfg9Q",
-            "percent": 21,
+            "link": "https://www.youtube.com/watch?v=VHJ5PPCi8hY",
+            "percent": 46,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "GGonop",
-            "link": "https://www.youtube.com/watch?v=5yaDI3qfg9Q",
-            "percent": "61-92",
+            "link": "https://www.youtube.com/watch?v=VHJ5PPCi8hY",
+            "percent": "44-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 81,

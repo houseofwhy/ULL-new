@@ -19,17 +19,17 @@
     "length": 50,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "25.07.2025", 
+    "lastUpd": "25.07.2025",
 
     "isMain": true,
     "isFuture": false,
     "tags": ["Finished", "Public", "Medium", "NONG"],
     "run": [
         {
-            "user": "Meper",
-            "link": "https://youtu.be/sQgOuexu1tc?si=fPFx2uYekrSEV675",
-            "percent": "81-100",
+            "user": "ConStar",
+            "link": "https://youtu.be/byACMs76CdQ?si=eYSybd2YQ8RHvHcq",
+            "percent": "75-100",
             "hz": 240
-        }        
+        }
     ]
-} 
+}

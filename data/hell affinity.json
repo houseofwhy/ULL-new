@@ -12,19 +12,19 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "NordstromUSA",
+            "link": "https://www.youtube.com/watch?v=uUxjGNMZuU8",
+            "percent": 53,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "NordstromUSA",
+            "link": "https://www.youtube.com/watch?v=A_5a5TLIqMg",
+            "percent": "47-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 60,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished"]
+    "tags": ["Long", "Finished", "Verifying"]
 }

@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=xX_WQgj8NQg",
-    "lastUpd": "28.12.2024",
+    "lastUpd": "18.02.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
-    "length": 0,
+    "length": 53,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["Deco and layout made at the same time"]
+    "tags": ["Medium"]
 }

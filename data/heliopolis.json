@@ -3,23 +3,23 @@
     "name": "Heliopolis",
     "author": "MindCap",
     "creators": [],
-    "verifier": "Garbag",
+    "verifier": "verification race",
     "isVerified": false,
     "verification": "",
     "showcase": "https://m.youtube.com/watch?v=7yaKGl_2Dsw&pp=ygUNaGVsaW9wb2xpcyBnZA%3D%3D",
     "percentToQualify": 20,
     "records": [
         {
-            "user": "garbag",
-            "link": "https://youtu.be/qp1CaQdZHAo?si=Ofj0S89KCqcNUeDj",
-            "percent": 24,
+            "user": "Abdiedevil",
+            "link": "https://youtu.be/yCPIBzBpRMs?si=o0yLabVsdM9djYEx",
+            "percent": 32,
             "hz": 240
         }
     ],
     "length": 131,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "06.09.2025",
+    "lastUpd": "20.12.2025",
 
     "isMain": true,
     "isFuture": true,
@@ -27,11 +27,11 @@
     "run": [
         {
             "user": "Abdiedevil",
-            "link": "https://youtu.be/cOvrkgWrGHU?si=7boYKGKuqjuoxKZ7",
-            "percent": "48-100",
+            "link": "https://youtu.be/iFKVLUSAQC8?si=BtrhTP8ybA7bb0Xt",
+            "percent": "38-92",
             "hz": 670
-        }        
+        }
     ],
 
-    "tags": ["Finished", "Verifying", "Long", "NONG", "Quality"]
+    "tags": ["Finished", "Verifying", "XL", "NONG", "Quality"]
 }

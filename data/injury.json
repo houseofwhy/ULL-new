@@ -3,7 +3,7 @@
     "name": "I N J U R Y",
     "author": "NineDice",
     "creators": [],
-    "verifier": "KYWY/unknown",
+    "verifier": "KYWY",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/bqZL6QKsDZI",
@@ -12,19 +12,19 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "KYWY",
+            "link": "https://www.youtube.com/watch?v=653-Er6VWcw",
+            "percent": 74,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "KYWY",
+            "link": "https://www.youtube.com/watch?v=tXzRtJGmP9M",
+            "percent": "18-81",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 39,
