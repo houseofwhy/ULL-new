@@ -1,7 +1,7 @@
 {
     "id": 130139071,
     "name": "Divine path",
-    "author": "branza",
+    "author": "Branza",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
@@ -29,9 +29,8 @@
     "rating": 1,
     "percentFinished": 0,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
-        "Layout",
         "XXL",
         "Public"
     ]

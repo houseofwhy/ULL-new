@@ -1,12 +1,12 @@
 {
-    "id": "private",
+    "id": 122587739,
     "name": "DIDYOUMESSUP",
     "author": "Noxiom",
     "creators": [],
     "verifier": "zilucy",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=AXzROtRyyQo",
+    "showcase": "https://youtu.be/6Bmivby0xv4?si=j0YPaUg99eAEMduL",
     "lastUpd": "28.10.2024",
 
     "percentToQualify": 1,
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 68,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
-    "tags": ["Long", "Finished", "Verifying"]
+    "tags": ["Long", "Finished"]
 }

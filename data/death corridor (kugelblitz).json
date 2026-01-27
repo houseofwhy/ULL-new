@@ -7,31 +7,31 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=55zVuNJL54I",
-    "lastUpd": "i have no clue man",
+    "lastUpd": "16.09.2025",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "KugelBlitZ",
+            "link": "https://www.youtube.com/watch?v=NBILJ3uAnaA",
+            "percent": 64,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "KugelBlitZ",
+            "link": "https://www.youtube.com/watch?v=-p4MnmPQsoo",
+            "percent": "16-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 129,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XL", "Remake", "Verifying"]
 }

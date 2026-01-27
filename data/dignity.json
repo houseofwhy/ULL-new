@@ -1,13 +1,13 @@
 {
     "id": "private",
     "name": "Dignity",
-    "author": "San Andreas gta v",
+    "author": "San Andreas",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Sevant",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=bROJMTAGRkQ",
-    "lastUpd": "15.08.2025",
+    "showcase": "https://www.youtube.com/watch?v=-bBdqPdv-5k",
+    "lastUpd": "15.01.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -20,18 +20,18 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Sevant",
+            "link": "https://www.youtube.com/live/kDa_zXe6V2A?si=xryk4zw_PHAWDBV0",
+            "percent": "37-65",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 66,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "Finished"]
 }

@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Down Bass Incarnate",
+    "name": "Down Bass Incarnation",
     "author": "Wespdx",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=eKrymdjxeC4",
-    "lastUpd": "12.08.2024 (not accurate)",
+    "showcase": "https://youtu.be/IzxAlxAVvXk?si=9991V6D_sfTxcdko",
+    "lastUpd": "01.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 145,
     "rating": 1,
     "percentFinished": 80,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["XL", "double check info"]
+    "tags": ["XL", "Remake"]
 }
