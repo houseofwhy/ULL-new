@@ -3,28 +3,28 @@
     "name": "Bang Bang",
     "author": "Varse",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=4JJ01RZhxkU",
-    "lastUpd": "25.11.2025",
+    "lastUpd": "20.12.2025",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Jori",
+            "link": "https://www.youtube.com/watch?v=F6RFaGHddRA",
+            "percent": 64,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Jori",
+            "link": "https://www.youtube.com/watch?v=F6RFaGHddRA",
+            "percent": "55-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 67,

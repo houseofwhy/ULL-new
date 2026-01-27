@@ -21,7 +21,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=ILRs6ayWeqQ",
-    "lastUpd": "22.4.2025",
+    "lastUpd": "22.04.2025",
     "percentToQualify": 1,
     "records": [
         {
@@ -43,7 +43,7 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": false,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "Finished",
         "Long",

@@ -1,13 +1,13 @@
 {
     "id": "private",
     "name": "Asteroid",
-    "author": "NetherPortal2 and Unnamed",
+    "author": "NetherPortal2",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=5w29YqoSWdE",
-    "lastUpd": "05.05.2025",
+    "lastUpd": "04.05.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 110,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 15,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long", "Layout"]
+    "tags": ["Long"]
 }

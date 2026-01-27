@@ -9,12 +9,12 @@
     "showcase": "https://www.youtube.com/watch?v=r44ig4sxMww",
     "lastUpd": "23.08.2025",
 
-    "percentToQualify": 60,
+    "percentToQualify": 63,
     "records": [
         {
             "user": "Dan2D",
-            "link": "https://www.youtube.com/watch?v=H_1_J9POBPY",
-            "percent": 60,
+            "link": "https://youtu.be/qhWEGFx98go?si=jLt9wJCW58x8K0Fp",
+            "percent": 62,
             "hz": 240
         }
     ],
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 79,

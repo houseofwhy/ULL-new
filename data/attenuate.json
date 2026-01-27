@@ -3,18 +3,18 @@
     "name": "Attenuate",
     "author": "HarriHarava",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/o9oncdboILg?si=Pf8kThnGJ6xRflZa",
     "lastUpd": "05.08.2025",
 
-    "percentToQualify": 1,
+    "percentToQualify": 10,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "d1kkgd",
+            "link": "https://www.youtube.com/watch?v=-OwwdgRJxfw",
+            "percent": 9,
             "hz": 0
         }
     ],

@@ -3,18 +3,18 @@
     "name": "Cyberpsychosis",
     "author": "Sobeann",
     "creators": [],
-    "verifier": "Sobeann",
+    "verifier": "Guille N.S",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=prdJRdhkdwA",
-    "lastUpd": "17.01.2025",
+    "showcase": "https://www.youtube.com/watch?v=yJUFmtYwHYg",
+    "lastUpd": "24.01.2026",
 
-    "percentToQualify": 1,
+    "percentToQualify": 53,
     "records": [
         {
             "user": "Guille N.S",
-            "link": "https://youtu.be/H8f2oC2yElA?si=HEO-mpvP06QJ0e-S",
-            "percent": 70,
+            "link": "https://www.youtube.com/watch?v=M1X24uXAAGY",
+            "percent": 52,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "https://www.youtube.com/watch?v=-PzQgzjzWNA",
             "percent": "34-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 91,

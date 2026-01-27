@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=QIM3bWqSmx0",
-    "lastUpd": "28.10.2025",
+    "lastUpd": "03e.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 141,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 15,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["XL", "Layout"]
+    "tags": ["XL"]
 }

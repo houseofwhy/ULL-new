@@ -1,6 +1,6 @@
 {
     "id": "private",
-    "name": "azathoth",
+    "name": "Azathoth",
     "author": "TheBigCheese_69",
     "creators": [],
     "verifier": "TenshoSDK",
@@ -29,9 +29,9 @@
 
     "length": 122,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 25,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["XL", "Layout"]
+    "tags": ["XL"]
 }

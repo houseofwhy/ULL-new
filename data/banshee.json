@@ -7,24 +7,24 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=h14lmGH31_M",
-    "lastUpd": "10.08.2025",
+    "lastUpd": "10.11.2025",
 
-    "percentToQualify": 1,
+    "percentToQualify": 78,
     "records": [
         {
             "user": "spcreat",
-            "link": "https://m.youtube.com/watch?v=AkAcvx32BII&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=112&pp=iAQB",
-            "percent": 86,
+            "link": "https://www.youtube.com/live/i5Xd9I4Zx1w?si=ykdSClb0hc27wNnP&t=6032",
+            "percent": 77,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "spcreat",
-            "link": "https://www.youtube.com/watch?v=hGRJKeBB14k",
+            "link": "https://www.youtube.com/live/hGRJKeBB14k?si=dsA5CS-Cs5t95hJT&t=1150",
             "percent": "21-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 91,

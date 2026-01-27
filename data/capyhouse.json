@@ -3,7 +3,7 @@
     "name": "Capyhouse",
     "author": "niroi",
     "creators": [],
-    "verifier": "hyperlith",
+    "verifier": "Hyperlith",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=sLtohKkKCOQ",
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 137,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
-    "tags": ["XL", "Remake", "absolute peam"]
+    "tags": ["XL", "Remake"]
 }

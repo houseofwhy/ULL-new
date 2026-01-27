@@ -7,14 +7,14 @@
     "isVerified": false,
     "verification": "03.11.2025",
     "showcase": "https://www.youtube.com/watch?v=5C4xbt-yIeQ",
-    "lastUpd": "03.11.2025",
+    "lastUpd": "25.11.2025",
 
-    "percentToQualify": 1,
+    "percentToQualify": 50,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "VERTOP",
+            "link": "https://www.youtube.com/watch?v=PeT5GAsu-rM",
+            "percent": 49,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "44-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 68,

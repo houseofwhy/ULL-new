@@ -44,11 +44,19 @@
         "placement": "30"
     },
     {
+        "name": "CRITICAL HEAT",
+        "placement": "30"
+    },
+    {
         "name": "Crimson Lady",
         "placement": "50"
     },
     {
         "name": "Shattered Kingdom",
+        "placement": "50"
+    },
+    {
+        "name": "QUAVER",
         "placement": "50"
     },
     {
