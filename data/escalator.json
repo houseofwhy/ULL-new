@@ -1,13 +1,13 @@
 {
     "id": "private",
     "name": "Escalator",
-    "author": "neomarbilan",
+    "author": "Neomarbilan",
     "creators": [],
     "verifier": "teraaa",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://m.youtube.com/watch?v=HzNplCtsVxU",
-    "lastUpd": "26.07.2024",
+    "showcase": "https://youtu.be/wyGXMC2I-j8?si=isvMI7aTVKHkXYKQ",
+    "lastUpd": "19.01.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "https://youtu.be/pqQGfeerxFk?si=29U9eu7RbhD70MKF",
             "percent": "61-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 109,
     "rating": 1,
-    "percentFinished": 90,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NONG"]
+    "tags": ["Long", "NONG", "Finished", "Verifying"]
 }

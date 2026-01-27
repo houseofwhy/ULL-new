@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/yqPr8mKRb0s",
-    "lastUpd": "30.09.2023",
+    "lastUpd": "27.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 222,
     "rating": 1,
-    "percentFinished": 35,
+    "percentFinished": 30,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XXL","Quality"]
 }

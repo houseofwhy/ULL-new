@@ -7,14 +7,14 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=CVXC2_bveBQ",
-    "lastUpd": "19.08.2025",
+    "lastUpd": "27.01.2026",
 
     "percentToQualify": 55,
     "records": [
         {
             "user": "Laniakea",
-            "link": "https://www.youtube.com/watch?v=kP4p23TmZsA",
-            "percent": 55,
+            "link": "https://www.youtube.com/watch?v=p4_MSX_8BC4",
+            "percent": 64,
             "hz": 240
         }
     ],
@@ -24,7 +24,7 @@
             "link": "https://www.youtube.com/watch?v=kP4p23TmZsA",
             "percent": "53-100",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 135,

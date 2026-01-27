@@ -3,11 +3,11 @@
     "name": "Elysium Mons",
     "author": "ItsHybrid",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "spcreat",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=1ZjV20Gx9ss",
-    "lastUpd": "24.10.2024",
+    "lastUpd": "27.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 185,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 35,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["XL"]
+    "tags": ["XL", "Remake"]
 }

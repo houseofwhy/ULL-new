@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/03EwCewqZWo?si=mKmFujUZ8Sn_tDEA",
-    "percentToQualify": 1,
+    "percentToQualify": 32,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Trolly1",
+            "link": "https://www.youtube.com/watch?v=f9ewrnsAAvs",
+            "percent": 31,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Thnnder",
+            "link": "https://www.youtube.com/watch?v=ZDfj5fYkCS0",
+            "percent": "63-100",
             "hz": 0
-        }        
+        }
     ],
     "length": 93,
     "rating": 1,
@@ -30,6 +30,6 @@
 
     "isMain": true,
     "isFuture": false,
-    "lastUpd": "24.08.2025",
+    "lastUpd": "17.11.2025",
     "tags": ["Long"]
 }

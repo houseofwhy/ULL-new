@@ -7,24 +7,24 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=AcHPzjdFS4A",
-    "lastUpd": "02.07.2025",
+    "lastUpd": "10.12.2025",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Hqmy",
+            "link": "https://www.youtube.com/live/iPvhbKyFIcw?si=V7_wcQN5Owyy4Evd",
+            "percent": 30,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "Hqmy",
-            "link": "https://fxtwitter.com/HamiltonHqmy/status/1970377525965791399",
-            "percent": "33-81",
+            "link": "https://youtu.be/Ju_UfXyBDSA?si=iSNVOb7THCFps0eU",
+            "percent": "33-96",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 175,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Finished", "Verifying", "Quality"]
+    "tags": ["XL", "Finished", "Verifying"]
 }

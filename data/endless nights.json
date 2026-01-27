@@ -3,10 +3,10 @@
     "name": "ENDLESS NIGHTS",
     "author": "CairoX",
     "creators": [],
-    "verifier": "Trick (as if)",
+    "verifier": "Trick",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=-lx49RrEzZ0",
+    "showcase": "https://youtu.be/hqAzF_1_nOI?si=_mxrlNk-1r5T17ao",
     "lastUpd": "07.11.2025",
 
     "percentToQualify": 1,
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 92,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 30,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "Remake"]
 }

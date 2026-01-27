@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "EGO DEATH",
-    "author": "mawmz",
+    "author": "mawnz",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 5,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long"]
 }

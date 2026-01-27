@@ -1,19 +1,19 @@
 {
     "id": "private",
     "name": "EXASPERATION",
-    "author": "Akunakun",
+    "author": "Thycket",
     "creators": [],
     "verifier": "Zoink",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=6AxgWd-JXvA&t=65s",
-    "lastUpd": "04.11.2025", 
+    "lastUpd": "04.11.2025",
     "percentToQualify": 49,
     "records": [
         {
             "user": "Zoink",
-            "link": "https://youtu.be/j-_1d13vhBQ?si=ABpRELfcLjsLhAKR",
-            "percent": 48,
+            "link": "https://youtu.be/v9rpMj2iJb4?si=TnjuooSQPoGNVZPF",
+            "percent": 67,
             "hz": 480
         }
     ],
@@ -31,6 +31,6 @@
             "link": "https://youtu.be/kQ-j2Uq3ec8?si=znpL3TVP3_FVb-oy",
             "percent": "67-100",
             "hz": 480
-        }        
+        }
     ]
 }
