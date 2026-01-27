@@ -7,19 +7,19 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/Ts5ZDH6ueX4?si=pkxyMgBY21BBkqDb",
-    "percentToQualify": 12,
+    "percentToQualify": 13,
     "records": [
         {
-            "user": "Surrounded",
-            "link": "https://youtu.be/_FMtLUGt9Y0?si=nuhyTHsP37BbMqMs",
-            "percent": 11,
+            "user": "Hypa",
+            "link": "https://www.youtube.com/watch?v=-em2rLb4EWg",
+            "percent": 12,
             "hz": 240
         }
     ],
     "length": 230,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "25.04.2025",
+    "lastUpd": "26.04.2025",
 
     "isMain": true,
     "isFuture": false,
@@ -28,10 +28,10 @@
 
     "run": [
         {
-            "user": "Surrounded",
-            "link": "https://youtu.be/_FMtLUGt9Y0?si=nuhyTHsP37BbMqMs",
-            "percent": "84-100",
+            "user": "enzollz",
+            "link": "https://www.youtube.com/watch?v=svciy2WmvEs",
+            "percent": "78-100",
             "hz": 240
-        }        
+        }
     ]
 }

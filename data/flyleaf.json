@@ -21,17 +21,17 @@
     "run": [
         {
             "user": "lolwut",
-            "link": "https://m.youtube.com/watch?v=p2Xk5O-n_FM",
-            "percent": "71-100",
+            "link": "https://www.youtube.com/watch?v=0jx0ELkMYxQ",
+            "percent": "18-73",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 71,
     "rating": 1,
-    "percentFinished": 29,
+    "percentFinished": 25,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "Verifying"]
 }

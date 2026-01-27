@@ -1,9 +1,9 @@
 {
     "id": "private",
-    "name": "FlashBang",
+    "name": "Flashbang",
     "author": "LordVaderCraft",
     "creators": [],
-    "verifier": "Noctal",
+    "verifier": "LordVaderCraft",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=2j9nLPyE2Tw",
@@ -24,7 +24,7 @@
             "link": "https://www.youtube.com/watch?v=VQzQ7F-BcJc",
             "percent": "45-100",
             "hz": 240
-        }        
+        }
     ],
 
     "length":170,

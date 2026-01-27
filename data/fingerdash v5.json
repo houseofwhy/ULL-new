@@ -1,15 +1,15 @@
 {
     "id": "private",
     "name": "Fingerdash V5",
-    "author": "|friedrice|",
+    "author": "Frice",
     "creators": [],
-    "verifier": "friedrice",
+    "verifier": "Frice",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=u5ihqai4f0Q",
+    "showcase": "https://www.youtube.com/watch?v=IXFS5Hut3sM",
     "lastUpd": "24.02.2025",
 
-    "percentToQualify": 44,
+    "percentToQualify": 45,
     "records": [
         {
             "user": "|friedrice|",
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 0,
     "rating": 1,
     "percentFinished": 30,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["Needs more information", "Remake"]
+    "tags": ["Long", "Remake"]
 }

@@ -3,7 +3,7 @@
     "name": "fury",
     "author": "cheapy",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Xplode",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=WfGxyLX9CXA",
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 106,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 20,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["Long", "Layout"]
+    "tags": ["Long"]
 }

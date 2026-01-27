@@ -3,7 +3,7 @@
     "name": "Furioso",
     "author": "剣部立地入学許可証 [s ice]",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Denni",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?app=desktop&v=7aaJwfThXZU",
@@ -29,9 +29,9 @@
 
     "length": 85,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "Finished", "NONG"]
 }

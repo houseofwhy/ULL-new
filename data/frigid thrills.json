@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "zXdasfsa2",
+            "user": "none",
             "link": "",
-            "percent": "0",
+            "percent": "",
             "hz": 0
         }
     ],
@@ -24,14 +24,14 @@
             "link": "https://www.youtube.com/watch?v=gbHYgSXCAB4",
             "percent": "38-86",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 132,
     "rating": 1,
     "percentFinished": 50,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["XL", "Quality", "Verifying"]
+    "tags": ["XL", "Verifying"]
 }
