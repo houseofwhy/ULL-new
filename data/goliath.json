@@ -12,26 +12,26 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Aurorae",
+            "link": "https://youtu.be/rEpPHg5ikwM?si=c9Eeb9ezRSCWsEQr",
+            "percent": 27,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Aurorae",
+            "link": "https://www.youtube.com/watch?v=2i6WE32HQU8",
+            "percent": "51-85",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 128,
     "rating": 1,
     "percentFinished": 0,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["XL", "Layout"]
+    "tags": ["XL", "Layout", "Verifying"]
 }

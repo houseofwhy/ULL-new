@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "GAMEEND",
-    "author": "Team crypta",
+    "author": "Team Crypta",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 65,

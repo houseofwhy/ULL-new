@@ -1,6 +1,6 @@
 {
     "id": "115419775",
-    "name": "Glacial pulsar",
+    "name": "Glacial Pulsar",
     "author": "Wahrheit",
     "creators": [],
     "verifier": "unknown",
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 47,
     "rating": 1,
     "percentFinished": 50,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Medium","Public","NC"]
 }

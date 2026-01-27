@@ -11,15 +11,15 @@
     "records": [
         {
             "user": "Doggie",
-            "link": "https://youtu.be/5gx07ZNiuJY?si=Gs5CrwoDts-pmICT",
-            "percent": 80,
+            "link": "https://youtu.be/mp8TSHLoW8Q?si=gZqC9llG_SWsAR70",
+            "percent": 83,
             "hz": 240
         }
     ],
     "length": 170,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "23.02.2025", 
+    "lastUpd": "23.01.2026",
 
     "isMain": true,
     "isFuture": true,
@@ -29,7 +29,7 @@
             "link": "https://youtu.be/JZ6rLQoP7Y0?si=pb4H0xpd4WuX8_9i",
             "percent": "25-100",
             "hz": 240
-        }        
+        }
     ],
     "tags": ["Finished", "Verifying", "XL", "Remake"]
 }

@@ -1,30 +1,30 @@
 {
     "id": "private",
     "name": "GREEN BULLET",
-    "author": "Cherryteam",
+    "author": "CherryTeam",
     "creators": [],
-    "verifier": "nickname",
+    "verifier": "Nickname",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/mHg2jrzpkxs",
-    "lastUpd": "23.04.2025",
+    "lastUpd": "23.01.2026",
 
-    "percentToQualify": 1,
+    "percentToQualify": 65,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Nickname",
+            "link": "https://youtu.be/T_ZobrS-vxA?si=On8D5Qj2oTat7cF0",
+            "percent": 64,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "nickname",
-            "link": "https://www.youtube.com/watch?v=5PpEhBdPBjw",
-            "percent": "43-100",
+            "user": "Nickname",
+            "link": "https://youtu.be/jpsr5ZWVu6o?si=pL87C2zj188e2yPx",
+            "percent": "34-100",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 129,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Finished"]
+    "tags": ["XL", "Finished", "Quality", "Verifying"]
 }

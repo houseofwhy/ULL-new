@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/WtvNxI2Hz3Y?si=E98T19njqq1OE6vJ",
-    "lastUpd": "30.08.2025",
+    "lastUpd": "31.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "https://www.youtube.com/watch?v=RFLo0l1HL9w",
             "percent": "65-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 201,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "Quality"]
+    "tags": ["XXL", "Quality", "Verifying"]
 }

@@ -19,7 +19,7 @@
     "length": 107,
     "rating": 1,
     "percentFinished": 80,
-    "lastUpd": "07.09.2025", 
+    "lastUpd": "10.12.2025",
 
     "isMain": true,
     "isFuture": false,
@@ -30,6 +30,6 @@
             "link": "https://youtu.be/rH3-VxO13os?si=Qbdun-7rlJDaxeqw",
             "percent": "9-23",
             "hz": 240
-        }        
+        }
     ]
-} 
+}
