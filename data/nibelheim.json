@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "Nibelheim",
-    "author": "Ventii",
+    "author": "Electrobird",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
@@ -22,14 +22,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 72,
     "rating": 1,
     "percentFinished": 35,
 
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": ["Long", "Quality"],
     "lastUpd": "17.07.2025"
 }

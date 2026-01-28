@@ -1,6 +1,6 @@
 {
     "id": "private",
-    "name": "Natural Disaster(ThePurgatory)",
+    "name": "Natural Disaster (ThePurgatory)",
     "author": "ThePurgatory",
     "creators": [],
     "verifier": "unknown",
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 90,

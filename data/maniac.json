@@ -3,7 +3,7 @@
     "name": "MANIAC",
     "author": "geogamer",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Zeroxy",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=96gVJRFwkNY",
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 75,
     "rating": 1,
     "percentFinished": 13,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Long"]
 }

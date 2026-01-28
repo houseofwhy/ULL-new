@@ -3,7 +3,7 @@
     "name": "nilk",
     "author": "Linear",
     "creators": [],
-    "verifier": "Swiborg never clear",
+    "verifier": "Swiborg",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=sEzPNnH7pZI",
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 101,
     "rating": 1,
     "percentFinished": 0,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Long", "Layout"]
 }

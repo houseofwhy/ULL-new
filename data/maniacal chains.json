@@ -1,5 +1,5 @@
 {
-    "id": "121936643 ",
+    "id": 121936643,
     "name": "Maniacal Chains",
     "author": "LordDivinity",
     "creators": [],
@@ -12,19 +12,19 @@
     "percentToQualify": 43,
     "records": [
         {
-            "user": "WatchPiggy",
-            "link": "https://www.youtube.com/watch?v=bEgwb3iQg-A",
-            "percent": 43,
+            "user": "spcreat",
+            "link": "https://youtu.be/twz1UKbP4-Y?si=BSouFJhNyjIMjV7m",
+            "percent": 88,
             "hz": 360
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "spcreat",
+            "link": "https://youtu.be/twz1UKbP4-Y?si=BSouFJhNyjIMjV7m",
+            "percent": "45-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 146,

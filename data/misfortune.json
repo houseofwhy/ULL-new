@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 40,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium", "Verified", "Finished", "Public", "Unrated"]
+    "tags": ["Medium", "Verified", "Finished", "Public", "Unrated", "Remake"]
 }

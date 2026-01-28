@@ -25,11 +25,11 @@
             "hz": 0
         }
     ],
-    "length": 12,
+    "length": 62,
     "rating": 1,
-    "percentFinished": 5,
-    "isMain": true,
-    "isFuture": true,
+    "percentFinished": 20,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
         "Medium",
         "Remake"
