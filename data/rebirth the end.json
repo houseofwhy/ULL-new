@@ -22,15 +22,15 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 788,
     "rating": 1,
-    "percentFinished": 0,
-    "lastUpd": "04.11.2025", 
+    "percentFinished": 5,
+    "lastUpd": "17.01.2026",
 
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Layout", "XXL", "Quality"]
-} 
+    "tags": ["XXL", "Quality"]
+}

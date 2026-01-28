@@ -100,7 +100,7 @@ export default {
                                     </p>
                                 </div>
                             </div>
-                            <div v-if="!level.isVerified && level.records[0].percent == 100">
+                            <div v-if="!level.isVerified && level.records[0].percent == 100" class="worldrecord">
                                 <p class="type-body">
                                     Layout verified by {{level.records[0].user}}
                                 </p>

@@ -3,11 +3,11 @@
     "name": "Rainy",
     "author": "DemOne",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=qDXCBRs8BGc&pp=ygUIcmFpbnkgZ2Q=",
-    "lastUpd": "28.11.2024",
+    "lastUpd": "20.07.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,7 +24,7 @@
             "link": "https://www.youtube.com/watch?v=S09NlADp5Hk",
             "percent": "80-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 87,

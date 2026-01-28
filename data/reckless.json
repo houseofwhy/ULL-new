@@ -3,7 +3,7 @@
     "name": "RECKLESS",
     "author": "Surjaco",
     "creators": [],
-    "verifier": "HipoSmokeWeed (HSW)",
+    "verifier": "HSW",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=ypwGmuzBXqc",
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 150,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Quality"]
+    "tags": ["XL", "Quality", "Remake"]
 }
