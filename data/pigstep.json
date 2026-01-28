@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Cryonix6000",
+            "link": "https://youtu.be/heTTrVrR0Go?si=A_VqUClKfmRVan4U",
+            "percent": 40,
             "hz": 0
         }
     ],
@@ -24,14 +24,14 @@
             "link": "https://www.youtube.com/watch?v=upD0e1qnzgY",
             "percent": "65-100",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 138,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["XL", "Finished", "Verifying"]
 }

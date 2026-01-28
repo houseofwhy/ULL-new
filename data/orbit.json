@@ -7,14 +7,14 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/k1QzxsQGqSI",
-    "lastUpd": "06.11.2025",
+    "lastUpd": "27.01.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Zoink",
+            "link": "https://youtu.be/H_C9HAWtwUo?si=qTp94l_ES_yNHM3z",
+            "percent": 93,
             "hz": 0
         }
     ],
@@ -22,16 +22,16 @@
         {
             "user": "none",
             "link": "",
-            "percent": "0",
+            "percent": "",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 200,
     "rating": 1,
-    "percentFinished": 95,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Quality"]
+    "tags": ["XL", "Quality", "Finished", "Verifying"]
 }

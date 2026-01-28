@@ -12,26 +12,26 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Phobos",
+            "link": "https://youtu.be/wKOedTTMyTs?si=IXDd-dEJNVKTlZh8",
+            "percent": 49,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "Volumni",
-            "link": "https://youtu.be/bbzVGtj3myE?si=NR-FSgKKv2RhoXTo",
-            "percent": "19-87",
+            "user": "none",
+            "link": "",
+            "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 195,
     "rating": 1,
     "percentFinished": 80,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XXL", "Quality", "NONG"]
 }

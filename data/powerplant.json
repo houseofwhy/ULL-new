@@ -6,8 +6,8 @@
     "verifier": "katzengd",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/bOLrM41XhaI",
-    "lastUpd": "08.25.2025",
+    "showcase": "https://youtu.be/vPNL_qAAJEY?si=stkeQ_r9AqmYje7m",
+    "lastUpd": "10.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 144,
     "rating": 1,
     "percentFinished": 70,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["XL"]
 }

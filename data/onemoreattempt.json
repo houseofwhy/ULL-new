@@ -29,11 +29,10 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "XXL",
         "Public",
-        "Finished",
-        "Verifying"
+        "Finished"
     ]
 }

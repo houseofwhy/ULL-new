@@ -1,7 +1,7 @@
 {
     "id": "113710822",
     "name": "Quanteuse processing",
-    "author": "Blankb",
+    "author": "Renn241",
     "creators": [],
     "verifier": "Zoink",
     "isVerified": true,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Public", "Finished", "Rated", "Long", "Remake"]
+    "tags": ["Public", "Finished", "Rated", "Long", "Remake", "Verified"]
 }
