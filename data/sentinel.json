@@ -6,8 +6,8 @@
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=91GStEKwT3U",
-    "lastUpd": "19.09.2025",
+    "showcase": "https://youtu.be/MVMMEK7qeVI?si=QN8iH7dRgF5DZ18b",
+    "lastUpd": "26.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -20,16 +20,16 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "luna",
+            "link": "https://youtu.be/E880YSUOCcQ?si=UlP7bKahG-XRxlwP",
+            "percent": "19-45",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 100,
     "rating": 1,
-    "percentFinished": 15,
+    "percentFinished": 30,
     "isMain": true,
     "isFuture": true,
 

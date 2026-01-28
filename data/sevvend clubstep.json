@@ -1,7 +1,7 @@
 {
     "id": "120255728",
     "name": "Sevvend Clubstep",
-    "author": "[cherry] team",
+    "author": "CherryTeam",
     "creators": [],
     "verifier": "Vorten",
     "isVerified": true,
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 71,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Rated", "Verified", "Public", "Quality"]
+    "tags": ["Long", "Finished", "Rated", "Verified", "Public"]
 }

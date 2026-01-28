@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=1D8k7ZUl9zw",
-    "lastUpd": "24.05.2025",
+    "lastUpd": "04.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,12 +24,12 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 84,
     "rating": 1,
-    "percentFinished": 65,
+    "percentFinished": 75,
     "isMain": true,
     "isFuture": true,
 

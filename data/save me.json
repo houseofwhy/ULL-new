@@ -3,7 +3,7 @@
     "name": "Save Me",
     "author": "domi77",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=PViww265ur8",
@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 20,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XXL"]
 }

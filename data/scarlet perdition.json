@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=zYJIrh1JPvY",
-    "lastUpd": "17.07.2025",
+    "lastUpd": "18.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 78,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 50,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "NONG"]
 }
