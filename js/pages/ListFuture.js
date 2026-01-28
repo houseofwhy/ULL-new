@@ -57,7 +57,7 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 200" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
                                 <p v-else class="type-label-lg">Legacy</p>
 							</span>
                         </td>
@@ -79,24 +79,31 @@ export default {
                         <div v-for="tag in level.tags" class="tag">{{tag}}</div>
                     </div>
                         <div>
-                            <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
-                                <p class="type-body">
-                                        World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
-                                </p>
+                             <div v-if="!level.isVerified && level.records[0].percent != 100">
+                                <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
+                                    <p class="type-body">
+                                            World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
+                                    </p>
+                                </div>
+                                <div v-if="!level.isVerified && level.records[0].percent == 0" class="worldrecord">
+                                    <p class="type-body">
+                                            World Record - From 0: None
+                                    </p>
+                                </div>
+                                <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
+                                    <p class="type-body">
+                                            World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
+                                    </p>
+                                </div>
+                                <div v-if="!level.isVerified && level.run[0].percent == '0'" class="worldrecord">
+                                    <p class="type-body">
+                                            World Record - Run: None
+                                    </p>
+                                </div>
                             </div>
-                            <div v-if="!level.isVerified && level.records[0].percent == 0" class="worldrecord">
+                            <div v-if="!level.isVerified && level.records[0].percent == 100" class="worldrecord">
                                 <p class="type-body">
-                                        World Record - From 0: None
-                                </p>
-                            </div>
-                            <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
-                                <p class="type-body">
-                                        World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
-                                </p>
-                            </div>
-                            <div v-if="!level.isVerified && level.run[0].percent == '0'" class="worldrecord">
-                                <p class="type-body">
-                                        World Record - Run: None
+                                    Layout verified by {{level.records[0].user}}
                                 </p>
                             </div>
                             <div class="lvlstatus">
