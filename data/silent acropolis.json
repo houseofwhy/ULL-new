@@ -1,7 +1,7 @@
 {
     "id": "111237270",
     "name": "Silent Acropolis",
-    "author": "The Purgatory",
+    "author": "ThePurgatory",
     "creators": [],
     "verifier": "open verification",
     "isVerified": false,
@@ -11,8 +11,8 @@
     "records": [
         {
             "user": "Septagon7",
-            "link": "https://youtu.be/WywIdSovVmM?si=LXW_90tq030CLEI2",
-            "percent": 43,
+            "link": "https://www.youtube.com/watch?v=4oV6fgdo4Eo",
+            "percent": 61,
             "hz": 240
         }
     ],
@@ -29,7 +29,7 @@
             "link": "https://youtu.be/c2pc6LSqBl8?si=OqttiBJ7dFz60gGy",
             "percent": "31-100",
             "hz": 240
-        }        
+        }
     ],
     "tags": ["Public", "Finished", "Verifying", "Long", "Remake", "Quality"],
     "lastUpd": "04.08.2025"
