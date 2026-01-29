@@ -3,10 +3,10 @@
     "name": "Silent Electroman Adventures",
     "author": "Idiocy",
     "creators": [],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
-    "verification": "Open Verification",
-    "showcase": "https://www.youtube.com/watch?v=GJ5aIG1DXaM",
+    "verification": "",
+    "showcase": "https://youtu.be/GJ5aIG1DXaM?si=4Cu1saYcrOLO50lm",
     "lastUpd": "13.09.2025",
 
     "percentToQualify": 1,
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 86,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["Long", "Finished", "Public", "googoogaagaa"]
+    "tags": ["Long", "Finished", "Public"]
 }

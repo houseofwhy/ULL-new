@@ -24,14 +24,14 @@
             "link": "https://youtu.be/JBGDHHXUDFU?si=PvVwVLg_QAz8o-U3",
             "percent": "55-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 90,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long", "Verifying", "Remake", "Finished"]
 }

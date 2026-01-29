@@ -29,7 +29,7 @@
     "percentFinished": 35,
 
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
     "tags": ["Long", "Quality"],
     "lastUpd": "17.07.2025"
 }

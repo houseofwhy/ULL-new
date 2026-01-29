@@ -3,28 +3,28 @@
     "name": "Silent Clubstep II",
     "author": "Sailent",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=nbkX-2mYX8Y",
-    "lastUpd": "25.08.2025",
+    "lastUpd": "25.01.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "Skittle Catastrophe",
-            "link": "https://www.youtube.com/watch?v=OeuT_ZZ60Ug",
-            "percent": 26,
+            "link": "https://youtu.be/QxQmap48MDA?si=UPJ5s9t45bSSIrcN",
+            "percent": 31,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "Skittle Catastrophe",
-            "link": "https://youtu.be/suXpr39rcDU",
-            "percent": "43-100",
+            "link": "https://youtu.be/y3hn5AOC3PU?si=Zy61Xm3zth9cDfik",
+            "percent": "38-98",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 86,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Public", "Finished", "Verifying"]
+    "tags": ["Long", "Public", "Finished", "Verifying", "Remake"]
 }

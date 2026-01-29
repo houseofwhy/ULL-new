@@ -7,14 +7,14 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Q-IT8xuqU9Q&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=506",
-    "lastUpd": "06.11.2025",
+    "lastUpd": "14.11.2025",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "Dezstro",
-            "link": "https://youtu.be/96TpR4i126k?si=TQBVwfWst9SznvNP",
-            "percent": 33,
+            "link": "https://youtu.be/A-QO1PICMlo?si=ocqt-lG-5a_YgHW6",
+            "percent": 55,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "https://www.youtube.com/watch?v=cj1CIEeswLs",
             "percent": "57-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 185,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Finished", "Verifying", "XL", "Quality" ]
+    "tags": ["Finished", "Verifying", "XL", "Quality"]
 }

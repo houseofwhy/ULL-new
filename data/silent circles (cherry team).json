@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Silent Circles (Cherry Team)",
-    "author": "Cherry Team",
+    "name": "Silent Circles (CherryTeam)",
+    "author": "CherryTeam",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=_PKoLv-BMIo",
-    "lastUpd": "12.08.2025",
+    "lastUpd": "09.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 94,
     "rating": 1,
-    "percentFinished": 10,
+    "percentFinished": 30,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["Long", "Egomaxxing"]
+    "tags": ["Long", "Quality", "NC"]
 }

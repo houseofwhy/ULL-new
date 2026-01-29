@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=6RCgII1G4Kw&list=RD6RCgII1G4Kw&start_radio=1&pp=ygUYc2lsZW50IGNpcmNsZXMgc3RhcmNobWFuoAcB",
-    "lastUpd": "09.11.2025",
+    "lastUpd": "04.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -21,10 +21,10 @@
     "run": [
         {
             "user": "ImJuls",
-            "link": "https://www.youtube.com/watch?v=JMPTi_Utnao&pp=ugUEEgJlbtIHCQkDCgGHKiGM7w%3D%3D",
-            "percent": "62-100",
+            "link": "https://youtu.be/MsxTriGlIiU?si=S_W3i6NV7MJDFTTl",
+            "percent": "47-100",
             "hz": 240
-        }        
+        }
     ],
 
     "length": 69,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Finished", "Long", "NC", "Remake"]
+    "tags": ["Finished", "Long", "NC", "Remake", "Verifying"]
 }

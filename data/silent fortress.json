@@ -30,8 +30,8 @@
     "length": 58,
     "rating": 1,
     "percentFinished": 25,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Medium"]
 }

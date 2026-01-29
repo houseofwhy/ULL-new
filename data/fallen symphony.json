@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 80,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
     "tags": ["XL", "NONG"]
 }
