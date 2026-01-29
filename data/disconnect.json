@@ -1,5 +1,5 @@
 {
-    "id": 127023313,
+    "id": "private",
     "name": "DISCONNECT",
     "author": "mcres",
     "creators": [
@@ -7,10 +7,10 @@
     ],
     "verifier": "Elinore",
     "isVerified": true,
-    "verification": "https://www.youtube.com/watch?v=HxHo-LzwSao",
-    "showcase": "https://www.youtube.com/watch?v=gVpqeqy6frU",
+    "verification": "https://www.youtube.com/watch?v=HxHo-LzwSao&pp=ygUNZGlzY29ubmVjdCBnZNgG-AQ%3D",
+    "showcase": "https://www.youtube.com/watch?v=gVpqeqy6frU&pp=ygUNZGlzY29ubmVjdCBnZA%3D%3D",
     "lastUpd": "13.10.2025",
-    "percentToQualify": 1,
+    "percentToQualify": 100,
     "records": [
         {
             "user": "none",
@@ -34,8 +34,9 @@
     "isFuture": true,
     "tags": [
         "XL",
-        "Public",
+        "Rated",
         "Finished",
-        "Rated"
+        "Public",
+        "Remake"
     ]
 }
