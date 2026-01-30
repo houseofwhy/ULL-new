@@ -1,9 +1,9 @@
 {
     "id": 113364415,
     "name": "Paranoia",
-    "author": " Amplitron",
+    "author": "Amplitron",
     "creators": [],
-    "verifier": " Amplitron",
+    "verifier": "Amplitron",
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=Aw83i8Zmh_0",
     "showcase": "https://www.youtube.com/watch?v=rg06lq4HL2c",
@@ -35,6 +35,7 @@
         "Finished",
         "Rated",
         "Long",
-        "NONG"
+        "NONG",
+        "Verified"
     ]
 }

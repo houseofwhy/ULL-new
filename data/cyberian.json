@@ -11,27 +11,26 @@
     "percentToQualify": 40,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "FHipoo",
+            "link": "https://youtu.be/O_iCpV_qgIE?si=WUQrBKJ2IQQg1gv3",
+            "percent": 39,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "FHippo",
+            "link": "https://www.youtube.com/watch?v=g5BdY91wDbo",
+            "percent": "37-73",
             "hz": 0
         }
     ],
     "length": 0,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 70,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
-        "Layout",
         "Verifying",
         "Medium"
     ]

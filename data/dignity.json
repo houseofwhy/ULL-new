@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=-bBdqPdv-5k",
-    "lastUpd": "15.01.2025",
+    "lastUpd": "29.01.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -21,8 +21,8 @@
     "run": [
         {
             "user": "Sevant",
-            "link": "https://www.youtube.com/live/kDa_zXe6V2A?si=xryk4zw_PHAWDBV0",
-            "percent": "37-65",
+            "link": "https://www.youtube.com/live/MY8SXp5z7Dg?si=6ipoEoRewmGeAbqO&t=4921",
+            "percent": "39-76",
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished"]
+    "tags": ["Long", "Finished", "Verifying"]
 }

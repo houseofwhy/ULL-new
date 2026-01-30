@@ -34,6 +34,7 @@
         "Long",
         "Public",
         "Finished",
-        "Rated"
+        "Rated",
+        "Verified"
     ]
 }

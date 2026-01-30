@@ -77,7 +77,7 @@
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=MWQyCUGt76Y&source_ve_path=MTc4NDI0",
     "showcase": "https://www.youtube.com/watch?v=4rW5LcILMMo&pp=ygURZGFtYXNjdXMgc2hvd2Nhc2U%3D",
-    "lastUpd": "13.8.2023",
+    "lastUpd": "13.08.2023",
     "percentToQualify": 100,
     "records": [
         {
@@ -104,6 +104,7 @@
         "Public",
         "XXL",
         "Rated",
-        "Finished"
+        "Finished",
+        "Verified"
     ]
 }

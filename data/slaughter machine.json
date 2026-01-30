@@ -3,7 +3,7 @@
     "name": "Slaughter Machine",
     "author": "HaloZombies",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=VM6UUgR-x8o&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=491&pp=gAQBiAQB",
@@ -19,7 +19,7 @@
     "length": 66,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "20.04.2025", 
+    "lastUpd": "20.04.2025",
 
     "isMain": false,
     "isFuture": false,
@@ -30,6 +30,6 @@
             "link": "https://youtu.be/JNbUc03qIU0?si=7kVYTYC7yt7CbXwR",
             "percent": "21-35",
             "hz": 240
-        }        
+        }
     ]
 }

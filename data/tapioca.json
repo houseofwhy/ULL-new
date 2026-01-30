@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 80,
     "rating": 1,
-    "percentFinished": 10,
-    "isMain": true,
-    "isFuture": true,
+    "percentFinished": 15,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Long"]
 }

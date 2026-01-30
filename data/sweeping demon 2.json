@@ -1,20 +1,20 @@
 {
     "id": "Private",
     "name": "Sweeping Demon 2",
-    "author": "Tempgd",
+    "author": "Temp",
     "creators": [],
     "verifier": "Taiago",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/xzUjqgYItkQ",
-    "lastUpd": "17.08.2025",
+    "lastUpd": "17.01.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "Taiago",
-            "link": "https://www.youtube.com/live/xybJnkcmwjg?t=1749",
-            "percent": 62,
+            "link": "https://youtu.be/ic_9fFREAWo?si=nRMpBX8J-QQ4o9wS",
+            "percent": 73,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "https://youtu.be/0tFBzVMAORQ?si=Jw57aurz-BHu0hPv",
             "percent": "21-87",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 77,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Verifying"]
+    "tags": ["Long", "Finished", "Verifying", "Remake"]
 }

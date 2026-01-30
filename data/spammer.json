@@ -1,13 +1,13 @@
 {
     "id": "private",
     "name": "Spammer",
-    "author": "cherryteam",
+    "author": "CherryTeam",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=NLT2ug_qY3s",
-    "lastUpd": "05.08.2025",
+    "lastUpd": "20.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,12 +24,12 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 112,
     "rating": 1,
-    "percentFinished": 40,
+    "percentFinished": 30,
     "isMain": true,
     "isFuture": true,
 
