@@ -1,0 +1,39 @@
+{
+    "id": 105748155,
+    "name": "Checked Steam",
+    "author": "gruzy",
+    "creators": [],
+    "verifier": " Whizkid05",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=cq6047eYGXs",
+    "showcase": "https://www.youtube.com/watch?v=QmGYA-eLHtc",
+    "lastUpd": "25.08.2024",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 65,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Long"
+    ]
+}

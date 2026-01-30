@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Cyberian",
+    "author": "Josh",
+    "creators": [],
+    "verifier": "Hippo",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=w3LHa5x_U1w",
+    "lastUpd": "23.08.2025",
+    "percentToQualify": 40,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 0,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Layout",
+        "Verifying",
+        "Medium"
+    ]
+}

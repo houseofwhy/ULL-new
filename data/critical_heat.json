@@ -1,0 +1,42 @@
+{
+    "id": 88442157,
+    "name": "Critical Heat",
+    "author": "Zeniux",
+    "creators": [
+        "Zeniux",
+        "Zeus"
+    ],
+    "verifier": " hstorm",
+    "isVerified": true,
+    "verification": "https://youtu.be/UjYIt2jy_BY?si=BLcuDJZ2mslHQM04",
+    "showcase": "https://youtu.be/-Fhz3qZVb9c?si=fl3NRaazL6J6AQkv",
+    "lastUpd": "18.03.2023",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 62,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Long"
+    ]
+}

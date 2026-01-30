@@ -1,0 +1,43 @@
+{
+    "id": 95176417,
+    "name": "NETWORK",
+    "author": "Agat3",
+    "creators": [
+        "Agat3",
+        "theworldofme",
+        "Kaza"
+    ],
+    "verifier": "vulcanium4",
+    "isVerified": true,
+    "verification": "https://youtu.be/K7wJi01J5D8?si=uhSjxX-b9N7E9d2L",
+    "showcase": "https://youtu.be/iozImYI5Yoo?si=Saf8XJlw9VNTyCDJ",
+    "lastUpd": "16.13.2023",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 124,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "XL"
+    ]
+}

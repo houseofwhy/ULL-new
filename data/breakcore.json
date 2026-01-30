@@ -1,0 +1,39 @@
+{
+    "id": 123674931,
+    "name": "Breakcore",
+    "author": "WoofelGD",
+    "creators": [],
+    "verifier": "breakcore11",
+    "isVerified": true,
+    "verification": "https://youtu.be/_H3KOVLE6gs?si=SMKyKitUEVaZU3m4",
+    "showcase": "https://www.youtube.com/watch?v=x-TZ0xrYLZU&pp=ygUMQnJlYWtjb3JlIGdk",
+    "lastUpd": "27.07.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 65,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Long",
+        "Unrated"
+    ]
+}
