@@ -1,0 +1,42 @@
+{
+    "id": 110891882,
+    "name": "Nautical Nebula",
+    "author": "elpitosGD",
+    "creators": [
+        "elpitosGD",
+        "manu"
+    ],
+    "verifier": "manu",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=JdmURAYP1-k",
+    "showcase": "https://www.youtube.com/watch?v=-bZ22bM4D5c&pp=ygUSbmF1dGljYWwgbmVidWxhIGdk",
+    "lastUpd": "7.10.2024",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 56,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Medium",
+        "Unrated",
+        "Finished",
+        "Public"
+    ]
+}

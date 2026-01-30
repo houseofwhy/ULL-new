@@ -1,0 +1,47 @@
+{
+    "id": "private",
+    "name": "Ultra Kira II",
+    "author": "Clara Clinhara, ",
+    "creators": [
+        "ReiGalinha",
+        "Clara Clinhara",
+        "Reyotta",
+        "Procurador",
+        "Luara GD",
+        "Kaapy",
+        "Ronbesuel",
+        "Breno",
+        "Bienamino"
+    ],
+    "verifier": "Unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=AXRJZdO79Gk",
+    "lastUpd": "21.4.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 97,
+    "rating": 1,
+    "percentFinished": 90,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long",
+        "Remake"
+    ]
+}
