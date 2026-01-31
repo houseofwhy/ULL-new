@@ -1,7 +1,7 @@
 {
-    "id": "private",
+    "id": "132274357",
     "name": "Rebirth The End",
-    "author": "Silence",
+    "author": "Silenceglobally",
     "creators": [],
     "verifier": "zLevii",
     "isVerified": false,
@@ -22,15 +22,15 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }
+        }        
     ],
     "length": 788,
     "rating": 1,
-    "percentFinished": 5,
-    "lastUpd": "17.01.2026",
+    "percentFinished": 0,
+    "lastUpd": "01.11.2025", 
 
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["XXL", "Quality"]
-}
+    "tags": ["Layout", "XXL", "Quality"]
+} 
