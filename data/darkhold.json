@@ -1,0 +1,44 @@
+{
+    "id": "private",
+    "name": "Darkhold",
+    "author": "Randum GMD",
+    "creators": [
+        "Rubrum",
+        "Nexes3",
+        "Randum",
+        "Joaozes",
+        "Renato",
+        "R3ruby"
+    ],
+    "verifier": "Unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=VaybwwoM6EA",
+    "lastUpd": "08.11.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 84,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Layout",
+        "Long"
+    ]
+}

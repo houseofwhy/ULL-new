@@ -1,0 +1,40 @@
+{
+    "id": "private",
+    "name": "far apart",
+    "author": "MadisonYuko",
+    "creators": [
+        "MadisonYuko"
+    ],
+    "verifier": "Unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=liXviHr4C40",
+    "lastUpd": "16.06.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 98,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Verifying",
+        "Long"
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "id": "private",
+    "name": "CRYOSTASIS",
+    "author": "xtibite",
+    "creators": [
+        "Grid",
+        "Mayk",
+        "Rondeletia",
+        "Winchester",
+        "Duque",
+        "aPunch",
+        "xtibite",
+        "loolycat",
+        "SimplyNiro",
+        "Ryal",
+        "Snom",
+        "AComet",
+        "Winter"
+    ],
+    "verifier": "Unknown",
+    "isVerified": true,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=HCCeBqaSevc&pp=ygUKY3J5b3N0YXNpcw%3D%3D",
+    "lastUpd": "19.12.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 98,
+    "rating": 1,
+    "percentFinished": 80,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long",
+        "Quality"
+    ]
+}

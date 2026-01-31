@@ -1,0 +1,48 @@
+{
+    "id": 113220284,
+    "name": "The Plunge",
+    "author": "Dolabill",
+    "creators": [
+        "Galvatron",
+        "Triplash",
+        "Roselyne",
+        "pbreaker",
+        "Adrone",
+        "Dolabill",
+        "Shodai",
+        "Arachnid"
+    ],
+    "verifier": "Gokill",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=8gW1-_u1K0Y&source_ve_path=MTc4NDI0",
+    "showcase": "https://www.youtube.com/watch?v=iyvRFtGVzHc",
+    "lastUpd": "18.12.2024",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 63,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long",
+        "Public",
+        "Finished",
+        "Rated"
+    ]
+}

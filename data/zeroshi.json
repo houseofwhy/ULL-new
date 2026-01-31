@@ -1,0 +1,41 @@
+{
+    "id": "private",
+    "name": "Zeroshi",
+    "author": "Aquafloria",
+    "creators": [
+        "Aquafloria"
+    ],
+    "verifier": "Unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=ROHtF7HxEmQ",
+    "lastUpd": "24.02.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 60,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Layout",
+        "Long",
+        "Remake",
+        "NONG"
+    ]
+}

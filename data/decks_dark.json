@@ -1,0 +1,41 @@
+{
+    "id": 95719795,
+    "name": "Decks Dark",
+    "author": "MadisonYuko",
+    "creators": [
+        "MadisonYuko"
+    ],
+    "verifier": "Whizkid05",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=l52ApE4HWkY",
+    "showcase": "https://www.youtube.com/watch?v=pJkq8IbGXIU&pp=ygUNZGVja3MgZGFyayBnZNIHCQmRCgGHKiGM7w%3D%3D",
+    "lastUpd": "24.08.2023",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 131,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "XL"
+    ]
+}
