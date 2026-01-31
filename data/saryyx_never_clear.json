@@ -45,6 +45,7 @@
         "Long",
         "Rated",
         "Finished",
-        "Remake"
+        "Remake",
+        "Verified"
     ]
 }

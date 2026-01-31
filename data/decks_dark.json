@@ -1,7 +1,7 @@
 {
     "id": 95719795,
     "name": "Decks Dark",
-    "author": "MadisonYuko",
+    "author": "zYuko",
     "creators": [
         "MadisonYuko"
     ],
@@ -36,6 +36,7 @@
         "Public",
         "Finished",
         "Rated",
-        "XL"
+        "XL",
+        "Verified"
     ]
 }

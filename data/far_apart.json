@@ -1,11 +1,11 @@
 {
     "id": "private",
     "name": "far apart",
-    "author": "MadisonYuko",
+    "author": "zYuko",
     "creators": [
         "MadisonYuko"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=liXviHr4C40",
@@ -31,10 +31,9 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "Finished",
-        "Verifying",
         "Long"
     ]
 }

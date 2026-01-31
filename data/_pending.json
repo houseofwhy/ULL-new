@@ -12,6 +12,10 @@
         "placement": "up"
     },
     {
+        "name": "MAX NRG",
+        "placement": "up"
+    },
+    {
         "name": "Angelicide",
         "placement": "down"
     },
@@ -28,6 +32,10 @@
         "placement": "down"
     },
     {
+        "name": "ZOINK NEVER CLEAR",
+        "placement": "1"
+    },
+    {
         "name": "Soulless",
         "placement": "10"
     },
@@ -36,11 +44,47 @@
         "placement": "10"
     },
     {
+        "name": "Energy Wave",
+        "placement": "10"
+    },
+    {
+        "name": "Midnight",
+        "placement": "10"
+    },
+    {
         "name": "V S C",
         "placement": "10"
     },
     {
+        "name": "Lirile",
+        "placement": "10"
+    },
+    {
+        "name": "BEHEMOTH",
+        "placement": "10"
+    },
+    {
         "name": "Outcast",
+        "placement": "20"
+    },
+    {
+        "name": "Phantasm IV",
+        "placement": "20"
+    },
+    {
+        "name": "Sky Linuddier",
+        "placement": "20"
+    },
+    {
+        "name": "CRITICAL HEAT",
+        "placement": "20"
+    },
+    {
+        "name": "Losing Your Mind",
+        "placement": "20"
+    },
+    {
+        "name": "SwiftVortex",
         "placement": "20"
     },
     {
@@ -52,7 +96,7 @@
         "placement": "30"
     },
     {
-        "name": "CRITICAL HEAT",
+        "name": "Neutron Step",
         "placement": "30"
     },
     {
@@ -92,6 +136,22 @@
         "placement": "75"
     },
     {
+        "name": "Vindication",
+        "placement": "75"
+    },
+    {
+        "name": "The French",
+        "placement": "75"
+    },
+    {
+        "name": "Fall In Line",
+        "placement": "75"
+    },
+    {
+        "name": "Despair",
+        "placement": "75"
+    },
+    {
         "name": "IMNOTSORRY",
         "placement": "?"
     },
@@ -125,6 +185,10 @@
     },
     {
         "name": "EVERBLOOM",
+        "placement": "?"
+    },
+    {
+        "name": "Omega PARTS",
         "placement": "?"
     }
 ]

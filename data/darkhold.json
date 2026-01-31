@@ -10,7 +10,7 @@
         "Renato",
         "R3ruby"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=VaybwwoM6EA",
@@ -36,7 +36,7 @@
     "rating": 1,
     "percentFinished": 0,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "Layout",
         "Long"

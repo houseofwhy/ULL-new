@@ -17,11 +17,11 @@
         "Etzeran",
         "iLogistics"
     ],
-    "verifier": "Unconfirmed",
+    "verifier": "SaturMan",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=EUpbb96x7AI&pp=0gcJCZEKAYcqIYzv",
-    "lastUpd": "14.11.2025",
+    "lastUpd": "20.12.2025",
     "percentToQualify": 100,
     "records": [
         {
@@ -33,9 +33,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "SaturMan",
+            "link": "https://youtu.be/qS4Wdn2XNwk?si=nqKhWTzTOelGeqMh",
+            "percent": "54-100",
             "hz": 0
         }
     ],
@@ -45,6 +45,7 @@
     "isMain": true,
     "isFuture": true,
     "tags": [
-        "Long"
+        "Long",
+        "Verifying"
     ]
 }
