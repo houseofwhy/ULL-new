@@ -6,7 +6,7 @@
     "verifier": "SerVax",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/Cp_k2GT4gp8?si=dXGRllJGQNs9_0Y5",
+    "showcase": "https://youtu.be/-jvx1MJTP-Q?si=ndDdmg6b5FerUwQH",
     "percentToQualify": 1,
     "records": [
         {
@@ -22,14 +22,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 155,
     "rating": 1,
-    "percentFinished": 80,
+    "percentFinished": 100,
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["XL", "Quality"],
-    "lastUpd": "23.11.2024"
+    "tags": ["XL", "Quality", "Finished"],
+    "lastUpd": "12.12.2025"
 }

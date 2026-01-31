@@ -5,7 +5,7 @@
     "creators": [
         "Aquafloria"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=ROHtF7HxEmQ",
@@ -30,8 +30,8 @@
     "length": 60,
     "rating": 1,
     "percentFinished": 0,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
         "Layout",
         "Long",

@@ -6,15 +6,15 @@
     "verifier": "wPopoff",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=hQ2rLIDD6W4",
+    "showcase": "https://youtu.be/hQ2rLIDD6W4?si=7BYmGAn6EuXQ5RQR",
     "lastUpd": "30.06.2025",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "ywuChaos",
+            "link": "https://youtu.be/jwiq7e53tMs?si=ztYH_tnKufxneR3b",
+            "percent": 40,
             "hz": 0
         }
     ],
@@ -24,12 +24,12 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 72,
     "rating": 1,
-    "percentFinished": 95,
+    "percentFinished": 85,
     "isMain": true,
     "isFuture": true,
 

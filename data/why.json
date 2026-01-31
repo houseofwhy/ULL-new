@@ -3,7 +3,7 @@
     "name": "why",
     "author": "akunakun",
     "creators": [],
-    "verifier": "Open Verification",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/QZbuA1F9Fbc",
@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "BrutalSword",
+            "link": "https://youtu.be/5RXfH9CKu-E?si=FIJLhxyh6p1uW9VT",
+            "percent": 80,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 2304,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL+", "Ultimate endurance test"]
+    "tags": ["XXXL"]
 }

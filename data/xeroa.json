@@ -6,11 +6,11 @@
         "Jinobeats",
         "Zivy"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=ghdMSt222zw&pp=ygUIeGVyb2EgZ2Q%3D",
-    "lastUpd": "5.7.2025",
+    "lastUpd": "05.07.2025",
     "percentToQualify": 1,
     "records": [
         {
@@ -30,9 +30,9 @@
     ],
     "length": 117,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 7,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "Remake",
         "Long"
