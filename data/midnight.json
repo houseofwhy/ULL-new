@@ -1,0 +1,42 @@
+{
+    "id": 96083028,
+    "name": "Midnight",
+    "author": "MadisonYuko",
+    "creators": [
+        "MadisonYuko"
+    ],
+    "verifier": "nei",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=NhkN_a9cNi8&source_ve_path=MTc4NDI0",
+    "showcase": "https://www.youtube.com/watch?v=JepVSrgVZDM&pp=ygUabWlkbmlnaHQgc2hvd2Nhc2UgZ2Qgenl1a2_SBwkJkQoBhyohjO8%3D",
+    "lastUpd": "02.11.2023",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 75,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Rated",
+        "Long",
+        "Public",
+        "Finished",
+        "Remake"
+    ]
+}

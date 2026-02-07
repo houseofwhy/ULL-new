@@ -1,0 +1,42 @@
+{
+    "id": 95049815,
+    "name": "Climax",
+    "author": "HushLC",
+    "creators": [
+        "Wain",
+        "HushLC"
+    ],
+    "verifier": "Wain",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=E4ppq2WeAAs&source_ve_path=MTc4NDI0",
+    "showcase": "https://www.youtube.com/watch?v=km4t3atJGfg&pp=ygUUY2xpbWF4IGZ1bGwgc2hvd2Nhc2U%3D",
+    "lastUpd": "02.10.2023",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 67,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Long"
+    ]
+}
