@@ -1,0 +1,49 @@
+{
+    "id": 125788781,
+    "name": "TrakineS",
+    "author": "Laranjoo",
+    "creators": [
+        "Laranjoo",
+        "Isnue",
+        "Clara",
+        "Kaapzz",
+        "Bienamino",
+        "MacacaPerfect",
+        "Brunexys",
+        "fwe",
+        "Reyotta"
+    ],
+    "verifier": "Mariner",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=oKuoI-_JzKU",
+    "showcase": "https://www.youtube.com/watch?v=ho4SACLDsPw",
+    "lastUpd": "09.09.2025",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 60,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Unrated",
+        "Public",
+        "Finished",
+        "Long"
+    ]
+}

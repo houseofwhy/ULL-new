@@ -1,0 +1,44 @@
+{
+    "id": 105593215,
+    "name": "ORDINARY",
+    "author": "Vit12",
+    "creators": [
+        "HugoLA",
+        "Vit12",
+        "Gustavo3",
+        "RafaBirds"
+    ],
+    "verifier": "wPopoff",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=4QiHP3jpGnk&source_ve_path=MTc4NDI0",
+    "showcase": "https://www.youtube.com/watch?v=h55wbCsem9E",
+    "lastUpd": "22.05.2024",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 77,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Rated",
+        "Long",
+        "Public",
+        "Finished"
+    ]
+}

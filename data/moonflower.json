@@ -1,0 +1,42 @@
+{
+    "id": 96660287,
+    "name": "Moonflower",
+    "author": "MadisonYuko",
+    "creators": [
+        "MadisonYuko"
+    ],
+    "verifier": "TFIBB",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=4_C6BaxD1D4",
+    "showcase": "https://www.youtube.com/watch?v=UdBS9JYYlZ8&pp=ygUNbW9vbmZsb3dlciBnZA%3D%3D",
+    "lastUpd": "25.11.2023",
+    "percentToQualify": 100,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 300,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XL",
+        "Public",
+        "Finished",
+        "Unrated",
+        "NONG"
+    ]
+}
