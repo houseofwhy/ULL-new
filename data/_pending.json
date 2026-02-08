@@ -1,5 +1,13 @@
 [
     {
+        "name": "The Human Limit",
+        "placement": "up"
+    },
+    {
+        "name": "Thinking Space II Legacy",
+        "placement": "up"
+    },
+    {
         "name": "CYBERPSYCHOSIS",
         "placement": "up"
     },
@@ -29,6 +37,10 @@
     },
     {
         "name": "La Llorona X",
+        "placement": "down"
+    },
+    {
+        "name": "LESOPOWAL",
         "placement": "down"
     },
     {
