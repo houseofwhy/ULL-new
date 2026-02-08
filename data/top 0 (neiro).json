@@ -1,7 +1,7 @@
 {
     "id": "98327676",
     "name": "TOP-0 (Human Limit)",
-    "author": "Neiro",
+    "author": "Exen",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 183,
     "rating": 1,
     "percentFinished": 40,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XL"]
 }

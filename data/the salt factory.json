@@ -1,13 +1,13 @@
 {
     "id": "113045735",
     "name": "The Salt Factory",
-    "author": "Eiriley",
+    "author": "CherryTeam",
     "creators": [],
-    "verifier": "nickname",
+    "verifier": "Nickname",
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=lQ7M-Sgov24",
     "showcase": "https://www.youtube.com/watch?v=A2En5Ngz8vY",
-    "lastUpd": "8.1.2026",
+    "lastUpd": "08.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 95,

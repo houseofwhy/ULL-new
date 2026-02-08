@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "Ultra Kira II",
-    "author": "Clara Clinhara, ",
+    "author": "Clara Clinhara",
     "creators": [
         "ReiGalinha",
         "Clara Clinhara",
@@ -17,7 +17,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=AXRJZdO79Gk",
-    "lastUpd": "21.4.2025",
+    "lastUpd": "21.04.2025",
     "percentToQualify": 1,
     "records": [
         {
@@ -38,8 +38,8 @@
     "length": 97,
     "rating": 1,
     "percentFinished": 90,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
         "Long",
         "Remake"

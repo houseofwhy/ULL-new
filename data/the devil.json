@@ -3,7 +3,7 @@
     "name": "The Devil",
     "author": "HeroZombie80",
     "creators": [],
-    "verifier": "Jenath/Open verification",
+    "verifier": "Jenath",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=ynFCKsoSROk",
@@ -20,11 +20,11 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Jenath",
+            "link": "https://www.youtube.com/watch?v=f5XHRAZsXl4",
+            "percent": "54-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 65,

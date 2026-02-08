@@ -8,7 +8,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=f2Wt1xpvOAs&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=89&pp=gAQBiAQB",
-      "lastUpd": "18.09.2025", 
+      "lastUpd": "18.09.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -25,15 +25,15 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
-    
+
     "length": 71,
     "rating": 1,
     "percentFinished": 60,
 
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long"]
 }

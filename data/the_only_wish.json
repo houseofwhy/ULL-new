@@ -48,6 +48,7 @@
         "Unrated",
         "Finished",
         "Public",
-        "Remake"
+        "Remake",
+        "Verified"
     ]
 }

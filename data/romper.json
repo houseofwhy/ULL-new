@@ -27,11 +27,10 @@
     ],
     "length": 90,
     "rating": 1,
-    "percentFinished": 0,
-    "isMain": false,
+    "percentFinished": 10,
+    "isMain": true,
     "isFuture": false,
     "tags": [
-        "Layout",
         "Long",
         "Remake"
     ]

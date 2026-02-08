@@ -3,7 +3,7 @@
     "name": "Vehemence",
     "author": "TBT",
     "creators": [],
-    "verifier": "wPopoff",
+    "verifier": "verification race",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/FPXryrqOrdw?si=p4U-GYu5pbayXjFy",
@@ -19,7 +19,7 @@
     "length": 146,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "10.08.2025", 
+    "lastUpd": "10.08.2025",
 
     "isMain": true,
     "isFuture": true,
@@ -30,6 +30,6 @@
             "link": "https://youtu.be/Zd-C6L9AlD0?si=Uzs-H_0ZqkNpslct",
             "percent": "53-100",
             "hz": 240
-        }        
+        }
     ]
 }

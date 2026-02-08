@@ -3,16 +3,16 @@
     "name": "The Devourer",
     "author": "Matiaslkll",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=SfoxLGel_uw&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=78&ab_channel=Cosmo",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Demise",
+            "link": "https://youtu.be/IDbykwcbeMU?si=mBCUEoefIb37vXb4",
+            "percent": 30,
             "hz": 0
         }
     ],
@@ -22,7 +22,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 72,
     "rating": 1,
@@ -31,5 +31,5 @@
     "isMain": true,
     "isFuture": false,
     "tags": ["Finished", "Public", "Long"],
-    "lastUpd": "01.07.2025"
+    "lastUpd": "23.09.2025"
 }

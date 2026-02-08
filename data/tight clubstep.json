@@ -3,11 +3,11 @@
     "name": "Tight Clubstep",
     "author": "Sevant",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Sevant",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/VGf7nh1yKIM",
-    "lastUpd": "08.02.2025",
+    "lastUpd": "06.03.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 90,
     "rating": 1,
     "percentFinished": 0,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
 
     "tags": ["Layout", "Remake", "Long"]
 }

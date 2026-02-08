@@ -1,27 +1,27 @@
 {
     "id": "private",
-    "name": "Thinking space II (legacy)",
+    "name": "Thinking Space II Legacy",
     "author": "Sebi",
     "creators": [],
-    "verifier": "Cocy group",
+    "verifier": "Zeronium",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/7EXwNGmphGM?si=8taw8mtBYSfMkVHr",
-    "lastUpd": "25.09.2025",
+    "lastUpd": "31.01.2026",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Zeronium",
+            "link": "https://youtu.be/LYOxLfjFbWo?si=0IS7YL2iUgz8HVDF",
+            "percent": 94,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Zeronium",
+            "link": "https://youtu.be/2gJsHScEx-w?si=zBWAmVZ-eL1SGo6G",
+            "percent": "47-100",
             "hz": 0
         }
     ],

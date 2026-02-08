@@ -6,8 +6,8 @@
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/86n8m-MXOG4",
-    "lastUpd": "01.06.2025",
+    "showcase": "https://youtu.be/R4OyEJdzZ9g?si=GXc4XeoqZCM43few",
+    "lastUpd": "24.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -24,14 +24,14 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 94,
     "rating": 1,
-    "percentFinished": 85,
+    "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["Long"]
 }

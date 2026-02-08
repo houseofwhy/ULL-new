@@ -7,24 +7,24 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=E0sQ4n9gCfc",
-    "lastUpd": "09.11.2025",
+    "lastUpd": "19.01.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Wity",
+            "link": "https://youtu.be/FdBbuWOPl-Y?si=rq0Qi5TLCapehQrr",
+            "percent": 91,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Wity",
+            "link": "https://youtu.be/nuoSvINCKm8?si=GOHQ7khcRmBytRDw",
+            "percent": "22-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 71,

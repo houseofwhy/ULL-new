@@ -12,7 +12,7 @@
         "Shodai",
         "Arachnid"
     ],
-    "verifier": "Gokill",
+    "verifier": "GoKill",
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=8gW1-_u1K0Y&source_ve_path=MTc4NDI0",
     "showcase": "https://www.youtube.com/watch?v=iyvRFtGVzHc",
@@ -43,6 +43,8 @@
         "Long",
         "Public",
         "Finished",
-        "Rated"
+        "Rated",
+        "Verified",
+        "Quality"
     ]
 }

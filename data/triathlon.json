@@ -3,7 +3,7 @@
     "name": "Triathlon",
     "author": "ZygisDij",
     "creators": [],
-    "verifier": "public",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/rsuRYFJyMiE",
@@ -12,19 +12,19 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "ZygisDij",
+            "link": "https://www.youtube.com/watch?v=dF7_DLR9nDw",
+            "percent": 73,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "ZygisDij",
+            "link": "https://www.youtube.com/watch?v=r4lApR_cAe4",
+            "percent": "36-100",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 795,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "Finished", "Public"]
+    "tags": ["XXL", "Finished", "Public", "Verifying"]
 }

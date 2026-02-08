@@ -25,7 +25,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?app=desktop&v=BLzQ6QhjHGM",
-    "lastUpd": "5.2.2025",
+    "lastUpd": "23.10.2025",
     "percentToQualify": 1,
     "records": [
         {
@@ -47,9 +47,8 @@
     "rating": 1,
     "percentFinished": 5,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "XL",
-        "Layout"
     ]
 }

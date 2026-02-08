@@ -1,7 +1,7 @@
 {
     "id": "91351939",
     "name": "Tunnel of Despair",
-    "author": "Neiro",
+    "author": "Exen",
     "creators": [],
     "verifier": "Zoink",
     "isVerified": true,
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 105,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Public", "Rated"]
+    "tags": ["Long", "Finished", "Public", "Rated", "Verified"]
 }

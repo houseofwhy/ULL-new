@@ -7,7 +7,7 @@
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=nQDTi077O6M",
     "showcase": "https://www.youtube.com/watch?v=DCbXHYwW7r0",
-    "lastUpd": "08.28.2023",
+    "lastUpd": "28.08.2023",
 
     "percentToQualify": 1,
     "records": [
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 100,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Verified", "Rated", "Public"]
+    "tags": ["Long", "Verified", "Rated", "Public", "Finished"]
 }
