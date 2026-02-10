@@ -5,7 +5,7 @@
     "creators": [
         "adaptivetax"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=1uYhk9-gexw",
@@ -29,12 +29,10 @@
     ],
     "length": 129,
     "rating": 1,
-    "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "percentFinished": 1,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
-        "Public",
-        "Layout",
         "XL"
     ]
 }

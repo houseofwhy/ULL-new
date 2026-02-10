@@ -37,6 +37,7 @@
         "Rated",
         "Finished",
         "Public",
-        "NONG"
+        "NONG",
+        "Verified"
     ]
 }

@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/EwDAZUgVTS8",
-    "lastUpd": "11.01.2026",
+    "lastUpd": "05.02.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Bacon",
+            "link": "#",
+            "percent": 51,
             "hz": 240
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Bacon",
+            "link": "https://youtu.be/yInDMQwQvZc?si=NbTto774UPBF8y5N",
+            "percent": "34-100",
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished"]
+    "tags": ["Long", "Finished", "Verifying"]
 }

@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/oZfKkZ36L9Q",
-    "lastUpd": "25.11.2025",
+    "lastUpd": "08.02.2026",
 
     "percentToQualify": 71,
     "records": [
         {
             "user": "Axinity",
-            "link": "https://youtu.be/CNM2m9YF82c?si=U1MeDgW8vtsP3nfV",
-            "percent": 70,
+            "link": "https://youtu.be/-RBNRndp-xE?si=xUtPXTN8wezh1RQQ",
+            "percent": 73,
             "hz": 240
         }
     ],
     "run": [
         {
             "user": "Axinity",
-            "link": "https://youtu.be/DoCLqk1Q2Ac?si=4KkZZbkrfZEwYWOW",
-            "percent": "39-100",
+            "link": "https://www.youtube.com/watch?v=X221kjOFiWk",
+            "percent": "25-100",
             "hz": 240
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium", "Finished", "Verifying", "NC"]
+    "tags": ["Medium", "Finished", "Verifying", "NC", "Remake"]
 }

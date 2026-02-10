@@ -3,11 +3,11 @@
     "name": "Triathlon",
     "author": "ZygisDij",
     "creators": [],
-    "verifier": "open verification",
-    "isVerified": false,
-    "verification": "",
+    "verifier": "ZygisDij",
+    "isVerified": true,
+    "verification": "https://youtu.be/WGU71RFygJs?si=1SzMVEmWZ-g5XiL3",
     "showcase": "https://youtu.be/rsuRYFJyMiE",
-    "lastUpd": "23.01.2025",
+    "lastUpd": "02.02.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "Finished", "Public", "Verifying"]
+    "tags": ["XXL", "Finished", "Public", "Verified", "Unrated"]
 }

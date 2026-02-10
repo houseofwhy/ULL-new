@@ -6,8 +6,8 @@
     "verifier": "剣部立地入学許可証 [s ice]",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=sF67wu28GBE",
-    "lastUpd": "08.06.2025",
+    "showcase": "https://youtu.be/x4Sa64sycV8?si=9mlFivCzEvSkE_vE",
+    "lastUpd": "06.02.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 79,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 60,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
     "tags": ["Long", "Quality"]
 }

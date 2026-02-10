@@ -13,7 +13,7 @@
         "Ataz",
         "Imthatlizard"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=CZS0p1G13hM",
@@ -38,8 +38,8 @@
     "length": 90,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
         "Finished",
         "Long",

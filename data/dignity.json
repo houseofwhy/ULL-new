@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=-bBdqPdv-5k",
-    "lastUpd": "29.01.2025",
+    "lastUpd": "08.02.2025",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Sevant",
+            "link": "https://www.youtube.com/live/gPhblUcPvgo?si=Wpa8Lzh_PKEsvL_q",
+            "percent": 34,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "Sevant",
-            "link": "https://www.youtube.com/live/MY8SXp5z7Dg?si=6ipoEoRewmGeAbqO&t=4921",
-            "percent": "39-76",
+            "link": "https://www.youtube.com/live/gPhblUcPvgo?si=Wpa8Lzh_PKEsvL_q",
+            "percent": "58-96",
             "hz": 0
         }
     ],

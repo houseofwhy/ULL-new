@@ -3,23 +3,23 @@
     "name": "Angelicide",
     "author": "zYuko",
     "creators": [],
-    "verifier": "open verification",
+    "verifier": "verification race",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Q-0k5m4UEfk",
-    "percentToQualify": 31,
+    "percentToQualify": 34,
     "records": [
         {
             "user": "Xtra8nuggies",
             "link": "https://www.youtube.com/watch?v=f44vs20Vd4M",
-            "percent": 31,
+            "percent": 33,
             "hz": 240
         }
     ],
     "length": 93,
     "rating": 1,
     "percentFinished": 100,
-    "lastUpd": "30.01.2026",
+    "lastUpd": "10.02.2026",
 
     "isMain": true,
     "isFuture": true,

@@ -9,7 +9,7 @@
         "Zronk",
         "Pastel Pink"
     ],
-    "verifier": "Unknown",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=OT9IveYVHyY",
@@ -33,9 +33,9 @@
     ],
     "length": 100,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 90,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "Long"
     ]

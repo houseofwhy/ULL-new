@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": 133175713,
     "name": "ORBIT",
     "author": "MindCap",
     "creators": [],
     "verifier": "Zoink",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=QKcv8DkNPd0",
     "showcase": "https://youtu.be/k1QzxsQGqSI",
-    "lastUpd": "31.01.2026",
+    "lastUpd": "10.02.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Quality", "Finished", "Verifying"]
+    "tags": ["XL", "Quality", "Finished", "Verified", "Unrated", "Public"]
 }
