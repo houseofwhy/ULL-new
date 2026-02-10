@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 0,
     "isMain": false,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["Layout", "Long"]
+    "tags": ["Layout", "Long", "Quality"]
 }
