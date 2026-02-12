@@ -1,0 +1,36 @@
+{
+    "id": "private",
+    "name": "Waru",
+    "author": "Exen",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/tksfExOwvMw?si=hXzntv6_4J8Q0qOU",
+    "lastUpd": "12.02.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 179,
+    "rating": 1,
+    "percentFinished": 25,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "XL"
+    ]
+}
