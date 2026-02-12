@@ -11,9 +11,9 @@
     "percentToQualify": 12,
     "records": [
         {
-            "user": "Fooaffe",
-            "link": "https://www.youtube.com/watch?v=PjCK-VFPe6Q",
-            "percent": 11,
+            "user": "Maximum",
+            "link": "https://www.youtube.com/watch?v=XWZwf23q7aU",
+            "percent": 12,
             "hz": 240
         }
     ],
@@ -29,7 +29,7 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": [
         "XXL",
         "Public",
