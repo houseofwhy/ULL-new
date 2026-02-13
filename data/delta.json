@@ -1,0 +1,41 @@
+{
+    "id": 93917362,
+    "name": "Delta",
+    "author": "ArtsiBurn",
+    "creators": [],
+    "verifier": "Doggie",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=_rr3J8DkIm4",
+    "showcase": "https://www.youtube.com/watch?v=SYhxEhywmrQ",
+    "lastUpd": "31.08.2023",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 144,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Verified",
+        "Rated",
+        "XL",
+        "Remake"
+    ]
+}

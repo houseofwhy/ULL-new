@@ -1,0 +1,37 @@
+{
+    "id": 125825037,
+    "name": "K4L1B3R",
+    "author": "Shyne",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/hFs-DR6uquA?si=3liXgL6wCTJys-uz",
+    "lastUpd": "21.09.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 75,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Public",
+        "Long"
+    ]
+}
