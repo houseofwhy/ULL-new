@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "BULGARIAN INTERFACE",
+    "author": "rubrum",
+    "creators": [],
+    "verifier": "Cursed",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=l8mFpZ_J37k",
+    "lastUpd": "22.05.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 84,
+    "rating": 1,
+    "percentFinished": 10,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Long",
+        "Remake"
+    ]
+}

@@ -35,6 +35,8 @@
         "Finished",
         "Medium",
         "Remake",
-        "NONG"
+        "NONG",
+        "Rated",
+        "Verified"
     ]
 }
