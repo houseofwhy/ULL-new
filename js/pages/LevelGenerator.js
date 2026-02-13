@@ -8,7 +8,7 @@ export default {
                     <h1 class="type-headline-lg">Level JSON Generator</h1>
                     <br>
                     <p class="type-body">Fill in the details below to generate a JSON file for the level. Refer to the guide for specific formatting rules.</p>
-                    
+
                     <form @submit.prevent="generateJson" class="generator-form">
                         <!-- Basic Info -->
                         <div class="form-group">
@@ -63,7 +63,7 @@ export default {
                             <input v-model="level.lastUpd" type="text" placeholder="DD.MM.YYYY" />
                             <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Leave empty to use today's date.</small>
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Password (ID)</label>
                              <input v-model="level.id" type="text" placeholder="private or level ID" />
@@ -114,7 +114,7 @@ export default {
                                 <input type="checkbox" v-model="level.isFuture" /> Future List?
                             </label>
                         </div>
-                         
+
                         <!-- Tags -->
                         <div class="form-group">
                             <label>Tags</label>
@@ -140,9 +140,9 @@ export default {
             </div>
             <component :is="'style'">
                 .generator-form {
-                    display: flex; 
-                    flex-direction: column; 
-                    gap: 1.5rem; 
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
                     margin-top: 2rem;
                     width: 100%;
                     font-family: "Lexend Deca", sans-serif;
@@ -205,7 +205,7 @@ export default {
             creatorsStr: "",
             errors: [],
             availableTags: [
-                "Public", "Finished", "Verifying", "Layout", "Unrated", "Rated",
+                "Public", "Finished", "Verifying", "Layout", "Verified", "Unrated", "Rated",
                 "Medium", "Long", "XL", "XXL", "NC", "Remake", "NONG", "Quality"
             ]
         };
