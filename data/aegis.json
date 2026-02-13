@@ -1,0 +1,36 @@
+{
+    "id": "private",
+    "name": "AEGIS",
+    "author": "Weaver",
+    "creators": [],
+    "verifier": "TBD",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/jSBZhU5MWW8?si=ejch82s0Uj19om7Q",
+    "lastUpd": "10.07.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 116,
+    "rating": 1,
+    "percentFinished": 2,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Long"
+    ]
+}

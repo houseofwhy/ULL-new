@@ -1,0 +1,39 @@
+{
+    "id": "private",
+    "name": "Echoes of Phantasm",
+    "author": "MinAY",
+    "creators": [],
+    "verifier": "Rivet",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/kGzAMkSC06A?si=rSYN8EqPur02FKlk",
+    "lastUpd": "23.11.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Rivet",
+            "link": "https://youtu.be/9GqXNbfNPXA?si=UV0C-yKNyNGj_T4l",
+            "percent": "42-100",
+            "hz": 240
+        }
+    ],
+    "length": 179,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Verifying",
+        "XL",
+        "Remake"
+    ]
+}
