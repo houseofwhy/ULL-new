@@ -1,0 +1,42 @@
+{
+    "id": 93340783,
+    "name": "Cimmerian Shade",
+    "author": "SrGuillester",
+    "creators": [
+        "SrGuillester",
+        "AZuLer4"
+    ],
+    "verifier": "spcreat",
+    "isVerified": true,
+    "verification": "https://youtu.be/lUNvV1k19HA?si=_-PuJ2E7NnypR9Xd",
+    "showcase": "https://youtu.be/mxPUmf2tsQE?si=r2Va2N06D4q1pRPa",
+    "lastUpd": "26.04.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 77,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long",
+        "Finished",
+        "Public",
+        "Rated"
+    ]
+}

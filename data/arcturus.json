@@ -1,0 +1,40 @@
+{
+    "id": 72315402,
+    "name": "arcturus",
+    "author": "maxfs",
+    "creators": [],
+    "verifier": "ultrakawaHD",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=a_Bqa8l9Xtc",
+    "showcase": "https://www.youtube.com/watch?v=_vyMFc4_La0",
+    "lastUpd": "09.08.2021",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 58,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Medium",
+        "Remake",
+        "NONG"
+    ]
+}

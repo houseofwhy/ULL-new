@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Cucumber Caverns",
+    "author": "irsdorkage",
+    "creators": [],
+    "verifier": "Lol amaZon",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=CY8oYTw1_PE",
+    "lastUpd": "09.02.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Lol amaZon",
+            "link": "https://youtu.be/VSBp53a-JWE?si=sR7MmwU-PwTUo0eH",
+            "percent": 57,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "Lol amaZon",
+            "link": "https://www.youtube.com/watch?v=eSnN66Ub9MM",
+            "percent": "34-100",
+            "hz": 240
+        }
+    ],
+    "length": 94,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Verifying",
+        "Finished",
+        "Long"
+    ]
+}

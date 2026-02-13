@@ -1,0 +1,40 @@
+{
+    "id": 69685815,
+    "name": "Sonic Wave Infinity",
+    "author": "APTeam",
+    "creators": [],
+    "verifier": "Xanii",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=C3-l_fFikpQ",
+    "showcase": "https://www.youtube.com/watch?v=UQVNbhQEiLE",
+    "lastUpd": "31.05.2021",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 148,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "XL",
+        "Remake"
+    ]
+}

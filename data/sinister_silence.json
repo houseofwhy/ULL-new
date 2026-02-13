@@ -1,0 +1,39 @@
+{
+    "id": 82249742,
+    "name": "Sinister Silence",
+    "author": "Wahffle",
+    "creators": [],
+    "verifier": "wwdonut",
+    "isVerified": true,
+    "verification": "https://youtu.be/6N8u_byYoZo?si=WWPxfP4rltebtPQj",
+    "showcase": "https://www.youtube.com/watch?v=wgw4Y4Ie1os",
+    "lastUpd": "03.08.2023",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 445,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XXL",
+        "Rated",
+        "Finished",
+        "Public"
+    ]
+}
