@@ -3,7 +3,7 @@
     "name": "Killstealer",
     "author": "Asterion",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Kloone",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/XKNXzRtxgsM",
@@ -12,10 +12,10 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Kloone",
+            "link": "https://www.youtube.com/watch?v=Rysglhd6nPg",
+            "percent": 46,
+            "hz": 240
         }
     ],
     "run": [

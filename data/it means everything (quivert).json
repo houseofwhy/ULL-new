@@ -3,7 +3,7 @@
     "name": "IT MEANS EVERYTHING",
     "author": "Velyt",
     "creators": [],
-    "verifier": "Quivert",
+    "verifier": "Stefan Boss, Wattyy",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=RDPySzeWKPA",
@@ -12,7 +12,7 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Quivert",
+            "user": "Stefan Boss",
             "link": "https://www.youtube.com/watch?v=XQ0LYnTx6vY",
             "percent": 54,
             "hz": 0
@@ -20,7 +20,7 @@
     ],
     "run": [
         {
-            "user": "Quivert",
+            "user": "Stefan Boss",
             "link": "https://youtu.be/E7rn2IphGfw?si=2JWDFnQos95lJQY_",
             "percent": "21-97",
             "hz": 0

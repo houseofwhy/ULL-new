@@ -3,7 +3,7 @@
     "name": "The Silent Zone",
     "author": "Fatum",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Gokill",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/R4OyEJdzZ9g?si=GXc4XeoqZCM43few",
@@ -20,10 +20,10 @@
     ],
     "run": [
         {
-            "user": "none",
+            "user": "GoKill",
             "link": "",
-            "percent": "0",
-            "hz": 0
+            "percent": "56-86",
+            "hz": 240
         }
     ],
 
