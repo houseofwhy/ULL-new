@@ -1,0 +1,41 @@
+{
+    "id": 99703915,
+    "name": "Fracture",
+    "author": "Arrowgazi",
+    "creators": [],
+    "verifier": "Dezstro",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=R_-chk3SRFI",
+    "showcase": "https://youtu.be/TroRY2oC4KM?si=hniesK2_Zsu-KP7E",
+    "lastUpd": "02.06.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 85,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Verified",
+        "Unrated",
+        "Long",
+        "NC"
+    ]
+}

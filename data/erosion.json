@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "EROSION",
+    "author": "Marsu",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/l6LSvxxEpGw?si=IyGL_8T-kpfEhx8r",
+    "lastUpd": "28.08.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 226,
+    "rating": 1,
+    "percentFinished": 40,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XXL",
+        "Quality"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "id": 93732702,
+    "name": "Crystal Crusher",
+    "author": "Zeniux",
+    "creators": [
+        "Zeniux",
+        "Zeus"
+    ],
+    "verifier": "GuiltGuit",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=qirwgz-haVQ",
+    "showcase": "https://youtu.be/8rh_hr7O1lg?si=I0RzPEQW-tIWSumz",
+    "lastUpd": "13.01.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 61,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Verified",
+        "Rated",
+        "Long"
+    ]
+}

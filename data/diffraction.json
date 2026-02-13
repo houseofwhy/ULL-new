@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Diffraction",
+    "author": "ggii",
+    "creators": [],
+    "verifier": "GamingByte",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=RtiiIkrhE9M",
+    "lastUpd": "22.07.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 92,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": false,
+    "isFuture": false,
+    "tags": [
+        "Finished",
+        "Long"
+    ]
+}

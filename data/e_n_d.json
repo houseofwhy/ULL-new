@@ -1,0 +1,41 @@
+{
+    "id": 117427403,
+    "name": "E N D",
+    "author": "SumoMonke",
+    "creators": [],
+    "verifier": "Karma",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=CQsy56smO3E",
+    "showcase": "https://youtu.be/sWsbwEwvPSY?si=AiOMyL8kCpC595d1",
+    "lastUpd": "16.04.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 52,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Unrated",
+        "Medium",
+        "Remake",
+        "NONG"
+    ]
+}

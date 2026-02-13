@@ -1,0 +1,56 @@
+{
+    "id": "private",
+    "name": "Lost in Time 2",
+    "author": "Zeronium",
+    "creators": [
+        "Zeronium",
+        "JOLA!",
+        "Akunakun",
+        "Bailey",
+        "Enfur",
+        "hue",
+        "eggyburstmagic",
+        "At424",
+        "Kaza",
+        "melody",
+        "dawn",
+        "BalmDaKing YT",
+        "TysonGMD",
+        "nexel",
+        "starseuni",
+        "fil",
+        "finley",
+        "skywyrd",
+        "MultiverseGD"
+    ],
+    "verifier": "Zeronium",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/V_QJz6fT-ns?si=PRrgOsYI3_oQ-4OM",
+    "lastUpd": "17.01.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 164,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "XL"
+    ]
+}

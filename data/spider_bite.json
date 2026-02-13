@@ -1,0 +1,36 @@
+{
+    "id": "private",
+    "name": "SPIDER BITE",
+    "author": "Terralith",
+    "creators": [],
+    "verifier": "zLevii",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/cGsBY1UB7kk?si=useowCawuZUXJncl",
+    "lastUpd": "09.02.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 84,
+    "rating": 1,
+    "percentFinished": 12,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Long"
+    ]
+}

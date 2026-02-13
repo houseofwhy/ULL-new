@@ -1,0 +1,41 @@
+{
+    "id": 95031870,
+    "name": "Jigsaw",
+    "author": "Nekon",
+    "creators": [],
+    "verifier": "GoKill",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=FPfSqlI0T30&t=9s",
+    "showcase": "https://youtu.be/ZAkyrfgNeOk?si=7bG6i4B96q-7M-du",
+    "lastUpd": "02.10.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 96,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Verified",
+        "Rated",
+        "Long",
+        "Quality"
+    ]
+}
