@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Flaklypa",
+    "author": "cheapy",
+    "creators": [],
+    "verifier": "Gelforce",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/hfVsyXUGfCg?si=qI4hFL1ed_o7HBby",
+    "lastUpd": "20.10.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Gelforce",
+            "link": "https://youtu.be/hfVsyXUGfCg?si=qI4hFL1ed_o7HBby",
+            "percent": 90,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "Gelforce",
+            "link": "https://youtu.be/eDdMBcwrpAk?si=lnDDZMpS2mhHWQkH",
+            "percent": "46-100",
+            "hz": 240
+        }
+    ],
+    "length": 96,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Verifying",
+        "Long"
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "id": "private",
+    "name": "Night of Nights",
+    "author": "garlicGD",
+    "creators": [],
+    "verifier": "Jif",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/8vJrw3xAHTA?si=24I2FZ4AYjfXP-H0",
+    "lastUpd": "21.06.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 174,
+    "rating": 1,
+    "percentFinished": 50,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "XL"
+    ]
+}

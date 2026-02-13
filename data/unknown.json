@@ -1,0 +1,41 @@
+{
+    "id": 88203501,
+    "name": "Unknown",
+    "author": "NineDice",
+    "creators": [],
+    "verifier": "Diamond",
+    "isVerified": true,
+    "verification": "https://youtu.be/a1sQxQqU6EM?si=VLe5K6QBL5pn12MA",
+    "showcase": "https://youtu.be/cSl9KmF_jHE?si=TgtUmtnRn8MStbrw",
+    "lastUpd": "31.01.2023",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 47,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Rated",
+        "Medium",
+        "Remake",
+        "Verified"
+    ]
+}

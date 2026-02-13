@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Lunaphobia",
+    "author": "Jakalope",
+    "creators": [],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/Fh13CFxgO60?si=hL7z2m4SxsuDpvsa",
+    "lastUpd": "29.05.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 77,
+    "rating": 1,
+    "percentFinished": 40,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Long",
+        "NC"
+    ]
+}
