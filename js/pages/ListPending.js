@@ -29,7 +29,9 @@ export default {
                             </div>
                         </td>
                         <td class="level">
-                            <div class="type-label-lg" style="padding: 1rem;">{{ level.name }}</div>
+                            <div class="type-label-lg" style="padding: 1rem;">
+                            <a :href="level.link">{{ level.name }}</a>
+                            </div>
                         </td>
                     </tr>
                 </table>

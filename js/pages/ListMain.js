@@ -140,9 +140,13 @@ export default {
                             <div class="type-title-sm">ID</div>
                             <p>{{ (level.id === "private" && level.leakID != null) ? level.leakID : level.id }}</p>
                         </li>
-                        <li>
+                        <li v-if="level.length!=0">
                             <div class="type-title-sm">Length</div>
                             <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
+                        </li>
+                        <li v-if="level.length==0">
+                            <div class="type-title-sm">Length</div>
+                            <p>unknown</p>
                         </li>
 						<li>
                             <div class="type-title-sm">Last Update</div>

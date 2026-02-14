@@ -43,164 +43,207 @@
         "name": "LESOPOWAL",
         "placement": "down"
     },
+
+
+
     {
         "name": "ZOINK NEVER CLEAR",
-        "placement": "1"
+        "placement": "1",
+        "link": "#"
     },
     {
         "name": "Soulless",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "Carsion",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "Energy Wave",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "Midnight",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "V S C",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "Lirile",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "BEHEMOTH",
-        "placement": "10"
+        "placement": "10",
+        "link": "#"
     },
     {
         "name": "Outcast",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "Phantasm IV",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "Sky Linuddier",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "CRITICAL HEAT",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "Losing Your Mind",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "SwiftVortex",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "The Fire and Flames",
-        "placement": "20"
+        "placement": "20",
+        "link": "#"
     },
     {
         "name": "Ground Fella",
-        "placement": "30"
+        "placement": "30",
+        "link": "#"
     },
     {
         "name": "Neutron Step",
-        "placement": "30"
+        "placement": "30",
+        "link": "#"
     },
     {
         "name": "Crimson Lady",
-        "placement": "50"
+        "placement": "50",
+        "link": "#"
     },
     {
         "name": "Shattered Kingdom",
-        "placement": "50"
+        "placement": "50",
+        "link": "#"
     },
     {
         "name": "QUAVER",
-        "placement": "50"
+        "placement": "50",
+        "link": "#"
     },
     {
         "name": "WAVING",
-        "placement": "50"
+        "placement": "50",
+        "link": "#"
     },
     {
         "name": "HYPERMANIAC",
-        "placement": "50"
+        "placement": "50",
+        "link": "#"
     },
     {
         "name": "Toxic Rush III",
-        "placement": "50"
+        "placement": "50",
+        "link": "#"
     },
     {
         "name": "Session 1",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "Calibrate",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "Final Level",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "Vindication",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "The French",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "Fall In Line",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "Despair",
-        "placement": "75"
+        "placement": "75",
+        "link": "#"
     },
     {
         "name": "IMNOTSORRY",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "Vaporeta",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "Hyoko",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "Silent Circles (Bunny)",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "Deadly Clubstep V2",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "The Final Phase",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "Korobeiniki",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "The Aether Trial",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "EVERBLOOM",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     },
     {
         "name": "Omega PARTS",
-        "placement": "?"
+        "placement": "?",
+        "link": "#"
     }
 ]
