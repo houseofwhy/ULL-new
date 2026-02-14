@@ -57,7 +57,7 @@ export default {
                     <div v-if="level.rankingScore == 2*(100**2)">
                         <div v-if="bestRecord" class="best-record">
                             <p class="type-body">
-                                The layout of the level <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">has been verified</span> by {{ bestRecord.user }}</a>
+                                The layout of the level <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">has been verified</span></a> by {{ bestRecord.user }}
                             </p>
                         </div>
                     </div>
