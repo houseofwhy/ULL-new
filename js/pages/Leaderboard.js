@@ -171,6 +171,7 @@ export default {
 
                 level.maxPercent = maxPercent;
                 level.maxRunDifference = maxRunDifference;
+                if (maxPercent == 100) {maxRunDifference = 100}
                 level.rankingScore = Math.max(maxPercent, maxRunDifference) ** 2 + Math.min(maxPercent, maxRunDifference) ** 1.8;
             });
 
