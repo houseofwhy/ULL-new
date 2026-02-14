@@ -37,6 +37,7 @@
         "Rated",
         "Finished",
         "Public",
-        "Remake"
+        "Remake",
+        "Verified"
     ]
 }

@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 130,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Unrated", "Finished", "Public"]
+    "tags": ["XL", "Rated", "Finished", "Public", "Verified"]
 }
