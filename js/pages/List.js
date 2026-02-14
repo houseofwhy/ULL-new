@@ -19,19 +19,35 @@ export default {
     components: { Spinner, LevelAuthors, ListEditors },
     template:
         `
-	<style>
+	<component :is="'style'">
 		.list__home{
 			border-color: var(--color-on-primary);
 		}
-	</style>
+        .search {
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--color-on-background);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-family: inherit;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .search:focus {
+            outline: 2px solid var(--color-primary);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+	</component>
 	<header class="new" :style="store.dark ? '--tab-active-bg: var(--color-background); --tab-active-color: var(--color-on-background);' : '--tab-active-bg: var(--color-on-background); --tab-active-color: var(--color-background);'">
-            <style>
+            <component :is="'style'">
                 header.new .nav__tab.router-link-active {
                     background-color: var(--tab-active-bg);
                     color: var(--tab-active-color);
                     border-color: transparent;
                 }
-            </style>
+            </component>
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">All Levels</span>
@@ -52,6 +68,12 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container surface">
+                <input 
+                    v-model="search"
+                    class="search"
+                    type="text" 
+                    placeholder="Search levels..."
+                >
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
@@ -179,7 +201,13 @@ export default {
         toggledShowcase: false,
         isFiltersActive: false,
         filtersList: filtersList,
+        search: "",
     }),
+    watch: {
+        search() {
+            this.applyFilters();
+        }
+    },
     computed: {
         level() {
             return this.list[this.selected][0];
@@ -227,36 +255,36 @@ export default {
         filtersToggle() {
             this.isFiltersActive = !this.isFiltersActive;
         },
+        applyFilters() {
+            if (!this.list) return;
+
+            const activeFilters = this.filtersList.filter(f => f.active && !f.separator);
+            const searchQuery = this.search.toLowerCase().trim();
+
+            this.list.forEach(item => {
+                const level = item[0];
+                if (!level) return;
+
+                const name = level.name.toLowerCase();
+                const matchesSearch = !searchQuery || name.includes(searchQuery);
+
+                let matchesTags = true;
+                if (activeFilters.length > 0) {
+                    for (const filter of activeFilters) {
+                        if (!level.tags || !level.tags.includes(filter.key)) {
+                            matchesTags = false;
+                            break;
+                        }
+                    }
+                }
+
+                level.isHidden = !(matchesSearch && matchesTags);
+            });
+        },
         useFilter(index) {
             if (filtersList[index].separator) return;
             this.filtersList[index].active = !this.filtersList[index].active;
-            this.filtersToggled = 0;
-            for (let filter of filtersList) {
-                if (filter.active) this.filtersToggled++;
-            }
-            if (this.filtersToggled != 0) {
-                this.list.map((level) => {
-                    for (let filter of filtersList) {
-                        if (!filter.active) {
-                            continue;
-                        }
-                        if (
-                            level[0].tags == undefined ||
-                            !level[0].tags.includes(filter.key)
-                        ) {
-                            level[0].isHidden = true;
-                            break;
-                        } else {
-                            level[0].isHidden = false;
-                        }
-                    }
-                    //				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
-                });
-            } else {
-                for (let level of this.list) {
-                    level[0].isHidden = false;
-                }
-            }
+            this.applyFilters();
         },
     },
 };
