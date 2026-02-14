@@ -22,7 +22,7 @@
     "lastUpd": "13.08.2025",
 
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": ["XL", "Remake"],
     "run": [
         {
@@ -30,6 +30,6 @@
             "link": "https://youtu.be/JCatrWrfeTg?si=46T3XN0OPLPfP4Ux",
             "percent": "58-100",
             "hz": 240
-        }        
+        }
     ]
 }

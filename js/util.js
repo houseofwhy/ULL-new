@@ -43,18 +43,21 @@ export const filtersList = [
 	{ active: false, name: "Finished", key: "Finished" },
 	{ active: false, name: "Being Verified", key: "Verifying" },
 	{ active: false, name: "Layout State", key: "Layout" },
+    { active: false, name: "Verified", key: "Verified" },
 	{ active: false, name: "Unrated", key: "Unrated" },
 	{ active: false, name: "Rated", key: "Rated" },
 	{ separator: true },
 	{ active: false, name: "Medium", key: "Medium" },
 	{ active: false, name: "Long", key: "Long" },
 	{ active: false, name: "XL", key: "XL" },
-	{ active: false, name: "XXL+", key: "XXL" },
+	{ active: false, name: "XXL", key: "XXL" },
+    { active: false, name: "XXXL+", key: "XXXL" },
 	{ separator: true },
 	{ active: false, name: "NC Level", key: "NC" },
 	{ active: false, name: "Remake", key: "Remake" },
 	{ active: false, name: "Uses NoNG", key: "NONG" },
 	{ active: false, name: "Top Quality", key: "Quality" },
+    { active: false, name: "2-Player", key: "2p" },
 	{ separator: true }
 ]
 

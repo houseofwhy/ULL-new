@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "katzen",
-            "link": "https://www.youtube.com/watch?v=UvSC-J3CKPw",
-            "percent": 86,
+            "user": "none",
+            "link": "#",
+            "percent": 0,
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "Verifying"]
+    "tags": ["XXXL"]
 }
