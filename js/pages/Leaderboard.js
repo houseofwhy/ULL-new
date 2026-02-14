@@ -42,7 +42,7 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <div>
+                    <div v-if="level.rankingScore != 2*(100**2)">
                         <div v-if="bestRecord" class="best-record">
                             <p class="type-body">
                                 Best progress from 0: <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
@@ -51,6 +51,13 @@ export default {
                         <div v-if="bestRun" class="best-run">
                             <p class="type-body">
                                 Best run: <a :href="bestRun.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div v-if="level.rankingScore == 2*(100**2)">
+                        <div v-if="bestRecord" class="best-record">
+                            <p class="type-body">
+                                The layout of the level has been verified by <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.user }}%</span></a>
                             </p>
                         </div>
                     </div>
@@ -171,8 +178,8 @@ export default {
 
                 level.maxPercent = maxPercent;
                 level.maxRunDifference = maxRunDifference;
-                if (maxPercent == 100) {maxRunDifference = 100}
                 level.rankingScore = Math.max(maxPercent, maxRunDifference) ** 2 + Math.min(maxPercent, maxRunDifference) ** 1.8;
+                if (maxPercent == 100) {level.rankingScore = 2*(100**2)}
             });
 
             const filteredList = list.filter(([level, err]) => level && !level.isVerified && level.rankingScore > 0);
