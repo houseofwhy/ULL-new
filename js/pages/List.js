@@ -20,9 +20,7 @@ export default {
     template:
         `
 	<component :is="'style'">
-		.list__home{
-			border-color: var(--color-on-primary);
-		}
+
         .search {
             width: 100%;
             padding: 10px;
@@ -40,14 +38,8 @@ export default {
             background-color: rgba(255, 255, 255, 0.1);
         }
 	</component>
-	<header class="new" :style="store.dark ? '--tab-active-bg: var(--color-background); --tab-active-color: var(--color-on-background);' : '--tab-active-bg: var(--color-on-background); --tab-active-color: var(--color-background);'">
-            <component :is="'style'">
-                header.new .nav__tab.router-link-active {
-                    background-color: var(--tab-active-bg);
-                    color: var(--tab-active-color);
-                    border-color: transparent;
-                }
-            </component>
+	<header class="new">
+
             <nav class="nav">
                 <router-link class="nav__tab" to="/">
                     <span class="type-label-lg">All Levels</span>

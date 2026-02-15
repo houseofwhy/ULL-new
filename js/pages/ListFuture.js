@@ -20,17 +20,8 @@ export default {
     template:
         `
 	<component :is="'style'">
-		.list__home{
-			border-color: var(--color-on-primary);
-		}
-		.dark header.new .nav__tab.router-link-active {
-			background-color: var(--color-background);
-			color: var(--color-on-background);
-		}
-		header.new .nav__tab.router-link-active {
-			background-color: var(--color-on-background);
-			color: var(--color-background);
-		}
+
+
         .search {
             width: 100%;
             padding: 10px;

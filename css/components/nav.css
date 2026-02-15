@@ -3,10 +3,11 @@
     --color-on-background: black;
     --color-primary: #1900ff;
     --color-on-primary: white;
-/* old color is #ff00ff */
+    /* old color is #ff00ff */
     display: flex;
     column-gap: 2rem;
 }
+
 .nav .nav__tab {
     padding-top: 4px;
     border-bottom: 4px solid transparent;
@@ -15,18 +16,29 @@
     padding-inline: 0.5rem;
     transition: border-color 100ms ease;
 }
+
 .nav .nav__tab.router-link-active {
     border-color: var(--color-on-primary);
 }
+
 .nav .nav__tab:hover {
     border-color: var(--color-on-primary);
 }
 
 header.new .nav .nav__tab.router-link-active {
-    border-color: var(--color-background);
+    border-color: black;
 }
+
+.dark header.new .nav .nav__tab.router-link-active {
+    border-color: white;
+}
+
 header.new .nav .nav__tab:hover {
-    border-color: var(--color-background);
+    border-color: black;
+}
+
+.dark header.new .nav .nav__tab:hover {
+    border-color: white;
 }
 
 .nav .nav__actions {
@@ -35,6 +47,7 @@ header.new .nav .nav__tab:hover {
     align-items: center;
     justify-content: flex-start;
 }
+
 .nav .nav__actions .nav__icon {
     height: 3rem;
     width: 3rem;
@@ -47,12 +60,15 @@ header.new .nav .nav__tab:hover {
     justify-content: center;
     transition: background-color 100ms ease;
 }
+
 .nav .nav__actions .nav__icon:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
 .nav .nav__actions .nav__icon img {
     height: 1.5rem;
 }
+
 .nav .nav__actions .nav__cta {
     margin-left: 1rem;
     padding: 1rem;
@@ -63,13 +79,14 @@ header.new .nav .nav__tab:hover {
     transition: transform 100ms ease;
     white-space: nowrap;
 }
+
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);
 }
 
 
 .filters {
-    width:200px;
+    width: 200px;
 }
 
 .filters-text {
@@ -84,8 +101,8 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-menu {
-    width:200px;
-    background:rgba(0, 0, 0, 1);
+    width: 200px;
+    background: rgba(0, 0, 0, 1);
     position: relative;
     top: -4px;
     max-height: 0;
@@ -100,8 +117,9 @@ header.new .nav .nav__tab:hover {
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
     padding: 7px 20px 7px 20px;
-/*    color: var(--color-on-background); */
+    /*    color: var(--color-on-background); */
 }
+
 .filters-one:hover {
     background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
@@ -113,7 +131,7 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-one.active span {
-    opacity:1
+    opacity: 1
 }
 
 .filters-selected .filters-menu {
