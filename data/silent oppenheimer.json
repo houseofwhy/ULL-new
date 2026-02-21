@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Q-IT8xuqU9Q&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=506",
-    "lastUpd": "14.11.2025",
+    "lastUpd": "14.02.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "Dezstro",
-            "link": "https://youtu.be/A-QO1PICMlo?si=ocqt-lG-5a_YgHW6",
-            "percent": 55,
+            "link": "https://youtu.be/iUO53bIXGqY?si=n5MJfyWXRqcCHP0b",
+            "percent": 59,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "Dezstro",
-            "link": "https://www.youtube.com/watch?v=cj1CIEeswLs",
-            "percent": "57-100",
+            "link": "https://youtu.be/bsv8EjM1wGw?si=R_UQ3HxN2qYh_-le",
+            "percent": "43-100",
             "hz": 0
         }
     ],

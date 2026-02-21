@@ -3,7 +3,7 @@
     "name": "Bad Tr1p",
     "author": "kapycta999",
     "creators": [],
-    "verifier": "exsii",
+    "verifier": "ROZE",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=qUzdJUbnijg",
@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
     "tags": ["Long", "Finished", "Verifying"]
 }

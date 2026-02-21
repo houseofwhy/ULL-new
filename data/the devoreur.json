@@ -10,17 +10,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Demise",
-            "link": "https://youtu.be/IDbykwcbeMU?si=mBCUEoefIb37vXb4",
-            "percent": 30,
+            "user": "xXMasterXxY",
+            "link": "https://youtu.be/BgwD-JnyAj0?si=THpNdBX_JEwbN87f",
+            "percent": 38,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "yoloapplesauce",
-            "link": "https://www.youtube.com/watch?v=AaVKf_RSjiU",
-            "percent": "61-93",
+            "user": "xXMasterXxY",
+            "link": "https://youtu.be/BgwD-JnyAj0?si=THpNdBX_JEwbN87f",
+            "percent": "26-64",
             "hz": 0
         }
     ],
@@ -30,6 +30,6 @@
 
     "isMain": true,
     "isFuture": false,
-    "tags": ["Finished", "Public", "Long"],
-    "lastUpd": "23.09.2025"
+    "tags": ["Finished", "Public", "Long", "Verifying"],
+    "lastUpd": "21.02.2026"
 }

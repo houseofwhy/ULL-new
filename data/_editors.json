@@ -5,17 +5,7 @@
         "link": "https://www.youtube.com/channel/UC72Ceml55mVisJNEByLBHPA"
     },
     {
-        "role": "owner",
-        "name": "niroi",
-        "link": "https://www.youtube.com/@niroi_"
-    },
-    {
-        "role": "owner",
-        "name": "Keres",
-        "link": "https://youtube.com/@keres9580"
-    },
-    {
-        "role": "owner",
+        "role": "admin",
         "name": "VivisectionGD",
         "link": "https://www.youtube.com/@VivisectionGD"
     },
@@ -25,24 +15,24 @@
         "link": "https://www.youtube.com/@exiled_shadegd"
     },
     {
-        "role": "admin",
-        "name": "MrMarcus",
-        "link": "https://www.youtube.com/@MrMarcusGD"
+        "role": "seniormod",
+        "name": "niroi",
+        "link": "https://www.youtube.com/@niroi_"
     },
     {
-        "role": "admin",
+        "role": "seniormod",
+        "name": "Keres",
+        "link": "https://youtube.com/@keres9580"
+    },
+    {
+        "role": "seniormod",
         "name": "LukeLGamer",
         "link": "https://www.youtube.com/@LukeLGamer34"
     },
     {
-        "role": "seniormod",
+        "role": "mod",
         "name": "Terralith",
         "link": "https://www.youtube.com/@terragaminggeometrydash"
-    },
-    {
-        "role": "mod",
-        "name": "Injur3dGX",
-        "link": "https://www.youtube.com/@Injured_666"
     },
     {
         "role": "mod",
@@ -63,10 +53,5 @@
         "role": "dev",
         "name": "NikoYakorem",
         "link": "#"
-    },
-    {
-        "role": "dev",
-        "name": "Silenceglobally",
-        "link": "https://www.youtube.com/channel/UCdzUSFNa2rPl48--5Y3v6IA"
     }
 ]

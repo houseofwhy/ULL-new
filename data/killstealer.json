@@ -13,8 +13,8 @@
     "records": [
         {
             "user": "Kloone",
-            "link": "https://www.youtube.com/watch?v=Rysglhd6nPg",
-            "percent": 46,
+            "link": "https://www.youtube.com/watch?v=GsmAP4yu4TQ",
+            "percent": 60,
             "hz": 240
         }
     ],
@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
-    "tags": ["XXL", "Finished"]
+    "tags": ["XXL", "Finished", "Verifying"]
 }

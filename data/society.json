@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/OTQ7ojWfHP0?si=pjddvaB7FxMwCrBX&t=104",
-    "lastUpd": "20.01.2026",
+    "lastUpd": "20.02.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Zylarion",
+            "link": "https://youtu.be/LQGYKoYMrFY?si=JqBbPC7lW7BSpBNM",
+            "percent": 18,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Galagzee",
+            "link": "https://www.youtube.com/watch?v=AFj_sU1zljQ&t=48s",
+            "percent": "33-50",
             "hz": 0
         }
     ],
