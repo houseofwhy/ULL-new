@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=qUzdJUbnijg",
-    "lastUpd": "01.02.2025",
+    "lastUpd": "25.02.2026",
 
     "percentToQualify": 60,
     "records": [
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "ROZE",
+            "link": "https://youtu.be/fyybGVoK0O0?si=MzH1lM7UH15Xswcz",
+            "percent": "29-100",
             "hz": 0
         }
     ],

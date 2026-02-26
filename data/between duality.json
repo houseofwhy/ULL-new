@@ -3,18 +3,18 @@
     "name": "Between Duality",
     "author": "Nexel",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "Destriv",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=8efAMwd5_Is",
-    "lastUpd": "11.11.2025",
+    "lastUpd": "26.02.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "none",
-            "link": "",
-            "percent": 0,
+            "link": "https://x.com/luxurious_nexel/status/2026475274880368837?s=46",
+            "percent": 62,
             "hz": 0
         }
     ],
@@ -24,7 +24,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
 
     "length": 88,
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Quality", "Finished"]
+    "tags": ["Long", "Quality", "Finished", "Verifying"]
 }
