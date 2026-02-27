@@ -1,14 +1,13 @@
 {
     "id": "private",
-    "name": "Yharon",
-    "author": "Starchman",
+    "name": "SupaDupaSonic",
+    "author": "russianluigi",
     "creators": [],
-    "verifier": "ImJuls",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=azUTvdCdGCU",
-    "lastUpd": "23.02.2026",
-
+    "showcase": "https://www.youtube.com/watch?v=pqtPkrmIKA4",
+    "lastUpd": "16.02.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -26,12 +25,13 @@
             "hz": 0
         }
     ],
-
-    "length": 141,
+    "length": 96,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 60,
     "isMain": true,
     "isFuture": false,
-
-    "tags": ["XL"]
+    "tags": [
+        "Long",
+        "Remake"
+    ]
 }

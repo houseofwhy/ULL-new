@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "mysterycore",
+    "author": "urge",
+    "creators": [],
+    "verifier": "Cyzyex",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=vc-4hD1MnB0",
+    "lastUpd": "22.02.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Cyzyex",
+            "link": "https://youtu.be/c2FVZErUemU?si=iGTsBPNexBcBmx75",
+            "percent": 61,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Cyzyex",
+            "link": "https://www.youtube.com/watch?v=-Ru--NjpBD4",
+            "percent": "59-100",
+            "hz": 240
+        }
+    ],
+    "length": 59,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Verifying",
+        "Medium"
+    ]
+}

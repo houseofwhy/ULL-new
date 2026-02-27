@@ -1,14 +1,13 @@
 {
-    "id": "private",
-    "name": "Yharon",
-    "author": "Starchman",
+    "id": 83476262,
+    "name": "Eternal Silence",
+    "author": "RealVet",
     "creators": [],
-    "verifier": "ImJuls",
+    "verifier": "open verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=azUTvdCdGCU",
-    "lastUpd": "23.02.2026",
-
+    "showcase": "https://youtu.be/JWUg2ZILWbM?si=Cy9P0pMJy3mroWei",
+    "lastUpd": "26.02.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -26,12 +25,16 @@
             "hz": 0
         }
     ],
-
-    "length": 141,
+    "length": 88,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 100,
     "isMain": true,
-    "isFuture": false,
-
-    "tags": ["XL"]
+    "isFuture": true,
+    "tags": [
+        "Verifying",
+        "Public",
+        "Finished",
+        "Long",
+        "Remake"
+    ]
 }

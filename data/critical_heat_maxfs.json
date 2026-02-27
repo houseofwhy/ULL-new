@@ -1,14 +1,13 @@
 {
     "id": "private",
-    "name": "Yharon",
-    "author": "Starchman",
+    "name": "CRITICAL HEAT",
+    "author": "maxfs",
     "creators": [],
-    "verifier": "ImJuls",
+    "verifier": "Clara Clarinha",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=azUTvdCdGCU",
-    "lastUpd": "23.02.2026",
-
+    "showcase": "https://youtu.be/IGTcquuJUIo?si=aOeWhfzao07y-A0C",
+    "lastUpd": "01.02.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -26,12 +25,13 @@
             "hz": 0
         }
     ],
-
-    "length": 141,
+    "length": 60,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": false,
-
-    "tags": ["XL"]
+    "tags": [
+        "Finished",
+        "Long"
+    ]
 }
