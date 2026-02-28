@@ -1,0 +1,42 @@
+{
+    "id": 77331805,
+    "name": "Aquamarine",
+    "author": "alex",
+    "creators": [],
+    "verifier": "seels",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=Q__EnRojGt4",
+    "showcase": "https://youtu.be/SK4hLtVr3ds?si=MLo8fKugkhgk8oYF",
+    "lastUpd": "08.10.2024",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 66,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Finished",
+        "Verified",
+        "Unrated",
+        "Long",
+        "NC",
+        "Remake"
+    ]
+}
