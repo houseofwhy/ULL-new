@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": 134541844,
     "name": "zorin",
     "author": "SnowFox",
     "creators": [],
     "verifier": "9i",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/U19vmpenb9g?si=HhMc_JTgYcVgGbZn",
     "showcase": "https://www.youtube.com/watch?v=_w-cxTkuvns",
-    "lastUpd": "29.01.2026",
+    "lastUpd": "27.02.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -32,7 +32,9 @@
     "isFuture": true,
     "tags": [
         "XL",
-        "Verifying",
-        "Finished"
+        "Verified",
+        "Finished",
+        "Public",
+        "Unrated",
     ]
 }
