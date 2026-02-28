@@ -20,6 +20,10 @@ export default {
         store
     }),
     template: `
+        <div class="meta">
+            <h3> List Guidelines </h3>
+            <p> The guidelines explain how each aspect of the Upcoming Level List works. You can view them <a href="https://docs.google.com/document/d/13dmRfx2OCiLEaM2EcgEd-mKdok11_k8k7HsA5a-K6nY/edit?usp=sharing" target="_blank" style="text-decoration: underline;">here</a> </p>
+        </div>
         <template v-if="editors">
             <h3>List Editors</h3>
             <ol class="editors">
@@ -30,11 +34,6 @@ export default {
                 </li>
             </ol>
         </template>
-
-        <div class="meta">
-            <h3> List Guidelines </h3>
-            <p> The guidelines explain how each aspect of the Upcoming Level List works. You can view them <a href="https://docs.google.com/document/d/13dmRfx2OCiLEaM2EcgEd-mKdok11_k8k7HsA5a-K6nY/edit?usp=sharing" target="_blank" style="text-decoration: underline;">here</a> </p>
-        </div>
 <!--
         <div class="meta">
             <h3> Level Standards </h3>
