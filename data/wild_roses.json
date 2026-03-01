@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Wild Roses",
+    "author": "CherryTeam",
+    "creators": [],
+    "verifier": "Eireley",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/13pj34hEF4w?si=W7Gu1CNmJmRqmhqm",
+    "lastUpd": "01.03.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 61,
+    "rating": 1,
+    "percentFinished": 60,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Quality",
+        "Long"
+    ]
+}
