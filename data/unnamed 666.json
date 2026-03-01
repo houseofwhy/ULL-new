@@ -3,7 +3,7 @@
     "name": "Unnamed 666",
     "author": "TMco",
     "creators": [],
-    "verifier": "open verification",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/ZB6XHzXP5n4?si=ZsVvAna9WXUpXEwH",
@@ -13,7 +13,7 @@
             "user": "WatchPiggy",
             "link": "#",
             "percent": 9,
-            "hz": 360 
+            "hz": 360
         }
     ],
     "run": [
@@ -22,7 +22,7 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 173,
     "rating": 1,

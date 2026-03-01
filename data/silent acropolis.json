@@ -3,7 +3,7 @@
     "name": "Silent Acropolis",
     "author": "ThePurgatory",
     "creators": [],
-    "verifier": "open verification",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=2djt_p6OQsg&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=11&ab_channel=Neiro",
@@ -25,9 +25,9 @@
 
     "run": [
         {
-            "user": "bop",
-            "link": "https://youtu.be/c2pc6LSqBl8?si=OqttiBJ7dFz60gGy",
-            "percent": "31-100",
+            "user": "Septagon7",
+            "link": "https://youtu.be/v56IEBLz5f4?si=axicdSZPun-wnoG_",
+            "percent": "27-100",
             "hz": 240
         }
     ],
