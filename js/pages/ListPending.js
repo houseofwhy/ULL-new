@@ -35,7 +35,7 @@ export default {
                         </td>
                     </tr>
                 </table>
-                <p v-else style="padding: 1rem;">No pending placements.</p>
+                <p v-else style="padding: 1rem;">No pending placements :)</p>
             </div>
             <div class="level-container surface">
                 <h3 style="margin-bottom: 1rem;">Pending Movements</h3>
@@ -51,7 +51,7 @@ export default {
                         </td>
                     </tr>
                 </table>
-                <p v-else style="padding: 1rem;">No pending movements.</p>
+                <p v-else style="padding: 1rem;">No pending movements :)</p>
             </div>
             <div class="meta-container surface">
                 <div class="meta">

@@ -1,56 +1,5 @@
 [
     {
-        "name": "The Human Limit",
-        "placement": "up"
-    },
-    {
-        "name": "Thinking Space II Legacy",
-        "placement": "up"
-    },
-    {
-        "name": "CYBERPSYCHOSIS",
-        "placement": "up"
-    },
-    {
-        "name": "GREEN BULLET",
-        "placement": "up"
-    },
-    {
-        "name": "Labyrinth",
-        "placement": "up"
-    },
-    {
-        "name": "Dignity",
-        "placement": "up"
-    },
-    {
-        "name": "MAX NRG",
-        "placement": "up"
-    },
-    {
-        "name": "Angelicide",
-        "placement": "down"
-    },
-    {
-        "name": "Misanthrope",
-        "placement": "down"
-    },
-    {
-        "name": "WRATH",
-        "placement": "down"
-    },
-    {
-        "name": "La Llorona X",
-        "placement": "down"
-    },
-    {
-        "name": "LESOPOWAL",
-        "placement": "down"
-    },
-
-
-
-    {
         "name": "ZOINK NEVER CLEAR",
         "placement": "1",
         "link": "https://youtu.be/sdwrOXNV6ws?si=J7fZz9axNTpopYzv"
@@ -59,6 +8,41 @@
         "name": "Soulless",
         "placement": "10",
         "link": "https://m.youtube.com/watch?v=XkJB-UozSRg&pp=0gcJCR4Bo7VqN5tD"
+    },
+    {
+        "name": "ByteShift",
+        "placement": "10",
+        "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
+    },
+    {
+        "name": "ByteShift",
+        "placement": "10",
+        "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
+    },
+    {
+        "name": "ByteShift",
+        "placement": "10",
+        "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
+    },
+    {
+        "name": "SHREDDER",
+        "placement": "10",
+        "link": "https://youtu.be/oNgMrmLkzKk?si=XE_uNXIdgHld1JTK"
+    },
+    {
+        "name": "Cuts",
+        "placement": "10",
+        "link": "https://youtu.be/WC0CQJ0kg6k?si=un2m3Z4qucM8OnQT"
+    },
+    {
+        "name": "BloodEngine",
+        "placement": "10",
+        "link": "https://www.youtube.com/watch?v=JswISB7Cht4"
+    },
+    {
+        "name": "Stoicism",
+        "placement": "10",
+        "link": "https://www.youtube.com/watch?v=DcC8ZZzvH08"
     },
     {
         "name": "Carcion",
@@ -126,6 +110,11 @@
         "link": "https://youtu.be/nZsVj499xeU?si=5Xbdde12FWxZzHeQ"
     },
     {
+        "name": "NUCLEAR STAR",
+        "placement": "20",
+        "link": "https://fxtwitter.com/luxurious_nexel/status/2025099832957042876?s=46"
+    },
+    {
         "name": "Ground Fella",
         "placement": "30",
         "link": "https://youtu.be/fXdpG1SMaS8?si=TtB0odQlT1xtES26"
@@ -134,6 +123,26 @@
         "name": "Neutron Step",
         "placement": "30",
         "link": "https://youtu.be/VdA-N0V5PjA"
+    },
+    {
+        "name": "ALLOPSYCHIC",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=INAIaWYS4O8"
+    },
+    {
+        "name": "CONVERGENCE",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=vhIEoYnMLOY"
+    },
+    {
+        "name": "ZANBOT",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=75woVCCPYbw"
+    },
+    {
+        "name": "PACKETLOSS",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=G3IinWezB6s"
     },
     {
         "name": "Crimson Lady",
@@ -146,24 +155,24 @@
         "link": "https://youtu.be/0S5XYgn4K_0?si=gPvDonBoIeyE6Iu6"
     },
     {
-        "name": "QUAVER",
-        "placement": "50",
-        "link": "#"
-    },
-    {
         "name": "WAVING",
         "placement": "50",
         "link": "https://youtu.be/F2cRzzgnWno?si=fPTket6DJKvTv7o-"
     },
     {
-        "name": "HYPERMANIAC",
-        "placement": "50",
-        "link": "#"
-    },
-    {
         "name": "Toxic Rush III",
         "placement": "50",
         "link": "https://youtu.be/LNX8WFl71x0?si=CNtMq9nqDpewsJk7"
+    },
+    {
+        "name": "Icarus",
+        "placement": "50",
+        "link": "https://youtu.be/LNX8WFl71x0?si=CNtMq9nqDpewsJk7"
+    },
+    {
+        "name": "Meshwork",
+        "placement": "50",
+        "link": "https://youtu.be/j-hK6bl5pMY?si=r3ITqBl3Jv-WKSIW"
     },
     {
         "name": "Session 1",
@@ -173,12 +182,12 @@
     {
         "name": "Calibrate",
         "placement": "75",
-        "link": "#"
+        "link": "https://youtu.be/cVnus4qPsTg?si=n9-Loe7Z6KmStvY6"
     },
     {
         "name": "Final Level",
         "placement": "75",
-        "link": "#"
+        "link": "https://youtu.be/X2lFZ1xhqxU?si=5bJOLYSP4kG7XXkL"
     },
     {
         "name": "Vindication",
@@ -199,6 +208,21 @@
         "name": "Despair",
         "placement": "75",
         "link": "https://youtu.be/6n6uxqWVYhs?si=PUWH04hXyssfp5fD"
+    },
+    {
+        "name": "NOTARTARUS",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=nGN-fQ6AnBA"
+    },
+    {
+        "name": "Canyon",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=IYM4Nh17_Ko"
+    },
+    {
+        "name": "Amanojaku",
+        "placement": "75",
+        "link": "https://youtu.be/0RPNF-RPRt8?si=1Fbb3SXCKYjtJ5mx"
     },
     {
         "name": "IMNOTSORRY",
@@ -228,7 +252,7 @@
     {
         "name": "The Final Phase",
         "placement": "?",
-        "link": "#"
+        "link": "https://www.youtube.com/watch?v=nBcJivS8X1A"
     },
     {
         "name": "Korobeiniki",
@@ -244,6 +268,11 @@
         "name": "EVERBLOOM",
         "placement": "?",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
+    },
+    {
+        "name": "Master Spark",
+        "placement": "?",
+        "link": "https://youtu.be/IcG1W3_GsZg?si=GuCuXcqrbLg2g6bs"
     },
     {
         "name": "Omega PARTS",

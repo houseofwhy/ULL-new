@@ -11,17 +11,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "veshel",
+            "link": "https://youtu.be/vMXLbGAceAE?si=8l1ONhs7Q1NRiddL",
+            "percent": 70,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "veshel",
+            "link": "https://youtu.be/X0Nch8Y7_U4?si=y-Gf22T7-qFAw239",
+            "percent": "45-100",
             "hz": 0
         }
     ],
@@ -33,6 +33,7 @@
     "tags": [
         "Finished",
         "NC",
-        "Long"
+        "Long",
+        "Verifying"
     ]
 }
