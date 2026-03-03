@@ -4,6 +4,14 @@
         "placement": "up"
     },
     {
+        "name": "SupaDupaSonic",
+        "placement": "up"
+    },
+    {
+        "name": "Wild Roses",
+        "placement": "up"
+    },
+    {
         "name": "ZOINK NEVER CLEAR",
         "placement": "1",
         "link": "https://youtu.be/sdwrOXNV6ws?si=J7fZz9axNTpopYzv"
@@ -104,6 +112,11 @@
         "link": "https://fxtwitter.com/luxurious_nexel/status/2025099832957042876?s=46"
     },
     {
+        "name": "CONVERGENCE",
+        "placement": "20",
+        "link": "https://www.youtube.com/watch?v=vhIEoYnMLOY"
+    },
+    {
         "name": "Ground Fella",
         "placement": "30",
         "link": "https://youtu.be/fXdpG1SMaS8?si=TtB0odQlT1xtES26"
@@ -117,11 +130,6 @@
         "name": "ALLOPSYCHIC",
         "placement": "30",
         "link": "https://www.youtube.com/watch?v=INAIaWYS4O8"
-    },
-    {
-        "name": "CONVERGENCE",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=vhIEoYnMLOY"
     },
     {
         "name": "ZANBOT",
