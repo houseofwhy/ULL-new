@@ -35,6 +35,7 @@
         "Long",
         "Verified",
         "Remake",
-        "Unrated"
+        "Unrated",
+        "Public"
     ]
 }

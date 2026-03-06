@@ -60,7 +60,7 @@ main.page-list--pending .list-container {
     color: var(--color-on-background);
     border: none;
     border-radius: 0.5rem;
-    padding: 0.4rem 1rem 0.4rem 0.4rem;
+    padding: 0.75rem 1rem;
     text-align: start;
     word-break: normal;
     overflow-wrap: anywhere;

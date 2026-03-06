@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium", "Finished", "Verified", "Unrated", "Public"]
+    "tags": ["Medium", "Finished", "Verified", "Rated", "Public"]
 }
