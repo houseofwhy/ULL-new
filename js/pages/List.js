@@ -233,40 +233,39 @@ export default {
             const id = getYoutubeIdFromUrl(url);
             return id ? getThumbnailFromId(id) : '';
         },
-    },
-    filtersToggle() {
-        this.isFiltersActive = !this.isFiltersActive;
-    },
-    useFilter(index) {
-        if (filtersList[index].separator) return;
-        this.filtersList[index].active = !this.filtersList[index].active;
-        this.filtersToggled = 0;
-        for (let filter of filtersList) {
-            if (filter.active) this.filtersToggled++;
-        }
-        if (this.filtersToggled != 0) {
-            this.list.map((level) => {
-                for (let filter of filtersList) {
-                    if (!filter.active) {
-                        continue;
-                    }
-                    if (
-                        level[0].tags == undefined ||
-                        !level[0].tags.includes(filter.key)
-                    ) {
-                        level[0].isHidden = true;
-                        break;
-                    } else {
-                        level[0].isHidden = false;
-                    }
-                }
-                //				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
-            });
-        } else {
-            for (let level of this.list) {
-                level[0].isHidden = false;
+        filtersToggle() {
+            this.isFiltersActive = !this.isFiltersActive;
+        },
+        useFilter(index) {
+            if (filtersList[index].separator) return;
+            this.filtersList[index].active = !this.filtersList[index].active;
+            this.filtersToggled = 0;
+            for (let filter of filtersList) {
+                if (filter.active) this.filtersToggled++;
             }
-        }
+            if (this.filtersToggled != 0) {
+                this.list.map((level) => {
+                    for (let filter of filtersList) {
+                        if (!filter.active) {
+                            continue;
+                        }
+                        if (
+                            level[0].tags == undefined ||
+                            !level[0].tags.includes(filter.key)
+                        ) {
+                            level[0].isHidden = true;
+                            break;
+                        } else {
+                            level[0].isHidden = false;
+                        }
+                    }
+                    //				level[0].isHidden=!(this.filtersList.filter(item => item.active && level[0].tags != undefined && level[0].tags.includes(item.key))).length > 0
+                });
+            } else {
+                for (let level of this.list) {
+                    level[0].isHidden = false;
+                }
+            }
+        },
     },
-},
 };
