@@ -1,180 +1,98 @@
-.nav {
-    --color-background: white;
-    --color-on-background: black;
-    --color-primary: #1900ff;
-    --color-on-primary: white;
-    /* old color is #ff00ff */
-    display: flex;
-    column-gap: 2rem;
-}
-.nav .nav__tab {
-    padding-top: 4px;
-    border-bottom: 4px solid transparent;
-    display: flex;
-    align-items: center;
-    padding-inline: 0.5rem;
-    transition: border-color 100ms ease;
-}
-.nav .nav__tab.router-link-active {
-    border-color: var(--color-on-primary);
-}
-.nav .nav__tab:hover {
-    border-color: var(--color-on-primary);
+// https://stackoverflow.com/questions/3452546/how-do-i-get-the-youtube-video-id-from-a-url
+export function getYoutubeIdFromUrl(url) {
+    return url.match(
+        /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/,
+    )?.[1] ?? '';
 }
 
-header.new .nav .nav__tab.router-link-active {
-    border-color: var(--color-background);
-}
-header.new .nav .nav__tab:hover {
-    border-color: var(--color-background);
+export function embed(video) {
+    return `https://www.youtube.com/embed/${getYoutubeIdFromUrl(video)}`;
 }
 
-.nav .nav__actions {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+export function localize(num) {
+    return num.toLocaleString(undefined, { minimumFractionDigits: 3 });
 }
-.nav .nav__actions .nav__icon {
-    height: 3rem;
-    width: 3rem;
-    border: none;
-    background-color: transparent;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 100ms ease;
+
+export function getThumbnailFromId(id) {
+    return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
 }
-.nav .nav__actions .nav__icon:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-.nav .nav__actions .nav__icon img {
-    height: 1.5rem;
-}
-.nav .nav__actions .nav__cta {
-    margin-left: 1rem;
-    padding: 1rem;
-    background-color: var(--color-on-primary);
-    color: var(--color-primary);
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 0.5rem 0 rgba(0, 0, 102, 0.5);
-    transition: transform 100ms ease;
-    white-space: nowrap;
-}
-.nav .nav__actions .nav__cta:hover:not(:active) {
-    transform: translateY(-2px);
+
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+export function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex],
+            array[currentIndex],
+        ];
+    }
+
+    return array;
 }
 
 
-.filters {
-    width:200px;
-}
-
-.filters-numeric {
-    padding: 8px 20px 4px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.filters-numeric-label {
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    opacity: 0.6;
-}
-
-.filters-numeric-input {
-    width: 100%;
-    padding: 5px 8px;
-    border-radius: 4px;
-    border: 1px solid rgba(128, 128, 128, 0.3);
-    background: rgba(128, 128, 128, 0.1);
-    color: inherit;
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-.filters-numeric-input:focus {
-    outline: 2px solid var(--color-primary);
-}
-
-.filters-text {
-    padding: 16px 0px 16px 50px;
-    border-bottom: 4px solid transparent;
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 500;
-    -webkit-font-smoothing: subpixel-antialiased;
-    cursor: pointer;
-}
-
-.filters-menu {
-    width:200px;
-    background:rgba(0, 0, 0, 1);
-    position: relative;
-    top: -4px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.filters-one {
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 17.2428571429px;
-    line-height: 18px;
-    font-weight: 500;
-    -webkit-font-smoothing: subpixel-antialiased;
-    padding: 7px 20px 7px 20px;
-    /*    color: var(--color-on-background); */
-}
-.filters-one:hover {
-    background: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-.filters-one span {
-    display: inline-block;
-    opacity: 0;
-}
-
-.filters-one.active span {
-    opacity:1
-}
-
-.filters-selected .filters-menu {
-    max-height: 1000px;
-}
-
-.separator-filter {
-    line-height: 18px;
-}
+export const filtersList = [
+    { active: false, name: "Public", key: "Public" },
+    { active: false, name: "Finished", key: "Finished" },
+    { active: false, name: "Being Verified", key: "Verifying" },
+    { active: false, name: "Layout State", key: "Layout" },
+    { active: false, name: "Verified", key: "Verified" },
+    { active: false, name: "Unrated", key: "Unrated" },
+    { active: false, name: "Rated", key: "Rated" },
+    { separator: true },
+    { active: false, name: "Medium", key: "Medium" },
+    { active: false, name: "Long", key: "Long" },
+    { active: false, name: "XL", key: "XL" },
+    { active: false, name: "XXL", key: "XXL" },
+    { active: false, name: "XXXL+", key: "XXXL" },
+    { separator: true },
+    { active: false, name: "NC Level", key: "NC" },
+    { active: false, name: "Remake", key: "Remake" },
+    { active: false, name: "Uses NoNG", key: "NONG" },
+    { active: false, name: "Top Quality", key: "Quality" },
+    { active: false, name: "2-Player", key: "2p" },
+    { separator: true }
+]
 
 
-.level-hidden {
-    display: none;
-}
 
-/* Shitty */
-
-.shity .nav .nav__tab.router-link-active {
-    border-color: transparent;
-    color: orange;
-}
-
-.shitty .nav .nav__tab:hover {
-    border-color: transparent;
-    color: orange;
-}
-
-.shitty .nav .nav__actions .nav__cta {
-    padding: 0.5rem;
-    background-color: #ccc;
-    color: black;
-    border-radius: 0;
-    border: 4px outset #eee;
-}
+export const filtersSetup = `<div style="flex-grow:1"></div>
+				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
+					<div class="filters-text" @click="filtersToggle">Filters <img :src="\`/assets/arrow-down\${store.dark ? '-dark' : ''}.svg\`" style="display:inline; vertical-align: middle;"></div>
+					<div class="filters-collapse">
+						<div class="filters-menu"
+							:style="{
+								backgroundColor: !store.dark ? 'white' : 'black',
+								color: !store.dark ? 'black' : 'white'
+							}"
+						>
+							<div class="filters-numeric">
+								<label class="filters-numeric-label">Min Decoration %</label>
+								<input class="filters-numeric-input" type="number" min="0" max="100" v-model.number="minDecoration" @click.stop @input="applyFilters()" placeholder="0" />
+							</div>
+							<div class="filters-numeric">
+								<label class="filters-numeric-label">Min Verification %</label>
+								<input class="filters-numeric-input" type="number" min="0" max="100" v-model.number="minVerification" @click.stop @input="applyFilters()" placeholder="0" />
+							</div>
+							<div class="separator-filter"></div>
+							<div class="filters-one"
+ 								v-for="(item,index) in filtersList"
+								:key="index"
+      								:class="{ active: item.active }"
+                                 @click="useFilter(index)"
+								>
+								<div class="separator-filter" v-if="item.separator"></div>
+								<div v-else>
+									<span>✓</span> {{item.name}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>`;

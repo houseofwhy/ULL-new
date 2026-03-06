@@ -7,7 +7,6 @@
     display: flex;
     column-gap: 2rem;
 }
-
 .nav .nav__tab {
     padding-top: 4px;
     border-bottom: 4px solid transparent;
@@ -16,29 +15,18 @@
     padding-inline: 0.5rem;
     transition: border-color 100ms ease;
 }
-
 .nav .nav__tab.router-link-active {
     border-color: var(--color-on-primary);
 }
-
 .nav .nav__tab:hover {
     border-color: var(--color-on-primary);
 }
 
 header.new .nav .nav__tab.router-link-active {
-    border-color: black;
+    border-color: var(--color-background);
 }
-
-.dark header.new .nav .nav__tab.router-link-active {
-    border-color: white;
-}
-
 header.new .nav .nav__tab:hover {
-    border-color: black;
-}
-
-.dark header.new .nav .nav__tab:hover {
-    border-color: white;
+    border-color: var(--color-background);
 }
 
 .nav .nav__actions {
@@ -47,7 +35,6 @@ header.new .nav .nav__tab:hover {
     align-items: center;
     justify-content: flex-start;
 }
-
 .nav .nav__actions .nav__icon {
     height: 3rem;
     width: 3rem;
@@ -60,15 +47,12 @@ header.new .nav .nav__tab:hover {
     justify-content: center;
     transition: background-color 100ms ease;
 }
-
 .nav .nav__actions .nav__icon:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-
 .nav .nav__actions .nav__icon img {
     height: 1.5rem;
 }
-
 .nav .nav__actions .nav__cta {
     margin-left: 1rem;
     padding: 1rem;
@@ -79,14 +63,43 @@ header.new .nav .nav__tab:hover {
     transition: transform 100ms ease;
     white-space: nowrap;
 }
-
 .nav .nav__actions .nav__cta:hover:not(:active) {
     transform: translateY(-2px);
 }
 
 
 .filters {
-    width: 200px;
+    width:200px;
+}
+
+.filters-numeric {
+    padding: 8px 20px 4px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filters-numeric-label {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
+.filters-numeric-input {
+    width: 100%;
+    padding: 5px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    background: rgba(128, 128, 128, 0.1);
+    color: inherit;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.filters-numeric-input:focus {
+    outline: 2px solid var(--color-primary);
 }
 
 .filters-text {
@@ -101,8 +114,8 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-menu {
-    width: 200px;
-    background: rgba(0, 0, 0, 1);
+    width:200px;
+    background:rgba(0, 0, 0, 1);
     position: relative;
     top: -4px;
     max-height: 0;
@@ -119,7 +132,6 @@ header.new .nav .nav__tab:hover {
     padding: 7px 20px 7px 20px;
     /*    color: var(--color-on-background); */
 }
-
 .filters-one:hover {
     background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
@@ -131,7 +143,7 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-one.active span {
-    opacity: 1
+    opacity:1
 }
 
 .filters-selected .filters-menu {
