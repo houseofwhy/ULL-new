@@ -195,6 +195,8 @@ export default {
         filtersList: filtersList,
         SHOW_THUMBNAILS,
         search: "",
+        minDecoration: 0,
+        minVerification: 0,
     }),
     watch: {
         search() {
@@ -268,14 +270,18 @@ export default {
 
             const activeFilters = this.filtersList.filter(f => f.active && !f.separator);
             const searchQuery = this.search.toLowerCase().trim();
+            const minDec = this.minDecoration || 0;
+            const minVer = this.minVerification || 0;
 
             this.list.forEach(item => {
                 const level = item[0];
                 if (!level) return;
 
+                // Search
                 const name = level.name.toLowerCase();
                 const matchesSearch = !searchQuery || name.includes(searchQuery);
 
+                // Tag filters
                 let matchesTags = true;
                 if (activeFilters.length > 0) {
                     for (const filter of activeFilters) {
@@ -286,7 +292,26 @@ export default {
                     }
                 }
 
-                level.isHidden = !(matchesSearch && matchesTags);
+                // Min Decoration % filter (uses level.percentFinished)
+                const decoration = level.percentFinished ?? 0;
+                const matchesDecoration = decoration >= minDec;
+
+                // Min Verification % filter
+                // records: use percent directly
+                const recordPercent = Math.max(0, ...((level.records || [])
+                    .map(r => Number(r.percent) || 0)));
+                // run: use |end - start| from "start-end" string format
+                const runPercent = Math.max(0, ...((level.run || [])
+                    .map(r => {
+                        const parts = String(r.percent).split('-').map(Number);
+                        return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1]))
+                            ? Math.abs(parts[1] - parts[0])
+                            : 0;
+                    })));
+                const verificationProgress = Math.max(recordPercent, runPercent);
+                const matchesVerification = verificationProgress >= minVer;
+
+                level.isHidden = !(matchesSearch && matchesTags && matchesDecoration && matchesVerification);
             });
         },
         useFilter(index) {
