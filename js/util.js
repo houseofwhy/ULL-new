@@ -62,44 +62,28 @@ export const filtersList = [
 ]
 
 
-export const filtersSetup = `<div style="flex-grow:1"></div>
-<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
-    <div class="filters-text" @click="filtersToggle">
-        Filters <img :src="\`/assets/arrow-down\${store.dark ? '-dark' : ''}.svg\`" style="display:inline; vertical-align: middle;">
-    </div>
-    <div class="filters-collapse">
-        <div class="filters-menu"
-            :style="{
-                backgroundColor: !store.dark ? 'white' : 'black',
-                color: !store.dark ? 'black' : 'white'
-            }"
-        >
-            <!-- NEW: Variable Inputs -->
-            <div style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <div style="margin-bottom: 10px;">
-                    <label style="font-size: 13px; font-weight: bold; opacity: 0.8; display: block; margin-bottom: 3px;">Min Decoration %</label>
-                    <input type="number" v-model.number="minDeco" placeholder="0" min="0" max="100" 
-                        style="width: 100%; background: rgba(128,128,128,0.2); border: 1px solid rgba(128,128,128,0.5); padding: 5px; color: inherit; border-radius: 4px; box-sizing: border-box;">
-                </div>
-                <div>
-                    <label style="font-size: 13px; font-weight: bold; opacity: 0.8; display: block; margin-bottom: 3px;">Min Verification %</label>
-                    <input type="number" v-model.number="minVerif" placeholder="0" min="0" max="100" 
-                        style="width: 100%; background: rgba(128,128,128,0.2); border: 1px solid rgba(128,128,128,0.5); padding: 5px; color: inherit; border-radius: 4px; box-sizing: border-box;">
-                </div>
-            </div>
-            <!-- END NEW INPUTS -->
 
-            <div class="filters-one"
-                v-for="(item,index) in filtersList"
-                :key="index"
-                :class="{ active: item.active }"
-                @click="useFilter(index)"
-            >
-                <div class="separator-filter" v-if="item.separator"></div>
-                <div v-else>
-                    <span>✓</span> {{item.name}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>`;
+export const filtersSetup = `<div style="flex-grow:1"></div>
+				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
+					<div class="filters-text" @click="filtersToggle">Filters <img :src="\`/assets/arrow-down\${store.dark ? '-dark' : ''}.svg\`" style="display:inline; vertical-align: middle;"></div>
+					<div class="filters-collapse">
+						<div class="filters-menu"
+							:style="{
+								backgroundColor: !store.dark ? 'white' : 'black',
+								color: !store.dark ? 'black' : 'white'
+							}"
+						>
+							<div class="filters-one"
+ 								v-for="(item,index) in filtersList"
+								:key="index"
+      								:class="{ active: item.active }"
+                                 @click="useFilter(index)"
+								>
+								<div class="separator-filter" v-if="item.separator"></div>
+								<div v-else>
+									<span>✓</span> {{item.name}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>`;
