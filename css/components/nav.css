@@ -161,17 +161,13 @@ header.new .nav .nav__tab:hover {
 
 .filters-selected .filters-menu {
     max-height: 70vh;
-    overflow-y: hidden;
-}
-
-.filters-selected .filters-menu:hover {
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.filters-selected .filters-menu:hover::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+.filters-selected .filters-menu::-webkit-scrollbar {
+    display: none;
 }
 
 .separator-filter {
