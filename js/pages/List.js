@@ -57,18 +57,18 @@ export default {
             <div class="list-container surface">
                 <input class="search-bar" v-model="searchQuery" type="text" placeholder="Search levels..." />
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden || (searchQuery && level && !level.name.toLowerCase().includes(searchQuery.toLowerCase()))}">`
-        <td class="rank">
-        <span :class="{ 'rank-verified': level?.isVerified}">
-    <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
-<p v-else class="type-label-lg">Londenberg</p>
-</span>
-</td>
-<td class="level" :class="{ 'active': selected == i, 'error': !level }">
-    <button @click="selected = i">
-    <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
-    <span :class="{ 'rank-verified': level?.isVerified}">
-    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden || (searchQuery && level && !level.name.toLowerCase().includes(searchQuery.toLowerCase()))}">
+                        <td class="rank">
+							<span :class="{ 'rank-verified': level?.isVerified}">
+                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg">Londenberg</p>
+							</span>
+                        </td>
+                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                            <button @click="selected = i">
+                                <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
+                                <span :class="{ 'rank-verified': level?.isVerified}">
+                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -170,35 +170,35 @@ export default {
         </main>
     `,
     data: () => ({
-    list: [],
-    editors: [],
-    loading: true,
-    selected: 0,
-    errors: [],
-    roleIconMap,
-    store,
-    toggledShowcase: false,
-    isFiltersActive: false,
-    filtersList: filtersList,
-    SHOW_THUMBNAILS,
-    searchQuery: '',
-}),
+        list: [],
+        editors: [],
+        loading: true,
+        selected: 0,
+        errors: [],
+        roleIconMap,
+        store,
+        toggledShowcase: false,
+        isFiltersActive: false,
+        filtersList: filtersList,
+        SHOW_THUMBNAILS,
+        searchQuery: '',
+    }),
     computed: {
-    level() {
-        return this.list[this.selected][0];
-    },
-    video() {
-        if (!this.level.showcase) {
-            return embed(this.level.verification);
-        }
+        level() {
+            return this.list[this.selected][0];
+        },
+        video() {
+            if (!this.level.showcase) {
+                return embed(this.level.verification);
+            }
 
-        return embed(
-            this.toggledShowcase || !this.level.isVerified
-                ? this.level.showcase
-                : this.level.verification
-        );
+            return embed(
+                this.toggledShowcase || !this.level.isVerified
+                    ? this.level.showcase
+                    : this.level.verification
+            );
+        },
     },
-},
     async mounted() {
         // Hide loading spinner
         this.list = await fetchList();
@@ -226,8 +226,8 @@ export default {
     },
     methods: {
         embed,
-            score,
-            getThumbnail(level) {
+        score,
+        getThumbnail(level) {
             if (level.thumbnail) return level.thumbnail;
             const url = level.showcase || level.verification || '';
             const id = getYoutubeIdFromUrl(url);
