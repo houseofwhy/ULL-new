@@ -93,10 +93,7 @@ body,
 header,
 main {
     display: grid;
-    grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 2fr) minmax(
-            16em,
-            1fr
-        );
+    grid-template-columns: minmax(16rem, 1.3fr) minmax(16rem, 1.8fr) minmax(16em, 0.8fr);
     column-gap: 2rem;
 }
 
