@@ -69,7 +69,21 @@ header.new .nav .nav__tab:hover {
 
 
 .filters {
-    width:200px;
+    width: 200px;
+    position: relative;
+}
+
+.filters-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    width: 200px;
+    pointer-events: none;
+}
+
+.filters-selected .filters-collapse {
+    pointer-events: auto;
 }
 
 .filters-numeric {
@@ -114,13 +128,12 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-menu {
-    width:200px;
-    background:rgba(0, 0, 0, 1);
-    position: relative;
-    top: -4px;
+    width: 200px;
+    background: rgba(0, 0, 0, 1);
     max-height: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     transition: max-height 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .filters-one {
@@ -147,7 +160,12 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-selected .filters-menu {
-    max-height: 1000px;
+    max-height: 70vh;
+    overflow-y: hidden;
+}
+
+.filters-selected .filters-menu:hover {
+    overflow-y: auto;
 }
 
 .separator-filter {
