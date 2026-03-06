@@ -56,9 +56,8 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container surface">
-                <input class="search-bar" v-model="searchQuery" type="text" placeholder="Search levels..." />
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden || (searchQuery && level && !level.name.toLowerCase().includes(searchQuery.toLowerCase()))}">
+                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
                                 <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
@@ -182,7 +181,6 @@ export default {
         isFiltersActive: false,
         filtersList: filtersList,
         SHOW_THUMBNAILS,
-        searchQuery: '',
     }),
     computed: {
         level() {
