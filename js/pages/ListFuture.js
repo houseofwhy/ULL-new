@@ -1,5 +1,5 @@
 import { store } from "../main.js";
-import { embed, filtersList, filtersSetup } from "../util.js";
+import { embed, filtersList, filtersSetup, getYoutubeIdFromUrl, getThumbnailFromId } from "../util.js";
 import { score } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
 
@@ -56,19 +56,20 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container surface">
+                <input class="search-bar" v-model="searchQuery" type="text" placeholder="Search levels..." />
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
-                        <td class="rank">
-							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg">Legacy</p>
-							</span>
-                        </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
-                                <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
-                                <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden || (searchQuery && level && !level.name.toLowerCase().includes(searchQuery.toLowerCase()))}">`
+        <td class="rank">
+        <span :class="{ 'rank-verified': level?.isVerified}">
+    <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
+<p v-else class="type-label-lg">Legacy</p>
+</span>
+</td>
+<td class="level" :class="{ 'active': selected == i, 'error': !level }">
+    <button @click="selected = i">
+    <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
+    <span :class="{ 'rank-verified': level?.isVerified}">
+    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -170,34 +171,35 @@ export default {
         </main>
     `,
     data: () => ({
-        list: [],
-        editors: [],
-        loading: true,
-        selected: 0,
-        errors: [],
-        roleIconMap,
-        store,
-        toggledShowcase: false,
-        isFiltersActive: false,
-        filtersList: filtersList,
-        SHOW_THUMBNAILS,
-    }),
+    list: [],
+    editors: [],
+    loading: true,
+    selected: 0,
+    errors: [],
+    roleIconMap,
+    store,
+    toggledShowcase: false,
+    isFiltersActive: false,
+    filtersList: filtersList,
+    SHOW_THUMBNAILS,
+    searchQuery: '',
+}),
     computed: {
-        level() {
-            return this.list[this.selected][0];
-        },
-        video() {
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
-            }
-
-            return embed(
-                this.toggledShowcase || !this.level.isVerified
-                    ? this.level.showcase
-                    : this.level.verification
-            );
-        },
+    level() {
+        return this.list[this.selected][0];
     },
+    video() {
+        if (!this.level.showcase) {
+            return embed(this.level.verification);
+        }
+
+        return embed(
+            this.toggledShowcase || !this.level.isVerified
+                ? this.level.showcase
+                : this.level.verification
+        );
+    },
+},
     async mounted() {
         // Hide loading spinner
         const list1 = await fetchList();
@@ -234,46 +236,46 @@ export default {
     },
     methods: {
         embed,
-        score,
-        getThumbnail(level) {
+            score,
+            getThumbnail(level) {
             if (level.thumbnail) return level.thumbnail;
             const url = level.showcase || level.verification || '';
-            const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|watch\?v=|shorts\/))([A-Za-z0-9_-]{11})/);
-            if (match) return `https://img.youtube.com/vi/${match[1]}/mqdefault.jpg`;
-            return '';
-        },
-        filtersToggle() {
-            this.isFiltersActive = !this.isFiltersActive;
-        },
-        useFilter(index) {
-            if (filtersList[index].separator) return;
-            this.filtersList[index].active = !this.filtersList[index].active;
-            this.filtersToggled = 0;
-            for (let filter of filtersList) {
-                if (filter.active) this.filtersToggled++;
-            }
-            if (this.filtersToggled != 0) {
-                this.list.map((level) => {
-                    for (let filter of filtersList) {
-                        if (!filter.active) {
-                            continue;
-                        }
-                        if (
-                            level[0].tags == undefined ||
-                            !level[0].tags.includes(filter.key)
-                        ) {
-                            level[0].isHidden = true;
-                            break;
-                        } else {
-                            level[0].isHidden = false;
-                        }
-                    }
-                });
-            } else {
-                for (let level of this.list) {
-                    level[0].isHidden = false;
-                }
-            }
+            const id = getYoutubeIdFromUrl(url);
+            return id ? getThumbnailFromId(id) : '';
         },
     },
+    filtersToggle() {
+        this.isFiltersActive = !this.isFiltersActive;
+    },
+    useFilter(index) {
+        if (filtersList[index].separator) return;
+        this.filtersList[index].active = !this.filtersList[index].active;
+        this.filtersToggled = 0;
+        for (let filter of filtersList) {
+            if (filter.active) this.filtersToggled++;
+        }
+        if (this.filtersToggled != 0) {
+            this.list.map((level) => {
+                for (let filter of filtersList) {
+                    if (!filter.active) {
+                        continue;
+                    }
+                    if (
+                        level[0].tags == undefined ||
+                        !level[0].tags.includes(filter.key)
+                    ) {
+                        level[0].isHidden = true;
+                        break;
+                    } else {
+                        level[0].isHidden = false;
+                    }
+                }
+            });
+        } else {
+            for (let level of this.list) {
+                level[0].isHidden = false;
+            }
+        }
+    },
+},
 };
