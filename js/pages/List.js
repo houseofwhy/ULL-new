@@ -7,6 +7,9 @@ import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
+// Set to false to hide thumbnails in the level list
+const SHOW_THUMBNAILS = true;
+
 const roleIconMap = {
     owner: "crown",
     admin: "user-gear",
@@ -62,7 +65,7 @@ export default {
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
-                                <img v-if="level" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
+                                <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
                                     <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
@@ -176,6 +179,7 @@ export default {
         toggledShowcase: false,
         isFiltersActive: false,
         filtersList: filtersList,
+        SHOW_THUMBNAILS,
     }),
     computed: {
         level() {
