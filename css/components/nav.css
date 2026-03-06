@@ -166,6 +166,12 @@ header.new .nav .nav__tab:hover {
 
 .filters-selected .filters-menu:hover {
     overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.filters-selected .filters-menu:hover::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 .separator-filter {
