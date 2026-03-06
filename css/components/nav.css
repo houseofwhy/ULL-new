@@ -133,7 +133,6 @@ header.new .nav .nav__tab:hover {
     max-height: 0;
     overflow-y: hidden;
     transition: max-height 0.3s ease-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .filters-one {
