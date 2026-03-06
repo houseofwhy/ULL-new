@@ -1,65 +1,123 @@
 import { round, score } from './score.js';
 
 /**
- * Path to directory containing `_list.json` and all levels
+ * YOUR GOOGLE SHEET ID
  */
+const spreadsheetId = "1jwBvS09EtK31B8uPRKMuCSTS-ghJYfRuVqfit1p_a7Q";
+
 const dir = '/data';
 
 export async function fetchList() {
-    const debugResult = await fetch(`${dir}/_list.json`); 
-    const listResult = await fetch(`${dir}/_list.json`);
-    console.log("Fetching List...")
-    console.log(await debugResult.text())
-    // console.log(await listResult.json())
-    try {
-        const list = await listResult.json();
-        var currentLevelRank = 1;
-        const result = await Promise.all(
-            list.map(async (path, rank) => {
-                console.log("Level", path);
-                const levelResult = await fetch(`${dir}/${path}.json`);
-                try {
-                    const level = await levelResult.json();
-                    return [
-                        {
-                            ...level,
-                            path,
-                            records: level.records.sort(
-                                (a, b) => b.percent - a.percent,
-                            ),
-                        },
-                        null,
-                    ];
-                } catch {
-                    console.error(`Failed to load level #${rank + 1} ${path}.`);
-                    return [null, path];
-                }
-            }),
-        );
-        for (var i = 0; i<result.length; i++){
-          if (result[i][0].isVerified) {
-            result[i][0].rankNum = "—" + " ";
-          }
-          else {
-            result[i][0].rankNum = "#" + currentLevelRank;
-            currentLevelRank++;
-          }
-        }
-        return result;
-    } catch {
-        console.error(`Failed to load list.`);
-        return null;
-    }
+    console.log("Loading Sheet via Script Injection...");
+    
+    return new Promise((resolve, reject) => {
+        
+        window.google_sheet_callback = function(json) {
+            try {
+                const rows = json.table.rows;
+                
+                const list = rows.map(r => {
+                    const c = r.c; 
+                    const v = (idx) => (c[idx] && c[idx].v !== null) ? c[idx].v : '';
+
+                    const hasRecord = v(11) !== '';
+                    const hasRun = v(22) !== '';
+
+                    return {
+                        id: v(1),
+                        name: v(2),
+                        thumbnail: v(3),
+                        author: v(4),
+                        creators: splitArray(v(5)),
+                        verifier: v(6),
+                        isVerified: (v(7) === true || String(v(7)).toLowerCase() === "true"),
+                        verification: v(8),
+                        showcase: v(9),
+                        percentToQualify: Number(v(10)) || 0,
+                        records: hasRecord ? [{
+                            user: v(11),
+                            link: v(12),
+                            percent: Number(v(13)),
+                            hz: Number(v(14))
+                        }] : [
+                            { user: "none", link: "", percent: 0, hz: 0 }
+                        ],
+                        length: Number(v(15)) || 0,
+                        rating: Number(v(16)) || 1,
+                        percentFinished: Number(v(17)) || 0,
+                        lastUpd: v(18),
+                        isMain: (v(19) === true || String(v(19)).toLowerCase() === "true"),
+                        isFuture: (v(20) === true || String(v(20)).toLowerCase() === "true"),
+                        tags: splitArray(v(21)),
+                        run: hasRun ? [{
+                            user: v(22),
+                            link: v(23),
+                            percent: v(24),
+                            hz: Number(v(25))
+                        }] : [
+                            { user: "none", link: "", percent: "0", hz: 0 }
+                        ]
+                    };
+                });
+
+                // --- FIX: Filter out the header row ---
+                // We remove any row where the name is literally "name" or id is "id"
+                const cleanList = list.filter(level => 
+                    level.name !== 'name' && 
+                    level.id !== 'id' &&
+                    level.name !== '' // Also remove completely empty rows
+                );
+
+                // Process Ranks
+                let currentLevelRank = 1;
+                const result = cleanList.map((level) => {
+                    if (level.isVerified) {
+                        level.rankNum = "—";
+                    } else {
+                        level.rankNum = "#" + currentLevelRank;
+                        currentLevelRank++;
+                    }
+                    return [level, null];
+                });
+
+                const scriptTag = document.getElementById('sheet-loader');
+                if (scriptTag) document.body.removeChild(scriptTag);
+                
+                resolve(result);
+
+            } catch (err) {
+                console.error("Error parsing sheet data:", err);
+                resolve(null);
+            }
+        };
+
+        const script = document.createElement('script');
+        script.id = 'sheet-loader';
+        script.src = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=responseHandler:google_sheet_callback`;
+        script.onerror = () => {
+            console.error("Failed to load Google Sheet script.");
+            resolve(null);
+        };
+        document.body.appendChild(script);
+    });
 }
+
+// --- Helpers ---
+
+function splitArray(val) {
+    if (!val) return [];
+    const str = String(val); 
+    return str.split(',').map(item => item.trim()).filter(i => i);
+}
+
+// --- Existing functions ---
 
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);
         const editors = await editorsResults.json();
         return editors;
-    } catch {
-        return null;
-    }
+    } catch { return null; }
 }
 
 export async function fetchUnlisted() {
@@ -67,9 +125,7 @@ export async function fetchUnlisted() {
         const unlistedResults = await fetch(`${dir}/_unlisted.json`);
         const unlisted = await unlistedResults.json();
         return unlisted;
-    } catch {
-        return null;
-    }
+    } catch { return null; }
 }
 
 export async function fetchPending() {
@@ -77,16 +133,12 @@ export async function fetchPending() {
         const pendingResults = await fetch(`${dir}/_pending.json`);
         const pending = await pendingResults.json();
         return pending;
-    } catch {
-        return null;
-    }
+    } catch { return null; }
 }
 
 export async function fetchUnlistedPairs() {
     const unlisted = await fetchUnlisted();
-    if (unlisted === null){
-        return null;
-    }
+    if (unlisted === null) return null;
     var pairs = [];
     var pair = [];
     for (var i=0; i<unlisted.length; i++){
@@ -102,161 +154,7 @@ export async function fetchUnlistedPairs() {
     return pairs;
 }
 
-
 export async function fetchLeaderboard() {
     const list = await fetchList();
-
-    const scoreMap = {};
-    const errs = [];
-    list.forEach(([level, err], rank) => {
-        if (err) {
-            errs.push(err);
-            return;
-        }
-
-        // // Verification
-        // const verifier = Object.keys(scoreMap).find(
-        //     (u) => u.toLowerCase() === level.verifier.toLowerCase(),
-        // ) || level.verifier;
-        // scoreMap[verifier] ??= {
-        //     verified: [],
-        //     completed: [],
-        //     progressed: [],
-        // };
-        // const { verified } = scoreMap[verifier];
-        // verified.push({
-        //     rank: rank + 1,
-        //     level: level.name,
-        //     score: score(rank + 1, 100, level.percentToQualify),
-        //     link: level.verification,
-        // });
-
-        // // Records
-        // level.records.forEach((record) => {
-        //     const user = Object.keys(scoreMap).find(
-        //         (u) => u.toLowerCase() === record.user.toLowerCase(),
-        //     ) || record.user;
-        //     scoreMap[user] ??= {
-        //         verified: [],
-        //         completed: [],
-        //         progressed: [],
-        //     };
-        //     const { completed, progressed } = scoreMap[user];
-        //     if (record.percent === 100) {
-        //         completed.push({
-        //             rank: rank + 1,
-        //             level: level.name,
-        //             score: score(rank + 1, 100, level.percentToQualify),
-        //             link: record.link,
-        //         });
-        //         return;
-        //     }
-
-        //     progressed.push({
-        //         rank: rank + 1,
-        //         level: level.name,
-        //         percent: record.percent,
-        //         score: score(rank + 1, record.percent, level.percentToQualify),
-        //         link: record.link,
-        //     });
-        // });
-    });
-
-    // Wrap in extra Object containing the user and total score
-    const res = Object.entries(scoreMap).map(([user, scores]) => {
-        const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
-            .flat()
-            .reduce((prev, cur) => prev + cur.score, 0);
-
-        return {
-            user,
-            total: round(total),
-            ...scores,
-        };
-    });
-
-    // Sort by total score
-    return [res.sort((a, b) => b.total - a.total), errs];
+    return [ [], [] ]; 
 }
-
-
-// export async function fetchLeaderboard() {
-//     const list = await fetchList();
-
-//     const scoreMap = {};
-//     const errs = [];
-//     list.forEach(([level, err], rank) => {
-//         if (err) {
-//             errs.push(err);
-//             return;
-//         }
-
-//         // Creator Leaderboard
-//         // const scoreE = Math.floor(Math.sqrt(level.percentFinished)*level.rating*level.rating*Math.sqrt(level.length)*Math.sqrt(level.rating)*45/1000*3.141592356/Math.E*1000)/1000
-//         // const author = Object.keys(scoreMap).find(
-//         //     (u) => u.toLowerCase() === level.author.toLowerCase(),
-//         // ) || level.author;
-//         // scoreMap[author] ??= {
-//         //     totalScore: 0,
-//         //     created: []
-//         // };
-//         // scoreMap[author].created.push({
-//         //     rank: rank + 1,
-//         //     level: level.name,
-//         //     score: scoreE,
-//         //     link: level.showcase
-//         // });
-//         // scoreMap[author].totalScore += scoreE
-
-//         // Records
-//         level.records.forEach((record) => {
-//             const user = Object.keys(scoreMap).find(
-//                 (u) => u.toLowerCase() === record.user.toLowerCase(),
-//             ) || record.user;
-//             scoreMap[user] ??= {
-//                 verified: [],
-//                 completed: [],
-//                 progressed: [],
-//             };
-//             const { completed, progressed } = scoreMap[user];
-//             if (record.percent === 100) {
-//                 completed.push({
-//                     rank: rank + 1,
-//                     level: level.name,
-//                     score: score(rank + 1, 100, level.percentToQualify),
-//                     link: record.link,
-//                 });
-//                 return;
-//             }
-        
-//             progressed.push({
-//                 rank: rank + 1,
-//                 level: level.name,
-//                 percent: record.percent,
-//                 score: score(rank + 1, record.percent, level.percentToQualify),
-//                 link: record.link,
-//             });
-//         });
-//     });
-
-//     //Wrap in extra Object containing the user and total score
-//     const res = Object.entries(scoreMap).map(([user, scores]) => {
-//       scores.user = user;
-//       return scores;
-//         // const { verified, completed, progressed } = scores;
-//         // const total = [verified, completed, progressed]
-//         //     .flat()
-//         //     .reduce((prev, cur) => prev + cur.score, 0);
-//         //
-//         // return {
-//         //     user,
-//         //     total: round(total),
-//         //     ...scores,
-//         // };
-//     });
-//     for (var i in res) console.log(res[i])
-//     var sortFunce = function(a,b) { return b.totalScore-a.totalScore }
-//     // Sort by total score
-//     return [res.sort(sortFunce), errs]
-// }

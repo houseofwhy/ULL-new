@@ -1,5 +1,5 @@
 import { store } from "../main.js";
-import { embed, filtersList, filtersSetup } from "../util.js";
+import { embed, filtersList, filtersSetup, getYoutubeIdFromUrl, getThumbnailFromId } from "../util.js";
 import { score } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
 
@@ -76,6 +76,7 @@ export default {
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
+                                <img v-if="level" :src="getThumbnail(level)" class="level-thumb" alt="" loading="lazy">
                                 <span :class="{ 'rank-verified': level?.isVerified}">
                                     <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
@@ -194,9 +195,17 @@ export default {
         isFiltersActive: false,
         filtersList: filtersList,
         search: "",
+        minDeco: null,
+        minVerif: null,
     }),
     watch: {
         search() {
+            this.applyFilters();
+        },
+        minDeco() {
+            this.applyFilters();
+        },
+        minVerif() {
             this.applyFilters();
         }
     },
@@ -244,6 +253,16 @@ export default {
     methods: {
         embed,
         score,
+        getThumbnail(level) {
+            if (!level) return '';
+            if (level.thumbnail) return level.thumbnail;
+            const videoUrl = level.showcase || level.verification;
+            if (videoUrl) {
+                const id = getYoutubeIdFromUrl(videoUrl);
+                if (id) return getThumbnailFromId(id);
+            }
+            return ''; 
+        },
         filtersToggle() {
             this.isFiltersActive = !this.isFiltersActive;
         },
@@ -260,6 +279,7 @@ export default {
                 const name = level.name.toLowerCase();
                 const matchesSearch = !searchQuery || name.includes(searchQuery);
 
+                // 1. Tags
                 let matchesTags = true;
                 if (activeFilters.length > 0) {
                     for (const filter of activeFilters) {
@@ -270,7 +290,46 @@ export default {
                     }
                 }
 
-                level.isHidden = !(matchesSearch && matchesTags);
+                // 2. Decoration %
+                let matchesDeco = true;
+                if (this.minDeco > 0) {
+                    if (level.percentFinished < this.minDeco) {
+                        matchesDeco = false;
+                    }
+                }
+
+                // 3. Verification % (Records OR Runs)
+                let matchesVerif = true;
+                if (this.minVerif > 0) {
+                    let bestPercent = 0;
+                    
+                    // A. Verified
+                    if (level.isVerified) bestPercent = 100;
+                    
+                    // B. Records from 0
+                    if (level.records && level.records.length > 0) {
+                         const recordMax = Math.max(...level.records.map(r => r.percent));
+                         bestPercent = Math.max(bestPercent, recordMax);
+                    }
+
+                    // C. Runs (Difference)
+                    if (level.run && level.run.length > 0) {
+                        const runMax = Math.max(...level.run.map(r => {
+                            const parts = String(r.percent).split('-');
+                            if (parts.length === 2) {
+                                return parseInt(parts[1]) - parseInt(parts[0]);
+                            }
+                            return 0;
+                        }));
+                        bestPercent = Math.max(bestPercent, runMax);
+                    }
+
+                    if (bestPercent < this.minVerif) {
+                        matchesVerif = false;
+                    }
+                }
+
+                level.isHidden = !(matchesSearch && matchesTags && matchesDeco && matchesVerif);
             });
         },
         useFilter(index) {

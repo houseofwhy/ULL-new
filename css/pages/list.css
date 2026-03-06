@@ -55,17 +55,44 @@ main.page-list--pending .list-container {
 .page-list .list .level {
     width: 100%;
 }
+/* Force the button to be a horizontal row */
 .page-list .list .level button {
     background-color: var(--color-background);
     color: var(--color-on-background);
     border: none;
     border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: start;
+    padding: 0.5rem; /* Smaller padding so it wraps the image nicely */
+    text-align: left !important;
     word-break: normal;
     overflow-wrap: anywhere;
     cursor: pointer;
+    
+    /* STRICT FLEXBOX SETTINGS */
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    width: 100%;
 }
+
+/* Force the thumbnail to stay small */
+.page-list .list .level .level-thumb {
+    width: 120px !important;
+    min-width: 120px !important; /* Prevents it from shrinking */
+    height: 67px !important; /* Forces 16:9 ratio */
+    object-fit: cover !important;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 !important; /* Removes any default spacing */
+    display: block !important;
+}
+
+/* White border when active */
+.page-list .list .level.active .level-thumb {
+    border-color: white !important; 
+}
+
 .page-list .list .level.error button {
     color: var(--color-error);
     cursor: not-allowed;
