@@ -299,7 +299,7 @@ export default {
                             : 0;
                     })));
                 const verificationProgress = Math.max(recordPercent, runPercent);
-                const matchesVerification = !level.isVerified && verificationProgress >= minVer;
+                const matchesVerification = level.isVerified || verificationProgress >= minVer;
 
                 level.isHidden = !(matchesSearch && matchesTags && matchesDecoration && matchesVerification);
             });
