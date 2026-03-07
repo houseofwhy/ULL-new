@@ -1,7 +1,7 @@
 [
     {
-        "name": "Penumbral",
-        "placement": "up"
+        "name": "Redemption",
+        "placement": "down"
     },
     {
         "name": "ZOINK NEVER CLEAR",
@@ -17,11 +17,6 @@
         "name": "ByteShift",
         "placement": "10",
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
-    },
-    {
-        "name": "SHREDDER",
-        "placement": "10",
-        "link": "https://youtu.be/oNgMrmLkzKk?si=XE_uNXIdgHld1JTK"
     },
     {
         "name": "Cuts",
@@ -52,11 +47,6 @@
         "name": "Midnight",
         "placement": "10",
         "link": "https://youtu.be/R4fSPS-0DYY?si=iYLSHJKzBfC0jqpO"
-    },
-    {
-        "name": "A N I",
-        "placement": "10",
-        "link": "https://youtu.be/1DRrmRCN9lE?si=pnwhKftcxLVsBg9L"
     },
     {
         "name": "Lirile",
@@ -102,11 +92,6 @@
         "name": "NUCLEAR STAR",
         "placement": "20",
         "link": "https://fxtwitter.com/luxurious_nexel/status/2025099832957042876?s=46"
-    },
-    {
-        "name": "CONVERGENCE",
-        "placement": "20",
-        "link": "https://www.youtube.com/watch?v=vhIEoYnMLOY"
     },
     {
         "name": "Ground Fella",
@@ -177,6 +162,11 @@
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
+    },
+    {
+        "name": "Prismline",
+        "placement": "75",
+        "link": "https://youtu.be/pIHOHz3i0Rw?si=_8De09av-FNA2H-b"
     },
     {
         "name": "Calibrate",
