@@ -219,3 +219,27 @@ main.page-list--pending .list-container {
     padding: 7px;
     margin: 2px
 }
+
+.legend .type-title-sm {
+    margin-bottom: 1rem;
+}
+
+.legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.legend-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}

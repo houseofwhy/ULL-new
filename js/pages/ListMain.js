@@ -178,8 +178,21 @@ export default {
                     <div class="errors" v-show="errors.length > 0">
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
+                    <div v-if="showColors" class="legend">
+                        <h3 class="type-title-sm">Legend</h3>
+                        <ul class="legend-list">
+                            <li><span class="legend-dot" style="background:#5599ff"></span><span class="type-body">On layout state</span></li>
+                            <li><span class="legend-dot" style="background:#33dddd"></span><span class="type-body">Deco is 1%–29% finished</span></li>
+                            <li><span class="legend-dot" style="background:#55ee55"></span><span class="type-body">Deco is 30%–69% finished</span></li>
+                            <li><span class="legend-dot" style="background:#ffee55"></span><span class="type-body">Deco is 70%–99% finished</span></li>
+                            <li><span class="legend-dot" style="background:#ffaa44"></span><span class="type-body">Finished</span></li>
+                            <li><span class="legend-dot" style="background:#ff6622"></span><span class="type-body">Verification progress is 30%–59%</span></li>
+                            <li><span class="legend-dot" style="background:#ff5555"></span><span class="type-body">Verification progress is 60%–99%</span></li>
+                            <li><span class="legend-dot" style="background:#bbbbbb"></span><span class="type-body">Verified, not rated</span></li>
+                            <li><span class="legend-dot" style="background:#ffffff; border: 1px solid #555;"></span><span class="type-body">Verified and rated</span></li>
+                        </ul>
+                    </div>
                     <ListEditors :editors="editors" />
-
                 </div>
             </div>
         </main>

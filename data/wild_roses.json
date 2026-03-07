@@ -7,27 +7,27 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/13pj34hEF4w?si=W7Gu1CNmJmRqmhqm",
-    "lastUpd": "01.03.2026",
+    "lastUpd": "07.03.2026",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Eireley",
+            "link": "https://www.youtube.com/live/1XOoz0y7tzk?si=eIlrfd9_IUwlr0LD",
+            "percent": 17,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Eireley",
+            "link": "https://youtube.com/live/bLMh-DFW3ik?feature=share",
+            "percent": "68-90",
             "hz": 0
         }
     ],
-    "length": 61,
+    "length": 70,
     "rating": 1,
-    "percentFinished": 60,
+    "percentFinished": 75,
     "isMain": true,
     "isFuture": true,
     "tags": [
