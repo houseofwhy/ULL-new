@@ -39,7 +39,7 @@ export function shuffle(array) {
 
 
 export const filtersList = [
-    { separator: true },
+    { separator: true}
     { active: false, name: "Public", key: "Public" },
     { active: false, name: "Finished", key: "Finished" },
     { active: false, name: "Being Verified", key: "Verifying" },
@@ -67,7 +67,7 @@ export const filtersList = [
 export const filtersSetup = `<div style="flex-grow:1"></div>
 				<button @click="SHOW_COLORS = !SHOW_COLORS" class="color-toggle-btn" :class="{ active: SHOW_COLORS }" title="Toggle level name colors">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-						<path v-if="!SHOW_COLORS" fill="currentColor" d="M12 2C9.38 2 4 9.22 4 14a8 8 0 0016 0c0-4.78-5.38-12-8-12zm0 18a6 6 0 01-6-6c0-3.5 3.91-9.15 6-11.56C14.09 4.85 18 10.5 18 14a6 6 0 01-6 6z"/>
+						<path v-if="!SHOW_COLORS" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2C9.38 2 4 9.22 4 14a8 8 0 0016 0c0-4.78-5.38-12-8-12z"/>
 						<path v-if="SHOW_COLORS" fill="currentColor" d="M12 2C9.38 2 4 9.22 4 14a8 8 0 0016 0c0-4.78-5.38-12-8-12z"/>
 					</svg>
 				</button>

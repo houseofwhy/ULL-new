@@ -84,7 +84,7 @@ export default {
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="SHOW_COLORS ? getLevelNameStyle(level) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="SHOW_COLORS ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -263,16 +263,18 @@ export default {
         filtersToggle() {
             this.isFiltersActive = !this.isFiltersActive;
         },
-        getLevelNameStyle(level) {
+        getLevelNameStyle(level, isSelected) {
             if (!level) return {};
             const dark = !this.store.dark; // .dark class = light theme, so invert
 
-            // Priority: tag-based colors first
-            if (level.tags && level.tags.includes('Rated')) {
-                return { color: dark ? '#cccccc' : '#222222', fontWeight: level.isVerified ? 'bold' : 'normal' };
-            }
+            // Unrated: always gray (same shade verified levels used to be)
             if (level.tags && level.tags.includes('Unrated')) {
-                return { color: dark ? '#999999' : '#555555', fontWeight: level.isVerified ? 'bold' : 'normal' };
+                const c = isSelected ? (dark ? '#dddddd' : '#333333') : (dark ? '#888888' : '#888888');
+                return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
+            }
+            // Rated: pure white/black
+            if (level.tags && level.tags.includes('Rated')) {
+                return { color: dark ? '#ffffff' : '#000000', fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
 
             // Compute verificationProgress
@@ -289,19 +291,33 @@ export default {
             if (level.isVerified) {
                 return { fontWeight: 'bold' };
             } else if (pf === 100 && verificationProgress >= 60) {
-                color = dark ? '#ff6666' : '#6b0000';
+                color = dark
+                    ? (isSelected ? '#ff9999' : '#ff5555')
+                    : (isSelected ? '#cc2222' : '#8b0000');
             } else if (pf === 100 && verificationProgress >= 30) {
-                color = dark ? '#ff7733' : '#992200';
+                color = dark
+                    ? (isSelected ? '#ffaa66' : '#ff6622')
+                    : (isSelected ? '#cc4400' : '#7a1a00');
             } else if (pf === 100) {
-                color = dark ? '#ffaa44' : '#7a3d00';
+                color = dark
+                    ? (isSelected ? '#ffcc77' : '#ffaa44')
+                    : (isSelected ? '#cc7700' : '#7a3d00');
             } else if (pf >= 70) {
-                color = dark ? '#ffee55' : '#6b5200';
+                color = dark
+                    ? (isSelected ? '#ffff77' : '#ffee55')
+                    : (isSelected ? '#ccaa00' : '#6b5200');
             } else if (pf >= 30) {
-                color = dark ? '#55ee55' : '#1a5c1a';
+                color = dark
+                    ? (isSelected ? '#88ff88' : '#55ee55')
+                    : (isSelected ? '#229922' : '#1a5c1a');
             } else if (pf >= 1) {
-                color = dark ? '#33dddd' : '#005f5f';
+                color = dark
+                    ? (isSelected ? '#66ffff' : '#33dddd')
+                    : (isSelected ? '#009999' : '#005f5f');
             } else {
-                color = dark ? '#5599ff' : '#003399';
+                color = dark
+                    ? (isSelected ? '#88bbff' : '#5599ff')
+                    : (isSelected ? '#2255cc' : '#003399');
             }
 
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
