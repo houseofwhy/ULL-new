@@ -8,7 +8,10 @@ import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
 // Set to false to hide thumbnails in the level list
-const SHOW_THUMBNAILS = false;
+const SHOW_THUMBNAILS = true;
+
+// Set to false to disable level name coloring
+const SHOW_COLORS = true;
 
 const roleIconMap = {
     owner: "crown",
@@ -81,7 +84,7 @@ export default {
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="SHOW_COLORS ? getLevelNameStyle(level) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -194,6 +197,7 @@ export default {
         isFiltersActive: false,
         filtersList: filtersList,
         SHOW_THUMBNAILS,
+        SHOW_COLORS,
         search: "",
         minDecoration: 0,
         minVerification: 0,
@@ -259,6 +263,50 @@ export default {
         filtersToggle() {
             this.isFiltersActive = !this.isFiltersActive;
         },
+        getLevelNameStyle(level) {
+            if (!level) return {};
+            const dark = this.store.dark;
+
+            // Priority: tag-based colors first
+            if (level.tags && level.tags.includes('Rated')) {
+                return { color: dark ? '#888888' : '#333333', fontWeight: level.isVerified ? 'bold' : 'normal' };
+            }
+            if (level.tags && level.tags.includes('Unrated')) {
+                return { color: dark ? '#aaaaaa' : '#666666', fontWeight: level.isVerified ? 'bold' : 'normal' };
+            }
+
+            // Compute verificationProgress
+            const recordPercent = Math.max(0, ...((level.records || []).map(r => Number(r.percent) || 0)));
+            const runPercent = Math.max(0, ...((level.run || []).map(r => {
+                const parts = String(r.percent).split('-').map(Number);
+                return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? Math.abs(parts[1] - parts[0]) : 0;
+            })));
+            const verificationProgress = Math.max(recordPercent, runPercent);
+
+            const pf = level.percentFinished ?? 0;
+            let color;
+
+            if (level.isVerified) {
+                // verified levels: bold, no color override — fall through to default
+                return { fontWeight: 'bold' };
+            } else if (pf === 100 && verificationProgress >= 60) {
+                color = dark ? '#b22222' : '#7a0000'; // Maroon
+            } else if (pf === 100 && verificationProgress >= 30) {
+                color = dark ? '#ff4500' : '#c43000'; // Red
+            } else if (pf === 100) {
+                color = dark ? '#ffa040' : '#c06000'; // Orange
+            } else if (pf >= 70) {
+                color = dark ? '#ffe066' : '#a07800'; // Yellow
+            } else if (pf >= 30) {
+                color = dark ? '#66dd66' : '#227722'; // Green
+            } else if (pf >= 1) {
+                color = dark ? '#44dddd' : '#007a7a'; // Aqua
+            } else {
+                color = dark ? '#6699ff' : '#0044cc'; // Blue
+            }
+
+            return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
+        },
         getThumbnail(level) {
             const url = level.thumbnail || level.verification || level.showcase || '';
             const id = getYoutubeIdFromUrl(url);
@@ -308,7 +356,7 @@ export default {
                             : 0;
                     })));
                 const verificationProgress = Math.max(recordPercent, runPercent);
-                const matchesVerification = level.isVerified || verificationProgress >= minVer;
+                const matchesVerification = !level.isVerified && verificationProgress >= minVer;
 
                 level.isHidden = !(matchesSearch && matchesTags && matchesDecoration && matchesVerification);
             });

@@ -116,6 +116,30 @@ header.new .nav .nav__tab:hover {
     outline: 2px solid var(--color-primary);
 }
 
+.color-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-background);
+    opacity: 0.4;
+    transition: opacity 100ms ease, background-color 100ms ease;
+    align-self: center;
+}
+
+.color-toggle-btn:hover {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.color-toggle-btn.active {
+    opacity: 1;
+}
+
 .filters-text {
     padding: 16px 0px 16px 50px;
     border-bottom: 4px solid transparent;
