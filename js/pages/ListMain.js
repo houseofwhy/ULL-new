@@ -75,15 +75,15 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">Leg</p>
+                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (!store.dark ? '#bbbbbb' : '#555555') : ''}">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (!store.dark ? '#bbbbbb' : '#555555') : ''}">Leg</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (!store.dark ? '#bbbbbb' : '#555555') : ''}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -271,11 +271,11 @@ export default {
                 const c = isSelected
                     ? (dark ? '#dddddd' : '#888888')
                     : (dark ? '#aaaaaa' : '#666666');
-                return { color: c, fontWeight: 'normal' };
+                return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
             // Rated: pure white/black
             if (level.tags && level.tags.includes('Rated')) {
-                return { color: dark ? '#ffffff' : '#000000', fontWeight: 'normal' };
+                return { color: dark ? '#ffffff' : '#000000', fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
 
             // Verified: bright gray + bold
@@ -327,7 +327,7 @@ export default {
                     : (isSelected ? '#6c95cc' : '#447acc');
             }
 
-            return { color, fontWeight: 'normal' };
+            return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
         getThumbnail(level) {
             const url = level.thumbnail || level.verification || level.showcase || '';
