@@ -77,7 +77,7 @@ export default {
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
                                 <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg">Leg</p>
+                                <p v-else class="type-label-lg" :style="SHOW_COLORS ? getLevelNameStyle(level, selected == i) : {}">Leg</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
@@ -270,7 +270,7 @@ export default {
             // Unrated: always gray
             if (level.tags && level.tags.includes('Unrated')) {
                 const c = isSelected
-                    ? (dark ? '#dddddd' : '#c6c6c6')
+                    ? (dark ? '#dddddd' : '#b0b0b0')
                     : '#888888';
                 return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
@@ -295,31 +295,31 @@ export default {
             } else if (pf === 100 && verificationProgress >= 60) {
                 color = dark
                     ? (isSelected ? '#ff9999' : '#ff5555')
-                    : (isSelected ? '#e58989' : '#e54c4c');
+                    : (isSelected ? '#cc7a7a' : '#cc4444');
             } else if (pf === 100 && verificationProgress >= 30) {
                 color = dark
                     ? (isSelected ? '#ffaa66' : '#ff6622')
-                    : (isSelected ? '#e5995b' : '#e55b1e');
+                    : (isSelected ? '#cc8851' : '#cc511b');
             } else if (pf === 100) {
                 color = dark
                     ? (isSelected ? '#ffcc77' : '#ffaa44')
-                    : (isSelected ? '#e5b76b' : '#e5993d');
+                    : (isSelected ? '#cca35f' : '#cc8836');
             } else if (pf >= 70) {
                 color = dark
                     ? (isSelected ? '#ffff77' : '#ffee55')
-                    : (isSelected ? '#e5e56b' : '#e5d64c');
+                    : (isSelected ? '#cccc5f' : '#ccbe44');
             } else if (pf >= 30) {
                 color = dark
                     ? (isSelected ? '#88ff88' : '#55ee55')
-                    : (isSelected ? '#7ae57a' : '#4cd64c');
+                    : (isSelected ? '#6ccc6c' : '#44be44');
             } else if (pf >= 1) {
                 color = dark
                     ? (isSelected ? '#66ffff' : '#33dddd')
-                    : (isSelected ? '#5be5e5' : '#2dc6c6');
+                    : (isSelected ? '#51cccc' : '#28b0b0');
             } else {
                 color = dark
                     ? (isSelected ? '#88bbff' : '#5599ff')
-                    : (isSelected ? '#7aa8e5' : '#4c89e5');
+                    : (isSelected ? '#6c95cc' : '#447acc');
             }
 
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };

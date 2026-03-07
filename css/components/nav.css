@@ -116,20 +116,19 @@ header.new .nav .nav__tab:hover {
     border: none;
     cursor: pointer;
     padding: 8px;
-    margin-left: 20px;
+    margin-left: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: currentColor;
-    opacity: 0.4;
-    transition: opacity 100ms ease, background-color 100ms ease;
+    opacity: 1;
+    transition: background-color 100ms ease;
     align-self: center;
 }
 
 .color-toggle-btn:hover {
-    opacity: 0.8;
-    background-color: rgba(128, 128, 128, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .color-toggle-btn.active {
