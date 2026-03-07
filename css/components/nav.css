@@ -117,6 +117,8 @@ header.new .nav .nav__tab:hover {
     cursor: pointer;
     padding: 8px;
     margin-left: -48px;
+    margin-right: 12px;
+    margin-bottom: 5px;
     border-radius: 50%;
     display: flex;
     align-items: center;

@@ -11,7 +11,6 @@ import ListEditors from "../components/ListEditors.js";
 const SHOW_THUMBNAILS = false;
 
 // Set to false to disable level name coloring
-const SHOW_COLORS = false;
 
 const roleIconMap = {
     owner: "crown",
@@ -76,15 +75,15 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="getLevelNameStyle(level, selected == i)">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg" :style="getLevelNameStyle(level, selected == i)">Leg</p>
+                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">Leg</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="getLevelNameStyle(level, selected == i)">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -197,7 +196,7 @@ export default {
         isFiltersActive: false,
         filtersList: filtersList,
         SHOW_THUMBNAILS,
-        SHOW_COLORS,
+        showColors: false,
         search: "",
         minDecoration: 0,
         minVerification: 0,
