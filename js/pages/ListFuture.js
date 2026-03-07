@@ -8,7 +8,7 @@ import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
 // Set to false to hide thumbnails in the level list
-const SHOW_THUMBNAILS = false;
+const SHOW_THUMBNAILS = true;
 
 const roleIconMap = {
     owner: "crown",
@@ -260,8 +260,7 @@ export default {
             this.isFiltersActive = !this.isFiltersActive;
         },
         getThumbnail(level) {
-            if (level.thumbnail) return level.thumbnail;
-            const url = level.showcase || level.verification || '';
+            const url = level.thumbnail || level.verification || level.showcase || '';
             const id = getYoutubeIdFromUrl(url);
             return id ? getThumbnailFromId(id) : '';
         },
