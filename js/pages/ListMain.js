@@ -8,10 +8,10 @@ import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
 // Set to false to hide thumbnails in the level list
-const SHOW_THUMBNAILS = true;
+const SHOW_THUMBNAILS = false;
 
 // Set to false to disable level name coloring
-const SHOW_COLORS = true;
+const SHOW_COLORS = false;
 
 const roleIconMap = {
     owner: "crown",
@@ -269,10 +269,10 @@ export default {
 
             // Priority: tag-based colors first
             if (level.tags && level.tags.includes('Rated')) {
-                return { color: dark ? '#888888' : '#333333', fontWeight: level.isVerified ? 'bold' : 'normal' };
+                return { color: dark ? '#cccccc' : '#222222', fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
             if (level.tags && level.tags.includes('Unrated')) {
-                return { color: dark ? '#aaaaaa' : '#666666', fontWeight: level.isVerified ? 'bold' : 'normal' };
+                return { color: dark ? '#999999' : '#555555', fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
 
             // Compute verificationProgress
@@ -287,22 +287,21 @@ export default {
             let color;
 
             if (level.isVerified) {
-                // verified levels: bold, no color override — fall through to default
                 return { fontWeight: 'bold' };
             } else if (pf === 100 && verificationProgress >= 60) {
-                color = dark ? '#b22222' : '#7a0000'; // Maroon
+                color = dark ? '#ff6666' : '#6b0000';
             } else if (pf === 100 && verificationProgress >= 30) {
-                color = dark ? '#ff4500' : '#c43000'; // Red
+                color = dark ? '#ff7733' : '#992200';
             } else if (pf === 100) {
-                color = dark ? '#ffa040' : '#c06000'; // Orange
+                color = dark ? '#ffaa44' : '#7a3d00';
             } else if (pf >= 70) {
-                color = dark ? '#ffe066' : '#a07800'; // Yellow
+                color = dark ? '#ffee55' : '#6b5200';
             } else if (pf >= 30) {
-                color = dark ? '#66dd66' : '#227722'; // Green
+                color = dark ? '#55ee55' : '#1a5c1a';
             } else if (pf >= 1) {
-                color = dark ? '#44dddd' : '#007a7a'; // Aqua
+                color = dark ? '#33dddd' : '#005f5f';
             } else {
-                color = dark ? '#6699ff' : '#0044cc'; // Blue
+                color = dark ? '#5599ff' : '#003399';
             }
 
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
