@@ -265,7 +265,7 @@ export default {
         },
         getLevelNameStyle(level) {
             if (!level) return {};
-            const dark = this.store.dark;
+            const dark = !this.store.dark; // .dark class = light theme, so invert
 
             // Priority: tag-based colors first
             if (level.tags && level.tags.includes('Rated')) {
