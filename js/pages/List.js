@@ -10,6 +10,8 @@ import ListEditors from "../components/ListEditors.js";
 // Set to false to hide thumbnails in the level list
 const SHOW_THUMBNAILS = false;
 
+// Set to false to disable level name coloring
+
 const roleIconMap = {
     owner: "crown",
     admin: "user-gear",
@@ -73,15 +75,15 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg">Londenberg</p>
+                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">Londenberg</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -194,6 +196,7 @@ export default {
         isFiltersActive: false,
         filtersList: filtersList,
         SHOW_THUMBNAILS,
+        showColors: false,
         search: "",
         minDecoration: 0,
         minVerification: 0,
@@ -250,6 +253,73 @@ export default {
         filtersToggle() {
             this.isFiltersActive = !this.isFiltersActive;
         },
+        getLevelNameStyle(level, isSelected) {
+            if (!level) return {};
+            const dark = !this.store.dark; // .dark class = light theme, so invert
+
+            // Unrated: always gray
+            if (level.tags && level.tags.includes('Unrated')) {
+                const c = isSelected
+                    ? (dark ? '#dddddd' : '#888888')
+                    : (dark ? '#bbbbbb' : '#666666');
+                return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
+            }
+            // Rated: pure white/black
+            if (level.tags && level.tags.includes('Rated')) {
+                return { color: dark ? '#ffffff' : '#000000', fontWeight: level.isVerified ? 'bold' : 'normal' };
+            }
+
+            // Verified: bright gray + bold
+            if (level.isVerified) {
+                const c = isSelected
+                    ? (dark ? '#ffffff' : '#000000')
+                    : (dark ? '#bbbbbb' : '#bbbbbb');
+                return { color: c, fontWeight: 'bold' };
+            }
+
+            // Compute verificationProgress
+            const recordPercent = Math.max(0, ...((level.records || []).map(r => Number(r.percent) || 0)));
+            const runPercent = Math.max(0, ...((level.run || []).map(r => {
+                const parts = String(r.percent).split('-').map(Number);
+                return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? Math.abs(parts[1] - parts[0]) : 0;
+            })));
+            const verificationProgress = Math.max(recordPercent, runPercent);
+
+            const pf = level.percentFinished ?? 0;
+            let color;
+
+            if (pf === 100 && verificationProgress >= 60) {
+                color = dark
+                    ? (isSelected ? '#ff9999' : '#ff5555')
+                    : (isSelected ? '#cc7a7a' : '#cc4444');
+            } else if (pf === 100 && verificationProgress >= 30) {
+                color = dark
+                    ? (isSelected ? '#ffaa66' : '#ff6622')
+                    : (isSelected ? '#cc8851' : '#cc511b');
+            } else if (pf === 100) {
+                color = dark
+                    ? (isSelected ? '#ffcc77' : '#ffaa44')
+                    : (isSelected ? '#cca35f' : '#cc8836');
+            } else if (pf >= 70) {
+                color = dark
+                    ? (isSelected ? '#ffff77' : '#ffee55')
+                    : (isSelected ? '#cccc5f' : '#ccbe44');
+            } else if (pf >= 30) {
+                color = dark
+                    ? (isSelected ? '#88ff88' : '#55ee55')
+                    : (isSelected ? '#6ccc6c' : '#44be44');
+            } else if (pf >= 1) {
+                color = dark
+                    ? (isSelected ? '#66ffff' : '#33dddd')
+                    : (isSelected ? '#51cccc' : '#28b0b0');
+            } else {
+                color = dark
+                    ? (isSelected ? '#88bbff' : '#5599ff')
+                    : (isSelected ? '#6c95cc' : '#447acc');
+            }
+
+            return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
+        },
         getThumbnail(level) {
             const url = level.thumbnail || level.verification || level.showcase || '';
             const id = getYoutubeIdFromUrl(url);
@@ -299,7 +369,7 @@ export default {
                             : 0;
                     })));
                 const verificationProgress = Math.max(recordPercent, runPercent);
-                const matchesVerification = level.isVerified || verificationProgress >= minVer;
+                const matchesVerification = !level.isVerified && verificationProgress >= minVer;
 
                 level.isHidden = !(matchesSearch && matchesTags && matchesDecoration && matchesVerification);
             });
