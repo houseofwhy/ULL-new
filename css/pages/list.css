@@ -220,20 +220,22 @@ main.page-list--pending .list-container {
     margin: 2px
 }
 
-.legend .type-title-sm {
-    margin-bottom: 1rem;
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .legend-list {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.75rem;
 }
 
 .legend-list li {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
 }
 
 .legend-dot {
