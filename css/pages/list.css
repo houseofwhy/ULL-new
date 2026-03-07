@@ -44,14 +44,6 @@ main.page-list--pending .list-container {
     padding-right: 1rem;
 }
 
-.page-list .list .active .rank-verified {
-    color: #FFFFFF;
-}
-
-.page-list .list .rank-verified {
-    color: #808080;
-}
-
 .page-list .list .level {
     width: 100%;
 }

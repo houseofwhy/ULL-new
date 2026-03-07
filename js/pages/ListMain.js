@@ -76,15 +76,15 @@ export default {
                     <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
                         <td class="rank">
 							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg" :style="SHOW_COLORS ? getLevelNameStyle(level, selected == i) : {}">Leg</p>
+                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="getLevelNameStyle(level, selected == i)">#{{ i + 1 }}</p>
+                                <p v-else class="type-label-lg" :style="getLevelNameStyle(level, selected == i)">Leg</p>
 							</span>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="SHOW_COLORS ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal'}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="getLevelNameStyle(level, selected == i)">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -270,13 +270,21 @@ export default {
             // Unrated: always gray
             if (level.tags && level.tags.includes('Unrated')) {
                 const c = isSelected
-                    ? (dark ? '#dddddd' : '#b0b0b0')
-                    : '#888888';
-                return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
+                    ? (dark ? '#dddddd' : '#888888')
+                    : (dark ? '#aaaaaa' : '#666666');
+                return { color: c, fontWeight: 'normal' };
             }
             // Rated: pure white/black
             if (level.tags && level.tags.includes('Rated')) {
-                return { color: dark ? '#ffffff' : '#000000', fontWeight: level.isVerified ? 'bold' : 'normal' };
+                return { color: dark ? '#ffffff' : '#000000', fontWeight: 'normal' };
+            }
+
+            // Verified: bright gray + bold
+            if (level.isVerified) {
+                const c = isSelected
+                    ? (dark ? '#ffffff' : '#000000')
+                    : (dark ? '#bbbbbb' : '#555555');
+                return { color: c, fontWeight: 'bold' };
             }
 
             // Compute verificationProgress
@@ -290,9 +298,7 @@ export default {
             const pf = level.percentFinished ?? 0;
             let color;
 
-            if (level.isVerified) {
-                return { fontWeight: 'bold' };
-            } else if (pf === 100 && verificationProgress >= 60) {
+            if (pf === 100 && verificationProgress >= 60) {
                 color = dark
                     ? (isSelected ? '#ff9999' : '#ff5555')
                     : (isSelected ? '#cc7a7a' : '#cc4444');
@@ -322,7 +328,7 @@ export default {
                     : (isSelected ? '#6c95cc' : '#447acc');
             }
 
-            return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
+            return { color, fontWeight: 'normal' };
         },
         getThumbnail(level) {
             const url = level.thumbnail || level.verification || level.showcase || '';
