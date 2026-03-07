@@ -230,6 +230,7 @@ main.page-list--pending .list-container {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 .legend-list li {
