@@ -267,9 +267,11 @@ export default {
             if (!level) return {};
             const dark = !this.store.dark; // .dark class = light theme, so invert
 
-            // Unrated: always gray (same shade verified levels used to be)
+            // Unrated: always gray
             if (level.tags && level.tags.includes('Unrated')) {
-                const c = isSelected ? (dark ? '#dddddd' : '#333333') : (dark ? '#888888' : '#888888');
+                const c = isSelected
+                    ? (dark ? '#dddddd' : '#c6c6c6')
+                    : '#888888';
                 return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
             // Rated: pure white/black
@@ -293,31 +295,31 @@ export default {
             } else if (pf === 100 && verificationProgress >= 60) {
                 color = dark
                     ? (isSelected ? '#ff9999' : '#ff5555')
-                    : (isSelected ? '#cc2222' : '#8b0000');
+                    : (isSelected ? '#e58989' : '#e54c4c');
             } else if (pf === 100 && verificationProgress >= 30) {
                 color = dark
                     ? (isSelected ? '#ffaa66' : '#ff6622')
-                    : (isSelected ? '#cc4400' : '#7a1a00');
+                    : (isSelected ? '#e5995b' : '#e55b1e');
             } else if (pf === 100) {
                 color = dark
                     ? (isSelected ? '#ffcc77' : '#ffaa44')
-                    : (isSelected ? '#cc7700' : '#7a3d00');
+                    : (isSelected ? '#e5b76b' : '#e5993d');
             } else if (pf >= 70) {
                 color = dark
                     ? (isSelected ? '#ffff77' : '#ffee55')
-                    : (isSelected ? '#ccaa00' : '#6b5200');
+                    : (isSelected ? '#e5e56b' : '#e5d64c');
             } else if (pf >= 30) {
                 color = dark
                     ? (isSelected ? '#88ff88' : '#55ee55')
-                    : (isSelected ? '#229922' : '#1a5c1a');
+                    : (isSelected ? '#7ae57a' : '#4cd64c');
             } else if (pf >= 1) {
                 color = dark
                     ? (isSelected ? '#66ffff' : '#33dddd')
-                    : (isSelected ? '#009999' : '#005f5f');
+                    : (isSelected ? '#5be5e5' : '#2dc6c6');
             } else {
                 color = dark
                     ? (isSelected ? '#88bbff' : '#5599ff')
-                    : (isSelected ? '#2255cc' : '#003399');
+                    : (isSelected ? '#7aa8e5' : '#4c89e5');
             }
 
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
