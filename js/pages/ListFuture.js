@@ -210,7 +210,7 @@ export default {
         isFiltersActive: false,
         filtersList: filtersList,
         SHOW_THUMBNAILS,
-        showColors: false,
+        showColors: true,
         search: "",
         minDecoration: 0,
         minVerification: 0,
