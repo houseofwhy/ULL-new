@@ -8,7 +8,7 @@ import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
 // Set to false to hide thumbnails in the level list
-const SHOW_THUMBNAILS = true;
+const SHOW_THUMBNAILS = false;
 
 // Set to false to disable level name coloring
 
