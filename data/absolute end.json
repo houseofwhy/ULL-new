@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/Wnl00lA5SCE?si=n2z-UB3UsPDk4mma&t=18s",
-    "lastUpd": "18.12.2025",
+    "lastUpd": "08.03.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "MAXDASH",
+            "link": "https://youtu.be/3tqePfumv9E?si=zo22F6FwDgc1rRzP",
+            "percent": 31,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "MAXDASH",
+            "link": "https://youtu.be/zmaXDqWRKto?si=7Lm4dccXgvTrxvEF",
+            "percent": "63-100",
             "hz": 0
         }
     ],
