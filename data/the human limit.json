@@ -22,14 +22,15 @@
             "link": "",
             "percent": "0",
             "hz": 0
-        }        
+        }
     ],
     "length": 75,
     "rating": 1,
     "percentFinished": 50,
-    "lastUpd": "04.06.2025", 
+    "lastUpd": "04.06.2025",
 
     "isMain": true,
     "isFuture": false,
-    "tags": ["Long", "Remake", "NONG"]
+    "tags": ["Long", "Remake", "NONG"],
+    "thumbnail": "https://i.ytimg.com/vi/U7aQVhsw9qQ/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDjyVfTIZl-RbTKdvTIhYW4O4_hTQ"
 }
