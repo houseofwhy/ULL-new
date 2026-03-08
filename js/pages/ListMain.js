@@ -83,7 +83,7 @@ export default {
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (showColors && isOldLevel(level) ? level.name + \` 🚫\` : level.name) : \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (showColors && isOldLevel(level) && !level.isVerified ? level.name + \` 🚫\` : level.name) : \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -190,7 +190,7 @@ export default {
                             <li><span class="legend-dot" style="background:#ff5555"></span><span class="legend-text">Verification progress is 60%–99%</span></li>
                             <li><span class="legend-dot" style="background:#bbbbbb"></span><span class="legend-text">Verified, not rated</span></li>
                             <li><span class="legend-dot" style="background:#ffffff; border: 1px solid #555;"></span><span class="legend-text">Verified and rated</span></li>
-                            <li><span style="font-size:0.75rem;line-height:0.75rem;">🚫</span><span class="legend-text">Pending for removal</span></li>
+                            <li><span style="font-size:0.75rem;line-height:0.75rem;margin-left:-1px;">🚫</span><span class="legend-text">Pending for removal</span></li>
                         </ul>
                     </div>
                     <ListEditors :editors="editors" />

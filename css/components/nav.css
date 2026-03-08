@@ -64,7 +64,7 @@ header.new .nav .nav__tab:hover {
 
 
 .filters {
-    width: 200px;
+    width: 220px;
     position: relative;
 }
 
@@ -73,7 +73,7 @@ header.new .nav .nav__tab:hover {
     top: 100%;
     right: 0;
     z-index: 1000;
-    width: 200px;
+    width: 220px;
     pointer-events: none;
 }
 
@@ -149,7 +149,7 @@ header.new .nav .nav__tab:hover {
 }
 
 .filters-menu {
-    width: 200px;
+    width: 220px;
     background: rgba(0, 0, 0, 1);
     max-height: 0;
     overflow-y: hidden;
