@@ -42,22 +42,15 @@ export default {
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <div v-if="level.rankingScore != 2*(100**2)">
+                    <div>
                         <div v-if="bestRecord" class="best-record">
                             <p class="type-body">
-                                Best progress from 0: <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
+                                Best progress from 0: <a :href="bestRecord.link != '#' ? bestRecord.link : undefined" :target="bestRecord.link != '#' ? '_blank' : undefined" :style="bestRecord.link != '#' ? 'text-decoration: underline; cursor: pointer;' : ''"><span :style="bestRecord.link != '#' ? 'color: #00b825;' : ''">{{ bestRecord.percent }}%</span> by {{ bestRecord.user }}</a>
                             </p>
                         </div>
                         <div v-if="bestRun" class="best-run">
                             <p class="type-body">
-                                Best run: <a :href="bestRun.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div v-if="level.rankingScore == 2*(100**2)">
-                        <div v-if="bestRecord" class="best-record">
-                            <p class="type-body">
-                                The layout of the level <a :href="bestRecord.link" target="_blank" style="text-decoration: underline;"><span style="color: #00b825;">has been verified</span></a> by {{ bestRecord.user }}
+                                Best run: <a :href="bestRun.link != '#' ? bestRun.link : undefined" :target="bestRun.link != '#' ? '_blank' : undefined" :style="bestRun.link != '#' ? 'text-decoration: underline; cursor: pointer;' : ''"><span :style="bestRun.link != '#' ? 'color: #00b825;' : ''">{{ bestRun.percent }}%</span> by {{ bestRun.user }}</a>
                             </p>
                         </div>
                     </div>
@@ -179,7 +172,6 @@ export default {
                 level.maxPercent = maxPercent;
                 level.maxRunDifference = maxRunDifference;
                 level.rankingScore = Math.max(maxPercent, maxRunDifference) ** 2 + Math.min(maxPercent, maxRunDifference) ** 1.8;
-                if (maxPercent == 100) {level.rankingScore = 2*(100**2)}
             });
 
             const filteredList = list.filter(([level, err]) => level && !level.isVerified && level.rankingScore > 0);

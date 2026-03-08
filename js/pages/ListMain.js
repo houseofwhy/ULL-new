@@ -1,5 +1,5 @@
 import { store } from "../main.js";
-import { embed, filtersList, filtersSetup, getYoutubeIdFromUrl, getThumbnailFromId } from "../util.js";
+import { embed, filtersList, filtersSetup } from "../util.js";
 import { score } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
 
@@ -101,7 +101,7 @@ export default {
                             <div v-if="!level.isVerified && level.records[0].percent != 100">
                                 <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
                                     <p class="type-body">
-                                            World Record - From 0: {{level.records[0].percent}}% by {{level.records[0].user}}
+                                        World Record - From 0: <a v-if="level.records[0].link && level.records[0].link != '#'" :href="level.records[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.records[0].percent}}% by {{level.records[0].user}}</a><template v-else>{{level.records[0].percent}}% by {{level.records[0].user}}</template>
                                     </p>
                                 </div>
                                 <div v-if="!level.isVerified && level.records[0].percent == 0" class="worldrecord">
@@ -111,7 +111,7 @@ export default {
                                 </div>
                                 <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
                                     <p class="type-body">
-                                            World Record - Run: {{level.run[0].percent}}% by {{level.run[0].user}}
+                                        World Record - Run: <a v-if="level.run[0].link && level.run[0].link != '#'" :href="level.run[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.run[0].percent}}% by {{level.run[0].user}}</a><template v-else>{{level.run[0].percent}}% by {{level.run[0].user}}</template>
                                     </p>
                                 </div>
                                 <div v-if="!level.isVerified && level.run[0].percent == '0'" class="worldrecord">
@@ -356,9 +356,7 @@ export default {
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
         getThumbnail(level) {
-            const url = level.thumbnail || level.verification || level.showcase || '';
-            const id = getYoutubeIdFromUrl(url);
-            return id ? getThumbnailFromId(id) : '';
+            return level.thumbnail || '';
         },
         isOldLevel(level) {
             if (!level.lastUpd) return false;
