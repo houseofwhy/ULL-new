@@ -1,5 +1,5 @@
 {
-    "id": "private",
+    "id": 126031219,
     "name": "The Big Black",
     "author": "hjog",
     "creators": [],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Long", "NC"]
+    "tags": ["Long", "NC", "Public"]
 }

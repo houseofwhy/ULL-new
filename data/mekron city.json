@@ -1,5 +1,5 @@
 {
-    "id": "private",
+    "id": 126031219,
     "name": "Mekron City",
     "author": "Janucha",
     "creators": [],
@@ -33,5 +33,5 @@
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Finished", "Medium"]
+    "tags": ["Finished", "Medium", "Public"]
 }
