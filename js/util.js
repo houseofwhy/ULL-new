@@ -42,6 +42,7 @@ export const filtersList = [
     { separator: true },
     { active: false, name: "Public", key: "Public" },
     { active: false, name: "Finished", key: "Finished" },
+    { active: false, name: "Open Verification", key: "Open Verification" },
     { active: false, name: "Being Verified", key: "Verifying" },
     { active: false, name: "Layout State", key: "Layout" },
     { active: false, name: "Verified", key: "Verified" },

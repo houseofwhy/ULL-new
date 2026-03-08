@@ -83,7 +83,7 @@ export default {
                             <button @click="selected = i">
                                 <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (showColors && isOldLevel(level) ? level.name + \` 🚫\` : level.name) : \`Error (\${err}.json)\` }}</span>
                                 </span>
                             </button>
                         </td>
@@ -190,6 +190,7 @@ export default {
                             <li><span class="legend-dot" style="background:#ff5555"></span><span class="legend-text">Verification progress is 60%–99%</span></li>
                             <li><span class="legend-dot" style="background:#bbbbbb"></span><span class="legend-text">Verified, not rated</span></li>
                             <li><span class="legend-dot" style="background:#ffffff; border: 1px solid #555;"></span><span class="legend-text">Verified and rated</span></li>
+                            <li><span style="font-size:0.75rem;line-height:0.75rem;">🚫</span><span class="legend-text">Pending for removal</span></li>
                         </ul>
                     </div>
                     <ListEditors :editors="editors" />
@@ -256,6 +257,18 @@ export default {
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
             }
+        }
+
+        // Auto-assign Open Verification tag on load
+        if (this.list) {
+            this.list.forEach(item => {
+                const level = item[0];
+                if (!level) return;
+                if (level.verifier && level.verifier.toLowerCase() === 'open verification') {
+                    if (!level.tags) level.tags = [];
+                    if (!level.tags.includes('Open Verification')) level.tags.push('Open Verification');
+                }
+            });
         }
 
         this.loading = false;
@@ -338,8 +351,29 @@ export default {
             const id = getYoutubeIdFromUrl(url);
             return id ? getThumbnailFromId(id) : '';
         },
+        isOldLevel(level) {
+            if (!level.lastUpd) return false;
+            const parts = level.lastUpd.split('.');
+            if (parts.length !== 3) return false;
+            const levelDate = new Date(Number(parts[2]), Number(parts[1]) - 1, Number(parts[0]));
+            const oneYearAgo = new Date();
+            oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+            return levelDate < oneYearAgo;
+        },
         applyFilters() {
             if (!this.list) return;
+
+            // Auto-assign Open Verification tag
+            this.list.forEach(item => {
+                const level = item[0];
+                if (!level) return;
+                if (level.verifier && level.verifier.toLowerCase() === 'open verification') {
+                    if (!level.tags) level.tags = [];
+                    if (!level.tags.includes('Open Verification')) {
+                        level.tags.push('Open Verification');
+                    }
+                }
+            });
 
             const activeFilters = this.filtersList.filter(f => f.active && !f.separator);
             const searchQuery = this.search.toLowerCase().trim();
@@ -382,9 +416,10 @@ export default {
                             : 0;
                     })));
                 const verificationProgress = Math.max(recordPercent, runPercent);
-                const matchesVerification = !level.isVerified && verificationProgress >= minVer;
+                const matchesVerification = level.isVerified || verificationProgress >= minVer;
+                const matchesDecorationFinal = level.isVerified || matchesDecoration;
 
-                level.isHidden = !(matchesSearch && matchesTags && matchesDecoration && matchesVerification);
+                level.isHidden = !(matchesSearch && matchesTags && matchesDecorationFinal && matchesVerification);
             });
         },
         useFilter(index) {
