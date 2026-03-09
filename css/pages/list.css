@@ -63,7 +63,7 @@ main.page-list--pending .list-container {
     width: 100%;
 }
 .page-list .list .level-thumbnail {
-    width: 4.5rem;
+    width: 5.33rem;
     height: 3rem;
     object-fit: cover;
     border-radius: 0.35rem;
@@ -82,7 +82,7 @@ main.page-list--pending .list-container {
     cursor: pointer;
 }
 .page-list .list .level.active button {
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 82%, white) 100%);
     color: var(--color-on-primary);
 }
 .page-list .level-container .level {

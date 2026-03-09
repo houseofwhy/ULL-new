@@ -8,7 +8,6 @@ import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
 // Set to false to hide thumbnails in the level list
-const SHOW_THUMBNAILS = false;
 
 // Set to false to disable level name coloring
 
@@ -81,7 +80,7 @@ export default {
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
-                                <img v-if="level && SHOW_THUMBNAILS" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
+                                <img v-if="level && showThumbnails" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
                                 <span :class="{ 'rank-verified': level?.isVerified}">
                                     <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (showColors && isOldLevel(level) && !level.isVerified ? level.name + \` 🚫\` : level.name) : \`Error (\${err}.json)\` }}</span>
                                 </span>
@@ -209,7 +208,7 @@ export default {
         toggledShowcase: false,
         isFiltersActive: false,
         filtersList: filtersList,
-        SHOW_THUMBNAILS,
+        showThumbnails: true,
         showColors: true,
         search: "",
         minDecoration: 0,
@@ -347,7 +346,13 @@ export default {
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
         getThumbnail(level) {
-            return level.thumbnail || '';
+            if (level.thumbnail) return level.thumbnail;
+            const extractYT = (url) => {
+                if (!url) return '';
+                const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
+                return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
+            };
+            return extractYT(level.verification) || extractYT(level.showcase) || '';
         },
         isOldLevel(level) {
             if (!level.lastUpd) return false;

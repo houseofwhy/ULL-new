@@ -116,7 +116,6 @@ header.new .nav .nav__tab:hover {
     border: none;
     cursor: pointer;
     padding: 8px;
-    margin-left: -48px;
     margin-right: 12px;
     margin-bottom: 5px;
     border-radius: 50%;
@@ -127,6 +126,10 @@ header.new .nav .nav__tab:hover {
     opacity: 1;
     transition: background-color 100ms ease;
     align-self: center;
+}
+
+.thumb-toggle-btn {
+    margin-left: -96px;
 }
 
 .color-toggle-btn:hover {

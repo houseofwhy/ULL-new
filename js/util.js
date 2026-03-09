@@ -68,6 +68,14 @@ export const filtersList = [
 export const filtersSetup = `<div style="flex-grow:1"></div>
 				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
 					<div style="display:flex; align-items:center;">
+						<button @click="showThumbnails = !showThumbnails" class="color-toggle-btn thumb-toggle-btn" :class="{ active: showThumbnails }" title="Toggle thumbnails">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+								<rect v-if="!showThumbnails" x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2.5"/>
+								<rect v-if="showThumbnails" x="3" y="5" width="18" height="14" rx="2" fill="currentColor"/>
+								<path v-if="showThumbnails" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round" d="M8 15l3-4 2.5 3 1.5-2 3 3"/>
+								<circle v-if="showThumbnails" cx="8.5" cy="9.5" r="1.5" fill="white"/>
+							</svg>
+						</button>
 						<button @click="showColors = !showColors" class="color-toggle-btn" :class="{ active: showColors }" title="Toggle level name colors">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
 								<path v-if="!showColors" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" d="M12 2C9.38 2 4 9.22 4 14a8 8 0 0016 0c0-4.78-5.38-12-8-12z"/>
