@@ -117,7 +117,7 @@ header.new .nav .nav__tab:hover {
     cursor: pointer;
     padding: 8px;
     margin-right: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -129,7 +129,7 @@ header.new .nav .nav__tab:hover {
 }
 
 .thumb-toggle-btn {
-    margin-left: -96px;
+    margin-left: -121px;
 }
 
 .color-toggle-btn:hover {
