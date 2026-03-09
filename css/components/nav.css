@@ -130,6 +130,7 @@ header.new .nav .nav__tab:hover {
 
 .thumb-toggle-btn {
     margin-left: -121px;
+    margin-right: 25px;
 }
 
 .color-toggle-btn:hover {
