@@ -2,10 +2,17 @@
 import { embed, filtersList } from "../util.js";
 import { fetchEditors, fetchList, fetchPending } from "../content.js";
 import Spinner from "../components/Spinner.js";
-import ListEditors from "../components/ListEditors.js";
+
+const roleIconMap = {
+    owner: 'crown',
+    admin: 'user-gear',
+    seniormod: 'user-shield',
+    mod: 'user-lock',
+    dev: 'code',
+};
 
 export default {
-    components: { Spinner, ListEditors },
+    components: { Spinner },
     template: `
 <component :is="'style'">
 .mob, .mob * { font-family: "Lexend Deca", sans-serif; } .mob { display: flex; flex-direction: column; height: 100%; background-color: var(--color-background); color: var(--color-on-background); }
@@ -17,9 +24,9 @@ export default {
     background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
     color: var(--color-on-primary);
 }
-.mob-header1 .logo { display: flex; align-items: flex-end; gap: 0.5rem; }
-.mob-header1 .logo h2 { font-size: 28px; font-weight: 700; line-height: 1; }
-.mob-header1 .logo p { font-size: 13px; font-weight: 500; margin-bottom: 2px; opacity: 0.8; }
+.mob-header1 .logo { display: flex; align-items: flex-end; gap: 0.4rem; }
+.mob-header1 .logo h2 { font-size: 28px; font-weight: 700; line-height: 1; align-self: flex-end; }
+.mob-header1 .logo p { font-size: 13px; font-weight: 500; opacity: 0.8; align-self: flex-end; margin-bottom: 1px; }
 
 .mob-header2 {
     display: flex; align-items: center; justify-content: space-between;
@@ -54,7 +61,7 @@ export default {
     background: var(--color-background); color: var(--color-on-background);
     border-top: 2px solid var(--color-primary);
     padding: 1.25rem 1rem 1.5rem; z-index: 201;
-    max-height: 75vh; overflow-y: auto;
+    max-height: 75vh; overflow-y: auto; padding-bottom: env(safe-area-inset-bottom, 1.25rem);
 }
 
 /* Pages popup */
@@ -92,7 +99,7 @@ export default {
 .mob-filter-tag .mob-check { width: 1.1rem; height: 1.1rem; border: 2px solid rgba(128,128,128,0.5); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 100ms; }
 .mob-filter-tag.active .mob-check { background: var(--color-primary); border-color: var(--color-primary); }
 .mob-filter-tag.active .mob-check::after { content: "✓"; color: white; font-size: 11px; line-height: 1; }
-.mob-filter-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem; }
+.mob-filter-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem; padding-bottom: 0.5rem; }
 .mob-filter-actions button {
     padding: 0.75rem; border: none; border-radius: 0.4rem; cursor: pointer;
     font-family: "Lexend Deca", sans-serif; font-size: 15px; font-weight: 500;
@@ -207,6 +214,12 @@ export default {
 .mob-legend-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; flex-shrink: 0; }
 .mob-pending-legend { display: flex; flex-direction: column; gap: 0.5rem; }
 .mob-pending-legend-row { display: flex; align-items: center; gap: 0.6rem; font-size: 14px; font-weight: 500; }
+.mob-editors-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.mob-editor-row { display: flex; align-items: center; gap: 0.6rem; font-size: 14px; font-weight: 500; }
+.mob-editor-row img { height: 1.3rem; width: 1.3rem; flex-shrink: 0; }
+.mob-editor-row a:hover { text-decoration: underline; }
+.mob-guidelines { font-size: 13px; line-height: 1.6; opacity: 0.85; }
+.mob-guidelines p { font-size: 13px; line-height: 1.6; margin-bottom: 0.4rem; }
 </component>
 
 <div class="mob" :class="{ dark: store.dark }">
@@ -295,8 +308,8 @@ export default {
                 <div class="mob-setting-row">
                     <span class="mob-setting-label">Theme</span>
                     <div class="mob-toggle">
-                        <button :class="{ active: !store.dark }" @click="store.dark || store.toggleDark()">Dark</button>
-                        <button :class="{ active: store.dark }" @click="store.dark && store.toggleDark()">Light</button>
+                        <button :class="{ active: !store.dark }" @click="store.dark && store.toggleDark()">Dark</button>
+                        <button :class="{ active: store.dark }" @click="store.dark || store.toggleDark()">Light</button>
                     </div>
                 </div>
                 <a href="https://discord.gg/HQzjUJ9ZBm" target="_blank" class="mob-contact-btn">
@@ -465,10 +478,26 @@ export default {
                     <div class="mob-pending-legend-row"><img src="/assets/question.svg" style="height:1.3rem;width:1.3rem;" />Unknown Placement</div>
                 </div>
             </div>
+            <!-- List Guidelines -->
+            <div>
+                <h3>List Guidelines</h3>
+                <div class="mob-guidelines">
+                    <p>All levels on this list are upcoming/unverified levels that are expected to be extreme demons upon completion.</p>
+                    <p>Levels must be at least in layout state and show significant progress to be considered for placement.</p>
+                    <p>The list is maintained by staff who decide placements based on expected difficulty and overall quality.</p>
+                    <p>To suggest a level or report an issue, contact the list staff via Discord.</p>
+                </div>
+            </div>
             <!-- Editors -->
             <div>
                 <h3>List Editors</h3>
-                <ListEditors :editors="editors" />
+                <div class="mob-editors-list">
+                    <div v-for="editor in editors" class="mob-editor-row">
+                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user') + '.svg'" />
+                        <a v-if="editor.link" :href="editor.link" target="_blank">{{ editor.name }}</a>
+                        <span v-else>{{ editor.name }}</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -484,6 +513,7 @@ export default {
         // list data
         rawList: [],
         editors: [],
+        roleIconMap,
         pendingPlacements: [],
         pendingMovements: [],
         selected: -1,
