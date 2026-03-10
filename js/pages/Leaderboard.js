@@ -29,9 +29,6 @@ export default {
                 }
             </style>
             <nav class="nav">
-                <h2 class="type-label-lg" style="font-weight:normal;font-size:20px;letter-spacing:0.35px;padding:0 0.5rem;align-self:center;">
-                    Closest to verification
-                </h2>
                 <div style="flex-grow:1"></div>
 				<div :class="{ 'filters-selected': isFiltersActive }" class="filters">
 					<div style="display:flex; align-items:center;">
@@ -83,10 +80,13 @@ export default {
 				</div>
             </nav>
         </header>
+        <h2 v-if="!loading" class="type-label-lg" style="font-weight: normal; font-size: 24px; margin: 30px 0 30px 0; letter-spacing: 0.35px; padding: 0 1rem;">
+            The leaderboard shows closest to verification upcoming levels
+        </h2>
         <main v-if="!loading" class="page-list">
             <div class="list-container surface" style="padding-block: 0rem;">
                 <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden }">
                         <td class="rank">
                             <p class="type-label-lg">#{{ i + 1 }}</p>
                         </td>
@@ -292,6 +292,36 @@ export default {
         useFilter(index) {
             if (filtersList[index].separator) return;
             this.filtersList[index].active = !this.filtersList[index].active;
+            this.applyFilters();
+        },
+        applyFilters() {
+            if (!this.list) return;
+            const activeFilters = this.filtersList.filter(f => f.active && !f.separator);
+            const minDec = this.minDecoration || 0;
+            const minVer = this.minVerification || 0;
+            this.list.forEach(item => {
+                const level = item[0];
+                if (!level) return;
+                let matchesTags = true;
+                if (activeFilters.length > 0) {
+                    for (const filter of activeFilters) {
+                        if (!level.tags || !level.tags.includes(filter.key)) {
+                            matchesTags = false;
+                            break;
+                        }
+                    }
+                }
+                const decoration = level.percentFinished ?? 0;
+                const matchesDecoration = decoration >= minDec;
+                const recordPercent = Math.max(0, ...((level.records || []).map(r => Number(r.percent) || 0)));
+                const runPercent = Math.max(0, ...((level.run || []).map(r => {
+                    const parts = String(r.percent).split('-').map(Number);
+                    return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? Math.abs(parts[1] - parts[0]) : 0;
+                })));
+                const verificationProgress = Math.max(recordPercent, runPercent);
+                const matchesVerification = verificationProgress >= minVer;
+                level.isHidden = !(matchesTags && matchesDecoration && matchesVerification);
+            });
         },
     },
 };
