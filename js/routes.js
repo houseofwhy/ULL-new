@@ -4,6 +4,7 @@ import ListMain from './pages/ListMain.js';
 import ListFuture from './pages/ListFuture.js';
 import LevelGenerator from './pages/LevelGenerator.js';
 import ListPending from './pages/ListPending.js';
+import Mobile from './pages/Mobile.js';
 
 export default [
     { path: '/', component: List },
@@ -11,5 +12,6 @@ export default [
     { path: '/pending', component: ListPending },
     { path: '/listmain', component: ListMain },
     { path: '/listfuture', component: ListFuture },
-    { path: '/generator', component: LevelGenerator }
+    { path: '/generator', component: LevelGenerator },
+    { path: '/mobile', component: Mobile },
 ];
