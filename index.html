@@ -25,6 +25,15 @@
     <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            #pc-header { display: none !important; }
+            .root > .page-list, .root > main { display: none !important; }
+        }
+        @media (min-width: 769px) {
+            .mob { display: none !important; }
+        }
+    </style>
 </head>
 
 <body id="app" onload="
@@ -39,7 +48,7 @@
         }
     ">
 <div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
-    <header class="surface">
+    <header class="surface" style="display:flex;" id="pc-header">
         <div class="logo">
             <div v-else class="logo">
                 <h2>ULL</h2>

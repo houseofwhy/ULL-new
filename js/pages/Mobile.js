@@ -2,19 +2,18 @@
 import { embed, filtersList } from "../util.js";
 import { fetchEditors, fetchList, fetchPending } from "../content.js";
 import Spinner from "../components/Spinner.js";
-import LevelAuthors from "../components/List/LevelAuthors.js";
 import ListEditors from "../components/ListEditors.js";
 
 export default {
-    components: { Spinner, LevelAuthors, ListEditors },
+    components: { Spinner, ListEditors },
     template: `
 <component :is="'style'">
-.mob { display: flex; flex-direction: column; height: 100%; font-family: "Lexend Deca", sans-serif; background-color: var(--color-background); color: var(--color-on-background); }
+.mob, .mob * { font-family: "Lexend Deca", sans-serif; } .mob { display: flex; flex-direction: column; height: 100%; background-color: var(--color-background); color: var(--color-on-background); }
 
 /* ── Headers ── */
 .mob-header1 {
     display: flex; align-items: center;
-    padding: 0 1rem; height: 4.5rem; flex-shrink: 0;
+    padding: 0 1rem; height: 3.825rem; flex-shrink: 0;
     background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
     color: var(--color-on-primary);
 }
@@ -51,7 +50,7 @@ export default {
     background: rgba(0,0,0,0.4);
 }
 .mob-popup {
-    position: absolute; top: calc(4.5rem + 3.5rem); left: 0; right: 0;
+    position: absolute; top: calc(3.825rem + 3.5rem); left: 0; right: 0;
     background: var(--color-background); color: var(--color-on-background);
     border-top: 2px solid var(--color-primary);
     padding: 1.25rem 1rem 1.5rem; z-index: 201;
@@ -59,7 +58,7 @@ export default {
 }
 
 /* Pages popup */
-.mob-pages-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.mob-pages-grid { display: flex; flex-direction: column; gap: 1.5rem; }
 .mob-pages-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; margin-bottom: 0.75rem; }
 .mob-page-link {
     display: block; width: 100%; text-align: left; background: none; border: none;
@@ -165,7 +164,10 @@ export default {
     background: rgba(128,128,128,0.05);
     border-top: 1px solid rgba(128,128,128,0.1);
 }
-.mob-detail-title { font-size: 22px; font-weight: 700; margin-bottom: 0.5rem; }
+.mob-author-block { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.5rem; }
+.mob-author-row { display: flex; gap: 0.5rem; align-items: baseline; }
+.mob-author-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.55; flex-shrink: 0; }
+.mob-author-value { font-size: 13px; font-weight: 500; }
 .mob-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.75rem; }
 .mob-tag { font-size: 12px; background: #5d5d5d; color: white; border-radius: 10px; padding: 3px 8px; }
 .mob-video { width: 100%; aspect-ratio: 16/9; margin: 0.75rem 0; border-radius: 0.4rem; }
@@ -334,9 +336,12 @@ export default {
                 </button>
                 <!-- Dropdown detail -->
                 <div v-if="selected === i && level" class="mob-level-detail">
-                    <div class="mob-detail-title">{{ level.name }}</div>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified" />
-                    <div class="mob-tags">
+                    <div class="mob-author-block">
+                        <div class="mob-author-row"><span class="mob-author-label">Level Author</span><span class="mob-author-value">{{ level.author }}</span></div>
+                        <div class="mob-author-row" v-if="level.creators && level.creators.length"><span class="mob-author-label">Creators</span><span class="mob-author-value">{{ level.creators.join(', ') }}</span></div>
+                        <div class="mob-author-row"><span class="mob-author-label">{{ level.isVerified ? 'Verified by' : 'To be verified by' }}</span><span class="mob-author-value">{{ level.verifier }}</span></div>
+                    </div>
+                    <div class="mob-tags" v-if="level.tags && level.tags.length">
                         <span v-for="tag in level.tags" class="mob-tag">{{ tag }}</span>
                     </div>
                     <div class="mob-status">
@@ -388,8 +393,10 @@ export default {
                     </div>
                 </button>
                 <div v-if="lbSelected === i && level" class="mob-level-detail">
-                    <div class="mob-detail-title">{{ level.name }}</div>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" />
+                    <div class="mob-author-block">
+                        <div class="mob-author-row"><span class="mob-author-label">Level Author</span><span class="mob-author-value">{{ level.author }}</span></div>
+                        <div class="mob-author-row" v-if="level.creators && level.creators.length"><span class="mob-author-label">Creators</span><span class="mob-author-value">{{ level.creators.join(', ') }}</span></div>
+                    </div>
                     <div v-if="getLbBestRecord(level)" class="mob-wr">
                         Best from 0: <a v-if="getLbBestRecord(level).link && getLbBestRecord(level).link != '#'" :href="getLbBestRecord(level).link" target="_blank" style="color:#00b825;text-decoration:underline;">{{ getLbBestRecord(level).percent }}%</a><template v-else><span style="color:#00b825;">{{ getLbBestRecord(level).percent }}%</span></template> by {{ getLbBestRecord(level).user }}
                     </div>
@@ -428,7 +435,7 @@ export default {
         <!-- INFORMATION -->
         <div v-if="currentPage === 'info'" class="mob-info">
             <!-- List Legend -->
-            <div v-if="showColors">
+            <div>
                 <h3>Legend</h3>
                 <div class="mob-legend-list">
                     <div class="mob-legend-row"><span class="mob-legend-dot" style="background:#5599ff"></span>On layout state</div>
