@@ -1,13 +1,13 @@
 {
-    "id": "123680258",
-    "name": "Tsunami",
-    "author": "OniLink",
-    "creators": ["OniLink"],
-    "verifier": "Zoink",
+    "id": "private",
+    "name": "Tunnel of Serpentical",
+    "author": "Demi",
+    "creators": ["Demi","Zanzz","Zars70","BK"],
+    "verifier": "Serpentical",
     "isVerified": false,
     "verification": "",
-    "showcase": " https://www.youtube.com/watch?v=-Uwz8zOIulw&t",
-    "lastUpd": "28.01.2026",
+    "showcase": "https://www.youtube.com/watch?v=f85Mcy8mwHI",
+    "lastUpd": "25.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 212,
+    "length": 83,
     "rating": 1,
-    "percentFinished": 60,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["XXL"]
+    "tags": ["Long", "Verifying"]
 }
