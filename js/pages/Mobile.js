@@ -236,7 +236,7 @@ export default {
     <div class="mob-header2">
         <div class="mob-header2-left">
             <button class="mob-tab-btn" :class="{ active: openMenu === 'pages' }" @click="toggleMenu('pages')">Pages</button>
-            <button class="mob-tab-btn" :class="{ active: openMenu === 'filters' }" @click="toggleMenu('filters')">Filters</button>
+            <button v-if="currentPage !== 'pending'" class="mob-tab-btn" :class="{ active: openMenu === 'filters' }" @click="toggleMenu('filters')">Filters</button>
             <button class="mob-tab-btn" :class="{ active: openMenu === 'settings' }" @click="toggleMenu('settings')">Settings</button>
         </div>
         <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-discord-btn">
@@ -313,7 +313,7 @@ export default {
                     </div>
                 </div>
                 <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-contact-btn">
-                    <img src="/assets/discord.svg" :style="'height:1.2rem;' + (!store.dark ? 'filter:invert(1)' : '')" /> Contact Support
+                    <img src="/assets/discord.svg" style="height:1.2rem; filter:invert(1);" /> Contact Support
                 </a>
             </div>
 
@@ -397,7 +397,7 @@ export default {
                     <span class="mob-rank">#{{ i + 1 }}</span>
                     <img v-if="showThumbnails && level" class="mob-thumb" :src="getThumbnail(level)" alt="" />
                     <div class="mob-level-info">
-                        <div class="mob-level-name">{{ level?.name || \`Error (\${err}.json)\` }}</div>
+                        <div class="mob-level-name" :style="showColors ? getLevelNameStyle(level, lbSelected === i) : {}">{{ level?.name || \`Error (\${err}.json)\` }}</div>
                         <div class="mob-level-sub" v-if="level">
                             <template v-if="getLbBestRecord(level)">WR: {{ getLbBestRecord(level).percent }}%</template>
                             <template v-if="getLbBestRecord(level) && getLbBestRun(level)"> · </template>
@@ -534,6 +534,7 @@ export default {
             if (!this.rawList.length) return [];
             const scored = this.rawList
                 .filter(([l]) => l && !l.isVerified)
+                .filter(([l]) => !((l.records || []).some(r => Number(r.percent) >= 100)))
                 .map(([l, e]) => {
                     const maxP = Math.max(0, ...((l.records || []).map(r => Number(r.percent) || 0)));
                     const maxR = Math.max(0, ...((l.run || []).map(r => {
