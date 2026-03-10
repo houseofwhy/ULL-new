@@ -24,9 +24,9 @@ export default {
     background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
     color: var(--color-on-primary);
 }
-.mob-header1 .logo { display: flex; align-items: baseline; gap: 0; }
-.mob-header1 .logo h2 { font-size: 28px; font-weight: 700; line-height: 1; }
-.mob-header1 .logo p { font-size: 11px; font-weight: 500; opacity: 0.8; margin-left: 5px; line-height: 1; }
+.mob-header1 .logo { display: flex; align-items: flex-end; gap: 0; }
+.mob-header1 .logo h2 { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 0; }
+.mob-header1 .logo p { font-size: 11px; font-weight: 500; opacity: 0.8; margin-left: 5px; line-height: 1; margin-bottom: 0; }
 
 .mob-header2 {
     display: flex; align-items: center; justify-content: space-between;
@@ -60,7 +60,7 @@ export default {
     position: absolute; top: calc(3.825rem + 3.5rem); left: 0; right: 0;
     background: var(--color-background); color: var(--color-on-background);
     border-top: 2px solid var(--color-primary);
-    padding: 1.25rem 1rem 2.5rem; z-index: 201;
+    padding: 1.25rem 1rem 3.5rem; z-index: 201;
     max-height: 75vh; overflow-y: auto;
 }
 
@@ -91,7 +91,7 @@ export default {
 }
 .mob-filter-separator { height: 1px; background: rgba(128,128,128,0.25); margin: 0.35rem 0; }
 .mob-filter-tag {
-    display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.4rem;
+    display: flex; align-items: center; gap: 0.6rem; padding: 0.3rem 0.4rem;
     cursor: pointer; border-radius: 0.3rem; font-size: 15px; font-weight: 500;
     transition: background-color 100ms;
 }
@@ -482,9 +482,7 @@ export default {
             <div>
                 <h3>List Guidelines</h3>
                 <div class="mob-guidelines">
-                    <p>This is an unofficial list of upcoming unverified extreme demon levels in Geometry Dash, ranked by expected difficulty.</p>
-                    <p>The list is maintained by a team of editors who keep track of progress, decoration, and verification attempts.</p>
-                    <p>For submission guidelines and more information, check out the guide <a href="https://discord.gg/9wVWSgJSe8" target="_blank" style="text-decoration:underline;">here</a>.</p>
+                    <p>The guidelines explain how each aspect of the Upcoming Level List works. You can view them <a href="https://docs.google.com/document/d/13dmRfx2OCiLEaM2EcgEd-mKdok11_k8k7HsA5a-K6nY/edit?usp=sharing" target="_blank" style="text-decoration:underline;">here</a></p>
                 </div>
             </div>
             <!-- Editors -->
@@ -492,7 +490,7 @@ export default {
                 <h3>List Editors</h3>
                 <div class="mob-editors-list">
                     <div v-for="editor in editors" class="mob-editor-row">
-                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user') + '.svg'" :style="!store.dark ? 'filter: invert(1)' : ''" />
+                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user') + (!store.dark ? '-dark' : '') + '.svg'" />
                         <a v-if="editor.link" :href="editor.link" target="_blank">{{ editor.name }}</a>
                         <span v-else>{{ editor.name }}</span>
                     </div>
@@ -520,7 +518,7 @@ export default {
         toggledShowcase: false,
         // settings
         showThumbnails: true,
-        showColors: false,
+        showColors: true,
         // filters
         search: '',
         minDecoration: 0,
