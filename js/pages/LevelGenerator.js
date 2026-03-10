@@ -42,6 +42,12 @@ export default {
                             <input v-model="level.showcase" type="url" placeholder="https://youtu.be/..." />
                         </div>
 
+                        <div class="form-group">
+                            <label>Thumbnail Link (YouTube thumbnail or Imgur image)</label>
+                            <input v-model="level.thumbnail" type="url" placeholder="https://i.ytimg.com/vi/... or https://i.imgur.com/..." />
+                            <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Optional. Used as the level thumbnail in the list.</small>
+                        </div>
+
                         <!-- Stats -->
                         <div class="form-group row" style="display: flex; gap: 20px;">
                             <div style="flex: 1;">
@@ -191,6 +197,7 @@ export default {
                 isVerified: false,
                 verification: "",
                 showcase: "",
+                thumbnail: "",
                 lastUpd: "",
                 percentToQualify: 1,
                 records: [],
@@ -205,7 +212,7 @@ export default {
             creatorsStr: "",
             errors: [],
             availableTags: [
-                "Public", "Finished", "Verifying", "Layout", "Verified", "Unrated", "Rated",
+                "Public", "Finished", "Verifying", "Layout", "Unrated", "Rated",
                 "Medium", "Long", "XL", "XXL", "NC", "Remake", "NONG", "Quality"
             ]
         };
@@ -242,6 +249,9 @@ export default {
                 const yyyy = today.getFullYear();
                 data.lastUpd = `${dd}.${mm}.${yyyy}`;
             }
+
+            // Remove thumbnail if empty
+            if (!data.thumbnail) delete data.thumbnail;
 
             // Ensure numbers are numbers
             data.length = Number(data.length);

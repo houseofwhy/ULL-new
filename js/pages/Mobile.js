@@ -26,7 +26,7 @@ export default {
 }
 .mob-header1 .logo { display: flex; align-items: flex-end; gap: 0; }
 .mob-header1 .logo h2 { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 0; }
-.mob-header1 .logo p { font-size: 11px; font-weight: 500; opacity: 0.8; margin-left: 5px; line-height: 1; margin-bottom: 0; }
+.mob-header1 .logo p { font-size: 11px; font-weight: 500; opacity: 0.8; margin-left: 10px; line-height: 1; margin-bottom: 0; }
 
 .mob-header2 {
     display: flex; align-items: center; justify-content: space-between;
@@ -49,7 +49,7 @@ export default {
     transition: background-color 100ms;
 }
 .mob-discord-btn:hover { background-color: rgba(128,128,128,0.2); }
-.mob-discord-btn img { height: 1.125rem; filter: var(--icon-filter, none); }
+.mob-discord-btn img { height: 1.125rem; }
 
 /* ── Popups ── */
 .mob-popup-overlay {
@@ -240,7 +240,7 @@ export default {
             <button class="mob-tab-btn" :class="{ active: openMenu === 'settings' }" @click="toggleMenu('settings')">Settings</button>
         </div>
         <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-discord-btn">
-            <img src="/assets/discord.svg" alt="Discord" />
+            <img src="/assets/discord.svg" alt="Discord" :style="!store.dark ? 'filter:invert(1)' : ''" />
         </a>
     </div>
 
@@ -313,7 +313,7 @@ export default {
                     </div>
                 </div>
                 <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-contact-btn">
-                    <img src="/assets/discord.svg" style="height:1.2rem;" /> Contact Support
+                    <img src="/assets/discord.svg" :style="'height:1.2rem;' + (!store.dark ? 'filter:invert(1)' : '')" /> Contact Support
                 </a>
             </div>
 
