@@ -132,6 +132,7 @@ export default {
     display: flex; align-items: center; justify-content: center; gap: 0.5rem;
     margin-top: 0.5rem; text-decoration: none;
 }
+.mob-contact-btn img { height: 1.2rem; filter: brightness(0) invert(1); }
 
 /* ── Page content ── */
 .mob-content { flex: 1; overflow-y: auto; }
@@ -313,7 +314,7 @@ export default {
                     </div>
                 </div>
                 <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-contact-btn">
-                    <img src="/assets/discord.svg" style="height:1.2rem; filter:invert(1);" /> Contact Support
+                    <img src="/assets/discord.svg" /> Contact Support
                 </a>
             </div>
 
