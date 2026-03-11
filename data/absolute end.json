@@ -3,7 +3,7 @@
     "name": "Absolute End",
     "thumbnail": "https://i.ytimg.com/vi/kILJ9gBpKj4/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBwRvwvRmQegGe4DBy61eujf9JumA",
     "author": "MAXDASH",
-    "creators": [],
+    "creators": ["MAXDASH"],
     "verifier": "MAXDASH",
     "isVerified": false,
     "verification": "",
@@ -14,8 +14,8 @@
     "records": [
         {
             "user": "MAXDASH",
-            "link": "https://youtu.be/3tqePfumv9E?si=zo22F6FwDgc1rRzP",
-            "percent": 31,
+            "link": "https://www.youtube.com/watch?v=7HqbQhgtmMI",
+            "percent": 35,
             "hz": 0
         }
     ],
