@@ -1,0 +1,41 @@
+{
+    "id": 94858072,
+    "name": "The Wonder of You",
+    "thumbnail": "https://i.ytimg.com/vi/iQ3RzYCvLvA/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCn06nzbUBI9m02KQEV2URQDkyupg",
+    "author": "Victurkey",
+    "creators": [],
+    "verifier": "Helix",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=iQ3RzYCvLvA",
+    "showcase": "https://www.youtube.com/watch?v=xtS4ibDPGxE",
+    "lastUpd": "26.09.2023",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 67,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long",
+        "Rated",
+        "Verified",
+        "Finished",
+        "Public"
+    ]
+}
