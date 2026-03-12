@@ -1,10 +1,10 @@
 ﻿/* ─── Root reset for PC ─── */
-html, body, .root { height: 100%; margin: 0; }
+html, body, #app { height: 100%; margin: 0; padding: 0; }
 
 /* ─── PC shell: sidebar + page ─── */
 .pc-shell {
     display: flex;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     background: var(--color-background);
     color: var(--color-on-background);
