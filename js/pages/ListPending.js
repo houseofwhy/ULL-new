@@ -1,142 +1,75 @@
-import { store } from "../main.js";
-import { fetchEditors, fetchPending } from "../content.js";
-
-import Spinner from "../components/Spinner.js";
-import ListEditors from "../components/ListEditors.js";
-
-const roleIconMap = {
-    owner: "crown",
-    admin: "user-gear",
-    seniormod: "user-shield",
-    mod: "user-lock",
-    dev: "code",
-};
+import { store } from '../main.js';
+import { fetchPending } from '../content.js';
+import Sidebar from './Sidebar.js';
+import SettingsModal from './SettingsModal.js';
+import Spinner from '../components/Spinner.js';
 
 export default {
-    components: { Spinner, ListEditors },
+    components: { Sidebar, SettingsModal, Spinner },
+    data: () => ({
+        store, loading: true,
+        pendingPlacements: [], pendingMovements: [],
+        showSettings: false,
+    }),
+    methods: {
+        getIconPath(icon) { return `/assets/${icon}.svg`; },
+    },
     template: `
-        <main v-if="loading" class="surface">
-            <Spinner></Spinner>
-        </main>
-        <main v-else class="page-list page-list--pending">
-            <div class="list-container surface">
-                <h3 style="margin-bottom: 1rem;">Pending Placements</h3>
-                <table class="list" v-if="pendingPlacements.length > 0">
-                    <tr v-for="(level, i) in pendingPlacements">
-                        <td class="rank">
-                            <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
-                                <img :src="getIconPath(level.placement === '?' ? 'question' : level.placement)" style="height: 1.5rem; width: 1.5rem;">
-                            </div>
-                        </td>
-                        <td class="level">
-                            <div class="type-label-lg" style="padding: 1rem;">
-                            <a :href="level.link">{{ level.name }}</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <p v-else style="padding: 1rem;">No pending placements :)</p>
-            </div>
-            <div class="level-container surface">
-                <h3 style="margin-bottom: 1rem;">Pending Movements</h3>
-                <table class="list" v-if="pendingMovements.length > 0">
-                    <tr v-for="(level, i) in pendingMovements">
-                        <td class="rank">
-                            <div style="display: flex; align-items: center; justify-content: flex-end;">
-                                <img :src="'/assets/move-' + (level.placement === 'up' ? 'up' : 'down') + '.svg'" style="height: 1.5rem; width: 1.5rem;">
-                            </div>
-                        </td>
-                        <td class="level">
-                            <div class="type-label-lg" style="padding: 1rem;">{{ level.name }}</div>
-                        </td>
-                    </tr>
-                </table>
-                <p v-else style="padding: 1rem;">No pending movements :)</p>
-            </div>
-            <div class="meta-container surface">
-                <div class="meta">
-                    <div class="meta">
-                        <h3>Legend</h3>
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
-                            <!-- Movements -->
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/move-up.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Moving Up</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/move-down.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Moving Down</p>
-                            </div>
-                            <!-- Placements -->
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/1.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending #1</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/10.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 10</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/20.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 20</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/30.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 30</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/50.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 50</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/75.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 75</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/question.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Unknown Placement</p>
-                            </div>
+    <div class="pc-shell" :class="{ dark: store.dark }">
+        <Sidebar @open-settings="showSettings = true" />
+        <div class="pc-page">
+            <div v-if="loading" class="pc-spinner"><Spinner /></div>
+            <div v-else class="pc-cols pc-cols--50-50">
+                <!-- Pending Placements -->
+                <div class="pc-col">
+                    <div class="pc-pending-title">Pending Placements</div>
+                    <div v-if="pendingPlacements.length">
+                        <div class="pc-pending-row" v-for="level in pendingPlacements" :key="level.name">
+                            <img :src="getIconPath(level.placement === '?' ? 'question' : level.placement)" alt="" />
+                            <span>{{ level.name }}</span>
                         </div>
                     </div>
-                    <ListEditors :editors="editors" />
+                    <p v-else style="opacity:0.45;font-size:14px;">No pending placements.</p>
+                </div>
+                <!-- Pending Movements -->
+                <div class="pc-col">
+                    <div class="pc-pending-title">Pending Movements</div>
+                    <div v-if="pendingMovements.length">
+                        <div class="pc-pending-row" v-for="level in pendingMovements" :key="level.name">
+                            <img :src="'/assets/move-' + (level.placement === 'up' ? 'up' : 'down') + '.svg'" alt="" />
+                            <span>{{ level.name }}</span>
+                        </div>
+                    </div>
+                    <p v-else style="opacity:0.45;font-size:14px;">No pending movements.</p>
+
+                    <div style="margin-top:2rem;">
+                        <div class="pc-pending-title">Legend</div>
+                        <div class="pc-pending-row"><img src="/assets/move-up.svg" /><span>Moving Up</span></div>
+                        <div class="pc-pending-row"><img src="/assets/move-down.svg" /><span>Moving Down</span></div>
+                        <div class="pc-pending-row"><img src="/assets/1.svg" /><span>Pending #1</span></div>
+                        <div class="pc-pending-row"><img src="/assets/10.svg" /><span>Pending Top 10</span></div>
+                        <div class="pc-pending-row"><img src="/assets/20.svg" /><span>Pending Top 20</span></div>
+                        <div class="pc-pending-row"><img src="/assets/30.svg" /><span>Pending Top 30</span></div>
+                        <div class="pc-pending-row"><img src="/assets/50.svg" /><span>Pending Top 50</span></div>
+                        <div class="pc-pending-row"><img src="/assets/75.svg" /><span>Pending Top 75</span></div>
+                        <div class="pc-pending-row"><img src="/assets/question.svg" /><span>Unknown Placement</span></div>
+                    </div>
+                </div>
             </div>
-        </main>
-    `,
-    data: () => ({
-        pendingPlacements: [],
-        pendingMovements: [],
-        editors: [],
-        loading: true,
-        roleIconMap,
-        store,
-    }),
+        </div>
+        <SettingsModal v-if="showSettings" @close="showSettings = false" />
+    </div>`,
     async mounted() {
         const pending = await fetchPending();
-        this.editors = await fetchEditors();
-
         if (pending) {
             this.pendingPlacements = pending
-                .filter(p => !["up", "down"].includes(p.placement.toLowerCase()))
-                .sort((a, b) => {
-                    const getVal = (p) => {
-                        if (p === "?") return 999999;
-                        return parseInt(p) || 999999;
-                    };
-                    const valA = getVal(a.placement);
-                    const valB = getVal(b.placement);
-                    if (valA !== valB) return valA - valB;
-                    return a.name.localeCompare(b.name);
+                .filter(p => !['up','down'].includes(p.placement.toLowerCase()))
+                .sort((a,b) => {
+                    const v = p => p.placement === '?' ? 999999 : (parseInt(p.placement)||999999);
+                    return v(a) - v(b) || a.name.localeCompare(b.name);
                 });
-
-            this.pendingMovements = pending
-                .filter(p => ["up", "down"].includes(p.placement.toLowerCase()));
+            this.pendingMovements = pending.filter(p => ['up','down'].includes(p.placement.toLowerCase()));
         }
-
         this.loading = false;
-    },
-    methods: {
-        getIconPath(icon) {
-            return `/assets/${icon}.svg`;
-        },
     },
 };

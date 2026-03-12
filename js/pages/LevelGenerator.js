@@ -1,291 +1,104 @@
-import { store } from "../main.js";
+import { store } from '../main.js';
+import Sidebar from './Sidebar.js';
+import SettingsModal from './SettingsModal.js';
 
 export default {
-    template: `
-        <main class="page-list">
-            <div class="list-container surface" style="grid-column: 1 / -1;">
-                <div class="content" style="padding: 2rem; max-width: 100%;">
-                    <h1 class="type-headline-lg">Level JSON Generator</h1>
-                    <br>
-                    <p class="type-body">Fill in the details below to generate a JSON file for the level. Refer to the guide for specific formatting rules.</p>
-
-                    <form @submit.prevent="generateJson" class="generator-form">
-                        <!-- Basic Info -->
-                        <div class="form-group">
-                            <label>Level Name (no quotes needed)</label>
-                            <input v-model="level.name" type="text" placeholder="Level Name" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Author (Host's name)</label>
-                            <input v-model="level.author" type="text" placeholder="Author" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Creators (comma separated)</label>
-                            <input v-model="creatorsStr" type="text" placeholder="Creator 1, Creator 2" />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Verifier</label>
-                            <input v-model="level.verifier" type="text" placeholder="Verifier" />
-                        </div>
-
-                        <!-- URLs -->
-                        <div class="form-group">
-                            <label>Verification Link (YouTube) - Only if verified</label>
-                            <input v-model="level.verification" type="url" placeholder="https://youtu.be/..." />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Showcase Link (YouTube) - Latest FULL preview</label>
-                            <input v-model="level.showcase" type="url" placeholder="https://youtu.be/..." />
-                        </div>
-
-                        <div class="form-group">
-                            <label>Thumbnail Link (YouTube thumbnail or Imgur image)</label>
-                            <input v-model="level.thumbnail" type="url" placeholder="https://i.ytimg.com/vi/... or https://i.imgur.com/..." />
-                            <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Optional. Used as the level thumbnail in the list.</small>
-                        </div>
-
-                        <!-- Stats -->
-                        <div class="form-group row" style="display: flex; gap: 20px;">
-                            <div style="flex: 1;">
-                                <label>Length (seconds)</label>
-                                <input v-model.number="level.length" type="number" min="0" />
-                            </div>
-                            <div style="flex: 1;">
-                                <label>Percent to Qualify (Current WR + 1)</label>
-                                <input v-model.number="level.percentToQualify" type="number" min="0" max="100" />
-                            </div>
-                            <div style="flex: 1;">
-                                <label>Percent Finished (0-100)</label>
-                                <input v-model.number="level.percentFinished" type="number" min="0" max="100" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Last Update</label>
-                            <input v-model="level.lastUpd" type="text" placeholder="DD.MM.YYYY" />
-                            <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Leave empty to use today's date.</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Password (ID)</label>
-                             <input v-model="level.id" type="text" placeholder="private or level ID" />
-                            <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Use "private" (with quotes) or a number (without quotes).</small>
-                        </div>
-
-                        <!-- Records -->
-                        <div class="form-group">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <label>Records (from 0%)</label>
-                                <button type="button" @click="addRecord" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8em; width: auto;">+ Add Record</button>
-                            </div>
-                            <div v-for="(rec, i) in level.records" :key="i" style="display: flex; gap: 10px; margin-top: 10px;">
-                                <input v-model="rec.user" placeholder="User" style="flex: 2" />
-                                <input v-model="rec.link" placeholder="Link" style="flex: 2" />
-                                <input v-model.number="rec.percent" type="number" placeholder="%" style="flex: 1" />
-                                <input v-model.number="rec.hz" type="number" placeholder="Hz" style="flex: 1" />
-                                <button type="button" @click="removeRecord(i)" class="btn" style="background: var(--color-error); padding: 0 1rem; width: auto;">X</button>
-                            </div>
-                            <p v-if="level.records.length === 0" class="type-body" style="font-size: 0.8em; opacity: 0.5; margin-top: 5px;">No records added (default "none" will be used).</p>
-                        </div>
-
-                        <!-- Runs -->
-                        <div class="form-group">
-                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <label>Runs</label>
-                                <button type="button" @click="addRun" class="btn" style="padding: 0.5rem 1rem; font-size: 0.8em; width: auto;">+ Add Run</button>
-                            </div>
-                            <div v-for="(run, i) in level.run" :key="i" style="display: flex; gap: 10px; margin-top: 10px;">
-                                <input v-model="run.user" placeholder="User" style="flex: 2" />
-                                <input v-model="run.link" placeholder="Link" style="flex: 2" />
-                                <input v-model="run.percent" placeholder="Run (e.g. 50-100)" style="flex: 1" />
-                                <input v-model.number="run.hz" type="number" placeholder="Hz" style="flex: 1" />
-                                <button type="button" @click="removeRun(i)" class="btn" style="background: var(--color-error); padding: 0 1rem; width: auto;">X</button>
-                            </div>
-                             <p v-if="level.run.length === 0" class="type-body" style="font-size: 0.8em; opacity: 0.5; margin-top: 5px;">No runs added (default "none" will be used).</p>
-                        </div>
-
-                        <!-- Checkboxes -->
-                        <div class="form-group row" style="display: flex; gap: 20px; align-items: center;">
-                            <label style="display: flex; align-items: center; gap: 5px;">
-                                <input type="checkbox" v-model="level.isVerified" /> Verified?
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 5px;">
-                                <input type="checkbox" v-model="level.isMain" /> Main List?
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 5px;">
-                                <input type="checkbox" v-model="level.isFuture" /> Future List?
-                            </label>
-                        </div>
-
-                        <!-- Tags -->
-                        <div class="form-group">
-                            <label>Tags</label>
-                            <div class="tags-container" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px;">
-                                <label v-for="tag in availableTags" :key="tag" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 5px; cursor: pointer;">
-                                    <input type="checkbox" :value="tag" v-model="level.tags" />
-                                    {{ tag }}
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Validation Errors -->
-                        <div v-if="errors.length" class="errors" style="background: rgba(255, 0, 0, 0.1); padding: 10px; border-radius: 5px;">
-                            <p v-for="err in errors" :key="err" class="error" style="color: #ff5555; margin: 0;">{{ err }}</p>
-                        </div>
-
-                        <div style="margin-top: 1rem; display: flex; align-items: center; gap: 1rem;">
-                            <button class="btn" type="submit">Download JSON</button>
-                            <span class="type-body" style="font-size: 0.9em; opacity: 0.8;">Preview: {{ filename }}</span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <component :is="'style'">
-                .generator-form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
-                    margin-top: 2rem;
-                    width: 100%;
-                    font-family: "Lexend Deca", sans-serif;
-                }
-                .generator-form .form-group {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                }
-                .generator-form label {
-                    font-family: "Lexend Deca", sans-serif;
-                }
-                .generator-form input[type="text"],
-                .generator-form input[type="url"],
-                .generator-form input[type="number"] {
-                    width: 100%;
-                    padding: 0.8rem;
-                    border-radius: 4px;
-                    border: 1px solid rgba(255,255,255,0.1);
-                    background: rgba(255,255,255,0.05);
-                    color: inherit;
-                    box-sizing: border-box;
-                    font-family: "Lexend Deca", sans-serif;
-                }
-                .generator-form input:focus {
-                    outline: 2px solid var(--color-primary);
-                    background: rgba(255,255,255,0.1);
-                }
-            </component>
-        </main>
-    `,
-    computed: {
-        filename() {
-            return (this.level.name.toLowerCase().replace(/[^a-z0-9]/g, " ").trim().replace(/\s+/g, "_") || "level") + ".json";
-        }
-    },
+    components: { Sidebar, SettingsModal },
     data() {
         return {
             store,
+            showSettings: false,
             level: {
-                id: "private",
-                name: "",
-                author: "",
-                creators: [],
-                verifier: "",
-                isVerified: false,
-                verification: "",
-                showcase: "",
-                thumbnail: "",
-                lastUpd: "",
-                percentToQualify: 1,
-                records: [],
-                run: [],
-                length: 0,
-                rating: 1,
-                percentFinished: 100,
-                isMain: true,
-                isFuture: true,
-                tags: []
+                id: "private", name: "", author: "", creators: [], verifier: "",
+                isVerified: false, verification: "", showcase: "", lastUpd: "",
+                percentToQualify: 1, records: [], run: [], length: 0, rating: 1,
+                percentFinished: 100, isMain: true, isFuture: true, tags: [], thumbnail: "",
             },
-            creatorsStr: "",
-            errors: [],
-            availableTags: [
-                "Public", "Finished", "Verifying", "Layout", "Unrated", "Rated",
-                "Medium", "Long", "XL", "XXL", "NC", "Remake", "NONG", "Quality"
-            ]
+            creatorsStr: "", errors: [],
+            availableTags: ["Public","Finished","Verifying","Layout","Unrated","Rated","Medium","Long","XL","XXL","NC","Remake","NONG","Quality","2p"],
         };
     },
+    computed: {
+        filename() {
+            return (this.level.name.toLowerCase().replace(/[^a-z0-9]/g,' ').trim().replace(/\s+/g,'_')||'level')+'.json';
+        },
+    },
     watch: {
-        creatorsStr(val) {
-            this.level.creators = val.split(',').map(s => s.trim()).filter(s => s);
-        }
+        creatorsStr(val) { this.level.creators = val.split(',').map(s=>s.trim()).filter(s=>s); },
     },
     methods: {
-        addRecord() {
-            this.level.records.push({ user: "", link: "", percent: 0, hz: 0 });
-        },
-        removeRecord(i) {
-            this.level.records.splice(i, 1);
-        },
-        addRun() {
-            this.level.run.push({ user: "", link: "", percent: "", hz: 240 });
-        },
-        removeRun(i) {
-            this.level.run.splice(i, 1);
-        },
+        addRecord() { this.level.records.push({user:'',link:'',percent:0,hz:0}); },
+        removeRecord(i) { this.level.records.splice(i,1); },
+        addRun() { this.level.run.push({user:'',link:'',percent:'',hz:240}); },
+        removeRun(i) { this.level.run.splice(i,1); },
         generateJson() {
             this.errors = [];
-
-            // Format Data
-            const data = { ...this.level };
-
-            // Set lastUpd to today if empty
+            const data = {...this.level};
             if (!data.lastUpd) {
-                const today = new Date();
-                const dd = String(today.getDate()).padStart(2, '0');
-                const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-                const yyyy = today.getFullYear();
-                data.lastUpd = `${dd}.${mm}.${yyyy}`;
+                const t=new Date(), dd=String(t.getDate()).padStart(2,'0'), mm=String(t.getMonth()+1).padStart(2,'0');
+                data.lastUpd = `${dd}.${mm}.${t.getFullYear()}`;
             }
-
-            // Remove thumbnail if empty
+            data.length=Number(data.length); data.percentToQualify=Number(data.percentToQualify); data.percentFinished=Number(data.percentFinished);
+            if (!isNaN(Number(data.id))) data.id=Number(data.id);
+            if (!data.records.length) data.records.push({user:'none',link:'',percent:0,hz:0});
+            if (!data.run.length) data.run.push({user:'none',link:'',percent:'0',hz:0});
             if (!data.thumbnail) delete data.thumbnail;
-
-            // Ensure numbers are numbers
-            data.length = Number(data.length);
-            data.percentToQualify = Number(data.percentToQualify);
-            data.percentFinished = Number(data.percentFinished);
-
-            // Handle ID: if it's a number string, convert to number, else keep string
-            if (!isNaN(Number(data.id))) {
-                data.id = Number(data.id);
-            }
-
-            // Handle Records defaults
-            if (data.records.length === 0) {
-                data.records.push({ user: "none", link: "", percent: 0, hz: 0 });
-            }
-            // Handle Runs defaults
-            if (data.run.length === 0) {
-                data.run.push({ user: "none", link: "", percent: "0", hz: 0 });
-            }
-
-            // Create file blob
-            const jsonStr = JSON.stringify(data, null, 4);
-            const blob = new Blob([jsonStr], { type: "application/json" });
-            const url = URL.createObjectURL(blob);
-
-            // Trigger download
-            const a = document.createElement("a");
-            a.href = url;
-            // naming convention matches the guide/existing files
-            a.download = `${data.name.toLowerCase().replace(/[^a-z0-9]/g, " ").trim().replace(/\s+/g, "_") || "level"}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-    }
+            const blob=new Blob([JSON.stringify(data,null,4)],{type:'application/json'});
+            const url=URL.createObjectURL(blob);
+            const a=document.createElement('a'); a.href=url;
+            a.download=(data.name.toLowerCase().replace(/[^a-z0-9]/g,' ').trim().replace(/\s+/g,'_')||'level')+'.json';
+            document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+        },
+    },
+    template: `
+    <div class="pc-shell" :class="{ dark: store.dark }">
+        <Sidebar @open-settings="showSettings = true" />
+        <div class="pc-page" style="overflow-y:auto;">
+            <div style="padding:2rem;max-width:860px;">
+                <h1 style="font-family:'Lexend Deca',sans-serif;font-size:28px;font-weight:700;margin-bottom:1.5rem;">Level JSON Generator</h1>
+                <p style="font-family:'Lexend Deca',sans-serif;font-size:14px;opacity:0.6;margin-bottom:2rem;">Fill in the details below to generate a JSON file for the level.</p>
+                <form @submit.prevent="generateJson" style="display:flex;flex-direction:column;gap:1.25rem;font-family:'Lexend Deca',sans-serif;">
+                    <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Level Name</label><input v-model="level.name" type="text" placeholder="Level Name" required style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Author</label><input v-model="level.author" type="text" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Verifier</label><input v-model="level.verifier" type="text" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Creators (comma separated)</label><input v-model="creatorsStr" type="text" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Verification Link</label><input v-model="level.verification" type="url" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Showcase Link</label><input v-model="level.showcase" type="url" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Thumbnail Link</label><input v-model="level.thumbnail" type="url" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Length (s)</label><input v-model.number="level.length" type="number" min="0" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">% to Qualify</label><input v-model.number="level.percentToQualify" type="number" min="0" max="100" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">% Finished</label><input v-model.number="level.percentFinished" type="number" min="0" max="100" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Last Update (DD.MM.YYYY)</label><input v-model="level.lastUpd" type="text" placeholder="Leave empty for today" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                        <div style="display:flex;flex-direction:column;gap:0.4rem;"><label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;">Password (ID)</label><input v-model="level.id" type="text" style="padding:0.6rem 0.8rem;border-radius:0.35rem;border:1.5px solid rgba(128,128,128,0.22);background:rgba(128,128,128,0.07);color:inherit;font-family:inherit;font-size:14px;outline:none;" /></div>
+                    </div>
+                    <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;">
+                        <label style="display:flex;align-items:center;gap:0.5rem;font-size:14px;"><input type="checkbox" v-model="level.isVerified" /> Verified</label>
+                        <label style="display:flex;align-items:center;gap:0.5rem;font-size:14px;"><input type="checkbox" v-model="level.isMain" /> Main List</label>
+                        <label style="display:flex;align-items:center;gap:0.5rem;font-size:14px;"><input type="checkbox" v-model="level.isFuture" /> Future List</label>
+                    </div>
+                    <div>
+                        <label style="font-size:12px;font-weight:700;text-transform:uppercase;opacity:0.5;display:block;margin-bottom:0.5rem;">Tags</label>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                            <label v-for="tag in availableTags" :key="tag" style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(128,128,128,0.1);padding:0.3rem 0.65rem;border-radius:0.3rem;cursor:pointer;font-size:13.5px;">
+                                <input type="checkbox" :value="tag" v-model="level.tags" /> {{ tag }}
+                            </label>
+                        </div>
+                    </div>
+                    <div v-if="errors.length" style="background:rgba(220,0,0,0.1);padding:0.75rem 1rem;border-radius:0.35rem;">
+                        <p v-for="e in errors" :key="e" style="color:#ff5555;font-size:13.5px;">{{ e }}</p>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:1rem;padding-top:0.5rem;">
+                        <button type="submit" style="padding:0.65rem 1.5rem;border-radius:0.4rem;border:none;background:var(--color-primary);color:#fff;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;">Download JSON</button>
+                        <span style="font-size:13px;opacity:0.5;">{{ filename }}</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <SettingsModal v-if="showSettings" @close="showSettings = false" />
+    </div>`,
 };

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -10,10 +9,10 @@
     <meta property="og:image" content="/ull_icon.png" />
     <title>Upcoming Levels List</title>
     <link rel="icon" href="/ull_icon.png" />
-    <meta name="theme-color" content="#c031c7">
+    <meta name="theme-color" content="#660aef">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/css/typography.css" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -22,70 +21,19 @@
     <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="/css/pc-layout.css" />
     <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
     <style>
-        @media (max-width: 768px) {
-            #pc-header { display: none !important; }
-            .root > .page-list, .root > main { display: none !important; }
-        }
-        @media (min-width: 769px) {
-            .mob { display: none !important; }
-        }
+        @media (min-width: 769px) { .mob { display: none !important; } }
+        /* PC root: no flex column, just fill viewport */
+        .root { display: block; height: 100%; }
     </style>
 </head>
-
-<body id="app" onload="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture' ||  location.hash == '#/') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        } else {
-            document.querySelectorAll('.list__home')[0].classList.remove('router-link-active')
-        }
-    " onclick="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        }
-    ">
-<div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
-    <header class="surface" style="display:flex;" id="pc-header">
-        <div class="logo">
-            <div v-else class="logo">
-                <h2>ULL</h2>
-                <p>v1.2.0</p>
-            </div>
-        </div>
-        <nav class="nav">
-            <router-link class="nav__tab list__home" to="/">
-                <span class="type-label-lg">List</span>
-            </router-link>
-            <router-link class="nav__tab" to="/leaderboard">
-                <span class="type-label-lg">Leaderboard</span>
-            </router-link>
-            <router-link class="nav__tab" to="/pending">
-                <span class="type-label-lg">Pending List</span>
-            </router-link>
-            <div class="nav__actions">
-                <button class="nav__icon" @click.prevent="store.toggleDark()">
-                    <img :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'" alt="" />
-                </button>
-                <a class="nav__icon" href="https://discord.gg/9wVWSgJSe8">
-                    <img src="/assets/discord.svg" alt="Discord Logo" />
-                </a>
-                <!-- <a class="nav__cta type-label-lg"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSev8GuHqq-00YRlr9iY4Xg5ttt-FaXWLb9JLI9eRTYHKdhk0Q/viewform?usp=sf_link"
-                    target="_blank">Submit Record</a>
-                <a class="nav__cta type-label-lg"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSetN4Gsdhmpsom2zqJWYDTzedJ3YdcVdNw4SJAk8BIfGZXO1Q/viewform?usp=sf_link"
-                    target="_blank">Submit Opinion</a> -->
-            </div>
-        </nav>
-    </header>
-
-
-
+<body id="app">
+<div class="root" :class="{ dark: store.dark }">
     <router-view></router-view>
 </div>
 </body>
-
 </html>
