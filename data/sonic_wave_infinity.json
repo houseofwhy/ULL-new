@@ -2,7 +2,8 @@
     "id": 69685815,
     "name": "Sonic Wave Infinity",
     "author": "APTeam",
-    "creators": [],
+    "creators": ["Zimnyte","Salamander","playerwombat","Luisluigi","Lilium","Brittank88","Reunomi","Incakola","Destez","Cynik","Nahuel","pocke",
+"Cybronaut","ZeroSR","Creeper4","ViPriN","Cyclic","Tribar","GD Endy","Davphla","Nickalopogas","Requiem","TeslaX","DaysOfThunder"],
     "verifier": "Xanii",
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=C3-l_fFikpQ",
@@ -36,6 +37,7 @@
         "Rated",
         "XL",
         "Remake",
-        "Verified"
+        "Verified",
+        "Govno"
     ]
 }
