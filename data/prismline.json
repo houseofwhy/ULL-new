@@ -1,13 +1,13 @@
 {
-    "id": "private",
-    "name": "Scattered Faith",
-    "thumbnail": "https://i.imgur.com/Ma51l32.png",
-    "author": "Brittank88",
+    "id": 135148907,
+    "name": "Prismline",
+    "author": "ItsHarryy",
     "creators": [],
-    "verifier": "Trick",
+    "verifier": "Wain",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/q1VUKT9Sjrs?si=Kt5Qxm_V3Jt4ae7c",
+    "showcase": "https://youtu.be/MWGVmsGMB_0?si=vewjBSQj3ztRvF9N",
+    "lastUpd": "21.01.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -25,13 +25,14 @@
             "hz": 0
         }
     ],
-    "length": 190,
+    "length": 85,
     "rating": 1,
-    "percentFinished": 60,
-    "lastUpd": "11.10.2025",
-
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
-
-    "tags": ["XL", "Quality", "NONG"]
+    "tags": [
+        "Long",
+        "Finished",
+        "Public"
+    ]
 }
