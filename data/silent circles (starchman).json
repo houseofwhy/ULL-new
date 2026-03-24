@@ -13,16 +13,16 @@
     "records": [
         {
             "user": "dewbbs",
-            "link": "https://www.youtube.com/watch?v=iKTAIUzIOKQ",
-            "percent": 50,
+            "link": "https://youtu.be/3ANI557EzW8?si=b7rz6hlGq0kgScBZ",
+            "percent": 58,
             "hz": 240
         }
     ],
     "run": [
         {
-            "user": "ImJuls",
-            "link": "https://youtu.be/MsxTriGlIiU?si=S_W3i6NV7MJDFTTl",
-            "percent": "47-100",
+            "user": "dewbbs",
+            "link": "https://youtu.be/llCZap9wVKU?si=QXCGWgSoowwchX14",
+            "percent": "27-85",
             "hz": 240
         }
     ],
