@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Ankou",
-    "author": "Cat_",
-    "creators": ["Cat_"],
-    "verifier": "Zombie_Gaming / Blue_Orbe",
+    "name": "Packetloss",
+    "author": "artemon4uk",
+    "creators": ["artemon4uk"],
+    "verifier": "whfyre(Потужний)",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/WFXgrnrdURA?si=oLObG5sShOmhlDgM",
-    "lastUpd": "07.03.2026",
+    "showcase": "https://youtu.be/G3IinWezB6s?si=d2XN6OVssld-h2SY",
+    "lastUpd": "19.02.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -22,16 +22,16 @@
         {
             "user": "none",
             "link": "",
-            "percent": "none",
+            "percent": "0",
             "hz": 0
         }
     ],
 
-    "length": 153,
+    "length": 77,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 40,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
-    "tags": ["XL", "Finished", "Verifying"]
+    "tags": ["Long"]
 }
