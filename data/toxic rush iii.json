@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "ALLOPSYCHIC",
-    "author": "[cherry] team",
-    "creators": ["nickname09"],
+    "name": "Toxic Rush III",
+    "author": "fitatfi",
+    "creators": ["LasagaStu","tophatmark","fitatfi","DuskerHu","hasuopf","qjivxn","RangoTheGod"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/INAIaWYS4O8?si=P1ICWzLZm9Jtd9R9",
-    "lastUpd": "26.01.2026",
+    "showcase": "https://youtu.be/LNX8WFl71x0?si=ln-ol9UtAhfAnIxC",
+    "lastUpd": "31.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -22,16 +22,16 @@
         {
             "user": "none",
             "link": "",
-            "percent": "none",
+            "percent": "0",
             "hz": 0
         }
     ],
 
-    "length": 145,
+    "length": 185,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 50,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long", "Layout"]
+    "tags": ["XXL","1.9"]
 }
