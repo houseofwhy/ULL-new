@@ -20,11 +20,6 @@
         "link": "https://youtu.be/WC0CQJ0kg6k?si=un2m3Z4qucM8OnQT"
     },
     {
-        "name": "BloodEngine",
-        "placement": "10",
-        "link": "https://www.youtube.com/watch?v=JswISB7Cht4"
-    },
-    {
         "name": "Stoicism",
         "placement": "10",
         "link": "https://www.youtube.com/watch?v=DcC8ZZzvH08"
@@ -35,24 +30,9 @@
         "link": "https://youtu.be/hsBltB_8l0M?si=99rOJiaObd6nqITw"
     },
     {
-        "name": "Lirile",
-        "placement": "10",
-        "link": "https://youtu.be/Rl9W6fubwsw?si=ugJFzGv0gUjCo5mL"
-    },
-    {
-        "name": "BEHEMOTH",
-        "placement": "10",
-        "link": "https://youtu.be/ilqe4h--hlg?si=i-ebjPCA9UiAudfE"
-    },
-    {
         "name": "Nihilum",
         "placement": "10",
         "link": "https://www.youtube.com/watch?v=I31pahrX6Ic"
-    },
-    {
-        "name": "ALONEWITHU",
-        "placement": "10",
-        "link": "https://youtu.be/WaBV4FkS2po?si=ST2AZen0BM6OOuKR"
     },
     {
         "name": "Outcast",
@@ -93,11 +73,6 @@
         "name": "Narine",
         "placement": "20",
         "link": "https://youtu.be/9WGGm4_FKt0"
-    },
-    {
-        "name": "Ground Fella",
-        "placement": "30",
-        "link": "https://youtu.be/fXdpG1SMaS8?si=TtB0odQlT1xtES26"
     },
     {
         "name": "Neutron Step",
@@ -150,11 +125,6 @@
         "link": "https://youtu.be/j-hK6bl5pMY?si=r3ITqBl3Jv-WKSIW"
     },
     {
-        "name": "Master Spark",
-        "placement": "50",
-        "link": "https://youtu.be/IcG1W3_GsZg?si=GuCuXcqrbLg2g6bs"
-    },
-    {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
@@ -194,11 +164,7 @@
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=IYM4Nh17_Ko"
     },
-    {
-        "name": "Amanojaku",
-        "placement": "75",
-        "link": "https://youtu.be/0RPNF-RPRt8?si=1Fbb3SXCKYjtJ5mx"
-    },
+
     {
         "name": "CONTRAVENTION",
         "placement":"75",
