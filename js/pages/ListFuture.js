@@ -357,7 +357,7 @@ export default {
         getThumbnail(level) {
             if (level.thumbnail) return level.thumbnail;
             const extractYT = (url) => {
-                if (!url) return '';
+                if (!url || typeof url !== 'string') return '';
                 const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
                 return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
             };
