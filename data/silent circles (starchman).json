@@ -3,7 +3,7 @@
     "name": "Silent Circles (Starchman)",
     "author": "Starchman",
     "creators": [],
-    "verifier": "ImJuls",
+    "verifier": "dewbbs",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=6RCgII1G4Kw&list=RD6RCgII1G4Kw&start_radio=1&pp=ygUYc2lsZW50IGNpcmNsZXMgc3RhcmNobWFuoAcB",
@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "ImJuls",
-            "link": "https://www.youtube.com/watch?v=JMPTi_Utnao&pp=ugUEEgJlbtIHCQkDCgGHKiGM7w%3D%3D",
-            "percent": 31,
+            "user": "dewbbs",
+            "link": "https://youtu.be/3ANI557EzW8?si=b7rz6hlGq0kgScBZ",
+            "percent": 58,
             "hz": 240
         }
     ],
     "run": [
         {
-            "user": "ImJuls",
-            "link": "https://youtu.be/MsxTriGlIiU?si=S_W3i6NV7MJDFTTl",
-            "percent": "47-100",
+            "user": "dewbbs",
+            "link": "https://youtu.be/llCZap9wVKU?si=QXCGWgSoowwchX14",
+            "percent": "27-85",
             "hz": 240
         }
     ],

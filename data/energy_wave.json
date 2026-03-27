@@ -6,7 +6,7 @@
     "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=PtsyAeDLSws&list=RDPtsyAeDLSws&start_radio=1",
+    "showcase": "https://www.youtube.com/watch?v=PtsyAeDLSws",
     "lastUpd": "02.02.2026",
     "percentToQualify": 24,
     "records": [
@@ -31,7 +31,6 @@
     "isMain": true,
     "isFuture": true,
     "tags": [
-        "Unrated",
         "NC",
         "XL",
         "Finished",
