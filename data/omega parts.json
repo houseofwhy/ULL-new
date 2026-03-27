@@ -1,8 +1,8 @@
 {
     "id": "private",
-    "name": "IMNOTSORRY",
+    "name": "Omega PARTS",
     "author": "zyphr",
-    "creators": ["zyphr","frazor"],
+    "creators": ["zyphr"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 43,
+    "length": 395,
     "rating": 1,
-    "percentFinished": 90,
+    "percentFinished": 0,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Medium", "NONG"]
+    "tags": ["XXXL+","Layout"]
 }
