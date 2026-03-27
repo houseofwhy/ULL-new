@@ -1,34 +1,36 @@
 {
     "id": "private",
-    "name": "Misanthrope",
-    "author": "Lordvadercraft",
-    "creators": [],
+    "name": "Master Spark",
+    "author": "TeamN2 & GDSkele",
+    "creators": ["Minus","Miner","Knobbelboy","Motu","Stormfly","GDSkele","Ryan LC","SyQual","Koreaqwer","Zelda","Nahuel2998","Vismuth","Aeidux",
+    "Rob Buck","ThorMode","Flosia","GoodSmile","Yonaka","OlliKuu","Powerbomb","Solarion","Cyclic","Wamiq","Luneth","1234","Satum","ItsHybrid",
+    "Aerae","Lebi06","Juhou"],
     "verifier": "Laser",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=uoxXKsRzFgA",
+    "showcase": "https://youtu.be/tKzSajVZW-0?si=344iYDHbKo7caoGx",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Laser",
-            "link": "https://youtu.be/CZBL9ypGTIE?si=HhZtgpLF2b0nLWg8",
-            "percent": 33,
-            "hz": 240
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
         }
     ],
     "length": 342,
     "rating": 1,
     "percentFinished": 70,
-    "lastUpd": "31.10.2025",
+    "lastUpd": "29.11.2025",
 
     "isMain": true,
     "isFuture": true,
-    "tags": ["Verifying", "XXL"],
+    "tags": ["Remake", "XXXL+"],
     "run": [
         {
-            "user": "SaitamaGD",
-            "link": "https://youtu.be/AgB_Ua5MMt0?si=ozUAITDGCZHrSMg3",
-            "percent": "22-90",
+            "user": "none",
+            "link": "",
+            "percent":"0",
             "hz": 0
         }        
     ]

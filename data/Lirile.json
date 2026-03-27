@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Lirile",
+    "author": "ZbartuxZ",
+    "creators": ["ZbartuxZ","Flolink212","KyeronnHK","Mstr","leaf","Anots","Lefty","Ashurra","Nitroghen","Jam","Boccherz","Fragma","Leukeos","F8WQ",
+    "Zkorp","Ninouin","Octoorzon","Doma_kocmoc","Yeezo"],
+    "verifier": "ILLYES",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=e7Z_-Y07pwo",
+    "lastUpd": "11.01.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 831,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+
+    "tags": ["Long", "Finished"]
+}
