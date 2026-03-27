@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "ALLOPSYCHIC",
+    "author": "[cherry] team",
+    "creators": ["nickname09"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/INAIaWYS4O8?si=P1ICWzLZm9Jtd9R9",
+    "lastUpd": "26.01.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "none",
+            "hz": 0
+        }
+    ],
+
+    "length": 145,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Long", "Layout State"]
+}
