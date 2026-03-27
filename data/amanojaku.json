@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Amanojaku",
+    "author": "Eternal Scarlet",
+    "creators": ["atrocious_grace","Hakureii","Itznet","hfine14","Gadri","ZeN526","Bonboz","Kerwynn","Xefernta","尔菲","Cowslice","n_zxnt",
+    "tengkorak_loncat","Hyoka","Dubr1se","SPlukluk","tenzti","ZeN_526","Xefernt","jetss27","XDcraftv"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "Asolihin",
+    "showcase": "https://youtu.be/0RPNF-RPRt8?si=t-imXPd5yazH84Lg",
+    "lastUpd": "07.02.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 133,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": true,
+    "isFuture": false,
+
+    "tags": ["XL","Finished","Being Verified"]
+}
