@@ -1,0 +1,39 @@
+{
+    "id": 96083028,
+    "name": "Midnight (Vivisection)",
+    "author": "hasuopf & VivisectionGD",
+    "creators": [
+        "hasuopf",
+        "VivisectionGD"
+    ],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/R4fSPS-0DYY?si=a8YRtxv5AwHSKBjI",
+    "lastUpd": "18.01.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 39,
+    "rating": 1,
+    "percentFinished": 20,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Medium"
+    ]
+}

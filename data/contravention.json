@@ -1,0 +1,37 @@
+{
+    "id": "Private",
+    "name": "CONTRAVENTION",
+    "author": "Tanginess",
+    "creators": ["Tanginess","maxfs","PreeZee","lemumn","Weaver","ado","filqh","wabas","RevueGD","Xav","lasaga","hjog","Timor","xenith","DLAppleGamez",
+"ShadowAxeKid","Arrow","rubrum"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/bo8SClU_kN4?si=Hcu5aMPG5U3JJsnC",
+    "percentToQualify": 0,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "length": 143,
+    "rating": 1,
+    "percentFinished": 70,
+
+    "isMain": true,
+    "isFuture": false,
+
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "tags": ["XL"],
+    "lastUpd": "05.03.2026"
+}
