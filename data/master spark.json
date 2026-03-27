@@ -1,0 +1,35 @@
+{
+    "id": "private",
+    "name": "Misanthrope",
+    "author": "Lordvadercraft",
+    "creators": [],
+    "verifier": "Laser",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=uoxXKsRzFgA",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Laser",
+            "link": "https://youtu.be/CZBL9ypGTIE?si=HhZtgpLF2b0nLWg8",
+            "percent": 33,
+            "hz": 240
+        }
+    ],
+    "length": 342,
+    "rating": 1,
+    "percentFinished": 70,
+    "lastUpd": "31.10.2025",
+
+    "isMain": true,
+    "isFuture": true,
+    "tags": ["Verifying", "XXL"],
+    "run": [
+        {
+            "user": "SaitamaGD",
+            "link": "https://youtu.be/AgB_Ua5MMt0?si=ozUAITDGCZHrSMg3",
+            "percent": "22-90",
+            "hz": 0
+        }        
+    ]
+}
