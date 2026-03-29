@@ -1,8 +1,8 @@
 {
     "id": "private",
     "name": "REfractured",
-    "author": "CDmusic",
-    "creators": [],
+    "author": "CDMusic",
+    "creators": ["CDMusic"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",

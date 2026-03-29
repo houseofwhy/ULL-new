@@ -2,7 +2,7 @@
     "id": "125427055",
     "name": "Infinite Silence",
     "author": "2A0L0I3",
-    "creators": [],
+    "creators": ["2AOL0I3"],
     "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
@@ -33,5 +33,5 @@
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Public", "Finished", "Long"]
+    "tags": ["Public", "Finished", "Long", "Remake"]
 }

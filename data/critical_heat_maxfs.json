@@ -2,7 +2,7 @@
     "id": "private",
     "name": "CRITICAL HEAT (maxfs)",
     "author": "maxfs",
-    "creators": [],
+    "creators": ["maxfs"],
     "verifier": "Clara Clarinha",
     "isVerified": false,
     "verification": "",

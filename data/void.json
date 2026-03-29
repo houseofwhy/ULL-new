@@ -2,7 +2,7 @@
     "id": "private",
     "name": "VOID",
     "author": "eEddy",
-    "creators": [],
+    "creators": ["eEddy"],
     "verifier": "veshel",
     "isVerified": false,
     "verification": "",
