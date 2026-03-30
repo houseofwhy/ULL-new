@@ -40,6 +40,16 @@
         "link": "https://www.youtube.com/watch?v=IHQf0tiKVSI"
     },
     {
+        "name": "00 Genesis",
+        "placement": "10",
+        "link": "https://youtu.be/PAvL7kAupDY?si=ezDR9XLfcNw9k-zo"
+    },
+    {
+        "name": "Constellations Song",
+        "placement": "10",
+        "link": "https://youtu.be/wKB7HG3xdGc?si=Mnz8AyJw371Drt6Z"
+    },
+    {
         "name": "Outcast",
         "placement": "20",
         "link": "https://youtu.be/YLBSCpQuxLo?si=pg2d-MtT_zSCF0Eh"
@@ -80,6 +90,11 @@
         "link": "https://youtu.be/9WGGm4_FKt0"
     },
     {
+        "name": "Reference",
+        "placement": "20",
+        "link:": "https://youtu.be/sy2h5zTKDWU?si=jA7qVRE3l9xV5CD7"
+    },
+    {
         "name": "Neutron Step",
         "placement": "30",
         "link": "https://youtu.be/VdA-N0V5PjA"
@@ -108,6 +123,11 @@
         "name": "Meshwork",
         "placement": "50",
         "link": "https://youtu.be/j-hK6bl5pMY?si=r3ITqBl3Jv-WKSIW"
+    },
+    {
+        "name": "PANIC",
+        "placement": "50",
+        "link": "https://youtu.be/R_LfhqE7AVY?si=jRP0mRevLH_Djkuq"
     },
     {
         "name": "Session 1",
@@ -149,7 +169,6 @@
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=IYM4Nh17_Ko"
     },
-
     {
         "name": "CONTRAVENTION",
         "placement":"75",
@@ -166,6 +185,16 @@
         "link": "https://youtu.be/GYKtnUqxG1E?si=dIvDV_b_VxXXVnLk"
     },
     {
+        "name": "EF",
+        "placement": "75",
+        "link": "https://youtu.be/Amu_WEcP9u0?si=IRwRPbS28rWzhy3R"
+    },
+    {
+        "name": "BALLISTIC BALLPIT",
+        "placement": "75",
+        "link": "https://youtu.be/6Baug9fL9JA?si=WeZHdDERPU1rWBsv"
+    },
+    {
         "name": "Operation Zoink",
         "placement": "?",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
@@ -179,11 +208,6 @@
         "name": "Hyoko",
         "placement": "?",
         "link": "https://youtu.be/zTDVM56hr_I?si=fSOfbbK2VVWwtuT3"
-    },
-    {
-        "name": "Silent Circles (Bunny)",
-        "placement": "10",
-        "link": "https://www.youtube.com/watch?v=IHQf0tiKVSI"
     },
     {
         "name": "Deadly Clubstep V2",
