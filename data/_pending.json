@@ -35,6 +35,11 @@
         "link": "https://www.youtube.com/watch?v=I31pahrX6Ic"
     },
     {
+        "name": "Silent Circles (Bunny)",
+        "placement": "10",
+        "link": "https://www.youtube.com/watch?v=IHQf0tiKVSI"
+    },
+    {
         "name": "Outcast",
         "placement": "20",
         "link": "https://youtu.be/YLBSCpQuxLo?si=pg2d-MtT_zSCF0Eh"
@@ -80,24 +85,9 @@
         "link": "https://youtu.be/VdA-N0V5PjA"
     },
     {
-        "name": "ALLOPSYCHIC",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=INAIaWYS4O8"
-    },
-    {
         "name": "ZANBOT",
         "placement": "30",
         "link": "https://www.youtube.com/watch?v=75woVCCPYbw"
-    },
-    {
-        "name": "Sulfur",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=wLbCeY5EP6c"
-    },
-    {
-        "name": "Crimson Lady",
-        "placement": "50",
-        "link": "https://youtu.be/h-TtjeM1hlg?si=8UzAmJFiS6S5u1T1"
     },
     {
         "name": "Shattered Kingdom",
@@ -108,11 +98,6 @@
         "name": "WAVING",
         "placement": "50",
         "link": "https://youtu.be/F2cRzzgnWno?si=fPTket6DJKvTv7o-"
-    },
-    {
-        "name": "Toxic Rush III",
-        "placement": "50",
-        "link": "https://youtu.be/LNX8WFl71x0?si=CNtMq9nqDpewsJk7"
     },
     {
         "name": "Icarus",
@@ -181,11 +166,6 @@
         "link": "https://youtu.be/GYKtnUqxG1E?si=dIvDV_b_VxXXVnLk"
     },
     {
-        "name": "IMNOTSORRY",
-        "placement": "?",
-        "link": "https://youtu.be/69g3LAqt7xE?si=094asTBnUjYWKcds"
-    },
-    {
         "name": "Operation Zoink",
         "placement": "?",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
@@ -202,7 +182,7 @@
     },
     {
         "name": "Silent Circles (Bunny)",
-        "placement": "?",
+        "placement": "10",
         "link": "https://www.youtube.com/watch?v=IHQf0tiKVSI"
     },
     {
@@ -224,10 +204,5 @@
         "name": "EVERBLOOM",
         "placement": "?",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
-    },
-    {
-        "name": "Omega PARTS",
-        "placement": "?",
-        "link": "https://youtu.be/LxdGkyBJ1U4?si=FVrwNuqqhsLCYmf9"
     }
 ]
