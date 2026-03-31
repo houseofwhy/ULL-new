@@ -612,15 +612,16 @@ export default {
         getThumbnail(level) {
             if (level.thumbnail) return level.thumbnail;
             const yt = url => {
-                if (!url) return '';
+                if (!url || typeof url !== 'string') return '';
                 const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
                 return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
             };
             return yt(level.verification) || yt(level.showcase) || '';
         },
         getVideo(level) {
-            if (!level.showcase) return embed(level.verification);
-            return embed(this.toggledShowcase || !level.isVerified ? level.showcase : level.verification);
+            const toStr = v => (v && typeof v === 'string') ? v : '';
+            if (!level.showcase) return embed(toStr(level.verification));
+            return embed(this.toggledShowcase || !level.isVerified ? toStr(level.showcase) : toStr(level.verification));
         },
         getLevelNameStyle(level, isSelected) {
             if (!level) return {};
