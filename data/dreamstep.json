@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Verified", "Unrated", "Public"]
+    "tags": ["Long", "Finished", "Verified", "Rated", "Public"]
 }
