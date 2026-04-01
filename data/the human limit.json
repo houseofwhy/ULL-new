@@ -3,7 +3,7 @@
     "name": "The Human Limit",
     "thumbnail": "https://i.ytimg.com/vi/U7aQVhsw9qQ/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDjyVfTIZl-RbTKdvTIhYW4O4_hTQ",
     "author": "The Elite",
-    "creators": [],
+    "creators": ["The Elite & More | Unknown rn"],
     "verifier": "Netermind ",
     "isVerified": false,
     "verification": "",
@@ -32,6 +32,5 @@
 
     "isMain": true,
     "isFuture": false,
-    "tags": ["Long", "Remake", "NONG"],
-    "thumbnail": "https://i.ytimg.com/vi/U7aQVhsw9qQ/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDjyVfTIZl-RbTKdvTIhYW4O4_hTQ"
+    "tags": ["Long", "Remake", "NONG"]
 }
