@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "VenomX",
+    "author": "TrueOmega",
+    "creators": ["TrueOmega","Yonaka","Duke","Janguire","CringyDylan"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/1EoRiOtXI2U?si=0x3CWOi1BuqFdwRe",
+    "lastUpd": "26.01.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 70,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long",
+        "Finished",
+        "Being Verified"
+    ]
+}

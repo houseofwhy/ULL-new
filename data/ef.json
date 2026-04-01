@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "EF",
+    "author": "PwfiHeh",
+    "creators": ["PwfiHeh"],
+    "verifier": "Gopso",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/Amu_WEcP9u0?si=IAp5w69Kc-uE7cPg",
+    "lastUpd": "16.03.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 222,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+
+    "tags": ["Medium","Quality","Finished","Verifying"]
+}

@@ -1,18 +1,14 @@
 [
     {
-        "name": "Redemption",
-        "placement": "down"
-    },
-    {
         "name": "ZOINK NEVER CLEAR",
         "placement": "1",
         "link": "https://youtu.be/sdwrOXNV6ws?si=J7fZz9axNTpopYzv"
-    },
+    },  
     {
-        "name": "Soulless",
-        "placement": "10",
-        "link": "https://m.youtube.com/watch?v=XkJB-UozSRg&pp=0gcJCR4Bo7VqN5tD"
-    },
+        "name": "WONDERLAND",
+        "placement": "1",
+        "link": "https://youtu.be/wyDGBiYtjOQ?si=qGWuFq65DwyDztG"
+    },  
     {
         "name": "ByteShift",
         "placement": "10",
@@ -22,11 +18,6 @@
         "name": "Cuts",
         "placement": "10",
         "link": "https://youtu.be/WC0CQJ0kg6k?si=un2m3Z4qucM8OnQT"
-    },
-    {
-        "name": "BloodEngine",
-        "placement": "10",
-        "link": "https://www.youtube.com/watch?v=JswISB7Cht4"
     },
     {
         "name": "Stoicism",
@@ -39,24 +30,24 @@
         "link": "https://youtu.be/hsBltB_8l0M?si=99rOJiaObd6nqITw"
     },
     {
-        "name": "Energy Wave",
+        "name": "Nihilum",
         "placement": "10",
-        "link": "https://youtu.be/XkCnbaKc3Sc?si=aMoIv4WsBOrTWzTn"
+        "link": "https://www.youtube.com/watch?v=I31pahrX6Ic"
     },
     {
-        "name": "Midnight",
+        "name": "Silent Circles (Bunny)",
         "placement": "10",
-        "link": "https://youtu.be/R4fSPS-0DYY?si=iYLSHJKzBfC0jqpO"
+        "link": "https://www.youtube.com/watch?v=IHQf0tiKVSI"
     },
     {
-        "name": "Lirile",
+        "name": "00 Genesis",
         "placement": "10",
-        "link": "https://youtu.be/Rl9W6fubwsw?si=ugJFzGv0gUjCo5mL"
+        "link": "https://youtu.be/PAvL7kAupDY?si=ezDR9XLfcNw9k-zo"
     },
     {
-        "name": "BEHEMOTH",
+        "name": "Constellations Song",
         "placement": "10",
-        "link": "https://youtu.be/ilqe4h--hlg?si=i-ebjPCA9UiAudfE"
+        "link": "https://youtu.be/wKB7HG3xdGc?si=Mnz8AyJw371Drt6Z"
     },
     {
         "name": "Outcast",
@@ -94,9 +85,19 @@
         "link": "https://fxtwitter.com/luxurious_nexel/status/2025099832957042876?s=46"
     },
     {
-        "name": "Ground Fella",
-        "placement": "30",
-        "link": "https://youtu.be/fXdpG1SMaS8?si=TtB0odQlT1xtES26"
+        "name": "Narine",
+        "placement": "20",
+        "link": "https://youtu.be/9WGGm4_FKt0"
+    },
+    {
+        "name": "Reference",
+        "placement": "20",
+        "link:": "https://youtu.be/sy2h5zTKDWU?si=jA7qVRE3l9xV5CD7"
+    },
+    {
+        "name": "Distortion",
+        "placement": "20",
+        "link": "https://youtu.be/WrKajZgS_tw?si=Ncdgtm6QuTRDX8OP"
     },
     {
         "name": "Neutron Step",
@@ -104,24 +105,9 @@
         "link": "https://youtu.be/VdA-N0V5PjA"
     },
     {
-        "name": "ALLOPSYCHIC",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=INAIaWYS4O8"
-    },
-    {
         "name": "ZANBOT",
         "placement": "30",
         "link": "https://www.youtube.com/watch?v=75woVCCPYbw"
-    },
-    {
-        "name": "PACKETLOSS",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=G3IinWezB6s"
-    },
-    {
-        "name": "Crimson Lady",
-        "placement": "50",
-        "link": "https://youtu.be/h-TtjeM1hlg?si=8UzAmJFiS6S5u1T1"
     },
     {
         "name": "Shattered Kingdom",
@@ -134,11 +120,6 @@
         "link": "https://youtu.be/F2cRzzgnWno?si=fPTket6DJKvTv7o-"
     },
     {
-        "name": "Toxic Rush III",
-        "placement": "50",
-        "link": "https://youtu.be/LNX8WFl71x0?si=CNtMq9nqDpewsJk7"
-    },
-    {
         "name": "Icarus",
         "placement": "50",
         "link": "https://youtu.be/LNX8WFl71x0?si=CNtMq9nqDpewsJk7"
@@ -149,29 +130,14 @@
         "link": "https://youtu.be/j-hK6bl5pMY?si=r3ITqBl3Jv-WKSIW"
     },
     {
-        "name": "Master Spark",
+        "name": "PANIC",
         "placement": "50",
-        "link": "https://youtu.be/IcG1W3_GsZg?si=GuCuXcqrbLg2g6bs"
-    },
-    {
-        "name": "The Aether Trial",
-        "placement": "50",
-        "link": "https://youtu.be/ib7Ly-1XRas?si=2EYUs0Sa6mAzB47Z"
+        "link": "https://youtu.be/R_LfhqE7AVY?si=jRP0mRevLH_Djkuq"
     },
     {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
-    },
-    {
-        "name": "Prismline",
-        "placement": "75",
-        "link": "https://youtu.be/pIHOHz3i0Rw?si=_8De09av-FNA2H-b"
-    },
-    {
-        "name": "Calibrate",
-        "placement": "75",
-        "link": "https://youtu.be/cVnus4qPsTg?si=n9-Loe7Z6KmStvY6"
     },
     {
         "name": "Final Level",
@@ -209,14 +175,34 @@
         "link": "https://www.youtube.com/watch?v=IYM4Nh17_Ko"
     },
     {
-        "name": "Amanojaku",
-        "placement": "75",
-        "link": "https://youtu.be/0RPNF-RPRt8?si=1Fbb3SXCKYjtJ5mx"
+        "name": "CONTRAVENTION",
+        "placement":"75",
+        "link": "https://youtu.be/bo8SClU_kN4?si=srT0DcpaienIbCBD"
     },
     {
-        "name": "IMNOTSORRY",
+        "name": "ENCELADUS",
+        "placement": "75",
+        "link": "https://youtu.be/tNQty__fJYg?si=UJu8wjhBNQmfoa34"
+    },
+    {
+        "name": "Enchanting Skylight",
+        "placement": "75",
+        "link": "https://youtu.be/GYKtnUqxG1E?si=dIvDV_b_VxXXVnLk"
+    },
+    {
+        "name": "EF",
+        "placement": "75",
+        "link": "https://youtu.be/Amu_WEcP9u0?si=IRwRPbS28rWzhy3R"
+    },
+    {
+        "name": "BALLISTIC BALLPIT",
+        "placement": "75",
+        "link": "https://youtu.be/6Baug9fL9JA?si=WeZHdDERPU1rWBsv"
+    },
+    {
+        "name": "Operation Zoink",
         "placement": "?",
-        "link": "https://youtu.be/69g3LAqt7xE?si=094asTBnUjYWKcds"
+        "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
     },
     {
         "name": "Vaporeta",
@@ -227,11 +213,6 @@
         "name": "Hyoko",
         "placement": "?",
         "link": "https://youtu.be/zTDVM56hr_I?si=fSOfbbK2VVWwtuT3"
-    },
-    {
-        "name": "Silent Circles (Bunny)",
-        "placement": "?",
-        "link": "https://www.youtube.com/watch?v=IHQf0tiKVSI"
     },
     {
         "name": "Deadly Clubstep V2",
@@ -252,10 +233,5 @@
         "name": "EVERBLOOM",
         "placement": "?",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
-    },
-    {
-        "name": "Omega PARTS",
-        "placement": "?",
-        "link": "https://youtu.be/LxdGkyBJ1U4?si=FVrwNuqqhsLCYmf9"
     }
 ]

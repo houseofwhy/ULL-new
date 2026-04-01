@@ -1,16 +1,13 @@
 {
-    "id": 88442157,
-    "name": "Critical Heat",
-    "author": "Zeniux",
-    "creators": [
-        "Zeniux",
-        "Zeus"
-    ],
-    "verifier": " hstorm",
+    "id": 130327668,
+    "name": "Being Home",
+    "author": "Turtl123",
+    "creators": ["Turtl123","goobs47"],
+    "verifier": "goobs47",
     "isVerified": true,
-    "verification": "https://youtu.be/UjYIt2jy_BY?si=BLcuDJZ2mslHQM04",
-    "showcase": "https://youtu.be/-Fhz3qZVb9c?si=fl3NRaazL6J6AQkv",
-    "lastUpd": "18.03.2023",
+    "verification": "https://www.youtube.com/watch?v=kt7FnUzK8CY",
+    "showcase": "https://www.youtube.com/watch?v=AYNItNS934A&pp=ygUNYmVpbmcgaG9tZSBnZNIHCQnFCgGHKiGM7w%3D%3D",
+    "lastUpd": "29.12.2025",
     "percentToQualify": 1,
     "records": [
         {
@@ -28,16 +25,15 @@
             "hz": 0
         }
     ],
-    "length": 62,
+    "length": 102,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
     "tags": [
+        "Long",
         "Public",
         "Finished",
-        "Rated",
-        "Long",
-        "Verified"
+        "Unrated"
     ]
 }

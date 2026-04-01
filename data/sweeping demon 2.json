@@ -3,7 +3,7 @@
     "name": "Sweeping Demon 2",
     "thumbnail": "https://i.ytimg.com/vi/Njt-NIhXlSk/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDI_UgecybprKKJK1zCoWzX0qqAtA",
     "author": "Temp",
-    "creators": [],
+    "creators": ["Temp"],
     "verifier": "Taiago",
     "isVerified": false,
     "verification": "",
@@ -22,8 +22,8 @@
     "run": [
         {
             "user": "Taiago",
-            "link": "https://youtu.be/0tFBzVMAORQ?si=Jw57aurz-BHu0hPv",
-            "percent": "21-87",
+            "link": "https://youtu.be/XIGcx28OEUE?si=HH_fusEm00p-pjmc",
+            "percent": "39-100",
             "hz": 0
         }
     ],

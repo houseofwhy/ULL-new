@@ -2,7 +2,7 @@
     "id": "private",
     "name": "LimeWire",
     "author": "Blaster1337",
-    "creators": [],
+    "creators": ["Blaster1337","cheapy"],
     "verifier": "finley",
     "isVerified": false,
     "verification": "",

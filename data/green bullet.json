@@ -1,8 +1,8 @@
 {
     "id": "private",
     "name": "GREEN BULLET",
-    "author": "CherryTeam",
-    "creators": [],
+    "author": "[cherry] team",
+    "creators": ["AirSavage","Konsi","Ego11","Xenith","Rhymer","fawksgdd","Loolycat","Dom89","MinAY","Harent","Del","Winchester"],
     "verifier": "Nickname",
     "isVerified": false,
     "verification": "",
@@ -21,8 +21,8 @@
     "run": [
         {
             "user": "Nickname",
-            "link": "https://youtu.be/jpsr5ZWVu6o?si=pL87C2zj188e2yPx",
-            "percent": "34-100",
+            "link": "https://youtu.be/5V_rXghtypY?si=loB7ftCh3-OkCELO",
+            "percent": "18-100",
             "hz": 240
         }
     ],

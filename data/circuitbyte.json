@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Circuitbyte",
+    "author": "YouknowwhoGD",
+    "creators": ["YouknowwhoGD","IRSDorkage","Gigibyte","SirgGD","nab.","Starsign","kacurroo","Visionary","KhaiGDVN","CoolSoup","DuskerHu","Inidevy",
+"Sebestein","SundayGMD","TopHatMark","D6CD"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/FKcapSx8dUA?si=6EI4xhFtJkIxeMmT",
+    "lastUpd": "15.03.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 106,
+    "rating": 1,
+    "percentFinished": 52,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Long"]
+}

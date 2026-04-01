@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "PACKETLOSS",
+    "author": "artemon4uk",
+    "creators": ["artemon4uk"],
+    "verifier": "whfyre(Потужний)",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/G3IinWezB6s?si=d2XN6OVssld-h2SY",
+    "lastUpd": "19.02.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 77,
+    "rating": 1,
+    "percentFinished": 40,
+    "isMain": true,
+    "isFuture": false,
+
+    "tags": ["Long"]
+}

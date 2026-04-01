@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "The Aether Trial",
+    "author": "GastyerWolfGD",
+    "creators": [],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=ib7Ly-1XRas",
+    "thumbnail": "https://i.ytimg.com/vi/6Q8rvo4iHUU/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBAQSGFN9e-M_n-8kcGx-qaRs3ZzA",
+    "lastUpd": "02.03.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 250,
+    "rating": 1,
+    "percentFinished": 10,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XXL"
+    ]
+}

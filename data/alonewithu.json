@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "ALONEWITHU",
+    "author": "Michael & coconut",
+    "creators": ["Einmaxiii","Smoke","username","Sneky64","Addie","Silence","Xyzz"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/WaBV4FkS2po?si=RIEqVwLwvUY5RrMD",
+    "percentToQualify": 38,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "length": 93,
+    "rating": 1,
+    "percentFinished": 100,
+    "lastUpd": "28.02.2026",
+
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["XL","NoNG"],
+
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ]
+}

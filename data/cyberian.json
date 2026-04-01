@@ -2,11 +2,11 @@
     "id": "private",
     "name": "Cyberian",
     "author": "Josh",
-    "creators": [],
+    "creators": ["Josh"],
     "verifier": "Hippo",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=w3LHa5x_U1w",
+    "showcase": "https://youtu.be/OmFO24FKthA",
     "lastUpd": "23.08.2025",
     "percentToQualify": 40,
     "records": [
@@ -25,7 +25,7 @@
             "hz": 0
         }
     ],
-    "length": 0,
+    "length": 43,
     "rating": 1,
     "percentFinished": 70,
     "isMain": true,

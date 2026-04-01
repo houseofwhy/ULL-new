@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Calibrate",
+    "author": "Bamvie",
+    "creators": ["Bamvie"],
+    "verifier": "Blebae",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/daPwxko5v2o?si=EyFCimXIVEFFeYz8",
+    "lastUpd": "16.02.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Blebae",
+            "link": "https://x.com/Blebae/status/2037629835577807227?s=20",
+            "percent": 91,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Blebae",
+            "link": "https://fixupx.com/Blebae/status/2033934259556409701?s=20",
+            "percent": "47-100",
+            "hz": 0
+        }
+    ],
+    "length": 77,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Long",
+        "Verifying"
+    ]
+}

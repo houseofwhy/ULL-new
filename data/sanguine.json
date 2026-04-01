@@ -3,7 +3,7 @@
     "name": "Sanguine",
     "author": "RafaBirds GD",
     "creators": [],
-    "verifier": "unknown",
+    "verifier": "spookkd",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=o3bauiDnO6w",
@@ -11,9 +11,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "spookkd",
+            "link": "https://www.youtube.com/watch?v=FNHajKbCD-c",
+            "percent": 56,
             "hz": 0
         }
     ],

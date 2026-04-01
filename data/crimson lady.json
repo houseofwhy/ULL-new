@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Crimson Lady",
+    "author": "LenZelium",
+    "creators": ["Vexexx","Volo","Lenz","p","Humbjumb","Samzaya","Exvill","Lenzelium","vApollo","Kixgz","Wavvy","Liu"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/h-TtjeM1hlg?si=ldxcKnFBO6fF6JiW",
+    "lastUpd": "05.04.2024",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 79,
+    "rating": 1,
+    "percentFinished": 80,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Long", "Quality"]
+}

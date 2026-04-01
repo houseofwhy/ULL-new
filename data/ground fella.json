@@ -1,0 +1,35 @@
+{
+    "id": "private",
+    "name": "Ground Fella",
+    "author": "nickname09",
+    "creators": ["nickname09"],
+    "verifier": "nickname09",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/fXdpG1SMaS8?si=seF0PxYQMg5Q2gbe",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "length": 61,
+    "rating": 1,
+    "percentFinished": 50,
+    "lastUpd": "23.12.2025",
+
+    "isMain": true,
+    "isFuture": false,
+    "tags": ["Long"],
+    "run": [
+        {
+            "user": "",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ]
+}

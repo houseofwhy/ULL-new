@@ -2,7 +2,8 @@
     "id": "private",
     "name": "Ex Vacuo",
     "author": "Shant",
-    "creators": [],
+    "creators": ["Molds","KireiMirai","CdPre","Revel","Minus","Gaudium","FunnyGame","Amateurre","Maskz","Drag747","Sequex","Maplegaegosu","VantaBlack","Shant",
+    "Chase","Alice","InterChange","HyoJung","Flosia","Hades","Galchi","GDSkele"],
     "verifier": "Laniakea",
     "isVerified": false,
     "verification": "",
@@ -21,8 +22,8 @@
     "run": [
         {
             "user": "Laniakea",
-            "link": "https://www.youtube.com/watch?v=kP4p23TmZsA",
-            "percent": "53-100",
+            "link": "https://youtu.be/TnObKqv3hwc",
+            "percent": "33-100",
             "hz": 240
         }
     ],

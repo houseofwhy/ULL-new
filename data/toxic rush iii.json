@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Toxic Rush III",
+    "author": "fitatfi",
+    "creators": ["LasagaStu","tophatmark","fitatfi","DuskerHu","hasuopf","qjivxn","RangoTheGod"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/LNX8WFl71x0?si=ln-ol9UtAhfAnIxC",
+    "lastUpd": "31.12.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 185,
+    "rating": 1,
+    "percentFinished": 50,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["XXL","1.9"]
+}

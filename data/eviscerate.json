@@ -2,7 +2,7 @@
     "id": "private",
     "name": "EVISCERATE",
     "author": "Darksive",
-    "creators": [],
+    "creators": ["Darksive"],
     "verifier": "Surpl3x",
     "isVerified": false,
     "verification": "",
@@ -13,8 +13,8 @@
     "records": [
         {
             "user": "Surpl3x",
-            "link": "https://www.youtube.com/live/ydqiMisgXtA?si=kT5VbSpe73Q5tp9M",
-            "percent": 13,
+            "link": "https://www.youtube.com/live/c9it-OAFefg?si=p4beN8gZfrGOBBod&t=7465",
+            "percent": 24,
             "hz": 0
         }
     ],

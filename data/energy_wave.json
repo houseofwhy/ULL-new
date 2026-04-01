@@ -1,0 +1,40 @@
+{
+    "id": 130734729,
+    "name": "Energy Wave",
+    "author": "Metalface221",
+    "creators": ["Metalface221"],
+    "verifier": "Open Verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=PtsyAeDLSws",
+    "lastUpd": "02.02.2026",
+    "percentToQualify": 24,
+    "records": [
+        {
+            "user": "lolwut",
+            "link": "https://www.youtube.com/watch?v=KMhUCXyUHVs",
+            "percent": 23,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 132,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "NC",
+        "XL",
+        "Finished",
+        "Verifying",
+        "Public"
+    ]
+}

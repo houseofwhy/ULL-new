@@ -2,7 +2,7 @@
     "id": "private",
     "name": "SILENT OPPENHEIMER",
     "author": "Feijoaoa",
-    "creators": [],
+    "creators": ["Feiljoaoa"],
     "verifier": "Dezstro",
     "isVerified": false,
     "verification": "",
@@ -13,8 +13,8 @@
     "records": [
         {
             "user": "Dezstro",
-            "link": "https://youtu.be/iUO53bIXGqY?si=n5MJfyWXRqcCHP0b",
-            "percent": 61,
+            "link": "https://youtu.be/QIEpCdZgBIQ?si=DrJu4ZwIw3n35yhx",
+            "percent": 64,
             "hz": 0
         }
     ],

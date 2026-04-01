@@ -13,9 +13,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "",
+            "user": "none",
             "link": "",
-            "percent": 13,
+            "percent": 0,
             "hz": 0
         }
     ],

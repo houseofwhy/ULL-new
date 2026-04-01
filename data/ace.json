@@ -2,7 +2,7 @@
     "id": "private",
     "name": "Ace",
     "author": "Aidsen",
-    "creators": [],
+    "creators": ["Aidsen"],
     "verifier": "Aidsen",
     "isVerified": false,
     "verification": "",

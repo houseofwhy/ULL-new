@@ -1,11 +1,14 @@
 {
     "id": "private",
-    "name": "Deimos (Skele)",
-    "author": "Skele",
-    "creators": [],
-    "verifier": "swiborg hell (he dropped)",
-    "isVerified": false,
-    "verification": "",
+    "name": "Deimos (Akira Kurisu)",
+    "author": "Akira Kurisu",
+    "creators": ["Tygrysek","Atomic","Para","Gooseam","Walroose","Isane","xNorth","Skele","CuLuC","Vismuth","Exen","Helpegasus","Escetity","Fenrrig","SeptaGon7",
+    "VoTcHi","syna","Akira","kDarko","Azuler","Grax","hawkyre","ViRuZ","ORte","BlasterRobotz","HeSo","Kaith","Morin","00Zero","Molds","Gabs","SyQual","Sonic80",
+    "Zanna83","UFWM","El3cTrO","Ultralix","Brittank88","Pineapple Cat","Nebulakuca","Buragoz","IcEDCave","Kentakiman","Archind","Kubson","GMTsean","TheTrueEclipse",
+    "Iqrar99","Megantwoo","Rynoxious","Lunaris","KatelynWaffles","Naim Naro"],
+    "verifier": "SebasLopez",
+    "isVerified": true,
+    "verification": "https://youtu.be/lQvCrTOGU1E?si=8n81N5B_B2fr2jLX&t=363",
     "showcase": "https://www.youtube.com/watch?v=QewMw5wtXoQ",
     "lastUpd": "22.05.2023",
 
@@ -33,5 +36,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Finished", "Verifying", "Remake"]
+    "tags": ["XL", "Finished", "Verified", "Remake"]
 }

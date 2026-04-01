@@ -1,16 +1,17 @@
 {
-    "id": 96083028,
-    "name": "Midnight",
-    "author": "zYuko",
+    "id": 88442157,
+    "name": "Critical Heat (Zeniux)",
+    "author": "Zeniux",
     "creators": [
-        "MadisonYuko"
+        "Zeniux",
+        "Zeus"
     ],
-    "verifier": "nei",
+    "verifier": " hstorm",
     "isVerified": true,
-    "verification": "https://www.youtube.com/watch?v=NhkN_a9cNi8&source_ve_path=MTc4NDI0",
-    "showcase": "https://www.youtube.com/watch?v=JepVSrgVZDM&pp=ygUabWlkbmlnaHQgc2hvd2Nhc2UgZ2Qgenl1a2_SBwkJkQoBhyohjO8%3D",
-    "lastUpd": "02.11.2023",
-    "percentToQualify": 100,
+    "verification": "https://youtu.be/UjYIt2jy_BY?si=BLcuDJZ2mslHQM04",
+    "showcase": "https://youtu.be/-Fhz3qZVb9c?si=fl3NRaazL6J6AQkv",
+    "lastUpd": "18.03.2023",
+    "percentToQualify": 1,
     "records": [
         {
             "user": "none",
@@ -27,17 +28,16 @@
             "hz": 0
         }
     ],
-    "length": 75,
+    "length": 62,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
     "tags": [
-        "Rated",
-        "Long",
         "Public",
         "Finished",
-        "Remake",
+        "Rated",
+        "Long",
         "Verified"
     ]
 }
