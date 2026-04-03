@@ -2,24 +2,15 @@ import { store } from "../main.js";
 import { fetchEditors, fetchPending } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
-import ListEditors from "../components/ListEditors.js";
-
-const roleIconMap = {
-    owner: "crown",
-    admin: "user-gear",
-    seniormod: "user-shield",
-    mod: "user-lock",
-    dev: "code",
-};
 
 export default {
-    components: { Spinner, ListEditors },
+    components: { Spinner },
     template: `
-        <main v-if="loading" class="surface">
+        <main v-if="loading" class="surface" style="display:flex;align-items:center;justify-content:center;">
             <Spinner></Spinner>
         </main>
-        <main v-else class="page-list page-list--pending">
-            <div class="list-container surface">
+        <main v-else class="page-pending-new">
+            <div class="pending-section surface">
                 <h3 style="margin-bottom: 1rem;">Pending Placements</h3>
                 <table class="list" v-if="pendingPlacements.length > 0">
                     <tr v-for="(level, i) in pendingPlacements">
@@ -30,14 +21,14 @@ export default {
                         </td>
                         <td class="level">
                             <div class="type-label-lg" style="padding: 1rem;">
-                            <a :href="level.link">{{ level.name }}</a>
+                                <a :href="level.link">{{ level.name }}</a>
                             </div>
                         </td>
                     </tr>
                 </table>
                 <p v-else style="padding: 1rem;">No pending placements :)</p>
             </div>
-            <div class="level-container surface">
+            <div class="pending-section surface">
                 <h3 style="margin-bottom: 1rem;">Pending Movements</h3>
                 <table class="list" v-if="pendingMovements.length > 0">
                     <tr v-for="(level, i) in pendingMovements">
@@ -53,79 +44,23 @@ export default {
                 </table>
                 <p v-else style="padding: 1rem;">No pending movements :)</p>
             </div>
-            <div class="meta-container surface">
-                <div class="meta">
-                    <div class="meta">
-                        <h3>Legend</h3>
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
-                            <!-- Movements -->
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/move-up.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Moving Up</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/move-down.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Moving Down</p>
-                            </div>
-                            <!-- Placements -->
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/1.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending #1</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/10.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 10</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/20.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 20</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/30.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 30</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/50.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 50</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/75.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Pending Top 75</p>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="/assets/question.svg" style="height: 1.5rem; width: 1.5rem;">
-                                <p>Unknown Placement</p>
-                            </div>
-                        </div>
-                    </div>
-                    <ListEditors :editors="editors" />
-            </div>
         </main>
     `,
     data: () => ({
         pendingPlacements: [],
         pendingMovements: [],
-        editors: [],
         loading: true,
-        roleIconMap,
         store,
     }),
     async mounted() {
         const pending = await fetchPending();
-        this.editors = await fetchEditors();
 
         if (pending) {
             this.pendingPlacements = pending
                 .filter(p => !["up", "down"].includes(p.placement.toLowerCase()))
                 .sort((a, b) => {
-                    const getVal = (p) => {
-                        if (p === "?") return 999999;
-                        return parseInt(p) || 999999;
-                    };
-                    const valA = getVal(a.placement);
-                    const valB = getVal(b.placement);
-                    if (valA !== valB) return valA - valB;
-                    return a.name.localeCompare(b.name);
+                    const getVal = (p) => p === "?" ? 999999 : (parseInt(p) || 999999);
+                    return getVal(a.placement) - getVal(b.placement) || a.name.localeCompare(b.name);
                 });
 
             this.pendingMovements = pending

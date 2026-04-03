@@ -22,13 +22,16 @@
     <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/filters-popup.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/settings-popup.css" />
     <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
     <style>
         @media (max-width: 768px) {
-            #pc-header { display: none !important; }
-            .root > .page-list, .root > main { display: none !important; }
+            .sidebar { display: none !important; }
+            .page-with-sidebar { display: none !important; }
         }
         @media (min-width: 769px) {
             .mob { display: none !important; }
@@ -36,55 +39,73 @@
     </style>
 </head>
 
-<body id="app" onload="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture' ||  location.hash == '#/') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        } else {
-            document.querySelectorAll('.list__home')[0].classList.remove('router-link-active')
-        }
-    " onclick="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        }
-    ">
+<body id="app">
 <div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
-    <header class="surface" style="display:flex;" id="pc-header">
-        <div class="logo">
-            <div v-else class="logo">
-                <h2>ULL</h2>
-                <p>v1.2.0</p>
-            </div>
-        </div>
-        <nav class="nav">
-            <router-link class="nav__tab list__home" to="/">
-                <span class="type-label-lg">List</span>
-            </router-link>
-            <router-link class="nav__tab" to="/leaderboard">
-                <span class="type-label-lg">Leaderboard</span>
-            </router-link>
-            <router-link class="nav__tab" to="/pending">
-                <span class="type-label-lg">Pending List</span>
-            </router-link>
-            <div class="nav__actions">
-                <button class="nav__icon" @click.prevent="store.toggleDark()">
-                    <img :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'" alt="" />
-                </button>
-                <a class="nav__icon" href="https://discord.gg/9wVWSgJSe8">
-                    <img src="/assets/discord.svg" alt="Discord Logo" />
-                </a>
-                <!-- <a class="nav__cta type-label-lg"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSev8GuHqq-00YRlr9iY4Xg5ttt-FaXWLb9JLI9eRTYHKdhk0Q/viewform?usp=sf_link"
-                    target="_blank">Submit Record</a>
-                <a class="nav__cta type-label-lg"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSetN4Gsdhmpsom2zqJWYDTzedJ3YdcVdNw4SJAk8BIfGZXO1Q/viewform?usp=sf_link"
-                    target="_blank">Submit Opinion</a> -->
-            </div>
+    <!-- Vertical Sidebar (PC only) -->
+    <aside class="sidebar">
+        <router-link to="/home" class="sidebar__logo">
+            <h2>ULL</h2>
+            <p>v1.2.0</p>
+        </router-link>
+        <nav class="sidebar__nav">
+            <div class="sidebar__section-label">Lists</div>
+            <router-link class="sidebar__link" to="/list">All Levels</router-link>
+            <router-link class="sidebar__link" to="/listmain">Main List</router-link>
+            <router-link class="sidebar__link" to="/listfuture">Future List</router-link>
+
+            <div class="sidebar__section-label" style="margin-top: 0.5rem;">Other</div>
+            <router-link class="sidebar__link" to="/leaderboard">Leaderboard</router-link>
+            <router-link class="sidebar__link" to="/upcoming">Upcoming Levels</router-link>
+            <router-link class="sidebar__link" to="/pending">Pending List</router-link>
+            <router-link class="sidebar__link" to="/information">Information</router-link>
         </nav>
-    </header>
+        <div class="sidebar__bottom">
+            <button class="sidebar__settings-btn" @click="store.showSettings = true">Settings</button>
+            <a class="sidebar__discord" href="https://discord.gg/9wVWSgJSe8" target="_blank">
+                <img src="/assets/discord.svg" alt="Discord" />
+            </a>
+        </div>
+    </aside>
 
+    <!-- Settings Popup -->
+    <div class="settings-overlay" v-if="store.showSettings" @click.self="store.showSettings = false">
+        <div class="settings-popup">
+            <div class="settings-popup__title">Settings</div>
+            <div class="settings-popup__item">
+                <span class="settings-popup__label">Thumbnails</span>
+                <div class="settings-popup__toggle">
+                    <button class="settings-popup__toggle-btn" :class="{ active: store.thumbnails }" @click="store.thumbnails = true; store.saveSetting('thumbnails', true)">ON</button>
+                    <button class="settings-popup__toggle-btn" :class="{ active: !store.thumbnails }" @click="store.thumbnails = false; store.saveSetting('thumbnails', false)">OFF</button>
+                </div>
+            </div>
+            <div class="settings-popup__item">
+                <span class="settings-popup__label">
+                    Level Coloring
+                    <a class="settings-popup__question" href="#/information" target="_blank" title="What is Level Coloring?">?</a>
+                </span>
+                <div class="settings-popup__toggle">
+                    <button class="settings-popup__toggle-btn" :class="{ active: store.levelColoring }" @click="store.levelColoring = true; store.saveSetting('levelColoring', true)">ON</button>
+                    <button class="settings-popup__toggle-btn" :class="{ active: !store.levelColoring }" @click="store.levelColoring = false; store.saveSetting('levelColoring', false)">OFF</button>
+                </div>
+            </div>
+            <div class="settings-popup__item">
+                <span class="settings-popup__label">Theme</span>
+                <div class="settings-popup__toggle">
+                    <button class="settings-popup__toggle-btn" :class="{ active: !store.dark }" @click="if(store.dark) store.toggleDark()">Dark</button>
+                    <button class="settings-popup__toggle-btn" :class="{ active: store.dark }" @click="if(!store.dark) store.toggleDark()">Light</button>
+                </div>
+            </div>
+            <a class="settings-popup__contact" href="https://discord.gg/9wVWSgJSe8" target="_blank">
+                <img src="/assets/discord.svg" alt="Discord" />
+                Contact Support
+            </a>
+        </div>
+    </div>
 
-
-    <router-view></router-view>
+    <!-- Page Content -->
+    <div class="page-with-sidebar">
+        <router-view></router-view>
+    </div>
 </div>
 </body>
 

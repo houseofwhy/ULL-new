@@ -2,9 +2,15 @@ import routes from './routes.js';
 
 export const store = Vue.reactive({
     dark: localStorage.getItem('dark') === null ? false : JSON.parse(localStorage.getItem('dark')),
+    thumbnails: localStorage.getItem('thumbnails') === null ? true : JSON.parse(localStorage.getItem('thumbnails')),
+    levelColoring: localStorage.getItem('levelColoring') === null ? true : JSON.parse(localStorage.getItem('levelColoring')),
+    showSettings: false,
     toggleDark() {
         this.dark = !this.dark;
         localStorage.setItem('dark', JSON.stringify(this.dark));
+    },
+    saveSetting(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
     },
 });
 

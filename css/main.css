@@ -90,8 +90,7 @@ body,
     color: var(--color-on-background);
 }
 
-header,
-main {
+main.page-list {
     display: grid;
     grid-template-columns: minmax(16rem, 1.15fr) minmax(16rem, 1.9fr) minmax(16em, 0.95fr);
     column-gap: 2rem;

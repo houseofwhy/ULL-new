@@ -1,0 +1,126 @@
+﻿/* Vertical Sidebar Header */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12.5%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    background-color: var(--color-background);
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.sidebar__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 1rem;
+    background: linear-gradient(180deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
+    color: var(--color-on-primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebar__logo h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.sidebar__logo p {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    opacity: 0.8;
+}
+
+.sidebar__nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0;
+    overflow-y: auto;
+}
+
+.sidebar__section-label {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1rem 1.25rem 0.4rem;
+    opacity: 0.5;
+    color: var(--color-on-background);
+}
+
+.sidebar__link {
+    display: block;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 1.25rem 0.6rem 1.75rem;
+    color: var(--color-on-background);
+    text-decoration: none;
+    transition: background-color 100ms ease;
+    cursor: pointer;
+}
+
+.sidebar__link:hover {
+    background-color: var(--color-background-hover);
+}
+
+.sidebar__link.router-link-active {
+    background: linear-gradient(90deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
+    color: var(--color-on-primary);
+}
+
+.sidebar__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.sidebar__settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-on-background);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.35rem;
+    transition: background-color 100ms ease;
+}
+
+.sidebar__settings-btn:hover {
+    background-color: var(--color-background-hover);
+}
+
+.sidebar__discord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    transition: background-color 100ms ease;
+}
+
+.sidebar__discord:hover {
+    background-color: var(--color-background-hover);
+}
+
+.sidebar__discord img {
+    height: 1.25rem;
+}
+
+/* Push page content to the right */
+.page-with-sidebar {
+    margin-left: 12.5%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

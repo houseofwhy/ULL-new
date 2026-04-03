@@ -1,15 +1,10 @@
 import { store } from "../main.js";
-import { embed, filtersList, filtersSetup } from "../util.js";
+import { embed, filtersList } from "../util.js";
 import { score } from "../score.js";
 import { fetchEditors, fetchList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import LevelAuthors from "../components/List/LevelAuthors.js";
-import ListEditors from "../components/ListEditors.js";
-
-// Set to false to hide thumbnails in the level list
-
-// Set to false to disable level name coloring
 
 const roleIconMap = {
     owner: "crown",
@@ -20,182 +15,150 @@ const roleIconMap = {
 };
 
 export default {
-    components: { Spinner, LevelAuthors, ListEditors },
-    template:
-        `
-	<component :is="'style'">
-
-        .search {
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--color-on-background);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            margin-bottom: 15px;
-            font-family: inherit;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        .search:focus {
-            outline: 2px solid var(--color-primary);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-	</component>
-	<header class="new">
-
-            <nav class="nav">
-                <router-link class="nav__tab" to="/">
-                    <span class="type-label-lg">All Levels</span>
-                </router-link>
-                <router-link class="nav__tab" to="/listmain">
-                    <span class="type-label-lg">Main List</span>
-                </router-link>
-                <router-link class="nav__tab" to="/listfuture">
-                    <span class="type-label-lg">Future List</span>
-                </router-link>
-								` +
-        filtersSetup +
-        `
-            </nav>
-        </header>
-		<main v-if="loading" class="surface">
-            <Spinner></Spinner>
-        </main>
-        <main v-else class="page-list">
-            <div class="list-container surface">
-                <input
-                    v-model="search"
-                    class="search"
-                    type="text"
-                    placeholder="Search levels..."
-                >
-                <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden}">
-                        <td class="rank">
-							<span :class="{ 'rank-verified': level?.isVerified}">
-                                <p v-if="i + 1 <= 500" class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">#{{ i + 1 }}</p>
-                                <p v-else class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">Londenberg</p>
-							</span>
-                        </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
-                            <button @click="selected = i">
-                                <img v-if="level && showThumbnails" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
-                                <span :class="{ 'rank-verified': level?.isVerified}">
-                                    <span class="type-label-lg" :style="showColors ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (showColors && isOldLevel(level) && !level.isVerified ? level.name + \` 🚫\` : level.name) : \`Error (\${err}.json)\` }}</span>
+    components: { Spinner, LevelAuthors },
+    template: `
+    <main v-if="loading" class="surface" style="display:flex;align-items:center;justify-content:center;">
+        <Spinner></Spinner>
+    </main>
+    <main v-else class="page-list-new">
+        <div class="list-container-new surface">
+            <div class="search-row">
+                <input v-model="search" class="search-new" type="text" placeholder="Search levels..." />
+                <button class="filters-btn" @click="showFilters = true">Filters</button>
+            </div>
+            <table class="list" v-if="list">
+                <tr v-for="([level, err], i) in list" :class="{ 'level-hidden': level?.isHidden }">
+                    <td class="rank">
+                        <span :class="{ 'rank-verified': level?.isVerified }">
+                            <p v-if="i + 1 <= 500" class="type-label-lg" :style="store.levelColoring ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">#{{ i + 1 }}</p>
+                            <p v-else class="type-label-lg" :style="store.levelColoring ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">Londenberg</p>
+                        </span>
+                    </td>
+                    <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                        <button @click="selected = i">
+                            <img v-if="level && store.thumbnails" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
+                            <div class="level-info">
+                                <span :class="{ 'rank-verified': level?.isVerified }">
+                                    <span class="type-label-lg" :style="store.levelColoring ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (store.levelColoring && isOldLevel(level) && !level.isVerified ? level.name + ' \\u{1F6AB}' : level.name) : \`Error (\${err}.json)\` }}</span>
                                 </span>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="level-container surface">
-                <div class="level" v-if="level">
-                    <h1>{{ level.name }}</h1>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
-                    <div style="display:flex">
-                        <div v-for="tag in level.tags" class="tag">{{tag}}</div>
-                    </div>
-                        <div>
-                            <div v-if="!level.isVerified && level.records[0].percent != 100">
-                                <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
-                                    <p class="type-body">
-                                        World Record - From 0: <a v-if="level.records[0].link && level.records[0].link != '#'" :href="level.records[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.records[0].percent}}% by {{level.records[0].user}}</a><template v-else>{{level.records[0].percent}}% by {{level.records[0].user}}</template>
-                                    </p>
-                                </div>
-                                <div v-if="!level.isVerified && level.records[0].percent == 0" class="worldrecord">
-                                    <p class="type-body">
-                                            World Record - From 0: None
-                                    </p>
-                                </div>
-                                <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
-                                    <p class="type-body">
-                                        World Record - Run: <a v-if="level.run[0].link && level.run[0].link != '#'" :href="level.run[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.run[0].percent}}% by {{level.run[0].user}}</a><template v-else>{{level.run[0].percent}}% by {{level.run[0].user}}</template>
-                                    </p>
-                                </div>
-                                <div v-if="!level.isVerified && level.run[0].percent == '0'" class="worldrecord">
-                                    <p class="type-body">
-                                            World Record - Run: None
-                                    </p>
-                                </div>
+                                <span v-if="level" class="level-subinfo">by {{ level.author }} | {{ level.verifier }}</span>
                             </div>
-                            <div v-if="!level.isVerified && level.records[0].percent == 100" class="worldrecord">
-                                <p class="type-body">
-                                    Layout verified by {{level.records[0].user}}
-                                </p>
-                            </div>
-                            <div class="lvlstatus">
-                                <p class="type-body">
-                                    <template v-if="level.isVerified">
-                                            Status: Verified
-                                    </template>
-                                    <template v-if="level.percentFinished == 0">
-                                            Status: Layout
-                                    </template>
-                                    <template v-if="level.percentFinished == 100 && !level.isVerified">
-                                            Status: Being Verified
-                                    </template>
-                                    <template v-if="level.percentFinished != 0 && level.percentFinished != 100">
-                                            Status: Decoration being made - {{level.percentFinished}}% done
-                                    </template>
-                                </p>
-                            </div>
-                        </div>
-                    <div v-if="level.isVerified" class="tabs">
-                        <button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
-                                <span class="type-label-lg">Showcase</span>
                         </button>
-                        <template v-if="level.isVerified">
-                            <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
-                                <span class="type-label-lg">Verification</span>
-                            </button>
-                        </template>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="level-container-new surface">
+            <div class="level" v-if="level">
+                <h1>{{ level.name }}</h1>
+                <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
+                <div style="display:flex; flex-wrap:wrap;">
+                    <div v-for="tag in level.tags" class="tag">{{tag}}</div>
+                </div>
+                <div>
+                    <div v-if="!level.isVerified && level.records[0].percent != 100">
+                        <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
+                            <p class="type-body">
+                                World Record - From 0: <a v-if="level.records[0].link && level.records[0].link != '#'" :href="level.records[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.records[0].percent}}% by {{level.records[0].user}}</a><template v-else>{{level.records[0].percent}}% by {{level.records[0].user}}</template>
+                            </p>
+                        </div>
+                        <div v-if="!level.isVerified && level.records[0].percent == 0" class="worldrecord">
+                            <p class="type-body">World Record - From 0: None</p>
+                        </div>
+                        <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
+                            <p class="type-body">
+                                World Record - Run: <a v-if="level.run[0].link && level.run[0].link != '#'" :href="level.run[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.run[0].percent}}% by {{level.run[0].user}}</a><template v-else>{{level.run[0].percent}}% by {{level.run[0].user}}</template>
+                            </p>
+                        </div>
+                        <div v-if="!level.isVerified && level.run[0].percent == '0'" class="worldrecord">
+                            <p class="type-body">World Record - Run: None</p>
+                        </div>
                     </div>
-                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                    <ul class="stats">
+                    <div v-if="!level.isVerified && level.records[0].percent == 100" class="worldrecord">
+                        <p class="type-body">Layout verified by {{level.records[0].user}}</p>
+                    </div>
+                    <div class="lvlstatus">
+                        <p class="type-body">
+                            <template v-if="level.isVerified">Status: Verified</template>
+                            <template v-if="level.percentFinished == 0">Status: Layout</template>
+                            <template v-if="level.percentFinished == 100 && !level.isVerified">Status: Being Verified</template>
+                            <template v-if="level.percentFinished != 0 && level.percentFinished != 100">Status: Decoration being made - {{level.percentFinished}}% done</template>
+                        </p>
+                    </div>
+                </div>
+                <div v-if="level.isVerified" class="tabs">
+                    <button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
+                        <span class="type-label-lg">Showcase</span>
+                    </button>
+                    <template v-if="level.isVerified">
+                        <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
+                            <span class="type-label-lg">Verification</span>
+                        </button>
+                    </template>
+                </div>
+                <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+                <ul class="stats">
+                    <li>
+                        <div class="type-title-sm">ID</div>
+                        <p>{{ (level.id === "private" && level.leakID != null) ? level.leakID : level.id }}</p>
+                    </li>
+                    <li>
+                        <div class="type-title-sm">Length</div>
+                        <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
+                    </li>
+                    <li>
+                        <div class="type-title-sm">Last Update</div>
+                        <p>{{level.lastUpd}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
+                <p>(\\u30CE\\u0CA0\\u76CA\\u0CA0)\\u30CE\\u5F61\\u253B\\u2501\\u253B</p>
+            </div>
+        </div>
 
-                        <li>
-                            <div class="type-title-sm">ID</div>
-                            <p>{{ (level.id === "private" && level.leakID != null) ? level.leakID : level.id }}</p>
-                        </li>
-                        <li>
-                            <div class="type-title-sm">Length</div>
-                            <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
-                        </li>
-						<li>
-                            <div class="type-title-sm">Last Update</div>
-                            <p>{{level.lastUpd}}</p>
-                        </li>
-                    </ul>
+        <!-- Filters Popup -->
+        <div class="filters-overlay" v-if="showFilters" @click.self="showFilters = false">
+            <div class="filters-popup">
+                <div class="filters-popup__title">Filters</div>
+                <div class="filters-popup__columns">
+                    <div>
+                        <div class="filters-popup__column-title">Status</div>
+                        <div class="filters-popup__item" v-for="(item, index) in statusFilters" :key="'s'+index" :class="{ active: item.active }" @click="item.active = !item.active">
+                            <div class="filters-popup__checkbox"><span class="filters-popup__check">\\u2713</span></div>
+                            <span>{{ item.name }}</span>
+                        </div>
+                        <div class="filters-popup__numeric" style="margin-top:0.75rem;">
+                            <label>Min Decoration %</label>
+                            <input type="number" min="0" max="100" v-model.number="minDecoration" placeholder="0" />
+                        </div>
+                        <div class="filters-popup__numeric">
+                            <label>Min Verification %</label>
+                            <input type="number" min="0" max="100" v-model.number="minVerification" placeholder="0" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filters-popup__column-title">Length</div>
+                        <div class="filters-popup__item" v-for="(item, index) in lengthFilters" :key="'l'+index" :class="{ active: item.active }" @click="item.active = !item.active">
+                            <div class="filters-popup__checkbox"><span class="filters-popup__check">\\u2713</span></div>
+                            <span>{{ item.name }}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="filters-popup__column-title">Other</div>
+                        <div class="filters-popup__item" v-for="(item, index) in otherFilters" :key="'o'+index" :class="{ active: item.active }" @click="item.active = !item.active">
+                            <div class="filters-popup__checkbox"><span class="filters-popup__check">\\u2713</span></div>
+                            <span>{{ item.name }}</span>
+                        </div>
+                    </div>
                 </div>
-                <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>(ノಠ益ಠ)ノ彡┻━┻</p>
+                <div class="filters-popup__actions">
+                    <button class="filters-popup__btn filters-popup__btn--reset" @click="resetFilters()">Reset Filters</button>
+                    <button class="filters-popup__btn filters-popup__btn--apply" @click="applyFilters(); showFilters = false">Apply Filters</button>
                 </div>
             </div>
-            <div class="meta-container surface">
-                <div class="meta">
-                    <div class="errors" v-show="errors.length > 0">
-                        <p class="error" v-for="error of errors">{{ error }}</p>
-                    </div>
-                    <div v-if="showColors" class="legend">
-                        <h3>Legend</h3>
-                        <ul class="legend-list">
-                            <li><span class="legend-dot" style="background:#5599ff"></span><span class="legend-text">On layout state</span></li>
-                            <li><span class="legend-dot" style="background:#33dddd"></span><span class="legend-text">Deco is 1%–29% finished</span></li>
-                            <li><span class="legend-dot" style="background:#55ee55"></span><span class="legend-text">Deco is 30%–69% finished</span></li>
-                            <li><span class="legend-dot" style="background:#ffee55"></span><span class="legend-text">Deco is 70%–99% finished</span></li>
-                            <li><span class="legend-dot" style="background:#ffaa44"></span><span class="legend-text">Finished</span></li>
-                            <li><span class="legend-dot" style="background:#ff6622"></span><span class="legend-text">Verification progress is 30%–59%</span></li>
-                            <li><span class="legend-dot" style="background:#ff5555"></span><span class="legend-text">Verification progress is 60%–99%</span></li>
-                            <li><span class="legend-dot" style="background:#bbbbbb"></span><span class="legend-text">Verified, not rated</span></li>
-                            <li><span class="legend-dot" style="background:#ffffff; border: 1px solid #555;"></span><span class="legend-text">Verified and rated</span></li>
-                            <li><span style="font-size:0.75rem;line-height:0.75rem;margin-left:-1px;">🚫</span><span class="legend-text">Pending for removal</span></li>
-                        </ul>
-                    </div>
-                    <ListEditors :editors="editors" />
-                </div>
-            </div>
-        </main>
+        </div>
+    </main>
     `,
     data: () => ({
         list: [],
@@ -206,10 +169,31 @@ export default {
         roleIconMap,
         store,
         toggledShowcase: false,
-        isFiltersActive: false,
-        filtersList: filtersList,
-        showThumbnails: true,
-        showColors: true,
+        showFilters: false,
+        statusFilters: [
+            { active: false, name: "Public", key: "Public" },
+            { active: false, name: "Finished", key: "Finished" },
+            { active: false, name: "Open Verification", key: "Open Verification" },
+            { active: false, name: "Being Verified", key: "Verifying" },
+            { active: false, name: "Layout State", key: "Layout" },
+            { active: false, name: "Verified", key: "Verified" },
+            { active: false, name: "Unrated", key: "Unrated" },
+            { active: false, name: "Rated", key: "Rated" },
+        ],
+        lengthFilters: [
+            { active: false, name: "Medium", key: "Medium" },
+            { active: false, name: "Long", key: "Long" },
+            { active: false, name: "XL", key: "XL" },
+            { active: false, name: "XXL", key: "XXL" },
+            { active: false, name: "XXXL+", key: "XXXL" },
+        ],
+        otherFilters: [
+            { active: false, name: "NC Level", key: "NC" },
+            { active: false, name: "Remake", key: "Remake" },
+            { active: false, name: "Uses NoNG", key: "NONG" },
+            { active: false, name: "Top Quality", key: "Quality" },
+            { active: false, name: "2-Player", key: "2p" },
+        ],
         search: "",
         minDecoration: 0,
         minVerification: 0,
@@ -221,44 +205,24 @@ export default {
     },
     computed: {
         level() {
-            return this.list[this.selected][0];
+            return this.list[this.selected]?.[0];
         },
         video() {
-            if (!this.level.showcase) {
-                return embed(this.level.verification);
-            }
-
-            return embed(
-                this.toggledShowcase || !this.level.isVerified
-                    ? this.level.showcase
-                    : this.level.verification
-            );
+            if (!this.level) return '';
+            if (!this.level.showcase) return embed(this.level.verification);
+            return embed(this.toggledShowcase || !this.level.isVerified ? this.level.showcase : this.level.verification);
         },
     },
     async mounted() {
-        // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
-        // Error handling
         if (!this.list) {
-            this.errors = [
-                "Failed to load list. Retry in a few minutes or notify list staff.",
-            ];
+            this.errors = ["Failed to load list. Retry in a few minutes or notify list staff."];
         } else {
-            this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
-            );
-            if (!this.editors) {
-                this.errors.push("Failed to load list editors.");
-            }
+            this.errors.push(...this.list.filter(([_, err]) => err).map(([_, err]) => `Failed to load level. (${err}.json)`));
         }
 
-        // Auto-assign Open Verification tag on load
         if (this.list) {
             this.list.forEach(item => {
                 const level = item[0];
@@ -275,74 +239,35 @@ export default {
     methods: {
         embed,
         score,
-        filtersToggle() {
-            this.isFiltersActive = !this.isFiltersActive;
-        },
         getLevelNameStyle(level, isSelected) {
             if (!level) return {};
-            const dark = !this.store.dark; // .dark class = light theme, so invert
-
-            // Unrated: always gray
+            const dark = !this.store.dark;
             if (level.tags && level.tags.includes('Unrated')) {
-                const c = isSelected
-                    ? (dark ? '#dddddd' : '#888888')
-                    : (dark ? '#bbbbbb' : '#666666');
+                const c = isSelected ? (dark ? '#dddddd' : '#888888') : (dark ? '#bbbbbb' : '#666666');
                 return { color: c, fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
-            // Rated: pure white/black
             if (level.tags && level.tags.includes('Rated')) {
                 return { color: dark ? '#ffffff' : '#000000', fontWeight: level.isVerified ? 'bold' : 'normal' };
             }
-
-            // Verified: bright gray + bold
             if (level.isVerified) {
-                const c = isSelected
-                    ? (dark ? '#ffffff' : '#000000')
-                    : (dark ? '#bbbbbb' : '#bbbbbb');
+                const c = isSelected ? (dark ? '#ffffff' : '#000000') : (dark ? '#bbbbbb' : '#bbbbbb');
                 return { color: c, fontWeight: 'bold' };
             }
-
-            // Compute verificationProgress
             const recordPercent = Math.max(0, ...((level.records || []).map(r => Number(r.percent) || 0)));
             const runPercent = Math.max(0, ...((level.run || []).map(r => {
                 const parts = String(r.percent).split('-').map(Number);
                 return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? Math.abs(parts[1] - parts[0]) : 0;
             })));
             const verificationProgress = Math.max(recordPercent, runPercent);
-
             const pf = level.percentFinished ?? 0;
             let color;
-
-            if (pf === 100 && verificationProgress >= 60) {
-                color = dark
-                    ? (isSelected ? '#ff9999' : '#ff5555')
-                    : (isSelected ? '#cc7a7a' : '#cc4444');
-            } else if (pf === 100 && verificationProgress >= 30) {
-                color = dark
-                    ? (isSelected ? '#ffaa66' : '#ff6622')
-                    : (isSelected ? '#cc8851' : '#cc511b');
-            } else if (pf === 100) {
-                color = dark
-                    ? (isSelected ? '#ffcc77' : '#ffaa44')
-                    : (isSelected ? '#cca35f' : '#cc8836');
-            } else if (pf >= 70) {
-                color = dark
-                    ? (isSelected ? '#ffff77' : '#ffee55')
-                    : (isSelected ? '#cccc5f' : '#ccbe44');
-            } else if (pf >= 30) {
-                color = dark
-                    ? (isSelected ? '#88ff88' : '#55ee55')
-                    : (isSelected ? '#6ccc6c' : '#44be44');
-            } else if (pf >= 1) {
-                color = dark
-                    ? (isSelected ? '#66ffff' : '#33dddd')
-                    : (isSelected ? '#51cccc' : '#28b0b0');
-            } else {
-                color = dark
-                    ? (isSelected ? '#88bbff' : '#5599ff')
-                    : (isSelected ? '#6c95cc' : '#447acc');
-            }
-
+            if (pf === 100 && verificationProgress >= 60) color = dark ? (isSelected ? '#ff9999' : '#ff5555') : (isSelected ? '#cc7a7a' : '#cc4444');
+            else if (pf === 100 && verificationProgress >= 30) color = dark ? (isSelected ? '#ffaa66' : '#ff6622') : (isSelected ? '#cc8851' : '#cc511b');
+            else if (pf === 100) color = dark ? (isSelected ? '#ffcc77' : '#ffaa44') : (isSelected ? '#cca35f' : '#cc8836');
+            else if (pf >= 70) color = dark ? (isSelected ? '#ffff77' : '#ffee55') : (isSelected ? '#cccc5f' : '#ccbe44');
+            else if (pf >= 30) color = dark ? (isSelected ? '#88ff88' : '#55ee55') : (isSelected ? '#6ccc6c' : '#44be44');
+            else if (pf >= 1) color = dark ? (isSelected ? '#66ffff' : '#33dddd') : (isSelected ? '#51cccc' : '#28b0b0');
+            else color = dark ? (isSelected ? '#88bbff' : '#5599ff') : (isSelected ? '#6c95cc' : '#447acc');
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
         getThumbnail(level) {
@@ -365,20 +290,16 @@ export default {
         },
         applyFilters() {
             if (!this.list) return;
-
-            // Auto-assign Open Verification tag
             this.list.forEach(item => {
                 const level = item[0];
                 if (!level) return;
                 if (level.verifier && level.verifier.toLowerCase() === 'open verification') {
                     if (!level.tags) level.tags = [];
-                    if (!level.tags.includes('Open Verification')) {
-                        level.tags.push('Open Verification');
-                    }
+                    if (!level.tags.includes('Open Verification')) level.tags.push('Open Verification');
                 }
             });
 
-            const activeFilters = this.filtersList.filter(f => f.active && !f.separator);
+            const activeFilters = [...this.statusFilters, ...this.lengthFilters, ...this.otherFilters].filter(f => f.active);
             const searchQuery = this.search.toLowerCase().trim();
             const minDec = this.minDecoration || 0;
             const minVer = this.minVerification || 0;
@@ -386,48 +307,33 @@ export default {
             this.list.forEach(item => {
                 const level = item[0];
                 if (!level) return;
-
-                // Search
                 const name = level.name.toLowerCase();
                 const matchesSearch = !searchQuery || name.includes(searchQuery);
-
-                // Tag filters
                 let matchesTags = true;
                 if (activeFilters.length > 0) {
                     for (const filter of activeFilters) {
-                        if (!level.tags || !level.tags.includes(filter.key)) {
-                            matchesTags = false;
-                            break;
-                        }
+                        if (!level.tags || !level.tags.includes(filter.key)) { matchesTags = false; break; }
                     }
                 }
-
-                // Min Decoration % filter (uses level.percentFinished)
                 const decoration = level.percentFinished ?? 0;
                 const matchesDecoration = decoration >= minDec;
-
-                // Min Verification % filter
-                // records: use percent directly
-                const recordPercent = Math.max(0, ...((level.records || [])
-                    .map(r => Number(r.percent) || 0)));
-                // run: use |end - start| from "start-end" string format
-                const runPercent = Math.max(0, ...((level.run || [])
-                    .map(r => {
-                        const parts = String(r.percent).split('-').map(Number);
-                        return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1]))
-                            ? Math.abs(parts[1] - parts[0])
-                            : 0;
-                    })));
+                const recordPercent = Math.max(0, ...((level.records || []).map(r => Number(r.percent) || 0)));
+                const runPercent = Math.max(0, ...((level.run || []).map(r => {
+                    const parts = String(r.percent).split('-').map(Number);
+                    return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? Math.abs(parts[1] - parts[0]) : 0;
+                })));
                 const verificationProgress = Math.max(recordPercent, runPercent);
                 const matchesVerification = level.isVerified || verificationProgress >= minVer;
                 const matchesDecorationFinal = level.isVerified || matchesDecoration;
-
                 level.isHidden = !(matchesSearch && matchesTags && matchesDecorationFinal && matchesVerification);
             });
         },
-        useFilter(index) {
-            if (filtersList[index].separator) return;
-            this.filtersList[index].active = !this.filtersList[index].active;
+        resetFilters() {
+            this.statusFilters.forEach(f => f.active = false);
+            this.lengthFilters.forEach(f => f.active = false);
+            this.otherFilters.forEach(f => f.active = false);
+            this.minDecoration = 0;
+            this.minVerification = 0;
             this.applyFilters();
         },
     },
