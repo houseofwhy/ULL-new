@@ -28,7 +28,7 @@
 
 .filters-popup__title {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.53rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
@@ -42,7 +42,7 @@
 
 .filters-popup__column-title {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 0.92rem;
+    font-size: 0.83rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -57,7 +57,7 @@
     padding: 0.35rem 0;
     cursor: pointer;
     font-family: "Lexend Deca", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.08rem;
     font-weight: 500;
 }
 
@@ -66,8 +66,8 @@
 }
 
 .filters-popup__checkbox {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.17rem;
+    height: 1.17rem;
     border: 2px solid rgba(128, 128, 128, 0.5);
     border-radius: 3px;
     display: flex;
@@ -84,7 +84,7 @@
 }
 
 .filters-popup__check {
-    font-size: 0.86rem;
+    font-size: 0.77rem;
     opacity: 0;
 }
 
@@ -101,7 +101,7 @@
 
 .filters-popup__numeric label {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 0.98rem;
+    font-size: 0.88rem;
     font-weight: 500;
     opacity: 0.7;
 }
@@ -114,7 +114,7 @@
     background: rgba(128, 128, 128, 0.1);
     color: inherit;
     font-family: "Lexend Deca", sans-serif;
-    font-size: 0.98rem;
+    font-size: 0.88rem;
     box-sizing: border-box;
 }
 
@@ -133,7 +133,7 @@
 
 .filters-popup__btn {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 1.03rem;
+    font-size: 0.93rem;
     font-weight: 600;
     padding: 0.6rem 1.5rem;
     border: none;

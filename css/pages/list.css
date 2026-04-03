@@ -184,8 +184,9 @@ main.page-list--pending .list-container {
 
 
 .page-list-new .level-container-new {
-    padding: 2rem;
+    padding: 1rem 2rem 2rem 1rem;
 }
+
 
 /* Search row with search + filters button */
 .search-row {
