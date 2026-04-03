@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 12.5%;
+    width: 240px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -119,7 +119,7 @@
 
 /* Push page content to the right */
 .page-with-sidebar {
-    margin-left: 12.5%;
+    margin-left: 240px;
     height: 100vh;
     display: flex;
     flex-direction: column;
