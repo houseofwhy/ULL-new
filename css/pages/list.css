@@ -178,12 +178,13 @@ main.page-list--pending .list-container {
 }
 
 .page-list-new .list-container-new {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0 1.5rem 1rem;
+    border-right: 1px solid rgba(128, 128, 128, 0.15);
 }
+
 
 .page-list-new .level-container-new {
     padding: 2rem;
-    border-left: 1px solid rgba(128, 128, 128, 0.15);
 }
 
 /* Search row with search + filters button */
