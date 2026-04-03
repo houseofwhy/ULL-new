@@ -14,7 +14,7 @@
 
 .filters-popup {
     width: 55%;
-    max-height: 80vh;
+    max-height: 85vh;
     background-color: var(--color-background);
     color: var(--color-on-background);
     border: 1px solid rgba(128, 128, 128, 0.3);

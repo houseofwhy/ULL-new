@@ -194,7 +194,9 @@ main.page-list--pending .list-container {
     gap: 0.75rem;
     margin-bottom: 1rem;
     align-items: center;
+    margin-left: 20px;
 }
+
 
 .search-new {
     flex: 1;
@@ -274,7 +276,7 @@ main.page-list--pending .list-container {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    width: 100%;
+    width: calc(100% - 20px);;
 }
 .page-list-new .list .level-thumbnail {
     width: 5.33rem;
