@@ -117,6 +117,10 @@
     height: 1.25rem;
 }
 
+.root:not(.dark) .sidebar__discord img {
+    filter: invert(1);
+}
+
 /* Push page content to the right */
 .page-with-sidebar {
     margin-left: 180px;

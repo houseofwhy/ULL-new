@@ -39,16 +39,17 @@ export default {
                 <div v-if="selectedPlayer.records.length">
                     <h3 style="margin-bottom:0.75rem;">Records ({{ selectedPlayer.records.length }})</h3>
                     <table style="width:100%; border-collapse:collapse;">
-                        <tr v-for="rec in selectedPlayer.records" :key="rec.levelName + rec.percent" style="border-bottom: 1px solid rgba(128,128,128,0.15);">
-                            <td style="padding:0.6rem 0; width:4.5rem; text-align:right; padding-right:1rem; opacity:0.7;">
-                                <span style="font-size:0.85rem;">+{{ rec.score.toFixed(3) }}</span>
+                        <tr v-for="rec in selectedPlayer.records" :key="rec.levelName + rec.percent + rec.type" style="border-bottom: 1px solid rgba(128,128,128,0.15);">
+                            <td style="padding:0.6rem 0; width:4.5rem; text-align:right; padding-right:1rem;">
+                                <span style="font-family:'Lexend Deca',sans-serif; font-size:0.8rem; font-weight:700; color:gray;">+{{ rec.score.toFixed(3) }}</span>
                             </td>
                             <td style="padding:0.6rem 0; flex:1;">
                                 <span class="type-label-lg">{{ rec.levelName }}</span>
-                                <span style="opacity:0.5; font-size:0.8rem; margin-left:0.5rem;">#{{ rec.levelRank }}</span>
+                                <span style="font-family:'Lexend Deca',sans-serif; font-size:0.8rem; font-weight:700; color:gray; margin-left:0.5rem;">#{{ rec.levelRank }}</span>
                             </td>
                             <td style="padding:0.6rem 0; text-align:right; padding-left:1rem; font-family:'Lexend Deca',sans-serif;">
-                                <span v-if="rec.type === 'run'">{{ rec.displayPercent }}%</span>
+                                <span v-if="rec.type === 'verification'">Verification</span>
+                                <span v-else-if="rec.type === 'run'">{{ rec.displayPercent }}%</span>
                                 <span v-else>{{ rec.percent }}%</span>
                             </td>
                         </tr>
@@ -94,6 +95,21 @@ export default {
             if (err || !level) return;
             const levelRank = rank + 1;
             const levelName = level.name;
+
+            // Verified levels: give verifier 2x the score of a 100% record
+            if (level.isVerified && level.verifier) {
+                const key = level.verifier.toLowerCase();
+                if (!playerMap[key]) playerMap[key] = { name: level.verifier, records: [] };
+                const sc = recordScore(levelRank, 100) * 2;
+                playerMap[key].records.push({
+                    levelName,
+                    levelRank,
+                    percent: 100,
+                    score: sc,
+                    type: 'verification',
+                });
+                return; // Skip records and runs for verified levels
+            }
 
             // Process records (from 0%)
             if (level.records) {

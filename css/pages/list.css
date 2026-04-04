@@ -216,6 +216,10 @@ main.page-list--pending .list-container {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.root:not(.dark) .search-new {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .filters-btn {
     font-family: "Lexend Deca", sans-serif;
     font-size: 0.95rem;
