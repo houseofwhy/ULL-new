@@ -339,8 +339,23 @@ main.page-list--pending .list-container {
 }
 
 /* Leaderboard overrides */
-.page-leaderboard {
+.page-list-new.page-leaderboard {
     grid-template-columns: 1fr 1.5fr;
+    max-width: none;
+    margin: 0;
+    column-gap: 0;
+    grid-template-rows: 1fr;
+}
+.page-list-new.page-leaderboard .list-container-new {
+    padding: 1.5rem 0 1.5rem 1rem;
+    border-right: 1px solid rgba(128, 128, 128, 0.15);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.page-list-new.page-leaderboard .level-container-new {
+    padding: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 .page-leaderboard .search-row--leaderboard {
     margin-left: 20px;
@@ -355,10 +370,7 @@ main.page-list--pending .list-container {
     justify-content: space-between;
     width: calc(100% - 20px);
 }
-.page-leaderboard .level-container-new {
-    padding: 2rem;
-}
-.page-leaderboard .level-container-new .level {
+.page-list-new.page-leaderboard .level-container-new .level {
     max-width: none;
     width: 100%;
 }

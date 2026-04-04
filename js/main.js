@@ -83,6 +83,9 @@ router.afterEach((to) => {
         startHintTimer();
     } else {
         stopHintTimer();
+        if (store.showColoringHint) {
+            store.dismissColoringHint();
+        }
     }
 });
 
