@@ -332,6 +332,21 @@ main.page-list--pending .list-container {
     gap: 1rem;
 }
 
+/* Leaderboard overrides */
+.page-leaderboard .search-row--leaderboard {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.page-leaderboard .search-row--leaderboard .search-new {
+    max-width: 100%;
+}
+.page-leaderboard .list .level button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+}
+
 /* Pending page - new 2-column layout */
 .page-pending-new {
     display: grid;

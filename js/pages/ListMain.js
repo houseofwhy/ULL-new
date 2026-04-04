@@ -125,7 +125,7 @@ export default {
                     <div>
                         <div class="filters-popup__column-title">Status</div>
                         <div class="filters-popup__item" v-for="(item, index) in statusFilters" :key="'s'+index" :class="{ active: item.active }" @click="item.active = !item.active">
-                            <div class="filters-popup__checkbox"><span class="filters-popup__check">\\u2713</span></div>
+                            <div class="filters-popup__checkbox"><span class="filters-popup__check">✓</span></div>
                             <span>{{ item.name }}</span>
                         </div>
                         <div class="filters-popup__numeric" style="margin-top:0.75rem;">
@@ -140,14 +140,14 @@ export default {
                     <div>
                         <div class="filters-popup__column-title">Length</div>
                         <div class="filters-popup__item" v-for="(item, index) in lengthFilters" :key="'l'+index" :class="{ active: item.active }" @click="item.active = !item.active">
-                            <div class="filters-popup__checkbox"><span class="filters-popup__check">\\u2713</span></div>
+                            <div class="filters-popup__checkbox"><span class="filters-popup__check">✓</span></div>
                             <span>{{ item.name }}</span>
                         </div>
                     </div>
                     <div>
                         <div class="filters-popup__column-title">Other</div>
                         <div class="filters-popup__item" v-for="(item, index) in otherFilters" :key="'o'+index" :class="{ active: item.active }" @click="item.active = !item.active">
-                            <div class="filters-popup__checkbox"><span class="filters-popup__check">\\u2713</span></div>
+                            <div class="filters-popup__checkbox"><span class="filters-popup__check">✓</span></div>
                             <span>{{ item.name }}</span>
                         </div>
                     </div>

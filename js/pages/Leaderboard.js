@@ -10,9 +10,9 @@ export default {
     <main v-if="loading" class="surface" style="display:flex;align-items:center;justify-content:center;">
         <Spinner></Spinner>
     </main>
-    <main v-else class="page-list-new">
+    <main v-else class="page-list-new page-leaderboard">
         <div class="list-container-new surface">
-            <div class="search-row">
+            <div class="search-row search-row--leaderboard">
                 <input v-model="search" class="search-new" type="text" placeholder="Search players..." />
             </div>
             <table class="list" v-if="players.length">
@@ -21,9 +21,9 @@ export default {
                         <p class="type-label-lg">#{{ player.globalRank }}</p>
                     </td>
                     <td class="level" :class="{ 'active': selected === i }">
-                        <button @click="selected = i" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+                        <button @click="selected = i">
                             <span class="type-label-lg">{{ player.name }}</span>
-                            <span class="type-label-lg" style="opacity:0.6; font-size:0.85rem;">{{ player.total.toFixed(3) }}</span>
+                            <span class="type-label-lg" style="opacity:0.6; font-size:0.85rem; margin-right:20px;">{{ player.total.toFixed(3) }}</span>
                         </button>
                     </td>
                 </tr>
@@ -34,7 +34,7 @@ export default {
             <div v-if="selectedPlayer" class="level" style="gap:1.5rem;">
                 <div>
                     <h1>{{ selectedPlayer.name }}</h1>
-                    <p class="type-body" style="margin-top:0.5rem; opacity:0.7; font-size:1.1rem;">Total Score: <strong>{{ selectedPlayer.total.toFixed(3) }}</strong></p>
+                    <p class="type-body" style="margin-top:1rem; margin-bottom:0.5rem; opacity:0.7; font-size:1.1rem; font-family:'Lexend Deca',sans-serif;">Total Score: <strong>{{ selectedPlayer.total.toFixed(3) }}</strong></p>
                 </div>
                 <div v-if="selectedPlayer.records.length">
                     <h3 style="margin-bottom:0.75rem;">Records ({{ selectedPlayer.records.length }})</h3>
@@ -47,8 +47,9 @@ export default {
                                 <span class="type-label-lg">{{ rec.levelName }}</span>
                                 <span style="opacity:0.5; font-size:0.8rem; margin-left:0.5rem;">#{{ rec.levelRank }}</span>
                             </td>
-                            <td style="padding:0.6rem 0; text-align:right; padding-left:1rem;">
-                                <span>{{ rec.percent }}%</span>
+                            <td style="padding:0.6rem 0; text-align:right; padding-left:1rem; font-family:'Lexend Deca',sans-serif;">
+                                <span v-if="rec.type === 'run'">{{ rec.displayPercent }}%</span>
+                                <span v-else>{{ rec.percent }}%</span>
                             </td>
                         </tr>
                     </table>
@@ -127,6 +128,7 @@ export default {
                         levelName,
                         levelRank,
                         percent,
+                        displayPercent: String(runRecord.percent),
                         score: sc,
                         type: 'run',
                     });
