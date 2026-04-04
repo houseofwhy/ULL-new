@@ -216,7 +216,7 @@ main.page-list--pending .list-container {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.root:not(.dark) .search-new {
+.root.dark .search-new {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -339,6 +339,9 @@ main.page-list--pending .list-container {
 }
 
 /* Leaderboard overrides */
+.page-leaderboard {
+    grid-template-columns: 1fr 1.5fr;
+}
 .page-leaderboard .search-row--leaderboard {
     margin-left: 20px;
     margin-right: 20px;

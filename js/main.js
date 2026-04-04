@@ -85,3 +85,17 @@ router.afterEach((to) => {
         stopHintTimer();
     }
 });
+
+// Shift+P+O+U to force-show coloring hint popup
+const hintKeys = new Set();
+window.addEventListener('keydown', (e) => {
+    if (e.shiftKey) hintKeys.add(e.key.toLowerCase());
+    if (e.shiftKey && hintKeys.has('p') && hintKeys.has('o') && hintKeys.has('u')) {
+        store.showColoringHint = true;
+        hintKeys.clear();
+    }
+});
+window.addEventListener('keyup', (e) => {
+    hintKeys.delete(e.key.toLowerCase());
+    if (!e.shiftKey) hintKeys.clear();
+});
