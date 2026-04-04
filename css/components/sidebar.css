@@ -118,7 +118,7 @@
 }
 
 .root:not(.dark) .sidebar__discord img {
-    filter: invert(0);
+    filter: brightness(0);
 }
 
 /* Push page content to the right */

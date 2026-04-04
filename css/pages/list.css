@@ -352,6 +352,14 @@ main.page-list--pending .list-container {
     justify-content: space-between;
     width: calc(100% - 20px);
 }
+.page-leaderboard .level-container-new {
+    padding: 2rem;
+}
+.page-leaderboard .level-container-new .level {
+    max-width: none;
+    width: 100%;
+}
+
 
 /* Pending page - new 2-column layout */
 .page-pending-new {

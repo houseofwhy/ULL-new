@@ -7,6 +7,10 @@ export const store = Vue.reactive({
     showSettings: false,
     showColoringHint: false,
     coloringHintDismissed: localStorage.getItem('coloringHintDismissed') === 'true',
+    coloringHintCooldown: (() => {
+        const until = Number(localStorage.getItem('coloringHintCooldownUntil') || 0);
+        return Date.now() < until;
+    })(),
     coloringHintNeverShow: false,
     toggleDark() {
         this.dark = !this.dark;
@@ -21,6 +25,9 @@ export const store = Vue.reactive({
             this.coloringHintDismissed = true;
             localStorage.setItem('coloringHintDismissed', 'true');
         }
+        // 10 minute cooldown
+        this.coloringHintCooldown = true;
+        localStorage.setItem('coloringHintCooldownUntil', String(Date.now() + 10 * 60 * 1000));
     },
 });
 
@@ -53,7 +60,7 @@ let hintElapsed = 0;
 let hintInterval = null;
 
 function startHintTimer() {
-    if (store.coloringHintDismissed || store.showColoringHint || hintInterval) return;
+    if (store.coloringHintDismissed || store.coloringHintCooldown || store.showColoringHint || hintInterval) return;
     hintInterval = setInterval(() => {
         hintElapsed++;
         if (hintElapsed >= 20) {
