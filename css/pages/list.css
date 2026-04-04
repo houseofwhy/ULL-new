@@ -312,8 +312,10 @@ main.page-list--pending .list-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 48rem;
+    width: 100%;
+    max-width: none;
 }
+
 .page-list-new .level-container-new .level .level-authors {
     display: grid;
     grid-template-columns: max-content 1fr;

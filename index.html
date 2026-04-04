@@ -36,11 +36,76 @@
         @media (min-width: 769px) {
             .mob { display: none !important; }
         }
+        /* Hide everything until Vue mounts to prevent FOUC */
+        [v-cloak] { display: none !important; }
+
+        /* Coloring hint popup */
+        .coloring-hint {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 150;
+            background-color: var(--color-background);
+            border: 1px solid rgba(128,128,128,0.3);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-width: 280px;
+            font-family: "Lexend Deca", sans-serif;
+            pointer-events: auto;
+        }
+        .coloring-hint__close {
+            position: absolute;
+            top: 0.4rem;
+            left: 0.6rem;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--color-on-background);
+            opacity: 0.5;
+            line-height: 1;
+        }
+        .coloring-hint__close:hover { opacity: 1; }
+        .coloring-hint__text {
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            color: var(--color-on-background);
+        }
+        .coloring-hint__never {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            opacity: 0.6;
+            cursor: pointer;
+            color: var(--color-on-background);
+        }
+        .coloring-hint__never input { cursor: pointer; }
+        .coloring-hint__btn {
+            display: inline-block;
+            text-align: center;
+            font-family: "Lexend Deca", sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.4rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: opacity 100ms ease;
+        }
+        .coloring-hint__btn:hover { opacity: 0.85; }
     </style>
 </head>
 
 <body id="app">
-<div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
+<div v-cloak class="root" :class="{ dark: store.dark, shitty: store.shitty }">
     <!-- Vertical Sidebar (PC only) -->
     <aside class="sidebar">
         <router-link to="/home" class="sidebar__logo">
@@ -100,6 +165,17 @@
                 Contact Support
             </a>
         </div>
+    </div>
+
+    <!-- Coloring Hint Popup -->
+    <div class="coloring-hint" v-if="store.showColoringHint">
+        <button class="coloring-hint__close" @click="store.dismissColoringHint()">&times;</button>
+        <p class="coloring-hint__text">Learn about level coloring here</p>
+        <label class="coloring-hint__never">
+            <input type="checkbox" v-model="store.coloringHintNeverShow" />
+            Don't show again
+        </label>
+        <a class="coloring-hint__btn" href="#/information" target="_blank">Go to Information</a>
     </div>
 
     <!-- Page Content -->
