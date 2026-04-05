@@ -7,7 +7,9 @@
  */
 export function recordScore(rank, percent) {
     if (percent <= 0 || rank <= 0) return 0;
-    let s = 0.7 * percent + 10 + 1.5 * (30000 / (rank + 35) - 2);
+    const s_p = 0.7 * percent + 10;
+    const s_r = 1.5 * (30000 / (rank + 40) - 2);
+    let s = s_p * s_r / 60;
     s = Math.max(0, s);
 
     return Math.round(s * 1000) / 1000;
