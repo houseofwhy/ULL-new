@@ -51,6 +51,10 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
+// Mark desktop for CSS min-width (user-agent only, not viewport width)
+if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+    document.documentElement.classList.add('desktop');
+}
 
 app.use(router);
 app.mount('#app');

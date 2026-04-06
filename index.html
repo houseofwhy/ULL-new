@@ -29,13 +29,7 @@
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
     <style>
-        @media (max-width: 768px) {
-            .sidebar { display: none !important; }
-            .page-with-sidebar { display: none !important; }
-        }
-        @media (min-width: 769px) {
-            .mob { display: none !important; }
-        }
+
         /* Hide everything until Vue mounts to prevent FOUC */
         [v-cloak] { display: none !important; }
 
@@ -108,9 +102,9 @@
 <div v-cloak class="root" :class="{ dark: store.dark, shitty: store.shitty }">
     <!-- Vertical Sidebar (PC only) -->
     <!-- Sidebar toggle (visible only when sidebar is collapsed) -->
-    <button class="sidebar-toggle" @click="store.sidebarOpen = !store.sidebarOpen">&#9776;</button>
+    <button v-if="$route.path !== '/mobile'" class="sidebar-toggle" @click="store.sidebarOpen = !store.sidebarOpen">&#9776;</button>
     <!-- Sidebar backdrop (overlay mode) -->
-    <div class="sidebar-backdrop" v-if="store.sidebarOpen" @click="store.sidebarOpen = false"></div>
+    <div v-if="$route.path !== '/mobile' && store.sidebarOpen" class="sidebar-backdrop" @click="store.sidebarOpen = false"></div>
 
     <aside class="sidebar" :class="{ 'sidebar--open': store.sidebarOpen }">
         <router-link to="/home" class="sidebar__logo">
@@ -184,12 +178,12 @@
     </div>
 
     <!-- Page Content (PC) -->
-    <div class="page-with-sidebar">
+    <div v-if="$route.path !== '/mobile'" class="page-with-sidebar">
         <router-view></router-view>
     </div>
 
     <!-- Page Content (Mobile) -->
-    <div class="mob">
+    <div v-if="$route.path === '/mobile'" class="mob">
         <router-view></router-view>
     </div>
 </div>

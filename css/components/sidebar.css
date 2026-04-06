@@ -130,11 +130,9 @@
 }
 
 /* Minimum page width (PC only) — prevents content from getting too narrow */
-@media (min-width: 769px) {
-    html {
-        min-width: 850px;
-        overflow-x: auto;
-    }
+html.desktop {
+    min-width: 850px;
+    overflow-x: auto;
 }
 
 /* Sidebar toggle button (hidden by default, shown when collapsed) */
@@ -165,7 +163,7 @@
 }
 
 /* Collapsed sidebar breakpoint */
-@media (max-width: 1100px) and (min-width: 769px) {
+@media (max-width: 1100px) {
     .sidebar {
         display: none;
     }
