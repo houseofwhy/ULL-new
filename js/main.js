@@ -4,6 +4,7 @@ export const store = Vue.reactive({
     dark: localStorage.getItem('dark') === null ? false : JSON.parse(localStorage.getItem('dark')),
     thumbnails: localStorage.getItem('thumbnails') === null ? true : JSON.parse(localStorage.getItem('thumbnails')),
     levelColoring: localStorage.getItem('levelColoring') === null ? true : JSON.parse(localStorage.getItem('levelColoring')),
+    sidebarOpen: false,
     showSettings: false,
     showColoringHint: false,
     coloringHintDismissed: localStorage.getItem('coloringHintDismissed') === 'true',
@@ -53,6 +54,13 @@ router.beforeEach((to, from, next) => {
 
 app.use(router);
 app.mount('#app');
+
+// Close sidebar overlay when resizing past the collapse breakpoint
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1100 && store.sidebarOpen) {
+        store.sidebarOpen = false;
+    }
+});
 
 // Coloring hint popup timer — counts only on list/upcoming pages
 const hintPages = ['/list', '/listmain', '/listfuture', '/upcoming'];

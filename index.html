@@ -107,7 +107,12 @@
 <body id="app">
 <div v-cloak class="root" :class="{ dark: store.dark, shitty: store.shitty }">
     <!-- Vertical Sidebar (PC only) -->
-    <aside class="sidebar">
+    <!-- Sidebar toggle (visible only when sidebar is collapsed) -->
+    <button class="sidebar-toggle" @click="store.sidebarOpen = !store.sidebarOpen">&#9776;</button>
+    <!-- Sidebar backdrop (overlay mode) -->
+    <div class="sidebar-backdrop" v-if="store.sidebarOpen" @click="store.sidebarOpen = false"></div>
+
+    <aside class="sidebar" :class="{ 'sidebar--open': store.sidebarOpen }">
         <router-link to="/home" class="sidebar__logo">
             <h2>ULL</h2>
             <p>v1.2.0</p>
@@ -176,7 +181,6 @@
             Don't show again
         </label>
         <a class="coloring-hint__btn" href="#/information" target="_blank" @click="store.dismissColoringHint()">Go to Information</a>
-
     </div>
 
     <!-- Page Content (PC) -->
@@ -188,8 +192,6 @@
     <div class="mob">
         <router-view></router-view>
     </div>
-</div>
-
 </div>
 </body>
 
