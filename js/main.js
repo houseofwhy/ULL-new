@@ -43,7 +43,7 @@ const router = VueRouter.createRouter({
 // Auto-redirect mobile devices
 const isMobile = () => window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 router.beforeEach((to, from, next) => {
-    if (isMobile() && to.path !== '/mobile') {
+    if (isMobile() && to.path !== '/mobile' && to.path !== '/generator') {
         next('/mobile');
     } else if (!isMobile() && to.path === '/mobile') {
         next('/');
