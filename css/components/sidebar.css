@@ -131,8 +131,9 @@
 
 /* Minimum page width (PC only) — prevents content from getting too narrow */
 @media (min-width: 769px) {
-    .root {
+    html {
         min-width: 850px;
+        overflow-x: auto;
     }
 }
 
