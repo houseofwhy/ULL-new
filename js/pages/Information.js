@@ -384,6 +384,7 @@ export default {
     color: var(--color-on-background);
     opacity: 0.2;
 }
+</component>
 
 
 
