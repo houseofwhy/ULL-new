@@ -180,7 +180,7 @@ export default {
     font-weight: 400;
     color: var(--color-on-background);
     opacity: 0.5;
-    margin-bottom: 16px;
+    margin-bottom: 16px !important;
     line-height: 1.6;
 }
 
@@ -409,7 +409,7 @@ export default {
                 <div class="info-card__title">List Editors</div>
                 <div class="info-editors">
                     <div v-for="editor in editors" class="info-editor">
-                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user-lock') + (store.dark ? '-dark' : '') + '.svg'" :alt="editor.role" />
+                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user-lock') + (store.dark ? '' : '-dark' ) + '.svg'" :alt="editor.role" />
                         <a v-if="editor.link && editor.link !== '#'" :href="editor.link" target="_blank">{{ editor.name }}</a>
                         <span v-else class="info-editor__name">{{ editor.name }}</span>
                         <span class="info-role" :class="'info-role-' + editor.role">{{ roleLabel(editor.role) }}</span>
