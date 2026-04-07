@@ -21,11 +21,13 @@ export default {
     template: `
 <component :is="'style'">
 /* ── INFO PAGE ── */
-.info-page {
-    height: 100%;
-    overflow-y: auto;
-    scrollbar-width: thin;
-}
+ .info-page {
+   height: 100%;
+   flex: 1;
+   min-height: 0;
+   overflow-y: auto;
+   scrollbar-width: thin;
+ }
 .info-page * { font-family: "Lexend Deca", sans-serif; }
 
 /* ── HERO ── */
