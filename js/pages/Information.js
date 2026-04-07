@@ -56,7 +56,7 @@ export default {
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: #c084fc;
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 }
 .info-hero p {
     max-width: 600px;
