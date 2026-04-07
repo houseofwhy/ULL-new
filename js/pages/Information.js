@@ -29,15 +29,11 @@ export default {
     scrollbar-width: thin;
 }
 .info-page, .info-page * { font-family: "Lexend Deca", sans-serif; box-sizing: border-box; }
-.info-page section,
-.info-page div,
-.info-page footer,
-.info-page nav,
 .info-page h1,
 .info-page h2,
 .info-page h3,
 .info-page h4,
-.info-page p { display: block; margin: 0; padding: 0; }
+.info-page p { margin: 0; padding: 0; }
 
 /* ── HERO ── */
 .info-hero {
