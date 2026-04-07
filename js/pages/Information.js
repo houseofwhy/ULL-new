@@ -56,7 +56,7 @@ export default {
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: #c084fc;
-    margin-bottom: 0;
+    margin-bottom: 30px;
 }
 .info-hero p {
     max-width: 600px;
@@ -128,6 +128,7 @@ export default {
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
+    line-height: 1.6;
 }
 .info-editor a:hover { text-decoration: underline; }
 .info-role {
@@ -160,6 +161,7 @@ export default {
     gap: 0.7rem;
     font-size: 0.85rem;
     font-weight: 400;
+    line-height: 1.6;
     color: var(--color-on-background);
 }
 .info-legend-dot {
@@ -178,7 +180,7 @@ export default {
     font-weight: 400;
     color: var(--color-on-background);
     opacity: 0.5;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     line-height: 1.6;
 }
 
@@ -343,6 +345,7 @@ export default {
     opacity: 0.4;
     line-height: 1.6;
     max-width: 320px;
+    margin-top: 1em;
 }
 .info-footer-links {
     display: flex !important;
@@ -381,7 +384,7 @@ export default {
     color: var(--color-on-background);
     opacity: 0.2;
 }
-</component>
+
 
 
 <main class="info-page surface">
