@@ -34,6 +34,10 @@ export default {
 .info-page h3,
 .info-page h4,
 .info-page p { margin: 0; padding: 0; }
+.info-page h1::before, .info-page h1::after,
+.info-page h2::before, .info-page h2::after,
+.info-page h3::before, .info-page h3::after,
+.info-page h4::before, .info-page h4::after { display: none; }
 
 /* ── HERO ── */
 .info-hero {
@@ -46,10 +50,11 @@ export default {
 .root.dark .info-hero {
     background: linear-gradient(180deg, rgba(62,0,249,0.08) 0%, transparent 100%);
 }
-.info-hero h1 {
+.info-page .info-hero h1 {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    line-height: 1.2;
     color: #c084fc;
     margin-bottom: 0;
 }
@@ -170,6 +175,7 @@ export default {
 }
 .info-coloring-desc {
     font-size: 0.8rem;
+    font-weight: 400;
     color: var(--color-on-background);
     opacity: 0.5;
     margin-bottom: 1rem;
@@ -208,26 +214,30 @@ export default {
     padding: 1.5rem 1.75rem;
     border-bottom: 1px solid rgba(128,128,128,0.15);
 }
-.info-guidelines-header h2 {
+.info-page .info-guidelines-header h2 {
     font-size: 1.25rem;
     font-weight: 700;
+    line-height: 1.3;
     color: var(--color-on-background);
 }
-.info-guidelines-header p {
+.info-page .info-guidelines-header p {
     font-size: 0.8rem;
+    font-weight: 400;
     color: var(--color-on-background);
     opacity: 0.5;
-    margin-top: 0.25rem;
+    margin-top: 0.35rem;
 }
-.info-guidelines-search {
+.info-page .info-guidelines-search {
     padding: 0.5rem 0.85rem;
     background: rgba(128,128,128,0.08);
     border: 1px solid rgba(128,128,128,0.3);
     border-radius: 0.4rem;
     color: var(--color-on-background);
-    font-family: inherit;
+    font-family: "Lexend Deca", sans-serif;
     font-size: 0.8rem;
+    font-weight: 400;
     width: 220px;
+    line-height: 1.4;
 }
 .info-guidelines-search:focus {
     outline: 2px solid var(--color-primary);
@@ -319,14 +329,16 @@ export default {
     justify-content: space-between;
     gap: 2rem;
 }
-.info-footer-brand h3 {
+.info-page .info-footer-brand h3 {
     font-size: 1rem;
     font-weight: 700;
+    line-height: 1.3;
     color: var(--color-on-background);
     margin-bottom: 0.25rem;
 }
-.info-footer-brand p {
+.info-page .info-footer-brand p {
     font-size: 0.75rem;
+    font-weight: 400;
     color: var(--color-on-background);
     opacity: 0.4;
     line-height: 1.6;
@@ -370,6 +382,7 @@ export default {
     opacity: 0.2;
 }
 </component>
+
 
 <main class="info-page surface">
     <!-- Hero -->
