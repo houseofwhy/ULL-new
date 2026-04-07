@@ -21,17 +21,27 @@ export default {
     template: `
 <component :is="'style'">
 /* ── INFO PAGE ── */
- .info-page {
-   height: 100%;
-   flex: 1;
-   min-height: 0;
-   overflow-y: auto;
-   scrollbar-width: thin;
- }
-.info-page * { font-family: "Lexend Deca", sans-serif; }
+.info-page {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.info-page, .info-page * { font-family: "Lexend Deca", sans-serif; box-sizing: border-box; }
+.info-page section,
+.info-page div,
+.info-page footer,
+.info-page nav,
+.info-page h1,
+.info-page h2,
+.info-page h3,
+.info-page h4,
+.info-page p { display: block; margin: 0; padding: 0; }
 
 /* ── HERO ── */
 .info-hero {
+    display: block;
     text-align: center;
     padding: 4rem 2rem 3rem;
     background: linear-gradient(180deg, rgba(102,10,239,0.15) 0%, transparent 100%);
@@ -44,15 +54,8 @@ export default {
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 50%, #c084fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.root.dark .info-hero h1 {
-    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, black) 50%, #6b21a8 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: #c084fc;
+    margin-bottom: 0;
 }
 .info-hero p {
     max-width: 600px;
@@ -73,10 +76,11 @@ export default {
 
 /* ── CARDS GRID ── */
 .info-cards {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin-bottom: 3rem;
+    width: 100%;
 }
 .info-card {
     background: var(--color-background-hover);
@@ -100,7 +104,7 @@ export default {
 
 /* ── EDITORS ── */
 .info-editors {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
 }
@@ -178,7 +182,7 @@ export default {
 
 /* ── PENDING LEGEND ── */
 .info-pending {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
 }
@@ -235,9 +239,10 @@ export default {
 }
 .info-guidelines-search::placeholder { color: var(--color-on-background); opacity: 0.35; }
 .info-guidelines-body {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 240px 1fr;
     min-height: 600px;
+    width: 100%;
 }
 
 /* TOC */
@@ -313,7 +318,7 @@ export default {
 .info-footer-inner {
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
+    display: flex !important;
     align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
@@ -332,7 +337,7 @@ export default {
     max-width: 320px;
 }
 .info-footer-links {
-    display: flex;
+    display: flex !important;
     gap: 2.5rem;
 }
 .info-footer-col h4 {
@@ -359,7 +364,7 @@ export default {
     margin: 1.5rem auto 0;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(128,128,128,0.15);
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
 }
@@ -530,7 +535,7 @@ export default {
         <div class="info-footer-inner">
             <div class="info-footer-brand">
                 <h3>Upcoming Levels List</h3>
-                <p>A community-maintained list forecasting the future of the Geometry Dash Demonlist.</p>
+                <p>A community-maintained catalogue forecasting the future of the Geometry Dash Extreme Demon Demonlist.</p>
             </div>
             <div class="info-footer-links">
                 <div class="info-footer-col">
