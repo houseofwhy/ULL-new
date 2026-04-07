@@ -491,9 +491,8 @@ main.page-list--pending .list-container {
     flex-shrink: 0;
 }
 
-/* Home and Info pages */
-.home-page,
-.information-page {
+/* Home page */
+.home-page {
     height: 100%;
     display: flex;
     align-items: center;
