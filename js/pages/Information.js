@@ -1,7 +1,6 @@
 ﻿import { store } from '../main.js';
 import { fetchEditors } from '../content.js';
-import { guidelinesData } from '../_guidelines.js';
-
+import { guidelinesData } from '../guidelines.js';
 
 const roleIconMap = {
     owner: 'crown',
@@ -217,6 +216,7 @@ export default {
     justify-content: space-between;
     padding: 1.5rem 1.75rem;
     border-bottom: 1px solid rgba(128,128,128,0.15);
+    background: var(--color-background-hover);
 }
 .info-page .info-guidelines-header h2 {
     font-size: 1.25rem;
@@ -270,11 +270,12 @@ export default {
     letter-spacing: 0.1em;
     color: var(--color-on-background);
     opacity: 0.4;
-    padding: 0.75rem 1.25rem 0.3rem;
+    padding: 1.1rem 1.25rem 0.4rem;
 }
+.info-toc-group:first-child { padding-top: 0.25rem; }
 .info-toc-link {
     display: block;
-    padding: 0.45rem 1.25rem 0.45rem 1.5rem;
+    padding: 0.5rem 1.25rem 0.5rem 1.5rem;
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--color-on-background);
@@ -320,29 +321,121 @@ export default {
 .info-guidelines-placeholder p { font-size: 0.9rem; }
 
 /* ── GUIDELINES CONTENT ── */
-.info-gl-group-header { margin-top: 2.5rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(128,128,128,0.15); }
+.info-gl-group-header {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(128,128,128,0.15);
+}
 .info-gl-group-header:first-child { margin-top: 0; }
-.info-page .info-gl-group-header h2 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: color-mix(in srgb, var(--color-primary) 65%, white); line-height: 1.3; }
-.root.dark .info-gl-group-header h2 { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.info-gl-intro { margin-bottom: 1.5rem; padding: 1rem 1.25rem; background: rgba(128,128,128,0.04); border-left: 3px solid rgba(128,128,128,0.2); border-radius: 0 0.35rem 0.35rem 0; }
-.info-gl-intro p { font-size: 0.82rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.6; }
+.info-page .info-gl-group-header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    line-height: 1.3;
+}
+.root.dark .info-gl-group-header h2 {
+    color: color-mix(in srgb, var(--color-primary) 65%, black);
+}
+.info-gl-intro {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(128,128,128,0.04);
+    border-left: 3px solid rgba(128,128,128,0.2);
+    border-radius: 0 0.35rem 0.35rem 0;
+}
+.info-gl-intro p {
+    font-size: 0.82rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-on-background);
+    opacity: 0.6;
+}
 .info-gl-intro p + p { margin-top: 0.6rem; }
-.info-gl-section { margin-bottom: 2.5rem; }
-.info-page .info-gl-section h3 { font-size: 0.95rem; font-weight: 700; color: var(--color-on-background); line-height: 1.4; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(128,128,128,0.08); }
-.info-page .info-gl-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--color-on-background); opacity: 0.85; line-height: 1.4; margin-top: 1.5rem; margin-bottom: 0.75rem; }
-.info-gl-section p { font-size: 0.82rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.75; }
+.info-gl-section {
+    margin-bottom: 2.5rem;
+}
+.info-page .info-gl-section h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(128,128,128,0.08);
+}
+.info-page .info-gl-section h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    opacity: 0.85;
+    line-height: 1.4;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.info-gl-section p {
+    font-size: 0.82rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-on-background);
+    opacity: 0.75;
+}
 .info-gl-section p + p { margin-top: 0.75rem; }
-.info-gl-section ul, .info-gl-section ol { margin: 0.6rem 0 0.6rem 1.2rem; padding: 0; font-size: 0.82rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.75; }
-.info-gl-section li { margin-bottom: 0.35rem; }
-.info-gl-section li ul, .info-gl-section li ol { margin-top: 0.3rem; opacity: 1; }
-.info-gl-section strong { font-weight: 600; opacity: 1; color: var(--color-on-background); }
-.info-gl-section a { color: color-mix(in srgb, var(--color-primary) 65%, white); text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color 100ms ease; }
+.info-gl-section ul,
+.info-gl-section ol {
+    margin: 0.6rem 0 0.6rem 1.4rem;
+    padding: 0;
+    font-size: 0.82rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-on-background);
+    opacity: 0.75;
+}
+.info-gl-section ol { list-style-type: decimal; }
+.info-gl-section ul { list-style-type: disc; }
+.info-gl-section li {
+    margin-bottom: 0.35rem;
+    padding-left: 0.3rem;
+}
+.info-gl-section li ul,
+.info-gl-section li ol {
+    margin-top: 0.3rem;
+    opacity: 1;
+}
+.info-gl-section li ol { list-style-type: lower-alpha; }
+.info-gl-section li li ol { list-style-type: lower-roman; }
+.info-gl-section li ul { list-style-type: circle; }
+.info-gl-section li li ul { list-style-type: square; }
+.info-gl-section strong {
+    font-weight: 600;
+    opacity: 1;
+    color: var(--color-on-background);
+}
+.info-gl-section a {
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 100ms ease;
+}
 .info-gl-section a:hover { text-decoration-color: currentColor; }
-.root.dark .info-gl-section a { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.info-gl-no-results { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 1rem; opacity: 0.25; gap: 0.5rem; text-align: center; color: var(--color-on-background); }
+.root.dark .info-gl-section a {
+    color: color-mix(in srgb, var(--color-primary) 65%, black);
+}
+.info-gl-no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    opacity: 0.25;
+    gap: 0.5rem;
+    text-align: center;
+    color: var(--color-on-background);
+}
 .info-gl-no-results span { font-size: 2rem; }
 .info-gl-no-results p { font-size: 0.85rem; }
-
 
 /* ── FOOTER ── */
 .info-footer {
@@ -413,8 +506,6 @@ export default {
 }
 </component>
 
-
-
 <main class="info-page surface">
     <!-- Hero -->
     <section class="info-hero">
@@ -436,7 +527,7 @@ export default {
                 <div class="info-card__title">List Editors</div>
                 <div class="info-editors">
                     <div v-for="editor in editors" class="info-editor">
-                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user-lock') + (store.dark ? '' : '-dark' ) + '.svg'" :alt="editor.role" />
+                        <img :src="'/assets/' + (roleIconMap[editor.role] || 'user-lock') + (store.dark ? '' : '-dark') + '.svg'" :alt="editor.role" />
                         <a v-if="editor.link && editor.link !== '#'" :href="editor.link" target="_blank">{{ editor.name }}</a>
                         <span v-else class="info-editor__name">{{ editor.name }}</span>
                         <span class="info-role" :class="'info-role-' + editor.role">{{ roleLabel(editor.role) }}</span>
@@ -521,8 +612,13 @@ export default {
 
         <!-- Guidelines -->
         <div class="info-guidelines">
-            <input class="info-guidelines-search" type="text" placeholder="Search guidelines..." v-model="glSearch" />
-        </div>
+            <div class="info-guidelines-header">
+                <div>
+                    <h2>Guidelines</h2>
+                    <p>How the Upcoming Levels List works \u2014 rules, criteria, and procedures</p>
+                </div>
+                <input class="info-guidelines-search" type="text" placeholder="Search guidelines..." v-model="glSearch" />
+            </div>
             <div class="info-guidelines-body">
                 <nav class="info-toc">
                     <template v-for="group in filteredGuidelines" :key="group.id">
@@ -551,11 +647,12 @@ export default {
                         </template>
                     </template>
                     <div v-else class="info-gl-no-results">
-                        <span>🔍</span>
+                        <span>\u{1F50D}</span>
                         <p>No guidelines match your search.</p>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -620,9 +717,13 @@ export default {
             return roleLabelMap[role] || role;
         },
         scrollToSection(id) {
+            const container = this.$refs.glContent;
             const el = document.getElementById('gl-' + id);
-            if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (el && container) {
+                container.scrollTo({
+                    top: el.offsetTop - container.offsetTop,
+                    behavior: 'smooth'
+                });
                 this.activeSection = id;
             }
         },
