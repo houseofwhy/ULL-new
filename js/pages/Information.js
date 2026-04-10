@@ -575,6 +575,9 @@ export default {
             <!-- List Editors -->
             <div class="info-card">
                 <div class="info-card__title">List Editors</div>
+                <p class="info-coloring-desc">
+                    Dedicated members managing the Upcoming Levels List
+                </p>
                 <div class="info-editors">
                     <div v-for="editor in editors" class="info-editor">
                         <img :src="'/assets/' + (roleIconMap[editor.role] || 'user-lock') + (store.dark ? '' : '-dark') + '.svg'" :alt="editor.role" />
