@@ -2,7 +2,7 @@
 import { embed, filtersList } from "../util.js";
 import { fetchEditors, fetchList, fetchPending } from "../content.js";
 import { recordScore } from "../formulas.js";
-import { guidelinesData } from "../guidelines.js";
+import { guidelinesData } from "../_guidelines.js";
 import Spinner from "../components/Spinner.js";
 
 const roleIconMap = {
