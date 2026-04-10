@@ -392,6 +392,7 @@
 <div class="gl-contact-card">
 <div class="gl-contact-role">List Owner</div>
 <div class="gl-contact-name">QwidziT</div>
+<div class="gl-contact-detail">Determining level positions and overall managment</div>
 <div class="gl-contact-links">
 <span>Discord — @qwidzit</span>
 <span>Telegram — @qwidzit</span>
@@ -411,15 +412,6 @@
 <div class="gl-contact-detail">Server management</div>
 <div class="gl-contact-links">
 <span>Discord — @exiled_shade</span>
-</div>
-</div>
-<div class="gl-contact-card">
-<div class="gl-contact-role">Admin</div>
-<div class="gl-contact-name">QwidziT</div>
-<div class="gl-contact-detail">Determining Level Positions and list tiers</div>
-<div class="gl-contact-links">
-<span>Discord — @qwidzit</span>
-<span>Telegram — @qwidzit</span>
 </div>
 </div>
 <div class="gl-contact-card">
