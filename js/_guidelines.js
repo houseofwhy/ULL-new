@@ -444,9 +444,23 @@
 </div>
 <div class="gl-contact-card">
 <div class="gl-contact-role">List Moderator</div>
-<div class="gl-contact-name">SixHunnid</div>
+<div class="gl-contact-name">ItzDel1ghtfuL</div>
 <div class="gl-contact-links">
-<span>Discord — @_sixhunnid_</span>
+<span>Discord — @itzdel1ghtful</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">List Moderator</div>
+<div class="gl-contact-name">Vantevia</div>
+<div class="gl-contact-links">
+<span>Discord — @vantev1a</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Website Coder</div>
+<div class="gl-contact-name">Prometheus</div>
+<div class="gl-contact-links">
+<span>Discord — @prometheus.dev</span>
 </div>
 </div>
 </div>
