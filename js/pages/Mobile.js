@@ -672,7 +672,7 @@ export default {
             <!-- Footer -->
             <div class="mob-info-footer">
                 <h3>Upcoming Levels List</h3>
-                <p>A community-maintained catalogue forecasting the future of the Geometry Dash Extreme Demon Demonlist.</p>
+                <p>A community-maintained catalogue forecasting the future of the Geometry Dash Demonlist.</p>
                 <div class="mob-info-footer-links">
                     <div class="mob-info-footer-col">
                         <h4>Navigate</h4>

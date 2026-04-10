@@ -710,7 +710,7 @@ export default {
         <div class="info-footer-inner">
             <div class="info-footer-brand">
                 <h3>Upcoming Levels List</h3>
-                <p>A community-maintained catalogue forecasting the future of the Geometry Dash Extreme Demon Demonlist.</p>
+                <p>A community-maintained catalogue forecasting the future of the Geometry Dash Demonlist.</p>
             </div>
             <div class="info-footer-links">
                 <div class="info-footer-col">
