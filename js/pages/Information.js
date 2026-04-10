@@ -1,5 +1,7 @@
 ﻿import { store } from '../main.js';
 import { fetchEditors } from '../content.js';
+import { guidelinesData } from '../data/_guidelines.js';
+
 
 const roleIconMap = {
     owner: 'crown',
@@ -317,6 +319,31 @@ export default {
 .info-guidelines-placeholder span { font-size: 2.5rem; }
 .info-guidelines-placeholder p { font-size: 0.9rem; }
 
+/* ── GUIDELINES CONTENT ── */
+.info-gl-group-header { margin-top: 2.5rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(128,128,128,0.15); }
+.info-gl-group-header:first-child { margin-top: 0; }
+.info-page .info-gl-group-header h2 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: color-mix(in srgb, var(--color-primary) 65%, white); line-height: 1.3; }
+.root.dark .info-gl-group-header h2 { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+.info-gl-intro { margin-bottom: 1.5rem; padding: 1rem 1.25rem; background: rgba(128,128,128,0.04); border-left: 3px solid rgba(128,128,128,0.2); border-radius: 0 0.35rem 0.35rem 0; }
+.info-gl-intro p { font-size: 0.82rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.6; }
+.info-gl-intro p + p { margin-top: 0.6rem; }
+.info-gl-section { margin-bottom: 2.5rem; }
+.info-page .info-gl-section h3 { font-size: 0.95rem; font-weight: 700; color: var(--color-on-background); line-height: 1.4; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(128,128,128,0.08); }
+.info-page .info-gl-section h4 { font-size: 0.85rem; font-weight: 700; color: var(--color-on-background); opacity: 0.85; line-height: 1.4; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.info-gl-section p { font-size: 0.82rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.75; }
+.info-gl-section p + p { margin-top: 0.75rem; }
+.info-gl-section ul, .info-gl-section ol { margin: 0.6rem 0 0.6rem 1.2rem; padding: 0; font-size: 0.82rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.75; }
+.info-gl-section li { margin-bottom: 0.35rem; }
+.info-gl-section li ul, .info-gl-section li ol { margin-top: 0.3rem; opacity: 1; }
+.info-gl-section strong { font-weight: 600; opacity: 1; color: var(--color-on-background); }
+.info-gl-section a { color: color-mix(in srgb, var(--color-primary) 65%, white); text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color 100ms ease; }
+.info-gl-section a:hover { text-decoration-color: currentColor; }
+.root.dark .info-gl-section a { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+.info-gl-no-results { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 1rem; opacity: 0.25; gap: 0.5rem; text-align: center; color: var(--color-on-background); }
+.info-gl-no-results span { font-size: 2rem; }
+.info-gl-no-results p { font-size: 0.85rem; }
+
+
 /* ── FOOTER ── */
 .info-footer {
     margin-top: 4rem;
@@ -494,53 +521,41 @@ export default {
 
         <!-- Guidelines -->
         <div class="info-guidelines">
-            <div class="info-guidelines-header">
-                <div>
-                    <h2>Guidelines</h2>
-                    <p>How the Upcoming Levels List works \u2014 rules, criteria, and procedures</p>
-                </div>
-                <input class="info-guidelines-search" type="text" placeholder="Search guidelines..." />
-            </div>
+            <input class="info-guidelines-search" type="text" placeholder="Search guidelines..." v-model="glSearch" />
+        </div>
             <div class="info-guidelines-body">
                 <nav class="info-toc">
-                    <div class="info-toc-group">General</div>
-                    <a class="info-toc-link active">1. Introduction</a>
-                    <a class="info-toc-link">2. List Structure</a>
-                    <a class="info-toc-link">3. Ranking Criteria</a>
-
-                    <div class="info-toc-group">Placement</div>
-                    <a class="info-toc-link">4. Addition Requirements</a>
-                    <a class="info-toc-link">5. Removal Criteria</a>
-                    <a class="info-toc-link">6. Movement Rules</a>
-                    <a class="info-toc-link">7. Pending Levels</a>
-
-                    <div class="info-toc-group">Records</div>
-                    <a class="info-toc-link">8. Record Submission</a>
-                    <a class="info-toc-link">9. Allowed Mods</a>
-                    <a class="info-toc-link">10. Verification</a>
-                    <a class="info-toc-link">11. World Records</a>
-
-                    <div class="info-toc-group">Technical</div>
-                    <a class="info-toc-link">12. Scoring Formula</a>
-                    <a class="info-toc-link">13. Leaderboard</a>
-                    <a class="info-toc-link">14. Level Coloring</a>
-
-                    <div class="info-toc-group">Other</div>
-                    <a class="info-toc-link">15. Staff Conduct</a>
-                    <a class="info-toc-link">16. Appeals Process</a>
-                    <a class="info-toc-link">17. Community Rules</a>
-                    <a class="info-toc-link">18. Changelog</a>
-                    <a class="info-toc-link">19. Credits</a>
-                    <a class="info-toc-link">20. FAQ</a>
+                    <template v-for="group in filteredGuidelines" :key="group.id">
+                        <div class="info-toc-group">{{ group.group }}</div>
+                        <a v-for="section in group.sections" :key="section.id"
+                           class="info-toc-link"
+                           :class="{ active: activeSection === section.id }"
+                           @click="scrollToSection(section.id)">
+                            {{ section.title }}
+                        </a>
+                    </template>
                 </nav>
-                <div class="info-guidelines-content">
-                    <div class="info-guidelines-placeholder">
-                        <span>\u{1F4D6}</span>
-                        <p>Guidelines content will be loaded here.<br/>Select a section from the sidebar to navigate.</p>
+                <div class="info-guidelines-content" ref="glContent" @scroll="onGlScroll">
+                    <template v-if="filteredGuidelines.length">
+                        <template v-for="group in filteredGuidelines" :key="group.id">
+                            <div class="info-gl-group-header" :id="'gl-group-' + group.id">
+                                <h2>{{ group.group }}</h2>
+                            </div>
+                            <div v-if="group.intro" class="info-gl-intro" v-html="group.intro"></div>
+                            <div v-for="section in group.sections" :key="section.id"
+                                 :id="'gl-' + section.id"
+                                 class="info-gl-section">
+                                <h3>{{ section.title }}</h3>
+                                <div v-html="section.content"></div>
+                            </div>
+                        </template>
+                    </template>
+                    <div v-else class="info-gl-no-results">
+                        <span>🔍</span>
+                        <p>No guidelines match your search.</p>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 
     <!-- Footer -->
@@ -581,13 +596,56 @@ export default {
         store,
         roleIconMap,
         editors: [],
+        glSearch: '',
+        activeSection: '',
     }),
+    computed: {
+        filteredGuidelines() {
+            const q = this.glSearch.trim().toLowerCase();
+            if (!q) return guidelinesData;
+            return guidelinesData
+                .map(group => {
+                    const sections = group.sections.filter(s =>
+                        s.title.toLowerCase().includes(q) ||
+                        s.content.toLowerCase().includes(q)
+                    );
+                    if (!sections.length) return null;
+                    return { ...group, sections };
+                })
+                .filter(Boolean);
+        },
+    },
     methods: {
         roleLabel(role) {
             return roleLabelMap[role] || role;
         },
+        scrollToSection(id) {
+            const el = document.getElementById('gl-' + id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                this.activeSection = id;
+            }
+        },
+        onGlScroll() {
+            const container = this.$refs.glContent;
+            if (!container) return;
+            const sections = container.querySelectorAll('.info-gl-section');
+            let current = '';
+            for (const sec of sections) {
+                const rect = sec.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                if (rect.top - containerRect.top <= 60) {
+                    current = sec.id.replace('gl-', '');
+                }
+            }
+            if (current) this.activeSection = current;
+        },
     },
     async mounted() {
         this.editors = await fetchEditors() || [];
+        if (guidelinesData.length && guidelinesData[0].sections.length) {
+            this.activeSection = guidelinesData[0].sections[0].id;
+        }
     },
 };
+
