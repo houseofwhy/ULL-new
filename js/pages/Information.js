@@ -423,6 +423,56 @@ export default {
 .root.dark .info-gl-section a {
     color: color-mix(in srgb, var(--color-primary) 65%, black);
 }
+/* Contact cards */
+.gl-contacts-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+.gl-contact-card {
+    background: rgba(128,128,128,0.06);
+    border: 1px solid rgba(128,128,128,0.12);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 150ms ease;
+}
+.gl-contact-card:hover { border-color: rgba(128,128,128,0.25); }
+.gl-contact-role {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--color-primary) 60%, white);
+    margin-bottom: 0.3rem;
+}
+.root.dark .gl-contact-role {
+    color: color-mix(in srgb, var(--color-primary) 60%, black);
+}
+.gl-contact-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin-bottom: 0.15rem;
+}
+.gl-contact-detail {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.45;
+    margin-bottom: 0.3rem;
+}
+.gl-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.gl-contact-links span {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.55;
+}
+
 .info-gl-no-results {
     display: flex;
     flex-direction: column;

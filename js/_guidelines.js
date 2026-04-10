@@ -388,27 +388,76 @@
                 id: 'contacts',
                 title: 'Contacts',
                 content: `
-<p><strong>List Owner:</strong></p>
-<ul>
-<li>QwidziT: Discord \u2014 @qwidzit | Telegram \u2014 @qwidzit</li>
-</ul>
-<p><strong>Admin:</strong></p>
-<ul>
-<li>VivisectionGD \u2014 Level placements and quality control: Discord \u2014 @vivisectiongd</li>
-<li>Exiled_shade \u2014 Server management: Discord \u2014 @exiled_shade</li>
-<li>QwidziT \u2014 Determining Level Positions and list tiers: Discord \u2014 @qwidzit | Telegram \u2014 @qwidzit</li>
-</ul>
-<p><strong>Elder List Moderator:</strong></p>
-<ul>
-<li>Niroi: Discord \u2014 @niroi_</li>
-<li>Keres: Discord \u2014 @keresgmd</li>
-<li>LukeLGamer: Discord \u2014 @lukelgamer</li>
-</ul>
-<p><strong>List Moderator / Trial List Moderator:</strong></p>
-<ul>
-<li>Terra: Discord \u2014 @.terralith</li>
-<li>SixHunnid: Discord \u2014 @_sixhunnid_</li>
-</ul>
+<div class="gl-contacts-grid">
+<div class="gl-contact-card">
+<div class="gl-contact-role">List Owner</div>
+<div class="gl-contact-name">QwidziT</div>
+<div class="gl-contact-links">
+<span>Discord — @qwidzit</span>
+<span>Telegram — @qwidzit</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Admin</div>
+<div class="gl-contact-name">VivisectionGD</div>
+<div class="gl-contact-detail">Level placements and quality control</div>
+<div class="gl-contact-links">
+<span>Discord — @vivisectiongd</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Admin</div>
+<div class="gl-contact-name">Exiled_shade</div>
+<div class="gl-contact-detail">Server management</div>
+<div class="gl-contact-links">
+<span>Discord — @exiled_shade</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Admin</div>
+<div class="gl-contact-name">QwidziT</div>
+<div class="gl-contact-detail">Determining Level Positions and list tiers</div>
+<div class="gl-contact-links">
+<span>Discord — @qwidzit</span>
+<span>Telegram — @qwidzit</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Elder List Moderator</div>
+<div class="gl-contact-name">Niroi</div>
+<div class="gl-contact-links">
+<span>Discord — @niroi_</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Elder List Moderator</div>
+<div class="gl-contact-name">Keres</div>
+<div class="gl-contact-links">
+<span>Discord — @keresgmd</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">Elder List Moderator</div>
+<div class="gl-contact-name">LukeLGamer</div>
+<div class="gl-contact-links">
+<span>Discord — @lukelgamer</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">List Moderator</div>
+<div class="gl-contact-name">Terra</div>
+<div class="gl-contact-links">
+<span>Discord — @.terralith</span>
+</div>
+</div>
+<div class="gl-contact-card">
+<div class="gl-contact-role">List Moderator</div>
+<div class="gl-contact-name">SixHunnid</div>
+<div class="gl-contact-links">
+<span>Discord — @_sixhunnid_</span>
+</div>
+</div>
+</div>
                 `
             }
         ]
