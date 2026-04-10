@@ -244,7 +244,7 @@ export default {
 .mob-info-legend-row { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 400; line-height: 1.6; color: var(--color-on-background); }
 .mob-info-legend-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; flex-shrink: 0; }
 .mob-info-legend-label { color: var(--color-on-background); opacity: 0.4; font-size: 0.7rem; margin-left: auto; white-space: nowrap; }
-.mob-info-coloring-desc { font-size: 0.75rem; font-weight: 400; color: var(--color-on-background); opacity: 0.5; margin-bottom: 12px !important; line-height: 1.6; }
+.mob-info-coloring-desc { font-size: 0.75rem; font-weight: 400; color: var(--color-on-background); opacity: 0.5; margin-bottom: 16px !important; line-height: 1.6; }
 
 /* mob pending */
 .mob-info-pending { display: flex; flex-direction: column; gap: 0.35rem; }

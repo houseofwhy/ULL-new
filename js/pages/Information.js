@@ -576,7 +576,7 @@ export default {
             <div class="info-card">
                 <div class="info-card__title">List Editors</div>
                 <p class="info-coloring-desc">
-                    Dedicated members managing the Upcoming Levels List
+                     Trusted group of dedicated members responsible for maintaining the Upcoming Levels List. Their work includes adding new levels, editing existing ones, and ensuring the list stays accurate.
                 </p>
                 <div class="info-editors">
                     <div v-for="editor in editors" class="info-editor">
