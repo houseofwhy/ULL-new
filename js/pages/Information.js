@@ -1,6 +1,6 @@
 ﻿import { store } from '../main.js';
 import { fetchEditors } from '../content.js';
-import { guidelinesData } from '../data/_guidelines.js';
+import { guidelinesData } from '../_guidelines.js';
 
 
 const roleIconMap = {
