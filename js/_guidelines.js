@@ -201,5 +201,216 @@
                 `
             }
         ]
+    },
+    {
+        group: 'Level Placement',
+        id: 'placement',
+        intro: `
+<p>This section of the guidelines covers the rules for adding levels to the list and determining their rank. It explains how levels are selected, positioned, and periodically reassessed.</p>
+<p>Furthermore, it defines the distinction between the three core categories: \u201cAll Levels\u201d, the \u201cMain List\u201d, and the \u201cFuture List\u201d.</p>
+        `,
+        sections: [
+            {
+                id: 'list-structure',
+                title: 'List Structure',
+                content: `
+<p>The Upcoming Level List is organized into three distinct tiers: All Levels, Main List, and Future List. While the relative positioning of levels is consistent across all tiers, each tier employs different inclusion standards, creating a hierarchy of probability and quality.</p>
+<h4>All Levels</h4>
+<p>This tier serves as the most comprehensive catalogue, featuring the largest number of levels and the lowest inclusion threshold. Its purpose is to list every level that has a conceivable chance of being verified and published, providing a broad overview of the upcoming landscape.</p>
+<h4>Main List</h4>
+<p>Serving a similar purpose as the \u201cAll Levels\u201d tier but with more stringent criteria, the Main List highlights levels that meet the fundamental standards required to be considered for an official rating by the developer (\u201cRate\u201d). It acts as a curated filter for higher-potential candidates.</p>
+<h4>Future List</h4>
+<p>This tier maintains the highest standards of the three. It functions as a focused preview, listing only levels with a very high likelihood of soon verification and publication. It represents the most immediate and probable future additions to the official demonlist.</p>
+                `
+            },
+            {
+                id: 'level-selection',
+                title: 'Level Selection',
+                content: `
+<p>This section defines the standards that determine a level\u2019s eligibility for inclusion in the Upcoming Level List and its placement within specific tiers. Levels that pass the selection process are placed in the Pending List. There you can also find information about the approximate position of a particular level. It will be added to the list as soon as its exact position is determined.</p>
+
+<h4>1. Universal Standards</h4>
+<p>All levels, regardless of the target tier, must satisfy the following fundamental conditions:</p>
+<ul>
+<li>The level must be based on the Classic game type. There is currently no platformer list.</li>
+<li>Levels are selected from those that are going to be published on the game\u2019s official servers. If a level is expected to be published on a private server, it will not be considered at all.</li>
+<li>The level must have a public video recording available.</li>
+<li>The level must demonstrate a credible potential to receive an official in-game rating. This is assessed through general criteria:
+<ol>
+<li>The level\u2019s duration is Medium or longer (\u226530 seconds);</li>
+<li>The proposed version of the level is official (recognized by its original creator);</li>
+<li>The level is in a valid state for consideration: it does not feature an open secret path to 100% and has not been officially released in another form;</li>
+<li>The level is original \u2014 it does not contain stolen elements of decoration, gameplay, etc;</li>
+<li>The level does not contain NSFW, NSFL, or similar elements, as well as profanity, racist remarks, insults, threats, which applies to both the content of the level and its name (in general, this corresponds to the age restriction of the game itself);</li>
+<li>The level must be a deco project, with decoration either already in progress or definitively planned for its final state.</li>
+</ol>
+</li>
+</ul>
+
+<h4>2. Tier-Specific Standards</h4>
+<p>Beyond the universal prerequisites, each tier enforces additional filters:</p>
+<p><strong>All Levels Tier</strong></p>
+<ul>
+<li>The level must exhibit sufficient quality to pass a vote among designated evaluators. This subjective assessment considers overall composition, object use, concept and execution, use of colors, etc;</li>
+<li>Levels on layout state are admitted only if the layout demonstrates notable quality or if the creator has a proven track record of completing projects.</li>
+</ul>
+<p><strong>Main List Tier</strong></p>
+<ul>
+<li>The level\u2019s quality bar (including the idea and its implementation, composition, use of colors, overall combination of objects, etc.) meets modern standards \u2014 it is comparable to the levels that were rated at the time of its release;</li>
+<li>Layout-only levels are admitted only in cases of exceptionally high-quality layout design or if the creator possesses an extensive portfolio of finished works.</li>
+</ul>
+<p><strong>Future List Tier</strong></p>
+<ul>
+<li>The level must represent the highest echelon of quality or have substantial records set on it, indicating a very high and imminent likelihood of verification.</li>
+<li>Levels on layout stage and levels with just-begun decoration are not eligible for this tier.</li>
+</ul>
+
+<h4>3. Standards for Verified Levels</h4>
+<p>All officially rated levels are deemed to have met all criteria and are automatically included in all list tiers.</p>
+<p>Among unrated but verified levels, only those that comply with the <a href="https://demonlist.org/guidelines" target="_blank">Global Demonlist Guidelines</a> are considered. Such levels are also added to all tiers of the list.</p>
+                `
+            },
+            {
+                id: 'determining-positions',
+                title: 'Determining and adjusting level positions',
+                content: `
+<p>This section outlines the methodology for assigning and updating a level\u2019s rank within the list.</p>
+
+<h4>1. Position Acquisition</h4>
+<p>The source of a level\u2019s position depends on its official status:</p>
+<ul>
+<li>All rated levels are placed in strict accordance with their ranking on <a href="https://pointercrate.com" target="_blank">Pointercrate</a>. The calculation of these positions is defined in Pointercrate\u2019s own guidelines.</li>
+<li>All unrated but verified levels are placed in strict accordance with their ranking on the <a href="https://demonlist.org" target="_blank">Global Demonlist</a>. The calculation of these positions is defined in the Global Demonlist Guidelines.</li>
+<li>For upcoming levels, determining an exact position is often impossible due to factors like private copies and unfinished gameplay. In such cases, our team employs all available methods to estimate difficulty:
+<ul>
+<li>Requesting private copies directly from creators or testers.</li>
+<li>Aggregating and analyzing difficulty estimates from experienced players.</li>
+<li>Evaluating the relative difficulty of known level segments.</li>
+</ul>
+</li>
+<li>If a level is in early development or subject to major changes, it is placed at the project\u2019s target position as stated by its author(s).</li>
+</ul>
+<p>Given the frequent lack of concrete data, any relevant information (e.g., gameplay footage, creator statements, tester feedback) shared in the #list-discussion or the #level-update-reporting channel will be reviewed and may lead to a position reassessment.</p>
+
+<h4>2. Placement Timing &amp; Position Updates</h4>
+<p><strong>Verified Levels (Rated &amp; Unrated):</strong> Most verified levels are added to the list shortly after verification, based on preliminary community estimates, even before their formal inclusion in official demonlists. Once they receive a final position on Pointercrate or the Global Demonlist, their rank in this list will be updated accordingly. Subsequent changes in the official demonlists will be mirrored here.</p>
+<p><strong>Upcoming Levels:</strong> These levels are only assigned a position once tangible information about their difficulty emerges, which may take a considerable amount of time. Their position is subject to change based on new difficulty information, adjustments to the level\u2019s layout during verification, or other relevant circumstances.</p>
+                `
+            }
+        ]
+    },
+    {
+        group: 'Content Policy',
+        id: 'content-policy',
+        intro: `
+<p>This section of the guidelines contains information about the list\u2019s policy regarding the placement, storage, and removal of content, including records, proof of their legitimacy, and levels.</p>
+<p>First of all, the concept of the game\u2019s competitive scene is introduced as a metaphorical space in which players compete with each other. The entire policy of the list regarding content is built with the aim of reflecting, as much as possible, without neglecting property rights, the objective state of the competitive scene. This is the main principle that guides the list staff when making decisions regarding content on the site.</p>
+        `,
+        sections: [
+            {
+                id: 'list-records',
+                title: 'List records',
+                content: `
+<p>Until reviewed by list staff, a player\u2019s records are considered the property of the player. Once a record is accepted, ownership is transferred to the list staff and they decide not to delete records at the player\u2019s request. The only exceptions are when a player is proven to be cheating, or when proof of legitimacy is unavailable due to suspicion of cheating, or if the account is a bypass.</p>
+<p>Proof of the legitimacy of a record, whether it is a video recording of the record attempt posted on a video hosting site or the unedited raw footage file uploaded to a cloud storage, is always considered as the property of the player and can be freely deleted by them. However, it should be understood that in the future, during a possible review, records may be rejected due to the unavailability of proof. It is also possible to replace the video recording of the record attempt in case of reposting it to another link or rebeating the level as a whole, but only after the record has been reviewed again by list staff.</p>
+<p>It should be noted that, guided by the main principle (see above), most records of players on the levels from the list may be added without their knowledge if the legitimacy of these records has been proven in one way or another.</p>
+                `
+            },
+            {
+                id: 'levels-thumbnails',
+                title: 'Levels and thumbnails',
+                content: `
+<p>Levels published on the game\u2019s official server are considered the property of the game developer, and therefore the list staff has decided not to remove levels from the list at the request of the creators. The only exceptions are cases where a level is removed directly from the game servers, or if it no longer meets the selection criteria, for example, as a result of an update without verification.</p>
+                `
+            }
+        ]
+    },
+    {
+        group: 'Technical Support',
+        id: 'support',
+        intro: `
+<p>This section of the guidelines contains information about technical support for the site, including the roles and areas of responsibility of the list staff, as well as ethical standards that list staff must adhere to when interacting with the community and responding to player inquiries.</p>
+        `,
+        sections: [
+            {
+                id: 'staff-roles',
+                title: 'Staff roles and their areas of responsibility',
+                content: `
+<p>List staff members are assigned the following roles:</p>
+<ol>
+<li><strong>List Moderator / Elder List Moderator</strong>
+<ul>
+<li>Determining Level Positions</li>
+<li>Placing Levels</li>
+<li>Participating in quality control</li>
+</ul>
+</li>
+<li><strong>Admin</strong>
+<ul>
+<li>Determining Level Positions</li>
+<li>Placing Levels</li>
+<li>Participating in quality control</li>
+<li>Managing one of the list\u2019s sectors of work:
+<ul>
+<li>Server management \u2014 Exiled_shade</li>
+<li>Level placements and quality control \u2014 VivisectionGD</li>
+<li>Determining Level Positions and list tiers \u2014 QwidziT</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>List Owner</strong>
+<ul>
+<li>Overall management of the list and its staff team</li>
+</ul>
+</li>
+</ol>
+<p>The primary (main) activity of staff members with this role is indicated in <strong>underlined</strong> font. If the most important thing is to get the best answer to a question, it is better to write to those whose activity overlaps with the indicated type of activity.</p>
+                `
+            },
+            {
+                id: 'ethical-standards',
+                title: 'Ethical standards of list staff',
+                content: `
+<p>Since the members of the list staff are representatives of the project, there are strict rules regarding their behavior:</p>
+<ul>
+<li>It is prohibited to neglect one\u2019s duties without a valid reason;</li>
+<li>It is prohibited to abuse of authority for personal gain or the gain of others;</li>
+<li>It is prohibited to cause any harm directly to the list itself, as well as to similar projects;</li>
+<li>It is prohibited to display any hostility or intolerance towards anyone or anything in public places and private discussions;</li>
+<li>It is prohibited to disclose the personal information of players entrusted to list staff by providing additional proof of the legitimacy of the record, personal conversation with a staff member, or any other means.</li>
+</ul>
+<p>If any of the above points are violated, the player may report this to an Admin or directly to the List Leader.</p>
+<p>In response to compliance with these rules, players are also asked to show respect and tolerance towards the list staff \u2014 any kind of insults or provocations may result in a justified refusal by the staff member to respond to the player\u2019s requests, and they have the right to do so.</p>
+                `
+            },
+            {
+                id: 'contacts',
+                title: 'Contacts',
+                content: `
+<p><strong>List Owner:</strong></p>
+<ul>
+<li>QwidziT: Discord \u2014 @qwidzit | Telegram \u2014 @qwidzit</li>
+</ul>
+<p><strong>Admin:</strong></p>
+<ul>
+<li>VivisectionGD \u2014 Level placements and quality control: Discord \u2014 @vivisectiongd</li>
+<li>Exiled_shade \u2014 Server management: Discord \u2014 @exiled_shade</li>
+<li>QwidziT \u2014 Determining Level Positions and list tiers: Discord \u2014 @qwidzit | Telegram \u2014 @qwidzit</li>
+</ul>
+<p><strong>Elder List Moderator:</strong></p>
+<ul>
+<li>Niroi: Discord \u2014 @niroi_</li>
+<li>Keres: Discord \u2014 @keresgmd</li>
+<li>LukeLGamer: Discord \u2014 @lukelgamer</li>
+</ul>
+<p><strong>List Moderator / Trial List Moderator:</strong></p>
+<ul>
+<li>Terra: Discord \u2014 @.terralith</li>
+<li>SixHunnid: Discord \u2014 @_sixhunnid_</li>
+</ul>
+                `
+            }
+        ]
     }
 ];
