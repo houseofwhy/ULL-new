@@ -124,7 +124,7 @@ export default {
             <!-- Hero -->
             <section class="pending-hero">
                 <h1>Pending List</h1>
-                <p>Levels currently awaiting placement or movement on the Upcoming Levels List.</p>
+                <p>Levels currently awaiting placement or movement on<br>the Upcoming Levels List.</p>
             </section>
 
             <!-- Cards -->

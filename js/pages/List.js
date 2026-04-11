@@ -53,9 +53,6 @@ export default {
             </div>
         </div>
         <div class="level-container-new surface">
-
-        </div>
-        <div class="level-container-new surface">
             <div class="level" v-if="level">
                 <h1>{{ level.name }}</h1>
                 <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
