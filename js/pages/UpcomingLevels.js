@@ -17,7 +17,7 @@ export default {
                 <input v-model="search" class="search-new" type="text" placeholder="Search levels..." />
                 <button class="filters-btn" @click="showFilters = true">Filters</button>
             </div>
-            <table class="list" v-if="list.length">
+            <table class="list" v-if="list.length && filteredList.length">
                 <tr v-for="([level, err], i) in filteredList" :key="i" :class="{ 'level-hidden': level?.isHidden }">
                     <td class="rank">
                         <p class="type-label-lg">#{{ i + 1 }}</p>
@@ -27,12 +27,16 @@ export default {
                             <img v-if="store.thumbnails && level" :src="getThumbnail(level)" class="level-thumbnail" alt="" />
                             <div class="level-info">
                                 <span class="type-label-lg" :style="store.levelColoring ? getLevelNameStyle(level, selected === i) : {}">{{ level?.name || \`Error (\${err}.json)\` }}</span>
-                                <span v-if="level" class="level-subinfo">WR: {{ getWR(level) }} | Run: {{ getRunPercent(level) }}</span>
+                                <span v-if="level" class="level-subinfo">WR: {{ getWR(level) }} | Run: {{ getRunString(level) }}</span>
                             </div>
                         </button>
                     </td>
                 </tr>
             </table>
+            <div v-else-if="list.length && !filteredList.length" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem;opacity:0.25;gap:0.5rem;text-align:center;color:var(--color-on-background);">
+                <span style="font-size:2rem;">\\u{1F50D}</span>
+                <p style="font-size:0.85rem;font-family:'Lexend Deca',sans-serif;">No levels match your search.</p>
+            </div>
             <p v-else style="padding:1rem; opacity:0.5;">No upcoming levels found</p>
         </div>
         <div class="level-container-new surface">
@@ -211,14 +215,18 @@ export default {
             const best = Math.max(0, ...level.records.map(r => r.percent));
             return best > 0 ? best + '%' : 'None';
         },
-        getRunPercent(level) {
+        getRunString(level) {
             if (!level.run || !level.run.length) return 'None';
-            const diffs = level.run.map(r => {
+            let bestRun = null;
+            let bestDiff = 0;
+            for (const r of level.run) {
                 const parts = String(r.percent).split('-').map(Number);
-                return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? Math.abs(parts[1] - parts[0]) : 0;
-            });
-            const best = Math.max(0, ...diffs);
-            return best > 0 ? best + '%' : 'None';
+                if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                    const diff = Math.abs(parts[1] - parts[0]);
+                    if (diff > bestDiff) { bestDiff = diff; bestRun = r; }
+                }
+            }
+            return bestRun ? bestRun.percent : 'None';
         },
         getThumbnail(level) {
             if (level.thumbnail) return level.thumbnail;

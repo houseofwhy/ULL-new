@@ -1,6 +1,7 @@
 ﻿import { store } from '../main.js';
 import { fetchEditors } from '../content.js';
 import { guidelinesData } from '../_guidelines.js';
+import Footer from '../components/Footer.js';
 
 const roleIconMap = {
     owner: 'crown',
@@ -19,6 +20,7 @@ const roleLabelMap = {
 };
 
 export default {
+    components: { Footer },
     template: `
 <component :is="'style'">
 /* ── INFO PAGE ── */
@@ -487,73 +489,8 @@ export default {
 .info-gl-no-results span { font-size: 2rem; }
 .info-gl-no-results p { font-size: 0.85rem; }
 
-/* ── FOOTER ── */
-.info-footer {
-    margin-top: 4rem;
-    border-top: 1px solid rgba(128,128,128,0.15);
-    padding: 2.5rem 2rem 2rem;
-}
-.info-footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex !important;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
-}
-.info-page .info-footer-brand h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--color-on-background);
-    margin-bottom: 0.25rem;
-}
-.info-page .info-footer-brand p {
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: var(--color-on-background);
-    opacity: 0.4;
-    line-height: 1.6;
-    max-width: 320px;
-    margin-top: 1em;
-}
-.info-footer-links {
-    display: flex !important;
-    gap: 2.5rem;
-}
-.info-footer-col h4 {
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-on-background);
-    opacity: 0.4;
-    margin-bottom: 0.6rem;
-}
-.info-footer-col a {
-    display: block;
-    font-size: 0.78rem;
-    color: var(--color-on-background);
-    opacity: 0.4;
-    text-decoration: none;
-    padding: 0.2rem 0;
-    transition: opacity 100ms ease;
-}
-.info-footer-col a:hover { opacity: 0.8; }
-.info-footer-bottom {
-    max-width: 1100px;
-    margin: 1.5rem auto 0;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(128,128,128,0.15);
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-}
-.info-footer-bottom p {
-    font-size: 0.68rem;
-    color: var(--color-on-background);
-    opacity: 0.2;
-}
+/* Footer spacing */
+.info-page .site-footer { margin-top: 4rem; }
 </component>
 
 <main class="info-page surface">
@@ -672,8 +609,8 @@ export default {
                 </div>
                 <input class="info-guidelines-search" type="text" placeholder="Search guidelines..." v-model="glSearch" />
             </div>
-            <div class="info-guidelines-body">
-                <nav class="info-toc">
+            <div class="info-guidelines-body" ref="glBody">
+                <nav class="info-toc" :style="{ overflowY: glBodyVisible ? 'auto' : 'hidden' }">
                     <template v-for="group in filteredGuidelines" :key="group.id">
                         <div class="info-toc-group">{{ group.group }}</div>
                         <a v-for="section in group.sections" :key="section.id"
@@ -684,7 +621,7 @@ export default {
                         </a>
                     </template>
                 </nav>
-                <div class="info-guidelines-content" ref="glContent" @scroll="onGlScroll">
+                <div class="info-guidelines-content" ref="glContent" @scroll="onGlScroll" :style="{ overflowY: glBodyVisible ? 'auto' : 'hidden' }">
                     <template v-if="filteredGuidelines.length">
                         <template v-for="group in filteredGuidelines" :key="group.id">
                             <div class="info-gl-group-header" :id="'gl-group-' + group.id">
@@ -709,37 +646,7 @@ export default {
     </div>
 
     <!-- Footer -->
-    <footer class="info-footer">
-        <div class="info-footer-inner">
-            <div class="info-footer-brand">
-                <h3>Upcoming Levels List</h3>
-                <p>A community-maintained catalogue forecasting the future of the Geometry Dash Demonlist.</p>
-            </div>
-            <div class="info-footer-links">
-                <div class="info-footer-col">
-                    <h4>Navigate</h4>
-                    <a href="#/list">All Levels</a>
-                    <a href="#/leaderboard">Leaderboard</a>
-                    <a href="#/pending">Pending List</a>
-                    <a href="#/upcoming">Upcoming Levels</a>
-                </div>
-                <div class="info-footer-col">
-                    <h4>Community</h4>
-                    <a href="https://discord.gg/9wVWSgJSe8" target="_blank">Discord Server</a>
-                    <a href="https://docs.google.com/document/d/13dmRfx2OCiLEaM2EcgEd-mKdok11_k8k7HsA5a-K6nY/edit?usp=sharing" target="_blank">Full Guidelines Doc</a>
-                </div>
-                <div class="info-footer-col">
-                    <h4>Contact</h4>
-                    <a href="https://discord.gg/9wVWSgJSe8" target="_blank">Discord Support</a>
-                    <a href="https://www.youtube.com/channel/UC72Ceml55mVisJNEByLBHPA" target="_blank">YouTube</a>
-                </div>
-            </div>
-        </div>
-        <div class="info-footer-bottom">
-            <p>&copy; 2024\u20132026 Upcoming Levels List. Not affiliated with RobTop Games or Pointercrate.</p>
-            <p>Built by the ULL Team</p>
-        </div>
-    </footer>
+    <Footer />
 </main>
     `,
     data: () => ({
@@ -748,6 +655,7 @@ export default {
         editors: [],
         glSearch: '',
         activeSection: '',
+        glBodyVisible: false,
     }),
     computed: {
         filteredGuidelines() {
@@ -800,6 +708,18 @@ export default {
         if (guidelinesData.length && guidelinesData[0].sections.length) {
             this.activeSection = guidelinesData[0].sections[0].id;
         }
+        this.$nextTick(() => {
+            const body = this.$refs.glBody;
+            if (body) {
+                this._glObserver = new IntersectionObserver(([entry]) => {
+                    this.glBodyVisible = entry.intersectionRatio >= 0.5;
+                }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+                this._glObserver.observe(body);
+            }
+        });
+    },
+    beforeUnmount() {
+        if (this._glObserver) this._glObserver.disconnect();
     },
 };
 

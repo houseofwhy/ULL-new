@@ -1,49 +1,164 @@
 import { store } from "../main.js";
-import { fetchEditors, fetchPending } from "../content.js";
+import { fetchPending } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
+import Footer from "../components/Footer.js";
 
 export default {
-    components: { Spinner },
+    components: { Spinner, Footer },
     template: `
+<component :is="'style'">
+/* ── PENDING PAGE ── */
+.page-pending {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.page-pending, .page-pending * { font-family: "Lexend Deca", sans-serif; box-sizing: border-box; }
+.page-pending h1, .page-pending h2, .page-pending h3, .page-pending h4, .page-pending p { margin: 0; padding: 0; }
+.page-pending h1::before, .page-pending h1::after,
+.page-pending h2::before, .page-pending h2::after,
+.page-pending h3::before, .page-pending h3::after,
+.page-pending h4::before, .page-pending h4::after { display: none; }
+
+/* Hero */
+.pending-hero {
+    text-align: center;
+    padding: 3rem 2rem 2.5rem;
+    background: linear-gradient(180deg, rgba(102,10,239,0.15) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(128,128,128,0.15);
+}
+.root.dark .pending-hero {
+    background: linear-gradient(180deg, rgba(62,0,249,0.08) 0%, transparent 100%);
+}
+.page-pending .pending-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #c084fc;
+    margin-bottom: 0.75rem !important;
+}
+.pending-hero p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.5;
+    line-height: 1.7;
+}
+
+/* Content */
+.pending-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+.pending-cards {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Card */
+.pending-card {
+    background: var(--color-background-hover);
+    border: 1px solid rgba(128,128,128,0.15);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    transition: border-color 150ms ease;
+}
+.pending-card:hover { border-color: rgba(128,128,128,0.3); }
+.pending-card__title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    margin-bottom: 1rem;
+}
+.root.dark .pending-card__title {
+    color: color-mix(in srgb, var(--color-primary) 65%, black);
+}
+
+/* Pending rows */
+.pending-rows { display: flex; flex-direction: column; gap: 0.15rem; }
+.pending-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.4rem;
+    transition: background-color 100ms ease;
+}
+.pending-row:hover { background: rgba(128,128,128,0.06); }
+.pending-row img { width: 1.3rem; height: 1.3rem; flex-shrink: 0; }
+.pending-row a, .pending-row span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-on-background);
+    text-decoration: none;
+    line-height: 1.4;
+}
+.pending-row a:hover { text-decoration: underline; }
+.pending-empty {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.45;
+    padding: 0.75rem 0.6rem;
+}
+
+/* Footer spacing */
+.page-pending .site-footer { margin-top: 3rem; }
+</component>
+
         <main v-if="loading" class="surface" style="display:flex;align-items:center;justify-content:center;">
             <Spinner></Spinner>
         </main>
-        <main v-else class="page-pending-new">
-            <div class="pending-section surface">
-                <h3 style="margin-bottom: 1rem;">Pending Placements</h3>
-                <table class="list" v-if="pendingPlacements.length > 0">
-                    <tr v-for="(level, i) in pendingPlacements">
-                        <td class="rank">
-                            <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
-                                <img :src="getIconPath(level.placement === '?' ? 'question' : level.placement)" style="height: 1.5rem; width: 1.5rem;">
+        <main v-else class="page-pending surface">
+            <!-- Hero -->
+            <section class="pending-hero">
+                <h1>Pending List</h1>
+                <p>Levels currently awaiting placement or movement on the Upcoming Levels List.</p>
+            </section>
+
+            <!-- Cards -->
+            <div class="pending-content">
+                <div class="pending-cards">
+                    <!-- Placements -->
+                    <div class="pending-card">
+                        <div class="pending-card__title">Pending Placements</div>
+                        <div v-if="pendingPlacements.length > 0" class="pending-rows">
+                            <div v-for="level in pendingPlacements" class="pending-row">
+                                <img :src="getIconPath(level.placement === '?' ? 'question' : level.placement)" alt="" />
+                                <a v-if="level.link" :href="level.link">{{ level.name }}</a>
+                                <span v-else>{{ level.name }}</span>
                             </div>
-                        </td>
-                        <td class="level">
-                            <div class="type-label-lg" style="padding: 1rem;">
-                                <a :href="level.link">{{ level.name }}</a>
+                        </div>
+                        <p v-else class="pending-empty">No pending placements.</p>
+                    </div>
+
+                    <!-- Movements -->
+                    <div class="pending-card">
+                        <div class="pending-card__title">Pending Movements</div>
+                        <div v-if="pendingMovements.length > 0" class="pending-rows">
+                            <div v-for="level in pendingMovements" class="pending-row">
+                                <img :src="'/assets/move-' + (level.placement === 'up' ? 'up' : 'down') + '.svg'" alt="" />
+                                <span>{{ level.name }}</span>
                             </div>
-                        </td>
-                    </tr>
-                </table>
-                <p v-else style="padding: 1rem;">No pending placements :)</p>
+                        </div>
+                        <p v-else class="pending-empty">No pending movements.</p>
+                    </div>
+                </div>
             </div>
-            <div class="pending-section surface">
-                <h3 style="margin-bottom: 1rem;">Pending Movements</h3>
-                <table class="list" v-if="pendingMovements.length > 0">
-                    <tr v-for="(level, i) in pendingMovements">
-                        <td class="rank">
-                            <div style="display: flex; align-items: center; justify-content: flex-end;">
-                                <img :src="'/assets/move-' + (level.placement === 'up' ? 'up' : 'down') + '.svg'" style="height: 1.5rem; width: 1.5rem;">
-                            </div>
-                        </td>
-                        <td class="level">
-                            <div class="type-label-lg" style="padding: 1rem;">{{ level.name }}</div>
-                        </td>
-                    </tr>
-                </table>
-                <p v-else style="padding: 1rem;">No pending movements :)</p>
-            </div>
+
+            <!-- Footer -->
+            <Footer />
         </main>
     `,
     data: () => ({

@@ -47,6 +47,10 @@ export default {
                     </td>
                 </tr>
             </table>
+            <div v-if="noResults" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem;opacity:0.25;gap:0.5rem;text-align:center;color:var(--color-on-background);">
+                <span style="font-size:2rem;">\\u{1F50D}</span>
+                <p style="font-size:0.85rem;font-family:'Lexend Deca',sans-serif;">No levels match your search.</p>
+            </div>
         </div>
         <div class="level-container-new surface">
             <div class="level" v-if="level">
@@ -204,6 +208,10 @@ export default {
         }
     },
     computed: {
+        noResults() {
+            if (!this.list || !this.search.trim()) return false;
+            return this.list.every(([level]) => !level || level.isHidden);
+        },
         level() {
             return this.list[this.selected]?.[0];
         },

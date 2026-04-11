@@ -430,6 +430,10 @@ export default {
         <!-- LIST PAGES (all / main / future) -->
         <div v-if="currentPage === 'all' || currentPage === 'main' || currentPage === 'future'" class="mob-list">
             <input v-model="search" @input="applyFilters()" class="mob-search" type="text" placeholder="Search levels..." />
+            <div v-if="mobNoResults" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem;opacity:0.25;gap:0.5rem;text-align:center;color:var(--color-on-background);">
+                <span style="font-size:1.5rem;">\\u{1F50D}</span>
+                <p style="font-size:0.8rem;font-family:'Lexend Deca',sans-serif;">No levels match your search.</p>
+            </div>
             <div v-for="([level, err], i) in displayList" :key="i" class="mob-level-row" v-show="!level?.isHidden">
                 <button class="mob-level-btn" :class="{ active: selected === i }" @click="selected = selected === i ? -1 : i">
                     <span class="mob-rank" :style="showColors ? getLevelNameStyle(level, selected === i) : {}">
@@ -527,7 +531,7 @@ export default {
                         <div class="mob-level-sub" v-if="level">
                             <template v-if="getLbBestRecord(level)">WR: {{ getLbBestRecord(level).percent }}%</template>
                             <template v-if="getLbBestRecord(level) && getLbBestRun(level)"> · </template>
-                            <template v-if="getLbBestRun(level)">Run: {{ getLbBestRun(level).percent }}%</template>
+                            <template v-if="getLbBestRun(level)">Run: {{ getLbBestRun(level).percent }}</template>
                         </div>
                     </div>
                 </button>
@@ -729,6 +733,10 @@ export default {
             if (this.currentPage === 'main') return this.rawList.filter(([l]) => l?.isMain);
             if (this.currentPage === 'future') return this.rawList.filter(([l]) => l?.isFuture);
             return this.rawList;
+        },
+        mobNoResults() {
+            if (!this.search.trim()) return false;
+            return this.displayList.every(([level]) => !level || level.isHidden);
         },
         mobFilteredGuidelines() {
             const q = this.mobGlSearch.trim().toLowerCase();
