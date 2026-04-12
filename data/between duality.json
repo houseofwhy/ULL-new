@@ -1,20 +1,19 @@
 {
-    "id": "private",
+    "id": 137757402,
     "name": "Between Duality",
     "author": "Nexel",
-    "creators": ["Nexel"],
-    "verifier": "Destriv",
-    "isVerified": false,
-    "verification": "",
+    "creators": [],
+    "verifier": "Destr",
+    "isVerified": true,
+    "verification": "https://youtu.be/uOb-ajQ4bgw?si=PdpZTJWJRrYW_-LL",
     "showcase": "https://www.youtube.com/watch?v=8efAMwd5_Is",
-    "lastUpd": "26.02.2026",
-
+    "lastUpd": "10.04.2026",
     "percentToQualify": 1,
     "records": [
         {
             "user": "none",
-            "link": "https://x.com/luxurious_nexel/status/2026475274880368837?s=46",
-            "percent": 62,
+            "link": "",
+            "percent": 0,
             "hz": 0
         }
     ],
@@ -26,12 +25,16 @@
             "hz": 0
         }
     ],
-
     "length": 88,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": true,
-
-    "tags": ["Long", "Quality", "Finished", "Verifying"]
+    "isFuture": false,
+    "tags": [
+        "Public",
+        "Finished",
+        "Unrated",
+        "Long",
+        "Quality"
+    ]
 }
