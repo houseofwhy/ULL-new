@@ -1,5 +1,5 @@
 {
-    "id": "private",
+    "id": "136981369",
     "name": "Calibrate",
     "author": "Bamvie",
     "creators": ["Bamvie"],
@@ -31,9 +31,10 @@
     "isMain": true,
     "isFuture": true,
     "tags": [
+        "Public",
         "Finished",
         "Long",
         "Verified",
-        "Unrated"
+        "Rated"
     ]
 }
