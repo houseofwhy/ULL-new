@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "CRAB WAVE",
-    "author": "eternal team",
-    "creators": [],
-    "verifier": "noxell",
+    "name": "NOTARTARU",
+    "author": "youngs6 & CirclezGD",
+    "creators": ["youngs6","CirclezGD","cukel31","bugdaybey","serwanno","wTidall","Cretnox"],
+    "verifier": "NotarGD",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=USKGOLeLaes",
-    "lastUpd": "14.11.2025",
+    "showcase": "https://youtu.be/nGN-fQ6AnBA?si=801oubcqcNEwHC84",
+    "lastUpd": "28.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 129,
+    "length": 94,
     "rating": 1,
     "percentFinished": 80,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["XL"]
+    "tags": ["Long","Remake"]
 }
