@@ -1,5 +1,5 @@
 import { store } from "../main.js";
-import { fetchPending } from "../content.js";
+import { fetchPending, fetchList } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
 import Footer from "../components/Footer.js";
@@ -62,6 +62,14 @@ export default {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     width: 100%;
+    align-items: start;
+}
+
+/* Right column stack */
+.pending-right-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 /* Card */
@@ -105,6 +113,13 @@ export default {
     line-height: 1.4;
 }
 .pending-row a:hover { text-decoration: underline; }
+.pending-row .pending-row__rank {
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.4;
+    margin-left: auto;
+    white-space: nowrap;
+}
 .pending-empty {
     font-size: 0.85rem;
     font-weight: 400;
@@ -130,7 +145,7 @@ export default {
             <!-- Cards -->
             <div class="pending-content">
                 <div class="pending-cards">
-                    <!-- Placements -->
+                    <!-- Placements (left) -->
                     <div class="pending-card">
                         <div class="pending-card__title">Pending Placements</div>
                         <div v-if="pendingPlacements.length > 0" class="pending-rows">
@@ -143,16 +158,32 @@ export default {
                         <p v-else class="pending-empty">No pending placements.</p>
                     </div>
 
-                    <!-- Movements -->
-                    <div class="pending-card">
-                        <div class="pending-card__title">Pending Movements</div>
-                        <div v-if="pendingMovements.length > 0" class="pending-rows">
-                            <div v-for="level in pendingMovements" class="pending-row">
-                                <img :src="'/assets/move-' + (level.placement === 'up' ? 'up' : 'down') + '.svg'" alt="" />
-                                <span>{{ level.name }}</span>
+                    <!-- Right column: Movements + Removals -->
+                    <div class="pending-right-stack">
+                        <!-- Movements -->
+                        <div class="pending-card">
+                            <div class="pending-card__title">Pending Movements</div>
+                            <div v-if="pendingMovements.length > 0" class="pending-rows">
+                                <div v-for="level in pendingMovements" class="pending-row">
+                                    <img :src="'/assets/move-' + (level.placement === 'up' ? 'up' : 'down') + '.svg'" alt="" />
+                                    <span>{{ level.name }}</span>
+                                </div>
                             </div>
+                            <p v-else class="pending-empty">No pending movements.</p>
                         </div>
-                        <p v-else class="pending-empty">No pending movements.</p>
+
+                        <!-- Removals -->
+                        <div class="pending-card">
+                            <div class="pending-card__title">Pending Removals</div>
+                            <div v-if="removalCandidates.length > 0" class="pending-rows">
+                                <div v-for="level in removalCandidates" class="pending-row">
+                                    <span style="font-size:0.85rem; flex-shrink:0;">🚫</span>
+                                    <span>{{ level.name }}</span>
+                                    <span class="pending-row__rank">#{{ level.rank }}</span>
+                                </div>
+                            </div>
+                            <p v-else class="pending-empty">No pending removals.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,11 +195,12 @@ export default {
     data: () => ({
         pendingPlacements: [],
         pendingMovements: [],
+        removalCandidates: [],
         loading: true,
         store,
     }),
     async mounted() {
-        const pending = await fetchPending();
+        const [pending, list] = await Promise.all([fetchPending(), fetchList()]);
 
         if (pending) {
             this.pendingPlacements = pending
@@ -180,6 +212,24 @@ export default {
 
             this.pendingMovements = pending
                 .filter(p => ["up", "down"].includes(p.placement.toLowerCase()));
+        }
+
+        if (list) {
+            const now = new Date();
+            const oneYearAgo = new Date();
+            oneYearAgo.setFullYear(now.getFullYear() - 1);
+
+            this.removalCandidates = list
+                .map(([level, err], i) => {
+                    if (err || !level || level.isVerified) return null;
+                    if (!level.lastUpd) return null;
+                    const parts = level.lastUpd.split('.');
+                    if (parts.length !== 3) return null;
+                    const levelDate = new Date(Number(parts[2]), Number(parts[1]) - 1, Number(parts[0]));
+                    if (levelDate >= oneYearAgo) return null;
+                    return { name: level.name, rank: i + 1 };
+                })
+                .filter(Boolean);
         }
 
         this.loading = false;
