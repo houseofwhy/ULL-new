@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "136991918",
     "name": "far apart",
-    "author": "zYuko",
+    "author": "MadisonYuko",
     "creators": [
         "MadisonYuko"
     ],
-    "verifier": "unknown",
+    "verifier": "Q1m",
     "isVerified": false,
-    "verification": "",
+    "verification": "https://youtu.be/yO6CkrSxZI4?si=0h3oPcMm78g6i0xO",
     "showcase": "https://www.youtube.com/watch?v=liXviHr4C40",
     "lastUpd": "16.06.2025",
     "percentToQualify": 1,
@@ -33,7 +33,9 @@
     "isMain": true,
     "isFuture": false,
     "tags": [
+        "Public",
         "Finished",
-        "Long"
+        "Long",
+        "Unrated"
     ]
 }

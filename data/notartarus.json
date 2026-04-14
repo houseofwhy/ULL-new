@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "PURGATORY",
-    "author": "Team Pegasus",
-    "creators": ["Team Pegasus & More | Unknown"],
-    "verifier": "o.Kuang",
+    "name": "NOTARTARUS",
+    "author": "youngs6 & CirclezGD",
+    "creators": ["youngs6","CirclezGD","cukel31","bugdaybey","serwanno","wTidall","Cretnox"],
+    "verifier": "NotarGD",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=YyvjU-1QuaQ&ab_channel=RamssesGD",
-    "lastUpd": "31.07.2025",
+    "showcase": "https://youtu.be/nGN-fQ6AnBA?si=801oubcqcNEwHC84",
+    "lastUpd": "28.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 353,
+    "length": 94,
     "rating": 1,
-    "percentFinished": 5,
+    "percentFinished": 80,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["XXL"]
+    "tags": ["Long","Remake"]
 }

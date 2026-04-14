@@ -1,13 +1,13 @@
 {
-    "id": 125825037,
-    "name": "KALIBER",
-    "author": "Shyne",
+    "id": "private",
+    "name": "Distortion",
+    "author": "Ka1sa",
     "creators": [],
-    "verifier": "Shyne",
+    "verifier": "Karma",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=ae9lrf2Antk",
-    "lastUpd": "29.03.2026",
+    "showcase": "https://youtu.be/WrKajZgS_tw?si=bLZ-Fh_uvDBp04qm",
+    "lastUpd": "22.03.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -25,13 +25,14 @@
             "hz": 0
         }
     ],
-    "length": 75,
+    "length": 55,
     "rating": 1,
-    "percentFinished": 75,
+    "percentFinished": 100,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
     "tags": [
-        "Public",
-        "Long"
+        "Finished",
+        "Medium",
+        "Verifying"
     ]
 }
