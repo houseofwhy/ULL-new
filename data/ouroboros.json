@@ -1,9 +1,9 @@
 {
     "id": "private",
     "name": "OUROBOROS",
-    "author": "[cherry] team",
+    "author": "Just a GD Player & qMystic & [cherry] team",
     "creators": ["JAGDP","qMystic"],
-    "verifier": "unknown",
+    "verifier": "Taiago",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=gZz_2r97wzM",
@@ -24,7 +24,7 @@
             "link": "https://www.youtube.com/watch?v=t5TWB9uA8kU",
             "percent": "27-100",
             "hz": 0
-        }
+        }        
     ],
 
     "length": 81,

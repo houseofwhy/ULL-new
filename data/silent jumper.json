@@ -1,13 +1,13 @@
 {
     "id": "private",
     "name": "Silent Jumper",
-    "author": "ThePurgatory",
+    "author": "ItzAley",
     "creators": [],
-    "verifier": "GreenZ",
+    "verifier": "Tawer",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/WZL3SOoRu7U?si=B0YYbqjhRWdMPoFc",
-    "lastUpd": "09.03.2026",
+    "lastUpd": "14.03.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -29,7 +29,7 @@
 
     "length": 90,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": false,
 

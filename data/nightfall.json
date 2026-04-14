@@ -1,20 +1,20 @@
 {
     "id": "private",
     "name": "NIGHTFALL",
-    "author": "MadisonYuko",
-    "creators": ["MadisonYuko"],
+    "author": "zYuko",
+    "creators": ["zYuko"],
     "verifier": "nei_gmd",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/ml4bpWYi-4Q",
-    "lastUpd": "05.04.2026",
+    "lastUpd": "19.09.2025",
 
     "percentToQualify": 76,
     "records": [
         {
             "user": "nei_gmd",
-            "link": "#",
-            "percent": 97,
+            "link": "https://fxtwitter.com/nei_gmd/status/1969081211109745001",
+            "percent": 76,
             "hz": 240
         }
     ],

@@ -10,21 +10,21 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=OTeoy41xCN8",
-    "lastUpd": "07.04.2026",
+    "lastUpd": "10.04.2025",
     "percentToQualify": 0,
     "records": [
         {
-            "user": "Zytrox",
-            "link": "https://youtu.be/Mo87iJqfINQ?si=6WVjSNRUQ_dJzRcb",
-            "percent": 41,
+            "user": "none",
+            "link": "",
+            "percent": 0,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "Zytrox",
-            "link": "https://youtu.be/Mo87iJqfINQ?si=PvbZqxhOaLj95Jy-",
-            "percent": "29-100",
+            "user": "none",
+            "link": "",
+            "percent": "0",
             "hz": 0
         }
     ],
@@ -35,7 +35,6 @@
     "isFuture": true,
     "tags": [
         "Finished",
-        "XL",
-        "Verifying"
+        "XL"
     ]
 }

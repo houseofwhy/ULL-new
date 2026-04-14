@@ -2,8 +2,8 @@
     "id": "private",
     "name": "ANGELBURN",
     "author": "Kaza",
-    "creators": ["Kaza"],
-    "verifier": "Kaza",
+    "creators": [],
+    "verifier": "Kaza GD",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/aMr4WNLMiXE",
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Long","Quality"]
+    "tags": ["Long"]
 }

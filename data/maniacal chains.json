@@ -1,41 +1,38 @@
 {
     "id": 121936643,
     "name": "Maniacal Chains",
+    "thumbnail": "https://i.ytimg.com/vi/ScgtU3V5AaE/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCx0jheYSfHgTO3aWXG7zJYE830RQ",
     "author": "LordDivinity",
-    "creators": [
-        "LordDivinity"
-    ],
-    "verifier": "spcreat",
-    "isVerified": true,
-    "verification": "https://youtu.be/TzeMJeIu6bY?si=YJJjvlzcaKg1j_R2",
+    "creators": ["LordDivinity"],
+    "verifier": "Open Verification",
+    "isVerified": false,
+    "verification": "",
     "showcase": "https://www.youtube.com/watch?v=EbGiIG8j2A0",
-    "lastUpd": "09.04.2026",
-    "percentToQualify": 1,
+    "lastUpd": "25.02.2026",
+
+    "percentToQualify": 43,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "spcreat",
+            "link": "https://youtu.be/Mu3DkaZbfjE?si=qrc_U7fXx3YfderKm",
+            "percent": 95,
+            "hz": 360
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "spcreat",
+            "link": "https://youtu.be/twz1UKbP4-Y?si=BSouFJhNyjIMjV7m",
+            "percent": "45-100",
             "hz": 0
         }
     ],
+
     "length": 146,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
-    "tags": [
-        "Public",
-        "XL",
-        "Finished",
-        "Unrated"
-    ]
+
+    "tags": ["XL", "Finished", "Public", "Verifying"]
 }

@@ -3,11 +3,11 @@
     "name": "SupaDupaSonic",
     "author": "russianluigi",
     "creators": [],
-    "verifier": "GMDCrawfish",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/musjVNDVQyA?si=MV3NjNpds6WU-Pff",
-    "lastUpd": "10.04.2026",
+    "showcase": "https://www.youtube.com/watch?v=pqtPkrmIKA4",
+    "lastUpd": "04.03.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -27,12 +27,11 @@
     ],
     "length": 96,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 65,
     "isMain": true,
     "isFuture": false,
     "tags": [
         "Long",
-        "Remake",
-        "Finished"
+        "Remake"
     ]
 }

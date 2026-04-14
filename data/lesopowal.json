@@ -1,13 +1,13 @@
 {
-    "id": "137886942",
-    "name": "Lesopowal",
+    "id": "private",
+    "name": "LESOPOWAL",
     "author": "[cherry] team",
     "creators": ["Inex","Pes11","PirrogXD"],
     "verifier": "Bacon",
-    "isVerified": true,
-    "verification": "https://youtu.be/RTXnFHkGO_g?si=zWqiOHSS_j5x_J5c",
+    "isVerified": false,
+    "verification": "",
     "showcase": "https://youtu.be/EwDAZUgVTS8",
-    "lastUpd": "05.04.2026",
+    "lastUpd": "05.02.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Verified", "Public", "Unrated"]
+    "tags": ["Long", "Finished", "Verifying"]
 }

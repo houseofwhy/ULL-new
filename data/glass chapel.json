@@ -1,14 +1,14 @@
 {
     "id": "private",
     "name": "Glass Chapel",
-    "thumbnail": "https://i.ytimg.com/vi/2Ln2-xW9eS8/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDMN53lshB7FXQXE1AqsBfjosq1jQ",
-    "author": "Arraegen",
+    "thumbnail": "https://i.ytimg.com/vi/2Ln2-xW9eS8/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDMN53lshB7FXQXE1AqsBfjosq1jQ", 
+    "author": "Manny Heffley",
     "creators": [],
     "verifier": "iIiLaseriIi",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/tU2Jx44LOro?si=Jo-bMKsf7p5Yg_4c",
-    "lastUpd": "13.04.2026",
+    "showcase": "https://youtu.be/2Ln2-xW9eS8?si=zBrvO3asjo-vX5YM",
+    "lastUpd": "31.08.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -30,7 +30,7 @@
 
     "length": 201,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": true,
 
