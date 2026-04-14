@@ -144,6 +144,7 @@ export default {
             { active: false, name: "Uses NoNG", key: "NONG" },
             { active: false, name: "Top Quality", key: "Quality" },
             { active: false, name: "2-Player", key: "2p" },
+            { active: false, name: "Pending Removal", key: "Pending Removal" },
         ],
         minDecoration: 0,
         minVerification: 0,
@@ -200,6 +201,10 @@ export default {
             level.maxPercent = maxPercent;
             level.maxRunDifference = maxRunDiff;
             level.rankingScore = Math.max(maxPercent, maxRunDiff) ** 2 + Math.min(maxPercent, maxRunDiff) ** 1.8;
+            if (this.isOldLevel(level)) {
+                if (!level.tags) level.tags = [];
+                if (!level.tags.includes('Pending Removal')) level.tags.push('Pending Removal');
+            }
         });
 
         this.list = list
@@ -210,6 +215,15 @@ export default {
     },
     methods: {
         embed,
+        isOldLevel(level) {
+            if (!level.lastUpd) return false;
+            const parts = level.lastUpd.split('.');
+            if (parts.length !== 3) return false;
+            const levelDate = new Date(Number(parts[2]), Number(parts[1]) - 1, Number(parts[0]));
+            const oneYearAgo = new Date();
+            oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+            return levelDate < oneYearAgo;
+        },
         getWR(level) {
             if (!level.records || !level.records.length) return 'None';
             const best = Math.max(0, ...level.records.map(r => r.percent));
@@ -252,6 +266,13 @@ export default {
         },
         applyFilters() {
             if (!this.list) return;
+            this.list.forEach(item => {
+                const level = item[0]; if (!level) return;
+                if (this.isOldLevel(level)) {
+                    if (!level.tags) level.tags = [];
+                    if (!level.tags.includes('Pending Removal')) level.tags.push('Pending Removal');
+                }
+            });
             const activeFilters = [...this.statusFilters, ...this.lengthFilters, ...this.otherFilters].filter(f => f.active);
             const minDec = this.minDecoration || 0;
             const minVer = this.minVerification || 0;

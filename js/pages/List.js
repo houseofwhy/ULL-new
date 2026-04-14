@@ -197,6 +197,7 @@ export default {
             { active: false, name: "Uses NoNG", key: "NONG" },
             { active: false, name: "Top Quality", key: "Quality" },
             { active: false, name: "2-Player", key: "2p" },
+            { active: false, name: "Pending Removal", key: "Pending Removal" },
         ],
         search: "",
         minDecoration: 0,
@@ -238,6 +239,10 @@ export default {
                 if (level.verifier && level.verifier.toLowerCase() === 'open verification') {
                     if (!level.tags) level.tags = [];
                     if (!level.tags.includes('Open Verification')) level.tags.push('Open Verification');
+                }
+                if (!level.isVerified && this.isOldLevel(level)) {
+                    if (!level.tags) level.tags = [];
+                    if (!level.tags.includes('Pending Removal')) level.tags.push('Pending Removal');
                 }
             });
         }
@@ -304,6 +309,10 @@ export default {
                 if (level.verifier && level.verifier.toLowerCase() === 'open verification') {
                     if (!level.tags) level.tags = [];
                     if (!level.tags.includes('Open Verification')) level.tags.push('Open Verification');
+                }
+                if (!level.isVerified && this.isOldLevel(level)) {
+                    if (!level.tags) level.tags = [];
+                    if (!level.tags.includes('Pending Removal')) level.tags.push('Pending Removal');
                 }
             });
 
