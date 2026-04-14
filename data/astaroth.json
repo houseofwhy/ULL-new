@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Astaroth",
+    "author": "Nucdev",
+    "creators": [],
+    "verifier": "Nucdev",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=mEsAmQjMI_U",
+    "lastUpd": "09.04.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Nucdev",
+            "link": "https://www.youtube.com/watch?v=AaOPcZ2lczM",
+            "percent": 40,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "Nucdev",
+            "link": "https://www.youtube.com/watch?v=AaOPcZ2lczM",
+            "percent": "37-100",
+            "hz": 0
+        }        
+    ],
+
+    "length": 60,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Medium", "Finished", "Verifying"]
+}
