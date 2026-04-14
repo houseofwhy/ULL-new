@@ -2,21 +2,15 @@ main.page-list--pending {
     grid-template-columns: minmax(16rem, 3fr) minmax(16rem, 3fr) minmax(16em, 2fr);
 }
 
-/*main.page-list--pending .list-container,
-main.page-list--pending .level-container {
-    overflow-y: scroll; !* Always shows scrollbar *!
-}*/
-/* Allow scrolling but hide the scrollbar: */
-
 main.page-list--pending .list-container,
 main.page-list--pending .level-container {
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 main.page-list--pending .list-container::-webkit-scrollbar,
 main.page-list--pending .level-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari/Opera */
+    display: none;
 }
 
 main.page-list--pending .list-container {
@@ -168,13 +162,225 @@ main.page-list--pending .list-container {
     text-decoration: underline;
 }
 
-/* Shitty */
+/* ==========================================
+   NEW PC LAYOUT - 2 Column (45% / 55%)
+   ========================================== */
+
+.page-list-new {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-list-new > div {
+    overflow-y: auto;
+}
+
+.page-list-new .list-container-new {
+    padding: 1.5rem 0 1.5rem 1rem;
+    border-right: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+
+.page-list-new .level-container-new {
+    padding: 2rem 4rem 2rem 1rem;
+}
+
+
+/* Search row with search + filters button */
+.search-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+.search-new {
+    flex: 1;
+    max-width: 60%;
+    padding: 0.6rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-on-background);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.search-new:focus {
+    outline: 2px solid var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.root.dark .search-new {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.filters-btn {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.6rem 1.25rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+    background: rgba(128, 128, 128, 0.1);
+    color: var(--color-on-background);
+    cursor: pointer;
+    transition: background-color 100ms ease;
+    white-space: nowrap;
+    align-self: stretch;
+}
+
+
+.filters-btn:hover {
+    background: rgba(128, 128, 128, 0.25);
+}
+
+/* Level sub-info (author | verifier) */
+.level-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.level-subinfo {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.78rem;
+    opacity: 0.5;
+    font-weight: 500;
+}
+
+
+/* Reuse list styles within new layout */
+.page-list-new .list {
+    table-layout: auto;
+    width: 100%;
+}
+.page-list-new .list .rank {
+    text-align: end;
+    padding-right: 1rem;
+}
+.page-list-new .list .level {
+    width: 100%;
+}
+.page-list-new .list .level button {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    text-align: start;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: calc(100% - 20px);;
+}
+.page-list-new .list .level-thumbnail {
+    width: 5.33rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 0.35rem;
+    flex-shrink: 0;
+    display: block;
+    background-color: #333;
+}
+.page-list-new .list .level.error button {
+    color: var(--color-error);
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+.page-list-new .list .level button:hover {
+    background-color: var(--color-background-hover);
+    color: var(--color-on-background-hover);
+}
+.page-list-new .list .level.active button {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 62%, white) 100%);
+    color: var(--color-on-primary);
+}
+.page-list-new .list .level.active .level-subinfo {
+    opacity: 0.7;
+}
+
+.page-list-new .level-container-new .level {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: none;
+}
+
+.page-list-new .level-container-new .level .level-authors {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-auto-rows: max-content;
+    gap: 1rem;
+}
+.page-list-new .level-container-new .level .video {
+    aspect-ratio: 16/9;
+}
+.page-list-new .level-container-new .level .stats {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 2rem;
+}
+.page-list-new .level-container-new .level .stats li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Leaderboard overrides */
+.page-list-new.page-leaderboard {
+    grid-template-columns: 1fr 1.5fr;
+    max-width: none;
+    margin: 0;
+    column-gap: 0;
+    grid-template-rows: 1fr;
+}
+.page-list-new.page-leaderboard .list-container-new {
+    padding: 1.5rem 0 1.5rem 1rem;
+    border-right: 1px solid rgba(128, 128, 128, 0.15);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.page-list-new.page-leaderboard .level-container-new {
+    padding: 2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.page-leaderboard .search-row--leaderboard {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.page-leaderboard .search-row--leaderboard .search-new {
+    max-width: 100%;
+}
+.page-leaderboard .list .level button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+}
+.page-list-new.page-leaderboard .level-container-new .level {
+    max-width: none;
+    width: 100%;
+}
+
+/* Shitty (legacy) */
 
 .shitty .page-list .list .level button {
     background-color: transparent;
     padding: 1rem 0;
 }
-
 
 .shitty .page-list .list .level button:hover {
     background-color: #eee;
@@ -253,4 +459,12 @@ main.page-list--pending .list-container {
     height: 0.75rem;
     border-radius: 50%;
     flex-shrink: 0;
+}
+
+/* Home page */
+.home-page {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

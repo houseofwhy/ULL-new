@@ -22,69 +22,170 @@
     <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
     <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/filters-popup.css" />
+    <link rel="stylesheet" type="text/css" href="/css/components/settings-popup.css" />
     <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
     <style>
-        @media (max-width: 768px) {
-            #pc-header { display: none !important; }
-            .root > .page-list, .root > main { display: none !important; }
+
+        /* Hide everything until Vue mounts to prevent FOUC */
+        [v-cloak] { display: none !important; }
+
+        /* Coloring hint popup */
+        .coloring-hint {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            z-index: 150;
+            background-color: var(--color-background);
+            border: 1px solid rgba(128,128,128,0.3);
+            border-radius: 0.75rem;
+            padding: 1.5rem 1.75rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-width: 320px;
+            font-family: "Lexend Deca", sans-serif;
+            pointer-events: auto;
         }
-        @media (min-width: 769px) {
-            .mob { display: none !important; }
+        .coloring-hint__close {
+            position: absolute;
+            top: 0.4rem;
+            left: 0.2rem;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--color-on-background);
+            opacity: 0.5;
+            line-height: 1;
         }
+        .coloring-hint__close:hover { opacity: 1; }
+        .coloring-hint__text {
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            color: var(--color-on-background);
+        }
+        .coloring-hint__never {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            opacity: 0.6;
+            cursor: pointer;
+            color: var(--color-on-background);
+        }
+        .coloring-hint__never input { cursor: pointer; }
+        .coloring-hint__btn {
+            display: inline-block;
+            text-align: center;
+            font-family: "Lexend Deca", sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.4rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: opacity 100ms ease;
+        }
+        .coloring-hint__btn:hover { opacity: 0.85; }
     </style>
 </head>
 
-<body id="app" onload="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture' ||  location.hash == '#/') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        } else {
-            document.querySelectorAll('.list__home')[0].classList.remove('router-link-active')
-        }
-    " onclick="
-        if (location.hash == '#/listmain' ||  location.hash == '#/listfuture') {
-            document.querySelectorAll('.list__home')[0].classList.add('router-link-active')
-        }
-    ">
-<div class="root" :class="{ dark: store.dark, shitty: store.shitty }">
-    <header class="surface" style="display:flex;" id="pc-header">
-        <div class="logo">
-            <div v-else class="logo">
-                <h2>ULL</h2>
-                <p>v1.2.0</p>
-            </div>
-        </div>
-        <nav class="nav">
-            <router-link class="nav__tab list__home" to="/">
-                <span class="type-label-lg">List</span>
-            </router-link>
-            <router-link class="nav__tab" to="/leaderboard">
-                <span class="type-label-lg">Leaderboard</span>
-            </router-link>
-            <router-link class="nav__tab" to="/pending">
-                <span class="type-label-lg">Pending List</span>
-            </router-link>
-            <div class="nav__actions">
-                <button class="nav__icon" @click.prevent="store.toggleDark()">
-                    <img :src="store.dark ? '/assets/light.svg' : '/assets/dark.svg'" alt="" />
-                </button>
-                <a class="nav__icon" href="https://discord.gg/9wVWSgJSe8">
-                    <img src="/assets/discord.svg" alt="Discord Logo" />
-                </a>
-                <!-- <a class="nav__cta type-label-lg"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSev8GuHqq-00YRlr9iY4Xg5ttt-FaXWLb9JLI9eRTYHKdhk0Q/viewform?usp=sf_link"
-                    target="_blank">Submit Record</a>
-                <a class="nav__cta type-label-lg"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSetN4Gsdhmpsom2zqJWYDTzedJ3YdcVdNw4SJAk8BIfGZXO1Q/viewform?usp=sf_link"
-                    target="_blank">Submit Opinion</a> -->
-            </div>
+<body id="app">
+<div v-cloak class="root" :class="{ dark: store.dark, shitty: store.shitty }">
+    <!-- Vertical Sidebar (PC only) -->
+    <!-- Sidebar toggle (visible only when sidebar is collapsed) -->
+    <button v-if="$route.path !== '/mobile'" class="sidebar-toggle" @click="store.sidebarOpen = !store.sidebarOpen">&#9776;</button>
+    <!-- Sidebar backdrop (overlay mode) -->
+    <div v-if="$route.path !== '/mobile' && store.sidebarOpen" class="sidebar-backdrop" @click="store.sidebarOpen = false"></div>
+
+    <aside class="sidebar" :class="{ 'sidebar--open': store.sidebarOpen }">
+        <router-link to="/home" class="sidebar__logo">
+            <h2>ULL</h2>
+            <p>v1.2.0</p>
+        </router-link>
+        <nav class="sidebar__nav">
+            <div class="sidebar__section-label">Lists</div>
+            <router-link class="sidebar__link" to="/list">All Levels</router-link>
+            <router-link class="sidebar__link" to="/listmain">Main List</router-link>
+            <router-link class="sidebar__link" to="/listfuture">Future List</router-link>
+
+            <div class="sidebar__section-label" style="margin-top: 0.5rem;">Other</div>
+            <router-link class="sidebar__link" to="/leaderboard">Leaderboard</router-link>
+            <router-link class="sidebar__link" to="/upcoming">Upcoming Levels</router-link>
+            <router-link class="sidebar__link" to="/pending">Pending List</router-link>
+            <router-link class="sidebar__link" to="/information">Information</router-link>
         </nav>
-    </header>
+        <div class="sidebar__bottom">
+            <button class="sidebar__settings-btn" @click="store.showSettings = true">Settings</button>
+            <a class="sidebar__discord" href="https://discord.gg/9wVWSgJSe8" target="_blank">
+                <img src="/assets/discord.svg" alt="Discord" />
+            </a>
+        </div>
+    </aside>
 
+    <!-- Settings Popup -->
+    <div class="settings-overlay" v-if="store.showSettings" @click.self="store.showSettings = false">
+        <div class="settings-popup">
+            <div class="settings-popup__title">Settings</div>
+            <div class="settings-popup__item">
+                <span class="settings-popup__label">Thumbnails</span>
+                <div class="settings-popup__toggle">
+                    <button class="settings-popup__toggle-btn" :class="{ active: store.thumbnails }" @click="store.thumbnails = true; store.saveSetting('thumbnails', true)">ON</button>
+                    <button class="settings-popup__toggle-btn" :class="{ active: !store.thumbnails }" @click="store.thumbnails = false; store.saveSetting('thumbnails', false)">OFF</button>
+                </div>
+            </div>
+            <div class="settings-popup__item">
+                <span class="settings-popup__label">
+                    Level Coloring
+                    <a class="settings-popup__question" href="#/information" target="_blank" title="What is Level Coloring?">?</a>
+                </span>
+                <div class="settings-popup__toggle">
+                    <button class="settings-popup__toggle-btn" :class="{ active: store.levelColoring }" @click="store.levelColoring = true; store.saveSetting('levelColoring', true)">ON</button>
+                    <button class="settings-popup__toggle-btn" :class="{ active: !store.levelColoring }" @click="store.levelColoring = false; store.saveSetting('levelColoring', false)">OFF</button>
+                </div>
+            </div>
+            <div class="settings-popup__item">
+                <span class="settings-popup__label">Theme</span>
+                <div class="settings-popup__toggle">
+                    <button class="settings-popup__toggle-btn" :class="{ active: !store.dark }" @click="store.dark && store.toggleDark()">Dark</button>
+                    <button class="settings-popup__toggle-btn" :class="{ active: store.dark }" @click="!store.dark && store.toggleDark()">Light</button>
+                </div>
+            </div>
+            <a class="settings-popup__contact" href="https://discord.gg/9wVWSgJSe8" target="_blank">
+                <img src="/assets/discord.svg" alt="Discord" />
+                Contact Support
+            </a>
+        </div>
+    </div>
 
+    <!-- Coloring Hint Popup -->
+    <div class="coloring-hint" v-if="store.showColoringHint">
+        <button class="coloring-hint__close" @click="store.dismissColoringHint()">&times;</button>
+        <p class="coloring-hint__text">Learn about level coloring here</p>
+        <label class="coloring-hint__never">
+            <input type="checkbox" v-model="store.coloringHintNeverShow" />
+            Don't show again
+        </label>
+        <a class="coloring-hint__btn" href="#/information" target="_blank" @click="store.dismissColoringHint()">Go to Information</a>
+    </div>
 
-    <router-view></router-view>
+    <!-- Page Content (PC) -->
+    <div v-if="$route.path !== '/mobile'" class="page-with-sidebar">
+        <router-view></router-view>
+    </div>
+
+    <!-- Page Content (Mobile) -->
+    <div v-if="$route.path === '/mobile'" class="mob">
+        <router-view></router-view>
+    </div>
 </div>
 </body>
 
