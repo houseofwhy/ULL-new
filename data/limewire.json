@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=e7Z_-Y07pwo",
-    "lastUpd": "24.09.2025",
+    "lastUpd": "16.04.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "finley",
+            "link": "https://x.com/iamfinleyy/status/2044147626904269231?s=20",
+            "percent": "68-100",
             "hz": 0
         }
     ],

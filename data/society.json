@@ -1,5 +1,5 @@
 {
-    "id": "127323087",
+    "id": "private",
     "name": "Society",
     "author": "Neomarbilan",
     "creators": ["Neomarbilan and More | Unknown rn"],
@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/OTQ7ojWfHP0?si=pjddvaB7FxMwCrBX&t=104",
-    "lastUpd": "20.02.2026",
+    "lastUpd": "13.04.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "Galagzee",
-            "link": "https://www.youtube.com/watch?v=AFj_sU1zljQ&t=48s",
-            "percent": "33-50",
+            "user": "wPopoff",
+            "link": "https://youtube.com/shorts/2r0t-r_xuoA?si=CVBjPQbxs_Hpop3-",
+            "percent": "52-100",
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NONG", "Finished", "Public"]
+    "tags": ["Long", "NONG", "Finished", "Verifying"]
 }

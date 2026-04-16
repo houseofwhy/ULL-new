@@ -6,7 +6,7 @@
     "verifier": "zLevii",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://m.youtube.com/watch?v=W4dDG845in8",
+    "showcase": "https://www.youtube.com/watch?v=wlPGCiLHlgI",
     "percentToQualify": 1,
     "records": [
         {
@@ -18,16 +18,16 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "zLevii",
+            "link": "https://youtu.be/LYfELeisGL8",
+            "percent": "49-55",
             "hz": 0
         }
     ],
     "length": 788,
     "rating": 1,
     "percentFinished": 5,
-    "lastUpd": "17.01.2026",
+    "lastUpd": "16.04.2026",
 
     "isMain": true,
     "isFuture": false,
