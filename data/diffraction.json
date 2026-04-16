@@ -3,7 +3,7 @@
     "name": "Diffraction",
     "thumbnail": "https://i.ytimg.com/vi/vjU-rXmmVO4/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBjAo4NTQZdqJETSwTe1dtE7MDSCA",
     "author": "ggii",
-    "creators": ["ggii & More | Unknown rn"],
+    "creators": ["ggii & More | Unknown"],
     "verifier": "GamingByte",
     "isVerified": false,
     "verification": "",
@@ -13,8 +13,8 @@
     "records": [
         {
             "user": "Gamingbyte",
-            "link": "https://youtu.be/q0aMPzd2lG8?si=pNOZVe-RFzupAcbb",
-            "percent": 66,
+            "link": "https://www.youtube.com/watch?v=5qKdEvpkbvA",
+            "percent": 73,
             "hz": 0
         }
     ],
@@ -29,8 +29,8 @@
     "length": 92,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": false,
-    "isFuture": false,
+    "isMain": true,
+    "isFuture": true,
     "tags": [
         "Finished",
         "Long"
