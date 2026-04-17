@@ -104,11 +104,6 @@
         "placement": "30",
         "link": "https://www.youtube.com/watch?v=75woVCCPYbw"
     },
-        {
-        "name": "ENCELADUS",
-        "placement": "30",
-        "link": "https://youtu.be/tNQty__fJYg?si=UJu8wjhBNQmfoa34"
-    },
     {
         "name": "Shattered Kingdom",
         "placement": "50",
@@ -199,7 +194,7 @@
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=8IH56Bog3xs"
     },
-    {
+       {
         "name": "Operation Zoink",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
@@ -243,11 +238,6 @@
         "name": "EVERBLOOM",
         "placement": "?",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
-    },
-    {
-        "name": "Quantong Processing",
-        "placement": "?",
-        "link": "https://youtu.be/oubFsPJ9yYM?si=FGkdKG67Jt0iJ_if"
     },
     {
         "name": "Belowzero",
