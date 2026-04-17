@@ -3,18 +3,18 @@
     "name": "Labyrinth",
     "author": "SyQual",
     "creators": [],
-    "verifier": "Hqmy",
+    "verifier": "GGonop",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/hcZWawS26hU",
-    "lastUpd": "12.12.2025",
+    "showcase": "https://www.youtube.com/watch?v=PfPOih94r7c",
+    "lastUpd": "15.04.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "GGonop",
-            "link": "https://www.youtube.com/watch?v=VHJ5PPCi8hY",
-            "percent": 46,
+            "link": "https://youtu.be/bvU88Sm5Naw?si=xYZLaJ6oU3uZaLzg",
+            "percent": 68,
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Verifying"]
+    "tags": ["Long", "Verifying", "Finished", "Remake"]
 }

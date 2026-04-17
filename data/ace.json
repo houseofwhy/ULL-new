@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": 138215607,
     "name": "Ace",
     "author": "Aidsen",
     "creators": ["Aidsen"],
     "verifier": "Aidsen",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=7uYghOdos8I",
     "showcase": "https://youtu.be/Y-amw14icK0",
-    "lastUpd": "25.10.2025",
+    "lastUpd": "15.04.2026",
 
     "percentToQualify": 93,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished", "Verifying"]
+    "tags": ["Long", "Finished", "Verified", "Unrated", "Public"]
 }

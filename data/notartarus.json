@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "Crimson Lady",
-    "author": "LenZelium",
-    "creators": ["Vexexx","Volo","Lenz","p","Humbjumb","Samzaya","Exvill","Lenzelium","vApollo","Kixgz","Wavvy","Liu"],
-    "verifier": "unknown",
+    "name": "NOTARTARUS",
+    "author": "youngs6 & CirclezGD",
+    "creators": ["youngs6","CirclezGD","cukel31","bugdaybey","serwanno","wTidall","Cretnox"],
+    "verifier": "NotarGD",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/h-TtjeM1hlg?si=ldxcKnFBO6fF6JiW",
-    "lastUpd": "16.04.2026",
+    "showcase": "https://youtu.be/nGN-fQ6AnBA?si=801oubcqcNEwHC84",
+    "lastUpd": "28.01.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 79,
+    "length": 94,
     "rating": 1,
-    "percentFinished": 80,
-    "isMain": true,
+    "percentFinished": 70,
+    "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long", "Quality"]
+    "tags": ["Long","Remake"]
 }

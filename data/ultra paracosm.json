@@ -1,20 +1,20 @@
 {
     "id": "private",
     "name": "Ultra Paracosm",
-    "author": "Renn241",
+    "author": "declan",
     "creators": ["declan","Renn241"],
     "verifier": "Wity",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=gBt1owG6Nvw",
-    "lastUpd": "16.03.2026",
+    "lastUpd": "16.04.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "Wity",
-            "link": "https://youtu.be/FdBbuWOPl-Y?si=rq0Qi5TLCapehQrr",
-            "percent": 91,
+            "link": "https://youtu.be/K0_O-clMF0A?is=YDhT6degI6uvF0jgl",
+            "percent": 71,
             "hz": 0
         }
     ],
