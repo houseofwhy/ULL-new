@@ -104,6 +104,11 @@
         "placement": "30",
         "link": "https://www.youtube.com/watch?v=75woVCCPYbw"
     },
+        {
+        "name": "ENCELADUS",
+        "placement": "30",
+        "link": "https://youtu.be/tNQty__fJYg?si=UJu8wjhBNQmfoa34"
+    },
     {
         "name": "Shattered Kingdom",
         "placement": "50",
@@ -175,11 +180,6 @@
         "link": "https://youtu.be/bo8SClU_kN4?si=srT0DcpaienIbCBD"
     },
     {
-        "name": "ENCELADUS",
-        "placement": "75",
-        "link": "https://youtu.be/tNQty__fJYg?si=UJu8wjhBNQmfoa34"
-    },
-    {
         "name": "Enchanting Skylight",
         "placement": "75",
         "link": "https://youtu.be/GYKtnUqxG1E?si=dIvDV_b_VxXXVnLk"
@@ -194,9 +194,9 @@
         "placement": "75",
         "link": "https://youtu.be/6Baug9fL9JA?si=WeZHdDERPU1rWBsv"
     },
-    {
+       {
         "name": "Operation Zoink",
-        "placement": "?",
+        "placement": "75",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
     },
     {
@@ -228,5 +228,15 @@
         "name": "EVERBLOOM",
         "placement": "?",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
+    },
+    {
+        "name": "Quantong Processing",
+        "placement": "?",
+        "link": "https://youtu.be/oubFsPJ9yYM?si=FGkdKG67Jt0iJ_if"
+    },
+    {
+        "name": "The Last Dream",
+        "placement": "?",
+        "link": "#"
     }
 ]
