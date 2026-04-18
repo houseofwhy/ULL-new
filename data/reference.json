@@ -2,7 +2,7 @@
     "id": "private",
     "name": "Reference ",
     "author": "TheWormDo",
-    "creators": [],
+    "creators": ["TheWormDo"],
     "verifier": "TheWormDo",
     "isVerified": false,
     "verification": "",

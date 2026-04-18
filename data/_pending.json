@@ -80,16 +80,6 @@
         "link": "https://youtu.be/9WGGm4_FKt0"
     },
     {
-        "name": "Reference",
-        "placement": "20",
-        "link:": "https://youtu.be/sy2h5zTKDWU?si=jA7qVRE3l9xV5CD7"
-    },
-    {
-        "name": "Distortion",
-        "placement": "20",
-        "link": "https://youtu.be/WrKajZgS_tw?si=Ncdgtm6QuTRDX8OP"
-    },
-    {
         "name": "ENCELADUS",
         "placement": "20",
         "link": "https://youtu.be/tNQty__fJYg?si=UJu8wjhBNQmfoa34"
@@ -160,24 +150,9 @@
         "link": "https://youtu.be/6n6uxqWVYhs?si=PUWH04hXyssfp5fD"
     },
     {
-        "name": "NOTARTARUS",
-        "placement": "75",
-        "link": "https://www.youtube.com/watch?v=nGN-fQ6AnBA"
-    },
-    {
         "name": "Canyon",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=IYM4Nh17_Ko"
-    },
-    {
-        "name": "CONTRAVENTION",
-        "placement":"75",
-        "link": "https://youtu.be/bo8SClU_kN4?si=srT0DcpaienIbCBD"
-    },
-    {
-        "name": "Enchanting Skylight",
-        "placement": "75",
-        "link": "https://youtu.be/GYKtnUqxG1E?si=dIvDV_b_VxXXVnLk"
     },
     {
         "name": "EF",
@@ -194,15 +169,10 @@
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=8IH56Bog3xs"
     },
-       {
+    {
         "name": "Operation Zoink",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
-    },
-    {
-        "name": "Fiberglass",
-        "placement": "?",
-        "link": "https://youtu.be/2L0CNK1xSlo?si=_guQX5Prn4jct0-w"
     },
     {
         "name": "Quantong Processing",
