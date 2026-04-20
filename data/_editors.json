@@ -6,13 +6,13 @@
     },
     {
         "role": "admin",
-        "name": "VivisectionGD",
-        "link": "https://www.youtube.com/@VivisectionGD"
-    },
-    {
-        "role": "admin",
         "name": "Exiled_Shade",
         "link": "https://www.youtube.com/@exiled_shadegd"
+    },
+    {
+        "role": "seniormod",
+        "name": "VivisectionGD",
+        "link": "https://www.youtube.com/@VivisectionGD"
     },
     {
         "role": "seniormod",
@@ -38,6 +38,26 @@
         "role": "mod",
         "name": "ItzDel1ghtfuL",
         "link": "https://www.youtube.com/@ItzDel1ghtfuLTCD"
+    },
+    {
+        "role": "mod",
+        "name": "IIIHatsurineIII",
+        "link": "#"
+    },
+    {
+        "role": "mod",
+        "name": "Th3Pot4toBOI",
+        "link": "https://www.youtube.com/@Th3Pot4toBOI"
+    },
+    {
+        "role":"mod",
+        "name": "TheCatAstronaut",
+        "link": "#"
+    },
+    {
+        "role": "mod",
+        "name": "Zeus",
+        "link": "#"
     },
     {
         "role": "dev",
