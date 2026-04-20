@@ -1,14 +1,13 @@
 {
     "id": "private",
-    "name": "ENCELADUS",
-    "author": "Albinosnail",
-    "creators": ["Albinosnail","Elphelt","SnowEye","Blanc","Hand","Neogul","Yoshidoestax","puhyuu","Isospin","Lris","Dubu","Wain","Harryy", "C4rin",
-"BNDL","ChuchitoDomin","Dangerkat"],
+    "name": "Despair",
+    "author": "aSolihin",
+    "creators": ["aSolihin","Hadox","TBD","Cpiks","DSHs"],
     "verifier": "Cuatrocientos",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/tNQty__fJYg?si=_2Vtw_iPxTxsFnu5",
-    "lastUpd": "10.03.2026",
+    "showcase": "https://youtu.be/6n6uxqWVYhs?si=3hxkVcjoxiEfVtGz",
+    "lastUpd": "01.11.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -28,11 +27,11 @@
         }
     ],
 
-    "length": 92,
+    "length": 85,
     "rating": 1,
-    "percentFinished": 100,
-    "isMain": true,
+    "percentFinished": 20,
+    "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long","Quality"]
+    "tags": ["Long"]
 }
