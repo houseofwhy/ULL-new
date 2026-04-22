@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "METROPOLIS",
+    "author": "KZLR",
+    "creators": [],
+    "verifier": "Ascended",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/TtrVGzbxm9A?si=3xH1rs96v3Lmzoow",
+    "lastUpd": "21.04.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 52,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": false,
+    "isFuture": false,
+    "tags": [
+        "Layout",
+        "Medium"
+    ]
+}
