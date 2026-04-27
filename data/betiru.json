@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "135988251",
     "name": "BETIRU",
     "author": "Kondziu",
     "creators": ["Kondziu & More | Unknown"],
     "verifier": "Dramel",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=LHccqdHXzAM",
-    "lastUpd": "11.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=kBtedf_Ic2s",
+    "lastUpd": "20.04.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Finished"]
+    "tags": ["Long", "Public", "Finished"]
 }
