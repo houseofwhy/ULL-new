@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Zylarion",
-            "link": "https://youtu.be/LQGYKoYMrFY?si=JqBbPC7lW7BSpBNM",
-            "percent": 18,
+            "user": "wPopoff",
+            "link": "https://youtu.be/77oQEjP1bks?si=InJORxUHAWP6KpfN",
+            "percent": 45,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "ItzDel1ghtfuL",
-            "link": "https://youtube.com/shorts/2r0t-r_xuoA?si=CVBjPQbxs_Hpop3-",
-            "percent": "37-100",
+            "user": "wPopoff",
+            "link": "https://youtu.be/77oQEjP1bks?si=IHPbxRPU2Wz6vwi1&t=71",
+            "percent": "43-100",
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NONG", "Finished", "Verifying"]
+    "tags": ["Long", "NONG", "Finished", "Verifying", "Quality"]
 }
