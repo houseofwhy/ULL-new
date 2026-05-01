@@ -1,15 +1,15 @@
 {
-    "id": "private",
+    "id": "138781722",
     "name": "Killstealer",
-    "author": "Asterion",
-    "creators": ["Underpipse","Linear","L4mbads","Avati","Elvii","Salamander","Keniz","Junbae123","Andhika","Rynoxious","7rodo","Vendash","Vendas","Gradientxxd",
+    "author": "Rynoxiouss",
+    "creators": ["Underpipse","Linear","L4mbads","Avati","Elvii","Salamander","Keniz","Junbae123","Andhika","Rynoxiouss","7rodo","Vendash","Vendas","Gradientxxd",
     "ConnectedGD","AlrexX","Maplegaegosu","Crowlley","ryu","rei","Vit12","5ske","Shaun07","Anubis","Lightvoid","Lordequacc","LekuJX","Don","Dzeser","End",
     "DigitalZero","iBlue","Holy","Skrypto","TheNamesSnek","Ferox242","Asterion"],
     "verifier": "Kloone",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/uhH4oqWrsfo?si=eNqaPSSfCxwWT52C",
     "showcase": "https://youtu.be/XKNXzRtxgsM",
-    "lastUpd": "16.11.2025",
+    "lastUpd": "22.04.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -35,5 +35,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXL", "Finished", "Verifying"]
+    "tags": ["XXL", "Finished", "Public", "Unrated"]
 }
