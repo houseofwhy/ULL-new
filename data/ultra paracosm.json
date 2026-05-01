@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "138704906",
     "name": "Ultra Paracosm",
     "author": "declan",
     "creators": ["declan","Renn241"],
     "verifier": "Wity",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/4V24spYQWuE?si=ou7mvs1STcvfarir",
     "showcase": "https://www.youtube.com/watch?v=gBt1owG6Nvw",
-    "lastUpd": "16.04.2026",
+    "lastUpd": "21.04.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Remake", "NC", "Finished", "Verifying"]
+    "tags": ["Long", "Remake", "NC", "Finished", "Public", "Unrated"]
 }
