@@ -5,17 +5,17 @@
     "author": "Dundermuffin",
     "creators": ["Dundermuffin"],
     "verifier": "jupi",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=f-keY28Ad3I",
-    "lastUpd": "14.10.2025",
+    "isVerified": true,
+    "verification": "https://youtu.be/eKqE_-AKzLI?si=gRN0fMy3uCvZhP_p&t=71",
+    "showcase": "https://youtu.be/eKqE_-AKzLI?si=okQSziX6jvy-JMtv",
+    "lastUpd": "20.04.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "jupi",
-            "link": "https://x.com/jupibun_/status/1928874313999913451",
-            "percent": 89,
+            "user": "none",
+            "link": "",
+            "percent": 0,
             "hz": 0
         }
     ],
