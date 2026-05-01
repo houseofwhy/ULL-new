@@ -11,8 +11,8 @@
     "records": [
         {
             "user": "Hover",
-            "link": "https://www.youtube.com/watch?v=s_0q3pHgaVY&t=6402s",
-            "percent": 40,
+            "link": "https://youtu.be/WVDGw6TdHjI?si=UAjUNBkm5hoED0OF",
+            "percent": 44,
             "hz": 240
         }
     ],
@@ -26,7 +26,7 @@
     "run": [
         {
             "user": "Hover",
-            "link": "https://www.youtube.com/watch?v=s_0q3pHgaVY&t=6402s",
+            "link": "https://youtu.be/WVDGw6TdHjI?si=AAKaL7VlUh7sPcAW&t=59",
             "percent": "43-100",
             "hz": 240
         }
