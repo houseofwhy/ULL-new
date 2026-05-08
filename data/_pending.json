@@ -5,8 +5,23 @@
         "link": "https://youtu.be/sdwrOXNV6ws?si=J7fZz9axNTpopYzv"
     },  
     {
+        "name": "Soft Living",
+        "placement": "1",
+        "link": "https://youtu.be/GUyCR9mYo9A?si=nlnTn-e4OH8fk5Gu"
+    },
+    {
+        "name": "CYANICAL",
+        "placement": "1",
+        "link": "https://youtu.be/6wMaWDA8beo?si=RLRIXaoeUzy7fLAG"
+    },
+    {
+        "name": "Octane",
+        "placement": "1",
+        "link": "https://youtu.be/6fnzx3KUE14?si=fuFHb4qvHg4Hszn7"
+    },
+    {
         "name": "ByteShift",
-        "placement": "10",
+        "placement": "1",
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
     },
     {
@@ -28,6 +43,11 @@
         "name": "belowZERO",
         "placement": "10",
         "link": "https://youtu.be/8IJxmfvoXOE?si=7m8EWyBdbriRgJaO"
+    },
+    {
+        "name": "Noblesse",
+        "placement": "10",
+        "link": "https://youtu.be/Oad5Xtq114E?si=gPrW61me4Tj7-uLq"
     },
     {
         "name": "Subconscious",
@@ -65,6 +85,26 @@
         "link": "https://youtu.be/9WGGm4_FKt0"
     },
     {
+        "name": "Bridge of Destiny",
+        "placement": "20",
+        "link": "https://youtu.be/HSDeqP5vtLs?si=Kebb8NmtVxsc8CBJ"
+    },
+    {
+        "name": "Suppression",
+        "placement": "20",
+        "link": "https://youtu.be/nHFcdpTrHSI?si=KZOBBAzyNqos0uE8"
+    },
+    {
+        "name": "E V E Rlasting",
+        "placement": "30",
+        "link":  "https://youtu.be/kBwCbuZniRI?si=eMEuyyZGuf4GQGVZ"
+    },
+    {
+        "name": "NOMAS 64 SEGUNDOS",
+        "placement": "50",
+        "link": "https://youtu.be/XS2_ER1ug6Y?si=7PJll3L5mAfcwUB6"
+    },
+    {
         "name": "BLAZEIT",
         "placement": "50",
         "link": "https://youtu.be/Oqth8K8BKKk?si=rZOybeWHAtYsJ240"
@@ -85,16 +125,21 @@
         "link": "https://youtu.be/j-hK6bl5pMY?si=r3ITqBl3Jv-WKSIW"
     },
     {
+        "name": "Goldcrest Calamity",
+        "placement": "50",
+        "link": "https://youtu.be/VJ8B8pKRWjw"
+    },
+    {
+        "name": "Anticulture",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=G8Oa4HzNBzk&pp=0gcJCdMKAYcqIYzv"
+    },
+    {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
     },
-    {
-        "name": "Final Level",
-        "placement": "75",
-        "link": "https://youtu.be/X2lFZ1xhqxU?si=5bJOLYSP4kG7XXkL"
-    },
-    {
+ {
         "name": "Vindication",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=vq2oEIuyLTo"
@@ -114,12 +159,7 @@
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=IYM4Nh17_Ko"
     },
-    {
-        "name": "BALLISTIC BALLPIT",
-        "placement": "75",
-        "link": "https://youtu.be/6Baug9fL9JA?si=WeZHdDERPU1rWBsv"
-    },
-    {
+ {
         "name": "Operation Zoink",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
@@ -158,5 +198,10 @@
         "name": "SUPERFEARMEWORLD",
         "placement": "?",
         "link": "https://youtu.be/xMXlbfKUKFY?si=yPerkxJo5cLB705l"
+    },
+    {
+        "name": "DEVILCIDE",
+        "placement": "?",
+        "link": "https://youtu.be/eayBukEUxxU?si=6JuLenIBcH_b1iTP"
     }
 ]
