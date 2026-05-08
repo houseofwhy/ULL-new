@@ -5,11 +5,6 @@
         "link": "https://youtu.be/sdwrOXNV6ws?si=J7fZz9axNTpopYzv"
     },  
     {
-        "name": "WONDERLAND",
-        "placement": "1",
-        "link": "https://youtu.be/wyDGBiYtjOQ?si=qGWuFq65DwyDztG"
-    },  
-    {
         "name": "ByteShift",
         "placement": "10",
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
@@ -18,11 +13,6 @@
         "name": "Carcion",
         "placement": "10",
         "link": "https://youtu.be/hsBltB_8l0M?si=99rOJiaObd6nqITw"
-    },
-    {
-        "name": "Nihilum",
-        "placement": "10",
-        "link": "https://www.youtube.com/watch?v=I31pahrX6Ic"
     },
     {
         "name": "00 Genesis",
@@ -130,11 +120,6 @@
         "link": "https://youtu.be/6Baug9fL9JA?si=WeZHdDERPU1rWBsv"
     },
     {
-        "name": "the last dream",
-        "placement": "75",
-        "link": "https://www.youtube.com/watch?v=8IH56Bog3xs"
-    },
-    {
         "name": "Operation Zoink",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
@@ -173,10 +158,5 @@
         "name": "SUPERFEARMEWORLD",
         "placement": "?",
         "link": "https://youtu.be/xMXlbfKUKFY?si=yPerkxJo5cLB705l"
-    },
-    {
-        "name": "Soul Restoration",
-        "placement": "?",
-        "link": "https://youtu.be/ruioggDMcRQ?si=5JFm5vreG1LwAZ4Y"
     }
 ]
