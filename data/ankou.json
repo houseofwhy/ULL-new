@@ -1,9 +1,9 @@
 {
     "id": "private",
     "name": "Ankou",
-    "author": "Cat_",
-    "creators": ["Cat_"],
-    "verifier": "Zombie_Gaming / Blue_Orbe",
+    "author": "Xukarns",
+    "creators": ["Xunarns"],
+    "verifier": "Zombie_Gaming / BlueOrbe",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/WFXgrnrdURA?si=oLObG5sShOmhlDgM",
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "none",
+            "user": "BlueOrbe",
+            "link": "https://youtu.be/4izmJaGQ7zA",
+            "percent": "69-100",
             "hz": 0
         }
     ],

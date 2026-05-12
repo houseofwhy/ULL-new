@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Brian_Cheese",
+            "link": "https://www.twitch.tv/brian_cheese/clip/BusyTiredPicklesTriHard-hp-xq_yyU_sElrxg",
+            "percent": 57,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Brian_Cheese",
+            "link": "https://youtu.be/v2uaVRtJnL4?si=v3vA00_9O3PcbiBc",
+            "percent": "28-100",
             "hz": 0
         }
     ],
