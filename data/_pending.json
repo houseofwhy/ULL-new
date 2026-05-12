@@ -21,8 +21,13 @@
     },
     {
         "name": "ByteShift",
-        "placement": "1",
+        "placement": "10",
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
+    },
+    {
+        "name": "Cascade(Amicrius)",
+        "placement": "10",
+        "link": "https://youtu.be/IgO5QDztrXE?si=8aYq4jmSJrRFDECK"
     },
     {
         "name": "Tragic",
@@ -170,6 +175,16 @@
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
     },
     {
+        "name" : "CONTRAVENTION",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=bo8SClU_kN4"
+    },
+    {
+        "name": "LET IT HAPPEN",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=gdWVol9b0vs"
+    },
+    {
         "name": "Quantong Processing",
         "placement": "?",
         "link": "https://www.youtube.com/watch?v=oubFsPJ9yYM&pp=ygULcXVhbnRvbmcgZ2TSBwkJxQoBhyohjO8%3D"
@@ -210,13 +225,13 @@
         "link": "https://youtu.be/eFEBaHzg0yg?si=O4SwcHQTzmEL1IZC"
     },
     {
-        "name": "MANGLE",
-        "placement": "?",
-        "link": "https://youtu.be/DAHgInqeNMU?si=iZ0Av1hlFAjQCXio"
-    },
-    {
         "name": "Duralusgore",
         "placement": "?",
         "link": "https://youtu.be/KZeThM51Ybo?si=RaUr6kjl3cTdr19x"
+    },
+    {
+        "name": "BASSLINE JUNKIE",
+        "placement": "?",
+        "link": "https://youtu.be/9NQQfASR2p8?si=WaWUqzPKW3NbP_0m"
     }
 ]
