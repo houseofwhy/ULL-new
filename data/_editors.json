@@ -41,11 +41,6 @@
     },
     {
         "role": "mod",
-        "name": "IIIHatsurineIII",
-        "link": "#"
-    },
-    {
-        "role": "mod",
         "name": "Th3Pot4toBOI",
         "link": "https://www.youtube.com/@Th3Pot4toBOI"
     },
@@ -53,11 +48,6 @@
         "role":"mod",
         "name": "TheCatAstronaut",
         "link": "https://www.youtube.com/@thecatastronaut0"
-    },
-    {
-        "role": "mod",
-        "name": "Zeus (Asbestos)",
-        "link": "https://www.youtube.com/@Asbestos_gmd"
     },
     {
         "role": "dev",
