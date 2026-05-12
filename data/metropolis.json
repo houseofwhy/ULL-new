@@ -27,11 +27,12 @@
     ],
     "length": 52,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 100,
     "isMain": false,
     "isFuture": false,
     "tags": [
-        "Layout",
-        "Medium"
+         "Medium",
+         "Finished",
+         "Verifying"
     ]
 }

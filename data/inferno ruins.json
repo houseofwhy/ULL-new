@@ -7,8 +7,8 @@
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=1FNGtZ8_M3I",
-    "lastUpd": "02.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=Ni9vC6zljtU",
+    "lastUpd": "02.05.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -30,9 +30,9 @@
 
     "length": 116,
     "rating": 1,
-    "percentFinished": 95,
+    "percentFinished": 100,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long"]
+    "tags": ["Long","Finished","Verifying","Quality"]
 }
