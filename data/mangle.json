@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "MANGLE",
+    "author": "KazaGD",
+    "creators": ["KazaGD"],
+    "verifier": "AVRG",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/DAHgInqeNMU?si=xXiIkA5jxH1UaLPN",
+    "lastUpd": "07.02.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "AVRG",
+            "link": "",
+            "percent": 60,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "AVRG",
+            "link": "",
+            "percent": "49-100",
+            "hz": 0
+        }
+    ],
+
+    "length": 38,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Medium","Finished", "Verifying"]
+}

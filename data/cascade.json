@@ -31,7 +31,7 @@
     "length": 150,
     "rating": 1,
     "percentFinished": 0,
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
     "tags": ["Layout", "XL", "NONG", "Quality"]
