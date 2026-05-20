@@ -3,7 +3,7 @@
     "name": "ZANBOT",
     "author": "Ido26",
     "creators": ["Ido26"],
-    "verifier": "unknown",
+    "verifier": "GMitzy",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/75woVCCPYbw",
@@ -12,17 +12,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "GMitzy",
+            "link": "https://youtu.be/_PSRYZD1Ass?si=hE-tDYuYdd3ngPVm",
+            "percent": 53,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "Nugblox",
-            "link": "",
-            "percent": "65-100",
+            "user": "GMitzy",
+            "link": "https://youtu.be/_PSRYZD1Ass?si=q8BTqD7PVxhiyFXd&t=106",
+            "percent": "33-100",
             "hz": 0
         }
     ],
