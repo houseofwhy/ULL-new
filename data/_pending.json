@@ -20,6 +20,11 @@
         "link": "https://youtu.be/6fnzx3KUE14?si=fuFHb4qvHg4Hszn7"
     },
     {
+        "name": "SARY MUSTNT CLEAR IT",
+        "placement": "1",
+        "link": "https://www.youtube.com/watch?v=ecOvGMBdZKQ"
+    },
+    {
         "name": "ByteShift",
         "placement": "10",
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
@@ -60,6 +65,11 @@
         "link": "https://youtu.be/Oad5Xtq114E?si=gPrW61me4Tj7-uLq"
     },
     {
+        "name": "HAUNT",
+        "placement": "10",
+        "link": "https://youtu.be/sQY4S1qD59o"
+    },
+    {
         "name": "Subconscious",
         "placement": "20",
         "link": "https://youtu.be/J7_rzTkAD8M?si=FxKmCTEcqB7nxqq9"
@@ -68,11 +78,6 @@
         "name": "Outcast",
         "placement": "20",
         "link": "https://youtu.be/YLBSCpQuxLo?si=pg2d-MtT_zSCF0Eh"
-    },
-    {
-        "name": "Losing Your Mind",
-        "placement": "20",
-        "link": "https://m.youtube.com/watch?v=OdNqIMzLRzE"
     },
     {
         "name": "SwiftVortex",
@@ -93,11 +98,6 @@
         "name": "Bridge of Destiny",
         "placement": "20",
         "link": "https://youtu.be/HSDeqP5vtLs?si=Kebb8NmtVxsc8CBJ"
-    },
-    {
-        "name": "Suppression",
-        "placement": "20",
-        "link": "https://youtu.be/nHFcdpTrHSI?si=KZOBBAzyNqos0uE8"
     },
     {
         "name": "E V E Rlasting",
@@ -140,6 +140,11 @@
         "link": "https://www.youtube.com/watch?v=G8Oa4HzNBzk&pp=0gcJCdMKAYcqIYzv"
     },
     {
+        "name": "Caliber",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=rPLk4MdmNoE"
+    },
+    {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
@@ -148,11 +153,6 @@
         "name": "Vindication",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=vq2oEIuyLTo"
-    },
-    {
-        "name": "The French",
-        "placement": "75",
-        "link": "https://youtu.be/910sbdTvqsg?si=krPhezFlAY-WjD6z"
     },
     {
         "name": "Fall In Line",
@@ -170,6 +170,11 @@
         "link": "https://www.youtube.com/watch?v=NvsLfMfstsg"
     },
     {
+        "name": "Losing Your Mind",
+        "placement": "75",
+        "link": "https://m.youtube.com/watch?v=OdNqIMzLRzE"
+    },
+    {
         "name": "EVERBLOOM",
         "placement": "75",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
@@ -185,6 +190,16 @@
         "link": "https://www.youtube.com/watch?v=gdWVol9b0vs"
     },
     {
+        "name": "HYTHER",
+        "placement": "75",
+        "link": "https://fxtwitter.com/zappiks/status/2052006108613517453?s=46"
+    },
+    {
+        "name": "WHITE ABYSS",
+        "placement": "75",
+        "link": "https://youtu.be/j4A8N0i6RZg"
+    },
+    {
         "name": "Quantong Processing",
         "placement": "?",
         "link": "https://www.youtube.com/watch?v=oubFsPJ9yYM&pp=ygULcXVhbnRvbmcgZ2TSBwkJxQoBhyohjO8%3D"
@@ -193,11 +208,6 @@
         "name": "Vaporeta",
         "placement": "?",
         "link": "https://m.youtube.com/watch?v=pNdFGeeStjo"
-    },
-    {
-        "name": "Hyoko",
-        "placement": "?",
-        "link": "https://youtu.be/zTDVM56hr_I?si=fSOfbbK2VVWwtuT3"
     },
     {
         "name": "The Final Phase",
@@ -230,8 +240,8 @@
         "link": "https://youtu.be/KZeThM51Ybo?si=RaUr6kjl3cTdr19x"
     },
     {
-        "name": "BASSLINE JUNKIE",
+        "name": "Ensorcell",
         "placement": "?",
-        "link": "https://youtu.be/9NQQfASR2p8?si=WaWUqzPKW3NbP_0m"
+        "link": "https://youtu.be/hUz_pb8s6Ds?si=QZv5wTpxAJqJgpcR"
     }
 ]
