@@ -1,9 +1,9 @@
 {
     "id": "private",
     "name": "Sulfur",
-    "author": "LoogiGD",
-    "creators": ["LoogiGD"],
-    "verifier": "unknown",
+    "author": "LoogiGD & [cherry] team",
+    "creators": ["LoogiGD","Vernam","Winchester"],
+    "verifier": "Doggie",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/wLbCeY5EP6c?si=6dT9j-xe2KvO-9B3",
@@ -29,9 +29,9 @@
 
     "length": 100,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 5,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Long","Layout"]
+    "tags": ["Long","Quality"]
 }
