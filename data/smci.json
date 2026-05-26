@@ -1,0 +1,37 @@
+{
+    "id": "135759653",
+    "name": "SARY MUSTN'T CLEAR IT",
+    "author": "wabas & Optic Sunflow",
+    "creators": ["wabas", "Optic Sunflow"],
+    "verifier": "Open Verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/ecOvGMBdZKQ?si=I1hV2wCmDUXHTbFq",
+    "lastUpd": "26.05.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 39,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Medium", "Remake", "Finished", "Verifying"]
+}
