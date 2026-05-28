@@ -2,7 +2,7 @@
     "id": "private",
     "name": "Astaroth",
     "author": "Nucdev",
-    "creators": [],
+    "creators": ["mariner","Nucdev"],
     "verifier": "Nucdev",
     "isVerified": false,
     "verification": "",
