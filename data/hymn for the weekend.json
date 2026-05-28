@@ -15,6 +15,13 @@
             "percent": 32,
             "hz": 240
         }
+    "run": [
+        {
+            "user": "Meper",
+            "link": "#",
+            "percent": "57-100",
+            "hz": 240
+        }		
     ],
     "length": 50,
     "rating": 1,

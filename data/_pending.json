@@ -20,9 +20,9 @@
         "link": "https://youtu.be/6fnzx3KUE14?si=fuFHb4qvHg4Hszn7"
     },
     {
-        "name": "SARY MUSTNT CLEAR IT",
+        "name": "Dream Dash",
         "placement": "1",
-        "link": "https://www.youtube.com/watch?v=ecOvGMBdZKQ"
+        "link": "https://www.youtube.com/watch?v=uYa8JPDVBw0"
     },
     {
         "name": "ByteShift",
@@ -45,11 +45,6 @@
         "link": "https://youtu.be/hsBltB_8l0M?si=99rOJiaObd6nqITw"
     },
     {
-        "name": "00 Genesis",
-        "placement": "10",
-        "link": "https://youtu.be/PAvL7kAupDY?si=ezDR9XLfcNw9k-zo"
-    },
-    {
         "name": "Constellations Song",
         "placement": "10",
         "link": "https://youtu.be/wKB7HG3xdGc?si=Mnz8AyJw371Drt6Z"
@@ -68,6 +63,11 @@
         "name": "HAUNT",
         "placement": "10",
         "link": "https://youtu.be/sQY4S1qD59o"
+    },
+    {
+        "name": "Bonfire",
+        "placement": "10",
+        "link": "https://www.youtube.com/watch?v=wq-_SFOT8wg"
     },
     {
         "name": "Subconscious",
@@ -100,19 +100,29 @@
         "link": "https://youtu.be/HSDeqP5vtLs?si=Kebb8NmtVxsc8CBJ"
     },
     {
+        "name": "Stupid horse",
+        "placement": "20",
+        "link": "https://youtu.be/wwqNmTqQM2A?si=9NqyuNuK1ByHcilv"
+    },
+    {
         "name": "E V E Rlasting",
         "placement": "30",
         "link":  "https://youtu.be/kBwCbuZniRI?si=eMEuyyZGuf4GQGVZ"
+	},
+	{
+        "name": "IT LURKS",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=OmEju4Rz88k"
     },
+	{
+        "name": "Cyber Raptor",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=zolzjLY7Mxs"
+    },	
     {
         "name": "NOMAS 64 SEGUNDOS",
         "placement": "50",
         "link": "https://youtu.be/XS2_ER1ug6Y?si=7PJll3L5mAfcwUB6"
-    },
-    {
-        "name": "BLAZEIT",
-        "placement": "50",
-        "link": "https://youtu.be/Oqth8K8BKKk?si=rZOybeWHAtYsJ240"
     },
     {
         "name": "WAVING",
@@ -143,6 +153,11 @@
         "name": "Caliber",
         "placement": "50",
         "link": "https://www.youtube.com/watch?v=rPLk4MdmNoE"
+    },
+    {
+        "name": "SOVEREIGN",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=GHmf4sK3YC8"
     },
     {
         "name": "Session 1",
@@ -199,6 +214,16 @@
         "placement": "75",
         "link": "https://youtu.be/j4A8N0i6RZg"
     },
+	{
+        "name": "Atropos",
+        "placement": "75",
+        "link": "https://youtu.be/gRJdRmLH0iE"
+    },
+	{
+        "name": "Marks",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=mhqLyk10BvY"
+    },
     {
         "name": "Quantong Processing",
         "placement": "?",
@@ -243,5 +268,20 @@
         "name": "Ensorcell",
         "placement": "?",
         "link": "https://youtu.be/hUz_pb8s6Ds?si=QZv5wTpxAJqJgpcR"
+    },
+	{
+        "name": "LEGION",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=bXX2O0hCBcc"
+	},
+	{
+        "name": "Tau",
+        "placement": "?",
+        "link": "https://youtu.be/1yIvplQz6Zk?si=cFTNbfRRQNX9NVns"
+    },
+	{
+        "name": "Castlevania",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=Y8ay8ir7awg"
     }
 ]
