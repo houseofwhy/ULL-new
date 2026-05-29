@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Cyber Raptor",
+    "author": "ItsGianlu & Robotition & niroi",
+    "creators": ["ItsGianlu","Robotition","niroi"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/zolzjLY7Mxs?si=QWB98WBPf5ET2REW",
+    "lastUpd": "13.05.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 708,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["XXXL+","Finished","Verifying","Remake"]
+}
