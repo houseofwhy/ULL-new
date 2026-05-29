@@ -3,14 +3,14 @@
     "name": "Hymn For The Weekend",
     "author": "Sady",
     "creators": ["Sady","Lit & More | Unknown"],
-    "verifier": "Meper",
+    "verifier": "Meepr",
     "isVerified": false,
     "verification": "",
     "showcase": "https://m.youtube.com/watch?v=j-Ws1146kbA&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=129&pp=gAQBiAQB",
     "percentToQualify": 33,
     "records": [
         {
-            "user": "Meper",
+            "user": "Meepr",
             "link": "#",
             "percent": 32,
             "hz": 240
@@ -18,7 +18,7 @@
     ],
     "run": [
         {
-            "user": "Meper",
+            "user": "Meepr",
             "link": "",
             "percent": "57-100",
             "hz": 240
