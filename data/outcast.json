@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Outcast",
+    "author": "Hypexz",
+    "creators": ["Hypexz"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=5w29YqoSWdE",
+    "lastUpd": "04.05.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 110,
+    "rating": 1,
+    "percentFinished": 15,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Long"]
+}
