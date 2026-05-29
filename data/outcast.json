@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "12980400",
     "name": "Outcast",
     "author": "Hypexz",
     "creators": ["Hypexz"],
-    "verifier": "unknown",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=5w29YqoSWdE",
-    "lastUpd": "04.05.2025",
+    "showcase": "https://youtu.be/YLBSCpQuxLo?si=o7VDsdU4IM28FC4q",
+    "lastUpd": "24.12.2025",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 110,
+    "length": 85,
     "rating": 1,
-    "percentFinished": 15,
+    "percentFinished": 100,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long"]
+    "tags": ["Long","Finished", "Verifying"]
 }
