@@ -1,18 +1,8 @@
-[
-    {
-        "name": "ZOINK NEVER CLEAR",
-        "placement": "1",
-        "link": "https://youtu.be/sdwrOXNV6ws?si=J7fZz9axNTpopYzv"
-    },  
+[  
     {
         "name": "Soft Living",
         "placement": "1",
         "link": "https://youtu.be/GUyCR9mYo9A?si=nlnTn-e4OH8fk5Gu"
-    },
-    {
-        "name": "CYANICAL",
-        "placement": "1",
-        "link": "https://youtu.be/6wMaWDA8beo?si=RLRIXaoeUzy7fLAG"
     },
     {
         "name": "Octane",
@@ -30,7 +20,7 @@
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
     },
     {
-        "name": "Cascade(Amicrius)",
+        "name": "Cascade (Amicrius)",
         "placement": "10",
         "link": "https://youtu.be/IgO5QDztrXE?si=8aYq4jmSJrRFDECK"
     },
@@ -60,11 +50,6 @@
         "link": "https://youtu.be/Oad5Xtq114E?si=gPrW61me4Tj7-uLq"
     },
     {
-        "name": "HAUNT",
-        "placement": "10",
-        "link": "https://youtu.be/sQY4S1qD59o"
-    },
-    {
         "name": "Bonfire",
         "placement": "10",
         "link": "https://www.youtube.com/watch?v=wq-_SFOT8wg"
@@ -73,11 +58,6 @@
         "name": "Subconscious",
         "placement": "20",
         "link": "https://youtu.be/J7_rzTkAD8M?si=FxKmCTEcqB7nxqq9"
-    },
-    {
-        "name": "Outcast",
-        "placement": "20",
-        "link": "https://youtu.be/YLBSCpQuxLo?si=pg2d-MtT_zSCF0Eh"
     },
     {
         "name": "SwiftVortex",
@@ -109,16 +89,6 @@
         "placement": "30",
         "link":  "https://youtu.be/kBwCbuZniRI?si=eMEuyyZGuf4GQGVZ"
 	},
-	{
-        "name": "IT LURKS",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=OmEju4Rz88k"
-    },
-	{
-        "name": "Cyber Raptor",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=zolzjLY7Mxs"
-    },	
     {
         "name": "NOMAS 64 SEGUNDOS",
         "placement": "50",
@@ -193,11 +163,6 @@
         "name": "EVERBLOOM",
         "placement": "75",
         "link": "https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB"
-    },
-    {
-        "name" : "CONTRAVENTION",
-        "placement": "75",
-        "link": "https://www.youtube.com/watch?v=bo8SClU_kN4"
     },
     {
         "name": "LET IT HAPPEN",
