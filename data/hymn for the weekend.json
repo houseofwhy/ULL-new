@@ -31,13 +31,5 @@
 
     "isMain": true,
     "isFuture": false,
-    "tags": ["Finished", "Public", "Medium", "NONG"],
-    "run": [
-        {
-            "user": "ConStar",
-            "link": "https://youtu.be/byACMs76CdQ?si=eYSybd2YQ8RHvHcq",
-            "percent": "75-100",
-            "hz": 240
-        }
-    ]
+    "tags": ["Finished", "Public", "Medium", "NONG"]
 }
