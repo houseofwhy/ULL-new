@@ -55,6 +55,11 @@
         "link": "https://www.youtube.com/watch?v=wq-_SFOT8wg"
     },
     {
+        "name": "Anticulture",
+        "placement": "20",
+        "link": "https://www.youtube.com/watch?v=G8Oa4HzNBzk&pp=0gcJCdMKAYcqIYzv"
+    },
+    {
         "name": "Subconscious",
         "placement": "20",
         "link": "https://youtu.be/J7_rzTkAD8M?si=FxKmCTEcqB7nxqq9"
@@ -115,9 +120,15 @@
         "link": "https://youtu.be/VJ8B8pKRWjw"
     },
     {
+<<<<<<< Updated upstream
         "name": "Anticulture",
         "placement": "50",
         "link": "https://www.youtube.com/watch?v=G8Oa4HzNBzk&pp=0gcJCdMKAYcqIYzv"
+=======
+        "name": "Caliber",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=rPLk4MdmNoE"
+>>>>>>> Stashed changes
     },
     {
         "name": "SOVEREIGN",
