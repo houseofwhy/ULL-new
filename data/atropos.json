@@ -1,13 +1,13 @@
 {
     "id": "private",
-    "name": "NOMAS 64 SEGUNDOS",
-    "author": "elxdmemegaoriginal",
-    "creators": ["elxdmemegaoriginal","Ignxzx","ciriboyito","hennkrido","zsilo","atuncin"],
-    "verifier": "unknown",
+    "name": "Atropos",
+    "author": "jet",
+    "creators": ["jet", "Aeleaxaendaer", "Versed"],
+    "verifier": "Versed/jet",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/XS2_ER1ug6Y?si=AYWFGbU2R1ZSMufm",
-    "lastUpd": "22.03.2026",
+    "showcase": "https://youtu.be/udGMa27SSF4?si=JFfeuVonCqK_2ZhX",
+    "lastUpd": "05.04.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -27,11 +27,11 @@
         }
     ],
 
-    "length": 65,
+    "length": 115,
     "rating": 1,
-    "percentFinished": 100,
+    "percentFinished": 60,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long","Finished","Verifying"]
+    "tags": ["Long","NoNG"]
 }
