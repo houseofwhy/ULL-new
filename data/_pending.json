@@ -15,6 +15,16 @@
         "link": "https://www.youtube.com/watch?v=uYa8JPDVBw0"
     },
     {
+        "name": "HATEOMANIA",
+        "placement": "1",
+        "link": "https://youtu.be/UFkafqkGSHw?si=jvd8ACI4BP7WxFu-"
+    },
+    {
+        "name": "SILENT HELHEIM",
+        "placement": "1",
+        "link": "https://youtu.be/b-WlUBrqNZ4?si=mYZipeME0U1q3OQe"
+    },
+    {
         "name": "ByteShift",
         "placement": "10",
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
@@ -50,14 +60,19 @@
         "link": "https://www.youtube.com/watch?v=wq-_SFOT8wg"
     },
     {
+        "name": "Constellations Song",
+        "placement": "10",
+        "link": "https://youtu.be/wKB7HG3xdGc?si=xtkB2GWltz2hzUBr"
+    },
+    {
+        "name": "ULTIMATUM",
+        "placement": "10",
+        "link": "https://youtu.be/r19XDJWxYCc?si=n3xalC8L-2jbwNZl"
+    },
+    {
         "name": "Anticulture",
         "placement": "20",
         "link": "https://www.youtube.com/watch?v=G8Oa4HzNBzk&pp=0gcJCdMKAYcqIYzv"
-    },
-    {
-        "name": "Subconscious",
-        "placement": "20",
-        "link": "https://youtu.be/J7_rzTkAD8M?si=FxKmCTEcqB7nxqq9"
     },
     {
         "name": "SwiftVortex",
@@ -90,10 +105,20 @@
         "link": "https://www.youtube.com/watch?v=UKIHBMqa5xU"
     },
     {
+        "name": "Gray Matter",
+        "placement": "20",
+        "link": "https://youtu.be/bA-XPfYU-BM?si=bNRxa0Xk-nn7mBbb"
+    },
+    {
         "name": "E V E Rlasting",
         "placement": "30",
         "link":  "https://youtu.be/kBwCbuZniRI?si=eMEuyyZGuf4GQGVZ"
 	},
+    {
+        "name": "Retina",
+        "placement": "30",
+        "link": "https://youtu.be/EHnrbMH-eH4?si=ZTKk0M64p_W4z8Wg"
+    },
     {
         "name": "WAVING",
         "placement": "50",
@@ -118,6 +143,21 @@
         "name": "SOVEREIGN",
         "placement": "50",
         "link": "https://www.youtube.com/watch?v=GHmf4sK3YC8"
+    },
+    {
+        "name": "LEGION",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=bXX2O0hCBcc"
+	},
+    {
+        "name": "Intuition",
+        "placement": "50",
+        "link": "https://youtu.be/hovqVbU9flk?si=JY5IpzdJzYuK9-0B"
+    },
+    {
+        "name": "HAUNTED SHIP",
+        "placement": "50",
+        "link": "https://youtu.be/kSSijblkjdE"
     },
     {
         "name": "Session 1",
@@ -165,18 +205,23 @@
         "link": "https://fxtwitter.com/zappiks/status/2052006108613517453?s=46"
     },
     {
-        "name": "WHITE ABYSS",
+        "name": "White Abyss",
         "placement": "75",
         "link": "https://youtu.be/j4A8N0i6RZg"
     },
-	{
-        "name": "Atropos",
+    {
+        "name": "Flux Realms",
         "placement": "75",
-        "link": "https://youtu.be/gRJdRmLH0iE"
+        "link": "#"
     },
-	{
+    {
+        "name": "THE GUDHSJ38",
+        "placement": "?",
+        "link": "https://youtu.be/BaKclZk1FpE?si=v8VFdibji5tFOcgO"
+    },
+    {
         "name": "Marks",
-        "placement": "75",
+        "placement": "?",
         "link": "https://www.youtube.com/watch?v=mhqLyk10BvY"
     },
 	{
@@ -220,11 +265,6 @@
         "link": "https://youtu.be/hUz_pb8s6Ds?si=QZv5wTpxAJqJgpcR"
     },
 	{
-        "name": "LEGION",
-        "placement": "?",
-        "link": "https://www.youtube.com/watch?v=bXX2O0hCBcc"
-	},
-	{
         "name": "Tau",
         "placement": "?",
         "link": "https://youtu.be/1yIvplQz6Zk?si=cFTNbfRRQNX9NVns"
@@ -233,5 +273,67 @@
         "name": "Castlevania",
         "placement": "?",
         "link": "https://www.youtube.com/watch?v=Y8ay8ir7awg"
+    },
+    {
+        "name": "The French",
+        "placement": "?",
+        "link": "https://youtu.be/910sbdTvqsg?si=krPhezFlAY-WjD6z"
+    },
+    {
+        "name": "Quantong Processing",
+        "placement": "?",
+        "link": "https://youtu.be/oubFsPJ9yYM?si=UmXgh8ffY9V3t3_F"
+    },
+    {
+        "name": "Korobeiniki",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=E5PURBZEKXM"
+    },
+    {
+        "name": "Sacrifice",
+        "placement": "?",
+        "link": "https://youtu.be/RPhy6t2bb04?si=UVDeE5wW_dH_5IYC"
+    },
+    {
+        "name": "AERIS",
+        "placement": "?",
+        "link": "https://youtu.be/oz1onTYlENk?si=5sLTrhTzRsSt02WJ"
+    },
+    {
+        "name": "METHHEAD",
+        "placement": "?",
+        "link": "https://youtu.be/kaPjBlbxjZY?si=cbldf71Yf84NTEIh"
+
+    },
+    {
+        "name": "WRACKNESS",
+        "placement": "?",
+        "link": "https://youtu.be/I8xE8sBhVdY?si=UyTtx6XWZvyZCaSP"
+    },
+    {
+        "name": "Silent Silhouette",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=_enNhDjPAbU&feature=youtu.be"
+    },
+    {
+        "name": "Battle of the Shades",
+        "placement": "?",
+        "link": "https://youtu.be/BLcPN64IQWA?si=u1Lf90DNgCC3MjIM"
+    },
+    {
+        "name": "INNARDS (bea_)",
+        "placement": "?",
+        "link": "https://youtu.be/axLJhPs2G90?si=TxwKY_Dc4tf-MsOx"
+    },
+    {
+        "name": "Jumper 2006",
+        "placement": "?",
+        "link": "https://youtu.be/NPGTIwe9wR8?si=q7N2kFPPFReQt6b1"
+    },
+    {
+        "name": "CLUBSTEP XYZ",
+        "placement": "?",
+        "link": "https://youtu.be/vzhactzEFWU?si=5RdDgdZMdgPRWwvl"
     }
+
 ]
