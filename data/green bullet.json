@@ -4,26 +4,26 @@
     "author": "[cherry] team",
     "creators": ["AirSavage","Konsi","Ego11","Xenith","Rhymer","fawksgdd","Loolycat","Dom89","MinAY","Harent","Del","Winchester"],
     "verifier": "Nickname",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/JG-qcvVkZFw?si=risom7nLdy0aBg-0",
     "showcase": "https://youtu.be/mHg2jrzpkxs",
     "lastUpd": "05.04.2026",
 
     "percentToQualify": 65,
     "records": [
         {
-            "user": "Nickname",
-            "link": "https://youtu.be/aeM2kiQG1K0?is=KM8DCgxzztW4KvL1",
-            "percent": 89,
+            "user": "none",
+            "link": "",
+            "percent": 0,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "Nickname",
-            "link": "https://youtu.be/5V_rXghtypY?si=loB7ftCh3-OkCELO",
-            "percent": "18-100",
-            "hz": 240
+            "user": "none",
+            "link": "",
+            "percent": "",
+            "hz": 0
         }
     ],
 
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XL", "Finished", "Quality", "Verifying"]
+    "tags": ["XL", "Finished", "Quality", "Verified", "Unrated"]
 }
