@@ -6,8 +6,8 @@
     "verifier": "Gopso",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/Amu_WEcP9u0?si=IAp5w69Kc-uE7cPg",
-    "lastUpd": "16.03.2026",
+    "showcase": "https://www.youtube.com/watch?v=ekNG1vHg5Uk",
+    "lastUpd": "04.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Gopso",
+            "link": "https://youtu.be/Ld6rs1KzcrM",
+            "percent": "49-100",
             "hz": 0
         }
     ],

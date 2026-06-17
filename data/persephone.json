@@ -1,14 +1,14 @@
 {
     "id": "private",
-    "name": "catastrophe",
-    "author": "rubrum",
-    "creators": [],
+    "name": "Persephone",
+    "author": "adoluvs",
+    "creators": ["adoluvs","Artox"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=o3XpLwlrBMk",
-    "lastUpd": "08.06.2026",
+    "showcase": "https://youtu.be/AEdjhzGSexI?si=LzYPzhYKBePADXfL",
     "percentToQualify": 1,
+    "lastUpd": "30.05.2026",
     "records": [
         {
             "user": "none",
@@ -25,12 +25,14 @@
             "hz": 0
         }
     ],
-    "length": 64,
+    "length": 56,
     "rating": 1,
-    "percentFinished": 50,
+    "percentFinished": 10,
+
     "isMain": true,
     "isFuture": false,
-    "tags": [
-        "Long"
-    ]
+
+    "tags": ["Long","Quality","NoNG"]
+
+
 }

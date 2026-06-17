@@ -1,13 +1,14 @@
 {
     "id": "private",
-    "name": "catastrophe",
-    "author": "rubrum",
-    "creators": [],
-    "verifier": "unknown",
+    "name": "наколки",
+    "author": "[delight] team | ItzDel1ghtfuL & More",
+    "creators": ["ItzDel1ghtfuL","DJilka","naliboki"],
+    "verifier": "ItzDel1ghtfuL",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=o3XpLwlrBMk",
-    "lastUpd": "08.06.2026",
+    "showcase": "https://youtu.be/VpHdLqslEIM?si=xiEaVpaXskZ4-ovv",
+    "lastUpd": "02.03.2026",
+
     "percentToQualify": 1,
     "records": [
         {
@@ -25,12 +26,12 @@
             "hz": 0
         }
     ],
-    "length": 64,
+
+    "length": 108,
     "rating": 1,
-    "percentFinished": 50,
+    "percentFinished": 0,
     "isMain": true,
-    "isFuture": false,
-    "tags": [
-        "Long"
-    ]
+    "isFuture": true,
+
+    "tags": ["Long", "Quality", "NONG"]
 }

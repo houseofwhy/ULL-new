@@ -6,7 +6,7 @@
         "MadisonYuko"
     ],
     "verifier": "Q1m",
-    "isVerified": false,
+    "isVerified": true,
     "verification": "https://youtu.be/yO6CkrSxZI4?si=0h3oPcMm78g6i0xO",
     "showcase": "https://www.youtube.com/watch?v=liXviHr4C40",
     "lastUpd": "16.06.2025",
@@ -36,6 +36,7 @@
         "Public",
         "Finished",
         "Long",
+        "Verified",
         "Unrated"
     ]
 }

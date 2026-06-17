@@ -1,13 +1,13 @@
 {
     "id": "private",
     "name": "Fury",
-    "author": "cheapy",
+    "author": "hsam",
     "creators": [],
     "verifier": "Xplode",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=WfGxyLX9CXA",
-    "lastUpd": "20.09.2025",
+    "showcase": "https://www.youtube.com/watch?v=fcIC-N3hf04",
+    "lastUpd": "11.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -29,7 +29,7 @@
 
     "length": 106,
     "rating": 1,
-    "percentFinished": 20,
+    "percentFinished": 65,
     "isMain": true,
     "isFuture": false,
 

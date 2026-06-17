@@ -3,7 +3,7 @@
     "name": "Cyber Raptor",
     "author": "ItsGianlu & Robotition & niroi",
     "creators": ["ItsGianlu","Robotition","niroi"],
-    "verifier": "unknown",
+    "verifier": "Lobster",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/zolzjLY7Mxs?si=QWB98WBPf5ET2REW",
@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Lobster",
+            "link": "https://youtu.be/X0uqmrkzfHI?si=bsgW-O9El86clI_R",
+            "percent": 93,
             "hz": 0
         }
     ],

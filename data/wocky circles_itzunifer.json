@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "Wocky Circles (ItzUnifer)",
+    "author": "ItzUnifer",
+    "creators": ["ItzUnifer","ch91","KYWY"],
+    "verifier": "opy30k",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=xcsG4q45ezg",
+    "lastUpd": "12.09.2025",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "opy30k",
+            "link": "https://youtu.be/oxc7jqYrduI?si=l91pM3eY9y7TRdxy",
+            "percent": 74,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 65,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": false,
+    "isFuture": false,
+
+    "tags": ["Long", "Remake", "NC", "Verifying", "Finished"]
+}

@@ -2,7 +2,7 @@
     "id": "private",
     "name": "Eternal Night",
     "author": "Electro",
-    "creators": [],
+    "creators": ["el3ctr0", "swiborg"],
     "verifier": "Swiborg",
     "isVerified": false,
     "verification": "",
@@ -18,9 +18,9 @@
     ],
     "run": [
         {
-            "user": "Thnnder",
-            "link": "https://www.youtube.com/watch?v=ZDfj5fYkCS0",
-            "percent": "63-100",
+            "user": "Mizukii",
+            "link": "https://youtu.be/cD3o9bOf_0w?si=2LEemy0fj5VpM5UX",
+            "percent": "38-100",
             "hz": 0
         }
     ],

@@ -1,20 +1,20 @@
 {
     "id": "private",
     "name": "Wocky Circles",
-    "author": "ItzUnifer",
-    "creators": ["ItzUnifer","ch91"],
+    "author": "Heyveli",
+    "creators": ["Heyveli","KYWY"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=xcsG4q45ezg",
-    "lastUpd": "12.09.2025",
+    "showcase": "https://youtu.be/ug3Z7mObjY4?si=o3tTVn8xVHk4u2c5",
+    "lastUpd": "09.04.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "opy30k",
-            "link": "https://youtu.be/oxc7jqYrduI?si=l91pM3eY9y7TRdxy",
-            "percent": 74,
+            "user": "none",
+            "link": "",
+            "percent": 0,
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long", "Remake", "NC"]
+    "tags": ["Long", "Remake", "NC", "Finished", "Verifying"]
 }
