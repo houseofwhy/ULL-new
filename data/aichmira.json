@@ -2,8 +2,8 @@
     "id": "private",
     "name": "AICHMIRA",
     "thumbnail": "https://i.ytimg.com/vi/KVBi8qpih9Y/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAgnVTlt34IuGBX-SvZxH4yPjNzDg",
-    "author": "Team OMEGA",
-    "creators": ["XxdomxX","Norbex & More | Unknown"],
+    "author": "XxDomXx",
+    "creators": ["XxDomXx","Norbex & More | Unknown"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
@@ -30,9 +30,9 @@
 
     "length": 106,
     "rating": 1,
-    "percentFinished": 60,
+    "percentFinished": 30,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NC", "Quality"]
+    "tags": ["Long", "NC"]
 }
