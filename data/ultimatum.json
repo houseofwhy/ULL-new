@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "ULTIMATUM",
+    "author": "Surjaco",
+    "creators": ["Surjaco","Hamato","CatioGD","Dangerous ROBOT","filqh","GalaxyCat","ItzYoshino","nCylix","tenzk","KinoKuni"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/wyGXMC2I-j8?si=isvMI7aTVKHkXYKQ",
+    "lastUpd": "06.06.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "None",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "None",
+            "link": "",
+            "percent": "",
+            "hz": 0
+        }
+    ],
+
+    "length": 76,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+
+    "tags": ["Long", "NONG", "Finished", "Verifying"]
+}
