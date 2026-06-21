@@ -11,11 +11,6 @@
     },
     {
         "role": "seniormod",
-        "name": "VivisectionGD",
-        "link": "https://www.youtube.com/@VivisectionGD"
-    },
-    {
-        "role": "seniormod",
         "name": "niroi",
         "link": "https://www.youtube.com/@niroi_"
     },
@@ -30,14 +25,14 @@
         "link": "https://www.youtube.com/@LukeLGamer34"
     },
     {
-        "role": "mod",
-        "name": "Terralith",
-        "link": "https://www.youtube.com/@terragaminggeometrydash"
+        "role": "seniormod",
+        "name": "ItzDel1ghtfuL",
+        "link": "https://www.youtube.com/@ItzDel1ghtfuLTCD"
     },
     {
         "role": "mod",
-        "name": "ItzDel1ghtfuL",
-        "link": "https://www.youtube.com/@ItzDel1ghtfuLTCD"
+        "name": "Terralith",
+        "link": "https://www.youtube.com/@terragaminggeometrydash"
     },
     {
         "role": "mod",
