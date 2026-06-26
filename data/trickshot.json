@@ -1,0 +1,37 @@
+{
+    "id": 136135870,
+    "name": "Trickshot",
+    "author": "vonic",
+    "creators": ["vonic"],
+    "verifier": "vonic",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=IMLjnmnIWRc",
+    "showcase": "https://www.youtube.com/watch?v=IHHiAsw_Q70",
+    "lastUpd": "20.03.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 64,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Verified", "Rated", "Public"]
+}
