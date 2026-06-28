@@ -20,6 +20,11 @@
         "link": "https://youtu.be/UFkafqkGSHw?si=jvd8ACI4BP7WxFu-"
     },
     {
+        "name": "mindflow",
+        "placement": "1",
+        "link": "https://youtu.be/JlbF4XzUyQE?si=BELQBwxpiKqxzzbN"
+    },
+    {
         "name": "SILENT HELHEIM",
         "placement": "1",
         "link": "https://youtu.be/b-WlUBrqNZ4?si=mYZipeME0U1q3OQe"
@@ -70,6 +75,21 @@
         "link": "https://youtu.be/r19XDJWxYCc?si=n3xalC8L-2jbwNZl"
     },
     {
+        "name": "RONALDO CIRCLES",
+        "placement": "10",
+        "link": "https://www.youtube.com/watch?v=k6heXn-yGGU"
+    },
+    {
+        "name": "OMEN",
+        "placement": "10",
+        "link": "https://www.youtube.com/watch?v=cKkYw4dG6NI"
+    },
+    {
+        "name": "kijin no sensou",
+        "placement": "10",
+        "link": "https://youtu.be/HdN5yXyTs7M?si=lWrFDXg2kXnynwWR"
+    },
+    {
         "name": "Anticulture",
         "placement": "20",
         "link": "https://www.youtube.com/watch?v=G8Oa4HzNBzk&pp=0gcJCdMKAYcqIYzv"
@@ -83,6 +103,11 @@
         "name": "The Fire and Flames",
         "placement": "20",
         "link": "https://youtu.be/rEjQ2KE-_FU?si=EOMhOKxCcIDIXjIh"
+    },
+    {
+        "name": "BAD TO THE BONE",
+        "placement": "20",
+        "link": "https://www.youtube.com/watch?v=RkCcNOBM584"
     },
     {
         "name": "Narine",
@@ -108,6 +133,16 @@
         "name": "Gray Matter",
         "placement": "20",
         "link": "https://youtu.be/bA-XPfYU-BM?si=bNRxa0Xk-nn7mBbb"
+    },
+    {
+        "name": "PRODUKT",
+        "placement": "20",
+        "link": "https://youtu.be/qDU8uuxir_w"
+    },
+       {
+        "name": "Dreamcore",
+        "placement": "20",
+        "link": "https://www.youtube.com/watch?v=m7F8ERVIK4c"
     },
     {
         "name": "E V E Rlasting",
@@ -163,6 +198,11 @@
         "name": "HAUNTED SHIP",
         "placement": "50",
         "link": "https://youtu.be/kSSijblkjdE"
+    },
+    {
+        "name": "Shadow of the Past",
+        "placement": "50",
+        "link": "https://youtu.be/33nJhY7sNtg"
     },
     {
         "name": "Session 1",
@@ -228,6 +268,11 @@
         "name": "Ensorcell",
         "placement": "75",
         "link": "https://youtu.be/hUz_pb8s6Ds?si=QZv5wTpxAJqJgpcR"
+    },
+	{
+        "name": "Nervhell",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=-yOd5eZKZbg"
     },
 	{
 		"name": "Reveries End",
@@ -334,6 +379,35 @@
         "name": "CLUBSTEP XYZ",
         "placement": "?",
         "link": "https://youtu.be/vzhactzEFWU?si=5RdDgdZMdgPRWwvl"
+    },
+    {
+        "name": "TIKI TIKI CIRCLES",
+        "placement": "?",
+        "link": "https://youtu.be/D6Xr_NMu7uI"
+    },
+    {
+        "name": "Pinnacle of Life",
+        "placement": "?",
+        "link": "https://youtu.be/xF0gkz-CZOU"
+    },
+    {
+        "name": "In Stasis",
+        "placement": "?",
+        "link": "https://youtu.be/QiMepc8xMnU"
+    },
+    {
+        "name": "TERROR",
+        "placement": "?",
+        "link": "https://youtu.be/wCXCBrCTUKA"
+    },
+    {
+        "name": "after nullscapes",
+        "placement": "?",
+        "link": "https://youtu.be/CCuTrDBxIAQ?is=2KaAZ9wNKYHddZgo"
+    },
+    {
+        "name": "The Impaler",
+        "placement": "?",
+        "link": "https://youtu.be/5TnpCHVk-t4?si=F-lYoNpTwHuWquFd"
     }
-
 ]
