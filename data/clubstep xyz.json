@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "CLUBSTEP XYZ",
+    "author": "Streamy450",
+    "creators": ["Streamy450","CairoX","GDSledge"],
+    "verifier": "Streamy450",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=m4Bmh7kosWg",
+    "lastUpd": "10.07.2025",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Streamy450",
+            "link": "https://www.youtube.com/watch?v=UzYaZsBvOJU",
+            "percent": 47,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 85,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Long",
+        "Finished",
+        "Verifying"
+    ]
+}

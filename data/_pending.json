@@ -20,14 +20,14 @@
         "link": "https://youtu.be/UFkafqkGSHw?si=jvd8ACI4BP7WxFu-"
     },
     {
-        "name": "mindflow",
+        "name": "Mindflow",
         "placement": "1",
         "link": "https://youtu.be/JlbF4XzUyQE?si=BELQBwxpiKqxzzbN"
     },
-    {
-        "name": "SILENT HELHEIM",
-        "placement": "1",
-        "link": "https://youtu.be/b-WlUBrqNZ4?si=mYZipeME0U1q3OQe"
+        {
+        "name": "TIKI TIKI CIRCLES",
+        "placement": "10",
+        "link": "https://youtu.be/D6Xr_NMu7uI"
     },
     {
         "name": "ByteShift",
@@ -73,11 +73,6 @@
         "name": "ULTIMATUM",
         "placement": "10",
         "link": "https://youtu.be/r19XDJWxYCc?si=n3xalC8L-2jbwNZl"
-    },
-    {
-        "name": "RONALDO CIRCLES",
-        "placement": "10",
-        "link": "https://www.youtube.com/watch?v=k6heXn-yGGU"
     },
     {
         "name": "OMEN",
@@ -153,6 +148,11 @@
         "name": "Retina",
         "placement": "30",
         "link": "https://youtu.be/EHnrbMH-eH4?si=ZTKk0M64p_W4z8Wg"
+    },
+    {
+        "name": "Battle of the Shades",
+        "placement": "30",
+        "link": "https://youtu.be/BLcPN64IQWA?si=u1Lf90DNgCC3MjIM"
     },
     {
         "name": "WAVING",
@@ -256,7 +256,7 @@
     },
     {
         "name": "THE GUDHSJ38",
-        "placement": "?",
+        "placement": "75",
         "link": "https://youtu.be/BaKclZk1FpE?si=v8VFdibji5tFOcgO"
     },
     {
@@ -270,9 +270,14 @@
         "link": "https://youtu.be/hUz_pb8s6Ds?si=QZv5wTpxAJqJgpcR"
     },
 	{
-        "name": "Nervhell",
+        "name": "NervHell",
         "placement": "75",
         "link": "https://www.youtube.com/watch?v=-yOd5eZKZbg"
+    },
+    {
+        "name": "The French",
+        "placement": "75",
+        "link": "https://youtu.be/910sbdTvqsg?si=krPhezFlAY-WjD6z"
     },
 	{
 		"name": "Reveries End",
@@ -320,11 +325,6 @@
         "link": "https://www.youtube.com/watch?v=Y8ay8ir7awg"
     },
     {
-        "name": "The French",
-        "placement": "?",
-        "link": "https://youtu.be/910sbdTvqsg?si=krPhezFlAY-WjD6z"
-    },
-    {
         "name": "Quantong Processing",
         "placement": "?",
         "link": "https://youtu.be/oubFsPJ9yYM?si=UmXgh8ffY9V3t3_F"
@@ -361,29 +361,9 @@
         "link": "https://www.youtube.com/watch?v=_enNhDjPAbU&feature=youtu.be"
     },
     {
-        "name": "Battle of the Shades",
-        "placement": "?",
-        "link": "https://youtu.be/BLcPN64IQWA?si=u1Lf90DNgCC3MjIM"
-    },
-    {
         "name": "INNARDS (bea_)",
         "placement": "?",
         "link": "https://youtu.be/axLJhPs2G90?si=TxwKY_Dc4tf-MsOx"
-    },
-    {
-        "name": "Jumper 2006",
-        "placement": "?",
-        "link": "https://youtu.be/NPGTIwe9wR8?si=q7N2kFPPFReQt6b1"
-    },
-    {
-        "name": "CLUBSTEP XYZ",
-        "placement": "?",
-        "link": "https://youtu.be/vzhactzEFWU?si=5RdDgdZMdgPRWwvl"
-    },
-    {
-        "name": "TIKI TIKI CIRCLES",
-        "placement": "?",
-        "link": "https://youtu.be/D6Xr_NMu7uI"
     },
     {
         "name": "Pinnacle of Life",

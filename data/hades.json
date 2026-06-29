@@ -14,16 +14,16 @@
     "records": [
         {
             "user": "mariner",
-            "link": "https://youtu.be/9qzrLidFHcw?si=p3k0bkDPTCswDk_A",
-            "percent": 17,
+            "link": "https://www.youtube.com/watch?v=yeXvqpn_K2o&t=35s",
+            "percent": 21,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "mariner",
+            "link": "https://youtu.be/yeXvqpn_K2o?si=b87cATHUowG8bNfv",
+            "percent": "63-100",
             "hz": 0
         }
     ],
