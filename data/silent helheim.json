@@ -1,31 +1,31 @@
 {
-    "id": "private",
-    "name": "CLUBSTEP XYZ",
+    "id": "80469799",
+    "name": "SILENT HELHEIM",
     "author": "Streamy450",
     "creators": ["Streamy450","CairoX","GDSledge"],
-    "verifier": "Streamy450",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=m4Bmh7kosWg",
-    "lastUpd": "10.07.2025",
+    "showcase": "https://www.youtube.com/watch?v=b-WlUBrqNZ4",
+    "lastUpd": "30.05.2026",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Streamy450",
-            "link": "https://www.youtube.com/watch?v=UzYaZsBvOJU",
-            "percent": 47,
+            "user": "Kopyedz",
+            "link": "https://youtu.be/060zFAojlT0?si=RS3tHMbLG8aBKiY1",
+            "percent": 78,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Kopyedz",
+            "link": "https://www.youtube.com/watch?v=BzajeK2m4BU&t=36",
+            "percent": "45-100",
             "hz": 0
         }
     ],
-    "length": 85,
+    "length": 51,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,

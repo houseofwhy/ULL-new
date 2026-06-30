@@ -1,0 +1,37 @@
+{
+    "id": "private",
+    "name": "RONALDO CIRCLES",
+    "author": "Team Mailand China // majin",
+    "creators": ["majin","Randum","Horizon","HD","Tusol","Frythief","Arshadow","TheeNegativee"],
+    "verifier": "Arshadow",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=k6heXn-yGGU",
+    "lastUpd": "11.06.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+
+    "length": 71,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long","Quality","NC","Verifying","Finished"]
+}
