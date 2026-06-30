@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "143836454",
     "name": "CYANICAL",
     "author": "qponn",
     "creators": ["qponn"],
-    "verifier": "unknown",
+    "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/1Jkq-Ficpyk?is=HJ2ZvL8bwBXAmtNt",
-    "lastUpd": "24.06.2026",
+    "lastUpd": "30.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 53,
     "rating": 1,
-    "percentFinished": 80,
+    "percentFinished": 10,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Long"]
+    "tags": ["Long","Open Verification","Verifying","Finished"]
 }

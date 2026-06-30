@@ -80,7 +80,7 @@
         "link": "https://www.youtube.com/watch?v=cKkYw4dG6NI"
     },
     {
-        "name": "kijin no sensou",
+        "name": "Kijin no Sensou",
         "placement": "10",
         "link": "https://youtu.be/HdN5yXyTs7M?si=lWrFDXg2kXnynwWR"
     },
@@ -134,10 +134,15 @@
         "placement": "20",
         "link": "https://youtu.be/qDU8uuxir_w"
     },
-       {
+    {
         "name": "Dreamcore",
         "placement": "20",
         "link": "https://www.youtube.com/watch?v=m7F8ERVIK4c"
+    },
+    {
+        "name": "Azure Flare (ItsHybrid)",
+        "placement": "20",
+        "link": "https://www.youtube.com/watch?v=kWY2ULjXEpo"
     },
     {
         "name": "E V E Rlasting",

@@ -2,12 +2,13 @@
     "id": "private",
     "name": "Fiberglass",
     "author": "[cherry] team",
-    "creators": [],
+    "creators": ["Vernam","Pes11","Junko Alice","hashinoby","kisss","devdevany","sayonarofc","derenowo","iten47",
+    "mblazer699","tacchini","mitonimiya","kiragdmj","lilium"],
     "verifier": "duvdevany",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=2L0CNK1xSlo",
-    "lastUpd": "10.04.2026",
+    "showcase": "https://www.youtube.com/watch?v=t22_kH1gJpI",
+    "lastUpd": "25.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +30,9 @@
 
     "length": 62,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 10,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long"]
+    "tags": ["Long","Quality","Verifying","Finished"]
 }

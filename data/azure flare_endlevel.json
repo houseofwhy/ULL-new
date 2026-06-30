@@ -1,0 +1,38 @@
+{
+    "id": "private",
+    "name": "Azure Flare (VERTOP)",
+    "thumbnail": "https://i.ytimg.com/vi/nsw1IPm2TVg/hqdefault.jpg?sqp=-oaymwEmCMQBEG5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLBcgvgsjeYS50sbaF4gj15VGUFgnw",
+    "author": "EndLevel",
+    "creators": ["EndLevel"],
+    "verifier": "VERTOP",
+    "isVerified": false,
+    "verification": "03.11.2025",
+    "showcase": "https://www.youtube.com/watch?v=ZZTcbv91irk&feature=youtu.be",
+    "lastUpd": "25.11.2025",
+
+    "percentToQualify": 50,
+    "records": [
+        {
+            "user": "VERTOP",
+            "link": "https://www.youtube.com/watch?v=PeT5GAsu-rM",
+            "percent": 49,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "VERTOP",
+            "link": "",
+            "percent": "44-100",
+            "hz": 0
+        }
+    ],
+
+    "length": 68,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "NC", "Finished","Verifying"]
+}

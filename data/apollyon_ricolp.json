@@ -26,9 +26,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "RicoLP",
+            "link": "https://www.youtube.com/watch?v=EKh495gjfYw",
+            "percent": "75-100",
             "hz": 0
         }
     ],
@@ -39,5 +39,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["XXXL"]
+    "tags": ["XXXL+", "Finished", "Quality", "Verifying"]
 }
