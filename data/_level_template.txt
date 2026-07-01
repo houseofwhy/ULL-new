@@ -3,7 +3,7 @@
     "name": "",
     "author": "",
     "creators": [],
-    "verifier": "",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "",
