@@ -5,9 +5,9 @@
     "creators": ["AWESOME ME"],
     "verifier": "Gnamolor",
     "isVerified": false,
-    "verification": "03.06.2026",
+    "verification": "https://www.youtube.com/watch?v=22l59QGmL48",
     "showcase": "https://www.youtube.com/watch?v=kSSijblkjdE",
-    "lastUpd": "",
+    "lastUpd": "26.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Remake", "Finished", "Verifying"]
+    "tags": ["Long", "Remake", "Finished", "Verified","Unrated"]
 }
