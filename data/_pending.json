@@ -1,10 +1,5 @@
 [  
     {
-        "name": "Soft Living",
-        "placement": "1",
-        "link": "https://youtu.be/GUyCR9mYo9A?si=nlnTn-e4OH8fk5Gu"
-    },
-    {
         "name": "Octane",
         "placement": "1",
         "link": "https://youtu.be/6fnzx3KUE14?si=fuFHb4qvHg4Hszn7"
@@ -35,7 +30,7 @@
         "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh"
     },
     {
-        "name": "Cascade (Amicrius)",
+        "name": "CASCADE (Amicrius)",
         "placement": "10",
         "link": "https://youtu.be/IgO5QDztrXE?si=8aYq4jmSJrRFDECK"
     },
@@ -125,11 +120,6 @@
         "link": "https://www.youtube.com/watch?v=UKIHBMqa5xU"
     },
     {
-        "name": "Gray Matter",
-        "placement": "20",
-        "link": "https://youtu.be/bA-XPfYU-BM?si=bNRxa0Xk-nn7mBbb"
-    },
-    {
         "name": "PRODUKT",
         "placement": "20",
         "link": "https://youtu.be/qDU8uuxir_w"
@@ -198,16 +188,6 @@
         "name": "Intuition",
         "placement": "50",
         "link": "https://youtu.be/hovqVbU9flk?si=JY5IpzdJzYuK9-0B"
-    },
-    {
-        "name": "HAUNTED SHIP",
-        "placement": "50",
-        "link": "https://youtu.be/kSSijblkjdE"
-    },
-    {
-        "name": "Shadow of the Past",
-        "placement": "50",
-        "link": "https://youtu.be/33nJhY7sNtg"
     },
     {
         "name": "Session 1",
@@ -310,11 +290,6 @@
         "link": "https://youtu.be/eayBukEUxxU?si=6JuLenIBcH_b1iTP"
     },
     {
-        "name": "Remorse",
-        "placement": "?",
-        "link": "https://youtu.be/eFEBaHzg0yg?si=O4SwcHQTzmEL1IZC"
-    },
-    {
         "name": "Duralusgore",
         "placement": "?",
         "link": "https://youtu.be/KZeThM51Ybo?si=RaUr6kjl3cTdr19x"
@@ -386,7 +361,7 @@
         "link": "https://youtu.be/wCXCBrCTUKA"
     },
     {
-        "name": "after nullscapes",
+        "name": "Zonescapes",
         "placement": "?",
         "link": "https://youtu.be/CCuTrDBxIAQ?is=2KaAZ9wNKYHddZgo"
     },
@@ -396,3 +371,4 @@
         "link": "https://youtu.be/5TnpCHVk-t4?si=F-lYoNpTwHuWquFd"
     }
 ]
+ 
