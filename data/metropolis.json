@@ -1,27 +1,27 @@
 {
-    "id": "private",
+    "id": "still unreleased bruh✌️🥀",
     "name": "METROPOLIS",
     "author": "KZLR",
     "creators": [],
     "verifier": "Ascended",
-    "isVerified": false,
+    "isVerified": true,
     "verification": "",
     "showcase": "https://youtu.be/E0MsK-a_w4c?si=5iifbO7vBW8L8wWh",
-    "lastUpd": "21.04.2026",
+    "lastUpd": "09.07.2026",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Ascended",
-            "link": "https://youtu.be/LtH7kiCA66U?si=boU3ZbTNF7rQD9wU",
-            "percent": 83,
+            "user": "",
+            "link": "",
+            "percent": 0,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "Ascended",
-            "link": "https://youtu.be/k3t325G4-dY?si=S0M3LxkCViASSXII&t=38",
-            "percent": "49-100",
+            "user": "",
+            "link": "",
+            "percent": "",
             "hz": 0
         }
     ],
@@ -33,6 +33,7 @@
     "tags": [
          "Medium",
          "Finished",
-         "Verifying"
+         "Verified",
+         "Unrated"
     ]
 }

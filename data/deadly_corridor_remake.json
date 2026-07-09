@@ -11,17 +11,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Mentrillum",
+            "link": "https://www.youtube.com/post/Ugkxw5P6GLnI2g_8hSlEpdjwsaRIm1fkyhM6",
+            "percent": 34,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Mentrillum",
+            "link": "https://www.youtube.com/post/Ugkxw5P6GLnI2g_8hSlEpdjwsaRIm1fkyhM6",
+            "percent": "28-100",
             "hz": 0
         }
     ],

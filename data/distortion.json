@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": "144371160",
     "name": "Distortion",
     "author": "Ka1sa",
     "creators": ["Mysel","Ultimxte","Noobypro","Ka1sa","Samu","ZenithGD","FreedyDash","YouknowwhoGD","AComet"],
     "verifier": "Karma",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=8iSgxah5bJY",
     "showcase": "https://youtu.be/WrKajZgS_tw?si=bLZ-Fh_uvDBp04qm",
-    "lastUpd": "22.03.2026",
+    "lastUpd": "07.07.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -32,6 +32,8 @@
     "isFuture": false,
     "tags": [
         "Finished",
-        "Medium"
+        "Medium", 
+        "Verified",
+        "Unrated"
     ]
 }
