@@ -29,9 +29,9 @@
 
     "length": 261,
     "rating": 1,
-    "percentFinished": 25,
+    "percentFinished": 0,
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
 
     "tags": ["XXL","Quality","NONG","Layout"]
 }

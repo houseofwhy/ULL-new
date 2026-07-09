@@ -21,7 +21,7 @@
     "run": [
         {
             "user": "none",
-            "link": "",  
+            "link": "",
             "percent": "0",
             "hz": 0
         }
@@ -30,8 +30,8 @@
     "length": 53,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long","Open Verification","Verifying","Finished"]
+    "tags": ["Long","Open Verification","Finished"]
 }

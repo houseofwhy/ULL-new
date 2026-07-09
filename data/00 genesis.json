@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/xLS6pXfi_Vs",
-    "lastUpd": "14.05.2026",
+    "lastUpd": "04.07.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -22,15 +22,15 @@
         {
             "user": "none",
             "link": "",
-            "percent": "none",
+            "percent": "",
             "hz": 0
         }
     ],
 
     "length": 341,
     "rating": 1,
-    "percentFinished": 20,
-    "isMain": false,
+    "percentFinished": 50,
+    "isMain": true,
     "isFuture": false,
 
     "tags": ["XXXL+", "Quality"]

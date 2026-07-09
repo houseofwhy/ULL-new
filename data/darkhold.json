@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "Darkhold",
-    "author": "Randum GMD",
+    "author": "Randum",
     "creators": [
         "Rubrum",
         "Nexes3",
@@ -38,7 +38,6 @@
     "isMain": true,
     "isFuture": false,
     "tags": [
-        "Layout",
         "Long"
     ]
 }

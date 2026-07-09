@@ -2,13 +2,13 @@
     "id": "private",
     "name": "Graveyard",
     "thumbnail": "https://i.ytimg.com/vi/Bptre_ypSa4/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDRYL2HNG4G5-ss93I7ig4QBnH9sw",
-    "author": "demi",
+    "author": "CRASH [team]",
     "creators": [],
-    "verifier": "manuw09",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/KkL2IxLML1A?si=-O1Q_qqVvRJupJjn",
-    "lastUpd": "19.01.2026",
+    "showcase": "https://www.youtube.com/watch?v=x-L-GHHc7Gw",
+    "lastUpd": "22.05.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -30,9 +30,9 @@
 
     "length": 48,
     "rating": 1,
-    "percentFinished": 28,
+    "percentFinished": 8,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Medium", "Remake"]
+    "tags": ["Medium", "Remake", "Layout"]
 }

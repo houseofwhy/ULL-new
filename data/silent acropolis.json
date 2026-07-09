@@ -1,9 +1,9 @@
 {
-    "id": "111237270",
+    "id": "private",
     "name": "Silent Acropolis",
     "author": "ThePurgatory",
     "creators": ["ValkyrieMasterGD","synage3211","Mittiran","Roselyne","NextPhaseGD","Feron","creatorschannelgd1780","Zhopolom","1nvise","dyubinart","Ivashka","Uriun","Inex"],
-    "verifier": "Open Verification",
+    "verifier": "Hover",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=2djt_p6OQsg&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=11&ab_channel=Neiro",
@@ -12,7 +12,7 @@
         {
             "user": "Hover",
             "link": "https://youtu.be/bGH6zPOE8jo?t=12657",
-            "percent": 62,
+            "percent": 84,
             "hz": 240
         }
     ],
@@ -31,6 +31,6 @@
             "hz": 240
         }
     ],
-    "tags": ["Public", "Finished", "Verifying", "Long", "Remake", "Quality"],
+    "tags": ["Finished", "Verifying", "Long", "Remake", "Quality"],
     "lastUpd": "05.04.2026"
 }

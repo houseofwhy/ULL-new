@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/Xf6jl9MsTzw",
-    "lastUpd": "05.03.2026",
+    "lastUpd": "05.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -20,10 +20,10 @@
     ],
     "run": [
         {
-            "user": "Smoothx",
-            "link": "https://youtu.be/lqEHmwpMDto?si=GY8AqBWzLlBSi_Zi",
-            "percent": "74-100",
-            "hz": 0
+            "user": "mariner",
+            "link": "https://www.youtube.com/watch?v=yeXvqpn_K2o",
+            "percent": "69-100",
+            "hz": 240
         }
     ],
 
