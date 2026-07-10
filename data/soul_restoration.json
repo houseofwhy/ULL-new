@@ -1,7 +1,7 @@
 {
     "id": "private",
     "name": "Soul Restoration",
-    "author": "",
+    "author": "Tornabro",
     "creators": [
         "Tornabro",
         "Amplitron"
@@ -32,8 +32,8 @@
     "length": 87,
     "rating": 1,
     "percentFinished": 0,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
         "Layout",
         "Long",

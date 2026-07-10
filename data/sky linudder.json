@@ -3,7 +3,7 @@
     "name": "Sky Linudder",
     "author": "LinuDi",
     "creators": ["LinuDi"],
-    "verifier": "whfyre // ksojeweu",
+    "verifier": "LinuDi",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/jIot3KCggmk?si=X1UiiRaJ1G8zHrkA",
@@ -30,7 +30,7 @@
     "length": 73,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": false,
+    "isMain": true,
     "isFuture": false,
 
     "tags": ["Long", "Remake", "Finished", "Verifying"]
