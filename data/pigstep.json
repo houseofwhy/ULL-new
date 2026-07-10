@@ -30,8 +30,8 @@
     "length": 138,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": false,
-    "isFuture": false,
+    "isMain": true,
+    "isFuture": true,
 
     "tags": ["XL", "Finished", "Verifying"]
 }

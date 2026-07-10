@@ -30,6 +30,6 @@
     "lastUpd": "09.07.2026",
 
     "isMain": true,
-    "isFuture": false,
-    "tags": ["Finished", "Public", "Medium", "NONG"]
+    "isFuture": true,
+    "tags": ["Finished", "Public", "Medium", "NONG", "Verifying"]
 }

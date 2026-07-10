@@ -30,8 +30,8 @@
     "length": 708,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": false,
-    "isFuture": false,
+    "isMain": true,
+    "isFuture": true,
 
     "tags": ["XXXL+","Finished","Verifying","Remake"]
 }

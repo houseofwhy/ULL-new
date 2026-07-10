@@ -32,7 +32,7 @@
     "rating": 1,
     "percentFinished": 95,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
     "tags": ["Long","Quality", "Remake"]
 }
