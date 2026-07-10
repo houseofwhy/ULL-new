@@ -2,12 +2,12 @@
     "id": "private",
     "name": "Snowblind",
     "author": "QwidziT",
-    "creators": ["QwidziT","Ynvie","Ivashka","Stikez_mazec"],
+    "creators": ["QwidziT","Ynvie","Ivashka","Rebu"],
     "verifier": "FHippo",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/umFBsNrUcdg",
-    "lastUpd": "15.05.2026",
+    "lastUpd": "10.07.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 73,
     "rating": 1,
-    "percentFinished": 41,
+    "percentFinished": 45,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Verifying", "Quality"]
+    "tags": ["Long", "Verifying", "Quality", "NoNG"]
 }

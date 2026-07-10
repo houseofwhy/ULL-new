@@ -29,9 +29,9 @@
 
     "length": 100,
     "rating": 1,
-    "percentFinished": 30,
+    "percentFinished": 40,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "NC"]
+    "tags": ["Long", "NC", "Quality"]
 }

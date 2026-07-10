@@ -29,8 +29,8 @@
     "length": 94,
     "rating": 1,
     "percentFinished": 75,
-    "isMain": true,
-    "isFuture": true,
+    "isMain": false,
+    "isFuture": false,
     "tags": [
         "Long",
         "NONG"

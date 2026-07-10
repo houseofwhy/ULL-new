@@ -30,7 +30,7 @@
     "length": 78,
     "rating": 1,
     "percentFinished": 20,
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
     "tags": ["Long", "NC"]
