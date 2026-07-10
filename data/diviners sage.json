@@ -29,9 +29,9 @@
 
     "length": 148,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 100,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
-    "tags": ["XL", "Remake"]
+    "tags": ["XL", "Remake", "Verified", "Unrated"]
 }

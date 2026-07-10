@@ -1,6 +1,6 @@
 {
     "id": "private",
-    "name": "CALIBER",
+    "name": "ExCalibur",
     "author": "adoluvsu",
     "creators": ["adoluvsu","TenshoSDK","catiogd","ShizuGD","lemunn_","d3kzxr"],
     "verifier": "unknown",
@@ -30,7 +30,7 @@
     "length": 0,
     "rating": 1,
     "percentFinished": 80,
-    "isMain": false,
+    "isMain": true,
     "isFuture": false,
 
     "tags": ["Long", "Remake"]

@@ -1,11 +1,11 @@
 {
-    "id": "private",
+    "id": 143671277,
     "name": "VOID",
     "author": "eEddy",
     "creators": ["eEddy"],
     "verifier": "veshel",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/uMv8iGVpeCc?si=YzO-W8Th3hJzTE7r",
     "showcase": "https://youtu.be/cdnLcnlEO5Q?si=-pCD-mq6sSmvMA_0",
     "lastUpd": "26.02.2026",
     "percentToQualify": 1,
@@ -34,6 +34,7 @@
         "Finished",
         "NC",
         "Long",
-        "Verifying"
+        "Verified",
+        "Unrated"
     ]
 }
