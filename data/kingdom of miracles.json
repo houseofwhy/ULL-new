@@ -26,11 +26,5 @@
     "isFuture": false,
     "tags": ["XL", "Remake"],
     "run": [
-        {
-            "user": "none",
-            "link": "",
-            "percent": "",
-            "hz": 0
-        }
     ]
 }
