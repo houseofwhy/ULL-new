@@ -8,7 +8,7 @@
     "verification": "",
     "showcase": "https://youtu.be/dxQbpipw3Is",
     "thumbnail": "https://i.ytimg.com/vi/X2lFZ1xhqxU/maxresdefault.jpg",
-    "lastUpd": "22.12.2025",
+    "lastUpd": "30.06.2025",
     "percentToQualify": 1,
     "records": [
         {
@@ -28,11 +28,12 @@
     ],
     "length": 90,
     "rating": 1,
-    "percentFinished": 0,
+    "percentFinished": 30,
     "isMain": true,
     "isFuture": true,
     "tags": [
         "Long",
-        "Layout"
+        "NC",
+        "Quality"
     ]
 }

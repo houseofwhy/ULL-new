@@ -28,11 +28,12 @@
     "length": 70,
     "rating": 1,
     "percentFinished": 100,
-    "isMain": false,
-    "isFuture": false,
+    "isMain": true,
+    "isFuture": true,
     "tags": [
         "Finished",
         "Remake",
-        "Long"
+        "Long",
+        "Verifying"
     ]
 }

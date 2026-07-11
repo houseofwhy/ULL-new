@@ -3,7 +3,7 @@
     "name": "BALLISTIC BALLPIT",
     "author": "Geogamer",
     "creators": [],
-    "verifier": "",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/pj5rzmtFn2E?si=AASuswX_SXhvNLtq",
@@ -27,8 +27,8 @@
     ],
     "length": 77,
     "rating": 1,
-    "percentFinished": 100,
-    "isMain": false,
+    "percentFinished": 40,
+    "isMain": true,
     "isFuture": false,
     "tags": [
         "Long"

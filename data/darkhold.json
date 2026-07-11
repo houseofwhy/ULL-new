@@ -36,7 +36,7 @@
     "rating": 1,
     "percentFinished": 50,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
     "tags": [
         "Long"
     ]
