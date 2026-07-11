@@ -24,7 +24,7 @@
     "lastUpd": "29.11.2025",
 
     "isMain": true,
-    "isFuture": true,
+    "isFuture": false,
     "tags": ["Remake", "XXXL+"],
     "run": [
         {
@@ -32,6 +32,6 @@
             "link": "",
             "percent":"0",
             "hz": 0
-        }        
+        }
     ]
 }
