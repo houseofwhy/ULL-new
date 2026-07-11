@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=kH3W1jLS4ZI",
-    "lastUpd": "15.06.2025",
+    "lastUpd": "15.06.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -30,7 +30,7 @@
     "length": 162,
     "rating": 1,
     "percentFinished": 10,
-    "isMain": true,
+    "isMain": false,
     "isFuture": false,
 
     "tags": ["XL", "Quality"]
