@@ -2,7 +2,7 @@
     "id": "private",
     "name": "EROSION",
     "author": "Marsu",
-    "creators": [],
+    "creators": ["Marsu"],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
@@ -27,11 +27,10 @@
     ],
     "length": 226,
     "rating": 1,
-    "percentFinished": 40,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": true,
     "tags": [
-        "XXL",
-        "Quality"
+        "XXL"
     ]
 }
