@@ -4,10 +4,10 @@
     "author": "declan",
     "creators": ["declan","SkyJax"],
     "verifier": "Axinity",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/Uue4ZRhVf-I",
     "showcase": "https://youtu.be/oi5o9GTc7Qs",
-    "lastUpd": "10.07.2026",
+    "lastUpd": "17.07.2026",
 
     "percentToQualify": 71,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Medium", "Finished", "Verifying", "NC", "Remake"]
+    "tags": ["Medium", "Finished", "Verified", "NC", "Remake", "Unrated"]
 }

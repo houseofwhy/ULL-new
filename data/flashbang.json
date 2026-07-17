@@ -9,7 +9,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=2j9nLPyE2Tw",
-    "lastUpd": "10.07.2026",
+    "lastUpd": "17.07.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -23,8 +23,8 @@
     "run": [
         {
             "user": "LordVaderCraft",
-            "link": "https://www.youtube.com/watch?v=DtnEB9h_xcI",
-            "percent": "44-93",
+            "link": "https://www.youtube.com/watch?v=tP_O6i71274",
+            "percent": "44-100",
             "hz": 240
         }
     ],
