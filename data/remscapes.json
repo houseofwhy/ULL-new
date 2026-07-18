@@ -1,14 +1,14 @@
 {
     "id": "private",
-    "name": "Remscapes",
+    "name": "Dreamscapes",
     "thumbnail": "https://i.ytimg.com/vi/7pFNl1vhboQ/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDtqj0djjsX7q4SukRybgJ0MBD49A",
     "author": "Vizi",
     "creators": [],
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/OsYwqtyPYd8?si=y6M8uq4jirC7s-gn",
-    "lastUpd": "15.01.2026",
+    "showcase": "https://youtu.be/mj1RAVc9QL4?si=A4LrrdEm7wOppWfv",
+    "lastUpd": "15.07.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -30,9 +30,9 @@
 
     "length": 63,
     "rating": 1,
-    "percentFinished": 90,
+    "percentFinished": 100,
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long", "Remake"]
+    "tags": ["Long", "Remake", "Finished"]
 }
