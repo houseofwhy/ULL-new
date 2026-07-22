@@ -10,9 +10,9 @@
     "percentToQualify": 32,
     "records": [
         {
-            "user": "Trolly1",
-            "link": "https://www.youtube.com/watch?v=f9ewrnsAAvs",
-            "percent": 31,
+            "user": "Al3xTT",
+            "link": "https://youtu.be/wPCb6prtlqM?is=7opdIloNezlJH1Wy",
+            "percent": 37,
             "hz": 0
         }
     ],
@@ -30,6 +30,6 @@
 
     "isMain": true,
     "isFuture": false,
-    "lastUpd": "17.11.2025",
+    "lastUpd": "21.07.2026",
     "tags": ["Long"]
 }

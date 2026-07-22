@@ -2,8 +2,8 @@
     "id": "private",
     "name": "OUROBOROS",
     "author": "[cherry] team",
-    "creators": ["JAGDP","qMystic"],
-    "verifier": "apu",
+    "creators": ["JAGDP","qMystic","Dimonkyky"],
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=gZz_2r97wzM",
@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "apu",
-            "link": "https://www.youtube.com/watch?v=eKYJBH8tFjI",
-            "percent": "41-100",
+            "user": "SerVax",
+            "link": "https://youtu.be/t5TWB9uA8kU?si=mg58xNXtk3R-_xAn",
+            "percent": "27-100",
             "hz": 0
         }
     ],

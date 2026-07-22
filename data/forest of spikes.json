@@ -4,17 +4,17 @@
     "author": "bimsgd",
     "creators": ["bimsgd"],
     "verifier": "unknown",
-    "isVerified": false,
+    "isVerified": "Brian_Cheese",
     "verification": "",
     "showcase": "https://youtu.be/AMTmhEFfKyg?si=RMnPwfyTn91H-MnZ",
-    "lastUpd": "18.01.2026",
+    "lastUpd": "18.07.2026",
 
     "percentToQualify": 1,
     "records": [
         {
             "user": "Brian_Cheese",
-            "link": "https://x.com/Brian__Cheese/status/2067940048969052486?s=20",
-            "percent": 77,
+            "link": "#",
+            "percent": 82,
             "hz": 0
         }
     ],

@@ -4,26 +4,26 @@
     "author": "[cherry] team | Vernam",
     "creators": ["Vernam","Pes11","Junko Alice","hashinoby","kisss","devdevany","sayonarofc","derenowo","iten47",
     "mblazer699","tacchini","mitonimiya","kiragdmj","lilium"],
-    "verifier": "duvdevany",
+    "verifier": "Duv",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=t22_kH1gJpI",
-    "lastUpd": "25.06.2026",
+    "lastUpd": "22.07.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Duv",
+            "link": "https://youtu.be/D_KCLO72uco",
+            "percent": 33,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "Duv",
+            "link": "https://youtu.be/D_KCLO72uco",
+            "percent": "62-100",
             "hz": 0
         }
     ],
