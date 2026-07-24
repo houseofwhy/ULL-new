@@ -1,0 +1,40 @@
+{
+    "id": "private",
+    "name": "https://www.youtube.com/watch?v=f4OR5PvqNa8",
+    "author": "oAquix",
+    "creators": [
+        "oAquix"
+    ],
+    "verifier": "kaza",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=f4OR5PvqNa8",
+    "thumbnail": "https://www.youtube.com/watch?v=f4OR5PvqNa8",
+    "lastUpd": "17.06.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 120,
+    "rating": 1,
+    "percentFinished": 0,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Layout",
+        "XL"
+    ]
+}

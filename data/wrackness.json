@@ -1,0 +1,42 @@
+{
+    "id": "private",
+    "name": "WRACKNESS",
+    "author": "Higane",
+    "creators": [
+        "Higane",
+        "Sylo"
+    ],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=I8xE8sBhVdY",
+    "thumbnail": "https://www.youtube.com/watch?v=I8xE8sBhVdY",
+    "lastUpd": "25.04.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 80,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Long",
+        "NONG"
+    ]
+}

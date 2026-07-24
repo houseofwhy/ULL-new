@@ -1,0 +1,40 @@
+{
+    "id": "private",
+    "name": "Lawet",
+    "author": "Cherryteam",
+    "creators": [
+        "Cherryteam"
+    ],
+    "verifier": "dovinn_",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=bS39BLjaY50",
+    "thumbnail": "https://www.youtube.com/watch?v=bS39BLjaY50",
+    "lastUpd": "30.06.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 120,
+    "rating": 1,
+    "percentFinished": 15,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XL",
+        "Quality"
+    ]
+}

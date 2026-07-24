@@ -1,0 +1,59 @@
+{
+    "id": "private",
+    "name": "AERIS",
+    "author": "oFishyyy",
+    "creators": [
+        "oFishyyy",
+        "aird",
+        "forcexx3",
+        "ivy",
+        "adam2324",
+        "togi",
+        "puppee",
+        "7xbropab",
+        "salsi",
+        "jerry",
+        "logestt7",
+        "Asukahhh",
+        "Mikegmd",
+        "russelsky",
+        "sadcraft0o",
+        "lucas",
+        "derry",
+        "mrnewb6963",
+        "sigmapreston",
+        "asuka",
+        "FrameZero266"
+    ],
+    "verifier": "ProStyle",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=mPX8sJcZ0bo",
+    "thumbnail": "https://www.youtube.com/watch?v=mPX8sJcZ0bo",
+    "lastUpd": "31.05.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 300,
+    "rating": 1,
+    "percentFinished": 35,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "XXL"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "id": "private",
+    "name": "Ensorcell",
+    "author": "TheCatAstronaut",
+    "creators": [
+        "TheCatAstronaut",
+        "Qply.y",
+        "EbieGD",
+        "samkap",
+        "culob"
+    ],
+    "verifier": "rubrum",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=hUz_pb8s6Ds",
+    "thumbnail": "https://www.youtube.com/watch?v=hUz_pb8s6Ds",
+    "lastUpd": "14.05.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 60,
+    "rating": 1,
+    "percentFinished": 30,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long"
+    ]
+}

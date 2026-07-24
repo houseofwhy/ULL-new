@@ -1,0 +1,40 @@
+{
+    "id": "\"private\"",
+    "name": "White Abyss",
+    "author": "Shiver",
+    "creators": [
+        "Shiver"
+    ],
+    "verifier": "Shiver",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=j4A8N0i6RZg",
+    "lastUpd": "19.06.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "Shiver",
+            "link": "https://www.youtube.com/watch?v=o3Q02NAb7oU",
+            "percent": 56,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "Shiver",
+            "link": "https://www.youtube.com/watch?v=o3Q02NAb7oU",
+            "percent": "45-100",
+            "hz": 240
+        }
+    ],
+    "length": 72,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Finished",
+        "Verifying",
+        "Long"
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": 113279154,
+    "name": "Water World",
+    "author": "Cheapyy",
+    "creators": [
+        "Cheapyy"
+    ],
+    "verifier": "niroi",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://youtu.be/P2KvBI-PpQU?si=QET_I6YqF9-Q3kTl",
+    "thumbnail": "https://youtu.be/P2KvBI-PpQU?si=QET_I6YqF9-Q3kTl",
+    "lastUpd": "10.07.2026",
+    "percentToQualify": 37,
+    "records": [
+        {
+            "user": "niroi",
+            "link": "https://www.youtube.com/watch?v=RXtwAprfuZY",
+            "percent": 36,
+            "hz": 240
+        }
+    ],
+    "run": [
+        {
+            "user": "",
+            "link": "https://www.youtube.com/watch?v=brOnDDHF5EI",
+            "percent": "20-68",
+            "hz": 240
+        }
+    ],
+    "length": 137,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Public",
+        "Verifying",
+        "XL"
+    ]
+}
