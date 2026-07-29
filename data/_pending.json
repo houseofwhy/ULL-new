@@ -125,6 +125,11 @@
         "link": "https://www.youtube.com/watch?v=m7F8ERVIK4c"
     },
     {
+        "name": "EXECUTION",
+        "placement": "30",
+        "link": "https://www.youtube.com/watch?v=jbkqxoZbZVQ"
+    },
+    {
         "name": "E V E Rlasting",
         "placement": "30",
         "link":  "https://youtu.be/kBwCbuZniRI?si=eMEuyyZGuf4GQGVZ"
@@ -138,6 +143,11 @@
         "name": "Battle of the Shades",
         "placement": "30",
         "link": "https://youtu.be/BLcPN64IQWA?si=u1Lf90DNgCC3MjIM"
+    },
+    {
+        "name": "SOVEREIGN",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=GHmf4sK3YC8"
     },
     {
         "name": "WAVING",
@@ -178,6 +188,11 @@
         "name": "Intuition",
         "placement": "50",
         "link": "https://youtu.be/hovqVbU9flk?si=JY5IpzdJzYuK9-0B"
+    },
+    {
+        "name": "Zonescapes",
+        "placement": "50",
+        "link": "https://youtu.be/CCuTrDBxIAQ?is=2KaAZ9wNKYHddZgo"
     },
     {
         "name": "Session 1",
@@ -253,6 +268,11 @@
         "name": "The French",
         "placement": "75",
         "link": "https://youtu.be/910sbdTvqsg?si=krPhezFlAY-WjD6z"
+    },
+    {
+        "name": "pickled!",
+        "placement": "75",
+        "link": "https://www.youtube.com/watch?v=9OqVQOeIPaE"
     },
 	{
 		"name": "Reveries End",
@@ -349,11 +369,6 @@
         "name": "TERROR",
         "placement": "?",
         "link": "https://youtu.be/wCXCBrCTUKA"
-    },
-    {
-        "name": "Zonescapes",
-        "placement": "?",
-        "link": "https://youtu.be/CCuTrDBxIAQ?is=2KaAZ9wNKYHddZgo"
     },
     {
         "name": "The Impaler",
