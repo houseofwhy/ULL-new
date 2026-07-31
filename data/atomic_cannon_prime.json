@@ -2,7 +2,7 @@
     "id": "private",
     "name": "ATOMIC CANNON PRIME",
     "author": "LIEB",
-    "creators": [],
+    "creators": ["LIEB", "Elanox", "Smokes", "Skele", "MultiverseGD", "Platnuu", "GrenadeOfTacos", "Coliwog", "tenzk", "Fliqh", "Manix648", "Infernuz", "Filqh", "Temp", "Th04", "Shaun07"],
     "verifier": "Zeronium",
     "isVerified": false,
     "verification": "",
@@ -27,7 +27,7 @@
     ],
     "length": 226,
     "rating": 1,
-    "percentFinished": 55,
+    "percentFinished": 80,
     "isMain": true,
     "isFuture": true,
     "tags": [
