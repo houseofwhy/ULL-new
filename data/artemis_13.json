@@ -16,17 +16,17 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "Zoink",
+            "link": "https://www.youtube.com/watch?v=Yg51HLNK_-o&t=8129s",
+            "percent": 41,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "none",
-            "link": "",
-            "percent": "0",
+            "link": "#",
+            "percent": "32-74",
             "hz": 0
         }
     ],
