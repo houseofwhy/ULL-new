@@ -1,0 +1,37 @@
+{
+    "id": "140900825",
+    "name": "HATEOMANIA",
+    "author": "SylenPaws",
+    "creators": ["SylenPaws"],
+    "verifier": "Open Verification",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=UFkafqkGSHw",
+    "lastUpd": "22.05.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 62,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": false , 
+    "isFuture": true, 
+
+    "tags": ["Open Verification", "Long", "Finished", "Verifying"]
+}
