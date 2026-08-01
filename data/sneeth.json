@@ -27,10 +27,11 @@
     ],
     "length": 77,
     "rating": 1,
-    "percentFinished": 45,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": false,
     "tags": [
-        "Long"
+        "Long",
+        "Finished"
     ]
 }

@@ -4,25 +4,19 @@
     "author": "[cherry] team",
     "creators": ["Vernam","Ariller","MinAY","KiraGDMJ","Hashinoby","kissthechrist","Winchester","Iten47","Konsi"],
     "verifier": "Eiriley",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://youtu.be/MnOSbQQV_wA?si=XcnwJtY43GVk7aQK",
     "showcase": "https://youtu.be/ParLtwMIWzI?si=Lz8lBco8dNfFQbgZ",
-    "lastUpd": "01.05.2026",
+    "lastUpd": "01.08.2026",
     "percentToQualify": 1,
     "records": [
         {
-            "user": "Eiriley",
-            "link": "https://www.youtube.com/watch?v=9SUvPXFqLbU&t=2614s",
-            "percent": 63,
-            "hz": 0
+
         }
     ],
     "run": [
         {
-            "user": "Eiriley",
-            "link": "",
-            "percent": "41-100",
-            "hz": 0
+        
         }
     ],
     "length": 70,
@@ -34,6 +28,6 @@
         "Quality",
         "Long",
         "Finished",
-        "Verifying"
+        "Public"
     ]
 }
