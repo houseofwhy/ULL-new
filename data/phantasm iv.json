@@ -3,7 +3,7 @@
     "name": "Phantasm IV",
     "author": "Thombo",
     "creators": [],
-    "verifier": "Bizdogg",
+    "verifier": "T4G",
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=Asl2I4SVCcA",
@@ -12,9 +12,9 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "T4G",
+            "link": "https://www.youtube.com/watch?v=kmwc4IS6uik",
+            "percent": 44,
             "hz": 0
         }
     ],
