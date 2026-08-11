@@ -6,8 +6,8 @@
     "verifier": "BONN GD",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=qnKzHnXnQzg",
-    "lastUpd": "24.12.2025",
+    "showcase": "https://youtu.be/LMsjqNrN17Q?si=EJLjklUugu20DSGi",
+    "lastUpd": "04.08.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -29,9 +29,9 @@
 
     "length": 75,
     "rating": 1,
-    "percentFinished": 55,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Long", "Quality", "NONG"]
+    "tags": ["Long", "Quality", "NONG", "Finished", "Verifying"]
 }
