@@ -1,17 +1,15 @@
 {
     "id": "private",
-    "name": "Wistfully",
+    "name": "thibkign soace III",
     "author": "hasuopf",
     "creators": [
-        "hasuopf",
-        "Rose",
-        "Cryptoria"
+        "hasuopf"
     ],
-    "verifier": "Hellcat",
+    "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://www.youtube.com/watch?v=_ujC1DiGYEs",
-    "lastUpd": "19.05.2026",
+    "showcase": "https://www.youtube.com/watch?v=R_2HNfGs9d0",
+    "lastUpd": "08.08.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -23,9 +21,9 @@
     ],
     "run": [
         {
-            "user": "АБУБУБАБУДЖАК",
-            "link": "https://youtu.be/V6pIhw0hDsE",
-            "percent": "63-100",
+            "user": "none",
+            "link": "",
+            "percent": "",
             "hz": 0
         }
     ],
@@ -37,7 +35,6 @@
     "tags": [
         "Long",
         "Verifying",
-        "Finished",
-        "Remake"
+        "Finished"
     ]
 }
