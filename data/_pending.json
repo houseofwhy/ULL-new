@@ -5,6 +5,11 @@
         "link": "https://youtu.be/6fnzx3KUE14?si=fuFHb4qvHg4Hszn7"
     },
     {
+        "name": "Midnight Moonlight",
+        "placement": "1",
+        "link": "https://www.youtube.com/watch?v=87lya-uNcHg"
+    },
+    {
         "name": "Dream Dash",
         "placement": "1",
         "link": "https://www.youtube.com/watch?v=uYa8JPDVBw0"
@@ -24,7 +29,6 @@
         "placement": "10",
         "link": "https://youtu.be/IgO5QDztrXE?si=8aYq4jmSJrRFDECK"
     },
-
     {
         "name": "belowZERO",
         "placement": "10",
@@ -54,6 +58,16 @@
         "name": "Kijin no Sensou",
         "placement": "10",
         "link": "https://youtu.be/HdN5yXyTs7M?si=lWrFDXg2kXnynwWR"
+    },
+    {
+        "name": "Chaoz Devotion",
+        "placement": "10",
+        "link": "https://youtu.be/M_uBKUuLbZk?si=3WbUBkyuvahCcfGN"
+    },
+    {
+        "name": "rYxUE",
+        "placement": "10",
+        "link": "https://youtu.be/ItzQjtwS_BU?is=7zxh7-hibHeM-Sej"
     },
     {
         "name": "SwiftVortex",
@@ -96,9 +110,19 @@
         "link": "https://www.youtube.com/watch?v=m7F8ERVIK4c"
     },
     {
+        "name": "Quantum Dominator",
+        "placement": "20",
+        "link": "https://www.youtube.com/watch?v=XRyYakntepU"
+    },
+    {
         "name": "pickled!",
         "placement": "30",
         "link": "https://www.youtube.com/watch?v=9OqVQOeIPaE"
+    },
+    {
+        "name": "EXECUTION",
+        "placement": "30",
+        "link": "https://youtu.be/jbkqxoZbZVQ"
     },
     {
         "name": "EXECUTION",
@@ -176,9 +200,24 @@
         "link": "https://youtu.be/RPhy6t2bb04?si=UVDeE5wW_dH_5IYC"
     },
     {
+        "name": "Cyberwave",
+        "placement": "50",
+        "link": "https://youtu.be/JFYAneB9QQk"
+    },
+    {
+        "name": "Mind Rush",
+        "placement": "50",
+        "link": "https://youtu.be/IYXd7uHOglI?si=jWZxuzQG5G2Xc0Ex&t=8"
+    },
+    {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
+    },
+    {
+        "name": "Predatorcore",
+        "placement": "75",
+        "link": "https://youtu.be/BnFA1Hy7Tag?si=Z1sug_giiJEXfzhW"
     },
     {
         "name": "EVERBLOOM",
@@ -224,6 +263,21 @@
 		"name": "Reveries End",
         "placement": "?",
         "link": "https://youtu.be/H-wM-Y_esNs?si=Dd2SV_al8To25ZgT"
+	},
+	{
+		"name": "Futuropolis",
+        "placement": "75",
+        "link": "https://youtu.be/omzrn7nxg14?si=gqgIoaECboW2IH9d"
+	},
+	{
+		"name": "Lux",
+        "placement": "75",
+        "link": "https://youtu.be/4RdbUcy2a1I?si=AWMWPuLr3T-Rn2A6"
+	},
+	{
+		"name": "YV Canis Majoris",
+        "placement": "75",
+        "link": "https://youtu.be/eni_QW0Gczs?is=6N6Kk4--15iu4XKK"
 	},
     {
         "name": "The Final Phase",
@@ -280,7 +334,31 @@
         "name": "TERROR",
         "placement": "?",
         "link": "https://youtu.be/wCXCBrCTUKA"
+    },
+    {
+        "name": "BauDakes",
+        "placement": "?",
+        "link": "https://youtu.be/bxzXBr19PC4?si=Vxz-Kn0mBx8uTjmT"
+    },
+    {
+        "name": "Sheol 9",
+        "placement": "?",
+        "link": "https://youtu.be/4SWnWFQG8M0?is=E8j4T7aShpaiJW3o"
+    },
+    {
+        "name": "FUKOUNA GIRL",
+        "placement": "?",
+        "link": "https://youtu.be/86LrgginTDk?is=pir_ZD_OeNkc7zZU"
+    },
+    {
+        "name": "DRY BASS",
+        "placement": "?",
+        "link": "https://youtu.be/Wq789vXPMmA"
+    },
+    {
+        "name": "CHROMEDOLL",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=jSG8SQsCOMQ"
     }
-
 ]
  
