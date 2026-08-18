@@ -15,6 +15,16 @@
         "link": "https://www.youtube.com/watch?v=uYa8JPDVBw0"
     },
     {
+        "name": "Necrofantasia",
+        "placement": "1",
+        "link": "https://www.youtube.com/watch?v=Il_N475vqP8"
+    },
+    {
+        "name": "ANNIMA INMORTALIS",
+        "placement": "1",
+        "link": "https://youtu.be/KlZV5RoNG84?is=7bdO3wzhx8H4cl7z"
+    },
+    {
         "name": "TIKI TIKI CIRCLES",
         "placement": "10",
         "link": "https://youtu.be/D6Xr_NMu7uI"
@@ -70,6 +80,11 @@
         "link": "https://youtu.be/ItzQjtwS_BU?is=7zxh7-hibHeM-Sej"
     },
     {
+        "name": "Darkmatter",
+        "placement": "10",
+        "link": "https://youtu.be/mNeYzatfvf8?si=Y4wG4z6AA2_bjYFN"
+    },
+    {
         "name": "SwiftVortex",
         "placement": "20",
         "link": "https://www.youtube.com/watch?v=xYEzpHQ3b98"
@@ -113,6 +128,11 @@
         "name": "Quantum Dominator",
         "placement": "20",
         "link": "https://www.youtube.com/watch?v=XRyYakntepU"
+    },
+    {
+        "name": "I Hate Myself",
+        "placement": "20",
+        "link": "https://youtu.be/R_2HNfGs9d0?si=UnGI65owWIAGSY1L"
     },
     {
         "name": "pickled!",
@@ -210,6 +230,11 @@
         "link": "https://youtu.be/IYXd7uHOglI?si=jWZxuzQG5G2Xc0Ex&t=8"
     },
     {
+        "name": "MODERATE TALKING",
+        "placement": "50",
+        "link": "https://www.youtube.com/watch?v=ibIW3d_XogE"
+    },
+    {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
@@ -278,6 +303,16 @@
 		"name": "YV Canis Majoris",
         "placement": "75",
         "link": "https://youtu.be/eni_QW0Gczs?is=6N6Kk4--15iu4XKK"
+	},
+	{
+		"name": "Dark Matter",
+        "placement": "75",
+        "link": "https://youtu.be/peLd4w3wMA0?is=jTGnJX1FmC_hJSBa"
+	},
+	{
+		"name": "Arctic Lighs bugfi",
+        "placement": "75",
+        "link": "https://youtu.be/lCv9sDWdFcM"
 	},
     {
         "name": "The Final Phase",
@@ -359,6 +394,36 @@
         "name": "CHROMEDOLL",
         "placement": "?",
         "link": "https://www.youtube.com/watch?v=jSG8SQsCOMQ"
+    },
+    {
+        "name": "MAXIMUM DOSAGE",
+        "placement": "?",
+        "link": "https://youtu.be/dYGgzf7i_Ak"
+    },
+    {
+        "name": "Lunatic Circuit",
+        "placement": "?",
+        "link": "https://youtu.be/qAssa5ZdpA4?si=yDKjjPDfO6U1my4E"
+    },
+    {
+        "name": "LEZIBRUV",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=oBBbPVmSE2U"
+    },
+    {
+        "name": "too Much processing",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=yAIdKH_zsrQ"
+    },
+    {
+        "name": "infernis",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=bk1L0maqd3k"
+    },
+    {
+        "name": "HAIL",
+        "placement": "?",
+        "link": "https://youtu.be/RjCEH6EIILk?si=f3n9zxQJ3ZBing93"
     }
 ]
  
