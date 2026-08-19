@@ -4,8 +4,8 @@
     "author": "Dan2D",
     "creators": ["Dan2D"],
     "verifier": "Dan2D",
-    "isVerified": false,
-    "verification": "",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=PbPa-NAIYYw ",
     "showcase": "https://www.youtube.com/watch?v=r44ig4sxMww",
     "lastUpd": "14.02.2026",
 
@@ -13,8 +13,8 @@
     "records": [
         {
             "user": "Dan2D",
-            "link": "https://www.youtube.com/watch?v=vIO9hAa-Koc&pp=wgIGCgQQAhgB",
-            "percent": 70,
+            "link": "https://www.youtube.com/watch?v=PbPa-NAIYYw ",
+            "percent": 100,
             "hz": 240
         }
     ],

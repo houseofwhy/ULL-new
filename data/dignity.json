@@ -14,16 +14,16 @@
     "records": [
         {
             "user": "Sevant",
-            "link": "https://www.youtube.com/live/gPhblUcPvgo?si=Wpa8Lzh_PKEsvL_q",
-            "percent": 34,
+            "link": "https://youtu.be/wAxS2PWA2tA?si=fM_zdF5DIoET5rSf",
+            "percent": 64,
             "hz": 0
         }
     ],
     "run": [
         {
             "user": "Sevant",
-            "link": "https://youtu.be/cHCeprrReq8?si=OFDXB6jyGYkz4Z1E",
-            "percent": "47-90",
+            "link": "https://youtu.be/wAxS2PWA2tA?si=fM_zdF5DIoET5rSf",
+            "percent": "43-100",
             "hz": 0
         }
     ],

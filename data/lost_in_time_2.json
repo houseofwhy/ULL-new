@@ -32,18 +32,18 @@
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
-            "hz": 0
+            "user": "Zeronium",
+            "link": "https://youtu.be/iytXr2brrsU?si=VOg_Zv8F-uApVV0q",
+            "percent": 33,
+            "hz": 240
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
-            "hz": 0
+            "user": "Zeronium",
+            "link": "https://youtu.be/iytXr2brrsU?si=VOg_Zv8F-uApVV0q",
+            "percent": "32-66",
+            "hz": 240
         }
     ],
     "length": 164,
