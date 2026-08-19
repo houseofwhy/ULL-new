@@ -25,6 +25,11 @@
         "link": "https://youtu.be/KlZV5RoNG84?is=7bdO3wzhx8H4cl7z"
     },
     {
+        "name": "The labyrinth",
+        "placement": "1",
+        "link": "https://youtu.be/rDTtnUrxx58?si=Qhqyi1df5X9IwASo"
+    },
+    {
         "name": "TIKI TIKI CIRCLES",
         "placement": "10",
         "link": "https://youtu.be/D6Xr_NMu7uI"
@@ -85,6 +90,16 @@
         "link": "https://youtu.be/mNeYzatfvf8?si=Y4wG4z6AA2_bjYFN"
     },
     {
+        "name": "Aquamarine (ThePurgatory)",
+        "placement": "10",
+        "link": "https://youtu.be/SBBwiLDuovc?si=FwP9Ctg2J2TtWt8D"
+    },
+    {
+        "name": "Lets go to heaven",
+        "placement": "10",
+        "link": "https://youtu.be/XebMp5lgbiY"
+    },
+    {
         "name": "SwiftVortex",
         "placement": "20",
         "link": "https://www.youtube.com/watch?v=xYEzpHQ3b98"
@@ -143,11 +158,6 @@
         "name": "EXECUTION",
         "placement": "30",
         "link": "https://youtu.be/jbkqxoZbZVQ"
-    },
-    {
-        "name": "EXECUTION",
-        "placement": "30",
-        "link": "https://www.youtube.com/watch?v=jbkqxoZbZVQ"
     },
     {
         "name": "E V E Rlasting",
@@ -235,6 +245,16 @@
         "link": "https://www.youtube.com/watch?v=ibIW3d_XogE"
     },
     {
+        "name": "Sylentium Dynamas",
+        "placement": "50",
+        "link": "https://youtu.be/4jFTz9VtS5w?si=WRGcyLZ_C_byKucc"
+    },
+    {
+        "name": "Silly Machine",
+        "placement": "50",
+        "link": "https://youtu.be/jIHdJqsrxe0"
+    },
+    {
         "name": "Session 1",
         "placement": "75",
         "link": "https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z"
@@ -313,6 +333,16 @@
 		"name": "Arctic Lighs bugfi",
         "placement": "75",
         "link": "https://youtu.be/lCv9sDWdFcM"
+	},
+	{
+		"name": "Ultra Realistik",
+        "placement": "75",
+        "link": "https://youtu.be/R4AsQtErJS4"
+	},
+	{
+		"name": "Forgotten Power",
+        "placement": "75",
+        "link": "https://youtu.be/6Yq39Hgzazg"
 	},
     {
         "name": "The Final Phase",
@@ -424,6 +454,31 @@
         "name": "HAIL",
         "placement": "?",
         "link": "https://youtu.be/RjCEH6EIILk?si=f3n9zxQJ3ZBing93"
+    },
+    {
+        "name": "PEAK",
+        "placement": "?",
+        "link": "https://www.youtube.com/watch?v=SmodVRct7I8"
+    },
+    {
+        "name": "BLOOD IN THE WATER",
+        "placement": "?",
+        "link": "https://youtu.be/0kkfxPIL1NQ?si=SSSxTxzLOqElDhbC"
+    },
+    {
+        "name": "Cyberpsychosis",
+        "placement": "?",
+        "link": ""
+    },
+    {
+        "name": "Bad Times",
+        "placement": "?",
+        "link": "https://youtu.be/G_J_zrKMnf4?si=kZg_lCQeUgcBuE4L"
+    },
+    {
+        "name": "CHROMAFLUX",
+        "placement": "?",
+        "link": "https://youtu.be/xFUrY48npOg"
     }
 ]
  
