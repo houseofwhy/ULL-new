@@ -1,0 +1,40 @@
+{
+    "id": "private",
+    "name": "The Impaler",
+    "author": "Ky",
+    "creators": ["Ky", "ItzFeaver", "duserlane", "Hyuu", "Kremain", "keter", "Richy", "Hyudesu", "Noa", "ikanoz", "Tayfrog", "kamarotgd",
+    "artios", "Yxlo", "Animized","TrollyGMD","endi_candy","Akary","EX01C", "Karoc" ,"FinniGD","Scyin", "Allia","Soleyt",
+    "Akari","Gabe","Cupidr","Devil","Carnatenarion","Zosmic","Nays4KG","Avocal","RealCookRay","Vexage","Anomaly","Erydra","SiaGD",
+    "Ilysims","Santtu","Mornig","Goldship","Avocalsib","Yummypoo","Sakio","Kly","RainbowSpiderzzz","qwz"],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=1PEgXEgdO2k",
+    "lastUpd": "03.05.2026",
+
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }        
+    ],
+
+    "length": 0,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true, 
+    "isFuture": false,
+
+    "tags": []
+}
