@@ -1,0 +1,43 @@
+{
+    "id": "private",
+    "name": "MURASAKI",
+    "author": "audieophoria",
+    "creators": [
+        "audieophoria",
+        "Badeaddice",
+        "Apunch",
+        "KrazyGFX"
+    ],
+    "verifier": "Sightless",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=Wtf0HRfTxp8",
+    "lastUpd": "12.06.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Sightless",
+            "link": "https://www.youtube.com/watch?v=8a-aIH0CzyM",
+            "percent": "44-100",
+            "hz": 240
+        }
+    ],
+    "length": 0,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Finished",
+        "Long",
+        "NONG"
+    ]
+}

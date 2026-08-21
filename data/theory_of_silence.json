@@ -1,0 +1,40 @@
+{
+    "id": "private",
+    "name": "Theory of Silence",
+    "author": "Frame0",
+    "creators": [
+        "Frame0"
+    ],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=YChBgj8CtXg",
+    "lastUpd": "02.08.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 115,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Finished",
+        "Verifying",
+        "Long"
+    ]
+}

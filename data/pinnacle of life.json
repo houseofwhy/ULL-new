@@ -1,0 +1,54 @@
+{
+    "id": 144012996,
+    "name": "Pinnacle of Life",
+    "author": "skzyl",
+    "creators": [
+        "skzyl",
+        "s3batr0nic",
+        "goob",
+        "Tuxcat",
+        "stillsoulless",
+        "Genoxide",
+        "Nexel",
+        "vonic",
+        "bims",
+        "twister",
+        "akunakunn",
+        "devilmine",
+        "Blaster",
+        "QuazeryIceCube"
+    ],
+    "verifier": "vonic",
+    "isVerified": false,
+    "verification": "https://www.youtube.com/watch?v=gQl5iY1ekyE&embeds_referring_euri=https%3A%2F%2Fpointercrate.com%2F",
+    "showcase": "https://www.youtube.com/watch?v=kdGwLfNeNj8",
+    "lastUpd": "02.07.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Sightless",
+            "link": "https://www.youtube.com/watch?v=8a-aIH0CzyM",
+            "percent": "44-100",
+            "hz": 240
+        }
+    ],
+    "length": 113,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": false,
+    "tags": [
+        "Finished",
+        "Public",
+        "Rated",
+        "Long"
+    ]
+}
