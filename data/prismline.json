@@ -1,13 +1,26 @@
 {
     "id": 135148907,
     "name": "Prismline",
-    "author": "ItsHarryy",
-    "creators": ["ItsHarryy","wain & More | Unknown"],
+    "author": "ItzHarryy",
+    "creators": [
+        "ItzHarryy",
+        "Wain",
+        "Texic",
+        "TheGalaxyCat",
+        "Puhyuu",
+        "YeldA",
+        "zXera",
+        "Xenga",
+        "RozzQ",
+        "Isospin",
+        "HushLC",
+        "Boratown"
+    ],
     "verifier": "Wain",
-    "isVerified": true,
-    "verification": "https://youtu.be/pIHOHz3i0Rw?si=jgBICegA69jiugke",
-    "showcase": "https://youtu.be/MWGVmsGMB_0?si=vewjBSQj3ztRvF9N",
-    "lastUpd": "21.01.2026",
+    "isVerified": false,
+    "verification": "https://www.youtube.com/watch?v=pIHOHz3i0Rw",
+    "showcase": "https://www.youtube.com/watch?v=S0KwXJpP-MM",
+    "lastUpd": "07.03.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -25,14 +38,15 @@
             "hz": 0
         }
     ],
-    "length": 85,
+    "length": 92,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
     "tags": [
-        "Long",
+        "Public",
         "Finished",
-        "Public"
+        "Rated",
+        "Long"
     ]
 }

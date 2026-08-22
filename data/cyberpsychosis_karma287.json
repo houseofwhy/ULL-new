@@ -1,0 +1,43 @@
+{
+    "id": "private",
+    "name": "Cyberpsychosis (KARMA287)",
+    "author": "KARMA287",
+    "creators": [
+        "KARMA287",
+        "chagpt cap",
+        "oasii",
+        "aps",
+        "rowanoodles",
+        "0pxl_dkspanot"
+    ],
+    "verifier": "",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=auy1rhMV03A",
+    "lastUpd": "22.08.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 147,
+    "rating": 1,
+    "percentFinished": 25,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Long"
+    ]
+}

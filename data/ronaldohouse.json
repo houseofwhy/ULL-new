@@ -1,0 +1,41 @@
+{
+    "id": "private",
+    "name": "Ronaldohouse",
+    "author": "unknxwnteam // Aquix & majin & SiaGMD",
+    "creators": [
+        "Aquix",
+        "majin",
+        "SiaGMD"
+    ],
+    "verifier": "unknown",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "",
+    "lastUpd": "01.07.2026",
+    "percentToQualify": 1,
+    "records": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": 0,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "none",
+            "link": "",
+            "percent": "0",
+            "hz": 0
+        }
+    ],
+    "length": 52,
+    "rating": 1,
+    "percentFinished": 50,
+    "isMain": true,
+    "isFuture": true,
+    "tags": [
+        "Remake",
+        "Medium"
+    ]
+}

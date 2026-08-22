@@ -1,0 +1,37 @@
+{
+    "id": "109814681",
+    "name": "Cyberpsychosis (Sobeann)",
+    "author": "Sobeann",
+    "creators": ["Sobeann","Guille N.S"],
+    "verifier": "Guille N.S",
+    "isVerified": false,
+    "verification": "",
+    "showcase": "https://www.youtube.com/watch?v=yJUFmtYwHYg",
+    "lastUpd": "24.06.2026",
+
+    "percentToQualify": 53,
+    "records": [
+        {
+            "user": "Guille N.S",
+            "link": "https://www.youtube.com/watch?v=M1X24uXAAGY",
+            "percent": 52,
+            "hz": 0
+        }
+    ],
+    "run": [
+        {
+            "user": "Guille N.S",
+            "link": "https://www.youtube.com/watch?v=LHjNGQcUQkI",
+            "percent": "36-100",
+            "hz": 0
+        }
+    ],
+
+    "length": 91,
+    "rating": 1,
+    "percentFinished": 100,
+    "isMain": true,
+    "isFuture": true,
+
+    "tags": ["Long", "Finished", "Verifying"]
+}
