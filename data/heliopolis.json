@@ -8,7 +8,7 @@
     "verifier": "Open Verification",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/t2-ktFtTqBM ",
+    "showcase": "https://youtu.be/t2-ktFtTqBM",
     "percentToQualify": 20,
     "records": [
         {
@@ -35,5 +35,5 @@
         }
     ],
 
-    "tags": ["Finished", "Verifying", "XL", "NONG", "Quality"]
+    "tags": ["Finished", "Verifying", "XL", "NONG", "Quality", "Public", "Open Verification"]
 }

@@ -17,7 +17,7 @@
         "Boratown"
     ],
     "verifier": "Wain",
-    "isVerified": false,
+    "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=pIHOHz3i0Rw",
     "showcase": "https://www.youtube.com/watch?v=S0KwXJpP-MM",
     "lastUpd": "07.03.2026",
@@ -47,6 +47,7 @@
         "Public",
         "Finished",
         "Rated",
-        "Long"
+        "Long",
+        "Verified"
     ]
 }

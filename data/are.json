@@ -7,22 +7,22 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://youtu.be/LMsjqNrN17Q?si=EJLjklUugu20DSGi",
-    "lastUpd": "04.08.2026",
+    "lastUpd": "21.08.2026",
 
     "percentToQualify": 1,
     "records": [
         {
-            "user": "none",
-            "link": "",
-            "percent": 0,
+            "user": "BONN GD",
+            "link": "#",
+            "percent": 21,
             "hz": 0
         }
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "BONN GD",
+            "link": "#",
+            "percent": "58-100",
             "hz": 0
         }
     ],

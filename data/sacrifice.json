@@ -59,6 +59,7 @@
         "Public",
         "Finished",
         "XL",
-        "Rated"
+        "Rated",
+        "Verified"
     ]
 }

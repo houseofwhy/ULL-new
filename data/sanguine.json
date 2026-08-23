@@ -1,13 +1,13 @@
 {
-    "id": "private",
+    "id": 146538900,
     "name": "Sanguine",
     "author": "RafaBirds GD",
     "creators": [],
     "verifier": "spookkd",
     "isVerified": true,
     "verification": "https://www.youtube.com/watch?v=cBVlGzobmsA",
-    "showcase": "https://www.youtube.com/watch?v=o3bauiDnO6w",
-    "lastUpd": "10.04.2026",
+    "showcase": "https://www.youtube.com/watch?v=xPUHo4FbvqU",
+    "lastUpd": "09.08.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -30,5 +30,5 @@
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
-    "tags": ["Finished", "Long", "Verifying"]
+    "tags": ["Finished", "Long", "Verified", "Unrated", "Public"]
 }

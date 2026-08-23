@@ -7,7 +7,7 @@
     "isVerified": false,
     "verification": "",
     "showcase": "https://www.youtube.com/watch?v=RDPySzeWKPA",
-    "lastUpd": "21.10.2025",
+    "lastUpd": "29.05.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -33,5 +33,5 @@
     "isMain": true,
     "isFuture": true,
 
-    "tags": ["Public", "Long", "Verifying"]
+    "tags": ["Public", "Long", "Verifying", "Finished"]
 }

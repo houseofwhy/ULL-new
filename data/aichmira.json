@@ -7,8 +7,8 @@
     "verifier": "unknown",
     "isVerified": false,
     "verification": "",
-    "showcase": "https://youtu.be/7_rCsm6n51o?si=p4HZIKtmDngAB3Dq",
-    "lastUpd": "20.07.2026",
+    "showcase": "https://youtu.be/kENjjGdAOlk?si=G8hrzGipC0zv9hHE",
+    "lastUpd": "22.08.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -30,9 +30,9 @@
 
     "length": 106,
     "rating": 1,
-    "percentFinished": 30,
+    "percentFinished": 100,
     "isMain": true,
     "isFuture": false,
 
-    "tags": ["Long", "NC"]
+    "tags": ["Long", "NC", "Finished"]
 }

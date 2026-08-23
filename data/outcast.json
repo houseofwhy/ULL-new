@@ -20,9 +20,9 @@
     ],
     "run": [
         {
-            "user": "none",
-            "link": "",
-            "percent": "0",
+            "user": "FlairSomething",
+            "link": "https://youtu.be/lJrDmubUX00?si=c8xTT0wgtQ9XHvGt",
+            "percent": "86-97",
             "hz": 0
         }
     ],
@@ -33,5 +33,5 @@
     "isMain": false,
     "isFuture": false,
 
-    "tags": ["Long","Finished", "Verifying"]
+    "tags": ["Long","Finished", "Verifying", "Public"]
 }

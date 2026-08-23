@@ -34,6 +34,7 @@
          "Medium",
          "Finished",
          "Verified",
-         "Unrated"
+         "Unrated",
+         "Public"
     ]
 }

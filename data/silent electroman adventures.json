@@ -1,13 +1,13 @@
 {
-    "id": "125950943",
-    "name": "Silent Electroman Adventures",
-    "author": "Idiocy",
+    "id": "147442928",
+    "name": "Silentman Adventures",
+    "author": "The Purgatory, Idiocy",
     "creators": ["Idiocy"],
-    "verifier": "unknown",
-    "isVerified": false,
-    "verification": "",
-    "showcase": "https://youtu.be/GJ5aIG1DXaM?si=4Cu1saYcrOLO50lm",
-    "lastUpd": "13.09.2025",
+    "verifier": "Nickname",
+    "isVerified": true,
+    "verification": "https://www.youtube.com/watch?v=NE89R0tA8fU",
+    "showcase": "https://www.youtube.com/watch?v=y3qMBVEbIuw",
+    "lastUpd": "22.08.2026",
 
     "percentToQualify": 1,
     "records": [
@@ -31,7 +31,7 @@
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
-    "isFuture": false,
+    "isFuture": true,
 
-    "tags": ["Long", "Finished", "Public"]
+    "tags": ["Long", "Finished", "Public", "Verified", "Unrated", "Remake"]
 }
