@@ -1,16 +1,14 @@
 {
-    "id": 133489881,
-    "name": "Doppler",
-    "author": "At242 & LaTeZk",
-    "creators": [
-        "At242",
-        "LaTeZk"
-    ],
-    "verifier": "Daniel j",
+    "id": 130891319,
+    "name": "cognitohazard",
+    "author": "MercuryDT",
+    "creators": [],
+    "verifier": "WhizKid05",
     "isVerified": true,
-    "verification": "https://www.youtube.com/watch?v=xSP43i61SLM",
-    "showcase": "https://www.youtube.com/watch?v=EyrJ-xS-6ms",
-    "lastUpd": "14.02.2026",
+    "verification": "https://www.youtube.com/watch?v=T5g0r16X_ZA",
+    "showcase": "https://www.youtube.com/watch?v=UF_zHxW0qo0",
+    "thumbnail": "https://youtu.be/m1jvLHBy99M?si=Xge8mHW-JTWLed53",
+    "lastUpd": "19.02.2026",
     "percentToQualify": 1,
     "records": [
         {
@@ -28,16 +26,15 @@
             "hz": 0
         }
     ],
-    "length": 72,
+    "length": 166,
     "rating": 1,
     "percentFinished": 100,
     "isMain": true,
     "isFuture": true,
     "tags": [
+        "Public",
         "Finished",
         "Rated",
-        "Long",
-        "Public",
-        "Verified"
+        "Long"
     ]
 }
