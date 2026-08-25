@@ -1,0 +1,4 @@
+# Cloudflare Pages: SPA fallback.
+# Real files (css, js, assets, robots.txt, sitemap.xml, images) are served first.
+# Any other path is handled by the Vue router inside index.html (200 = rewrite, URL unchanged).
+/*    /index.html    200

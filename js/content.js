@@ -1,82 +1,75 @@
 import { round, score } from './score.js';
 
-/**
- * Path to directory containing `_list.json` and all levels
- */
-const dir = '/data';
+const api = 'https://d1-wrkr.ullteam.workers.dev';
 
 export async function fetchList() {
-    const debugResult = await fetch(`${dir}/_list.json`); 
-    const listResult = await fetch(`${dir}/_list.json`);
-    console.log("Fetching List...")
-    console.log(await debugResult.text())
-    // console.log(await listResult.json())
     try {
-        const list = await listResult.json();
+        const res = await fetch(`${api}/api/list`);
+        const levels = await res.json();
         var currentLevelRank = 1;
-        const result = await Promise.all(
-            list.map(async (path, rank) => {
-                console.log("Level", path);
-                const levelResult = await fetch(`${dir}/${path}.json`);
-                try {
-                    const level = await levelResult.json();
-                    return [
-                        {
-                            ...level,
-                            path,
-                            records: level.records.sort(
-                                (a, b) => b.percent - a.percent,
-                            ),
-                        },
-                        null,
-                    ];
-                } catch {
-                    console.error(`Failed to load level #${rank + 1} ${path}.`);
-                    return [null, path];
-                }
-            }),
-        );
-        for (var i = 0; i<result.length; i++){
-          if (result[i][0].isVerified) {
-            result[i][0].rankNum = "—" + " ";
-          }
-          else {
-            result[i][0].rankNum = "#" + currentLevelRank;
-            currentLevelRank++;
-          }
+        const result = levels.map((level) => {
+            level.records = (level.records || []).sort((a, b) => b.percent - a.percent);
+            return [level, null];
+        });
+        for (var i = 0; i < result.length; i++) {
+            if (result[i][0].isVerified) {
+                result[i][0].rankNum = "— ";
+            } else {
+                result[i][0].rankNum = "#" + currentLevelRank;
+                currentLevelRank++;
+            }
         }
         return result;
     } catch {
-        console.error(`Failed to load list.`);
+        console.error('Failed to load list.');
         return null;
     }
 }
 
 export async function fetchEditors() {
     try {
-        const editorsResults = await fetch(`${dir}/_editors.json`);
-        const editors = await editorsResults.json();
-        return editors;
+        const res = await fetch(`${api}/api/editors`);
+        return await res.json();
     } catch {
         return null;
     }
 }
 
 export async function fetchUnlisted() {
+    return null;
+}
+
+export async function fetchPending() {
     try {
-        const unlistedResults = await fetch(`${dir}/_unlisted.json`);
-        const unlisted = await unlistedResults.json();
-        return unlisted;
+        const res = await fetch(`${api}/api/pending`);
+        return await res.json();
     } catch {
         return null;
     }
 }
 
-export async function fetchPending() {
+export async function fetchRecentChanges() {
     try {
-        const pendingResults = await fetch(`${dir}/_pending.json`);
-        const pending = await pendingResults.json();
-        return pending;
+        const res = await fetch(`${api}/api/recent-changes`);
+        return await res.json();
+    } catch {
+        return [];
+    }
+}
+
+export async function fetchLevelMonth() {
+    try {
+        const res = await fetch(`${api}/api/level-month`);
+        return await res.json();
+    } catch {
+        return null;
+    }
+}
+
+export async function fetchLevelVerif() {
+    try {
+        const res = await fetch(`${api}/api/level-verif`);
+        return await res.json();
     } catch {
         return null;
     }

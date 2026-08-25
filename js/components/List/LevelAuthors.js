@@ -23,6 +23,12 @@ export default {
             <p class="type-body">
                 <span>{{ author }}</span>
             </p>
+            <template v-if="creators && creators.length">
+                <div class="type-title-sm">Level Creators</div>
+                <p class="type-body">
+                    <span>{{ creators.join(', ') }}</span>
+                </p>
+            </template>
             <div class="type-title-sm">
                 <template v-if="isVerified == true">
                     Verified by

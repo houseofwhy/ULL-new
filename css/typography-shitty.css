@@ -1,0 +1,229 @@
+/* Shitty Variants */
+
+.shitty h1,
+.shitty .type-h1,
+.shitty .type-headline-lg {
+    font-family: "Times New Roman", serif;
+    font-size: 51.4285714286px;
+    line-height: 52px;
+    font-weight: 700;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty h1::before,
+.shitty .type-h1::before,
+.shitty .type-headline-lg::before {
+    content: "";
+    margin-bottom: -0.1805555556em;
+    display: table;
+}
+.shitty h1::after,
+.shitty .type-h1::after,
+.shitty .type-headline-lg::after {
+    content: "";
+    margin-top: -0.1305555556em;
+    display: table;
+}
+
+.shitty h2,
+.shitty .type-h2,
+.shitty .type-headline-md {
+    font-family: "Times New Roman", serif;
+    font-size: 34.2857142857px;
+    line-height: 40px;
+    font-weight: 700;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty h2::before,
+.shitty .type-h2::before,
+.shitty .type-headline-md::before {
+    content: "";
+    margin-bottom: -0.2583333333em;
+    display: table;
+}
+.shitty h2::after,
+.shitty .type-h2::after,
+.shitty .type-headline-md::after {
+    content: "";
+    margin-top: -0.2083333333em;
+    display: table;
+}
+
+.shitty h3,
+.shitty .type-h3,
+.shitty .type-headline-sm {
+    font-family: "Verdana", sans-serif;
+    font-size: 22.8571428571px;
+    line-height: 28px;
+    font-weight: 700;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty h3::before,
+.shitty .type-h3::before,
+.shitty .type-headline-sm::before {
+    content: "";
+    margin-bottom: -0.2875em;
+    display: table;
+}
+.shitty h3::after,
+.shitty .type-h3::after,
+.shitty .type-headline-sm::after {
+    content: "";
+    margin-top: -0.2375em;
+    display: table;
+}
+
+.shitty h4,
+.shitty .type-h4,
+.shitty .type-title-lg {
+    font-family: "Verdana", sans-serif;
+    font-size: 22.8571428571px;
+    line-height: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty h4::before,
+.shitty .type-h4::before,
+.shitty .type-title-lg::before {
+    content: "";
+    margin-bottom: -0.2875em;
+    display: table;
+}
+.shitty h4::after,
+.shitty .type-h4::after,
+.shitty .type-title-lg::after {
+    content: "";
+    margin-top: -0.2375em;
+    display: table;
+}
+
+.shitty h5,
+.shitty .type-h5,
+.shitty .type-title-md {
+    font-family: "Verdana", sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty h5::before,
+.shitty .type-h5::before,
+.shitty .type-title-md::before {
+    content: "";
+    margin-bottom: -0.325em;
+    display: table;
+}
+.shitty h5::after,
+.shitty .type-h5::after,
+.shitty .type-title-md::after {
+    content: "";
+    margin-top: -0.275em;
+    display: table;
+}
+
+.shitty h6,
+.shitty dt,
+.shitty .type-h6,
+.shitty .type-title-sm {
+    font-family: "Verdana", sans-serif;
+    font-size: 17.1428571429px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty h6::before,
+.shitty dt::before,
+.shitty .type-h6::before,
+.shitty .type-title-sm::before {
+    content: "";
+    margin-bottom: -0.375em;
+    display: table;
+}
+.shitty h6::after,
+.shitty dt::after,
+.shitty .type-h6::after,
+.shitty .type-title-sm::after {
+    content: "";
+    margin-top: -0.325em;
+    display: table;
+}
+
+.shitty label,
+.shitty input[type="text"],
+.shitty input[type="number"],
+.shitty .type-label-lg {
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+    font-size: 17.1428571429px;
+    line-height: 20px;
+    font-weight: bold;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty .type-label-lg::before {
+    content: "";
+    margin-bottom: -0.2583333333em;
+    display: table;
+}
+.shitty .type-label-lg::after {
+    content: "";
+    margin-top: -0.2083333333em;
+    display: table;
+}
+
+.shitty .type-label-md {
+    font-family: "Verdana", sans-serif;
+    font-size: 14.2857142857px;
+    line-height: 18px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty .type-label-md::before {
+    content: "";
+    margin-bottom: -0.305em;
+    display: table;
+}
+.shitty .type-label-md::after {
+    content: "";
+    margin-top: -0.255em;
+    display: table;
+}
+
+.shitty .type-label-sm {
+    font-family: "Verdana", sans-serif;
+    font-size: 11.4285714286px;
+    line-height: 12px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty .type-label-sm::before {
+    content: "";
+    margin-bottom: -0.2em;
+    display: table;
+}
+.shitty .type-label-sm::after {
+    content: "";
+    margin-top: -0.15em;
+    display: table;
+}
+
+.shitty p,
+.shitty .type-body {
+    font-family: "Verdana", sans-serif;
+    font-size: 17.1428571429px;
+    line-height: 28px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.shitty p::before,
+.shitty .type-body::before {
+    content: "";
+    margin-bottom: -0.4916666667em;
+    display: table;
+}
+.shitty p::after,
+.shitty .type-body::after {
+    content: "";
+    margin-top: -0.4416666667em;
+    display: table;
+}

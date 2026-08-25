@@ -1,0 +1,465 @@
+/* Override old list.css placeholder centering */
+.home-page {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    font-family: "Lexend Deca", sans-serif;
+}
+.home-page, .home-page * { box-sizing: border-box; }
+.home-page h1, .home-page h2, .home-page h3, .home-page h4, .home-page p { margin: 0; padding: 0; }
+.home-page h1::before, .home-page h1::after,
+.home-page h2::before, .home-page h2::after,
+.home-page h3::before, .home-page h3::after,
+.home-page h4::before, .home-page h4::after { display: none; }
+
+/* ── HERO ── */
+.home-hero {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    background: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(102,10,239,0.14) 0%, transparent 65%);
+    border-bottom: 1px solid rgba(128,128,128,0.1);
+    position: relative;
+}
+.home-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    max-width: 640px;
+}
+.home-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--color-on-background);
+}
+.home-hero-desc {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--color-on-background);
+    opacity: 0.5;
+    max-width: 500px;
+}
+.home-hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.25rem;
+}
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.5rem;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 120ms ease, transform 120ms ease;
+    border: none;
+    line-height: 1;
+}
+.home-btn--primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 70%, #a855f7) 100%);
+    color: white;
+}
+.home-btn--primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+.home-hero-social {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+}
+.home-social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 0.4rem;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-on-background);
+    background: rgba(128,128,128,0.07);
+    border: 1px solid rgba(128,128,128,0.15);
+    opacity: 0.6;
+    transition: opacity 100ms ease;
+}
+.home-social-btn:hover { opacity: 1; }
+.home-social-btn img { width: 1rem; height: 1rem; }
+
+/* ── CONTENT ── */
+.home-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── CARD ── */
+.home-card {
+    background: var(--color-background-hover);
+    border: 1px solid rgba(128,128,128,0.15);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+.home-card:hover {
+    border-color: rgba(128,128,128,0.55);
+    box-shadow: 0 0 0 2px rgba(128,128,128,0.18), 0 6px 24px rgba(0,0,0,0.1);
+    transform: scale(1.006);
+}
+.home-card__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    margin-bottom: 1.25rem;
+}
+.root.dark .home-card__title { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+
+/* ── 2-COL GRID ── */
+.home-grid-2col {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+.home-grid-2col > .home-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* ── RECENT CHANGES ── */
+.home-card--scroll {
+    min-height: 0;
+    overflow: hidden;
+}
+.home-changes {
+    height: 354px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    border: 1px solid rgba(128,128,128,0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: rgba(128,128,128,0.03);
+}
+.home-changes-date {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-on-background);
+    opacity: 0.35;
+    margin: 1.25rem 0 0.85rem;
+}
+.home-changes-date:first-child { margin-top: 0; }
+.home-changes-date::before,
+.home-changes-date::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(128,128,128,0.18);
+}
+.home-change {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    padding: 0.15rem 0;
+    color: var(--color-on-background);
+}
+.home-change .dim { opacity: 0.45; }
+.home-change strong { font-weight: 600; }
+
+/* ── EDITORS DESC ── */
+.home-editors-desc {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.5;
+    line-height: 1.6;
+    margin-bottom: 1rem !important;
+}
+
+/* ── LEVEL CARD SHARED (LotM + CTV) ── */
+.home-level-period {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    background: rgba(102,10,239,0.1);
+    padding: 0.15rem 0.55rem;
+    border-radius: 2rem;
+    margin-bottom: 0.85rem;
+}
+.root.dark .home-level-period { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+.home-level-name {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
+}
+.home-level-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.home-level-thumb {
+    flex-shrink: 0;
+    width: 120px;
+    aspect-ratio: 16/9;
+    border-radius: 0.4rem;
+    background: rgba(128,128,128,0.08);
+    border: 1px solid rgba(128,128,128,0.12);
+    overflow: hidden;
+}
+.home-level-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home-level-meta { display: flex; flex-direction: column; min-width: 0; }
+.home-level-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+}
+.home-level-rank {
+    font-weight: 700;
+    color: var(--color-on-background);
+    opacity: 0.35;
+}
+.home-level-author {
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.5;
+}
+.home-level-sep {
+    color: var(--color-on-background);
+    opacity: 0.2;
+}
+.home-level-id {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    background: rgba(102,10,239,0.12);
+    padding: 0.12rem 0.45rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(102,10,239,0.2);
+}
+.root.dark .home-level-id { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+
+/* ── RECORD ROWS ── */
+.home-record-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    border: 1px solid rgba(128,128,128,0.1);
+    border-radius: 0.5rem;
+    padding: 0.35rem;
+    background: rgba(128,128,128,0.03);
+}
+.home-record-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.home-record-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    transition: background 100ms ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.home-record-row:hover {
+    background: rgba(128,128,128,0.06);
+    border-color: rgba(128,128,128,0.1);
+}
+.home-record-pct {
+    font-size: 1rem;
+    font-weight: 700;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    min-width: 5rem;
+    font-variant-numeric: tabular-nums;
+}
+.root.dark .home-record-pct { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+.home-record-player {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-on-background);
+    flex: 1;
+}
+.home-record-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-on-background);
+    opacity: 0.25;
+    white-space: nowrap;
+}
+
+/* ── CTV / DISCORD BUTTONS ── */
+.home-ctv-card { display: flex !important; flex-direction: column; }
+.home-lotm-card { display: flex !important; flex-direction: column; }
+.home-ctv-btn,
+.home-discord-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    align-self: flex-start;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--color-primary) 65%, white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 100ms ease;
+}
+.root.dark .home-ctv-btn,
+.root.dark .home-discord-btn { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+.home-ctv-btn:hover,
+.home-discord-btn:hover { opacity: 1; }
+.home-ctv-btn::after { content: ' →'; }
+.home-discord-btn img { width: 0.9rem; height: 0.9rem; margin-right: 3px; }
+
+/* ── EVENTS PAGE ── */
+.events-content { max-width: 1400px; }
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+.events-lotd-card { grid-column: 1 / 3; }
+.events-lotd-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+}
+.events-info-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: color-mix(in srgb, var(--color-primary) 80%, white);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+.events-stat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.events-stat-key {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.4;
+    margin-bottom: 0.2rem;
+}
+.events-stat-val {
+    font-size: 0.875rem;
+}
+.events-tags { margin-top: 0.85rem; }
+
+.home-lotd-date {
+    margin-top: 25px;
+    font-size: 0.78rem;
+    opacity: 0.45;
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+}
+
+/* ── PARTNERS ── */
+.home-partners-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.home-partner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(128,128,128,0.12);
+    text-decoration: none;
+    transition: border-color 150ms ease, background 150ms ease;
+    background: rgba(128,128,128,0.03);
+}
+.home-partner:hover {
+    border-color: rgba(128,128,128,0.25);
+    background: rgba(128,128,128,0.06);
+}
+.home-partner-logo {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 0.4rem;
+    background: rgba(128,128,128,0.08);
+    border: 1px solid rgba(128,128,128,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-partner-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 0.4rem; }
+.home-partner-logo-placeholder {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.35rem;
+    background: rgba(128,128,128,0.2);
+}
+.home-partner-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    line-height: 1.3;
+}
+.home-partner-desc {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--color-on-background);
+    opacity: 0.42;
+    line-height: 1.55;
+}
+
+/* ── FOOTER ── */
+.home-page .site-footer { margin-top: 50px; }

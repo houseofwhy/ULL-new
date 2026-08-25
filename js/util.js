@@ -116,3 +116,34 @@ export const filtersSetup = `<div style="flex-grow:1"></div>
 						</div>
 					</div>
 				</div>`;
+
+// ── Benchmark mode ────────────────────────────────────────────────────────────
+// Benchmark mode keeps every unverified level plus the verified ones flagged as
+// benchmarks, and hides the rest. One predicate, used by both the filters and the
+// renumbering below, so the two can never disagree about what is visible.
+export function passesBenchmark(level, benchmarkMode) {
+    return !benchmarkMode || !level.isVerified || level.benchmark === true;
+}
+
+// The list renders every row and hides the filtered-out ones, so the displayed rank
+// is normally the row's index in the full list. Under benchmark mode that leaves
+// gaps where the hidden levels were (#1, #2, #5, #6 …), so recount the placements
+// across the levels benchmark mode actually shows and store it on each level.
+//
+// Deliberately independent of the search box and tag filters: those narrow the view
+// but shouldn't change a level's placement, whereas benchmark mode is a different
+// view of the list with its own numbering.
+export function assignBenchmarkRanks(list, benchmarkMode) {
+    let rank = 0;
+    for (const entry of list || []) {
+        const level = Array.isArray(entry) ? entry[0] : entry;
+        if (!level) continue;
+        level.benchmarkRank = benchmarkMode && passesBenchmark(level, true) ? ++rank : null;
+    }
+}
+
+// The number to print next to a level: its benchmark placement when benchmark mode
+// is on, otherwise its position in the full list.
+export function displayRank(level, index, benchmarkMode) {
+    return benchmarkMode && level && level.benchmarkRank ? level.benchmarkRank : index + 1;
+}

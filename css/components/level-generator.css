@@ -1,0 +1,32 @@
+.generator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    font-family: "Lexend Deca", sans-serif;
+}
+.generator-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.generator-form label {
+    font-family: "Lexend Deca", sans-serif;
+}
+.generator-form input[type="text"],
+.generator-form input[type="url"],
+.generator-form input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: inherit;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
+}
+.generator-form input:focus {
+    outline: 2px solid var(--color-primary);
+    background: rgba(255,255,255,0.1);
+}

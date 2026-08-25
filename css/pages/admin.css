@@ -1,0 +1,539 @@
+/* ── LOGIN GATE ── */
+.admin-login-gate {
+    max-width: 400px;
+    margin: 6rem auto;
+    padding: 2.5rem;
+    background: var(--color-background-hover);
+    border: 1px solid rgba(128,128,128,0.15);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: "Lexend Deca", sans-serif;
+}
+.admin-login-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin: 0;
+}
+.admin-login-desc {
+    font-size: 0.85rem;
+    color: var(--color-on-background);
+    opacity: 0.55;
+    margin: 0;
+    line-height: 1.5;
+}
+.admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+.admin-login-input {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border-radius: 0.45rem;
+    border: 1px solid rgba(128,128,128,0.25);
+    background: rgba(128,128,128,0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 120ms ease;
+}
+.admin-login-input:focus { border-color: var(--color-primary); }
+.admin-login-error {
+    font-size: 0.8rem;
+    color: #ef4444;
+    margin: 0;
+}
+.admin-login-btn {
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.5rem;
+    background: var(--color-primary);
+    color: white;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: opacity 120ms ease;
+    align-self: flex-start;
+}
+.admin-login-btn:hover { opacity: 0.85; }
+.admin-login-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── ADMIN PAGE ── */
+.admin-page {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    font-family: "Lexend Deca", sans-serif;
+}
+.admin-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+.admin-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin: 0;
+}
+.admin-logout-btn {
+    padding: 0.45rem 1rem;
+    border-radius: 0.4rem;
+    background: rgba(128,128,128,0.1);
+    border: 1px solid rgba(128,128,128,0.2);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 100ms ease;
+}
+.admin-logout-btn:hover { opacity: 1; }
+
+/* ── TOOLBAR ── */
+.admin-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+.admin-search {
+    flex: 1;
+    max-width: 360px;
+    padding: 0.55rem 0.9rem;
+    border-radius: 0.45rem;
+    border: 1px solid rgba(128,128,128,0.2);
+    background: rgba(128,128,128,0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 120ms ease;
+}
+.admin-search:focus { border-color: var(--color-primary); }
+.admin-count {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    white-space: nowrap;
+}
+
+/* ── TABLE ── */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+.admin-th {
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-on-background);
+    opacity: 0.4;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(128,128,128,0.12);
+}
+.admin-th--pos { width: 3.5rem; }
+.admin-th--type { width: 6rem; }
+.admin-th--move { width: 12rem; }
+.admin-th--action { width: 5rem; }
+
+.admin-row { transition: background 80ms ease; }
+.admin-row:hover { background: rgba(128,128,128,0.04); }
+.admin-td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid rgba(128,128,128,0.07);
+    color: var(--color-on-background);
+    vertical-align: middle;
+}
+.admin-td--pos {
+    font-weight: 700;
+    opacity: 0.35;
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+}
+.admin-level-name { font-weight: 600; font-size: 0.875rem; }
+.admin-level-author { font-size: 0.72rem; opacity: 0.45; margin-top: 1px; }
+
+/* ── BADGES ── */
+.admin-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.18rem 0.5rem;
+    border-radius: 2rem;
+}
+.admin-badge--verified { background: rgba(102,10,239,0.12); color: color-mix(in srgb, var(--color-primary) 70%, white); }
+.admin-badge--main { background: rgba(16,185,129,0.12); color: #10b981; }
+.admin-badge--future { background: rgba(245,158,11,0.12); color: #f59e0b; }
+.root.dark .admin-badge--verified { color: color-mix(in srgb, var(--color-primary) 70%, black); }
+
+/* ── MOVE / DELETE CONTROLS ── */
+.admin-td--move { display: flex; align-items: center; gap: 0.4rem; }
+.admin-pos-input {
+    width: 4rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(128,128,128,0.2);
+    background: rgba(128,128,128,0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    outline: none;
+}
+.admin-pos-input:focus { border-color: var(--color-primary); }
+.admin-btn {
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.35rem;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: opacity 100ms ease;
+    white-space: nowrap;
+}
+.admin-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.admin-btn--move { background: rgba(102,10,239,0.12); color: color-mix(in srgb, var(--color-primary) 70%, white); }
+.admin-btn--move:hover:not(:disabled) { background: rgba(102,10,239,0.2); }
+.admin-btn--delete { background: rgba(239,68,68,0.1); color: #ef4444; }
+.admin-btn--delete:hover:not(:disabled) { background: rgba(239,68,68,0.2); }
+.root.dark .admin-btn--move { color: color-mix(in srgb, var(--color-primary) 70%, black); }
+
+/* The primary action on the Levels tab — solid, so it reads as "create" next to
+   the tinted secondary buttons. */
+.admin-btn--new {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.admin-btn--new:hover:not(:disabled) { filter: brightness(1.12); }
+
+/* Confirmation strip after a level is created. */
+.admin-notice {
+    background: rgba(16,185,129,0.12);
+    color: #10b981;
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 0.45rem;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 1rem;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ── STATES ── */
+.admin-loading, .admin-empty {
+    padding: 3rem;
+    text-align: center;
+    opacity: 0.4;
+    font-size: 0.875rem;
+}
+
+/* ── CLICKABLE ROW ── */
+.admin-row--clickable { cursor: pointer; }
+
+/* ── EDIT MODAL ── */
+.admin-edit-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.admin-edit-modal {
+    background: var(--color-background);
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 660px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+    font-family: "Lexend Deca", sans-serif;
+}
+.admin-edit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    flex-shrink: 0;
+}
+.admin-edit-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-on-background);
+}
+.admin-edit-close {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--color-on-background);
+    cursor: pointer;
+    opacity: 0.45;
+    line-height: 1;
+    padding: 0;
+    transition: opacity 100ms ease;
+}
+.admin-edit-close:hover { opacity: 1; }
+
+.admin-edit-form {
+    overflow-y: auto;
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.admin-edit-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.admin-edit-group > label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-on-background);
+    opacity: 0.45;
+}
+.admin-edit-group input[type="text"],
+.admin-edit-group input[type="url"],
+.admin-edit-group input[type="number"] {
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.4rem;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    background: rgba(128, 128, 128, 0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 120ms ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+.admin-edit-group input:focus { border-color: var(--color-primary); }
+
+.admin-edit-row {
+    display: flex;
+    gap: 0.65rem;
+}
+.admin-edit-row .admin-edit-group { flex: 1; }
+
+.admin-edit-checks {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.admin-edit-checks label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: var(--color-on-background);
+    cursor: pointer;
+}
+
+.admin-edit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.2rem;
+}
+.admin-edit-tags label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(128, 128, 128, 0.08);
+    padding: 0.28rem 0.65rem;
+    border-radius: 2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-on-background);
+    opacity: 1;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.admin-edit-subheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+.admin-edit-record {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.35rem;
+    align-items: center;
+}
+.admin-edit-record input {
+    flex: 1;
+    padding: 0.38rem 0.5rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    background: rgba(128, 128, 128, 0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.8rem;
+    outline: none;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.admin-edit-record input:focus { border-color: var(--color-primary); }
+.admin-edit-record--sm { flex: 0 0 4rem !important; }
+.admin-edit-record--md { flex: 0 0 6.5rem !important; }
+.admin-edit-empty {
+    font-size: 0.78rem;
+    opacity: 0.4;
+    margin: 0.2rem 0 0;
+}
+
+.admin-edit-footer {
+    padding: 0.9rem 1.5rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    display: flex;
+    gap: 0.65rem;
+    flex-shrink: 0;
+}
+
+/* ── TABS ── */
+.admin-tabs {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(128,128,128,0.15);
+    padding-bottom: 0;
+}
+.admin-tab {
+    padding: 0.55rem 1.1rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0.45;
+    transition: opacity 100ms ease, border-color 100ms ease;
+}
+.admin-tab:hover { opacity: 0.7; }
+.admin-tab.active {
+    opacity: 1;
+    border-bottom-color: var(--color-primary);
+}
+
+/* ── CARD ── */
+.admin-card {
+    background: var(--color-background-hover);
+    border: 1px solid rgba(128,128,128,0.12);
+    border-radius: 0.65rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.admin-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin: 0 0 0.1rem;
+}
+.admin-card-subhead {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-on-background);
+    opacity: 0.45;
+    margin-top: 0.25rem;
+}
+
+/* ── EVENTS GRID ── */
+.admin-events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+@media (max-width: 780px) {
+    .admin-events-grid { grid-template-columns: 1fr; }
+}
+
+/* ── SELECT ── */
+.admin-select {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.4rem;
+    border: 1px solid rgba(128,128,128,0.2);
+    background: rgba(128,128,128,0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.875rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 120ms ease;
+    box-sizing: border-box;
+}
+.admin-select:focus { border-color: var(--color-primary); }
+
+/* ── CARD INPUTS (inherit admin-edit-group styles) ── */
+.admin-card .admin-edit-group input[type="text"],
+.admin-card .admin-edit-group input[type="url"],
+.admin-card .admin-edit-group input[type="number"] {
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.4rem;
+    border: 1px solid rgba(128,128,128,0.2);
+    background: rgba(128,128,128,0.06);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 120ms ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+.admin-card .admin-edit-group input:focus { border-color: var(--color-primary); }
+.admin-card .admin-edit-group > label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-on-background);
+    opacity: 0.45;
+}
