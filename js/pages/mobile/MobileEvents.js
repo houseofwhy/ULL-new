@@ -19,7 +19,7 @@ function getThumbnail(level) {
 }
 
 function pickDailyLevel(list) {
-    const valid = list.filter(([l, e]) => l && !e);
+    const valid = list.filter(([l, e]) => l && !e && !l.isVerified);
     if (!valid.length) return null;
     const d = new Date();
     const seed = (d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()) >>> 0;
