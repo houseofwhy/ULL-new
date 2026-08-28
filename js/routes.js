@@ -21,8 +21,10 @@ import MobileHome from './pages/mobile/MobileHome.js';
 import MobileEvents from './pages/mobile/MobileEvents.js';
 
 export default [
-    { path: '/', redirect: '/home' },
-    { path: '/home', component: Home },
+    // "/" is the canonical home URL and renders Home directly — redirecting it
+    // to /home would move every visitor (and Googlebot) off the canonical URL.
+    { path: '/', component: Home },
+    { path: '/home', redirect: '/' },
     { path: '/list', component: List },
     { path: '/leaderboard', component: Leaderboard },
     { path: '/pending', component: ListPending },

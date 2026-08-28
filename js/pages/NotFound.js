@@ -7,7 +7,7 @@ export default {
         <p style="opacity:0.6;line-height:1.6;margin:0;">
             The page you're looking for doesn't exist or may have moved. Check the address, or head back to the home page.
         </p>
-        <router-link to="/home" style="margin-top:0.5rem;padding:0.7rem 1.6rem;border-radius:0.5rem;background:var(--color-primary);color:#fff;font-family:'Lexend Deca',sans-serif;font-weight:600;text-decoration:none;">
+        <router-link to="/" style="margin-top:0.5rem;padding:0.7rem 1.6rem;border-radius:0.5rem;background:var(--color-primary);color:#fff;font-family:'Lexend Deca',sans-serif;font-weight:600;text-decoration:none;">
             Go to Home Page
         </router-link>
     </div>

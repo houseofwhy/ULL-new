@@ -174,6 +174,42 @@ Each level returned by `/api/list` (and related endpoints) has this shape:
 
 ---
 
+## Search & AI visibility
+
+The site is a Vue SPA, so a crawler that does not run JavaScript would otherwise
+see an empty page. `scripts/build-seo.mjs` closes that gap: it writes a real
+static HTML file for every public URL, each with its own `<title>`, meta
+description, canonical link, Open Graph tags, JSON-LD graph and a readable
+no-JavaScript version of the page. Cloudflare Pages serves those files ahead of
+the `/* -> /index.html` fallback in `_redirects`, and `js/main.js` removes the
+static block the moment Vue mounts.
+
+```bash
+node scripts/build-seo.mjs
+```
+
+Generated — **do not edit by hand**:
+
+| Output | What it is |
+|--------|------------|
+| `index.html` (marker regions only) | Home page head + static content |
+| `list/`, `listmain/`, `listfuture/`, `upcoming/`, `pending/`, `leaderboard/`, `events/`, `information/` | One `index.html` per public route |
+| `sitemap.xml` | All public URLs with `lastmod` |
+| `llms.txt` | Plain-text brief for AI crawlers and answer engines |
+| `js/seo-meta.js` | Titles/descriptions for client-side navigations |
+
+Page copy lives in `scripts/seo/content.mjs` — edit it there and re-run the
+script. Everything in `index.html` **outside** the `seo:head` and `seo:content`
+markers (stylesheets, the Vue template, shared meta) is hand-maintained and
+copied verbatim into every generated page, so re-run the build after touching it.
+
+> The `google-site-verification` meta tag in `index.html` is what keeps the
+> Google Search Console property verified. Do not remove it.
+
+Run `node js/seo.test.mjs` after any change here.
+
+---
+
 ## Deploying
 
 The Worker and its D1 database are managed in the Cloudflare dashboard, not from this
@@ -208,6 +244,7 @@ npm i playwright vue@3.2.31 vue-router@4.0.14
 node css/mobile-footer.test.mjs         # mobile footer layout
 node js/list-ui.test.mjs                # benchmark recounting + Return to top
 node scripts/e2e-test.mjs               # home page + admin panel in Chromium
+node js/seo.test.mjs                    # per-URL metadata, crawler + no-JS behaviour
 ```
 
 ## Security
