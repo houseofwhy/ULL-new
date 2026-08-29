@@ -1,5 +1,5 @@
 import { store } from "../main.js";
-import { embed, passesBenchmark, assignBenchmarkRanks, displayRank } from '../util.js';
+import { embed, passesBenchmark, assignBenchmarkRanks, displayRank, levelThumbnail } from '../util.js';
 import { score } from "../score.js";
 import { fetchEditors, fetchList, fetchPending } from "../content.js";
 
@@ -49,7 +49,7 @@ export default {
                     </td>
                     <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                         <button @click="selected = i">
-                            <img v-if="level && store.thumbnails" class="level-thumbnail" :src="getThumbnail(level)" alt="" />
+                            <img v-if="level && store.thumbnails" class="level-thumbnail" :src="levelThumbnail(level)" alt="" />
                             <div class="level-info">
                                 <span :class="{ 'rank-verified': level?.isVerified }">
                                     <span class="type-label-lg" :style="store.levelColoring ? getLevelNameStyle(level, selected == i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected == i ? (!store.dark ? '#ffffff' : '#000000') : (!store.dark ? '#bbbbbb' : '#bbbbbb')) : ''}">{{ level?.name ? (store.levelColoring && isOldLevel(level) && !level.isVerified ? level.name + (isVeryOldLevel(level) ? ' \\u{1F6AB}\\u{1F6AB}' : ' \\u{1F6AB}') : level.name) : \`Error (\${err}.json)\` }}</span>
@@ -380,15 +380,7 @@ export default {
             else color = dark ? (isSelected ? '#88bbff' : '#5599ff') : (isSelected ? '#6c95cc' : '#447acc');
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
-        getThumbnail(level) {
-            if (level.thumbnail) return level.thumbnail;
-            const extractYT = (url) => {
-                if (!url || typeof url !== 'string') return '';
-                const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
-                return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
-            };
-            return extractYT(level.verification) || extractYT(level.showcase) || '';
-        },
+        levelThumbnail,
         isOldLevel(level) {
             if (!level.lastUpd) return false;
             const parts = level.lastUpd.split('.');

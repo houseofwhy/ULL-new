@@ -53,8 +53,8 @@ export default {
                             </div>
 
                             <div class="form-group">
-                                <label>Thumbnail Link (YouTube thumbnail or Imgur image)</label>
-                                <input v-model="level.thumbnail" type="url" placeholder="https://i.ytimg.com/vi/... or https://i.imgur.com/..." />
+                                <label>Thumbnail Link (YouTube video, YouTube thumbnail, or Imgur image)</label>
+                                <input v-model="level.thumbnail" type="url" placeholder="YouTube link or image URL" />
                                 <small class="typeBody" style="font-size: 0.8em; opacity: 0.7;">Optional.</small>
                             </div>
 

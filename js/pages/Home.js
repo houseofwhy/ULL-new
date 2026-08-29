@@ -36,7 +36,7 @@ export default {
                 <router-link to="/information" class="home-btn home-btn--primary">Learn More</router-link>
             </div>
             <div class="home-hero-social">
-                <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="home-social-btn">
+                <a href="https://discord.gg/QRX47v2qyC" target="_blank" class="home-social-btn">
                     <img src="/assets/discord.svg" :style="store.dark ? 'filter:invert(1)' : ''" alt="Discord" />
                     Discord
                 </a>

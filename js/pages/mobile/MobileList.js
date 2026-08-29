@@ -1,5 +1,5 @@
 import { store } from '../../main.js';
-import { embed, passesBenchmark } from '../../util.js';
+import { embed, passesBenchmark, levelThumbnail } from '../../util.js';
 import { mobileStore, applyFilters } from './mobileStore.js';
 
 export default {
@@ -36,7 +36,7 @@ export default {
                         <span v-if="rankOf(level, i) <= 500">#{{ rankOf(level, i) }}</span>
                         <span v-else>{{ pageType === 'all' ? 'Londenberg' : pageType === 'main' ? 'Leg' : 'Legacy' }}</span>
                     </span>
-                    <img v-if="mobileStore.showThumbnails && level" class="mob-thumb" :src="getThumbnail(level)" alt="" />
+                    <img v-if="mobileStore.showThumbnails && level" class="mob-thumb" :src="levelThumbnail(level)" alt="" />
                     <div class="mob-level-info">
                         <div class="mob-level-name" :style="mobileStore.showColors ? getLevelNameStyle(level, selected === i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected === i ? (!store.dark ? '#ffffff' : '#000000') : '#bbbbbb') : ''}">
                             {{ level?.name ? (mobileStore.showColors && isOldLevel(level) && !level?.isVerified ? level.name + ' \u{1F6AB}' : level.name) : \`Error (\${err}.json)\` }}
@@ -180,15 +180,7 @@ export default {
             if (!p.placement || p.placement === '?') return 'Estimated position: to be determined';
             return 'Estimated position: around #' + p.placement;
         },
-        getThumbnail(level) {
-            if (level.thumbnail) return level.thumbnail;
-            const yt = url => {
-                if (!url || typeof url !== 'string') return '';
-                const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
-                return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
-            };
-            return yt(level.verification) || yt(level.showcase) || '';
-        },
+        levelThumbnail,
         getVideo(level) {
             const toStr = v => (v && typeof v === 'string') ? v : '';
             if (!level.showcase) return embed(toStr(level.verification));

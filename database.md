@@ -603,7 +603,7 @@ the real message reaches the panel. Never remove it.
   > same records tie regardless of list position. `node js/upcoming.test.mjs` pins this.
 - **Frame Windows Counter**: if `level.frameCounter` is set, the level card shows a
   "Frame Windows Counter" row with a "Watch Here" link (List/ListMain/ListFuture pages).
-- **Social links**: the community links are **Discord** (`https://discord.gg/9wVWSgJSe8`)
+- **Social links**: the community links are **Discord** (`https://discord.gg/QRX47v2qyC`)
   and **X** (`https://x.com/ull_gd`). Discord alone sits in the desktop sidebar and the
   mobile top bar; **X is deliberately not in either** — it appears in the desktop settings
   popup, the mobile settings sheet, both footers, the home hero, the mobile home social row

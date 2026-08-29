@@ -4,7 +4,7 @@
 Top 1–100 Extreme Demons in Geometry Dash projected to place on the Demonlist.
 It aims to forecast future rankings, including worthy unrated levels.
 
-🌐 **Website:** https://ull.pages.dev  ·  💬 **Discord:** https://discord.gg/9wVWSgJSe8  ·  𝕏 **X:** [@ull_gd](https://x.com/ull_gd)
+🌐 **Website:** https://ull.pages.dev  ·  💬 **Discord:** https://discord.gg/QRX47v2qyC  ·  𝕏 **X:** [@ull_gd](https://x.com/ull_gd)
 
 > Not affiliated with RobTop Games. These guidelines are adapted from, and heavily
 > rely on, the structure and principles of the Global Demonlist Guidelines — full
@@ -239,12 +239,14 @@ node worker/worker.unmigrated.test.mjs  # Worker against the pre-migration schem
 node worker/worker.throttle.test.mjs    # auth rate limiter
 node js/leaderboard.test.mjs            # leaderboard scoring vs the /data snapshot
 node js/upcoming.test.mjs               # Upcoming Levels ordering
+node js/util.test.mjs                   # thumbnail URL resolution
 
 npm i playwright vue@3.2.31 vue-router@4.0.14
 node css/mobile-footer.test.mjs         # mobile footer layout
 node js/list-ui.test.mjs                # benchmark recounting + Return to top
 node scripts/e2e-test.mjs               # home page + admin panel in Chromium
 node js/seo.test.mjs                    # per-URL metadata, crawler + no-JS behaviour
+node js/pending-ui.test.mjs             # Pending List links (desktop + mobile)
 ```
 
 ## Security

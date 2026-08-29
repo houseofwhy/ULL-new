@@ -1,22 +1,6 @@
 import { store } from '../../main.js';
+import { levelThumbnail, thumbnailUrl } from '../../util.js';
 import { mobileStore } from './mobileStore.js';
-
-function ytThumb(url) {
-    if (!url) return '';
-    const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
-    return m ? `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg` : url;
-}
-
-function getThumbnail(level) {
-    if (!level) return '';
-    if (level.thumbnail) return level.thumbnail;
-    const extractYT = (url) => {
-        if (!url || typeof url !== 'string') return '';
-        const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
-        return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
-    };
-    return extractYT(level.verification) || extractYT(level.showcase) || '';
-}
 
 function pickDailyLevel(list) {
     const valid = list.filter(([l, e]) => l && !e && !l.isVerified);
@@ -63,7 +47,7 @@ export default {
                             <span class="mob-events-record-label">Best run</span>
                         </a>
                     </div>
-                    <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-events-discord-btn">
+                    <a href="https://discord.gg/QRX47v2qyC" target="_blank" class="mob-events-discord-btn">
                         <img src="/assets/discord.svg" :style="store.dark ? 'filter:invert(1)' : ''" alt="Discord" />
                         Participate in our Discord Server
                     </a>
@@ -136,10 +120,10 @@ export default {
     `,
     data: () => ({ store, mobileStore }),
     computed: {
-        lotmThumb() { return ytThumb(mobileStore.levelMonth?.thumbnail); },
-        ctvThumb()  { return ytThumb(mobileStore.levelVerif?.thumbnail); },
+        lotmThumb() { return thumbnailUrl(mobileStore.levelMonth?.thumbnail); },
+        ctvThumb()  { return thumbnailUrl(mobileStore.levelVerif?.thumbnail); },
         levelDay() { return mobileStore.rawList.length ? pickDailyLevel(mobileStore.rawList) : null; },
-        lotdThumb() { return getThumbnail(this.levelDay); },
+        lotdThumb() { return levelThumbnail(this.levelDay); },
         lotdRecord() {
             const recs = this.levelDay?.records;
             if (!recs?.length) return null;

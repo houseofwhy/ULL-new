@@ -631,7 +631,7 @@ export default {
                 </div>
                 <div class="admin-edit-group">
                     <label>Thumbnail Link</label>
-                    <input v-model="editLevel.thumbnail" type="url" placeholder="https://i.ytimg.com/vi/..." />
+                    <input v-model="editLevel.thumbnail" type="url" placeholder="YouTube link or image URL" />
                 </div>
                 <div class="admin-edit-group">
                     <label>Frame Windows Counter Link</label>

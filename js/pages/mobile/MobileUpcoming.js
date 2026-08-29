@@ -1,4 +1,4 @@
-import { embed } from '../../util.js';
+import { embed, levelThumbnail } from '../../util.js';
 import { upcomingScore } from '../../formulas.js';
 import { mobileStore } from './mobileStore.js';
 
@@ -18,7 +18,7 @@ export default {
             <div v-for="([level, err], i) in filteredList" :key="i" class="mob-level-row">
                 <button class="mob-level-btn" :class="{ active: lbSelected === i }" @click="lbSelected = lbSelected === i ? -1 : i">
                     <span class="mob-rank">#{{ i + 1 }}</span>
-                    <img v-if="mobileStore.showThumbnails && level" class="mob-thumb" :src="getThumbnail(level)" alt="" />
+                    <img v-if="mobileStore.showThumbnails && level" class="mob-thumb" :src="levelThumbnail(level)" alt="" />
                     <div class="mob-level-info">
                         <div class="mob-level-name">{{ level?.name || \`Error (\${err}.json)\` }}</div>
                         <div class="mob-level-sub" v-if="level">
@@ -83,15 +83,7 @@ export default {
         },
     },
     methods: {
-        getThumbnail(level) {
-            if (level.thumbnail) return level.thumbnail;
-            const yt = url => {
-                if (!url || typeof url !== 'string') return '';
-                const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
-                return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
-            };
-            return yt(level.verification) || yt(level.showcase) || '';
-        },
+        levelThumbnail,
         getVideo(level) {
             const toStr = v => (v && typeof v === 'string') ? v : '';
             if (!level.showcase) return embed(toStr(level.verification));

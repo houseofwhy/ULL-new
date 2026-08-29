@@ -41,7 +41,7 @@ export default {
                     </div>
                 </div>
                 <div class="mob-home-social-row">
-                    <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="mob-home-social-btn" title="Discord">
+                    <a href="https://discord.gg/QRX47v2qyC" target="_blank" class="mob-home-social-btn" title="Discord">
                         <img src="/assets/discord.svg" :style="store.dark ? 'filter:invert(1)' : ''" alt="Discord" />
                     </a>
                     <a href="https://x.com/ull_gd" target="_blank" rel="noopener" class="mob-home-social-btn" title="X (@ull_gd)">
@@ -119,7 +119,7 @@ export default {
                     </div>
                     <div class="mob-footer-col">
                         <h4>Community</h4>
-                        <a href="https://discord.gg/9wVWSgJSe8" target="_blank">Discord</a>
+                        <a href="https://discord.gg/QRX47v2qyC" target="_blank">Discord</a>
                         <a href="https://x.com/ull_gd" target="_blank" rel="noopener">X (@ull_gd)</a>
                     </div>
                 </div>

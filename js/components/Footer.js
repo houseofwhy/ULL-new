@@ -19,7 +19,7 @@ export default {
             </div>
             <div class="site-footer-col">
                 <h4>Community</h4>
-                <a href="https://discord.gg/9wVWSgJSe8" target="_blank">Discord</a>
+                <a href="https://discord.gg/QRX47v2qyC" target="_blank">Discord</a>
                 <a href="https://x.com/ull_gd" target="_blank" rel="noopener">X (@ull_gd)</a>
             </div>
         </div>

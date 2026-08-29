@@ -396,7 +396,7 @@
 <div class="gl-contact-name">Upcoming Levels List</div>
 <div class="gl-contact-detail">Announcements, placements and list updates</div>
 <div class="gl-contact-links">
-<a href="https://discord.gg/9wVWSgJSe8" target="_blank" rel="noopener">Discord — discord.gg/9wVWSgJSe8</a>
+<a href="https://discord.gg/QRX47v2qyC" target="_blank" rel="noopener">Discord — discord.gg/QRX47v2qyC</a>
 <a href="https://x.com/ull_gd" target="_blank" rel="noopener">X — @ull_gd</a>
 </div>
 </div>

@@ -9,7 +9,7 @@
 ## Reporting a Vulnerability
 
 Please report vulnerabilities privately through the
-[Discord server](https://discord.gg/9wVWSgJSe8) — DM the Website Coder
+[Discord server](https://discord.gg/QRX47v2qyC) — DM the Website Coder
 **Prometheus** (`@prometheus.dev`), or the **List Leader QwidziT** (`@qwidzit`).
 
 Please do not open a public issue for security problems. Response times vary with
@@ -24,7 +24,7 @@ us, and staff will never ask you for an API key there.
 
 | Channel | Where |
 |---------|-------|
-| Discord | <https://discord.gg/9wVWSgJSe8> |
+| Discord | <https://discord.gg/QRX47v2qyC> |
 | X | [@ull_gd](https://x.com/ull_gd) |
 | Website | <https://ull.pages.dev> |
 

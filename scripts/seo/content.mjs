@@ -9,7 +9,7 @@ export const SITE = {
     origin: 'https://ull.pages.dev',
     name: 'Upcoming Levels List',
     shortName: 'ULL',
-    discord: 'https://discord.gg/9wVWSgJSe8',
+    discord: 'https://discord.gg/QRX47v2qyC',
     x: 'https://x.com/ull_gd',
     api: 'https://d1-wrkr.ullteam.workers.dev',
     logo: 'https://ull.pages.dev/ull_icon.png',

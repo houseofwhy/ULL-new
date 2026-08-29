@@ -2,7 +2,7 @@
 export function getYoutubeIdFromUrl(url) {
     if (!url || typeof url !== 'string') return '';
     return url.match(
-        /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/,
+        /.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|shorts\/|live\/|watch\?v=)([^#\&\?]*).*/,
     )?.[1] ?? '';
 }
 
@@ -17,6 +17,31 @@ export function localize(num) {
 
 export function getThumbnailFromId(id) {
     return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+}
+
+// The image for a video URL, or '' if it is not a YouTube link.
+export function youtubeThumbnail(url) {
+    const id = getYoutubeIdFromUrl(url);
+    return id ? getThumbnailFromId(id) : '';
+}
+
+// Whatever an editor pasted into a thumbnail field. A YouTube link of any shape
+// becomes that video's thumbnail image — the page URL itself is not an image, so
+// using it verbatim renders a broken picture. Anything else (i.ytimg.com,
+// Imgur, …) is already a direct image URL and is passed through untouched.
+export function thumbnailUrl(value) {
+    if (!value || typeof value !== 'string') return '';
+    const url = value.trim();
+    return youtubeThumbnail(url) || url;
+}
+
+// The image to show for a level: its own thumbnail if one is set, otherwise
+// derived from the verification video, then the showcase.
+export function levelThumbnail(level) {
+    if (!level) return '';
+    return thumbnailUrl(level.thumbnail)
+        || youtubeThumbnail(level.verification)
+        || youtubeThumbnail(level.showcase);
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

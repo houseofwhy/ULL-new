@@ -1,23 +1,7 @@
 import { store } from '../main.js';
+import { levelThumbnail, thumbnailUrl } from '../util.js';
 import { fetchLevelMonth, fetchLevelVerif, fetchList } from '../content.js';
 import Footer from '../components/Footer.js';
-
-function ytThumb(url) {
-    if (!url) return '';
-    const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
-    return m ? `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg` : url;
-}
-
-function getThumbnail(level) {
-    if (!level) return '';
-    if (level.thumbnail) return level.thumbnail;
-    const extractYT = (url) => {
-        if (!url || typeof url !== 'string') return '';
-        const m = url.match(/.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/);
-        return m ? `https://img.youtube.com/vi/${m[1]}/mqdefault.jpg` : '';
-    };
-    return extractYT(level.verification) || extractYT(level.showcase) || '';
-}
 
 function pickDailyLevel(list) {
     const valid = list.filter(([l, e]) => l && !e && !l.isVerified);
@@ -48,7 +32,7 @@ export default {
                     <div class="events-lotd-left">
                         <div class="home-level-header">
                             <div class="home-level-thumb">
-                                <img v-if="getThumbnail(levelDay)" :src="getThumbnail(levelDay)" alt="" />
+                                <img v-if="levelThumbnail(levelDay)" :src="levelThumbnail(levelDay)" alt="" />
                             </div>
                             <div class="home-level-meta">
                                 <div class="home-level-name">{{ levelDay.name }}</div>
@@ -116,7 +100,7 @@ export default {
                 <div class="home-card__title">Level of the Month</div>
                 <div class="home-level-header">
                     <div class="home-level-thumb">
-                        <img v-if="ytThumb(levelMonth.thumbnail)" :src="ytThumb(levelMonth.thumbnail)" alt="" />
+                        <img v-if="thumbnailUrl(levelMonth.thumbnail)" :src="thumbnailUrl(levelMonth.thumbnail)" alt="" />
                     </div>
                     <div class="home-level-meta">
                         <div class="home-level-name">{{ levelMonth.name }}</div>
@@ -141,7 +125,7 @@ export default {
                         <span class="home-record-label">Best run</span>
                     </a>
                 </div>
-                <a href="https://discord.gg/9wVWSgJSe8" target="_blank" class="home-discord-btn">
+                <a href="https://discord.gg/QRX47v2qyC" target="_blank" class="home-discord-btn">
                     <img src="/assets/discord.svg" :style="store.dark ? 'filter:invert(1)' : ''" alt="Discord" />
                     Participate in our Discord Server
                 </a>
@@ -152,7 +136,7 @@ export default {
                 <div class="home-card__title">Closest to Verification</div>
                 <div class="home-level-header">
                     <div class="home-level-thumb">
-                        <img v-if="ytThumb(levelVerif.thumbnail)" :src="ytThumb(levelVerif.thumbnail)" alt="" />
+                        <img v-if="thumbnailUrl(levelVerif.thumbnail)" :src="thumbnailUrl(levelVerif.thumbnail)" alt="" />
                     </div>
                     <div class="home-level-meta">
                         <div class="home-level-name">{{ levelVerif.name }}</div>
@@ -205,7 +189,7 @@ export default {
             return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
         },
     },
-    methods: { ytThumb, getThumbnail },
+    methods: { thumbnailUrl, levelThumbnail },
     async mounted() {
         const [lm, lv, list] = await Promise.all([
             fetchLevelMonth(),
