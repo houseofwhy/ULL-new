@@ -236,7 +236,7 @@ for (const page_ of PAGES) {
         const level = sample[0];
         const route = "/level/" + levelSlug(level.path, paths);
         await page.goto(base + route, { waitUntil: "networkidle" });
-        ok("SPA renders the level page", (await page.locator(".level-page__title").innerText()).trim() === level.name);
+        ok("SPA renders the level page", (await page.locator(".lvl-title").innerText()).trim() === level.name);
         ok("static block was replaced", !(await page.evaluate(() => !!document.getElementById("seo-fallback"))));
         ok("stays on the level URL", trimSlash(await page.evaluate(() => location.pathname)) === route);
         ok("still indexable after mount",
@@ -245,7 +245,7 @@ for (const page_ of PAGES) {
 
         // An unknown level shows the not-found state rather than breaking.
         await page.goto(base + "/level/definitely-not-a-level", { waitUntil: "networkidle" });
-        ok("unknown level handled", (await page.locator(".level-page__missing").count()) === 1);
+        ok("unknown level handled", (await page.locator(".lvl-missing").count()) === 1);
         await ctx.close();
     }
 }
