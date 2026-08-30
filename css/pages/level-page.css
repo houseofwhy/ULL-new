@@ -1,4 +1,7 @@
-/* /level/<slug> — the standalone page for a single level. */
+/* /level/<slug> — the standalone page for a single level.
+   Reached cold from search results and shared links, so unlike the list panel
+   it has to introduce the level on its own: a hero built from the level's own
+   thumbnail, its three placements, then the video and the facts. */
 
 /* Same scroll container the other pages use: the shell is a fixed-height flex
    column, so the page itself has to be the thing that scrolls. */
@@ -8,97 +11,397 @@
     min-height: 0;
     overflow-y: auto;
     scrollbar-width: thin;
+    font-family: 'Lexend Deca', sans-serif;
+
+    /* Neutral greys so one set of values works in both themes. */
+    --lvl-line: rgba(128, 128, 128, 0.22);
+    --lvl-line-strong: rgba(128, 128, 128, 0.38);
+    --lvl-fill: rgba(128, 128, 128, 0.09);
+    --lvl-fill-2: rgba(128, 128, 128, 0.13);
+    --lvl-accent: color-mix(in srgb, var(--color-primary) 45%, white);
 }
 .level-page, .level-page * { box-sizing: border-box; }
-
-.level-page__inner {
-    width: 100%;
-    max-width: 46rem;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 3rem;
-    font-family: 'Lexend Deca', sans-serif;
+.root.dark .level-page {
+    --lvl-accent: color-mix(in srgb, var(--color-primary) 75%, black);
 }
+/* The typography sheet hangs ::before/::after spacers off every heading and
+   paragraph to trim leading. This page sets its own line heights, so they only
+   add stray gaps here. */
+.level-page h1::before, .level-page h1::after,
+.level-page h2::before, .level-page h2::after,
+.level-page h3::before, .level-page h3::after,
+.level-page p::before, .level-page p::after,
+.level-page dt::before, .level-page dt::after { display: none; }
+.level-page a { color: inherit; text-decoration: none; }
 
-.level-page__crumbs {
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.lvl-hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--lvl-line);
+}
+/* The level's thumbnail, blurred far past recognition — it is there for colour,
+   not detail, which is why a 320px YouTube still is enough. */
+.lvl-hero__bg {
+    position: absolute;
+    inset: -4rem;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2.75rem) saturate(1.35);
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+.root.dark .lvl-hero__bg { opacity: 0.35; }
+.lvl-hero__scrim {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--color-background) 50%, transparent) 0%, var(--color-background) 94%),
+        linear-gradient(100deg, color-mix(in srgb, var(--color-primary) 40%, transparent) 0%, transparent 62%);
+}
+.lvl-hero__inner {
+    position: relative;
     display: flex;
-    gap: 0.5rem;
-    font-size: 0.8rem;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 19rem;
+    max-width: 82rem;
+    padding: 3.5rem 3rem 1.75rem;
+}
+.lvl-hero__body { flex: 1; min-width: 0; }
+
+.lvl-crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-size: 0.72rem;
     opacity: 0.55;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
 }
-.level-page__crumbs a { text-decoration: underline; }
+.lvl-crumbs a:hover { text-decoration: underline; }
+.lvl-crumbs b { font-weight: 600; }
 
-.level-page__title {
-    font-size: 2rem;
-    line-height: 1.15;
-    margin: 0 0 0.4rem;
+.lvl-title {
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+.lvl-byline {
+    margin: 0.85rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    opacity: 0.65;
+}
+.lvl-byline b { font-weight: 600; }
+
+.lvl-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.35rem; }
+.lvl-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.32rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border: 1px solid currentColor;
+}
+.lvl-status i { width: 0.42rem; height: 0.42rem; border-radius: 50%; background: currentColor; }
+/* Same progression the list colours level names by, so a level reads the same
+   in both places. */
+.lvl-status--done   { color: #9d9d9d; }
+.lvl-status--red    { color: #ff5555; }
+.lvl-status--orange { color: #ff6622; }
+.lvl-status--amber  { color: #ffaa44; }
+.lvl-status--yellow { color: #ffee55; }
+.lvl-status--green  { color: #55ee55; }
+.lvl-status--cyan   { color: #33dddd; }
+.lvl-status--blue   { color: #5599ff; }
+.root.dark .lvl-status--done   { color: #6f6f6f; }
+.root.dark .lvl-status--red    { color: #cc4444; }
+.root.dark .lvl-status--orange { color: #cc511b; }
+.root.dark .lvl-status--amber  { color: #b87a24; }
+.root.dark .lvl-status--yellow { color: #9a9022; }
+.root.dark .lvl-status--green  { color: #2f9c2f; }
+.root.dark .lvl-status--cyan   { color: #1d8f8f; }
+.root.dark .lvl-status--blue   { color: #3a6cb8; }
+
+.lvl-tag {
+    padding: 0.32rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    background: var(--lvl-fill-2);
+    border: 1px solid var(--lvl-line);
 }
 
-.level-page__ranks {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin: 0.6rem 0 1rem;
-}
-.level-page__ranks a { text-decoration: underline; }
-
-.level-page__tags {
+.lvl-ranks { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.lvl-rank {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--color-background) 65%, transparent);
+    border: 1px solid var(--lvl-line);
+    backdrop-filter: blur(8px);
+    transition: border-color 120ms ease, transform 120ms ease;
+}
+.lvl-rank:hover { border-color: var(--lvl-line-strong); transform: translateY(-1px); }
+.lvl-rank--lead {
+    background: linear-gradient(150deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 55%, white) 130%);
+    border-color: transparent;
+    color: var(--color-on-primary);
+}
+.lvl-rank--lead:hover { border-color: transparent; }
+.lvl-rank__n { font-size: 1.5rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.lvl-rank__l {
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+.lvl-rank--lead .lvl-rank__l { opacity: 0.85; }
+
+/* ── Body ─────────────────────────────────────────────────────────────────── */
+.lvl-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(17rem, 0.8fr);
+    gap: 2.5rem;
+    max-width: 82rem;
+    padding: 2.25rem 3rem 3rem;
+}
+.lvl-main { min-width: 0; }
+
+.lvl-tabs { display: flex; gap: 0.3rem; margin-bottom: 0.85rem; }
+.lvl-tab {
+    padding: 0.45rem 1rem;
+    border-radius: 0.45rem;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: transparent;
+    color: var(--color-on-background);
+    opacity: 0.5;
+    border: 1px solid var(--lvl-line);
+    cursor: pointer;
+    transition: opacity 120ms ease, background-color 120ms ease;
+}
+.lvl-tab:hover { opacity: 0.8; }
+.lvl-tab.is-on {
+    opacity: 1;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-color: transparent;
 }
 
-.level-page__video {
+.lvl-video {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
-    background: rgba(128, 128, 128, 0.12);
-    border: 1px solid rgba(128, 128, 128, 0.25);
+    max-height: 62vh;
+    border-radius: 0.75rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--lvl-line);
 }
-
-.level-page__facts {
-    display: grid;
-    grid-template-columns: minmax(7rem, auto) 1fr;
-    gap: 0.5rem 1.25rem;
-    margin: 0 0 1.5rem;
-    font-size: 0.92rem;
-}
-.level-page__facts dt { opacity: 0.55; }
-.level-page__facts dd { margin: 0; }
-
-.level-page__links {
+.root.dark .lvl-video { background: var(--lvl-fill); }
+.lvl-video--empty {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 1.75rem;
-}
-.level-page__links a {
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(128, 128, 128, 0.35);
-    border-radius: 0.45rem;
+    align-items: center;
+    justify-content: center;
     font-size: 0.85rem;
+    opacity: 0.35;
 }
 
-.level-page__about {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    opacity: 0.65;
-    border-top: 1px solid rgba(128, 128, 128, 0.25);
-    padding-top: 1.25rem;
+.lvl-section { margin-top: 2.25rem; }
+.lvl-h2, .lvl-h3 {
+    margin: 0 0 1rem;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    opacity: 0.45;
+    line-height: 1.2;
 }
-.level-page__about a { text-decoration: underline; }
+.lvl-h2 { font-size: 0.7rem; display: flex; align-items: center; gap: 0.5rem; }
+.lvl-h3 { font-size: 0.65rem; }
+.lvl-count {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.42rem;
+    border-radius: 1rem;
+    background: var(--lvl-fill-2);
+    letter-spacing: 0;
+}
+.lvl-creators { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.lvl-creator {
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.4rem;
+    font-size: 0.78rem;
+    background: var(--lvl-fill);
+    border: 1px solid var(--lvl-line);
+}
 
-.level-page__missing h1 { font-size: 1.6rem; }
-.level-page__missing p { font-size: 0.95rem; line-height: 1.6; opacity: 0.75; margin: 0 0 0.75rem; }
-.level-page__missing a { text-decoration: underline; }
+.lvl-about {
+    grid-column: 1;
+    margin: 0.75rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--lvl-line);
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.7;
+    opacity: 0.5;
+}
+.lvl-about a { text-decoration: underline; }
 
-/* The page carries its own layout, so it reads the same in the mobile shell. */
-@media (max-width: 768px) {
-    /* Clear the fixed sidebar toggle, which sits at the top-left. */
-    .level-page__inner { padding: 3.25rem 1rem 2.5rem; }
-    .level-page__title { font-size: 1.5rem; }
-    .level-page__facts { grid-template-columns: 1fr; gap: 0.15rem; }
-    .level-page__facts dd { margin-bottom: 0.6rem; }
+/* ── Right rail ───────────────────────────────────────────────────────────── */
+.lvl-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    position: sticky;
+    top: 0;
+    align-self: start;
+}
+.lvl-card {
+    padding: 1.15rem 1.25rem;
+    border-radius: 0.75rem;
+    background: var(--lvl-fill);
+    border: 1px solid var(--lvl-line);
+}
+
+.lvl-meter + .lvl-meter { margin-top: 0.95rem; }
+.lvl-meter__top { display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.4rem; }
+.lvl-meter__top span { opacity: 0.55; }
+.lvl-meter__top b { font-weight: 600; }
+.lvl-bar { height: 0.35rem; border-radius: 1rem; background: var(--lvl-fill-2); overflow: hidden; }
+.lvl-bar i {
+    display: block;
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 45%, white));
+}
+.lvl-bar--alt i { background: linear-gradient(90deg, #e0762c, #ffc46b); }
+
+.lvl-wr { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.lvl-wr__card {
+    padding: 0.8rem 0.9rem;
+    border-radius: 0.6rem;
+    background: var(--lvl-fill);
+    border: 1px solid var(--lvl-line);
+    min-width: 0;
+}
+.lvl-wr__k { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; }
+.lvl-wr__v {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0.35rem;
+    letter-spacing: -0.02em;
+    color: var(--lvl-accent);
+    overflow-wrap: anywhere;
+}
+a.lvl-wr__v:hover { text-decoration: underline; }
+.lvl-wr__v--none { color: inherit; opacity: 0.28; font-size: 1.05rem; }
+.lvl-wr__u { font-size: 0.72rem; opacity: 0.5; margin-top: 0.15rem; overflow-wrap: anywhere; }
+
+.lvl-dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.55rem 1rem;
+    font-size: 0.8rem;
+}
+.lvl-dl dt {
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: inherit;
+    text-transform: none;
+    opacity: 0.45;
+}
+.lvl-dl dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+
+.lvl-links { display: flex; flex-direction: column; gap: 0.45rem; }
+.lvl-link {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 0.6rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: opacity 120ms ease, background-color 120ms ease, border-color 120ms ease;
+}
+.lvl-link:hover { opacity: 0.88; }
+.lvl-link--ghost {
+    background: transparent;
+    color: var(--color-on-background);
+    border-color: var(--lvl-line-strong);
+    font-weight: 500;
+}
+.lvl-link--ghost:hover { background: var(--lvl-fill-2); opacity: 1; }
+.lvl-link--copied {
+    color: #3fbf7f;
+    border-color: #3fbf7f;
+    background: rgba(63, 191, 127, 0.1);
+}
+
+/* ── Missing level ────────────────────────────────────────────────────────── */
+.lvl-missing {
+    max-width: 34rem;
+    padding: 5rem 3rem 4rem;
+}
+.lvl-missing h1 { margin: 0 0 1rem; font-size: 2rem; line-height: 1.15; letter-spacing: -0.02em; }
+.lvl-missing p { margin: 0 0 1.75rem; font-size: 0.9rem; font-weight: 500; line-height: 1.7; opacity: 0.6; }
+.lvl-missing .lvl-link { display: inline-block; width: auto; }
+
+/* ── Narrow ───────────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .lvl-hero__inner { padding-inline: 2rem; }
+    .lvl-body { padding-inline: 2rem; gap: 2rem; }
+    .lvl-missing { padding-inline: 2rem; }
+}
+
+@media (max-width: 900px) {
+    .lvl-hero__inner {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+        /* Clear the fixed sidebar toggle, which sits at the top-left. */
+        padding: 3.5rem 1.25rem 1.5rem;
+    }
+    .lvl-ranks { flex-wrap: wrap; }
+    .lvl-rank { flex: 1 1 6rem; }
+    .lvl-body {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1.5rem 1.25rem 2.5rem;
+        gap: 1.75rem;
+    }
+    .lvl-about { margin-top: 0; }
+    /* Nothing to stick to once the rail is a stacked block. */
+    .lvl-side { position: static; }
+    .lvl-video { max-height: none; }
+    .lvl-missing { padding: 4rem 1.25rem 3rem; }
+}
+
+@media (max-width: 420px) {
+    .lvl-wr { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lvl-rank, .lvl-tab, .lvl-link { transition: none; }
+    .lvl-rank:hover { transform: none; }
 }
