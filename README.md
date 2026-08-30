@@ -228,6 +228,36 @@ Every level gets its own URL at `/level/<slug>`, pre-rendered with its
 position, creators, verifier, records, progress and video links, and live in the
 SPA through the `/level/:slug` route.
 
+It is the page strangers arrive on from a search result or a shared link, so it
+carries its own hero rather than the list's chrome (`js/pages/LevelPage.js`,
+`css/pages/level-page.css`):
+
+- a **hero** with the level's own thumbnail blurred behind the title, the byline
+  ("by *host* · verified by *verifier*", or **to be verified by** while the level
+  is unverified), the status pill and the tags;
+- its **placements** in All Levels / Main List / Future List as three cards, each
+  linking to that list;
+- the **video** (Showcase / Verification tabs when both exist) with the creators
+  underneath;
+- a sticky rail of **Progress**, **World records**, **Details** and the actions.
+
+**No fields exist only for this page.** Both progress bars are derived from what
+the API already returns — decoration from `percentFinished`, verification from
+the better of the best from-0 record and the widest run span, which is the same
+`verifyProgress` measure the lists colour level names by. The status pill uses
+that same colour scale, so a level reads the same here as in the list. `Verified`,
+`Verifying`, `Being Verified` and `Layout` are dropped from the tag row because
+the status pill already says them.
+
+`frameCounter` shows up as a **Frame Windows Counter → Watch here** row in
+Details, and the row is omitted entirely when the field is null or blank.
+
+The list panels on All Levels, Main List and Future List each carry an **Open
+Level Page** button on the title row (`.level-open`, in
+`css/components/level-share.css`) — a real `router-link` to `/level/<slug>`, so it
+can also be middle-clicked or copied. The "Share level" control lower down is
+unchanged and still copies the URL rather than navigating.
+
 The slug comes from the level's API `path`, not its name, because **staff rename
 levels regularly and a URL that 404s throws away whatever ranking and inbound
 links it had earned**. `data/_level-registry.json` remembers every slug the site

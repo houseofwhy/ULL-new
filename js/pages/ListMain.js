@@ -83,12 +83,24 @@ export default {
         </div>
         <div class="level-container-new surface">
             <div class="level" v-if="level">
-                <div>
-                    <h1>{{ level.name }}</h1>
-                    <div v-if="level.allLevelsRank || level.futureRank" class="cross-list-ranks" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-family:'Lexend Deca',sans-serif;font-size:0.9rem;opacity:0.45;margin-top:0.6rem;">
-                        <span v-if="level.allLevelsRank">#{{ level.allLevelsRank }} in All Levels</span>
-                        <span v-if="level.futureRank">{{ level.allLevelsRank ? '· ' : '' }}#{{ level.futureRank }} in Future List</span>
+                <div class="level-head">
+                    <div class="level-head__text">
+                        <h1>{{ level.name }}</h1>
+                        <div v-if="level.allLevelsRank || level.futureRank" class="cross-list-ranks" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-family:'Lexend Deca',sans-serif;font-size:0.9rem;opacity:0.45;margin-top:0.6rem;">
+                            <span v-if="level.allLevelsRank">#{{ level.allLevelsRank }} in All Levels</span>
+                            <span v-if="level.futureRank">{{ level.allLevelsRank ? '· ' : '' }}#{{ level.futureRank }} in Future List</span>
+                        </div>
                     </div>
+                    <router-link v-if="level.path" class="level-open"
+                                 :to="'/level/' + levelSlug(level.path, allPaths)">
+                        <span>Open Level Page</span>
+                        <svg class="level-open__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                             stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6.5 3.5H4a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 4 13.5h7a1.5 1.5 0 0 0 1.5-1.5V9.5" />
+                            <path d="M9.5 2.5h4v4" />
+                            <path d="M13.5 2.5 7.5 8.5" />
+                        </svg>
+                    </router-link>
                 </div>
                 <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
                 <div style="display:flex; flex-wrap:wrap;">

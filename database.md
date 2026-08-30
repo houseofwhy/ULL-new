@@ -497,6 +497,31 @@ the real message reaches the panel. Never remove it.
   `MobileList.js`): each level page shows the level's rank in the *other* two lists (e.g.
   "#12 in All Levels · #3 in Future List"), computed as `allLevelsRank` / `mainRank` /
   `futureRank` on mount (desktop pages) or in `Mobile.js` (mobile), mirroring Upcoming Levels.
+- **Level page** (`js/pages/LevelPage.js`, `css/pages/level-page.css`): the standalone
+  `/level/<slug>` page renders from the same `/api/list` payload as the list panels and adds
+  **no fields of its own**. Everything on it is either a stored column or derived from one:
+  - **Progress bars.** Decoration is `percentFinished`. Verification is `100` when
+    `isVerified`, otherwise the same `verifyProgress` the lists use — `max(best record %,
+    widest run span)`, where a run span is `|b − a|` parsed out of a `"a-b"` `run[].percent`.
+  - **Status pill.** Wording matches the list panel (`Verified` / `Being verified` /
+    `Layout` / `Decoration N% done`); the colour follows the level-name scale from
+    `getLevelNameStyle` (red ≥60, orange ≥30, amber at `percentFinished === 100`, yellow ≥70,
+    green ≥30, cyan ≥1, blue at 0), so a level reads the same in both places.
+  - **Tag row** drops `Verified`, `Verifying`, `Being Verified` and `Layout` — the pill
+    already says them.
+  - **Byline** reads `verified by X` only when `isVerified`; otherwise **`to be verified by
+    X`**, matching `MobileList.js`'s author block. Hidden entirely when `verifier` is empty,
+    `none` or `unknown`.
+  - **`frameCounter`** renders as a `Frame Windows Counter → Watch here` row in the Details
+    card, linking the stored URL. The admin panel stores `null` for a blank field
+    (`Admin.js`), so the row is skipped when the value is null, undefined or whitespace.
+  - **`id`** shows `leakID` when `id === 'private'` and a leak ID exists, else `Private` —
+    same rule as the list panels' ID stat.
+- **Open Level Page button** (`List.js`/`ListMain.js`/`ListFuture.js`, `.level-open` in
+  `css/components/level-share.css`): sits on the detail panel's title row, opposite the level
+  name, as a `router-link` to `/level/' + levelSlug(level.path, allPaths)`. Rendered only when
+  the level has a `path`. Distinct from the `.level-share` control further down the panel,
+  which is a link to the same URL but copies it instead of navigating.
 - **Pending search fallback** (`List.js`/`ListMain.js`/`ListFuture.js`, `MobileList.js`): when a
   search returns **no matches, or 3 or fewer**, the page checks the pending list (`fetchPending`,
   kept in `this.pending` / `mobileStore.pending`) for an entry whose name contains the query and,
