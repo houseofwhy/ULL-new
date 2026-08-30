@@ -3,48 +3,57 @@
 // URL already carries them from the matching static file.
 export const PAGE_META = {
     "/": {
-        "title": "Upcoming Levels List — Upcoming Geometry Dash Extreme Demons",
+        "title": "Upcoming Levels List",
+        "socialTitle": "Upcoming Levels List — Upcoming Geometry Dash Extreme Demons",
         "description": "Upcoming Levels List (ULL) tracks every upcoming Top 1–100 Extreme Demon in Geometry Dash — levels in development, their creators, verifiers, decoration progress and best records, ranked by where they are projected to land on the Demonlist."
     },
     "/list": {
-        "title": "All Levels — Every Upcoming Extreme Demon | Upcoming Levels List",
+        "title": "ULL — All Levels",
+        "socialTitle": "All Levels — Every Upcoming Extreme Demon | Upcoming Levels List",
         "description": "The complete Upcoming Levels List catalogue: every Geometry Dash Extreme Demon in development with a chance of being verified and placed on the Demonlist, ranked with creators, verifiers, decoration progress and records."
     },
     "/listmain": {
-        "title": "Main List — Rate-Worthy Upcoming Extreme Demons | Upcoming Levels List",
+        "title": "ULL — Main List",
+        "socialTitle": "Main List — Rate-Worthy Upcoming Extreme Demons | Upcoming Levels List",
         "description": "The Main List holds the upcoming Geometry Dash Extreme Demons that meet the fundamental standards required to be considered for an official rating, ranked by projected Demonlist placement."
     },
     "/listfuture": {
-        "title": "Future List — Extreme Demons Closest to Release | Upcoming Levels List",
+        "title": "ULL — Future List",
+        "socialTitle": "Future List — Extreme Demons Closest to Release | Upcoming Levels List",
         "description": "The Future List is the strictest Upcoming Levels List tier: Geometry Dash Extreme Demons with a very high likelihood of imminent verification and publication, ranked by projected Demonlist position."
     },
     "/upcoming": {
-        "title": "Upcoming Levels — Closest to Verification | Upcoming Levels List",
+        "title": "ULL — Upcoming Levels",
+        "socialTitle": "Upcoming Levels — Closest to Verification | Upcoming Levels List",
         "description": "Which upcoming Geometry Dash Extreme Demon is closest to being verified? Unverified levels ranked by the best record and longest run anyone has achieved on them, updated as new progress comes in."
     },
     "/pending": {
-        "title": "Pending List — Levels Awaiting Placement | Upcoming Levels List",
+        "title": "ULL — Pending List",
+        "socialTitle": "Pending List — Levels Awaiting Placement | Upcoming Levels List",
         "description": "Levels submitted to the Upcoming Levels List and awaiting a placement decision from the staff team, with their expected placement range and whether they are moving up or down."
     },
     "/leaderboard": {
-        "title": "Leaderboard — Top Players on Upcoming Extreme Demons | Upcoming Levels List",
+        "title": "ULL — Leaderboard",
+        "socialTitle": "Leaderboard — Top Players on Upcoming Extreme Demons | Upcoming Levels List",
         "description": "Players ranked by the verifications, layout completions, records and runs they hold on upcoming Geometry Dash Extreme Demons, scored by each level’s position on the Upcoming Levels List."
     },
     "/events": {
-        "title": "Events — Level of the Month & Closest to Verification | Upcoming Levels List",
+        "title": "ULL — Events",
+        "socialTitle": "Events — Level of the Month & Closest to Verification | Upcoming Levels List",
         "description": "The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team."
     },
     "/information": {
-        "title": "Guidelines & Information | Upcoming Levels List",
+        "title": "ULL — Information",
+        "socialTitle": "Guidelines & Information | Upcoming Levels List",
         "description": "How the Upcoming Levels List works: record acceptance and proof requirements, permitted and prohibited software, level placement procedure, level colouring, staff duties and the full ULL guidelines."
     },
     "/generator": {
-        "title": "Level Generator — Upcoming Levels List",
+        "title": "ULL — Level Generator",
         "description": "Internal tool for building Upcoming Levels List entries.",
         "noindex": true
     },
     "/admin": {
-        "title": "Admin — Upcoming Levels List",
+        "title": "ULL — Admin",
         "description": "Staff-only administration panel.",
         "noindex": true
     }

@@ -25,6 +25,12 @@ const TYPES = {
 
 const server = createServer((req, res) => {
     const url = decodeURIComponent(req.url.split('?')[0]);
+    // Cloudflare Pages redirects a directory URL to its trailing-slash form.
+    // Mirroring that here is the point: /listmain arrives as /listmain/.
+    if (!url.endsWith('/') && existsSync(path.join(ROOT, url, 'index.html'))) {
+        res.writeHead(308, { location: url + '/' });
+        return res.end();
+    }
     for (const c of [path.join(ROOT, url), path.join(ROOT, url, 'index.html')]) {
         if (existsSync(c) && statSync(c).isFile()) {
             res.writeHead(200, { 'content-type': TYPES[path.extname(c)] || 'application/octet-stream' });
@@ -67,6 +73,8 @@ async function stubExternals(ctx, delayMs = 0) {
 
 const SNAPSHOT_FILE = path.join(ROOT, 'data', '_seo-snapshot.json');
 const snapshot = existsSync(SNAPSHOT_FILE) ? JSON.parse(readFileSync(SNAPSHOT_FILE, 'utf8')) : null;
+
+const trimSlash = (p) => (p.length > 1 ? p.replace(/\/+$/, '') : p);
 
 let failed = 0;
 const ok = (name, cond, extra = '') => {
@@ -111,7 +119,7 @@ for (const page_ of PAGES) {
     ok('indexable', info.robots === 'index, follow', info.robots);
     ok('Search Console verification tag present', info.gsc);
     ok('one valid JSON-LD graph', info.ld.length === 1 && !info.ld[0].includes('INVALID'), JSON.stringify(info.ld[0]));
-    ok('no client-side redirect off the URL', info.path === route, info.path);
+    ok('no client-side redirect off the URL', trimSlash(info.path) === route, info.path);
     ok('no page errors', errors.length === 0, errors.join(' | '));
     await ctx.close();
 }
@@ -157,7 +165,7 @@ for (const page_ of PAGES) {
     const page = await ctx.newPage();
     await page.goto(base + '/list', { waitUntil: 'networkidle' });
     const p = await page.evaluate(() => location.pathname);
-    ok('not bounced into the /mobile tree', p === '/list', p);
+    ok('not bounced into the /mobile tree', trimSlash(p) === '/list', p);
     await ctx.close();
 }
 
@@ -230,7 +238,7 @@ for (const page_ of PAGES) {
         await page.goto(base + route, { waitUntil: "networkidle" });
         ok("SPA renders the level page", (await page.locator(".level-page__title").innerText()).trim() === level.name);
         ok("static block was replaced", !(await page.evaluate(() => !!document.getElementById("seo-fallback"))));
-        ok("stays on the level URL", (await page.evaluate(() => location.pathname)) === route);
+        ok("stays on the level URL", trimSlash(await page.evaluate(() => location.pathname)) === route);
         ok("still indexable after mount",
             (await page.evaluate(() => document.querySelector('meta[name="robots"]')?.content)) === "index, follow");
         ok("no page errors", errors.length === 0, errors.join(" | "));
@@ -324,7 +332,7 @@ for (const page_ of PAGES) {
     ok("confirms the copy", (await share.innerText()).trim() === "Link copied");
     const clip = await page.evaluate(() => navigator.clipboard.readText());
     ok("copied an absolute level URL", /^https?:\/\/[^/]+\/level\/[a-z0-9-]+$/.test(clip), clip);
-    ok("did not navigate away", (await page.evaluate(() => location.pathname)) === "/list");
+    ok("did not navigate away", trimSlash(await page.evaluate(() => location.pathname)) === "/list");
 
     await page.waitForTimeout(2100);
     ok("returns to its resting state", (await share.innerText()).trim() === "Share level");
@@ -332,5 +340,52 @@ for (const page_ of PAGES) {
     await ctx.close();
 }
 
+// ── arriving straight at a URL, trailing slash and all ──────────────────────
+// Cloudflare Pages serves /listmain as /listmain/, which used to miss every
+// lookup keyed without the slash: the tab read "Page Not Found" until you
+// clicked something, and the canonical URL grew a slash the static file did
+// not have.
+{
+    console.log('\n── direct hit with a trailing slash ──');
+    const ctx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+    await stubExternals(ctx);
+    const page = await ctx.newPage();
+    for (const route of ["/listmain", "/list", "/leaderboard", "/level/aeternus"]) {
+        await page.goto(base + route, { waitUntil: "networkidle" });
+        const got = await page.evaluate(() => ({
+            path: location.pathname,
+            title: document.title,
+            canonical: document.querySelector("link[rel=canonical]")?.href,
+            robots: document.querySelector('meta[name="robots"]')?.content,
+        }));
+        ok(route + ": the server did add a trailing slash", got.path === route + "/", got.path);
+        ok(route + ": title is not the 404 title", !/Page Not Found/.test(got.title), got.title);
+        ok(route + ": canonical has no trailing slash", got.canonical === SITE.origin + route, got.canonical);
+        ok(route + ": still indexable", got.robots === "index, follow", got.robots);
+    }
+    await ctx.close();
+}
+
+// ── the browser tab reads as ULL — Page ─────────────────────────────────────
+{
+    console.log('\n── tab titles ──');
+    const ctx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+    await stubExternals(ctx);
+    const page = await ctx.newPage();
+    await page.goto(base + "/", { waitUntil: "networkidle" });
+    ok("home is the site name", (await page.title()) === "Upcoming Levels List", await page.title());
+    for (const [route, expected] of [["/list", "ULL — All Levels"], ["/leaderboard", "ULL — Leaderboard"], ["/information", "ULL — Information"]]) {
+        await page.click(`.sidebar__nav a[href="${route}"]`);
+        await page.waitForFunction((r) => location.pathname.replace(/\/+$/, "") === r, route);
+        ok(route + ": tab title", (await page.title()) === expected, await page.title());
+        // Link previews keep the longer, descriptive wording.
+        const og = await page.evaluate(() => document.querySelector('meta[property="og:title"]')?.content);
+        ok(route + ": link preview stays descriptive", og.length > expected.length + 10, og);
+    }
+    await ctx.close();
+}
+
+await browser.close();
+server.close();
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

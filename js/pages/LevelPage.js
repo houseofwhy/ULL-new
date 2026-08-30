@@ -117,7 +117,7 @@ export default {
 
             this.level = levelForSlug(levels, this.$route.params.slug);
             this.loading = false;
-            if (this.level) document.title = `${this.level.name} — Geometry Dash Extreme Demon | Upcoming Levels List`;
+            if (this.level) document.title = `ULL — ${this.level.name}`;
         },
     },
     watch: { '$route.params.slug': 'load' },

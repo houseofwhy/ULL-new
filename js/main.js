@@ -52,6 +52,12 @@ document.getElementById('seo-fallback')?.remove();
 const app = Vue.createApp({
     data: () => ({ store }),
 });
+// Cloudflare Pages serves a directory URL with a trailing slash, so arriving
+// straight at ull.pages.dev/listmain lands the router on "/listmain/". Every
+// lookup here is keyed without one, and the canonical URL must not grow one
+// either, so paths are normalised before anything reads them.
+const normalizePath = (p) => (p.length > 1 && p.endsWith('/') ? p.replace(/\/+$/, '') : p);
+
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(),
     routes,
@@ -87,13 +93,14 @@ const isCrawler = () => BOT_UA.test(navigator.userAgent);
 // Auto-redirect mobile devices
 const isMobile = () => !isCrawler() && (window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent));
 router.beforeEach((to, from, next) => {
-    const standalone = to.path.startsWith('/level/') || to.path === '/generator' || to.path === '/admin';
-    if (isMobile() && !to.path.startsWith('/mobile') && !standalone) {
+    const path = normalizePath(to.path);
+    const standalone = path.startsWith('/level/') || path === '/generator' || path === '/admin';
+    if (isMobile() && !path.startsWith('/mobile') && !standalone) {
         // Deep links matter: someone arriving on /list from a search result must
         // land on the mobile list, not be dumped on the mobile home page.
-        next(DESKTOP_TO_MOBILE[to.path] || '/mobile');
-    } else if (!isMobile() && to.path.startsWith('/mobile')) {
-        next(MOBILE_TO_DESKTOP[to.path] || '/');
+        next(DESKTOP_TO_MOBILE[path] || '/mobile');
+    } else if (!isMobile() && path.startsWith('/mobile')) {
+        next(MOBILE_TO_DESKTOP[path] || '/');
     } else {
         next();
     }
@@ -160,7 +167,7 @@ router.afterEach((to) => {
 // it correct across client-side navigations, which never reload the document.
 const SITE_ORIGIN = 'https://ull.pages.dev';
 const NOT_FOUND_META = {
-    title: 'Page Not Found — Upcoming Levels List',
+    title: 'ULL — Page Not Found',
     description: 'This page does not exist on the Upcoming Levels List.',
     noindex: true,
 };
@@ -177,16 +184,18 @@ function setMeta(selector, attr, value) {
 }
 
 router.afterEach((to) => {
+    const currentPath = normalizePath(to.path);
+
     // Level pages are indexable and set their own title once the level loads;
     // without this they would fall through to NOT_FOUND_META and go noindex.
-    if (to.path.startsWith('/level/')) {
-        setMeta('link[rel="canonical"]', 'href', SITE_ORIGIN + to.path);
-        setMeta('meta[property="og:url"]', 'content', SITE_ORIGIN + to.path);
+    if (currentPath.startsWith('/level/')) {
+        setMeta('link[rel="canonical"]', 'href', SITE_ORIGIN + currentPath);
+        setMeta('meta[property="og:url"]', 'content', SITE_ORIGIN + currentPath);
         setMeta('meta[name="robots"]', 'content', 'index, follow');
         return;
     }
 
-    const desktopPath = MOBILE_TO_DESKTOP[to.path] || to.path;
+    const desktopPath = MOBILE_TO_DESKTOP[currentPath] || currentPath;
     // /home renders the same page as the root "/", which is the canonical URL.
     const canonicalPath = desktopPath === '/home' ? '/' : desktopPath;
     const meta = PAGE_META[canonicalPath] || NOT_FOUND_META;
@@ -195,10 +204,10 @@ router.afterEach((to) => {
     document.title = meta.title;
     setMeta('meta[name="description"]', 'content', meta.description);
     setMeta('link[rel="canonical"]', 'href', url);
-    setMeta('meta[property="og:title"]', 'content', meta.title);
+    setMeta('meta[property="og:title"]', 'content', meta.socialTitle || meta.title);
     setMeta('meta[property="og:description"]', 'content', meta.description);
     setMeta('meta[property="og:url"]', 'content', url);
-    setMeta('meta[name="twitter:title"]', 'content', meta.title);
+    setMeta('meta[name="twitter:title"]', 'content', meta.socialTitle || meta.title);
     setMeta('meta[name="twitter:description"]', 'content', meta.description);
     // Utility routes (admin, level generator, unknown URLs) must never be indexed.
     setMeta('meta[name="robots"]', 'content', meta.noindex ? 'noindex, follow' : 'index, follow');

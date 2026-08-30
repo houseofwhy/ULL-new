@@ -2,6 +2,7 @@ import { store } from '../main.js';
 import { levelThumbnail, thumbnailUrl } from '../util.js';
 import { fetchLevelMonth, fetchLevelVerif, fetchList } from '../content.js';
 import Footer from '../components/Footer.js';
+import Spinner from '../components/Spinner.js';
 
 function pickDailyLevel(list) {
     const valid = list.filter(([l, e]) => l && !e && !l.isVerified);
@@ -13,9 +14,12 @@ function pickDailyLevel(list) {
 }
 
 export default {
-    components: { Footer },
+    components: { Footer, Spinner },
     template: `
-<main class="info-page surface">
+<main v-if="loading" class="info-page surface" style="display:flex;align-items:center;justify-content:center;">
+    <Spinner></Spinner>
+</main>
+<main v-else class="info-page surface">
     <section class="info-hero">
         <h1>Events</h1>
         <p>Featured level highlights — Level of the Month, the level closest to verification, and today's featured level.</p>
@@ -171,6 +175,7 @@ export default {
 </main>
     `,
     data: () => ({
+        loading: true,
         store,
         levelMonth: null,
         levelVerif: null,
@@ -199,5 +204,6 @@ export default {
         this.levelMonth = lm;
         this.levelVerif = lv;
         if (list?.length) this.levelDay = pickDailyLevel(list);
+        this.loading = false;
     },
 };

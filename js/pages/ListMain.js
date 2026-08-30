@@ -85,7 +85,7 @@ export default {
             <div class="level" v-if="level">
                 <div>
                     <h1>{{ level.name }}</h1>
-                    <div v-if="level.allLevelsRank || level.futureRank" class="cross-list-ranks" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-family:'Lexend Deca',sans-serif;font-size:0.9rem;opacity:0.45;margin-top:0.35rem;">
+                    <div v-if="level.allLevelsRank || level.futureRank" class="cross-list-ranks" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-family:'Lexend Deca',sans-serif;font-size:0.9rem;opacity:0.45;margin-top:0.6rem;">
                         <span v-if="level.allLevelsRank">#{{ level.allLevelsRank }} in All Levels</span>
                         <span v-if="level.futureRank">{{ level.allLevelsRank ? '· ' : '' }}#{{ level.futureRank }} in Future List</span>
                     </div>

@@ -2363,7 +2363,7 @@ main.page-list--pending .list-container {
 .level-page__ranks {
     font-size: 0.9rem;
     opacity: 0.6;
-    margin: 0 0 1rem;
+    margin: 0.6rem 0 1rem;
 }
 .level-page__ranks a { text-decoration: underline; }
 
