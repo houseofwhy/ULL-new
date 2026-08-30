@@ -1,0 +1,55 @@
+/* Share control in a list's level panel. It is a real link to the level's own
+   page — so it can be middle-clicked, right-click-copied and crawled — that
+   copies the URL instead of navigating when clicked. */
+
+.level-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid rgba(128, 128, 128, 0.32);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.level-share:hover {
+    background: rgba(128, 128, 128, 0.12);
+    border-color: rgba(128, 128, 128, 0.5);
+}
+
+.level-share:active { background: rgba(128, 128, 128, 0.2); }
+
+.level-share:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.level-share__icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* Confirmation state. Green reads as "done" in both themes. */
+.level-share--copied {
+    border-color: #3fbf7f;
+    color: #3fbf7f;
+    background: rgba(63, 191, 127, 0.1);
+}
+.level-share--copied:hover {
+    background: rgba(63, 191, 127, 0.16);
+    border-color: #3fbf7f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .level-share { transition: none; }
+}

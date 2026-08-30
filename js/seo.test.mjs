@@ -40,11 +40,14 @@ const base = `http://localhost:${server.address().port}`;
 
 // The CDNs and the live API are not reachable offline — serve Vue
 // from node_modules and stub the rest so the app boots as it does in production.
-async function stubExternals(ctx) {
+async function stubExternals(ctx, delayMs = 0) {
     for (const [u, f] of Object.entries({
         'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
         'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
-    })) await ctx.route(u, (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
+    })) await ctx.route(u, async (r) => {
+        if (delayMs) await new Promise((done) => setTimeout(done, delayMs));
+        r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') });
+    });
     for (const h of ['https://cdnjs.cloudflare.com/**', 'https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
         await ctx.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
     await ctx.route('https://d1-wrkr.ullteam.workers.dev/**', (r) => {
@@ -255,7 +258,79 @@ for (const page_ of PAGES) {
     }
     await ctx.close();
 }
-await browser.close();
-server.close();
+// ── the static block must never reach a visitor ─────────────────────────────
+// It exists for crawlers that do not run JavaScript. A visitor seeing it, even
+// for a moment, is the bug this guards against: Vue is held back deliberately
+// here so a slow connection is what gets tested, not a fast one.
+{
+    console.log('\n── no flash of the static block ──');
+    for (const route of ['/list', '/', '/level/aeternus']) {
+        const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+        await stubExternals(ctx, 800);
+        const page = await ctx.newPage();
+        let seen = 0, offTheme = 0, samples = 0;
+        const poll = setInterval(async () => {
+            try {
+                const r = await page.evaluate(() => {
+                    const el = document.getElementById("seo-fallback");
+                    return {
+                        visible: el ? !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length) : false,
+                        bg: getComputedStyle(document.documentElement).backgroundColor,
+                    };
+                });
+                samples++;
+                if (r.visible) seen++;
+                if (r.bg !== "rgb(28, 27, 31)" && r.bg !== "rgba(0, 0, 0, 0)") offTheme++;
+            } catch { /* navigating */ }
+        }, 25);
+        await page.goto(base + route, { waitUntil: "networkidle" });
+        await page.waitForTimeout(150);
+        clearInterval(poll);
+        ok(route + ": static block never visible", seen === 0, seen + " of " + samples + " samples");
+        ok(route + ": ground held the theme colour", offTheme === 0, offTheme + " of " + samples + " samples");
+        ok(route + ": app rendered in the end", (await page.locator(".root").count()) === 1);
+        await ctx.close();
+    }
+
+    // Someone on the light theme should get their own ground, not black.
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await stubExternals(ctx);
+    const page = await ctx.newPage();
+    await page.addInitScript(() => localStorage.setItem("dark", "true"));
+    await page.goto(base + "/list", { waitUntil: "domcontentloaded" });
+    const bg = await page.evaluate(() => document.documentElement.style.background);
+    ok("light-theme visitor gets a white ground", /255, 255, 255|#ffffff/.test(bg), bg);
+    await ctx.close();
+}
+
+// ── the share control ───────────────────────────────────────────────────────
+{
+    console.log('\n── share button ──');
+    const ctx = await browser.newContext({ viewport: { width: 1500, height: 950 }, permissions: ["clipboard-read", "clipboard-write"] });
+    await stubExternals(ctx);
+    const page = await ctx.newPage();
+    const errors = [];
+    page.on("pageerror", (e) => errors.push(String(e)));
+    await page.goto(base + "/list", { waitUntil: "networkidle" });
+
+    const share = page.locator(".level-share");
+    // A real link, so it can be middle-clicked, right-click-copied and crawled.
+    ok("is a real link to the level page", (await share.getAttribute("href"))?.startsWith("/level/"), await share.getAttribute("href"));
+    ok("reads as a share control", (await share.innerText()).trim() === "Share level");
+
+    await share.scrollIntoViewIfNeeded();
+    await share.click();
+    await page.waitForTimeout(150);
+    ok("confirms the copy", (await share.innerText()).trim() === "Link copied");
+    const clip = await page.evaluate(() => navigator.clipboard.readText());
+    ok("copied an absolute level URL", /^https?:\/\/[^/]+\/level\/[a-z0-9-]+$/.test(clip), clip);
+    ok("did not navigate away", (await page.evaluate(() => location.pathname)) === "/list");
+
+    await page.waitForTimeout(2100);
+    ok("returns to its resting state", (await share.innerText()).trim() === "Share level");
+    ok("no page errors", errors.length === 0, errors.join(" | "));
+    await ctx.close();
+}
+
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

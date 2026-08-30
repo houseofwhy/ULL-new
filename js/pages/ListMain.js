@@ -150,9 +150,23 @@ export default {
                         <p>{{level.lastUpd}}</p>
                     </li>
                 </ul>
-                <p class="level-permalink" v-if="level.path">
-                    <router-link :to="'/level/' + levelSlug(level.path, allPaths)">Open this level’s own page</router-link>
-                </p>
+                <a v-if="level.path" class="level-share"
+                   :class="{ 'level-share--copied': copiedPath === level.path }"
+                   :href="'/level/' + levelSlug(level.path, allPaths)"
+                   @click.prevent="copyLevelLink(level)">
+                    <svg v-if="copiedPath === level.path" class="level-share__icon" viewBox="0 0 16 16"
+                         fill="none" stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 8.5l3.2 3.2L13 5" />
+                    </svg>
+                    <svg v-else class="level-share__icon" viewBox="0 0 16 16"
+                         fill="none" stroke="currentColor" stroke-width="1.5"
+                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6.6 9.4a2.9 2.9 0 0 0 4.1 0l2-2a2.9 2.9 0 1 0-4.1-4.1l-.6.6" />
+                        <path d="M9.4 6.6a2.9 2.9 0 0 0-4.1 0l-2 2a2.9 2.9 0 1 0 4.1 4.1l.6-.6" />
+                    </svg>
+                    <span>{{ copiedPath === level.path ? 'Link copied' : 'Share level' }}</span>
+                </a>
                 <ul class="stats" v-if="level.frameCounter">
                     <li>
                         <div class="type-title-sm">Frame Windows Counter</div>
@@ -218,6 +232,9 @@ export default {
         roleIconMap,
         store,
         toggledShowcase: false,
+        // Which level's link was just copied, so the share button can confirm.
+        copiedPath: '',
+        copiedTimer: null,
         showFilters: false,
         statusFilters: [
             { active: false, name: "Public", key: "Public" },
@@ -333,6 +350,9 @@ export default {
     beforeUnmount() {
         if (this._scrollEl) this._scrollEl.removeEventListener('scroll', this._onScroll);
     },
+    unmounted() {
+        clearTimeout(this.copiedTimer);
+    },
     methods: {
         displayRank,
         // The left column (.list-container-new) is the scroll container. Show the
@@ -390,6 +410,35 @@ export default {
         },
         levelSlug,
         levelThumbnail,
+        async copyLevelLink(level) {
+            const url = window.location.origin + '/level/' + levelSlug(level.path, this.allPaths);
+            let copied = false;
+            try {
+                await navigator.clipboard.writeText(url);
+                copied = true;
+            } catch {
+                // Clipboard API needs a secure context and permission; fall back
+                // to a throwaway selection, which works anywhere.
+                const field = document.createElement('textarea');
+                field.value = url;
+                field.setAttribute('readonly', '');
+                field.style.position = 'fixed';
+                field.style.opacity = '0';
+                document.body.appendChild(field);
+                field.select();
+                try { copied = document.execCommand('copy'); } catch { copied = false; }
+                field.remove();
+            }
+            // If neither route worked, navigate instead — the link still leads
+            // somewhere useful rather than doing nothing.
+            if (!copied) {
+                this.$router.push('/level/' + levelSlug(level.path, this.allPaths));
+                return;
+            }
+            this.copiedPath = level.path;
+            clearTimeout(this.copiedTimer);
+            this.copiedTimer = setTimeout(() => { this.copiedPath = ''; }, 2000);
+        },
         isOldLevel(level) {
             if (!level.lastUpd) return false;
             const parts = level.lastUpd.split('.');

@@ -252,6 +252,18 @@ Keep editing the files under `css/`; only the bundle is served. Add or reorder a
 stylesheet in the commented `css:start` block in `index.html`, then re-run the
 script.
 
+### The static block is for crawlers only
+
+A visitor must never see it. The boot shield at the top of `index.html` runs
+before `<body>` is parsed: it marks `<html class="js">`, which an inline rule
+uses to hide `#seo-fallback` outright, and paints the visitor's own theme
+colour so the screen holds that instead of a white or half-styled page while Vue
+loads. `main.js` then removes the block before mounting.
+
+Readers with JavaScript off — which is every AI crawler that matters here — still
+get the full block. `node js/seo.test.mjs` holds Vue back deliberately and
+samples the page throughout the load to prove nothing flashes.
+
 Page copy lives in `scripts/seo/content.mjs` — edit it there and re-run the
 script. Everything in `index.html` **outside** the `seo:head` and `seo:content`
 markers (stylesheets, the Vue template, shared meta) is hand-maintained and

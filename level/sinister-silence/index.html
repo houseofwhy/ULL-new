@@ -15,6 +15,25 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://ull.pages.dev/ull_icon.png" />
 
+    <!-- Boot shield. Runs before <body> is parsed, so none of it can flash.
+         The static content block below exists for crawlers that do not execute
+         JavaScript; a visitor must never see it, so it is hidden the moment we
+         know scripting is on. The page then holds the theme's own background
+         until Vue paints, rather than a white or half-styled screen. -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.className += ' js';
+            var light = false;
+            try { light = JSON.parse(localStorage.getItem('dark')) === true; } catch (e) { /* private mode */ }
+            root.style.background = light ? '#ffffff' : '#1c1b1f';
+        })();
+    </script>
+    <style>
+        html { background: #1c1b1f; }
+        html.js #seo-fallback { display: none !important; }
+    </style>
+
     <link rel="icon" href="/ull_icon.png" />
     <link rel="apple-touch-icon" href="/ull_icon.png" />
     <meta name="theme-color" content="#c031c7">
@@ -536,6 +555,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/admin.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/level-generator.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/coloring-hint.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/level-share.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/typography-shitty.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/seo-fallback.css" /> -->
     <!-- css:end -->
