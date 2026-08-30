@@ -891,7 +891,7 @@
     },
     "cyberpsychosis-karma287": {
       "path": "cyberpsychosis_karma287",
-      "name": "Cyberpsychosis (KARMA287)",
+      "name": "Arasaka",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-08-30",
       "retiredAt": null,
@@ -899,7 +899,7 @@
     },
     "cyberpsychosis-sobeann": {
       "path": "cyberpsychosis_sobeann",
-      "name": "Cyberpsychosis (Sobeann)",
+      "name": "Cyberpsychosis",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-08-30",
       "retiredAt": null,
@@ -3308,6 +3308,14 @@
     "the-jet-engine": {
       "path": "the_jet_engine",
       "name": "THE JET ENGINE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-labyrinth": {
+      "path": "the labyrinth",
+      "name": "The Labyrinth",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-08-30",
       "retiredAt": null,

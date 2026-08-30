@@ -2539,6 +2539,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/the-labyrinth</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/the-last-dream</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
