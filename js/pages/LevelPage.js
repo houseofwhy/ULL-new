@@ -37,7 +37,7 @@ export default {
                     <h1 class="lvl-title">{{ level.name }}</h1>
                     <p class="lvl-byline">
                         by <b>{{ level.author }}</b>
-                        <template v-if="hasVerifier"> · verified by <b>{{ level.verifier }}</b></template>
+                        <template v-if="hasVerifier"> · {{ level.isVerified ? 'verified by' : 'to be verified by' }} <b>{{ level.verifier }}</b></template>
                     </p>
                     <div class="lvl-pills">
                         <span class="lvl-status" :class="'lvl-status--' + status.tone"><i></i>{{ status.label }}</span>
@@ -120,7 +120,10 @@ export default {
                     <dl class="lvl-dl">
                         <template v-for="fact in facts" :key="fact[0]">
                             <dt>{{ fact[0] }}</dt>
-                            <dd>{{ fact[1] }}</dd>
+                            <dd>
+                                <a v-if="fact[2]" class="lvl-dl__link" :href="fact[2]" target="_blank" rel="noopener">{{ fact[1] }}</a>
+                                <template v-else>{{ fact[1] }}</template>
+                            </dd>
                         </template>
                     </dl>
                 </div>
@@ -128,7 +131,6 @@ export default {
                 <div class="lvl-links">
                     <a v-if="level.showcase" class="lvl-link" :href="level.showcase" target="_blank" rel="noopener">Showcase video</a>
                     <a v-if="level.verification" class="lvl-link" :class="{ 'lvl-link--ghost': level.showcase }" :href="level.verification" target="_blank" rel="noopener">Verification video</a>
-                    <a v-if="level.frameCounter" class="lvl-link lvl-link--ghost" :href="level.frameCounter" target="_blank" rel="noopener">Frame Windows Counter</a>
                     <button class="lvl-link lvl-link--ghost" :class="{ 'lvl-link--copied': copied }" @click="copyLink">
                         {{ copied ? 'Link copied' : 'Copy link to this level' }}
                     </button>
@@ -228,16 +230,19 @@ export default {
             const covered = ['verified', 'verifying', 'being verified', 'layout'];
             return (this.level?.tags || []).filter((t) => !covered.includes(String(t).toLowerCase()));
         },
+        // [label, text, href?] — a third entry turns the value into a link.
         facts() {
             const l = this.level;
             if (!l) return [];
             const id = l.id === 'private' ? (l.leakID != null ? l.leakID : 'Private') : l.id;
+            const frames = typeof l.frameCounter === 'string' ? l.frameCounter.trim() : '';
             return [
                 ['Host', l.author],
                 ['Verifier', this.hasVerifier ? l.verifier : 'Unknown'],
                 ['Level ID', id],
                 l.length ? ['Length', `${Math.floor(l.length / 60)}m ${l.length % 60}s`] : null,
                 l.lastUpd ? ['Updated', l.lastUpd] : null,
+                frames ? ['Frame Windows Counter', 'Watch here', frames] : null,
             ].filter(Boolean);
         },
     },

@@ -53,3 +53,56 @@
 @media (prefers-reduced-motion: reduce) {
     .level-share { transition: none; }
 }
+
+/* ── Open Level Page ────────────────────────────────────────────────────────
+   The panel shows the level; this opens the level's own page at /level/<slug>.
+   It sits on the title row rather than under the fold, because it is the one
+   control in the panel that leads somewhere new. */
+
+.level-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.level-head__text { min-width: 0; }
+
+.level-open {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.35rem;
+    padding: 0.6rem 1.05rem;
+    border-radius: 0.55rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 62%, white) 100%);
+    color: var(--color-on-primary);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 1px 8px color-mix(in srgb, var(--color-primary) 35%, transparent);
+    transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+.level-open:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 14px color-mix(in srgb, var(--color-primary) 45%, transparent);
+}
+.level-open:active { transform: none; opacity: 0.9; }
+.level-open:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+.level-open__icon { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
+
+/* Narrow panels put the button under the title rather than squeezing it. */
+@media (max-width: 1100px) {
+    .level-head { flex-direction: column; gap: 0.9rem; }
+    .level-open { margin-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .level-open { transition: none; }
+    .level-open:hover { transform: none; }
+}

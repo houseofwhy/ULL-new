@@ -315,7 +315,9 @@ a.lvl-wr__v:hover { text-decoration: underline; }
 .lvl-dl {
     margin: 0;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    /* minmax(0, auto) rather than auto: a long label ("Frame Windows Counter")
+       wraps instead of forcing the value off the card. */
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
     gap: 0.55rem 1rem;
     font-size: 0.8rem;
 }
@@ -328,6 +330,8 @@ a.lvl-wr__v:hover { text-decoration: underline; }
     opacity: 0.45;
 }
 .lvl-dl dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.lvl-dl__link { color: var(--lvl-accent); text-decoration: underline; text-underline-offset: 0.15em; }
+.lvl-dl__link:hover { text-decoration-thickness: 2px; }
 
 .lvl-links { display: flex; flex-direction: column; gap: 0.45rem; }
 .lvl-link {
