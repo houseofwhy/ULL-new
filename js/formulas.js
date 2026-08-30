@@ -81,3 +81,40 @@ export function isLayoutCompletion(level, percent) {
 export function upcomingScore(maxPercent, maxRunDiff) {
     return Math.max(maxPercent, maxRunDiff) ** 2 + Math.min(maxPercent, maxRunDiff) ** 1.8;
 }
+
+/**
+ * The best progress anyone has made on a level: the highest record from 0%, and
+ * the longest run span. Both feed upcomingScore.
+ */
+export function levelProgress(level) {
+    const maxPercent = Math.max(0, ...(level.records || []).map(r => Number(r.percent) || 0));
+    let maxRunDiff = 0;
+    if (level.run && level.run.length) {
+        maxRunDiff = Math.max(0, ...level.run.map(r => {
+            const parts = String(r.percent).split('-').map(Number);
+            return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? parts[1] - parts[0] : 0;
+        }));
+    }
+    return { maxPercent, maxRunDiff };
+}
+
+/**
+ * The Upcoming Levels ordering: unverified levels that have progress but are not
+ * already completed, best first. Annotates each level with maxPercent,
+ * maxRunDifference and rankingScore.
+ * @param {Array} levels - plain level objects
+ * @returns {Array} the qualifying levels, sorted
+ */
+export function upcomingRanking(levels) {
+    for (const level of levels) {
+        if (!level) continue;
+        const { maxPercent, maxRunDiff } = levelProgress(level);
+        level.maxPercent = maxPercent;
+        level.maxRunDifference = maxRunDiff;
+        level.rankingScore = upcomingScore(maxPercent, maxRunDiff);
+    }
+    return levels
+        .filter(level => level && !level.isVerified && level.rankingScore > 0
+            && !(level.records || []).some(r => Number(r.percent) >= 100))
+        .sort((a, b) => b.rankingScore - a.rankingScore);
+}

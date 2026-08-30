@@ -1,0 +1,104 @@
+/* /level/<slug> — the standalone page for a single level. */
+
+/* Same scroll container the other pages use: the shell is a fixed-height flex
+   column, so the page itself has to be the thing that scrolls. */
+.level-page {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.level-page, .level-page * { box-sizing: border-box; }
+
+.level-page__inner {
+    width: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.level-page__crumbs {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.55;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.level-page__crumbs a { text-decoration: underline; }
+
+.level-page__title {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin: 0 0 0.4rem;
+}
+
+.level-page__ranks {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin: 0 0 1rem;
+}
+.level-page__ranks a { text-decoration: underline; }
+
+.level-page__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.level-page__video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(128, 128, 128, 0.12);
+    border: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.level-page__facts {
+    display: grid;
+    grid-template-columns: minmax(7rem, auto) 1fr;
+    gap: 0.5rem 1.25rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.92rem;
+}
+.level-page__facts dt { opacity: 0.55; }
+.level-page__facts dd { margin: 0; }
+
+.level-page__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+.level-page__links a {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 0.45rem;
+    font-size: 0.85rem;
+}
+
+.level-page__about {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.65;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+    padding-top: 1.25rem;
+}
+.level-page__about a { text-decoration: underline; }
+
+.level-page__missing h1 { font-size: 1.6rem; }
+.level-page__missing p { font-size: 0.95rem; line-height: 1.6; opacity: 0.75; margin: 0 0 0.75rem; }
+.level-page__missing a { text-decoration: underline; }
+
+/* The page carries its own layout, so it reads the same in the mobile shell. */
+@media (max-width: 768px) {
+    /* Clear the fixed sidebar toggle, which sits at the top-left. */
+    .level-page__inner { padding: 3.25rem 1rem 2.5rem; }
+    .level-page__title { font-size: 1.5rem; }
+    .level-page__facts { grid-template-columns: 1fr; gap: 0.15rem; }
+    .level-page__facts dd { margin-bottom: 0.6rem; }
+}

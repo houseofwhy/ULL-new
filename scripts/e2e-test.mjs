@@ -110,8 +110,8 @@ const check = (l, c, x = '') => c ? (pass++, console.log(`  ok   ${l}`)) : (fail
 const ctx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
 // Serve the CDN deps (Vue, Vue Router) from node_modules — no outbound network here.
 const CDN = {
-  'https://unpkg.com/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
-  'https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
+  'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
+  'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
 };
 for (const [url, file] of Object.entries(CDN)) {
   await ctx.route(url, route => route.fulfill({

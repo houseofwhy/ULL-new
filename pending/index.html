@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- Shared head — identical on every page. Edit here, then re-run: node scripts/build-seo.mjs -->
-    <meta name="robots" content="index, follow" />
     <meta name="author" content="Upcoming Levels List Team" />
     <meta name="google-site-verification" content="lE-yOraf9g4e7a2-Ob8nwT_UeaSQDoOgSc7cXVQnTF0" />
     <meta property="og:type" content="website" />
@@ -23,6 +22,7 @@
     <!-- seo:head:start -->
     <title>Pending List — Levels Awaiting Placement | Upcoming Levels List</title>
     <meta name="description" content="Levels submitted to the Upcoming Levels List and awaiting a placement decision from the staff team, with their expected placement range and whether they are moving up or down." />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ull.pages.dev/pending" />
     <meta property="og:title" content="Pending List — Levels Awaiting Placement | Upcoming Levels List" />
     <meta property="og:description" content="Levels submitted to the Upcoming Levels List and awaiting a placement decision from the staff team, with their expected placement range and whether they are moving up or down." />
@@ -74,32 +74,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/typography.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/list.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/home.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/list-hero.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/list-pending.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/information.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/leaderboard.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/mobile.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/mobile-info.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/nav.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/btn.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/filters-popup.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/settings-popup.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/footer.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pages/admin.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/level-generator.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/coloring-hint.css" />
-    <link rel="stylesheet" type="text/css" href="/css/typography-shitty.css" />
-    <link rel="stylesheet" type="text/css" href="/css/components/seo-fallback.css" />
-    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+    <!-- css:start — the stylesheets, in cascade order. After editing this list
+         run: node scripts/build-css.mjs -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/typography.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/list.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/home.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/list-hero.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/list-pending.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/information.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/level-page.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/leaderboard.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/mobile.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/mobile-info.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/nav.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/btn.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/sidebar.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/filters-popup.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/settings-popup.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/footer.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/admin.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/level-generator.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/coloring-hint.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/typography-shitty.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/components/seo-fallback.css" /> -->
+    <!-- css:end -->
+    <link rel="stylesheet" type="text/css" href="/css/bundle.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
 </head>
 
@@ -118,6 +122,105 @@ current reading is moving them up or down. Once a decision is made the level mov
 <a href="/listfuture">Future</a> lists.</p>
 <p>The rules that govern submissions and placement decisions are documented in the
 <a href="/information">guidelines</a>.</p>
+<h2>Pending placements</h2>
+<ul>
+  <li><a href="https://youtu.be/6fnzx3KUE14?si=fuFHb4qvHg4Hszn7" rel="noopener">Octane</a> — expected around #1</li>
+  <li><a href="https://www.youtube.com/watch?v=87lya-uNcHg" rel="noopener">Midnight Moonlight</a> — expected around #1</li>
+  <li><a href="https://www.youtube.com/watch?v=uYa8JPDVBw0" rel="noopener">Dream Dash</a> — expected around #1</li>
+  <li><a href="https://www.youtube.com/watch?v=Il_N475vqP8" rel="noopener">Necrofantasia</a> — expected around #1</li>
+  <li><a href="https://youtu.be/KlZV5RoNG84?is=7bdO3wzhx8H4cl7z" rel="noopener">ANNIMA INMORTALIS</a> — expected around #1</li>
+  <li><a href="https://youtu.be/rDTtnUrxx58?si=Qhqyi1df5X9IwASo" rel="noopener">The labyrinth</a> — expected around #1</li>
+  <li><a href="https://youtu.be/D6Xr_NMu7uI" rel="noopener">TIKI TIKI CIRCLES</a> — expected around #10</li>
+  <li><a href="https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh" rel="noopener">ByteShift</a> — expected around #10</li>
+  <li><a href="https://youtu.be/IgO5QDztrXE?si=8aYq4jmSJrRFDECK" rel="noopener">CASCADE (Amicrius)</a> — expected around #10</li>
+  <li><a href="https://youtu.be/8IJxmfvoXOE?si=7m8EWyBdbriRgJaO" rel="noopener">belowZERO</a> — expected around #10</li>
+  <li><a href="https://youtu.be/Oad5Xtq114E?si=gPrW61me4Tj7-uLq" rel="noopener">Noblesse</a> — expected around #10</li>
+  <li><a href="https://www.youtube.com/watch?v=wq-_SFOT8wg" rel="noopener">Bonfire</a> — expected around #10</li>
+  <li><a href="https://youtu.be/wKB7HG3xdGc?si=xtkB2GWltz2hzUBr" rel="noopener">Constellations Song</a> — expected around #10</li>
+  <li><a href="https://www.youtube.com/watch?v=cKkYw4dG6NI" rel="noopener">OMEN</a> — expected around #10</li>
+  <li><a href="https://youtu.be/HdN5yXyTs7M?si=lWrFDXg2kXnynwWR" rel="noopener">Kijin no Sensou</a> — expected around #10</li>
+  <li><a href="https://youtu.be/M_uBKUuLbZk?si=3WbUBkyuvahCcfGN" rel="noopener">Chaoz Devotion</a> — expected around #10</li>
+  <li><a href="https://youtu.be/ItzQjtwS_BU?is=7zxh7-hibHeM-Sej" rel="noopener">rYxUE</a> — expected around #10</li>
+  <li><a href="https://youtu.be/mNeYzatfvf8?si=Y4wG4z6AA2_bjYFN" rel="noopener">Darkmatter</a> — expected around #10</li>
+  <li><a href="https://youtu.be/SBBwiLDuovc?si=FwP9Ctg2J2TtWt8D" rel="noopener">Aquamarine (ThePurgatory)</a> — expected around #10</li>
+  <li><a href="https://youtu.be/XebMp5lgbiY" rel="noopener">Lets go to heaven</a> — expected around #10</li>
+  <li><a href="https://www.youtube.com/watch?v=xYEzpHQ3b98" rel="noopener">SwiftVortex</a> — expected around #20</li>
+  <li><a href="https://youtu.be/rEjQ2KE-_FU?si=EOMhOKxCcIDIXjIh" rel="noopener">The Fire and Flames</a> — expected around #20</li>
+  <li><a href="https://www.youtube.com/watch?v=RkCcNOBM584" rel="noopener">BAD TO THE BONE</a> — expected around #20</li>
+  <li><a href="https://youtu.be/9WGGm4_FKt0" rel="noopener">Narine</a> — expected around #20</li>
+  <li><a href="https://youtu.be/HSDeqP5vtLs?si=Kebb8NmtVxsc8CBJ" rel="noopener">Bridge of Destiny</a> — expected around #20</li>
+  <li><a href="https://youtu.be/wwqNmTqQM2A?si=9NqyuNuK1ByHcilv" rel="noopener">Stupid horse</a> — expected around #20</li>
+  <li><a href="https://youtu.be/qDU8uuxir_w" rel="noopener">PRODUKT</a> — expected around #20</li>
+  <li><a href="https://www.youtube.com/watch?v=m7F8ERVIK4c" rel="noopener">Dreamcore</a> — expected around #20</li>
+  <li><a href="https://www.youtube.com/watch?v=XRyYakntepU" rel="noopener">Quantum Dominator</a> — expected around #20</li>
+  <li><a href="https://youtu.be/R_2HNfGs9d0?si=UnGI65owWIAGSY1L" rel="noopener">I Hate Myself</a> — expected around #20</li>
+  <li><a href="https://www.youtube.com/watch?v=9OqVQOeIPaE" rel="noopener">pickled!</a> — expected around #30</li>
+  <li><a href="https://youtu.be/jbkqxoZbZVQ" rel="noopener">EXECUTION</a> — expected around #30</li>
+  <li><a href="https://youtu.be/kBwCbuZniRI?si=eMEuyyZGuf4GQGVZ" rel="noopener">E V E Rlasting</a> — expected around #30</li>
+  <li><a href="https://youtu.be/EHnrbMH-eH4?si=ZTKk0M64p_W4z8Wg" rel="noopener">Retina</a> — expected around #30</li>
+  <li><a href="https://www.youtube.com/watch?v=E9e5gXGxopI" rel="noopener">Flux Realms</a> — expected around #50</li>
+  <li><a href="https://www.youtube.com/watch?v=GHmf4sK3YC8" rel="noopener">SOVEREIGN</a> — expected around #50</li>
+  <li><a href="https://youtu.be/F2cRzzgnWno?si=fPTket6DJKvTv7o-" rel="noopener">WAVING</a> — expected around #50</li>
+  <li><a href="https://youtu.be/LNX8WFl71x0?si=CNtMq9nqDpewsJk7" rel="noopener">Icarus</a> — expected around #50</li>
+  <li><a href="https://youtu.be/j-hK6bl5pMY?si=r3ITqBl3Jv-WKSIW" rel="noopener">Meshwork</a> — expected around #50</li>
+  <li><a href="https://www.youtube.com/watch?v=svsXsw3dc9k" rel="noopener">MURASAKI</a> — expected around #50</li>
+  <li><a href="https://youtu.be/VJ8B8pKRWjw" rel="noopener">Goldcrest Calamity</a> — expected around #50</li>
+  <li><a href="https://www.youtube.com/watch?v=GHmf4sK3YC8" rel="noopener">SOVEREIGN</a> — expected around #50</li>
+  <li><a href="https://www.youtube.com/watch?v=bXX2O0hCBcc" rel="noopener">LEGION</a> — expected around #50</li>
+  <li><a href="https://youtu.be/hovqVbU9flk?si=JY5IpzdJzYuK9-0B" rel="noopener">Intuition</a> — expected around #50</li>
+  <li><a href="https://youtu.be/CCuTrDBxIAQ?is=2KaAZ9wNKYHddZgo" rel="noopener">Zonescapes</a> — expected around #50</li>
+  <li><a href="https://youtu.be/RPhy6t2bb04?si=UVDeE5wW_dH_5IYC" rel="noopener">Sacrifice</a> — expected around #50</li>
+  <li><a href="https://youtu.be/JFYAneB9QQk" rel="noopener">Cyberwave</a> — expected around #50</li>
+  <li><a href="https://youtu.be/IYXd7uHOglI?si=jWZxuzQG5G2Xc0Ex&amp;t=8" rel="noopener">Mind Rush</a> — expected around #50</li>
+  <li><a href="https://www.youtube.com/watch?v=ibIW3d_XogE" rel="noopener">MODERATE TALKING</a> — expected around #50</li>
+  <li><a href="https://youtu.be/4jFTz9VtS5w?si=WRGcyLZ_C_byKucc" rel="noopener">Sylentium Dynamas</a> — expected around #50</li>
+  <li><a href="https://youtu.be/jIHdJqsrxe0" rel="noopener">Silly Machine</a> — expected around #50</li>
+  <li><a href="https://youtu.be/WOtisHee84k?si=n_Zr4w3QjdI8e22Z" rel="noopener">Session 1</a> — expected around #75</li>
+  <li><a href="https://youtu.be/BnFA1Hy7Tag?si=Z1sug_giiJEXfzhW" rel="noopener">Predatorcore</a> — expected around #75</li>
+  <li><a href="https://youtu.be/P4jHbUwkUv8?si=ZEf0QTOBRe0QgdaB" rel="noopener">EVERBLOOM</a> — expected around #75</li>
+  <li><a href="https://www.youtube.com/watch?v=gdWVol9b0vs" rel="noopener">LET IT HAPPEN</a> — expected around #75</li>
+  <li><a href="https://fxtwitter.com/zappiks/status/2052006108613517453?s=46" rel="noopener">HYTHER</a> — expected around #75</li>
+  <li><a href="https://youtu.be/BaKclZk1FpE?si=v8VFdibji5tFOcgO" rel="noopener">THE GUDHSJ38</a> — expected around #75</li>
+  <li><a href="https://www.youtube.com/watch?v=mhqLyk10BvY" rel="noopener">Marks</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=-yOd5eZKZbg" rel="noopener">NervHell</a> — expected around #75</li>
+  <li><a href="https://youtu.be/xF0gkz-CZOU" rel="noopener">Pinnacle of Life</a> — expected around #75</li>
+  <li><a href="https://youtu.be/5TnpCHVk-t4?si=F-lYoNpTwHuWquFd" rel="noopener">The Impaler</a> — expected around #75</li>
+  <li><a href="https://youtu.be/H-wM-Y_esNs?si=Dd2SV_al8To25ZgT" rel="noopener">Reveries End</a> — placement unknown</li>
+  <li><a href="https://youtu.be/omzrn7nxg14?si=gqgIoaECboW2IH9d" rel="noopener">Futuropolis</a> — expected around #75</li>
+  <li><a href="https://youtu.be/4RdbUcy2a1I?si=AWMWPuLr3T-Rn2A6" rel="noopener">Lux</a> — expected around #75</li>
+  <li><a href="https://youtu.be/eni_QW0Gczs?is=6N6Kk4--15iu4XKK" rel="noopener">YV Canis Majoris</a> — expected around #75</li>
+  <li><a href="https://youtu.be/peLd4w3wMA0?is=jTGnJX1FmC_hJSBa" rel="noopener">Dark Matter</a> — expected around #75</li>
+  <li><a href="https://youtu.be/lCv9sDWdFcM" rel="noopener">Arctic Lighs bugfi</a> — expected around #75</li>
+  <li><a href="https://youtu.be/R4AsQtErJS4" rel="noopener">Ultra Realistik</a> — expected around #75</li>
+  <li><a href="https://youtu.be/6Yq39Hgzazg" rel="noopener">Forgotten Power</a> — expected around #75</li>
+  <li><a href="https://www.youtube.com/watch?v=nBcJivS8X1A" rel="noopener">The Final Phase</a> — placement unknown</li>
+  <li><a href="https://youtu.be/xMXlbfKUKFY?si=yPerkxJo5cLB705l" rel="noopener">SUPERFEARMEWORLD</a> — placement unknown</li>
+  <li><a href="https://youtu.be/KZeThM51Ybo?si=RaUr6kjl3cTdr19x" rel="noopener">Duralusgore</a> — placement unknown</li>
+  <li><a href="https://youtu.be/1yIvplQz6Zk?si=cFTNbfRRQNX9NVns" rel="noopener">Tau</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=Y8ay8ir7awg" rel="noopener">Castlevania</a> — placement unknown</li>
+  <li><a href="https://youtu.be/YVlsvg9dmQQ" rel="noopener">Quantong Processing</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=E5PURBZEKXM" rel="noopener">Korobeiniki</a> — placement unknown</li>
+  <li><a href="https://youtu.be/kaPjBlbxjZY?si=cbldf71Yf84NTEIh" rel="noopener">METHHEAD</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=_enNhDjPAbU&amp;feature=youtu.be" rel="noopener">Silent Silhouette</a> — placement unknown</li>
+  <li><a href="https://youtu.be/QiMepc8xMnU" rel="noopener">In Stasis</a> — placement unknown</li>
+  <li><a href="https://youtu.be/wCXCBrCTUKA" rel="noopener">TERROR</a> — placement unknown</li>
+  <li><a href="https://youtu.be/bxzXBr19PC4?si=Vxz-Kn0mBx8uTjmT" rel="noopener">BauDakes</a> — placement unknown</li>
+  <li><a href="https://youtu.be/4SWnWFQG8M0?is=E8j4T7aShpaiJW3o" rel="noopener">Sheol 9</a> — placement unknown</li>
+  <li><a href="https://youtu.be/86LrgginTDk?is=pir_ZD_OeNkc7zZU" rel="noopener">FUKOUNA GIRL</a> — placement unknown</li>
+  <li><a href="https://youtu.be/Wq789vXPMmA" rel="noopener">DRY BASS</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=jSG8SQsCOMQ" rel="noopener">CHROMEDOLL</a> — placement unknown</li>
+  <li><a href="https://youtu.be/dYGgzf7i_Ak" rel="noopener">MAXIMUM DOSAGE</a> — placement unknown</li>
+  <li><a href="https://youtu.be/qAssa5ZdpA4?si=yDKjjPDfO6U1my4E" rel="noopener">Lunatic Circuit</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=oBBbPVmSE2U" rel="noopener">LEZIBRUV</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=yAIdKH_zsrQ" rel="noopener">too Much processing</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=bk1L0maqd3k" rel="noopener">infernis</a> — placement unknown</li>
+  <li><a href="https://youtu.be/RjCEH6EIILk?si=f3n9zxQJ3ZBing93" rel="noopener">HAIL</a> — placement unknown</li>
+  <li><a href="https://www.youtube.com/watch?v=SmodVRct7I8" rel="noopener">PEAK</a> — placement unknown</li>
+  <li><a href="https://youtu.be/0kkfxPIL1NQ?si=SSSxTxzLOqElDhbC" rel="noopener">BLOOD IN THE WATER</a> — placement unknown</li>
+  <li>Cyberpsychosis — placement unknown</li>
+  <li><a href="https://youtu.be/G_J_zrKMnf4?si=kZg_lCQeUgcBuE4L" rel="noopener">Bad Times</a> — placement unknown</li>
+  <li><a href="https://youtu.be/xFUrY48npOg" rel="noopener">CHROMAFLUX</a> — placement unknown</li>
+</ul><p class="seo-stamp">Ranking as of 2026-08-30. Visitors see live data.</p>
     <nav class="seo-fallback__nav" aria-label="Sections">
       <a href="/">Upcoming Levels List</a>
       <a href="/list">All Levels</a>

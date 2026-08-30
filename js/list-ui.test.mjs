@@ -72,8 +72,8 @@ const base = `http://localhost:${server.address().port}`;
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
 const ctx = await browser.newContext({ viewport: { width: 1400, height: 800 } });
 for (const [u, f] of Object.entries({
-  'https://unpkg.com/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
-  'https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
+  'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
+  'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
 })) await ctx.route(u, r => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
 await ctx.route('https://cdnjs.cloudflare.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
 await ctx.route('https://fonts.googleapis.com/**', r => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
@@ -213,8 +213,8 @@ console.log('\n── mobile list keeps the same recounting ──');
   const mctx = await browser.newContext({ viewport: { width: 390, height: 844 },
     userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148' });
   for (const [u, f] of Object.entries({
-    'https://unpkg.com/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
-    'https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
+    'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
+    'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
   })) await mctx.route(u, r => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
   for (const h of ['https://cdnjs.cloudflare.com/**', 'https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
     await mctx.route(h, r => r.fulfill({ status: 200, body: '' }));

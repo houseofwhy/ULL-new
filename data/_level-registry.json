@@ -1,0 +1,3837 @@
+{
+  "version": 1,
+  "slugs": {
+    "00-genesis": {
+      "path": "00 genesis",
+      "name": "00 Genesis",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "a-n-i": {
+      "path": "a_n_i",
+      "name": "A N I",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "absolute-end": {
+      "path": "absolute end",
+      "name": "Absolute End",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "abucto": {
+      "path": "abucto",
+      "name": "Abucto",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "abyss-of-darkness": {
+      "path": "abyss of darkness",
+      "name": "Abyss of Darkness",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ace": {
+      "path": "ace",
+      "name": "Ace",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "acheron": {
+      "path": "acheron",
+      "name": "Acheron",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "aeris": {
+      "path": "aeris",
+      "name": "AERIS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "aeternus": {
+      "path": "aeternus",
+      "name": "Aeternus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "aethernal-silence": {
+      "path": "aethernal silence",
+      "name": "Aethernal Silence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "africa-circles": {
+      "path": "africa circles",
+      "name": "Africa Circles",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "agite": {
+      "path": "agite",
+      "name": "A.G.I.T.E",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "allopsychic": {
+      "path": "allopsychic",
+      "name": "ALLOPSYCHIC",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "amanojaku": {
+      "path": "amanojaku",
+      "name": "Amanojaku",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "amethyst": {
+      "path": "amethyst",
+      "name": "Amethyst",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "anathema": {
+      "path": "anathema",
+      "name": "Anathema",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "andromeda": {
+      "path": "andromeda",
+      "name": "andromeda",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "andron": {
+      "path": "andron",
+      "name": "Andron",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "angelburn": {
+      "path": "angelburn",
+      "name": "ANGELBURN",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "angelicide": {
+      "path": "angelicide",
+      "name": "Angelicide (Xtra8Nuggies)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ankou": {
+      "path": "ankou",
+      "name": "Ankou",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "anomaly": {
+      "path": "anomaly",
+      "name": "ANOMALY",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "antarctic-lights": {
+      "path": "antarctic lights",
+      "name": "Antarctic Lights",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "anticulture": {
+      "path": "anticulture",
+      "name": "ANTICULTURE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "apocalyptic-trilogy": {
+      "path": "apocalyptic trilogy",
+      "name": "Apocalyptic Trilogy",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "apollyon-murkkat": {
+      "path": "apollyon_murkkat",
+      "name": "Apollyon (murkkat)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "apollyon-ricolp": {
+      "path": "apollyon_ricolp",
+      "name": "APOLLYON (RicoLP)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "aquamarine-alex": {
+      "path": "aquamarine_alex",
+      "name": "Aquamarine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "aquamarine-thepurgatory": {
+      "path": "aquamarine_thepurgatory",
+      "name": "Aquamarine (ThePurgatory)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "aquavious-lights": {
+      "path": "aquavious lights",
+      "name": "Aquavious Lights",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "arcturus": {
+      "path": "arcturus",
+      "name": "arcturus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "are": {
+      "path": "are",
+      "name": "ARE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "artemis": {
+      "path": "artemis",
+      "name": "ARTEMIS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "artemis-13": {
+      "path": "artemis_13",
+      "name": "Artemis 13",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ascension-to-heaven": {
+      "path": "ascension to heaven",
+      "name": "Ascension to Heaven",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ashley-wave-trials": {
+      "path": "ashley wave trials",
+      "name": "Ashley Wave Trials",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "astaroth": {
+      "path": "astaroth",
+      "name": "Astaroth",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "atomic-cannon-mkiii": {
+      "path": "atomic_cannon_mkiii",
+      "name": "ATOMIC CANNON MKIII",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "atomic-cannon-prime": {
+      "path": "atomic_cannon_prime",
+      "name": "ATOMIC CANNON PRIME",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "atropos": {
+      "path": "atropos",
+      "name": "Atropos",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "avernus": {
+      "path": "avernus",
+      "name": "Avernus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "azathoth": {
+      "path": "azathoth",
+      "name": "Azathoth",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "azure-flare-endlevel": {
+      "path": "azure flare_endlevel",
+      "name": "Azure Flare (VERTOP)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "azure-flare-itshybrid": {
+      "path": "azure_flare_itshybrid",
+      "name": "Azure Flare (ItsHybrid)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bad-apple": {
+      "path": "bad apple",
+      "name": "Bad Apple",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bad-trip": {
+      "path": "bad trip",
+      "name": "Bad Tr1p",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ballistic-ballpit": {
+      "path": "ballistic ballpit",
+      "name": "BALLISTIC BALLPIT",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bang-bang": {
+      "path": "bang bang",
+      "name": "Bang Bang",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "banshee": {
+      "path": "banshee",
+      "name": "Banshee",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "based-after-based": {
+      "path": "based after based",
+      "name": "Based After Based",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bassline-junkie": {
+      "path": "bassline junkie",
+      "name": "BASSLINE JUNKIE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "battle-of-the-shades": {
+      "path": "battle_of_the_shades",
+      "name": "Battle of the Shades",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "beeline": {
+      "path": "beeline",
+      "name": "BEELINE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "behemoth": {
+      "path": "behemoth",
+      "name": "BEHEMOTH",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "being-home": {
+      "path": "being_home",
+      "name": "BEING HOME",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "belladonna": {
+      "path": "belladonna",
+      "name": "Belladonna",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bellatrix": {
+      "path": "bellatrix",
+      "name": "Bellatrix",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "betaxh": {
+      "path": "betaxh",
+      "name": "BetaxH",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "betiru": {
+      "path": "betiru",
+      "name": "BETIRU",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "between-duality": {
+      "path": "between duality",
+      "name": "Between Duality",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "black-rose": {
+      "path": "black_rose",
+      "name": "Black Rose",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "blackout": {
+      "path": "blackout",
+      "name": "Blackout",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "blazeit": {
+      "path": "blazeit",
+      "name": "BLAZEIT",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bloodengine": {
+      "path": "bloodengine",
+      "name": "BloodEngine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bloom": {
+      "path": "bloom",
+      "name": "BLOOM",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "blooming-blossoms": {
+      "path": "blooming_blossoms",
+      "name": "Blooming Blossoms",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "blossom": {
+      "path": "blossom",
+      "name": "Blossom",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "blue-machine": {
+      "path": "blue machine",
+      "name": "Blue Machine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bluescreen": {
+      "path": "bluescreen",
+      "name": "BLUESCREEN",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bonfire": {
+      "path": "bonfire",
+      "name": "Bonfire",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "boobawamba": {
+      "path": "boobawamba",
+      "name": "BOOBAWAMBA",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bottomless-pit": {
+      "path": "bottomless pit",
+      "name": "Bottomless Pit",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "bpata-mpaka": {
+      "path": "bpata_mpaka",
+      "name": "BPATA MPAKA",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "breakcore": {
+      "path": "breakcore",
+      "name": "Breakcore",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "britney-no-sclears": {
+      "path": "britney no sclears",
+      "name": "BRITNEY NO SCLEARS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "buckministerfullerene": {
+      "path": "buckministerfullerene",
+      "name": "Buckministerfullerene",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "calibrate": {
+      "path": "calibrate",
+      "name": "Calibrate",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "capyhouse": {
+      "path": "capyhouse",
+      "name": "Capyhouse",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cascade": {
+      "path": "cascade",
+      "name": "Cascade",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "catastrophe": {
+      "path": "catastrophe",
+      "name": "catastrophe",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "centipede": {
+      "path": "centipede",
+      "name": "Centipede",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "chaoz-devotion": {
+      "path": "chaoz_devotion",
+      "name": "Chaoz Devotion",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "checked-steam": {
+      "path": "checked_steam",
+      "name": "Checked Steam",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "chil": {
+      "path": "chil",
+      "name": "CHIL",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "chromacave": {
+      "path": "chromacave",
+      "name": "CHROMACAVE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cimmerian-shade": {
+      "path": "cimmerian_shade",
+      "name": "Cimmerian Shade",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "circuitbyte": {
+      "path": "circuitbyte",
+      "name": "Circuitbyte",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "clandestine": {
+      "path": "clandestine",
+      "name": "Clandestine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "climax": {
+      "path": "climax",
+      "name": "Climax",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "clubstep-xyz": {
+      "path": "clubstep xyz",
+      "name": "CLUBSTEP XYZ",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "coalescence": {
+      "path": "coalescence",
+      "name": "Coalescence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "codependence-2p": {
+      "path": "codependence_2p",
+      "name": "Codependence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cognitohazard": {
+      "path": "cognitohazard",
+      "name": "cognitohazard",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "collapse": {
+      "path": "collapse",
+      "name": "Collapse",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "combustion": {
+      "path": "combustion",
+      "name": "COMBUSTION",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "control-nexus": {
+      "path": "control nexus",
+      "name": "Control Nexus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "convergence": {
+      "path": "convergence",
+      "name": "CONVERGENCE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "convulsion": {
+      "path": "convulsion",
+      "name": "CONVULSION",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cornbread-travel": {
+      "path": "cornbread_travel",
+      "name": "Cornbread Travel",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "crab-wave": {
+      "path": "crab wave",
+      "name": "CRAB WAVE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "crimson-heart": {
+      "path": "crimson heart",
+      "name": "Crimson Heart",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "crimson-lady": {
+      "path": "crimson lady",
+      "name": "Crimson Lady",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "critical-heat-maxfs": {
+      "path": "critical_heat_maxfs",
+      "name": "CRITICAL HEAT (maxfs)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "critical-heat-zeniux": {
+      "path": "critical_heat_zeniux",
+      "name": "Critical Heat (Zeniux)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cruel-world": {
+      "path": "cruel world",
+      "name": "Cruel World",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cryostasis": {
+      "path": "cryostasis",
+      "name": "CRYOSTASIS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "crystal-edge": {
+      "path": "crystal edge",
+      "name": "Crystal Edge",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cucumber-caverns": {
+      "path": "cucumber_caverns",
+      "name": "Cucumber Caverns",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cyanical": {
+      "path": "cyanical",
+      "name": "Cyanical",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cyber-raptor": {
+      "path": "cyber raptor",
+      "name": "Cyber Raptor",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cyberian": {
+      "path": "cyberian",
+      "name": "Cyberian",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cyberpsychosis-karma287": {
+      "path": "cyberpsychosis_karma287",
+      "name": "Cyberpsychosis (KARMA287)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "cyberpsychosis-sobeann": {
+      "path": "cyberpsychosis_sobeann",
+      "name": "Cyberpsychosis (Sobeann)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "damascus": {
+      "path": "damascus",
+      "name": "Damascus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "darkhold": {
+      "path": "darkhold",
+      "name": "Darkhold",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "dead-silence": {
+      "path": "dead silence",
+      "name": "Dead Silence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "deadlier-clubstep": {
+      "path": "deadlier clubstep",
+      "name": "Deadlier Clubstep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "deadly-corridor-remake": {
+      "path": "deadly_corridor_remake",
+      "name": "Deadly Corridor Remake",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "death-corridor-kugelblitz": {
+      "path": "death corridor (kugelblitz)",
+      "name": "Death Corridor",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "decks-dark": {
+      "path": "decks_dark",
+      "name": "Decks Dark",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "defeated-circles": {
+      "path": "defeated circles",
+      "name": "DEFEATED CIRCLES",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "deimos-itshybrid": {
+      "path": "deimos (itshybrid)",
+      "name": "Deimos",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "delta": {
+      "path": "delta",
+      "name": "Delta",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "despair": {
+      "path": "despair",
+      "name": "Despair",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "diabolic-clubstep": {
+      "path": "diabolic_clubstep",
+      "name": "Diabolic Clubstep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "diffraction": {
+      "path": "diffraction",
+      "name": "Diffraction",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "dignity": {
+      "path": "dignity",
+      "name": "Dignity",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "dimensional-vortex": {
+      "path": "dimensional_vortex",
+      "name": "Dimensional Vortex",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "distortion": {
+      "path": "distortion",
+      "name": "Distortion",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "diviners-sage": {
+      "path": "diviners sage",
+      "name": "diviners sage",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "doppler": {
+      "path": "doppler",
+      "name": "Doppler",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "down-bass-incarnate": {
+      "path": "down bass incarnate",
+      "name": "Down Bass Incarnation",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "dreamin": {
+      "path": "dreamin",
+      "name": "DREAMIN",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "dreamstep": {
+      "path": "dreamstep",
+      "name": "DreamStep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "dualist": {
+      "path": "dualist",
+      "name": "Dualist",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "e-n-d": {
+      "path": "e_n_d",
+      "name": "E N D",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "echo": {
+      "path": "echo",
+      "name": "ECHO",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "echoes-of-phantasm": {
+      "path": "echoes_of_phantasm",
+      "name": "Echoes of Phantasm",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "edge-of-destiny": {
+      "path": "edge of destiny",
+      "name": "Edge of Destiny",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ego": {
+      "path": "ego",
+      "name": "EGO",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "elysium-mons": {
+      "path": "elysium mons",
+      "name": "Elysium Mons",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "enceladus": {
+      "path": "enceladus",
+      "name": "ENCELADUS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "enchanting-skylight": {
+      "path": "enchanting skylight",
+      "name": "Enchanting Skylight",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "endless-nights": {
+      "path": "endless nights",
+      "name": "ENDLESS NIGHTS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "energy-wave": {
+      "path": "energy_wave",
+      "name": "Energy Wave",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ensorcell": {
+      "path": "ensorcell",
+      "name": "Ensorcell",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "epimethean": {
+      "path": "epimethean",
+      "name": "EPIMETHEAN",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "erosion": {
+      "path": "erosion",
+      "name": "EROSION",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "escalator": {
+      "path": "escalator",
+      "name": "Escalator",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eternal-night": {
+      "path": "eternal night",
+      "name": "Eternal Night",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eternal-silence": {
+      "path": "eternal_silence",
+      "name": "Eternal Silence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eternaltheory": {
+      "path": "eternaltheory",
+      "name": "ETERNALtheory",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eternity": {
+      "path": "eternity",
+      "name": "Eternity",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eurus": {
+      "path": "eurus",
+      "name": "EURUS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "every-end": {
+      "path": "every end",
+      "name": "Every End",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eviscerate": {
+      "path": "eviscerate",
+      "name": "EVISCERATE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ex-vacuo": {
+      "path": "ex vacuo",
+      "name": "Ex Vacuo",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "exasperation": {
+      "path": "exasperation",
+      "name": "EXASPERATION",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "excalibur": {
+      "path": "excalibur",
+      "name": "ExCalibur",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "excelsus": {
+      "path": "excelsus",
+      "name": "Excelsus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "exceptional": {
+      "path": "exceptional",
+      "name": "Exceptional",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "eyes-in-the-water": {
+      "path": "eyes in the water",
+      "name": "Eyes in the Water",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fairy-knife-hell": {
+      "path": "fairy knife hell",
+      "name": "FAIRY KNIFE HELL",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fallen-symphony": {
+      "path": "fallen symphony",
+      "name": "Fallen Symphony",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "far-apart": {
+      "path": "far_apart",
+      "name": "far apart",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fatebreaker": {
+      "path": "fatebreaker",
+      "name": "Fatebreaker",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fiberglass": {
+      "path": "fiberglass",
+      "name": "Fiberglass",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "final-level": {
+      "path": "final_level",
+      "name": "Magnetic Maelstrom",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "finaltheory": {
+      "path": "finaltheory",
+      "name": "FinalTheory",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fingerdash-v5": {
+      "path": "fingerdash v5",
+      "name": "Fingerdash V5",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "firework": {
+      "path": "firework",
+      "name": "Firework",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "flaklypa": {
+      "path": "flaklypa",
+      "name": "Flaklypa",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "flamewall": {
+      "path": "flamewall",
+      "name": "Flamewall",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "flashbang": {
+      "path": "flashbang",
+      "name": "Flashbang",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "flyleaf": {
+      "path": "flyleaf",
+      "name": "Flyleaf",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "forest-of-spikes": {
+      "path": "forest of spikes",
+      "name": "FOREST OF SPIKES",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fracture": {
+      "path": "fracture",
+      "name": "Fracture",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "frigid-thrills": {
+      "path": "frigid thrills",
+      "name": "Frigid Thrills",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fubuki": {
+      "path": "fubuki",
+      "name": "FUBUKI",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fukuona-girl": {
+      "path": "fukuona girl",
+      "name": "FUKUONA GIRL",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "funky-amalgamation": {
+      "path": "funky_amalgamation",
+      "name": "Funky Amalgamation",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "furioso": {
+      "path": "furioso",
+      "name": "Furioso",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "fury": {
+      "path": "fury",
+      "name": "Fury",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "gaggatrondra": {
+      "path": "gaggatrondra",
+      "name": "Gaggatrondra",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "galaxy-collapse": {
+      "path": "galaxy collapse",
+      "name": "Galaxy Collapse",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "gameend": {
+      "path": "gameend",
+      "name": "GAMEEND",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "garden": {
+      "path": "garden",
+      "name": "garden",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "glass-chapel": {
+      "path": "glass chapel",
+      "name": "Glass Chapel",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "goliath": {
+      "path": "goliath",
+      "name": "Goliath",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "graveyard": {
+      "path": "graveyard",
+      "name": "Graveyard",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "gray-matter": {
+      "path": "gray matter",
+      "name": "Gray Matter",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "green-bullet": {
+      "path": "green bullet",
+      "name": "GREEN BULLET",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "grief": {
+      "path": "grief",
+      "name": "GRIEF",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ground-fella": {
+      "path": "ground fella",
+      "name": "Ground Fella",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hades": {
+      "path": "hades",
+      "name": "Hades",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hard-white-and-long": {
+      "path": "hard white and long",
+      "name": "HARD WHITE AND LONG",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hateomania": {
+      "path": "hateomania",
+      "name": "HATEOMANIA",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "haunt": {
+      "path": "haunt",
+      "name": "HAUNT",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "haunted-ship": {
+      "path": "haunted ship",
+      "name": "Haunted Ship",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hawktuagon-force": {
+      "path": "hawktuagon force",
+      "name": "Hawktuagon force",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hazard-duty-pay": {
+      "path": "hazard duty pay",
+      "name": "HAZARD DUTY PAY",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "heavy-energizer": {
+      "path": "heavy energizer",
+      "name": "Heavy Energizer",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "heliopolis": {
+      "path": "heliopolis",
+      "name": "Heliopolis",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hell-affinity": {
+      "path": "hell affinity",
+      "name": "Hell Affinity",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "her-funeral": {
+      "path": "her funeral",
+      "name": "Her Funeral",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "herr-machine": {
+      "path": "herr machine",
+      "name": "HERR machine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hitorigoto": {
+      "path": "hitorigoto",
+      "name": "Hitorigoto",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hurt": {
+      "path": "hurt",
+      "name": "H U R T",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "hymn-for-the-weekend": {
+      "path": "hymn for the weekend",
+      "name": "Hymn For The Weekend",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "idontknowwhatisthis": {
+      "path": "idontknowwhatisthis",
+      "name": "idontknowwhatisthis",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ikea-level": {
+      "path": "ikea_level",
+      "name": "IKEA LEVEL",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "imnotsorry": {
+      "path": "imnotsorry",
+      "name": "IMNOTSORRY",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "indigo-nightmare": {
+      "path": "indigo nightmare",
+      "name": "Indigo Nightmare",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "inferno-ruins": {
+      "path": "inferno ruins",
+      "name": "Inferno Ruins",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "infernoplex": {
+      "path": "infernoplex",
+      "name": "Infernoplex",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "infinite-chaos": {
+      "path": "infinite_chaos",
+      "name": "Infinite Chaos",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "infinite-silence": {
+      "path": "infinite silence",
+      "name": "Infinite Silence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "injury": {
+      "path": "injury",
+      "name": "I N J U R Y",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "it-lurks": {
+      "path": "it lurks",
+      "name": "IT LURKS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "it-means-everything-quivert": {
+      "path": "it means everything (quivert)",
+      "name": "IT MEANS EVERYTHING",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "jigsaw": {
+      "path": "jigsaw",
+      "name": "Jigsaw",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "k4l1b3r": {
+      "path": "k4l1b3r",
+      "name": "KALIBER",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "katarsis": {
+      "path": "katarsis",
+      "name": "Katarsis",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "killstealer": {
+      "path": "killstealer",
+      "name": "Killstealer",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kinesiophobia": {
+      "path": "kinesiophobia",
+      "name": "KINESIOPHOBIA",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kingdom-of-miracles": {
+      "path": "kingdom of miracles",
+      "name": "Kingdom of Miracalis",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kintetsu": {
+      "path": "kintetsu",
+      "name": "Kintetsu",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kocmoc": {
+      "path": "kocmoc",
+      "name": "KOCMOC",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kocmoc-unleashed": {
+      "path": "kocmoc unleashed",
+      "name": "KOCMOC UNLEASHED",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kosetsu": {
+      "path": "kosetsu",
+      "name": "KOSETSU",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kurayami": {
+      "path": "kurayami",
+      "name": "KURAYAMI",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "kyouki": {
+      "path": "kyouki",
+      "name": "Kyouki",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "labyrinth": {
+      "path": "labyrinth",
+      "name": "Labyrinth",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lawet": {
+      "path": "lawet",
+      "name": "Lawet",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "layers": {
+      "path": "layers",
+      "name": "LAYERS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lesopowal": {
+      "path": "lesopowal",
+      "name": "Lesopowal",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "levigo": {
+      "path": "levigo",
+      "name": "Levigo",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "limbo": {
+      "path": "limbo",
+      "name": "LIMBO",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "limewire": {
+      "path": "limewire",
+      "name": "LimeWire",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lirile": {
+      "path": "lirile",
+      "name": "Lirile",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "loops-of-fury": {
+      "path": "loops_of_fury",
+      "name": "Loops of Fury",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "losing-your-mind": {
+      "path": "losing_your_mind",
+      "name": "Losing Your Mind",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lost-in-time-2": {
+      "path": "lost_in_time_2",
+      "name": "Lost in Time 2",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lovers-in-abyss": {
+      "path": "lovers in abyss",
+      "name": "Lovers in Abyss",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "luminite": {
+      "path": "luminite",
+      "name": "Luminite",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lunaphobia": {
+      "path": "lunaphobia",
+      "name": "Lunaphobia",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lunatic-eyes": {
+      "path": "lunatic eyes",
+      "name": "Lunatic Eyes",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "mangle": {
+      "path": "mangle",
+      "name": "MANGLE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "maniac": {
+      "path": "maniac",
+      "name": "MANIAC",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "maniacal-chains": {
+      "path": "maniacal chains",
+      "name": "Maniacal Chains",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "manray": {
+      "path": "manray",
+      "name": "M A N R A Y",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "map-of-problematique": {
+      "path": "map of problematique",
+      "name": "Map of Problematique",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "master-of-puppets": {
+      "path": "master of puppets",
+      "name": "Master of Puppets",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "master-spark": {
+      "path": "master spark",
+      "name": "Master Spark",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "max-nrg": {
+      "path": "max_nrg",
+      "name": "MAX NRG",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "mayhem": {
+      "path": "mayhem",
+      "name": "Mayhem",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "medusa": {
+      "path": "medusa",
+      "name": "MEDUSA",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "mekron-city": {
+      "path": "mekron city",
+      "name": "Mekron City",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "memorized": {
+      "path": "memorized",
+      "name": "Memorized",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "menace": {
+      "path": "menace",
+      "name": "Menace",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "mercury": {
+      "path": "mercury",
+      "name": "Mercury",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "methhead": {
+      "path": "methhead",
+      "name": "METHHEAD",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "metropolis": {
+      "path": "metropolis",
+      "name": "METROPOLIS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "midnight-vivisection": {
+      "path": "midnight(vivisection)",
+      "name": "Midnight (VivisectionGD)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "midnight-zyuko": {
+      "path": "midnight(zyuko)",
+      "name": "Midnight (MadisonYuko)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "minusdry": {
+      "path": "minusdry",
+      "name": "MINUSdry",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "misanthrope": {
+      "path": "misanthrope",
+      "name": "Misanthrope",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "misfortune": {
+      "path": "misfortune",
+      "name": "M I S F O R T U N E",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "moonflower": {
+      "path": "moonflower",
+      "name": "Moonflower",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "murasaki": {
+      "path": "murasaki",
+      "name": "MURASAKI",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "mysterycore": {
+      "path": "mysterycore",
+      "name": "mysterycore",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "natural-disaster": {
+      "path": "natural disaster",
+      "name": "Natural Disaster (iIiLaseriIi)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "natural-disaster-thepurgatory": {
+      "path": "natural disaster(thepurgatory)",
+      "name": "Natural Disaster (ThePurgatory)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nautical-nebula": {
+      "path": "nautical_nebula",
+      "name": "Nautical Nebula",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nebulabrasque": {
+      "path": "nebulabrasque",
+      "name": "Nebulabrasque",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nebulous": {
+      "path": "nebulous",
+      "name": "NEBULOUS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "necropolis-ii": {
+      "path": "necropolis_ii",
+      "name": "Necropolis II",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nervhell": {
+      "path": "nervhell",
+      "name": "NervHell",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "netherix": {
+      "path": "netherix",
+      "name": "Netherix",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "network": {
+      "path": "network",
+      "name": "NETWORK",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "neutron-step": {
+      "path": "neutron step",
+      "name": "Neutron Step",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nibelheim": {
+      "path": "nibelheim",
+      "name": "Nibelheim",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "night-of-nights": {
+      "path": "night_of_nights",
+      "name": "Night of Nights",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nightfall": {
+      "path": "nightfall",
+      "name": "NIGHTFALL",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nihilum": {
+      "path": "nihilum",
+      "name": "Nihilum",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nilk": {
+      "path": "nilk",
+      "name": "nilk",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nomad": {
+      "path": "nomad",
+      "name": "NOMAD",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nomas-64-segundos": {
+      "path": "nomas 64 segundos",
+      "name": "NOMAS 64 SEGUNDOS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "notartarus": {
+      "path": "notartarus",
+      "name": "NOTARTARUS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nuclear-star": {
+      "path": "nuclear star",
+      "name": "NUCLEAR STAR",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "null": {
+      "path": "null",
+      "name": "NULL",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nullscapes": {
+      "path": "nullscapes",
+      "name": "Nullscapes",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "oblivion": {
+      "path": "oblivion",
+      "name": "Oblivion",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "omega-parts": {
+      "path": "omega parts",
+      "name": "Omega PARTS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "onemoreattempt": {
+      "path": "onemoreattempt",
+      "name": "OneMoreAttempt",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "operation-evolution": {
+      "path": "operation evolution",
+      "name": "Operation Evolution",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "orbit": {
+      "path": "orbit",
+      "name": "ORBIT",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ordinary": {
+      "path": "ordinary",
+      "name": "ORDINARY",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "orochi": {
+      "path": "orochi",
+      "name": "Orochi",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ouroboros": {
+      "path": "ouroboros",
+      "name": "OUROBOROS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "outcast": {
+      "path": "outcast",
+      "name": "Outcast",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "outlast": {
+      "path": "outlast",
+      "name": "OUTLAST",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "overdrive": {
+      "path": "overdrive",
+      "name": "OVERDRIVE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "packetloss": {
+      "path": "packetloss",
+      "name": "PACKETLOSS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "panic": {
+      "path": "panic",
+      "name": "PANIC",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "panthalassa": {
+      "path": "panthalassa",
+      "name": "Panthalassa",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "patina": {
+      "path": "patina",
+      "name": "Patina",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "peach-vomit": {
+      "path": "peach vomit",
+      "name": "Peach Vomit",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "penumbral": {
+      "path": "penumbral",
+      "name": "Penumbral",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "persephone": {
+      "path": "persephone",
+      "name": "Persephone",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "phantasm-iv": {
+      "path": "phantasm iv",
+      "name": "Phantasm IV",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "pigstep": {
+      "path": "pigstep",
+      "name": "PigStep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "pinnacle-of-life": {
+      "path": "pinnacle of life",
+      "name": "Pinnacle of Life",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "plasma-doom-machine": {
+      "path": "plasma doom machine",
+      "name": "Plasma DOOM Machine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "plastic-death": {
+      "path": "plastic_death",
+      "name": "Plastic Death",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "polar-vortex": {
+      "path": "polar vortex",
+      "name": "Polar Vortex",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "poocubed": {
+      "path": "poocubed",
+      "name": "poocubed",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "powerplant": {
+      "path": "powerplant",
+      "name": "POWER PLANT",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "prismline": {
+      "path": "prismline",
+      "name": "Prismline",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "psychopath": {
+      "path": "psychopath",
+      "name": "PSYCHOPATH",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "quanteuse-processing": {
+      "path": "quanteuse processing",
+      "name": "Quanteuse processing",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "quasar": {
+      "path": "quasar",
+      "name": "QUASAR",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "rainy": {
+      "path": "rainy",
+      "name": "Rainy",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ranshin": {
+      "path": "ranshin",
+      "name": "Ranshin",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "reality-spirituality": {
+      "path": "reality_spirituality",
+      "name": "Reality Spirituality",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "rebirth-the-end": {
+      "path": "rebirth the end",
+      "name": "Rebirth The End",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "reckless": {
+      "path": "reckless",
+      "name": "RECKLESS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "redemption": {
+      "path": "redemption",
+      "name": "Redemption",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "reference": {
+      "path": "reference",
+      "name": "Reference ",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "remorse": {
+      "path": "remorse",
+      "name": "Remorse",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "remscapes": {
+      "path": "remscapes",
+      "name": "Dreamscapes",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "rest-in-peace": {
+      "path": "rest_in_peace",
+      "name": "Rest in Peace",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "river-cocytos": {
+      "path": "river cocytos",
+      "name": "RIVER COCYTUS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "rockstar-life": {
+      "path": "rockstar life",
+      "name": "ROCKSTAR LIFE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "romper": {
+      "path": "romper",
+      "name": "ROMPER",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ronaldo-circles": {
+      "path": "ronaldo circles",
+      "name": "RONALDO CIRCLES",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ronaldohouse": {
+      "path": "ronaldohouse",
+      "name": "Ronaldohouse",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sacrifice": {
+      "path": "sacrifice",
+      "name": "Sacrifice",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sacrilege": {
+      "path": "sacrilege",
+      "name": "Sacrilege",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sakupen-circles": {
+      "path": "sakupen circles",
+      "name": "Sakupen Circles",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sakupen-circles-nick24": {
+      "path": "sakupen_circles_nick24",
+      "name": "Sakupen circles (Nick24)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sanctity": {
+      "path": "sanctity",
+      "name": "Sanctity",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sanguine": {
+      "path": "sanguine",
+      "name": "Sanguine",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "saryyx-never-clear": {
+      "path": "saryyx_never_clear",
+      "name": "SARYYX NEVER CLEAR",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "saul-goodman": {
+      "path": "saul goodman",
+      "name": "Saul Goodman",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "scarlet-perdition": {
+      "path": "scarlet perdition",
+      "name": "Scarlet Perdition",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "scarlet-sirius": {
+      "path": "scarlet sirius",
+      "name": "Scarlet Sirius",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "scattered-faith": {
+      "path": "scattered faith",
+      "name": "Scattered Faith",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "scream-attack": {
+      "path": "scream_attack",
+      "name": "Scream Attack",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sedentary": {
+      "path": "sedentary",
+      "name": "sedentary",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sentinel": {
+      "path": "sentinel",
+      "name": "Sentinel",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sevvend-clubstep": {
+      "path": "sevvend clubstep",
+      "name": "Sevvend Clubstep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "shadow-of-the-past": {
+      "path": "shadow of the past",
+      "name": "Shadow Of The Past",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "shredder": {
+      "path": "shredder",
+      "name": "SHREDDER",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "shukketsu": {
+      "path": "shukketsu",
+      "name": "Shukketsu",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-acropolis": {
+      "path": "silent acropolis",
+      "name": "Silent Acropolis",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-bloodbath": {
+      "path": "silent_bloodbath",
+      "name": "Silent Bloodbath",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-circles-bunny": {
+      "path": "silent circles (bunny)",
+      "name": "Silent Circles (bunny)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-circles-cherry-team": {
+      "path": "silent circles (cherry team)",
+      "name": "Silent Circles (cherryteam)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-circles-starchman": {
+      "path": "silent circles (starchman)",
+      "name": "Silent Circles (Starchman)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-club-plus": {
+      "path": "silent club plus",
+      "name": "Silent Club Plus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-clubstep": {
+      "path": "silent clubstep",
+      "name": "Silent clubstep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-clubstep-ii": {
+      "path": "silent clubstep ii",
+      "name": "Silent Clubstep II",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-electroman-adventures": {
+      "path": "silent electroman adventures",
+      "name": "Silentman Adventures",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-fortress": {
+      "path": "silent fortress",
+      "name": "Silent Fortress",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-helheim": {
+      "path": "silent helheim",
+      "name": "SILENT HELHEIM",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-jumper": {
+      "path": "silent jumper",
+      "name": "Silent Jumper",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-kocmoc": {
+      "path": "silent kocmoc",
+      "name": "SILENT KOCMOC",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silent-oppenheimer": {
+      "path": "silent oppenheimer",
+      "name": "SILENT OPPENHEIMER",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silentlocked": {
+      "path": "silentlocked",
+      "name": "Silentlocked",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sin": {
+      "path": "sin",
+      "name": "SIN",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sinister-silence": {
+      "path": "sinister_silence",
+      "name": "Sinister Silence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "six-paths-of-pain": {
+      "path": "six paths of pain",
+      "name": "Six Paths of Pain",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sky-linudder": {
+      "path": "sky linudder",
+      "name": "Sky Linudder",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "slaughterhouse": {
+      "path": "slaughterhouse",
+      "name": "Slaughterhouse",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sneeth": {
+      "path": "sneeth",
+      "name": "SNEETH",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "snowblind": {
+      "path": "snowblind",
+      "name": "Snowblind",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "snowbound": {
+      "path": "snowbound",
+      "name": "Snowbound",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "snowdrive": {
+      "path": "snowdrive",
+      "name": "SNOWDRIVE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "society": {
+      "path": "society",
+      "name": "Society",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "solar-flare": {
+      "path": "solar flare",
+      "name": "Solar Flare",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sonic-wave-infinity": {
+      "path": "sonic_wave_infinity",
+      "name": "Sonic Wave Infinity",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "soul-restoration": {
+      "path": "soul_restoration",
+      "name": "Soul Restoration",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "spammer": {
+      "path": "spammer",
+      "name": "Spammer",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "spectre": {
+      "path": "spectre",
+      "name": "Spectre",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "spider-bite": {
+      "path": "spider_bite",
+      "name": "SPIDER BITE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "spirit-overclock": {
+      "path": "spirit_overclock",
+      "name": "SPIRIT OVERCLOCK",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "starbird": {
+      "path": "starbird",
+      "name": "starbird",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "stellar-night": {
+      "path": "stellar_night",
+      "name": "Stellar Night",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "stephenson-2-18": {
+      "path": "stephenson 2 18",
+      "name": "Stephenson 2-18",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "stoicism": {
+      "path": "stoicism",
+      "name": "Stoicism",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "subconscious": {
+      "path": "subconscious",
+      "name": "Subconscious",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "subsuming-vortex": {
+      "path": "subsuming vortex",
+      "name": "Subsuming Vortex",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "subterminal-point": {
+      "path": "subterminal point",
+      "name": "Subterminal Point",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sulfur": {
+      "path": "sulfur",
+      "name": "Sulfur",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sunrise-scourge": {
+      "path": "sunrise_scourge",
+      "name": "SUNRISE SCOURGE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "supadupasonic": {
+      "path": "supadupasonic",
+      "name": "SupaDupaSonic",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "suppression": {
+      "path": "suppression",
+      "name": "Suppression",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sweeping-demon-2": {
+      "path": "sweeping demon 2",
+      "name": "Sweeping Demon 2",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tapioca": {
+      "path": "tapioca",
+      "name": "TAPIOCA",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "taron": {
+      "path": "taron",
+      "name": "Taron",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tartarus": {
+      "path": "tartarus",
+      "name": "Tartarus",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "teeth-fortress-ii": {
+      "path": "teeth fortress ii",
+      "name": "TEETH FORTRESS II",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tempest-dive": {
+      "path": "tempest dive",
+      "name": "Tempest Dive",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "terminal-rampancy": {
+      "path": "terminal_rampancy",
+      "name": "Terminal Rampancy",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-aether-trial": {
+      "path": "the_aether_trial",
+      "name": "The Aether Trial",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-bloop": {
+      "path": "the_bloop",
+      "name": "The Bloop",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-cata-ombs": {
+      "path": "the_cataсombs",
+      "name": "The Catacombs",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-devil": {
+      "path": "the devil",
+      "name": "The Devil",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-devourer": {
+      "path": "the devourer",
+      "name": "The Devourer",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-golden": {
+      "path": "the_golden",
+      "name": "The Golden",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-hallucination": {
+      "path": "the hallucination",
+      "name": "The Hallucination",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-impaler": {
+      "path": "the impaler",
+      "name": "The Impaler",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-jet-engine": {
+      "path": "the_jet_engine",
+      "name": "THE JET ENGINE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-last-dream": {
+      "path": "the_last_dream",
+      "name": "The Last Dream",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-lightning-rod": {
+      "path": "the lightning rod",
+      "name": "The Lightning Rod",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-loss-of-life": {
+      "path": "the loss of life",
+      "name": "THE LOSS OF LIFE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-national-anthem": {
+      "path": "the national anthem",
+      "name": "The National Anthem",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-only-wish": {
+      "path": "the_only_wish",
+      "name": "The Only Wish",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-plunge": {
+      "path": "the_plunge",
+      "name": "The Plunge",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-salt-factory": {
+      "path": "the salt factory",
+      "name": "The Salt Factory",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-seventh-sun": {
+      "path": "the seventh sun",
+      "name": "The Seventh Sun",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-silent-zone": {
+      "path": "the silent zone",
+      "name": "The Silent Zone",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-wonder-of-you": {
+      "path": "the_wonder_of_you",
+      "name": "The Wonder of You",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-yangire": {
+      "path": "the_yangire",
+      "name": "The Yangire",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "theory-of-sevvend": {
+      "path": "theory of sevvend",
+      "name": "Theory of Sevvend",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "theory-of-silence": {
+      "path": "theory_of_silence",
+      "name": "Theory of Silence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "theta": {
+      "path": "theta",
+      "name": "Theta",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "thibkign-soace-iii": {
+      "path": "thibkign soace III",
+      "name": "thibkign soace III",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "thinking-space-ii": {
+      "path": "thinking space ii",
+      "name": "Thinking Space II",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "thinking-space-ii-legacy": {
+      "path": "thinking_space_ii_legacy",
+      "name": "Thinking Space II (Legacy)",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "through-the-gates": {
+      "path": "through the gates",
+      "name": "Through The Gates",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tidal-wave": {
+      "path": "tidal wave",
+      "name": "Tidal Wave",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tight-clubstep": {
+      "path": "tight clubstep",
+      "name": "Tight Clubstep",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tiki-tiki-circles": {
+      "path": "tiki tiki circles",
+      "name": "TIKI TIKI CIRCLES",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "time-attack": {
+      "path": "time attack",
+      "name": "Time Attack",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "toxic-rush-iii": {
+      "path": "toxic rush iii",
+      "name": "Toxic Rush III",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tragedy": {
+      "path": "tragedy",
+      "name": "Tragedy",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tragic": {
+      "path": "tragic",
+      "name": "TRAGIC",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "trakines": {
+      "path": "trakines",
+      "name": "TrakineS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "transhumanist": {
+      "path": "transhumanist",
+      "name": "Transhumanist",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "triathlon": {
+      "path": "triathlon",
+      "name": "Triathlon",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "trickshot": {
+      "path": "trickshot",
+      "name": "Trickshot",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tsunami": {
+      "path": "tsunami",
+      "name": "Tsunami",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tunnel-of-despair": {
+      "path": "tunnel of despair",
+      "name": "Tunnel of Despair",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "tunnel-of-serpent": {
+      "path": "tunnel of serpent",
+      "name": "Tunnel of Serpent",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "turmoiled": {
+      "path": "turmoiled",
+      "name": "Turmoiled",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ufo-on-track-of-rage": {
+      "path": "ufo_on_track_of_rage",
+      "name": "UFO on Track of RAGE",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ultimatum": {
+      "path": "ultimatum",
+      "name": "ULTIMATUM",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ultra-kira-ii": {
+      "path": "ultra_kira_ii",
+      "name": "Ultra Kira II",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ultra-paracosm": {
+      "path": "ultra paracosm",
+      "name": "Ultra Paracosm",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "unknown": {
+      "path": "unknown",
+      "name": "UNKNOWN",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "vehemence": {
+      "path": "vehemence",
+      "name": "Vehemence",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "venomx": {
+      "path": "venomx",
+      "name": "VenomX",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "verdant-landscape": {
+      "path": "verdant_landscape",
+      "name": "Verdant Landscape",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "viprin-ufo": {
+      "path": "viprin_ufo",
+      "name": "Viprin UFO",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "vivisect": {
+      "path": "vivisect",
+      "name": "Vivisect",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "void": {
+      "path": "void",
+      "name": "VOID",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "voltage": {
+      "path": "voltage",
+      "name": "Voltage",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "vulcan": {
+      "path": "vulcan",
+      "name": "V.U.L.C.A.N",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "walter-white": {
+      "path": "walter_white",
+      "name": "walter white",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "waru": {
+      "path": "waru",
+      "name": "Waru",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "water": {
+      "path": "water",
+      "name": "WATER",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "waterfall": {
+      "path": "waterfall",
+      "name": "Waterfall",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "wavterminal": {
+      "path": "wavterminal",
+      "name": "Wavterminal",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "when-i-fall": {
+      "path": "when i fall",
+      "name": "When I Fall",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "white-abyss": {
+      "path": "white_abyss",
+      "name": "White Abyss",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "who-am-i": {
+      "path": "who am i",
+      "name": "WHO AM I",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "why": {
+      "path": "why",
+      "name": "why",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "wild-roses": {
+      "path": "wild_roses",
+      "name": "Wild Roses",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "wistfully": {
+      "path": "wistfully",
+      "name": "Wistfully",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "wocky-circles": {
+      "path": "wocky circles",
+      "name": "Wocky Circles",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "woofel": {
+      "path": "woofel",
+      "name": "Woofel",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "wrackness": {
+      "path": "wrackness",
+      "name": "WRACKNESS",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "wrath": {
+      "path": "wrath",
+      "name": "WRATH",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "xciii": {
+      "path": "xciii",
+      "name": "XCIII",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "yharon": {
+      "path": "yharon",
+      "name": "Yharon",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "zanbot": {
+      "path": "zanbot",
+      "name": "ZANBOT",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "zorin": {
+      "path": "zorin",
+      "name": "zorin",
+      "firstSeen": "2026-08-30",
+      "lastSeen": "2026-08-30",
+      "retiredAt": null,
+      "redirectTo": null
+    }
+  }
+}

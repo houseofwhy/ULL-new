@@ -8,4 +8,7 @@
 
 # Anything else — /mobile/*, /generator, /admin, unknown URLs — falls through to
 # the SPA shell and is handled by the Vue router (200 = rewrite, URL unchanged).
+# seo:redirects:start
+# seo:redirects:end
+
 /*    /index.html    200

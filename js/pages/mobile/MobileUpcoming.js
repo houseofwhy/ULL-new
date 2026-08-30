@@ -1,5 +1,5 @@
 import { embed, levelThumbnail } from '../../util.js';
-import { upcomingScore } from '../../formulas.js';
+import { upcomingRanking } from '../../formulas.js';
 import { mobileStore } from './mobileStore.js';
 
 export default {
@@ -61,19 +61,10 @@ export default {
     computed: {
         lbList() {
             if (!mobileStore.rawList.length) return [];
+            // Shared with the desktop page and the baked static content.
+            const ranked = new Set(upcomingRanking(mobileStore.rawList.map(([l]) => l).filter(Boolean)));
             return mobileStore.rawList
-                .filter(([l]) => l && !l.isVerified)
-                .filter(([l]) => !((l.records || []).some(r => Number(r.percent) >= 100)))
-                .map(([l, e]) => {
-                    const maxP = Math.max(0, ...((l.records || []).map(r => Number(r.percent) || 0)));
-                    const maxR = Math.max(0, ...((l.run || []).map(r => {
-                        const p = String(r.percent).split('-').map(Number);
-                        return p.length === 2 ? Math.abs(p[1] - p[0]) : 0;
-                    })));
-                    l.rankingScore = upcomingScore(maxP, maxR);
-                    return [l, e];
-                })
-                .filter(([l]) => l.rankingScore > 0)
+                .filter(([l]) => ranked.has(l))
                 .sort((a, b) => b[0].rankingScore - a[0].rankingScore);
         },
         filteredList() {

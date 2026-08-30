@@ -1,7 +1,7 @@
 ﻿import { store } from '../main.js';
 import { embed, levelThumbnail } from '../util.js';
 import { fetchList } from '../content.js';
-import { upcomingScore } from '../formulas.js';
+import { upcomingRanking } from '../formulas.js';
 
 import Spinner from '../components/Spinner.js';
 import LevelAuthors from '../components/List/LevelAuthors.js';
@@ -219,28 +219,19 @@ export default {
             if (level.isFuture) { futureRank++; level.futureRank = futureRank; }
         });
 
-        list.forEach(([level, err]) => {
-            if (err || !level) return;
-            let maxPercent = Math.max(0, ...(level.records || []).map(r => r.percent));
-            let maxRunDiff = 0;
-            if (level.run && level.run.length) {
-                const diffs = level.run.map(r => {
-                    const parts = String(r.percent).split('-').map(Number);
-                    return (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) ? parts[1] - parts[0] : 0;
-                });
-                maxRunDiff = Math.max(0, ...diffs);
-            }
-            level.maxPercent = maxPercent;
-            level.maxRunDifference = maxRunDiff;
-            level.rankingScore = upcomingScore(maxPercent, maxRunDiff);
+        for (const [level, err] of list) {
+            if (err || !level) continue;
             if (this.isOldLevel(level)) {
                 if (!level.tags) level.tags = [];
                 if (!level.tags.includes('Pending Removal')) level.tags.push('Pending Removal');
             }
-        });
+        }
 
+        // Ranked by upcomingRanking so this page, the mobile page and the
+        // baked static content can never drift apart.
+        const ranked = new Set(upcomingRanking(list.map(([level]) => level).filter(Boolean)));
         this.list = list
-            .filter(([level, err]) => level && !level.isVerified && level.rankingScore > 0 && !(level.records || []).some(r => Number(r.percent) >= 100))
+            .filter(([level]) => ranked.has(level))
             .sort((a, b) => b[0].rankingScore - a[0].rankingScore);
 
         this.loading = false;

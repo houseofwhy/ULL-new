@@ -9,6 +9,7 @@ import Mobile from './pages/Mobile.js';
 import Home from './pages/Home.js';
 import UpcomingLevels from './pages/UpcomingLevels.js';
 import Information from './pages/Information.js';
+import LevelPage from './pages/LevelPage.js';
 import Events from './pages/Events.js';
 import NotFound from './pages/NotFound.js';
 
@@ -32,6 +33,8 @@ export default [
     { path: '/listfuture', component: ListFuture },
     { path: '/upcoming', component: UpcomingLevels },
     { path: '/information', component: Information },
+    // One page per level, pre-rendered by scripts/build-seo.mjs.
+    { path: '/level/:slug', component: LevelPage },
     { path: '/events', component: Events },
     { path: '/generator', component: LevelGenerator },
     { path: '/admin', component: Admin },

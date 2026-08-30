@@ -20,6 +20,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITE, NAV, PAGES, FAQ } from './seo/content.mjs';
 import { guidelinesData } from '../js/_guidelines.js';
+import { readRegistry, planPages } from './seo/registry.mjs';
+import { levelPage, retiredPage, bakedBlocks, annotate } from './seo/levels.mjs';
+import { levelSlug } from '../js/util.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const HEAD_START = '<!-- seo:head:start -->';
@@ -28,6 +31,18 @@ const BODY_START = '<!-- seo:content:start -->';
 const BODY_END = '<!-- seo:content:end -->';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// The last successful fetch. Generation never depends on the network: if the
+// snapshot is missing the pages still build, just without the live rankings.
+const SNAPSHOT_FILE = path.join(ROOT, 'data', '_seo-snapshot.json');
+const snapshot = fs.existsSync(SNAPSHOT_FILE) ? JSON.parse(fs.readFileSync(SNAPSHOT_FILE, 'utf8')) : null;
+const baked = snapshot ? bakedBlocks(snapshot) : {};
+const registry = readRegistry(ROOT);
+const levelPlan = snapshot ? planPages(registry, snapshot.levels) : [];
+// Cross-list positions are only knowable from the full ordering, so annotate
+// the whole list up front and look each level up by its path.
+const annotated = new Map(snapshot ? annotate(snapshot.levels).map((l) => [l.path, l]) : []);
+const annotateOne = (level) => annotated.get(level.path) ?? level;
 const stripTags = (s) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const today = new Date().toISOString().slice(0, 10);
 
@@ -48,6 +63,8 @@ function fillRegion(html, start, end, content) {
 
 function jsonLd(page) {
     const url = SITE.origin + page.route;
+    // Level pages describe themselves — see scripts/seo/levels.mjs.
+    if (page.graph) return indent(JSON.stringify({ '@context': 'https://schema.org', '@graph': page.graph }, null, 2));
     const graph = [];
 
     graph.push({
@@ -108,16 +125,16 @@ function jsonLd(page) {
         });
     }
 
-    return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2)
-        .split('\n')
-        .map((l) => '        ' + l)
-        .join('\n');
+    return indent(JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2));
 }
+
+const indent = (text) => text.split('\n').map((l) => '        ' + l).join('\n');
 
 function buildHead(page) {
     const url = SITE.origin + page.route;
     return `    <title>${esc(page.title)}</title>
     <meta name="description" content="${esc(page.description)}" />
+    <meta name="robots" content="${page.noindex ? 'noindex, follow' : 'index, follow'}" />
     <link rel="canonical" href="${url}" />
     <meta property="og:title" content="${esc(page.title)}" />
     <meta property="og:description" content="${esc(page.description)}" />
@@ -160,6 +177,9 @@ function buildBody(page) {
     let inner = page.body.trim();
     if (page.faq) inner += '\n' + faqHtml().trim();
     if (page.guidelines) inner += '\n' + guidelinesHtml();
+    // The live ranking, as of the last successful fetch. Visitors never read
+    // this — the Vue app replaces it with current API data on mount.
+    if (baked[page.route]) inner += '\n' + baked[page.route].trim();
 
     return `<div id="seo-fallback">
   <div class="seo-fallback__inner">
@@ -194,6 +214,60 @@ for (const page of PAGES) {
     console.log('wrote', path.relative(ROOT, dest), `(${(out.length / 1024).toFixed(1)} KB)`);
 }
 
+// ── level pages ─────────────────────────────────────────────────────────────
+// planPages() decides what each known slug serves: a live page, a "no longer
+// listed" page during the grace period, or a redirect once that runs out.
+const livePaths = (snapshot?.levels ?? []).map((l) => l.path);
+const levelPages = [];
+const levelRedirects = [];
+let liveCount = 0, retiredCount = 0;
+
+for (const item of levelPlan) {
+    if (item.kind === "redirect") {
+        levelRedirects.push(["/level/" + item.slug, item.to]);
+        continue;
+    }
+    const page = item.kind === "live"
+        ? levelPage(annotateOne(item.level), livePaths)
+        : retiredPage(item.entry, item.slug);
+    item.kind === "live" ? liveCount++ : retiredCount++;
+    levelPages.push(page);
+
+    let out = fillRegion(shell, HEAD_START, HEAD_END, buildHead(page));
+    out = fillRegion(out, BODY_START, BODY_END, buildBody(page));
+    const dest = path.join(ROOT, page.dir, "index.html");
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.writeFileSync(dest, out);
+}
+console.log("wrote " + liveCount + " level page(s), " + retiredCount + " retired, " + levelRedirects.length + " redirect(s)");
+
+// A slug that has moved on to a redirect must not leave its old page behind.
+const keepDirs = new Set(levelPages.map((p) => p.dir.replace(/^level\//, "")));
+const levelRoot = path.join(ROOT, "level");
+if (fs.existsSync(levelRoot)) {
+    for (const entry of fs.readdirSync(levelRoot)) {
+        if (!keepDirs.has(entry)) fs.rmSync(path.join(levelRoot, entry), { recursive: true, force: true });
+    }
+}
+
+// _redirects: hand-written rules stay, the level block is regenerated.
+{
+    const file = path.join(ROOT, "_redirects");
+    const START = "# seo:redirects:start";
+    const END = "# seo:redirects:end";
+    let text = fs.readFileSync(file, "utf8");
+    const rules = levelRedirects.map(([from, to]) => from.padEnd(52) + " " + to.padEnd(32) + " 301");
+    const block = [START, ...rules, END].join("\n");
+    if (text.includes(START) && text.includes(END)) {
+        text = text.slice(0, text.indexOf(START)) + block + text.slice(text.indexOf(END) + END.length);
+    } else {
+        // Must sit above the SPA catch-all, which has to stay last.
+        text = text.replace("/*    /index.html    200", block + "\n\n/*    /index.html    200");
+    }
+    fs.writeFileSync(file, text);
+    console.log("wrote _redirects (" + levelRedirects.length + " level redirect(s))");
+}
+
 // sitemap.xml
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -205,6 +279,12 @@ ${PAGES.map(
     <priority>${p.priority}</priority>
   </url>`
 ).join('\n')}
+${levelPages.filter((p) => !p.noindex).map((p) => `  <url>
+    <loc>${SITE.origin}${p.route}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>
+  </url>`).join('\n')}
 </urlset>
 `;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);

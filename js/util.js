@@ -172,3 +172,46 @@ export function assignBenchmarkRanks(list, benchmarkMode) {
 export function displayRank(level, index, benchmarkMode) {
     return benchmarkMode && level && level.benchmarkRank ? level.benchmarkRank : index + 1;
 }
+
+// ── Level page URLs ─────────────────────────────────────────────────────────
+// A level's API `path` is its stable identity: staff rename levels often, and a
+// rename must not change the URL the level already ranks for. Paths are not
+// URL-safe though ("top 0 (neiro)"), so they are slugified for the address bar.
+
+export function slugify(path) {
+    return String(path ?? '')
+        .toLowerCase()
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 80) || 'level';
+}
+
+// FNV-1a, so the build and the browser derive the same suffix.
+export function shortHash(value) {
+    let h = 0x811c9dc5;
+    const s = String(value);
+    for (let i = 0; i < s.length; i++) {
+        h ^= s.charCodeAt(i);
+        h = Math.imul(h, 0x01000193) >>> 0;
+    }
+    return h.toString(36).slice(0, 6);
+}
+
+// Two different paths can slugify to the same string. The one that sorts first
+// keeps the clean slug; the rest get a hash suffix. Sorting rather than list
+// order keeps the assignment stable when ranks move around.
+export function levelSlug(path, allPaths) {
+    const base = slugify(path);
+    if (!allPaths) return base;
+    const clashing = allPaths.filter((p) => slugify(p) === base).sort();
+    return clashing.length > 1 && clashing[0] !== path ? `${base}-${shortHash(path)}` : base;
+}
+
+// The reverse: which level a /level/<slug> URL refers to.
+export function levelForSlug(levels, slug) {
+    if (!slug) return null;
+    const paths = levels.map((l) => l.path);
+    return levels.find((l) => levelSlug(l.path, paths) === slug) || null;
+}

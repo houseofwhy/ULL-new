@@ -14,6 +14,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import { PAGES, SITE } from '../scripts/seo/content.mjs';
+import { levelSlug } from './util.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TYPES = {
@@ -37,24 +38,32 @@ const server = createServer((req, res) => {
 await new Promise((r) => server.listen(0, r));
 const base = `http://localhost:${server.address().port}`;
 
-// unpkg, the font CDNs and the live API are not reachable offline — serve Vue
+// The CDNs and the live API are not reachable offline — serve Vue
 // from node_modules and stub the rest so the app boots as it does in production.
 async function stubExternals(ctx) {
     for (const [u, f] of Object.entries({
-        'https://unpkg.com/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
-        'https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
+        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
+        'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
     })) await ctx.route(u, (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
     for (const h of ['https://cdnjs.cloudflare.com/**', 'https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
         await ctx.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
     await ctx.route('https://d1-wrkr.ullteam.workers.dev/**', (r) => {
-        // level-month / level-verif return an object or null, never an array.
-        r.fulfill({
-            status: 200,
-            contentType: 'application/json',
-            body: /level-(month|verif)/.test(r.request().url()) ? 'null' : '[]',
-        });
+        const url = new URL(r.request().url()).pathname;
+        // Serve the committed snapshot so the pages render the same data the
+        // static HTML was generated from.
+        const body =
+            url === '/api/list' ? snapshot?.levels ?? []
+            : url === '/api/pending' ? snapshot?.pending ?? []
+            : url === '/api/editors' ? snapshot?.editors ?? []
+            // level-month / level-verif return an object or null, never an array.
+            : /level-(month|verif)/.test(url) ? null
+            : [];
+        r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(body) });
     });
 }
+
+const SNAPSHOT_FILE = path.join(ROOT, 'data', '_seo-snapshot.json');
+const snapshot = existsSync(SNAPSHOT_FILE) ? JSON.parse(readFileSync(SNAPSHOT_FILE, 'utf8')) : null;
 
 let failed = 0;
 const ok = (name, cond, extra = '') => {
@@ -183,6 +192,69 @@ for (const page_ of PAGES) {
     await ctx.close();
 }
 
+// ── per-level pages ─────────────────────────────────────────────────────────
+{
+    console.log('\n── level pages ──');
+    if (!snapshot) {
+        ok("a snapshot exists to generate level pages from", false, "run: node scripts/fetch-data.mjs --fixture");
+    } else {
+        const paths = snapshot.levels.map((l) => l.path);
+        const sample = [snapshot.levels[0], snapshot.levels[Math.floor(snapshot.levels.length / 2)], snapshot.levels.at(-1)];
+
+        // Without JavaScript: the page must already carry the level facts.
+        const noJs = await browser.newContext({ javaScriptEnabled: false });
+        const p1 = await noJs.newPage();
+        for (const level of sample) {
+            const route = "/level/" + levelSlug(level.path, paths);
+            await p1.goto(base + route);
+            const text = (await p1.locator("#seo-fallback").innerText()).replace(/\s+/g, " ");
+            ok(route + ": names the level", text.includes(level.name), text.slice(0, 80));
+            ok(route + ": states its position", /#\d+ in All Levels/.test(text));
+            ok(route + ": links back to the list", (await p1.locator("#seo-fallback a[href='/list']").count()) > 0);
+            const canonical = await p1.evaluate(() => document.querySelector("link[rel=canonical]")?.href);
+            ok(route + ": canonical", canonical === SITE.origin + route, canonical);
+        }
+        await noJs.close();
+
+        // With JavaScript: the SPA route renders and stays on the URL.
+        const ctx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+        await stubExternals(ctx);
+        const page = await ctx.newPage();
+        const errors = [];
+        page.on("pageerror", (e) => errors.push(String(e)));
+        const level = sample[0];
+        const route = "/level/" + levelSlug(level.path, paths);
+        await page.goto(base + route, { waitUntil: "networkidle" });
+        ok("SPA renders the level page", (await page.locator(".level-page__title").innerText()).trim() === level.name);
+        ok("static block was replaced", !(await page.evaluate(() => !!document.getElementById("seo-fallback"))));
+        ok("stays on the level URL", (await page.evaluate(() => location.pathname)) === route);
+        ok("still indexable after mount",
+            (await page.evaluate(() => document.querySelector('meta[name="robots"]')?.content)) === "index, follow");
+        ok("no page errors", errors.length === 0, errors.join(" | "));
+
+        // An unknown level shows the not-found state rather than breaking.
+        await page.goto(base + "/level/definitely-not-a-level", { waitUntil: "networkidle" });
+        ok("unknown level handled", (await page.locator(".level-page__missing").count()) === 1);
+        await ctx.close();
+    }
+}
+
+// ── baked live rankings ─────────────────────────────────────────────────────
+{
+    console.log('\n── baked rankings ──');
+    const ctx = await browser.newContext({ javaScriptEnabled: false });
+    const page = await ctx.newPage();
+    for (const [route, heading] of [["/list", "Current ranking"], ["/listmain", "Current Main List"], ["/upcoming", "Closest to verification"]]) {
+        await page.goto(base + route);
+        const text = (await page.locator("#seo-fallback").innerText()).replace(/\s+/g, " ");
+        ok(route + ": has the baked section", text.includes(heading), text.slice(0, 90));
+        const rows = await page.locator("#seo-fallback table.seo-table tbody tr").count();
+        ok(route + ": carries real rows", rows > 20, String(rows));
+        const links = await page.locator("#seo-fallback table.seo-table a[href^='/level/']").count();
+        ok(route + ": rows link to level pages", links === rows, links + " of " + rows);
+    }
+    await ctx.close();
+}
 await browser.close();
 server.close();
 console.log(failed ? `\n${failed} failed` : '\nall passed');

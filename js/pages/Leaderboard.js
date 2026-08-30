@@ -1,6 +1,6 @@
 import { store } from '../main.js';
 import { fetchList } from '../content.js';
-import { recordScore, verificationScore, layoutCompletionScore, isLayoutCompletion } from '../formulas.js';
+import { buildLeaderboard } from '../leaderboard.js';
 
 import Spinner from '../components/Spinner.js';
 
@@ -105,83 +105,7 @@ export default {
         const list = await fetchList();
         if (!list) { this.loading = false; return; }
 
-        const playerMap = {};
-
-        list.forEach(([level, err], rank) => {
-            if (err || !level) return;
-            const levelRank = rank + 1;
-            const levelName = level.name;
-
-            // Verified levels: give verifier 2x the score of a 100% record
-            if (level.isVerified && level.verifier) {
-                const key = level.verifier.toLowerCase();
-                if (!playerMap[key]) playerMap[key] = { name: level.verifier, records: [] };
-                const sc = verificationScore(levelRank);
-                playerMap[key].records.push({
-                    levelName,
-                    levelRank,
-                    percent: 100,
-                    score: sc,
-                    type: 'verification',
-                });
-                return; // Skip records and runs for verified levels
-            }
-
-            // Process records (from 0%)
-            if (level.records) {
-                level.records.forEach(record => {
-                    if (!record.user || record.percent <= 0) return;
-                    const key = record.user.toLowerCase();
-                    if (!playerMap[key]) playerMap[key] = { name: record.user, records: [] };
-                    const percent = Number(record.percent);
-                    // 100% on a level that isn't verified yet is a layout completion,
-                    // not an ordinary record: the player beat it in its current,
-                    // undecorated state. Worth 0.8 of a verification, rather than the
-                    // 1x it used to get by falling through to recordScore().
-                    const layout = isLayoutCompletion(level, percent);
-                    const sc = layout ? layoutCompletionScore(levelRank) : recordScore(levelRank, percent);
-                    playerMap[key].records.push({
-                        levelName,
-                        levelRank,
-                        percent,
-                        score: sc,
-                        type: layout ? 'layout' : 'record',
-                    });
-                });
-            }
-
-            // Process runs
-            if (level.run) {
-                level.run.forEach(runRecord => {
-                    if (!runRecord.user) return;
-                    const parts = String(runRecord.percent).split('-').map(Number);
-                    if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) return;
-                    const percent = Math.abs(parts[1] - parts[0]);
-                    if (percent <= 0) return;
-                    const key = runRecord.user.toLowerCase();
-                    if (!playerMap[key]) playerMap[key] = { name: runRecord.user, records: [] };
-                    const sc = recordScore(levelRank, percent);
-                    playerMap[key].records.push({
-                        levelName,
-                        levelRank,
-                        percent,
-                        displayPercent: String(runRecord.percent),
-                        score: sc,
-                        type: 'run',
-                    });
-                });
-            }
-        });
-
-        // Calculate totals and sort
-        this.players = Object.values(playerMap).map(p => {
-            p.records.sort((a, b) => b.score - a.score);
-            p.total = p.records.reduce((sum, r) => sum + r.score, 0);
-            return p;
-        }).sort((a, b) => b.total - a.total);
-
-        // Assign global ranks
-        this.players.forEach((p, i) => { p.globalRank = i + 1; });
+        this.players = buildLeaderboard(list);
 
         this.loading = false;
     },

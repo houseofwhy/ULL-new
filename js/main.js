@@ -87,7 +87,8 @@ const isCrawler = () => BOT_UA.test(navigator.userAgent);
 // Auto-redirect mobile devices
 const isMobile = () => !isCrawler() && (window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent));
 router.beforeEach((to, from, next) => {
-    if (isMobile() && !to.path.startsWith('/mobile') && to.path !== '/generator' && to.path !== '/admin') {
+    const standalone = to.path.startsWith('/level/') || to.path === '/generator' || to.path === '/admin';
+    if (isMobile() && !to.path.startsWith('/mobile') && !standalone) {
         // Deep links matter: someone arriving on /list from a search result must
         // land on the mobile list, not be dumped on the mobile home page.
         next(DESKTOP_TO_MOBILE[to.path] || '/mobile');
@@ -176,6 +177,15 @@ function setMeta(selector, attr, value) {
 }
 
 router.afterEach((to) => {
+    // Level pages are indexable and set their own title once the level loads;
+    // without this they would fall through to NOT_FOUND_META and go noindex.
+    if (to.path.startsWith('/level/')) {
+        setMeta('link[rel="canonical"]', 'href', SITE_ORIGIN + to.path);
+        setMeta('meta[property="og:url"]', 'content', SITE_ORIGIN + to.path);
+        setMeta('meta[name="robots"]', 'content', 'index, follow');
+        return;
+    }
+
     const desktopPath = MOBILE_TO_DESKTOP[to.path] || to.path;
     // /home renders the same page as the root "/", which is the canonical URL.
     const canonicalPath = desktopPath === '/home' ? '/' : desktopPath;

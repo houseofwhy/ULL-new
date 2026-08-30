@@ -1,5 +1,5 @@
 import { store } from "../main.js";
-import { embed, filtersList, passesBenchmark, assignBenchmarkRanks, displayRank, levelThumbnail } from '../util.js';
+import { embed, filtersList, passesBenchmark, assignBenchmarkRanks, displayRank, levelThumbnail, levelSlug } from '../util.js';
 import { score } from "../score.js";
 import { fetchEditors, fetchList, fetchPending } from "../content.js";
 
@@ -150,6 +150,9 @@ export default {
                         <p>{{level.lastUpd}}</p>
                     </li>
                 </ul>
+                <p class="level-permalink" v-if="level.path">
+                    <router-link :to="'/level/' + levelSlug(level.path, allPaths)">Open this level’s own page</router-link>
+                </p>
                 <ul class="stats" v-if="level.frameCounter">
                     <li>
                         <div class="type-title-sm">Frame Windows Counter</div>
@@ -255,6 +258,11 @@ export default {
         },
     },
     computed: {
+        // Needed to derive a level's URL: two paths can slugify the same, and
+        // the tie is broken against the whole set.
+        allPaths() {
+            return (this.list || []).map(([level]) => level?.path).filter(Boolean);
+        },
         noResults() {
             if (!this.list || !this.search.trim()) return false;
             return this.list.every(([level]) => !level || level.isHidden);
@@ -380,6 +388,7 @@ export default {
             else color = dark ? (isSelected ? '#88bbff' : '#5599ff') : (isSelected ? '#6c95cc' : '#447acc');
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
+        levelSlug,
         levelThumbnail,
         isOldLevel(level) {
             if (!level.lastUpd) return false;
