@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-31T15:12:21.418Z",
+  "fetchedAt": "2026-08-31T20:53:15.166Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -7394,19 +7394,24 @@
       "creators": [
         "aquafloria",
         "arrowgazi",
-        "coldstorm"
+        "coldstorm",
+        "timorgd",
+        "xenith",
+        "adoluvs",
+        "xolarzz",
+        "weaver"
       ],
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=l5_r96n_G1U",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 53,
       "percentToQualify": 1,
-      "percentFinished": 60,
-      "lastUpd": "24.05.2026",
+      "percentFinished": 70,
+      "lastUpd": "31.08.2026",
       "tags": [
         "Long"
       ],
@@ -8123,21 +8128,22 @@
     {
       "path": "crab wave",
       "name": "CRAB WAVE",
-      "author": "eternal team",
+      "author": "eternal team // Mr. Losos'",
       "creators": [],
       "verifier": "noxell",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=USKGOLeLaes",
-      "thumbnail": "",
+      "showcase": "https://www.youtube.com/watch?v=OpTX0oByM3A",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 129,
       "percentToQualify": 1,
-      "percentFinished": 80,
-      "lastUpd": "14.11.2025",
+      "percentFinished": 100,
+      "lastUpd": "31.08.2026",
       "tags": [
-        "XL"
+        "XL",
+        "Remake"
       ],
       "records": [
         {
@@ -23798,14 +23804,6 @@
       "indefinite": 0
     },
     {
-      "id": 282,
-      "name": "ANNIMA INMORTALIS",
-      "placement": "1",
-      "link": "https://youtu.be/KlZV5RoNG84?is=7bdO3wzhx8H4cl7z",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
       "id": 285,
       "name": "ByteShift",
       "placement": "10",
@@ -23944,7 +23942,7 @@
     {
       "id": 304,
       "name": "PRODUKT",
-      "placement": "20",
+      "placement": "1",
       "link": "https://youtu.be/qDU8uuxir_w",
       "sort_order": null,
       "indefinite": 0
@@ -24384,7 +24382,7 @@
     {
       "id": 368,
       "name": "HAIL",
-      "placement": "?",
+      "placement": "20",
       "link": "https://youtu.be/RjCEH6EIILk?si=f3n9zxQJ3ZBing93",
       "sort_order": null,
       "indefinite": 0
@@ -24490,16 +24488,28 @@
       "sort_order": 10
     },
     {
+      "name": "ado",
+      "role": "mod",
+      "link": "https://www.youtube.com/channel/UCDUA8egBYIu2t4D9bMpHPpQ",
+      "sort_order": 11
+    },
+    {
+      "name": "Gosdas",
+      "role": "mod",
+      "link": "",
+      "sort_order": 12
+    },
+    {
       "name": "Prometheus",
       "role": "dev",
       "link": "https://www.youtube.com/c/PrometheusAlt",
-      "sort_order": 11
+      "sort_order": 13
     },
     {
       "name": "Niko",
       "role": "dev",
       "link": "",
-      "sort_order": 12
+      "sort_order": 14
     }
   ],
   "levelMonth": {
