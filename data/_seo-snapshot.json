@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-31T07:18:17.527Z",
+  "fetchedAt": "2026-08-31T15:12:21.418Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1267,19 +1267,25 @@
       "author": "IcedCave",
       "creators": [
         "icedcave",
+        "RealVet",
+        "Iris",
+        "Doop",
+        "Greafer",
         "Triplash",
+        "DrCuber",
         "GhostVandalf",
-        "GD Iris",
-        "Mercury",
+        "NineDice",
+        "MercuryDT",
+        "river",
         "Burgadahz",
-        "greafer",
         "GrenadeOfTacos",
-        "CDMusic"
+        "CDMusic",
+        "Rynoxious"
       ],
       "verifier": "Doggie",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=Wd0DIyujh2g",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
