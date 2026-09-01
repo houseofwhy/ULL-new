@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-01T16:46:07.772Z",
+  "fetchedAt": "2026-09-01T19:59:08.798Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -401,18 +401,20 @@
       "path": "vehemence",
       "name": "Vehemence",
       "author": "TBT",
-      "creators": [],
-      "verifier": "Verification Race (A6, Netermind, Serpentical)",
+      "creators": [
+        "MadisonYuko"
+      ],
+      "verifier": "Open Verification",
       "verification": "",
       "showcase": "https://youtu.be/FPXryrqOrdw?si=225nzp7Fa3j0IDhj",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 146,
       "percentToQualify": 8,
       "percentFinished": 100,
-      "lastUpd": "29.04.2026",
+      "lastUpd": "01.09.2026",
       "tags": [
         "Finished",
         "Verifying",
