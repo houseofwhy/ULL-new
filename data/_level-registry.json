@@ -921,6 +921,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "darkmatter01": {
+      "path": "darkmatter01",
+      "name": "DARKMATTER",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "dead-silence": {
       "path": "dead silence",
       "name": "Dead Silence",
@@ -1585,6 +1593,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "haunted": {
+      "path": "haunted",
+      "name": "Haunted",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "haunted-ship": {
       "path": "haunted ship",
       "name": "Haunted Ship",
@@ -1885,6 +1901,14 @@
       "path": "lesopowal",
       "name": "Lesopowal",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lets-go-to-heaven": {
+      "path": "lets go to heaven",
+      "name": "Lets Go To Heaven",
+      "firstSeen": "2026-09-01",
       "lastSeen": "2026-09-01",
       "retiredAt": null,
       "redirectTo": null
@@ -2205,6 +2229,14 @@
       "path": "nebulous",
       "name": "NEBULOUS",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "necrofantasia": {
+      "path": "necrofantasia",
+      "name": "Necrofantasia",
+      "firstSeen": "2026-09-01",
       "lastSeen": "2026-09-01",
       "retiredAt": null,
       "redirectTo": null
@@ -2545,10 +2577,26 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "predatorcore": {
+      "path": "predatorcore",
+      "name": "Predatorcore",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "prismline": {
       "path": "prismline",
       "name": "Prismline",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "produkt": {
+      "path": "produkt",
+      "name": "PRODUKT",
+      "firstSeen": "2026-09-01",
       "lastSeen": "2026-09-01",
       "retiredAt": null,
       "redirectTo": null
@@ -2693,6 +2741,14 @@
       "path": "ronaldohouse",
       "name": "Ronaldohouse",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ryxuee": {
+      "path": "ryxuee",
+      "name": "rYxUEE",
+      "firstSeen": "2026-09-01",
       "lastSeen": "2026-09-01",
       "retiredAt": null,
       "redirectTo": null
@@ -2918,6 +2974,14 @@
       "name": "Silent Fortress",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-01",
+      "retiredAt": "2026-09-01",
+      "redirectTo": "silent-fortressfin"
+    },
+    "silent-fortressfin": {
+      "path": "silent fortressfin",
+      "name": "SileNT ForTrEsS",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
       "retiredAt": null,
       "redirectTo": null
     },
@@ -3102,7 +3166,7 @@
       "name": "starbird",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-01",
-      "retiredAt": null,
+      "retiredAt": "2026-09-01",
       "redirectTo": null
     },
     "stellar-night": {
@@ -3617,6 +3681,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "ultra-realistik": {
+      "path": "ultra realistik",
+      "name": "Ultra Realistik",
+      "firstSeen": "2026-09-01",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "unknown": {
       "path": "unknown",
       "name": "UNKNOWN",
@@ -3750,7 +3822,7 @@
       "name": "WHO AM I",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-01",
-      "retiredAt": null,
+      "retiredAt": "2026-09-01",
       "redirectTo": null
     },
     "why": {
@@ -3821,6 +3893,14 @@
       "path": "yharon",
       "name": "Yharon",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-01",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "you-when-bee-crusher": {
+      "path": "you when bee crusher",
+      "name": "You When Bee Crusher",
+      "firstSeen": "2026-09-01",
       "lastSeen": "2026-09-01",
       "retiredAt": null,
       "redirectTo": null
