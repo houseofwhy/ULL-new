@@ -1,5 +1,13 @@
 # Moving the site to the main repo (`houseofwhy/ULL-new`)
 
+> **Historical — do not follow this for routine work.** This describes the
+> one-time migration that made ULL-new the live site, back when it was the stale
+> copy. ULL-new is now the source of truth and designtest is a mirror of it, so
+> replacing ULL-new's tree wholesale would delete the hourly refresh workflow,
+> roll back the pre-rendered pages and the append-only slug registry, and ship
+> designtest's `Disallow: /` robots.txt to the live site. To bring design work
+> across today, follow [`SYNC-FROM-DESIGNTEST.md`](SYNC-FROM-DESIGNTEST.md).
+
 This repo (`Upcoming-Levels-List/ULL-designtest`) is the test build. This guide moves
 its finished code into **`houseofwhy/ULL-new`**, which becomes the live site, while
 **keeping ULL-new's existing git history** and **keeping the same D1 API backend**.
