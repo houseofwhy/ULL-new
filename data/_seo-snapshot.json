@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-03T01:13:08.476Z",
+  "fetchedAt": "2026-09-03T05:56:06.751Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -137,7 +137,7 @@
       "length": 788,
       "percentToQualify": 1,
       "percentFinished": 5,
-      "lastUpd": "16.04.2026",
+      "lastUpd": "30.08.2026",
       "tags": [
         "XXL",
         "Quality"
@@ -468,8 +468,8 @@
       "records": [
         {
           "user": "Xtra8nuggies",
-          "link": "https://www.youtube.com/live/OIpRzmYRxrw?si=_gBHBUsPIdl7cvr2&t=7825",
-          "percent": 37,
+          "link": "https://www.youtube.com/watch?v=rJ_3cOtkXr0",
+          "percent": 41,
           "hz": 240
         }
       ],
@@ -998,14 +998,14 @@
       "verifier": "Trick",
       "verification": "",
       "showcase": "https://youtu.be/6fyWICi1HzY?si=BIYAputfrnPMM1jl",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 92,
       "percentToQualify": 1,
       "percentFinished": 40,
-      "lastUpd": "22.04.2026",
+      "lastUpd": "02.09.2026",
       "tags": [
         "Long",
         "Remake"
@@ -1492,8 +1492,8 @@
       "run": [
         {
           "user": "Taiago",
-          "link": "https://youtu.be/SrE8yuRymEY?si=obMNzDSgJu-ZslVJ",
-          "percent": "21-87",
+          "link": "https://www.youtube.com/watch?v=6u-uMoGeKtg",
+          "percent": "21-94",
           "hz": 0
         }
       ],
@@ -2265,9 +2265,9 @@
       ],
       "run": [
         {
-          "user": "noname228gg",
-          "link": "https://youtu.be/9kKsgISwEtM?si=ZroIWFdrX9-cqsgS",
-          "percent": "9-100",
+          "user": "Chiikawa",
+          "link": "https://www.youtube.com/watch?v=8KthiYsTvlU",
+          "percent": "4-100",
           "hz": 0
         }
       ],
@@ -4267,7 +4267,7 @@
       "verifier": "Dezstro",
       "verification": "",
       "showcase": "https://youtu.be/Rx9ujjXK7N4?si=FSjSVBttAoEUq8bv",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -4292,8 +4292,8 @@
       "run": [
         {
           "user": "Dezstro",
-          "link": "https://youtu.be/NtiR00EMhfw?si=TrIoiWLsev1emV-C",
-          "percent": "35-100",
+          "link": "https://www.youtube.com/watch?v=XMoLUOoinak",
+          "percent": "32-100",
           "hz": 0
         }
       ],
@@ -5142,7 +5142,7 @@
       "verifier": "teraaa",
       "verification": "",
       "showcase": "https://youtu.be/wyGXMC2I-j8?si=isvMI7aTVKHkXYKQ",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -5159,8 +5159,8 @@
       "records": [
         {
           "user": "teraaa",
-          "link": "https://www.youtube.com/watch?v=7JPl4hPZJig",
-          "percent": 49,
+          "link": "https://www.youtube.com/watch?v=Thf3zFHVxvc",
+          "percent": 52,
           "hz": 0
         }
       ],
@@ -8132,7 +8132,7 @@
       "verifier": "LordVadercraft",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=2j9nLPyE2Tw",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -8150,8 +8150,8 @@
       "records": [
         {
           "user": "LordVaderCraft",
-          "link": "https://www.youtube.com/watch?v=4lMO2aFKZnc",
-          "percent": 49,
+          "link": "https://www.youtube.com/watch?v=bk_JXPUFpPQ",
+          "percent": 66,
           "hz": 240
         }
       ],
@@ -9237,14 +9237,14 @@
       "verifier": "renzgmd",
       "verification": "",
       "showcase": "https://youtu.be/X7IfJqWRcOo?si=lF2QYnUZNcvUJ1c3",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 194,
       "percentToQualify": 1,
       "percentFinished": 90,
-      "lastUpd": "25.03.2026",
+      "lastUpd": "08.08.2026",
       "tags": [
         "XL"
       ],
@@ -14336,14 +14336,14 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=o3XpLwlrBMk",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 64,
       "percentToQualify": 1,
       "percentFinished": 50,
-      "lastUpd": "08.06.2026",
+      "lastUpd": "27.08.2026",
       "tags": [
         "Long"
       ],
@@ -14559,7 +14559,7 @@
       "verifier": "GMitzy",
       "verification": "",
       "showcase": "https://youtu.be/75woVCCPYbw",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -14575,8 +14575,8 @@
       "records": [
         {
           "user": "GMitzy",
-          "link": "https://youtu.be/_PSRYZD1Ass?si=hE-tDYuYdd3ngPVm",
-          "percent": 53,
+          "link": "https://www.youtube.com/watch?v=J5ZFrwEkbGg",
+          "percent": 54,
           "hz": 0
         }
       ],
@@ -17550,12 +17550,12 @@
       "name": "Hawktuagon force",
       "author": "Artos",
       "creators": [],
-      "verifier": "Blebae",
-      "verification": "",
+      "verifier": "ezvie",
+      "verification": "https://www.youtube.com/watch?v=XTy7yu-DjqM",
       "showcase": "https://www.youtube.com/watch?v=9mJLHrcOfCw",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
-      "id": "private",
+      "id": "148097539",
       "rating": 1,
       "length": 87,
       "percentToQualify": 1,
@@ -17564,7 +17564,9 @@
       "tags": [
         "Finished",
         "Long",
-        "Remake"
+        "Remake",
+        "Unrated",
+        "Public"
       ],
       "records": [
         {
@@ -17582,7 +17584,7 @@
           "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
@@ -21844,7 +21846,7 @@
       "verifier": "NazCompgames",
       "verification": "",
       "showcase": "https://youtu.be/kCB1osYbZ6U?si=Y15RAfa0LQFUGHZj",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -21867,10 +21869,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Nazcompgames",
+          "link": "https://www.youtube.com/watch?v=cS71u-YtNzA",
+          "percent": "49-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
