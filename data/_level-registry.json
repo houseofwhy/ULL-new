@@ -609,6 +609,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "c-sharp": {
+      "path": "c sharp",
+      "name": "C Sharp",
+      "firstSeen": "2026-09-06",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "calibrate": {
       "path": "calibrate",
       "name": "Calibrate",
@@ -677,6 +685,14 @@
       "path": "chromacave",
       "name": "CHROMACAVE",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "chromedoll": {
+      "path": "chromedoll",
+      "name": "CHROMEDOLL",
+      "firstSeen": "2026-09-06",
       "lastSeen": "2026-09-06",
       "retiredAt": null,
       "redirectTo": null
@@ -989,6 +1005,14 @@
       "path": "delta",
       "name": "Delta",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "demons": {
+      "path": "demons",
+      "name": "Demons",
+      "firstSeen": "2026-09-06",
       "lastSeen": "2026-09-06",
       "retiredAt": null,
       "redirectTo": null
@@ -1625,6 +1649,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "heavenly-sakupen": {
+      "path": "heavenly sakupen",
+      "name": "Heavenly Sakupen",
+      "firstSeen": "2026-09-06",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "heavy-energizer": {
       "path": "heavy energizer",
       "name": "Heavy Energizer",
@@ -1865,10 +1897,26 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "kyoto": {
+      "path": "kyoto",
+      "name": "Kyoto",
+      "firstSeen": "2026-09-06",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "kyouki": {
       "path": "kyouki",
       "name": "Kyouki",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "l-o-v-e": {
+      "path": "l o v e",
+      "name": "l o v e",
+      "firstSeen": "2026-09-06",
       "lastSeen": "2026-09-06",
       "retiredAt": null,
       "redirectTo": null
@@ -1997,6 +2045,22 @@
       "path": "lunatic eyes",
       "name": "Lunatic Eyes",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "m-i-s-f-o-r-t-u-n-e": {
+      "path": "m i s f o r t u n e",
+      "name": "M I S F O R T U N E",
+      "firstSeen": "2026-09-06",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "make-paul-dance": {
+      "path": "make paul dance",
+      "name": "Make Paul Dance",
+      "firstSeen": "2026-09-06",
       "lastSeen": "2026-09-06",
       "retiredAt": null,
       "redirectTo": null
@@ -2189,6 +2253,14 @@
       "path": "mysterycore",
       "name": "mysterycore",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nage": {
+      "path": "nage",
+      "name": "NAGE",
+      "firstSeen": "2026-09-06",
       "lastSeen": "2026-09-06",
       "retiredAt": null,
       "redirectTo": null
@@ -3145,6 +3217,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "spectrolux": {
+      "path": "spectrolux",
+      "name": "Spectrolux",
+      "firstSeen": "2026-09-06",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "spider-bite": {
       "path": "spider_bite",
       "name": "SPIDER BITE",
@@ -3781,6 +3861,14 @@
       "path": "water",
       "name": "WATER",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-06",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "water-world": {
+      "path": "water world",
+      "name": "Water World",
+      "firstSeen": "2026-09-06",
       "lastSeen": "2026-09-06",
       "retiredAt": null,
       "redirectTo": null
