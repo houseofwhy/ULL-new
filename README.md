@@ -323,9 +323,14 @@ repo. In order:
 > "Requests without any query are not supported". Both `.sql` files above are kept
 > comment-free for that reason — don't add header comments to them.
 
-Moving this build to another repo as the live site? See
-[docs/MOVE-TO-MAIN-REPO.md](docs/MOVE-TO-MAIN-REPO.md) — step-by-step, with a
-troubleshooting section.
+Bringing design work across from `Upcoming-Levels-List/ULL-designtest`? See
+[docs/SYNC-FROM-DESIGNTEST.md](docs/SYNC-FROM-DESIGNTEST.md) — which source paths
+to take, which generated ones to rebuild instead, and the four ways a wholesale
+copy breaks the live site.
+
+[docs/MOVE-TO-MAIN-REPO.md](docs/MOVE-TO-MAIN-REPO.md) covers the original
+one-time migration that made this repo the live site. It is kept for history and
+should not be followed for routine syncs.
 
 ### Tests
 
