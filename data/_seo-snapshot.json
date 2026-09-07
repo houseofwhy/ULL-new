@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-07T00:04:41.300Z",
+  "fetchedAt": "2026-09-07T04:56:34.007Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -94,7 +94,7 @@
       "rating": 1,
       "length": 148,
       "percentToQualify": 1,
-      "percentFinished": 80,
+      "percentFinished": 90,
       "lastUpd": "20.06.2026",
       "tags": [
         "XL",
