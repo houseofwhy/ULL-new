@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-09T00:22:14.269Z",
+  "fetchedAt": "2026-09-09T04:56:06.759Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -136,7 +136,7 @@
       "rating": 1,
       "length": 788,
       "percentToQualify": 1,
-      "percentFinished": 5,
+      "percentFinished": 27,
       "lastUpd": "30.08.2026",
       "tags": [
         "XXL",
@@ -2392,7 +2392,7 @@
         "Komp",
         "nikroplays"
       ],
-      "verifier": "spcreat",
+      "verifier": "hstorm",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=h14lmGH31_M",
       "thumbnail": "https://i.ytimg.com/vi/_XUxxAjWZbM/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDWpmmxvpr9qFE_2ouZtMkG9m8GJw",
@@ -2478,7 +2478,7 @@
       "creators": [
         "Exen",
         "TheRealSparky",
-        "CairoX",
+        "Cartox",
         "Cerez",
         "yvc_05",
         "Owlyy",
@@ -2489,7 +2489,7 @@
       "verifier": "kloone",
       "verification": "",
       "showcase": "https://youtu.be/6n2RTDoKs_k?si=QknM_oGVgCmTGJa6",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -10326,7 +10326,7 @@
       "creators": [],
       "verifier": "Helix",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=dKVMegIS8LA",
+      "showcase": "https://www.youtube.com/watch?v=xuDGAhk31Fo&pp=ygUSbG92ZXJzIGluIGFieXNzIGdk",
       "thumbnail": "https://i.ytimg.com/vi/1-H5wEU4c64/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDKMslxJsrbhQ9dKQcIbkc6XCo-Bw",
       "frameCounter": null,
       "id": "private",
@@ -14427,12 +14427,32 @@
     },
     {
       "path": "catastrophe",
-      "name": "catastrophe",
+      "name": "CATASTROPHE",
       "author": "rubrum",
-      "creators": [],
-      "verifier": "unknown",
+      "creators": [
+        "nCarver",
+        "rubrum",
+        "Lobst3r",
+        "pokeGMD",
+        "coldstorm",
+        "Endgrain",
+        "Glacial7",
+        "AlrexX",
+        "Timor",
+        "Linear2",
+        "Saki",
+        "xenith",
+        "vendas",
+        "Xolarzz",
+        "Filqh",
+        "Randum",
+        "Rynoxious",
+        "Duke",
+        "Artaire"
+      ],
+      "verifier": "MatsuoIsHere",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=o3XpLwlrBMk",
+      "showcase": "https://www.youtube.com/watch?v=uD6UozFgo7Y",
       "thumbnail": null,
       "frameCounter": null,
       "id": "private",
@@ -18288,8 +18308,9 @@
     {
       "path": "ensorcell",
       "name": "Ensorcell",
-      "author": "TheCatAstronaut",
+      "author": "Junecat",
       "creators": [
+        "Junecat",
         "TheCatAstronaut",
         "Qply.y",
         "EbieGD",
@@ -19611,7 +19632,7 @@
         "Ronbesuel",
         "Bienamino"
       ],
-      "verifier": "Nixen",
+      "verifier": "Chubs Dubs",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=AXRJZdO79Gk",
       "thumbnail": "https://i.imgur.com/P7CYC4u.jpeg",
