@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-11T21:47:29.594Z",
+  "fetchedAt": "2026-09-12T00:23:21.811Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -20832,7 +20832,7 @@
     },
     {
       "path": "predatorcore",
-      "name": "Predatorcore",
+      "name": "predatorcore",
       "author": "Urge",
       "creators": [
         "Urge",
@@ -20845,19 +20845,20 @@
       "frameCounter": null,
       "id": "private",
       "rating": 1,
-      "length": 0,
+      "length": 65,
       "percentToQualify": 1,
-      "percentFinished": 0,
+      "percentFinished": 100,
       "lastUpd": "01.09.2026",
       "tags": [
-        "Finished"
+        "Finished",
+        "Long"
       ],
       "records": [
         {
           "user": "DylanADV",
-          "link": "https://youtu.be/jgkvX7SRopE?si=ABosbbXFfSmjZyWO",
+          "link": "https://youtu.be/3Bjz3MWuIPo",
           "percent": 0,
-          "hz": 50
+          "hz": 83
         }
       ],
       "run": [
@@ -24997,7 +24998,7 @@
     },
     {
       "id": 342,
-      "name": "YV Canis Majoris",
+      "name": "VY Canis Majoris",
       "placement": "75",
       "link": "https://youtu.be/eni_QW0Gczs?is=6N6Kk4--15iu4XKK",
       "sort_order": null,
@@ -25109,7 +25110,7 @@
     },
     {
       "id": 358,
-      "name": "BauDakes",
+      "name": "BaudukeS",
       "placement": "?",
       "link": "https://youtu.be/bxzXBr19PC4?si=Vxz-Kn0mBx8uTjmT",
       "sort_order": null,
