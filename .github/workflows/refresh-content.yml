@@ -1,0 +1,68 @@
+# Keeps the static, crawler-visible copy of the list in step with the live API.
+#
+# Visitors always see current data — the Vue app fetches the API on every page
+# load. This job only refreshes the pre-rendered HTML that search engines and AI
+# crawlers read, so being up to an hour behind is harmless.
+#
+# Two separate steps on purpose: fetch-data.mjs writes nothing unless the API
+# answered and the response passed its sanity checks, and build-seo.mjs always
+# generates from whatever snapshot is committed. A failed fetch therefore leaves
+# the site exactly as it was rather than publishing an empty list.
+
+name: Refresh static content
+
+on:
+  schedule:
+    - cron: '25 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: refresh-content
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The generated pages are committed back, so push with a token that
+          # can write to the branch.
+          persist-credentials: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Fetch the live list
+        run: node scripts/fetch-data.mjs
+
+      - name: Regenerate static pages
+        run: |
+          node scripts/build-css.mjs
+          node scripts/build-seo.mjs
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "ULL content bot"
+          git config user.email "actions@github.com"
+          # Only the generated surfaces — never anything hand-maintained.
+          git add -A \
+            data/_seo-snapshot.json data/_level-registry.json \
+            level index.html list listmain listfuture upcoming pending leaderboard events information \
+            sitemap.xml llms.txt _redirects js/seo-meta.js css/bundle.css
+          if git diff --cached --quiet; then
+            echo "No content changes."
+            exit 0
+          fi
+          git commit -m "Refresh static list content [skip ci]"
+          # Another run (or a human push) may have landed first.
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected, rebasing and retrying ($attempt/3)"
+            git pull --rebase --autostash || exit 1
+          done
+          exit 1
