@@ -159,6 +159,9 @@
     color: var(--color-on-primary);
 }
 .lvl-rank--lead:hover { border-color: transparent; }
+/* Same as .u-rank--off in css/ull-v2.css: a tier the level is not on says so. */
+.lvl-rank--off { opacity: 0.4; }
+.lvl-rank--off:hover { border-color: var(--lvl-line); transform: none; }
 .lvl-rank__n { font-size: 1.5rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
 .lvl-rank__l {
     font-size: 0.58rem;
@@ -334,7 +337,10 @@ a.lvl-wr__v:hover { text-decoration: underline; }
 .lvl-dl__link:hover { text-decoration-thickness: 2px; }
 
 .lvl-links { display: flex; flex-direction: column; gap: 0.45rem; }
-.lvl-link {
+/* Scoped: `.level-page a { color: inherit }` above scores 0,1,1 and would
+   otherwise beat a bare `.lvl-link` at 0,1,0, leaving the filled button with
+   body-text colour on its primary fill — black on #3e00f9 in the light theme. */
+.level-page .lvl-link {
     display: block;
     width: 100%;
     padding: 0.7rem 1rem;
@@ -349,15 +355,15 @@ a.lvl-wr__v:hover { text-decoration: underline; }
     cursor: pointer;
     transition: opacity 120ms ease, background-color 120ms ease, border-color 120ms ease;
 }
-.lvl-link:hover { opacity: 0.88; }
-.lvl-link--ghost {
+.level-page .lvl-link:hover { opacity: 0.88; }
+.level-page .lvl-link--ghost {
     background: transparent;
     color: var(--color-on-background);
     border-color: var(--lvl-line-strong);
     font-weight: 500;
 }
-.lvl-link--ghost:hover { background: var(--lvl-fill-2); opacity: 1; }
-.lvl-link--copied {
+.level-page .lvl-link--ghost:hover { background: var(--lvl-fill-2); opacity: 1; }
+.level-page .lvl-link--copied {
     color: #3fbf7f;
     border-color: #3fbf7f;
     background: rgba(63, 191, 127, 0.1);
@@ -370,7 +376,7 @@ a.lvl-wr__v:hover { text-decoration: underline; }
 }
 .lvl-missing h1 { margin: 0 0 1rem; font-size: 2rem; line-height: 1.15; letter-spacing: -0.02em; }
 .lvl-missing p { margin: 0 0 1.75rem; font-size: 0.9rem; font-weight: 500; line-height: 1.7; opacity: 0.6; }
-.lvl-missing .lvl-link { display: inline-block; width: auto; }
+.level-page .lvl-missing .lvl-link { display: inline-block; width: auto; }
 
 /* ── Narrow ───────────────────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
@@ -406,6 +412,6 @@ a.lvl-wr__v:hover { text-decoration: underline; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .lvl-rank, .lvl-tab, .lvl-link { transition: none; }
+    .lvl-rank, .lvl-tab, .level-page .lvl-link { transition: none; }
     .lvl-rank:hover { transform: none; }
 }

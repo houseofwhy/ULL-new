@@ -92,7 +92,19 @@ class RateLimited extends Error {
 // NOTE: the real DB column is `editor_name`, not `name`.
 // A request with no Bearer token is not throttled (no credential was presented);
 // only actual wrong-key attempts count toward the limit.
-async function authed(req, db) {
+//
+// Memoised per Request. Several handlers ask twice — and the midnight-snapshot
+// hook below asks before any of them — and each ask used to be another key
+// lookup and another tick of the throttle counter, so a single request could
+// charge itself two failures for one wrong key. The promise is cached, not the
+// value, so two concurrent asks share one lookup.
+const AUTH_CACHE = new WeakMap();
+function authed(req, db) {
+  if (!AUTH_CACHE.has(req)) AUTH_CACHE.set(req, authenticate(req, db));
+  return AUTH_CACHE.get(req);
+}
+
+async function authenticate(req, db) {
   const auth = req.headers.get('Authorization') || '';
   const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
   if (!token) return null;
@@ -108,8 +120,20 @@ async function authed(req, db) {
   return row ? row.editor_name : null;
 }
 
-async function log(db, editor, action, target, details = '') {
+// `undo` is the deleted row itself, so the panel can put it back. It is stored
+// only for the actions UNDOABLE lists; everything else logs as before. A
+// database that has not had the migration run has no undo_data column, so the
+// insert falls back to the four-column form rather than losing the log line.
+async function log(db, editor, action, target, details = '', undo = null) {
   try {
+    if (undo) {
+      try {
+        await db.prepare(
+          'INSERT INTO audit_log (editor_name, action, target, details, undo_data) VALUES (?, ?, ?, ?, ?)'
+        ).bind(editor, action, target, details, JSON.stringify(undo)).run();
+        return;
+      } catch { /* no undo_data column → fall through */ }
+    }
     await db.prepare(
       'INSERT INTO audit_log (editor_name, action, target, details) VALUES (?, ?, ?, ?)'
     ).bind(editor, action, target, details).run();
@@ -195,6 +219,204 @@ function groupChanges(rows) {
   return groups;
 }
 
+// ── Snapshots ────────────────────────────────────────────────────────────────
+// The panel can put the list back to how it stood at a past midnight. There is
+// no cron here, and none is needed: a snapshot is taken lazily, on the first
+// write of each UTC day. At that moment the state IS the midnight state, because
+// nothing has written since midnight — that is exactly what "no snapshot for
+// today yet" means. A day nobody edited gets no snapshot, and needs none: the
+// previous one is still the state that day started and ended in.
+//
+// What is captured is the list and the things that describe it. `editor_keys` is
+// deliberately NOT captured: a restore must never resurrect a revoked API key,
+// nor drop one issued since.
+const SNAPSHOT_TABLES = ['levels', 'pending', 'recent_changes'];
+const SNAPSHOT_CONFIG_KEYS = ['levelMonth', 'levelVerif'];
+
+const DAY_MS = 86400000;
+// How long each resolution is kept. Inside a week, every snapshot; out to a
+// month, one per seven-day bucket; beyond that, one per calendar month.
+const KEEP_ALL_MS = 7 * DAY_MS;
+const KEEP_WEEKLY_MS = 31 * DAY_MS;
+
+const utcDay = (d = new Date()) => d.toISOString().slice(0, 10);
+
+// gzip, then base64, because D1 stores text. The levels table alone is ~270 KB
+// of JSON and D1 caps one value at 1 MB, so the list would grow into that limit
+// uncompressed; gzipped the same rows are ~55 KB.
+async function deflate(text) {
+  const stream = new Blob([text]).stream().pipeThrough(new CompressionStream('gzip'));
+  const bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+  let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  }
+  return btoa(bin);
+}
+
+async function inflate(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return await new Response(stream).text();
+}
+
+// A table that does not exist yet reads as null rather than throwing, and a
+// restore then leaves that table alone instead of emptying it.
+async function captureState(db) {
+  const state = {};
+  for (const table of SNAPSHOT_TABLES) {
+    try {
+      const { results } = await db.prepare(`SELECT * FROM ${table}`).all();
+      state[table] = results || [];
+    } catch { state[table] = null; }
+  }
+  try {
+    const marks = SNAPSHOT_CONFIG_KEYS.map((k) => `'${k}'`).join(', ');
+    const { results } = await db.prepare(
+      `SELECT key, value FROM config WHERE key IN (${marks})`
+    ).all();
+    state.config = results || [];
+  } catch { state.config = null; }
+  return state;
+}
+
+async function takeSnapshot(db, { day, kind, label }) {
+  const state = await captureState(db);
+  const raw = JSON.stringify(state);
+  await db.prepare(
+    `INSERT INTO snapshots (taken_at, day, kind, label, format, levels_count, bytes, data)
+     VALUES (?, ?, ?, ?, 'gzip', ?, ?, ?)`
+  ).bind(
+    new Date().toISOString(), day, kind, label,
+    (state.levels || []).length, raw.length, await deflate(raw),
+  ).run();
+  await thinSnapshots(db);
+}
+
+// Which snapshots survive the retention policy, by id. Everything inside a week
+// is kept; between a week and a month, the EARLIEST of each seven-day bucket,
+// which is the one closest to that week's start; beyond a month, the earliest of
+// each calendar month. Keeping the earliest rather than the latest is what makes
+// "restore to that week" mean the state the week began in.
+function snapshotKeepers(rows, now) {
+  const keep = new Set();
+  const weekly = new Map();
+  const monthly = new Map();
+  for (const row of rows) {
+    const at = Date.parse(row.taken_at);
+    if (isNaN(at)) { keep.add(row.id); continue; }
+    const age = now - at;
+    if (age < KEEP_ALL_MS) { keep.add(row.id); continue; }
+    const bucket = age < KEEP_WEEKLY_MS ? weekly : monthly;
+    const d = new Date(at);
+    const key = age < KEEP_WEEKLY_MS
+      ? String(Math.floor(at / (7 * DAY_MS)))
+      : `${d.getUTCFullYear()}-${d.getUTCMonth()}`;
+    const held = bucket.get(key);
+    if (!held || at < held.at) bucket.set(key, { id: row.id, at });
+  }
+  for (const held of weekly.values()) keep.add(held.id);
+  for (const held of monthly.values()) keep.add(held.id);
+  return keep;
+}
+
+async function thinSnapshots(db) {
+  try {
+    const { results } = await db.prepare('SELECT id, taken_at FROM snapshots').all();
+    const rows = results || [];
+    const keep = snapshotKeepers(rows, Date.now());
+    const drop = rows.filter((r) => !keep.has(r.id)).map((r) => r.id);
+    if (!drop.length) return;
+    await db.prepare(
+      `DELETE FROM snapshots WHERE id IN (${drop.map(() => '?').join(', ')})`
+    ).bind(...drop).run();
+  } catch { /* snapshots table missing → nothing to thin */ }
+}
+
+// Called before the first write of a UTC day, from the one place every authed
+// write passes through. Failing here must never block the write: a database
+// without the snapshots table simply goes on unsnapshotted.
+async function snapshotMidnightOnce(db) {
+  try {
+    const day = utcDay();
+    const row = await db.prepare(
+      "SELECT id FROM snapshots WHERE day = ? AND kind = 'auto'"
+    ).bind(day).first();
+    if (row) return;
+    await takeSnapshot(db, { day, kind: 'auto', label: `Midnight, ${day} UTC` });
+  } catch { /* never block a write */ }
+}
+
+// Column names come from the database itself (SELECT * on a fixed table list),
+// never from a request, so building the statement by hand is safe. Doing it from
+// the row's own keys also means a snapshot taken before a column existed still
+// restores — it just does not set that column.
+function insertRow(db, table, row) {
+  const cols = Object.keys(row);
+  return db.prepare(
+    `INSERT INTO ${table} (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(', ')})`
+  ).bind(...cols.map((c) => row[c]));
+}
+
+// One batch, so the restore is all-or-nothing: D1 runs a batch as a transaction.
+async function applySnapshot(db, snap) {
+  const state = JSON.parse(snap.format === 'gzip' ? await inflate(snap.data) : snap.data);
+  const stmts = [];
+  for (const table of SNAPSHOT_TABLES) {
+    const rows = state[table];
+    if (!Array.isArray(rows)) continue;   // not captured → leave the table alone
+    stmts.push(db.prepare(`DELETE FROM ${table}`));
+    for (const row of rows) stmts.push(insertRow(db, table, row));
+  }
+  if (Array.isArray(state.config)) {
+    for (const row of state.config) {
+      stmts.push(db.prepare(
+        'INSERT INTO config (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value'
+      ).bind(row.key, row.value));
+    }
+  }
+  await db.batch(stmts);
+  return {
+    levels: (state.levels || []).length,
+    pending: (state.pending || []).length,
+    changes: (state.recent_changes || []).length,
+  };
+}
+
+// What the panel prints beside the restore list, so the policy is stated in one
+// place rather than described twice.
+const SNAPSHOT_RETENTION = 'Every snapshot for a week, then one a week for a month, then one a month.';
+
+// A row from audit_log as the panel wants it: undo_data is the deleted row and
+// can be a quarter of a megabyte, so it never crosses the wire — what the panel
+// needs to know is only whether an undo is available.
+function auditRow(row) {
+  const { undo_data, ...rest } = row;
+  return { ...rest, undoable: !!undo_data && !!UNDOABLE[row.action] && !row.undone_at };
+}
+
+// The 500 an endpoint returns when the snapshots table has not been created.
+async function snapshotsMissing(db) {
+  try {
+    await db.prepare('SELECT id FROM snapshots LIMIT 1').first();
+    return null;
+  } catch {
+    return err('The snapshots table does not exist yet. Run scripts/schema-migrations.sql on the D1 database first.', 500);
+  }
+}
+
+// ── Undoing a deletion ───────────────────────────────────────────────────────
+// Every DELETE handler stores the row it removed on its audit line. These say
+// where each one goes back.
+const UNDOABLE = {
+  DELETE: 'levels',
+  PENDING_DELETE: 'pending',
+  CHANGE_DELETE: 'recent_changes',
+  EDITOR_DELETE: 'editor_keys',
+};
+
 async function handle(req, env) {
     const db = env.DB;
     const url = new URL(req.url);
@@ -202,6 +424,17 @@ async function handle(req, env) {
     const method = req.method;
 
     if (method === 'OPTIONS') return new Response(null, { headers: CORS });
+
+    // The first write of a UTC day snapshots what the list looked like at
+    // midnight, before that write lands. Every authed write goes through here,
+    // so no handler has to remember to ask. The snapshot endpoints take their
+    // own, and bootstrap runs before there is anybody to attribute it to.
+    if (!['GET', 'HEAD', 'OPTIONS'].includes(method)
+        && !path.startsWith('/api/admin/snapshots')
+        && path !== '/api/admin/bootstrap'
+        && await authed(req, db)) {
+      await snapshotMidnightOnce(db);
+    }
 
     // ── GET /api/list ──────────────────────────────────────────
     if (method === 'GET' && path === '/api/list') {
@@ -281,13 +514,186 @@ async function handle(req, env) {
     }
 
     // ── GET /api/audit-log ─────────────────────────────────────
+    // The whole log, a page at a time, newest first. It used to be a bare
+    // `LIMIT 100` with no way past it, so anything older than the last hundred
+    // operations was simply unreachable. `before` is the id to continue from, so
+    // paging is stable while new entries land at the top.
+    //
+    // ONE WORKER SERVES TWO SITES. A bare call with no query string answers
+    // exactly what it always did — a plain array of the newest 100 rows — so an
+    // admin panel deployed before this change keeps working against it. Asking
+    // for anything (`?limit`, `?before`, `?editor`, `?action`) opts into the
+    // paged shape `{ entries, total, hasMore }`. Do not remove this: dropping it
+    // breaks the other site's Audit Log tab the moment this worker deploys.
     if (method === 'GET' && path === '/api/audit-log') {
       const editor = await authed(req, db);
       if (!editor) return err('Unauthorized', 401);
+      const paged = [...url.searchParams.keys()].length > 0;
+
+      const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit') || '100', 10) || 100, 1), 500);
+      const before = parseInt(url.searchParams.get('before') || '0', 10) || 0;
+      const who = (url.searchParams.get('editor') || '').trim();
+      const action = (url.searchParams.get('action') || '').trim();
+
+      const where = [];
+      const binds = [];
+      if (before) { where.push('id < ?'); binds.push(before); }
+      if (who) { where.push('editor_name = ?'); binds.push(who); }
+      if (action) { where.push('action = ?'); binds.push(action); }
+      const clause = where.length ? `WHERE ${where.join(' AND ')}` : '';
+
+      // One extra row tells the panel whether there is another page, without a
+      // second count query per scroll.
       const { results } = await db.prepare(
-        'SELECT * FROM audit_log ORDER BY id DESC LIMIT 100'
-      ).all();
-      return json(results);
+        `SELECT * FROM audit_log ${clause} ORDER BY id DESC LIMIT ?`
+      ).bind(...binds, limit + 1).all();
+      const rows = results || [];
+      const hasMore = rows.length > limit;
+      const entries = (hasMore ? rows.slice(0, limit) : rows).map(auditRow);
+
+      // The unfiltered total, so the panel can say "showing 100 of 4,312".
+      let total = entries.length;
+      try {
+        const filter = [];
+        const fBinds = [];
+        if (who) { filter.push('editor_name = ?'); fBinds.push(who); }
+        if (action) { filter.push('action = ?'); fBinds.push(action); }
+        const row = await db.prepare(
+          `SELECT COUNT(*) AS n FROM audit_log ${filter.length ? `WHERE ${filter.join(' AND ')}` : ''}`
+        ).bind(...fBinds).first();
+        if (row) total = row.n;
+      } catch { /* keep the page count */ }
+
+      return paged ? json({ entries, total, hasMore }) : json(entries);
+    }
+
+    // ── GET /api/admin/activity ────────────────────────────────
+    // How much each editor did over a window, newest window first. Defaults to
+    // the last 30 days, which is the reading the panel shows beside the log.
+    if (method === 'GET' && path === '/api/admin/activity') {
+      const editor = await authed(req, db);
+      if (!editor) return err('Unauthorized', 401);
+      const days = Math.min(Math.max(parseInt(url.searchParams.get('days') || '30', 10) || 30, 1), 365);
+      const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 19).replace('T', ' ');
+      try {
+        const { results } = await db.prepare(
+          `SELECT editor_name,
+                  COUNT(*) AS changes,
+                  SUM(CASE WHEN action LIKE '%DELETE%' THEN 1 ELSE 0 END) AS deletions,
+                  MAX(timestamp) AS last_at
+             FROM audit_log
+            WHERE timestamp >= ?
+         GROUP BY editor_name
+         ORDER BY changes DESC, editor_name ASC`
+        ).bind(since).all();
+        return json({ days, since, editors: results || [] });
+      } catch {
+        return json({ days, since, editors: [] });
+      }
+    }
+
+    // ── GET /api/admin/snapshots ───────────────────────────────
+    // The list of restore points, without the blobs.
+    if (method === 'GET' && path === '/api/admin/snapshots') {
+      const editor = await authed(req, db);
+      if (!editor) return err('Unauthorized', 401);
+      try {
+        const { results } = await db.prepare(
+          `SELECT id, taken_at, day, kind, label, levels_count, bytes, LENGTH(data) AS stored_bytes
+             FROM snapshots ORDER BY taken_at DESC`
+        ).all();
+        return json({ snapshots: results || [], retention: SNAPSHOT_RETENTION });
+      } catch {
+        return json({ snapshots: [], retention: SNAPSHOT_RETENTION, missing: true });
+      }
+    }
+
+    // ── POST /api/admin/snapshots ──────────────────────────────
+    // Take one now, on top of whatever the day already has.
+    if (method === 'POST' && path === '/api/admin/snapshots') {
+      const editor = await authed(req, db);
+      if (!editor) return err('Unauthorized', 401);
+      const body = await req.json().catch(() => ({}));
+      const missing = await snapshotsMissing(db);
+      if (missing) return missing;
+      const label = String(body.label || '').slice(0, 120) || `Taken by ${editor}`;
+      await takeSnapshot(db, { day: utcDay(), kind: 'manual', label });
+      await log(db, editor, 'SNAPSHOT', utcDay(), label);
+      return json({ ok: true });
+    }
+
+    // ── POST /api/admin/snapshots/:id/restore ──────────────────
+    // Put the list back to a snapshot. The live state is snapshotted first, so
+    // this is never a one-way door: going back a month and then restoring that
+    // new "before restore" point returns everything, including whatever was
+    // done today after midnight.
+    const restoreMatch = path.match(/^\/api\/admin\/snapshots\/(\d+)\/restore$/);
+    if (method === 'POST' && restoreMatch) {
+      const editor = await authed(req, db);
+      if (!editor) return err('Unauthorized', 401);
+      const missing = await snapshotsMissing(db);
+      if (missing) return missing;
+
+      const snap = await db.prepare('SELECT * FROM snapshots WHERE id = ?').bind(restoreMatch[1]).first();
+      if (!snap) return err('Snapshot not found', 404);
+
+      await takeSnapshot(db, {
+        day: utcDay(),
+        kind: 'restore',
+        label: `Before restoring to ${snap.day}`,
+      });
+
+      let counts;
+      try {
+        counts = await applySnapshot(db, snap);
+      } catch (e) {
+        return err(`Restore failed, nothing was changed: ${e.message}`, 500);
+      }
+      await log(db, editor, 'RESTORE', snap.day, `${counts.levels} levels, ${counts.changes} changes`);
+      return json({ ok: true, ...counts });
+    }
+
+    // ── POST /api/admin/audit-log/:id/undo ─────────────────────
+    // Put back a row somebody deleted. The audit line carries the row itself.
+    const undoMatch = path.match(/^\/api\/admin\/audit-log\/(\d+)\/undo$/);
+    if (method === 'POST' && undoMatch) {
+      const editor = await authed(req, db);
+      if (!editor) return err('Unauthorized', 401);
+
+      let entry;
+      try {
+        entry = await db.prepare('SELECT * FROM audit_log WHERE id = ?').bind(undoMatch[1]).first();
+      } catch {
+        return err('The audit_log table has no undo_data column yet. Run scripts/schema-migrations.sql on the D1 database first.', 500);
+      }
+      if (!entry) return err('Not found', 404);
+      if (entry.undone_at) return err('That deletion has already been undone', 409);
+
+      const table = UNDOABLE[entry.action];
+      if (!table) return err(`${entry.action} is not a deletion that can be undone`, 400);
+      const row = tryJSON(entry.undo_data, null);
+      if (!row || typeof row !== 'object') return err('This entry was recorded before deletions were reversible', 400);
+
+      // Refuse rather than overwrite: the row may have been re-created by hand.
+      const key = table === 'levels' ? 'path' : table === 'editor_keys' ? 'editor_name' : 'id';
+      const clash = await db.prepare(`SELECT 1 AS x FROM ${table} WHERE ${key} = ?`).bind(row[key]).first();
+      if (clash) return err(`A row with that ${key} already exists — nothing was changed`, 409);
+
+      try {
+        if (table === 'levels') {
+          // Reopen the gap the delete closed, so the level lands where it was.
+          await db.prepare('UPDATE levels SET sort_order = sort_order + 1 WHERE sort_order >= ?')
+            .bind(row.sort_order).run();
+        }
+        await insertRow(db, table, row).run();
+      } catch (e) {
+        return err(`Could not put it back: ${e.message}`, 500);
+      }
+
+      await db.prepare('UPDATE audit_log SET undone_at = ? WHERE id = ?')
+        .bind(new Date().toISOString(), entry.id).run();
+      await log(db, editor, 'UNDO', entry.target, `${entry.action} by ${entry.editor_name}`);
+      return json({ ok: true, table });
     }
 
     // ── GET /api/level-month ───────────────────────────────────
@@ -335,22 +741,6 @@ async function handle(req, env) {
       } catch (e) {
         return changesTableError(e) || err(`Server error: ${e && e.message}`, 500);
       }
-    }
-
-    // ── GET /api/leaderboard ───────────────────────────────────
-    if (method === 'GET' && path === '/api/leaderboard') {
-      const { results } = await db.prepare(
-        'SELECT * FROM leaderboard ORDER BY score DESC'
-      ).all();
-      return json(results);
-    }
-
-    // ── GET /api/upcoming ──────────────────────────────────────
-    if (method === 'GET' && path === '/api/upcoming') {
-      const { results } = await db.prepare(
-        'SELECT * FROM upcoming ORDER BY sort_order ASC'
-      ).all();
-      return json(results.map(r => ({ ...r, tags: tryJSON(r.tags, []) })));
     }
 
     // ── PUT /api/levels (insert or update) ────────────────────
@@ -457,11 +847,11 @@ async function handle(req, env) {
       const lpath = decodeURIComponent(delLevelMatch[1]);
       // Don't match numeric paths (those are GET /api/levels/:position)
       if (/^\d+$/.test(lpath)) return err('Not found', 404);
-      const row = await db.prepare('SELECT sort_order, name FROM levels WHERE path = ?').bind(lpath).first();
+      const row = await db.prepare('SELECT * FROM levels WHERE path = ?').bind(lpath).first();
       if (!row) return err('Not found', 404);
       await db.prepare('DELETE FROM levels WHERE path = ?').bind(lpath).run();
       await db.prepare('UPDATE levels SET sort_order = sort_order - 1 WHERE sort_order > ?').bind(row.sort_order).run();
-      await log(db, editor, 'DELETE', lpath, row.name);
+      await log(db, editor, 'DELETE', lpath, row.name, row);
       return json({ ok: true });
     }
 
@@ -495,8 +885,9 @@ async function handle(req, env) {
       const editor = await authed(req, db);
       if (!editor) return err('Unauthorized', 401);
       const id = delPendMatch[1];
+      const row = await db.prepare('SELECT * FROM pending WHERE id = ?').bind(id).first();
       await db.prepare('DELETE FROM pending WHERE id = ?').bind(id).run();
-      await log(db, editor, 'PENDING_DELETE', id);
+      await log(db, editor, 'PENDING_DELETE', id, row ? row.name : '', row);
       return json({ ok: true });
     }
 
@@ -587,8 +978,9 @@ async function handle(req, env) {
       const editor = await authed(req, db);
       if (!editor) return err('Unauthorized', 401);
       const id = delChangeMatch[1];
+      const row = await db.prepare('SELECT * FROM recent_changes WHERE id = ?').bind(id).first();
       await db.prepare('DELETE FROM recent_changes WHERE id = ?').bind(id).run();
-      await log(db, editor, 'CHANGE_DELETE', id);
+      await log(db, editor, 'CHANGE_DELETE', id, row ? row.date : '', row);
       return json({ ok: true });
     }
 
@@ -668,8 +1060,14 @@ async function handle(req, env) {
       const editor = await authed(req, db);
       if (!editor) return err('Unauthorized', 401);
       const name = decodeURIComponent(delEditorMatch[1]);
+      // The row carries key_hash, so undoing this restores the editor's API key
+      // as well as their name. The panel says so on the button.
+      const row = await db.prepare('SELECT * FROM editor_keys WHERE editor_name = ?').bind(name).first();
+      // Deleting nobody used to report success and write an audit line with
+      // nothing behind it, which then offered an undo that could not run.
+      if (!row) return err('Not found', 404);
       await db.prepare('DELETE FROM editor_keys WHERE editor_name = ?').bind(name).run();
-      await log(db, editor, 'EDITOR_DELETE', name);
+      await log(db, editor, 'EDITOR_DELETE', name, `role=${row.role}`, row);
       return json({ ok: true });
     }
 

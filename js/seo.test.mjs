@@ -48,7 +48,7 @@ const base = `http://localhost:${server.address().port}`;
 // from node_modules and stub the rest so the app boots as it does in production.
 async function stubExternals(ctx, delayMs = 0) {
     for (const [u, f] of Object.entries({
-        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js': 'node_modules/vue/dist/vue.global.js',
+        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js': 'node_modules/vue/dist/vue.global.prod.js',
         'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
     })) await ctx.route(u, async (r) => {
         if (delayMs) await new Promise((done) => setTimeout(done, delayMs));

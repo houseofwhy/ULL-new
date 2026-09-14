@@ -1,0 +1,291 @@
+<!--meta
+title: Shelf
+tag: one sticky segment bar, no overlays
+files: js/pages/mobile/MobileInfo.js · css/pages/mobile-info.css
+state: every segment switches — the Rules segment has a second row of five
+idea: The page is a shelf of seven parts and you are always standing in one of them. A compact hero, the search under it, then a sticky segment bar that scrolls sideways — Start, FAQ, Pages, Rules, Marks, Staff, API — and under it the part itself, printed in the page. Nothing opens over anything: there is no scrim, no scroll lock, no focus trap, and Back does what Back does. The Rules segment carries a second row for the five guideline groups, so the fourteen sections are two taps deep at most and a whole group reads as one scroll, in order, the way a rulebook is meant to be read.
+weight: The bar itself. Seven segments in the desktop's order, with the first one — Start — holding the page's own definition of the list, so a first-time visitor lands on the answer rather than on six doors. Every segment carries the eyebrow, name and sentence the desktop face has, so nothing is lost by the faces going away; what goes is the summary screen that showed all six at once.
+cost: Middling. No modal component at all, which is the largest thing the other two need — the panels are v-if on the same ?open= key. New is the sticky segment bar, its overflow, and remembering which group of the guidelines you were in. The search opens a segment instead of a window, which is one method rather than two.
+watch: You can no longer see the whole page at once: there is no screen that shows all six blocks together, so the bar has to name them well and it has to be obvious that it scrolls past API. Two sticky rows above the content on the Rules segment eat 6rem of a 844px screen. The desktop's previous/next pair through the fourteen sections becomes group chips plus scrolling, so check that reading straight through still works.
+-->
+<style>
+/* ── B. Shelf ─────────────────────────────────────────────────────────────
+   Seven parts, one on screen at a time, all of them in the page. The only new
+   mechanism is the segment bar; everything under it is the reading kit. */
+.mk-shelf { position: relative; overflow: hidden; }
+.mk-shelf .sh-r { position: absolute; opacity: 0; pointer-events: none; }
+
+/* ── Hero ──
+   Shorter than the desktop's, because the bar and the search have to be on the
+   first screen with it. */
+.mk-shelf .sh-hero { padding: 1.1rem var(--m-pad) 0.9rem; background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 0%, transparent 62%); }
+.mk-shelf .sh-hero h1 { font-size: 1.5rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.mk-shelf .sh-hero p { margin-top: 0.45rem; font-size: 0.76rem; line-height: 1.55; opacity: 0.55; }
+.mk-shelf .sh-more { color: var(--u-accent); font-weight: 600; cursor: pointer; }
+
+.mk-shelf .sh-search { padding: 0 var(--m-pad) 0.8rem; }
+.mk-shelf .sh-field { display: flex; align-items: center; gap: 0.55rem; height: var(--m-tap); padding: 0 0.75rem; border-radius: var(--m-r); border: 1px solid var(--u-line); background: var(--u-fill); }
+.mk-shelf .sh-field input { flex: 1; min-width: 0; border: 0; background: transparent; color: inherit; font-family: inherit; font-size: 0.82rem; outline: none; }
+.mk-shelf .sh-mag { position: relative; flex-shrink: 0; width: 0.85rem; height: 0.85rem; border: 1.5px solid currentColor; border-radius: 50%; opacity: 0.45; }
+.mk-shelf .sh-mag::after { content: ''; position: absolute; right: -0.3rem; bottom: -0.3rem; width: 0.42rem; height: 1.5px; background: currentColor; transform: rotate(45deg); }
+.mk-shelf .sh-results { display: none; margin-top: 0.6rem; }
+.mk-shelf .sh-search:focus-within .sh-results { display: flex; }
+
+/* ── The bar ──
+   Sticky, scrolls sideways, fades at the right edge so it is visible that it
+   runs past the last segment on screen. */
+.mk-shelf .sh-seg {
+    position: sticky; top: 0; z-index: 15;
+    display: flex; gap: 0.35rem;
+    padding: 0.6rem var(--m-pad);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--u-line);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+.mk-shelf .sh-seg::-webkit-scrollbar { display: none; }
+.mk-shelf .sh-tab {
+    flex: 0 0 auto;
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    min-height: 2.1rem; padding: 0 0.75rem;
+    border-radius: 2rem; border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    font-size: 0.76rem; font-weight: 600; white-space: nowrap; cursor: pointer;
+}
+.mk-shelf .sh-tab span { font-size: 0.62rem; opacity: 0.45; font-variant-numeric: tabular-nums; }
+.mk-shelf #sh-about:checked ~ .m2-scroll .sh-seg label[for="sh-about"],
+.mk-shelf #sh-faq:checked ~ .m2-scroll .sh-seg label[for="sh-faq"],
+.mk-shelf #sh-navigation:checked ~ .m2-scroll .sh-seg label[for="sh-navigation"],
+.mk-shelf #sh-guidelines:checked ~ .m2-scroll .sh-seg label[for="sh-guidelines"],
+.mk-shelf #sh-reference:checked ~ .m2-scroll .sh-seg label[for="sh-reference"],
+.mk-shelf #sh-staff:checked ~ .m2-scroll .sh-seg label[for="sh-staff"],
+.mk-shelf #sh-api:checked ~ .m2-scroll .sh-seg label[for="sh-api"] { background: var(--color-primary); color: var(--color-on-primary); border-color: transparent; }
+.mk-shelf #sh-about:checked ~ .m2-scroll .sh-seg label[for="sh-about"] span,
+.mk-shelf #sh-faq:checked ~ .m2-scroll .sh-seg label[for="sh-faq"] span,
+.mk-shelf #sh-navigation:checked ~ .m2-scroll .sh-seg label[for="sh-navigation"] span,
+.mk-shelf #sh-guidelines:checked ~ .m2-scroll .sh-seg label[for="sh-guidelines"] span,
+.mk-shelf #sh-reference:checked ~ .m2-scroll .sh-seg label[for="sh-reference"] span,
+.mk-shelf #sh-staff:checked ~ .m2-scroll .sh-seg label[for="sh-staff"] span,
+.mk-shelf #sh-api:checked ~ .m2-scroll .sh-seg label[for="sh-api"] span { opacity: 0.8; }
+
+/* ── The panels ── */
+.mk-shelf .sh-panel { display: none; padding: 1.1rem var(--m-pad) 2rem; }
+.mk-shelf #sh-about:checked ~ .m2-scroll .sh-panel--about,
+.mk-shelf #sh-faq:checked ~ .m2-scroll .sh-panel--faq,
+.mk-shelf #sh-navigation:checked ~ .m2-scroll .sh-panel--navigation,
+.mk-shelf #sh-guidelines:checked ~ .m2-scroll .sh-panel--guidelines,
+.mk-shelf #sh-reference:checked ~ .m2-scroll .sh-panel--reference,
+.mk-shelf #sh-staff:checked ~ .m2-scroll .sh-panel--staff,
+.mk-shelf #sh-api:checked ~ .m2-scroll .sh-panel--api { display: block; }
+.mk-shelf .sh-head { margin-bottom: 1rem; }
+.mk-shelf .sh-head .u-eyebrow { margin-bottom: 0.35rem; }
+.mk-shelf .sh-head h2 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+.mk-shelf .sh-head p { margin-top: 0.4rem; font-size: 0.76rem; line-height: 1.6; opacity: 0.5; }
+.mk-shelf .sh-jump { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.25rem; }
+.mk-shelf .sh-jump > * { width: 100%; min-height: var(--m-tap); }
+
+/* ── The second row, on Rules ──
+   Five groups. The whole group reads as one scroll, in the guidelines' own
+   order, rather than one section at a time behind an index. */
+.mk-shelf .sh-groups {
+    position: sticky; top: 3.1rem; z-index: 14;
+    display: flex; gap: 0.3rem;
+    margin: 0 calc(var(--m-pad) * -1) 1rem;
+    padding: 0.55rem var(--m-pad);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--u-line);
+    overflow-x: auto; scrollbar-width: none;
+}
+.mk-shelf .sh-groups::-webkit-scrollbar { display: none; }
+.mk-shelf .sh-g {
+    flex: 0 0 auto; display: inline-flex; align-items: baseline; gap: 0.3rem;
+    min-height: 1.9rem; padding: 0.25rem 0.6rem;
+    border-radius: 0.4rem; font-size: 0.72rem; font-weight: 600;
+    white-space: nowrap; opacity: 0.45; cursor: pointer;
+}
+.mk-shelf .sh-g b { font-size: 0.6rem; font-weight: 700; opacity: 0.6; font-variant-numeric: tabular-nums; }
+.mk-shelf #sg-general:checked ~ .m2-scroll .sh-groups label[for="sg-general"],
+.mk-shelf #sg-acceptance:checked ~ .m2-scroll .sh-groups label[for="sg-acceptance"],
+.mk-shelf #sg-placement:checked ~ .m2-scroll .sh-groups label[for="sg-placement"],
+.mk-shelf #sg-content:checked ~ .m2-scroll .sh-groups label[for="sg-content"],
+.mk-shelf #sg-support:checked ~ .m2-scroll .sh-groups label[for="sg-support"] { opacity: 1; background: var(--u-fill-2); }
+.mk-shelf .sh-group { display: none; }
+.mk-shelf #sg-general:checked ~ .m2-scroll .sh-group--general,
+.mk-shelf #sg-acceptance:checked ~ .m2-scroll .sh-group--acceptance,
+.mk-shelf #sg-placement:checked ~ .m2-scroll .sh-group--placement,
+.mk-shelf #sg-content:checked ~ .m2-scroll .sh-group--content,
+.mk-shelf #sg-support:checked ~ .m2-scroll .sh-group--support { display: block; }
+.mk-shelf .sh-sec + .sh-sec { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--u-line); }
+.mk-shelf .sh-next { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; width: 100%; min-height: var(--m-tap); margin-top: 1.75rem; padding: 0.6rem 0.9rem; border-radius: var(--u-r-sm); border: 1px solid var(--u-line); font-size: 0.78rem; font-weight: 600; cursor: pointer; }
+.mk-shelf .sh-next span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+</style>
+
+<div class="m2 ull2 mki mk-shelf">
+    <input class="sh-r" type="radio" name="sh" id="sh-about" checked />
+    <input class="sh-r" type="radio" name="sh" id="sh-faq" />
+    <input class="sh-r" type="radio" name="sh" id="sh-navigation" />
+    <input class="sh-r" type="radio" name="sh" id="sh-guidelines" />
+    <input class="sh-r" type="radio" name="sh" id="sh-reference" />
+    <input class="sh-r" type="radio" name="sh" id="sh-staff" />
+    <input class="sh-r" type="radio" name="sh" id="sh-api" />
+    <input class="sh-r" type="radio" name="sg" id="sg-general" checked />
+    <input class="sh-r" type="radio" name="sg" id="sg-acceptance" />
+    <input class="sh-r" type="radio" name="sg" id="sg-placement" />
+    <input class="sh-r" type="radio" name="sg" id="sg-content" />
+    <input class="sh-r" type="radio" name="sg" id="sg-support" />
+
+<!--__B:topbar__-->
+
+    <div class="m2-scroll">
+        <section class="sh-hero">
+            <h1>Information</h1>
+            <p>
+                The Upcoming Levels List forecasts which Extreme Demons are about to be verified and placed
+                on the Demonlist. This page says how that is decided, what everything on the site means, who
+                to ask, and how to read the whole list as JSON.
+                <label class="sh-more" for="sh-about">What this list is, in full &rarr;</label>
+            </p>
+        </section>
+
+        <div class="sh-search">
+            <div class="sh-field">
+                <span class="sh-mag"></span>
+                <input type="search" value="proof" placeholder="Search the guidelines, the FAQ, the endpoints and the legends" aria-label="Search this page" />
+            </div>
+            <div class="sh-results mki-hits">
+<!--__B:hits__-->
+            </div>
+        </div>
+
+        <nav class="sh-seg">
+            <label class="sh-tab" for="sh-about">Start</label>
+            <label class="sh-tab" for="sh-faq">FAQ <span>15</span></label>
+            <label class="sh-tab" for="sh-navigation">Pages <span>9</span></label>
+            <label class="sh-tab" for="sh-guidelines">Rules <span>14</span></label>
+            <label class="sh-tab" for="sh-reference">Marks <span>19</span></label>
+            <label class="sh-tab" for="sh-staff">Staff <span>12</span></label>
+            <label class="sh-tab" for="sh-api">API <span>9</span></label>
+        </nav>
+
+        <section class="sh-panel sh-panel--about">
+            <div class="sh-head">
+                <div class="u-eyebrow">Start here</div>
+                <h2>What this list is</h2>
+            </div>
+<!--__B:about__-->
+            <div class="sh-jump">
+                <label class="u-btn u-btn--ghost" for="sh-navigation">What is on each page &rarr;</label>
+                <label class="u-btn u-btn--ghost" for="sh-reference">What the marks mean &rarr;</label>
+            </div>
+        </section>
+
+        <section class="sh-panel sh-panel--faq">
+            <div class="sh-head">
+                <div class="u-eyebrow">Answers &middot; 15 questions</div>
+                <h2>FAQ</h2>
+                <p>Submitting a record and what proof it needs, how a level gets listed, how leaderboard points are worked out, and why a total changes when you have submitted nothing. 15 questions in 4 groups, each answered here rather than pointed at the guidelines.</p>
+            </div>
+<!--__B:faq__-->
+        </section>
+
+        <section class="sh-panel sh-panel--navigation">
+            <div class="sh-head">
+                <div class="u-eyebrow">Navigation &middot; 9 pages</div>
+                <h2>What is on each page</h2>
+                <p>Every page on the site and what you will find on it, written so you can tell which page answers your question before you open it.</p>
+            </div>
+<!--__B:navigation__-->
+        </section>
+
+        <section class="sh-panel sh-panel--guidelines">
+            <div class="sh-head">
+                <div class="u-eyebrow">The rules &middot; 14 sections</div>
+                <h2>Guidelines</h2>
+                <p>How records are accepted, how levels are chosen and positioned, what the staff may and may not do. 14 sections, and the answer to most arguments.</p>
+            </div>
+
+            <div class="sh-groups">
+                <label class="sh-g" for="sg-general">General <b>2</b></label>
+                <label class="sh-g" for="sg-acceptance">Acceptance of Records <b>4</b></label>
+                <label class="sh-g" for="sg-placement">Level Placement <b>3</b></label>
+                <label class="sh-g" for="sg-content">Content Policy <b>2</b></label>
+                <label class="sh-g" for="sg-support">Technical Support <b>3</b></label>
+            </div>
+
+            <div class="sh-group sh-group--general">
+                <div class="sh-sec">
+<!--__B:gl-section__-->
+                </div>
+                <div class="sh-sec">
+<!--__B:gl-glossary__-->
+                </div>
+                <label class="sh-next" for="sg-acceptance">
+                    Acceptance of Records &rarr;
+                    <span>Next group &middot; 4</span>
+                </label>
+            </div>
+            <div class="sh-group sh-group--acceptance">
+                <div class="mki-toc">
+                    <span class="mki-toc__a">Definition of a World Record</span>
+                    <span class="mki-toc__a">Requirements for proof of legitimacy</span>
+                    <span class="mki-toc__a">Tolerance and leniency policy</span>
+                    <span class="mki-toc__a">Cheating and penalties</span>
+                </div>
+                <p class="mki-note">The four sections of this group print here in full, one after another, exactly as General does.</p>
+            </div>
+            <div class="sh-group sh-group--placement">
+                <div class="mki-toc">
+                    <span class="mki-toc__a">List Structure</span>
+                    <span class="mki-toc__a">Level Selection</span>
+                    <span class="mki-toc__a">Determining and adjusting level positions</span>
+                </div>
+                <p class="mki-note">The three sections of this group print here in full, one after another.</p>
+            </div>
+            <div class="sh-group sh-group--content">
+                <div class="mki-toc">
+                    <span class="mki-toc__a">List records</span>
+                    <span class="mki-toc__a">Levels and thumbnails</span>
+                </div>
+                <p class="mki-note">The two sections of this group print here in full, one after another.</p>
+            </div>
+            <div class="sh-group sh-group--support">
+                <div class="mki-toc">
+                    <span class="mki-toc__a">Staff roles and their areas of responsibility</span>
+                    <span class="mki-toc__a">Ethical standards of list staff</span>
+                    <span class="mki-toc__a">Contacts</span>
+                </div>
+                <p class="mki-note">The three sections of this group print here in full, one after another.</p>
+            </div>
+        </section>
+
+        <section class="sh-panel sh-panel--reference">
+            <div class="sh-head">
+                <div class="u-eyebrow">Reference &middot; 19 marks</div>
+                <h2>What the marks mean</h2>
+                <p>The colour a level&rsquo;s name is drawn in, and the icons on the Pending List.</p>
+            </div>
+<!--__B:reference__-->
+        </section>
+
+        <section class="sh-panel sh-panel--staff">
+            <div class="sh-head">
+                <div class="u-eyebrow">Who to talk to &middot; 12 people</div>
+                <h2>Staff &amp; contact</h2>
+                <p>The team that maintains the list, and where to take a record, a correction, a site bug or a complaint.</p>
+            </div>
+<!--__B:staff__-->
+        </section>
+
+        <section class="sh-panel sh-panel--api">
+            <div class="sh-head">
+                <div class="u-eyebrow">Build on it &middot; 9 endpoints</div>
+                <h2>API documentation</h2>
+                <p>The whole list as public JSON &mdash; no key, no signup, CORS open.</p>
+            </div>
+<!--__B:api__-->
+        </section>
+    </div>
+
+<!--__B:tabbar__-->
+</div>

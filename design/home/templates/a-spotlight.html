@@ -1,0 +1,201 @@
+<!--meta
+title: Spotlight
+tag: desktop · A
+surface: desktop
+files: js/pages/Home.js · css/pages/home.css
+idea: Keep every block the page has and fix the geometry it sits on. One column carries the hero, the credentials, the rows and the feed, so the page has a single left edge instead of the two it had — 72px apart at 1440, 312px apart at 1920. The half of the hero that was empty at every width goes to #1, drawn the way /level/&lt;slug&gt; draws it, with its blurred thumbnail, its status pill and both progress meters, and the copy fills the column beside it. Under it, not the next five rows of the list but the five levels above the hardest verified level that have got furthest through verification — the ones that would take the Top 1 spot if they were finished today, in the order they are likely to do it. The feed keeps its scroll window, and the editors card becomes a line of names.
+weight: The first screen stops being an advert and starts being the list. A visitor sees one level in full — where it stands, how far the decoration got, how far anyone has got through it — plus four more with the same numbers drawn rather than written. The staff roster drops from 465px of card to one wrapped line, and every row on the page — the spotlight, the credentials, the lane, the feed — is drawn from one left edge and one right edge.
+cost: Cheapest of the two desktop templates. .home-hero, .home-content and .home-page .u-cred collapse into one .hm-col rule; the spotlight is .u-hero + .u-meter, both already shipped, fed by the level the page already has in memory at index 0; the row gains .u-bar--thin, also shipped. No new data and no new route. The editors line needs the same fetchEditors call it makes today.
+watch: The spotlight is only ever #1, so the page leads with a level that may sit at 100% decoration for months — it is the top of the list, not news. The Top 1 lane is ordered by progress rather than by placement, so its rank column does not count down, which reads as a mistake until the note under the heading is read.
+-->
+<style>
+/* The copy on the left, the level it is about on the right, and the paragraph
+   fills its column rather than stopping at a cap — that cap is what left a
+   ragged band of nothing beside the card. Both edges are the page's: the copy
+   starts where every row below it starts, the card ends where they end.
+   `padding-block`, not `padding`: a shorthand here resets the inline padding
+   the column sets, which is what put the hero 40px left of everything else. */
+.mk-a .hm-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 3rem; align-items: center; padding-block: 2.75rem 2.25rem; }
+.mk-a .hm-hero > div:first-child { min-width: 0; }
+.mk-a .u-cred { padding: 1.15rem 0; border-top: 1px solid var(--u-line); }
+.mk-a .hm-body { padding-block: 1.75rem 2.5rem; }
+.mk-a .hm-top { display: flex; flex-direction: column; gap: 0.15rem; }
+.mk-a .hm-top .u-row { border: 1px solid transparent; padding-block: 0.6rem; }
+.mk-a .hm-top .u-row:hover { border-color: var(--u-line); }
+.mk-a .hm-cols { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 3rem; align-items: start; margin-top: 2.25rem; padding-top: 2rem; border-top: 1px solid var(--u-line); }
+/* A framed window the feed scrolls inside. There is no changelog route to send
+   a reader to, so every entry is here; unrolled it ran past the editors beside
+   it and made the page most of a screen longer for a log nobody reads to the
+   end. */
+.mk-a .hm-feed { max-height: 26rem; overflow-y: auto; scrollbar-width: thin; padding: 0.85rem 1rem; border: 1px solid var(--u-line); border-radius: var(--u-r-sm); background: var(--u-fill); }
+.mk-a .hm-note--lane { margin: 0 0 0.9rem; max-width: 46rem; }
+.mk-a .hm-note { margin: 0.75rem 0 0; font-size: 0.74rem; line-height: 1.6; opacity: 0.45; }
+</style>
+
+<div class="mk-shell ull2">
+<!--__B:side__-->
+<div class="hm mk-a">
+
+    <div class="hm-band">
+        <div class="hm-col hm-hero">
+            <div>
+                <div class="hm-eyebrow">Geometry Dash &middot; Extreme Demons</div>
+                <h1 class="hm-title">Upcoming Levels List</h1>
+                <p class="hm-lead">A community-maintained catalogue of upcoming Top 1&ndash;100 Extreme Demons, ranked by where the staff team projects each one will land on the Demonlist once it is verified.</p>
+                <div class="hm-cta">
+                    <a class="u-btn" href="#">Browse all 479 levels</a>
+                    <a class="u-btn u-btn--ghost" href="#">How placement works</a>
+                </div>
+                <div class="hm-social">
+                    <a href="#"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5c1.6.4 2.9 1 4.1 1.8a13.9 13.9 0 0 0-14.4 0c1.2-.8 2.6-1.4 4.1-1.8L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 1 11.5 1.3 15a19.9 19.9 0 0 0 6 3l1.2-1.7c-1-.4-1.9-.9-2.7-1.4l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4c-.8.5-1.7 1-2.7 1.4l1.2 1.7a19.9 19.9 0 0 0 6-3c.4-4.1-.6-7.6-2.4-10.6ZM8.5 12.9c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Zm7 0c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Z"/></svg>Discord</a>
+                    <a href="#"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@ull_gd</a>
+                </div>
+            </div>
+
+            <!-- The spotlight is /level/<slug>'s own header, at the size the
+                 hero was leaving empty. Nothing here is new: the thumbnail,
+                 the status pill and both meters are what the level page
+                 already draws for this level. -->
+            <a class="hm-spot" href="#">
+                <div class="u-hero">
+                    <div class="u-hero__bg mk-thumb mk-thumb--a"></div>
+                    <div class="u-hero__scrim"></div>
+                    <div class="u-hero__inner">
+                        <div class="u-hero__body">
+                            <div class="u-eyebrow" style="margin-bottom:0.5rem">Top of the list &middot; #1</div>
+                            <h2 class="u-hero__title">Aeternus</h2>
+                            <p class="u-hero__by">by <b>Riot</b> &middot; on open verification</p>
+                        </div>
+                        <span class="u-pill u-pill--amber"><i></i>Being verified</span>
+                    </div>
+                </div>
+                <div class="hm-spot__body">
+                    <div class="u-meter">
+                        <div class="u-meter__top"><span>Decoration</span><b>100%</b></div>
+                        <span class="u-bar"><i style="width:100%"></i></span>
+                    </div>
+                    <div class="u-meter">
+                        <div class="u-meter__top"><span>Furthest anyone has got</span><b>72-100%</b></div>
+                        <span class="u-bar u-bar--alt"><i style="width:28%"></i></span>
+                    </div>
+                    <div class="hm-spot__foot">
+                        <span class="u-btn u-btn--ghost">Open level page</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="hm-col"><!--__B:cred3__--></div>
+
+    <div class="hm-col hm-body">
+        <section>
+            <div class="hm-sec__head">
+                <h2 class="u-eyebrow u-eyebrow--lg">Upcoming Top 1 levels</h2>
+                <a class="hm-more" href="#">All upcoming &rarr;</a>
+            </div>
+            <p class="hm-note hm-note--lane">Above <b>Society</b>, the hardest level on the list that is verified, and closest to being verified themselves.</p>
+            <div class="hm-top">
+                <a class="u-row hm-row" href="#">
+                    <span class="u-row__lead">#26</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--b"></span>
+                    <span class="u-row__body">
+                        <span class="hm-row__head">
+                            <span class="u-row__name">GRIEF</span>
+                            <span class="u-pill u-pill--red"><i></i>Being verified</span>
+                        </span>
+                        <span class="u-row__sub">by IcedCave &middot; to be verified by Doggie</span>
+                        <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:97%"></i></span>
+                    </span>
+                    <span class="hm-row__fig">97%<span>furthest</span></span>
+                </a>
+                <a class="u-row hm-row" href="#">
+                    <span class="u-row__lead">#27</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--c"></span>
+                    <span class="u-row__body">
+                        <span class="hm-row__head">
+                            <span class="u-row__name">Sweeping Demon 2</span>
+                            <span class="u-pill u-pill--red"><i></i>Being verified</span>
+                        </span>
+                        <span class="u-row__sub">by Temp &middot; to be verified by Taiago</span>
+                        <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:86%"></i></span>
+                    </span>
+                    <span class="hm-row__fig">86%<span>furthest</span></span>
+                </a>
+                <!-- A run reaching from 19% to 91% is written as the span it
+                     covers, not as the 72 points it is worth. -->
+                <a class="u-row hm-row" href="#">
+                    <span class="u-row__lead">#25</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--d"></span>
+                    <span class="u-row__body">
+                        <span class="hm-row__head">
+                            <span class="u-row__name">KOCMOC UNLEASHED</span>
+                            <span class="u-pill u-pill--red"><i></i>Being verified</span>
+                        </span>
+                        <span class="u-row__sub">by [cherry] team | Vernam &middot; to be verified by Arshadow</span>
+                        <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:72%"></i></span>
+                    </span>
+                    <span class="hm-row__fig">19-91%<span>furthest</span></span>
+                </a>
+                <a class="u-row hm-row" href="#">
+                    <span class="u-row__lead">#37</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--e"></span>
+                    <span class="u-row__body">
+                        <span class="hm-row__head">
+                            <span class="u-row__name">Artemis 13</span>
+                            <span class="u-pill u-pill--red"><i></i>Being verified</span>
+                        </span>
+                        <span class="u-row__sub">by nxhtrise &middot; to be verified by Zoink</span>
+                        <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:72%"></i></span>
+                    </span>
+                    <span class="hm-row__fig">72%<span>furthest</span></span>
+                </a>
+                <a class="u-row hm-row" href="#">
+                    <span class="u-row__lead">#24</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--f"></span>
+                    <span class="u-row__body">
+                        <span class="hm-row__head">
+                            <span class="u-row__name">EXASPERATION</span>
+                            <span class="u-pill u-pill--yellow"><i></i>Decoration 95%</span>
+                        </span>
+                        <span class="u-row__sub">by Thycket &middot; to be verified by Zoink</span>
+                        <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:67%"></i></span>
+                    </span>
+                    <span class="hm-row__fig">67%<span>furthest</span></span>
+                </a>
+            </div>
+        </section>
+
+        <div class="hm-cols">
+            <section>
+                <div class="hm-sec__head">
+                    <h2 class="u-eyebrow">Recent changes</h2>
+                </div>
+                <div class="hm-feed">
+                    <div class="hm-feed__date">23 August 2026</div>
+                    <div class="hm-change is-down"><span class="hm-change__dot"></span><div><b>Tunnel of Serpent</b> <span class="dim">has been moved down from #54 to #59, above</span> <b>Remorse</b> <span class="dim">and below</span> <b>Amethyst</b></div></div>
+                    <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>Cyberpsychosis (Sobeann)</b> <span class="dim">has been moved up from #97 to #91, above</span> <b>ORBIT</b> <span class="dim">and below</span> <b>Energy Wave</b></div></div>
+                    <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>Ex Vacuo</b> <span class="dim">has been moved up from #233 to #113, above</span> <b>ANGELBURN</b> <span class="dim">and below</span> <b>BOOBAWAMBA</b></div></div>
+                    <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>ARE</b> <span class="dim">has been moved up from #257 to #142, above</span> <b>Thibkign Soace III</b> <span class="dim">and below</span> <b>RONALDO CIRCLES</b></div></div>
+                    <div class="hm-change is-down"><span class="hm-change__dot"></span><div><b>AICHMIRA</b> <span class="dim">has been moved down from #261 to #476, above</span> <b>Critical Heat</b> <span class="dim">and below</span> <b>Checked Steam</b></div></div>
+                    <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>Silentman Adventures</b> <span class="dim">has been moved up from #185 to #157, above</span> <b>Spammer</b> <span class="dim">and below</span> <b>Lirile</b></div></div>
+                    <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>The Lightning Rod</b> <span class="dim">has been moved up from #253 to #237, above</span> <b>Pigstep</b> <span class="dim">and below</span> <b>Suppression</b></div></div>
+                    <div class="hm-feed__date">22 August 2026</div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Cyberpsychosis (Karma)</b> <span class="dim">has been placed at #88, above</span> <b>GREEN BULLET</b> <span class="dim">and below</span> <b>Chaoz Devotion</b></div></div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Control Nexus</b> <span class="dim">has been placed at #168, above</span> <b>Bonfire</b> <span class="dim">and below</span> <b>The National Anthem</b></div></div>
+                    <div class="hm-feed__date">21 August 2026</div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Rebirth The End</b> <span class="dim">has been placed at #3, above</span> <b>M A N R A Y</b> <span class="dim">and below</span> <b>Kingdom of Miracalis</b></div></div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>FUKOUNA GIRL</b> <span class="dim">has been placed at #139, above</span> <b>Ashley Wave Trials</b> <span class="dim">and below</span> <b>Silent clubstep</b></div></div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="u-eyebrow">List editors <span class="u-count">12</span></h2>
+                <!--__B:editors-line__-->
+                <p class="hm-note">Trusted members who add levels, update placements and keep the list accurate. Roles and contact routes are on <a href="#" style="text-decoration:underline">Information</a>.</p>
+            </section>
+        </div>
+    </div>
+
+</div>
+</div>

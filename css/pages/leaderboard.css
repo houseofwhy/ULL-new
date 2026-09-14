@@ -1,111 +1,224 @@
-.page-leaderboard-container {
-    display: block;
+/* Leaderboard — js/pages/Leaderboard.js.
+
+   The board and the player profile. Everything generic (cards, pills, stats,
+   the empty state) comes from css/ull-v2.css; only the two columns' own
+   rhythm lives here.
+
+   The rules that used to be in this file styled a .board / .player markup the
+   page stopped rendering some redesigns ago, and were dead. */
+
+.page-list-new.page-leaderboard {
+    grid-template-columns: 40% 60%;
+    max-width: none;
+    margin: 0;
+    column-gap: 0;
 }
-.page-leaderboard {
-    height: 100%;
+.page-leaderboard .search-row--leaderboard { margin-bottom: 0.85rem; }
+
+/* ── Podium ──
+   The top three, with first place in the middle. Metal tones rather than the
+   list's status scale: this is standing, not progress. */
+.page-leaderboard .lb-podium {
     display: grid;
-    grid-template-columns: minmax(24rem, 2fr) 3fr;
-    grid-template-rows: max-content 1fr;
-    column-gap: 2rem;
-    max-width: 80rem;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 0 1.25rem 1rem;
+    align-items: end;
 }
-.page-leaderboard > div {
-    overflow-y: auto;
-}
-.page-leaderboard .error-container {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-}
-.page-leaderboard .error-container .error {
-    padding: 1rem;
-    background-color: var(--color-error);
-    color: var(--color-on-error);
-}
-.page-leaderboard .board-container,
-.page-leaderboard .player-container {
-    grid-row: 2;
-    padding-block: 2rem;
-}
-.page-leaderboard .board-container {
-    padding-inline: 1rem;
-}
-.page-leaderboard .board {
-    table-layout: auto;
-    display: block;
-    width: 100%;
-}
-.page-leaderboard .board .rank {
-    padding-block: 1rem;
-    text-align: end;
-}
-.page-leaderboard .board .total {
-    padding: 1rem;
-    text-align: end;
-}
-.page-leaderboard .board .user {
-    width: 100%;
-}
-.page-leaderboard .board .user button {
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-    border: none;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: start;
-    word-break: normal;
-    overflow-wrap: anywhere;
-}
-.page-leaderboard .board .user button:hover {
-    background-color: var(--color-background-hover);
-    color: var(--color-on-background-hover);
-    cursor: pointer;
-}
-.page-leaderboard .board .user.active button {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-}
-.page-leaderboard .player {
+.page-leaderboard .lb-pod {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding-right: 2rem;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.9rem 0.5rem;
+    border-radius: 0.75rem;
+    background: rgba(128, 128, 128, 0.09);
+    border: 1px solid rgba(128, 128, 128, 0.22);
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    min-width: 0;
+    cursor: pointer;
+    transition: border-color 120ms ease;
 }
-.page-leaderboard .player .table {
-    table-layout: fixed;
+.page-leaderboard .lb-pod:hover { border-color: rgba(128, 128, 128, 0.45); }
+.page-leaderboard .lb-pod__p {
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
 }
-.page-leaderboard .player .table tr td:not(:last-child) {
-    padding-right: 2rem;
+.page-leaderboard .lb-pod__n {
+    max-width: 100%;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-.page-leaderboard .player .table p,
-.page-leaderboard .player .table a {
-    padding-block: 1rem;
+.page-leaderboard .lb-pod__s {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
 }
-.page-leaderboard .player .table .rank p,
-.page-leaderboard .player .table .score p {
-    text-align: end;
+.page-leaderboard .lb-pod--1 {
+    padding-block: 1.15rem;
+    border-color: color-mix(in srgb, #e0b44a 55%, transparent);
+    background: linear-gradient(180deg, rgba(224, 180, 74, 0.14), transparent 75%);
 }
-.page-leaderboard .player .table .level {
+.page-leaderboard .lb-pod--1 .lb-pod__s { color: #e0b44a; }
+.page-leaderboard .lb-pod--2 { border-color: color-mix(in srgb, #b9bcc4 45%, transparent); }
+.page-leaderboard .lb-pod--2 .lb-pod__s { color: #b9bcc4; }
+.page-leaderboard .lb-pod--3 { border-color: color-mix(in srgb, #c08457 45%, transparent); }
+.page-leaderboard .lb-pod--3 .lb-pod__s { color: #c08457; }
+.root.dark .page-leaderboard .lb-pod--2 .lb-pod__s { color: #8b8f98; }
+
+/* ── Board ── */
+.page-leaderboard .lb-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    padding: 0 0.9rem 1.5rem;
+}
+.page-leaderboard .lb-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: "Lexend Deca", sans-serif;
+    text-align: start;
+    cursor: pointer;
 }
-.page-leaderboard .player .table a:hover {
-    text-decoration: underline;
+.page-leaderboard .lb-row:hover { background: var(--color-background-hover); }
+.page-leaderboard .lb-row.is-on {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 62%, white) 100%);
+    color: var(--color-on-primary);
+}
+.page-leaderboard .lb-row__r {
+    flex-shrink: 0;
+    width: 2.4rem;
+    text-align: right;
+    font-size: 0.78rem;
+    font-weight: 700;
+    opacity: 0.4;
+    font-variant-numeric: tabular-nums;
+}
+.page-leaderboard .lb-row.is-on .lb-row__r { opacity: 0.7; }
+.page-leaderboard .lb-row__n {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.page-leaderboard .lb-row__s {
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
 }
 
-/* Shitty */
-
-.shitty .page-leaderboard .board .user button {
-    background-color: transparent;
-    padding: 1rem 0;
+/* ── Player ── */
+.page-leaderboard .lb-player {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    padding: 1.75rem 2rem 2.5rem;
+}
+.page-leaderboard .lb-player--empty { height: 100%; justify-content: center; padding-bottom: 1.75rem; }
+.page-leaderboard .lb-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.22);
+}
+.page-leaderboard .lb-head__who { min-width: 0; }
+.page-leaderboard .lb-head__name {
+    margin: 0;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+}
+.page-leaderboard .lb-head__name::before,
+.page-leaderboard .lb-head__name::after { display: none; }
+.page-leaderboard .lb-head__sub { margin: 0.5rem 0 0; font-size: 0.8rem; opacity: 0.5; }
+.page-leaderboard .lb-head__sub::before,
+.page-leaderboard .lb-head__sub::after { display: none; }
+.page-leaderboard .lb-total { flex-shrink: 0; text-align: right; }
+.page-leaderboard .lb-total b {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: color-mix(in srgb, var(--color-primary) 45%, white);
+    font-variant-numeric: tabular-nums;
+}
+.root.dark .page-leaderboard .lb-total b { color: color-mix(in srgb, var(--color-primary) 75%, black); }
+.page-leaderboard .lb-total span {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
 }
 
-
-.shitty .page-leaderboard .board .user button:hover {
-    background-color: #eee;
-    color: black !important;
+/* ── Records ── */
+.page-leaderboard .lb-rec {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.65rem 0.7rem;
+}
+.page-leaderboard .lb-rec + .lb-rec { border-top: 1px solid rgba(128, 128, 128, 0.15); }
+.page-leaderboard .lb-rec:hover { background: rgba(128, 128, 128, 0.06); }
+.page-leaderboard .lb-rec__score {
+    text-align: right;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: color-mix(in srgb, var(--color-primary) 45%, white);
+}
+.root.dark .page-leaderboard .lb-rec__score { color: color-mix(in srgb, var(--color-primary) 75%, black); }
+.page-leaderboard .lb-rec__lvl {
+    min-width: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* How far the player got, right after the level name — the name alone does not
+   say whether the score came from a completion or a run. */
+.lb-rec__pct { margin-left: 0.45rem; font-size: 0.74rem; font-weight: 600; color: var(--u-accent); font-variant-numeric: tabular-nums; }
+.page-leaderboard .lb-rec__rank {
+    margin-left: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    opacity: 0.35;
+    font-variant-numeric: tabular-nums;
 }
 
-.shitty .page-leaderboard .board .user.active button {
-    background-color: transparent;
-    color: orange;
+@media (max-width: 1100px) {
+    .page-leaderboard .lb-player { padding: 1.35rem 1.25rem 2rem; }
+    .page-leaderboard .lb-rec { grid-template-columns: 3.4rem minmax(0, 1fr) auto; gap: 0.6rem; }
 }

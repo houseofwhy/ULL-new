@@ -64,3 +64,25 @@ export function buildLeaderboard(list) {
     players.forEach((p, i) => { p.globalRank = i + 1; });
     return players;
 }
+
+// ── How a record reads on the leaderboard ────────────────────────────────────
+// Two labels, shared by the desktop panel and the phone: what the player got to
+// on the level, and what kind of record that makes it. The progress sits beside
+// the level name — "EXASPERATION 67-100%" — because the name alone does not say
+// whether the score came from a completion or a run.
+
+const RECORD_TYPE_LABEL = {
+    verification: 'Verification',
+    layout: 'Layout completion',
+    run: 'Run',
+    record: 'Record',
+};
+
+export function recordProgress(rec) {
+    if (!rec) return '';
+    return rec.type === 'run' ? `${rec.displayPercent}%` : `${rec.percent}%`;
+}
+
+export function recordTypeLabel(rec) {
+    return RECORD_TYPE_LABEL[rec?.type] || 'Record';
+}

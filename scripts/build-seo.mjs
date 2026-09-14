@@ -98,7 +98,7 @@ function jsonLd(page) {
             url: SITE.origin + '/',
             logo: SITE.logo,
             description:
-                'Community-run project cataloguing upcoming Top 1–100 Extreme Demons in Geometry Dash and forecasting their placement on the Demonlist. Not affiliated with RobTop Games.',
+                'Community-run project cataloguing upcoming Top 1–135 Extreme Demons in Geometry Dash and forecasting their placement on the Demonlist. Not affiliated with RobTop Games.',
             sameAs: [SITE.x, SITE.discord],
         });
     } else {
@@ -317,7 +317,7 @@ const llms = `# ${SITE.name} (${SITE.shortName})
 
 > ${stripTags(PAGES[0].description)}
 
-${SITE.shortName} is a community-run catalogue of upcoming Top 1-100 Extreme Demons in
+${SITE.shortName} is a community-run catalogue of upcoming Top 1-135 Extreme Demons in
 Geometry Dash: levels still in development, decoration or verification, ranked by the
 position the staff team projects they will take on the Demonlist once released. It also
 catalogues worthy unrated Extreme Demons. Not affiliated with RobTop Games.

@@ -25,7 +25,7 @@ export default {
         </div>
     </div>
     <div class="site-footer-bottom">
-        <p>&copy; 2024–2026 Upcoming Levels List. Not affiliated with RobTop Games.</p>
+        <p>&copy; 2023–2026 Upcoming Levels List. Not affiliated with RobTop Games.</p>
         <p>Built by the ULL Team</p>
     </div>
 </footer>

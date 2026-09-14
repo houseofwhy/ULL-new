@@ -118,6 +118,21 @@ const emptyCtv = () => ({
     run:    { percent: '', player: '', link: '' },
 });
 
+// The audit log is read a page at a time; 100 is what the endpoint used to
+// return in total, and is a comfortable screenful.
+const AUDIT_PAGE = 100;
+
+// The actions the worker writes, for the filter. Anything it starts writing
+// later still shows in the table — this list only fills the dropdown.
+const AUDIT_ACTIONS = [
+    'INSERT', 'UPDATE', 'DELETE', 'MOVE',
+    'RESTORE', 'UNDO', 'SNAPSHOT',
+    'PENDING_ADD', 'PENDING_EDIT', 'PENDING_UPDATE', 'PENDING_DELETE',
+    'CHANGE_ADD', 'CHANGE_EDIT', 'CHANGE_DELETE', 'CHANGE_REORDER',
+    'EDITOR_ADD', 'EDITOR_UPDATE', 'EDITOR_DELETE', 'EDITOR_REORDER',
+    'CONFIG_UPDATE',
+];
+
 export default {
     components: { AdminLogin, Footer },
     template: `
@@ -136,13 +151,17 @@ export default {
             <button class="admin-tab" :class="{ active: activeTab === 'pending' }" @click="activeTab = 'pending'">Pending</button>
             <button class="admin-tab" :class="{ active: activeTab === 'changes' }" @click="activeTab = 'changes'">Recent Changes</button>
             <button class="admin-tab" :class="{ active: activeTab === 'audit' }" @click="activeTab = 'audit'">Audit Log</button>
+            <button class="admin-tab" :class="{ active: activeTab === 'snapshots' }" @click="activeTab = 'snapshots'">Snapshots</button>
         </div>
 
         <!-- ── LEVELS ── -->
         <template v-if="activeTab === 'levels'">
             <div class="admin-toolbar">
                 <button class="admin-btn admin-btn--new" @click="openNewLevel()">+ New Level</button>
-                <input v-model="search" class="admin-search" placeholder="Search by name or author…" />
+                <label class="search-field admin-search">
+                    <span class="info-mag" aria-hidden="true"></span>
+                    <input v-model="search" class="search-new" placeholder="Search by name or author…" />
+                </label>
                 <span class="admin-count">{{ filteredLevels.length }} levels</span>
             </div>
             <div v-if="levelNotice" class="admin-notice">{{ levelNotice }}</div>
@@ -550,31 +569,128 @@ export default {
         <!-- ── AUDIT LOG ── -->
         <template v-if="activeTab === 'audit'">
             <div class="admin-toolbar">
-                <span style="font-size:0.8rem;opacity:0.55;">Last 100 operations, newest first.</span>
+                <label class="search-field admin-search">
+                    <span class="info-mag" aria-hidden="true"></span>
+                    <input v-model="auditFilterText" class="search-new" placeholder="Filter by editor or action…" @keydown.enter="applyAuditFilter()" />
+                </label>
+                <select class="admin-select" v-model="auditAction" @change="applyAuditFilter()">
+                    <option value="">All actions</option>
+                    <option v-for="a in AUDIT_ACTIONS" :key="a" :value="a">{{ a }}</option>
+                </select>
+                <span class="admin-count">{{ auditShownLabel }}</span>
                 <button class="admin-btn admin-btn--move" @click="loadAuditLog()" :disabled="auditLoading" style="margin-left:auto;">{{ auditLoading ? 'Loading…' : 'Refresh' }}</button>
             </div>
-            <div v-if="auditLoading" class="admin-loading">Loading audit log…</div>
-            <div v-else-if="!auditLog.length" class="admin-empty">No entries yet. The audit_log table may need to be created — see setup guide.</div>
+
+            <!-- Who did how much, over the same window the panel names. This is
+                 a count of audit lines, so a level edited twice counts twice. -->
+            <div class="admin-card admin-activity">
+                <div class="admin-card-title">Activity, last {{ activity.days }} days</div>
+                <div v-if="!activity.editors.length" class="admin-note" style="padding:0.5rem 0 0;">Nothing logged in this window.</div>
+                <div v-else class="admin-activity__grid">
+                    <button v-for="row in activity.editors" :key="row.editor_name" type="button"
+                            class="admin-activity__cell" :class="{ 'is-on': auditEditor === row.editor_name }"
+                            @click="filterByEditor(row.editor_name)">
+                        <span class="admin-activity__n">{{ row.changes }}</span>
+                        <span class="admin-activity__who">{{ row.editor_name || 'unknown' }}</span>
+                        <span class="admin-activity__sub">
+                            {{ row.deletions ? row.deletions + ' deletion' + (row.deletions === 1 ? '' : 's') : 'no deletions' }}
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div v-if="auditLoading && !auditLog.length" class="admin-loading">Loading audit log…</div>
+            <div v-else-if="!auditLog.length" class="admin-empty">
+                {{ auditEditor || auditAction ? 'Nothing matches that filter.' : 'No entries yet. The audit_log table may need to be created — see setup guide.' }}
+            </div>
             <table v-else class="admin-table">
                 <thead>
                     <tr>
                         <th class="admin-th" style="width:11rem;">Time (UTC)</th>
-                        <th class="admin-th" style="width:7rem;">Editor</th>
-                        <th class="admin-th" style="width:8rem;">Action</th>
+                        <th class="admin-th" style="width:8rem;">Editor</th>
+                        <th class="admin-th" style="width:9rem;">Action</th>
                         <th class="admin-th">Target</th>
                         <th class="admin-th">Details</th>
+                        <th class="admin-th admin-th--action" style="width:7rem;">Undo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="entry in auditLog" :key="entry.id" class="admin-row">
+                    <tr v-for="entry in auditLog" :key="entry.id" class="admin-row" :class="{ 'is-undone': entry.undone_at }">
                         <td class="admin-td admin-td--pos" style="font-size:0.72rem;white-space:nowrap;opacity:0.55;">{{ entry.timestamp }}</td>
                         <td class="admin-td" style="font-size:0.8rem;font-weight:600;">{{ entry.editor_name }}</td>
                         <td class="admin-td"><span class="admin-badge admin-badge--main" style="font-size:0.58rem;">{{ entry.action }}</span></td>
                         <td class="admin-td" style="font-size:0.8rem;">{{ entry.target }}</td>
                         <td class="admin-td" style="font-size:0.72rem;opacity:0.5;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ entry.details }}</td>
+                        <td class="admin-td admin-td--move">
+                            <button v-if="entry.undoable" class="admin-btn admin-btn--move" style="font-size:0.68rem;"
+                                    :disabled="undoing === entry.id" @click="undoDeletion(entry)">
+                                {{ undoing === entry.id ? '…' : 'Put back' }}
+                            </button>
+                            <span v-else-if="entry.undone_at" style="font-size:0.66rem;opacity:0.45;">undone</span>
+                        </td>
                     </tr>
                 </tbody>
             </table>
+
+            <div v-if="auditHasMore" class="admin-more">
+                <button class="admin-btn admin-btn--move" :disabled="auditLoading" @click="loadMoreAudit()">
+                    {{ auditLoading ? 'Loading…' : 'Load ' + auditPageSize + ' older' }}
+                </button>
+            </div>
+            <p v-else-if="auditLog.length" class="admin-note" style="text-align:center;">
+                That is the whole log — {{ auditTotal.toLocaleString() }} operation{{ auditTotal === 1 ? '' : 's' }}, back to the beginning.
+            </p>
+        </template>
+
+        <template v-if="activeTab === 'snapshots'">
+            <div class="admin-toolbar">
+                <span style="font-size:0.8rem;opacity:0.55;">{{ snapshotsRetention }}</span>
+                <button class="admin-btn admin-btn--new" @click="takeSnapshot()" :disabled="snapshotBusy">Take one now</button>
+                <button class="admin-btn admin-btn--move" @click="loadSnapshots()" :disabled="snapshotsLoading" style="margin-left:auto;">{{ snapshotsLoading ? 'Loading…' : 'Refresh' }}</button>
+            </div>
+
+            <div v-if="snapshotsLoading && !snapshots.length" class="admin-loading">Loading snapshots…</div>
+            <div v-else-if="snapshotsMissing" class="admin-empty">
+                The snapshots table does not exist yet. Run <code>scripts/schema-migrations.sql</code> on the D1 database.
+            </div>
+            <div v-else-if="!snapshots.length" class="admin-empty">
+                No snapshots yet. One is taken automatically before the first edit of each day.
+            </div>
+            <table v-else class="admin-table">
+                <thead>
+                    <tr>
+                        <th class="admin-th" style="width:12rem;">Taken (UTC)</th>
+                        <th class="admin-th" style="width:7rem;">Stands for</th>
+                        <th class="admin-th">What it is</th>
+                        <th class="admin-th" style="width:7rem;">Levels</th>
+                        <th class="admin-th" style="width:7rem;">Size</th>
+                        <th class="admin-th admin-th--action" style="width:8rem;">Restore</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="snap in snapshots" :key="snap.id" class="admin-row">
+                        <td class="admin-td admin-td--pos" style="font-size:0.72rem;white-space:nowrap;opacity:0.6;">{{ snap.taken_at.replace('T', ' ').slice(0, 19) }}</td>
+                        <td class="admin-td" style="font-size:0.78rem;font-weight:600;">{{ snap.day }}</td>
+                        <td class="admin-td" style="font-size:0.78rem;">
+                            <span class="admin-badge" :class="snapshotBadge(snap.kind)" style="font-size:0.56rem;margin-right:0.5rem;">{{ snap.kind }}</span>
+                            {{ snap.label }}
+                        </td>
+                        <td class="admin-td" style="font-size:0.78rem;font-variant-numeric:tabular-nums;">{{ snap.levels_count }}</td>
+                        <td class="admin-td" style="font-size:0.72rem;opacity:0.5;font-variant-numeric:tabular-nums;">{{ kb(snap.stored_bytes) }}</td>
+                        <td class="admin-td admin-td--move">
+                            <button class="admin-btn admin-btn--delete" style="font-size:0.68rem;"
+                                    :disabled="snapshotBusy" @click="restoreSnapshot(snap)">
+                                {{ restoring === snap.id ? '…' : 'Restore' }}
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p v-if="snapshots.length" class="admin-note">
+                Restoring puts back the levels, the pending list, the recent-changes feed and the two event picks.
+                It never touches editors or API keys. The live list is snapshotted first, so a restore can always be
+                undone by restoring the &ldquo;before restoring to…&rdquo; point it leaves behind.
+            </p>
         </template>
 
         <Footer />
@@ -882,12 +998,38 @@ export default {
         newPending: emptyPending(),
         pendingSubmitting: false,
         placementTiers: PLACEMENT_TIERS,
-        // Audit Log
+        // Audit Log — the whole thing, a page at a time.
         auditLog: [],
         auditLoading: false,
         auditLoaded: false,
+        auditTotal: 0,
+        auditHasMore: false,
+        auditPageSize: AUDIT_PAGE,
+        auditFilterText: '',
+        auditEditor: '',
+        auditAction: '',
+        activity: { days: 30, editors: [] },
+        undoing: 0,
+        AUDIT_ACTIONS,
+        // Snapshots
+        snapshots: [],
+        snapshotsLoading: false,
+        snapshotsLoaded: false,
+        snapshotsMissing: false,
+        snapshotsRetention: '',
+        snapshotBusy: false,
+        restoring: 0,
     }),
     computed: {
+        // "showing 100 of 4,312", or what the filter narrowed it to.
+        auditShownLabel() {
+            if (!this.auditTotal) return '';
+            const shown = this.auditLog.length;
+            const of = this.auditTotal.toLocaleString();
+            const scope = this.auditEditor || this.auditAction ? ' matching' : '';
+            return shown >= this.auditTotal ? `${of}${scope} operation${this.auditTotal === 1 ? '' : 's'}`
+                : `showing ${shown.toLocaleString()} of ${of}${scope}`;
+        },
         filteredLevels() {
             if (!this.search.trim()) return this.levels;
             const q = this.search.toLowerCase();
@@ -926,7 +1068,11 @@ export default {
             if (tab === 'editors' && !this.editorsLoaded) this.loadEditors();
             if (tab === 'pending' && !this.pendingLoaded) this.loadPending();
             if (tab === 'changes' && !this.changesLoaded) this.loadChanges();
-            if (tab === 'audit' && !this.auditLoaded) this.loadAuditLog();
+            // These two are read every time they are opened, not once. They are
+            // logs of what just happened, and they carry buttons that act on
+            // rows — a stale one offers an undo for something already undone.
+            if (tab === 'audit') this.loadAuditLog();
+            if (tab === 'snapshots') this.loadSnapshots();
         },
     },
     async mounted() {
@@ -1458,16 +1604,160 @@ export default {
         },
 
         // ── AUDIT LOG ──
+        // A page at a time, newest first, continuing from the last id seen. The
+        // endpoint used to hand back a hard LIMIT 100 with no way past it, so
+        // anything older than the last hundred operations was unreachable.
+        auditQuery(before) {
+            const q = new URLSearchParams({ limit: String(AUDIT_PAGE) });
+            if (before) q.set('before', String(before));
+            if (this.auditEditor) q.set('editor', this.auditEditor);
+            if (this.auditAction) q.set('action', this.auditAction);
+            return q.toString();
+        },
+        async fetchAuditPage(before) {
+            const res = await fetch(`${API}/api/audit-log?${this.auditQuery(before)}`, {
+                headers: { Authorization: `Bearer ${store.authKey}` },
+            });
+            const body = await res.json();
+            if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+            // A worker deployed before this change answers with a bare array.
+            return Array.isArray(body)
+                ? { entries: body, total: body.length, hasMore: false }
+                : body;
+        },
         async loadAuditLog() {
             this.auditLoading = true;
             try {
-                const res = await fetch(`${API}/api/audit-log`, {
-                    headers: { Authorization: `Bearer ${store.authKey}` },
-                });
-                this.auditLog = await res.json();
+                const page = await this.fetchAuditPage(0);
+                this.auditLog = page.entries;
+                this.auditTotal = page.total;
+                this.auditHasMore = page.hasMore;
+                await this.loadActivity();
             } catch (e) { alert(requestFailed(e)); }
             this.auditLoading = false;
             this.auditLoaded = true;
+        },
+        async loadMoreAudit() {
+            if (!this.auditLog.length) return this.loadAuditLog();
+            this.auditLoading = true;
+            try {
+                const page = await this.fetchAuditPage(this.auditLog[this.auditLog.length - 1].id);
+                this.auditLog = this.auditLog.concat(page.entries);
+                this.auditTotal = page.total;
+                this.auditHasMore = page.hasMore;
+            } catch (e) { alert(requestFailed(e)); }
+            this.auditLoading = false;
+        },
+        // One field for both filters: a name the activity panel knows is an
+        // editor, anything matching an action is an action.
+        applyAuditFilter() {
+            const text = this.auditFilterText.trim();
+            const asAction = AUDIT_ACTIONS.find((a) => a.toLowerCase() === text.toLowerCase());
+            if (asAction) { this.auditAction = asAction; this.auditEditor = ''; }
+            else { this.auditEditor = text; }
+            this.loadAuditLog();
+        },
+        filterByEditor(name) {
+            this.auditEditor = this.auditEditor === name ? '' : name;
+            this.auditFilterText = this.auditEditor;
+            this.loadAuditLog();
+        },
+        async loadActivity() {
+            try {
+                const res = await fetch(`${API}/api/admin/activity`, {
+                    headers: { Authorization: `Bearer ${store.authKey}` },
+                });
+                const body = await res.json();
+                if (res.ok && body && Array.isArray(body.editors)) this.activity = body;
+            } catch { /* the log is still readable without it */ }
+        },
+        async undoDeletion(entry) {
+            const what = entry.action === 'EDITOR_DELETE'
+                ? `Put "${entry.target}" back as an editor? This restores their API key as well as their name.`
+                : `Put "${entry.target}" back?`;
+            if (!confirm(what)) return;
+            this.undoing = entry.id;
+            try {
+                const res = await fetch(`${API}/api/admin/audit-log/${entry.id}/undo`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${store.authKey}`, 'Content-Type': 'application/json' },
+                    body: '{}',
+                });
+                const body = await res.json();
+                if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+                // The list the undo touched is now stale in the panel.
+                this.loaded = false; this.pendingLoaded = false;
+                this.changesLoaded = false; this.editorsLoaded = false;
+                await this.loadAuditLog();
+            } catch (e) { alert(requestFailed(e)); }
+            this.undoing = 0;
+        },
+
+        // ── SNAPSHOTS ──
+        kb(bytes) {
+            if (!bytes) return '—';
+            return bytes < 1024 ? `${bytes} B` : `${Math.round(bytes / 1024).toLocaleString()} KB`;
+        },
+        snapshotBadge(kind) {
+            return kind === 'restore' ? 'admin-badge--verified'
+                : kind === 'manual' ? 'admin-badge--future' : 'admin-badge--main';
+        },
+        async loadSnapshots() {
+            this.snapshotsLoading = true;
+            try {
+                const res = await fetch(`${API}/api/admin/snapshots`, {
+                    headers: { Authorization: `Bearer ${store.authKey}` },
+                });
+                const body = await res.json();
+                if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+                this.snapshots = body.snapshots || [];
+                this.snapshotsRetention = body.retention || '';
+                this.snapshotsMissing = !!body.missing;
+            } catch (e) { alert(requestFailed(e)); }
+            this.snapshotsLoading = false;
+            this.snapshotsLoaded = true;
+        },
+        async takeSnapshot() {
+            const label = prompt('Label this snapshot (optional):', '');
+            if (label === null) return;
+            this.snapshotBusy = true;
+            try {
+                const res = await fetch(`${API}/api/admin/snapshots`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${store.authKey}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ label }),
+                });
+                const body = await res.json();
+                if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+                await this.loadSnapshots();
+            } catch (e) { alert(requestFailed(e)); }
+            this.snapshotBusy = false;
+        },
+        async restoreSnapshot(snap) {
+            const msg = `Put the list back to how it stood on ${snap.day}?\n\n`
+                + `${snap.levels_count} levels, plus the pending list, the recent-changes feed and the event picks.\n`
+                + 'Editors and API keys are not touched.\n\n'
+                + 'What is live now is snapshotted first, so this can be undone.';
+            if (!confirm(msg)) return;
+            this.snapshotBusy = true;
+            this.restoring = snap.id;
+            try {
+                const res = await fetch(`${API}/api/admin/snapshots/${snap.id}/restore`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${store.authKey}`, 'Content-Type': 'application/json' },
+                    body: '{}',
+                });
+                const body = await res.json();
+                if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+                alert(`Restored ${body.levels} levels, ${body.pending} pending entries and ${body.changes} change lines.`);
+                // Everything the panel holds came from before the restore.
+                this.loaded = false; this.pendingLoaded = false;
+                this.changesLoaded = false; this.eventsLoaded = false;
+                this.auditLoaded = false;
+                await this.loadSnapshots();
+            } catch (e) { alert(requestFailed(e)); }
+            this.restoring = 0;
+            this.snapshotBusy = false;
         },
     },
 };

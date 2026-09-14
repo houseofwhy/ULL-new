@@ -215,3 +215,149 @@ export function levelForSlug(levels, slug) {
     const paths = levels.map((l) => l.path);
     return levels.find((l) => levelSlug(l.path, paths) === slug) || null;
 }
+
+// ── Level state ───────────────────────────────────────────────────────────
+// Four readings every page needs and each used to derive for itself: how far
+// the decoration has got, how far anyone has got into the level, what to call
+// that state, and the best record and run behind it. LevelPage.js computed all
+// of this inline; the list panel, upcoming, home and events each computed a
+// different subset a different way. One implementation, shared.
+
+export function decorationPercent(level) {
+    return Math.max(0, Math.min(100, Number(level?.percentFinished) || 0));
+}
+
+// The furthest anyone has got, and what it was: the highest record set from 0%,
+// or the longest span of a run, whichever reaches further. A verified level is
+// 100 by definition.
+//
+// Two things read this. `verificationPercent` is the number — it drives the
+// meters, the status tones and the order of the Upcoming Levels page.
+// `verificationLabel` is how that number is written, and the two disagree on
+// purpose: a run that covers 72% to 100% of a level reaches 28 percentage
+// points, but nobody describes it that way. It is written as the span it
+// covers, the same way the Best run card writes it, because "28%" beside a
+// level that has been played from 72% to the end is misleading. A record is
+// written as the single figure it reached.
+export function verificationEvidence(level) {
+    if (!level) return null;
+    if (level.isVerified) return { kind: 'verified', value: 100, label: '100%', entry: null };
+
+    let best = null;
+    // Records first, so a record and a run that reach equally far read as the
+    // record — the simpler of the two statements.
+    for (const r of level.records || []) {
+        const p = Number(r.percent) || 0;
+        if (p > 0 && (!best || p > best.value)) best = { kind: 'record', value: p, label: `${p}%`, entry: r };
+    }
+    for (const r of level.run || []) {
+        const parts = String(r.percent).split('-').map(Number);
+        if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) continue;
+        const span = Math.abs(parts[1] - parts[0]);
+        if (span > 0 && (!best || span > best.value)) best = { kind: 'run', value: span, label: `${r.percent}%`, entry: r };
+    }
+    return best;
+}
+
+export function verificationPercent(level) {
+    const best = verificationEvidence(level);
+    return best ? Math.max(0, Math.min(100, best.value)) : 0;
+}
+
+// The same reading, written rather than measured. Empty where nobody has got
+// anywhere yet, so a caller can fall back to its own "None".
+export function verificationLabel(level) {
+    const best = verificationEvidence(level);
+    return best ? best.label : '';
+}
+
+// { label, tone } for the status pill. The tones are the same progression the
+// list colours level names by, so a level reads the same in the row, in the
+// panel, on its own page and in an events card.
+export function levelStatus(level) {
+    if (!level) return { label: '', tone: 'done' };
+    if (level.isVerified) return { label: 'Verified', tone: 'done' };
+    const pf = decorationPercent(level);
+    const vp = verificationPercent(level);
+    if (pf === 100) {
+        return { label: 'Being verified', tone: vp >= 60 ? 'red' : vp >= 30 ? 'orange' : 'amber' };
+    }
+    if (!pf) return { label: 'Layout', tone: 'blue' };
+    return { label: `Decoration ${pf}% done`, tone: pf >= 70 ? 'yellow' : pf >= 30 ? 'green' : 'cyan' };
+}
+
+// The list stores a placeholder row rather than an empty array when there is no
+// record yet, so "none" and 0 both mean nothing has been set.
+export function bestRecord(level) {
+    return (level?.records || [])
+        .filter((r) => r.user && r.user !== 'none' && Number(r.percent) > 0)
+        .sort((a, b) => Number(b.percent) - Number(a.percent))[0] || null;
+}
+
+export function bestRun(level) {
+    return (level?.run || []).find((r) => r.user && r.user !== 'none' && String(r.percent) !== '0' && String(r.percent) !== '') || null;
+}
+
+// A record's link is '#' when there is no video for it.
+export function recordLink(record) {
+    const link = record?.link;
+    return link && link !== '#' ? link : '';
+}
+
+export function levelLength(level) {
+    const secs = Number(level?.length) || 0;
+    return `${Math.floor(secs / 60)}m ${secs % 60}s`;
+}
+
+// The list shows a private level's leaked ID when one is known.
+export function levelId(level) {
+    if (!level) return '';
+    return level.id === 'private' ? (level.leakID != null ? level.leakID : 'Private') : level.id;
+}
+
+// "none" and "unknown" both mean the verifier is not decided yet.
+export function hasVerifier(level) {
+    const v = level?.verifier;
+    return !!v && v !== 'none' && String(v).toLowerCase() !== 'unknown';
+}
+
+// Open Verification is not a person: nobody has claimed the level yet. The
+// staff type it in whatever case they like, so match it in any.
+export function isOpenVerification(level) {
+    return String(level?.verifier || '').trim().toLowerCase() === 'open verification';
+}
+
+// What the Verifier row of a facts list says. An undecided verifier reads
+// "unknown", lowercase, the same as every other value in those lists.
+export function verifierLabel(level) {
+    return hasVerifier(level) ? level.verifier : 'unknown';
+}
+
+// How the verifier reads in a byline, as { lead, name } so the name can carry
+// its own weight in the markup. Null when there is nothing to say.
+//
+//   nobody has claimed it   →  on open verification
+//   somebody is on it       →  to be verified by wPopoff
+//   it is done              →  verified by wPopoff
+export function verifierLine(level) {
+    if (!level) return null;
+    if (isOpenVerification(level) && !level.isVerified) return { lead: 'on', name: 'open verification' };
+    if (!hasVerifier(level)) return null;
+    return { lead: level.isVerified ? 'verified by' : 'to be verified by', name: level.verifier };
+}
+
+// A level's placement in each of the three tiers, always all three and always
+// in the same order, so the chips do not reshuffle as you move between lists.
+// `n` is null where the level is not on that tier — the chip says so rather
+// than disappearing, which is the only way to tell "not on it" from "we did not
+// mention it". `current` is the tier the reader is looking at, and the only one
+// highlighted.
+export function levelRanks(level, current = 'all', mobile = false) {
+    if (!level) return [];
+    const to = (desktop, phone) => (mobile ? phone : desktop);
+    return [
+        { key: 'all', n: level.allLevelsRank || null, label: 'All Levels', to: to('/list', '/mobile/all') },
+        { key: 'main', n: level.mainRank || null, label: 'Main List', to: to('/listmain', '/mobile/main') },
+        { key: 'future', n: level.futureRank || null, label: 'Future List', to: to('/listfuture', '/mobile/future') },
+    ].map((r) => ({ ...r, lead: r.key === current }));
+}

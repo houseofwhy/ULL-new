@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="root">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>__TITLE__ — /information</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* The page as the app renders it: no review chrome, no frame. Theme tokens are
+   copied from css/main.css — .root is ULL's dark default and .root.dark is its
+   light theme, the class names inverted exactly as the app has them. The app
+   gives this route a scrolling <main>, so the mock owns the viewport height and
+   scrolls inside itself rather than scrolling the window. */
+:root { color-scheme: dark light; }
+html.root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+}
+html.root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+body > .ull2 { flex: 1; min-height: 0; }
+/* Role icons ship as two files, -dark being the one for the light theme; these
+   pages carry the dark-theme file and invert it, which is what the app's :src
+   binding does with a second request. The pending-list icons carry their own
+   colours and are never inverted. */
+html.root.dark .mk-inv { filter: invert(1); }
+
+/* Preview control only — not part of the design. */
+.pv-theme {
+    position: fixed; right: 0.9rem; bottom: 0.9rem; z-index: 99;
+    padding: 0.35rem 0.7rem; border-radius: 2rem;
+    background: rgba(128, 128, 128, 0.14); border: 1px solid rgba(128, 128, 128, 0.3);
+    color: inherit; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    opacity: 0.35; cursor: pointer;
+}
+.pv-theme:hover { opacity: 0.9; }
+
+/*__COMPONENT_CSS__*/
+</style>
+</head>
+<body>
+<!--__BODY__-->
+<button class="pv-theme" type="button" onclick="document.documentElement.classList.toggle('dark')">theme</button>
+</body>
+</html>

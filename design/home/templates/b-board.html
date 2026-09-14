@@ -1,0 +1,229 @@
+<!--meta
+title: Board
+tag: desktop · B
+surface: desktop
+files: js/pages/Home.js · css/pages/home.css
+idea: Ask what a visitor comes to a tracker's landing page to find out, and answer all of it above the fold. The hero shrinks to a band — one line of what this is, one filled button — and the page becomes three lanes on one grid: the top of the list, the levels closest to being verified, and what the staff changed this week. The middle lane is the top of /upcoming in that page's own order, so it is a reading the site already computes rather than a new one. The staff roster leaves the body and becomes a credit line above the footer, where the same twelve names already sit on Information.
+weight: The empty right half of the hero is gone because the hero is no longer a half-width block on a full-width band, and the page uses the width the window gives it at 1920 rather than a 1100px column with 312px of dead margin beside a full-bleed hero. Three questions get one screen each in a row instead of one question getting the page and the other two being buried below a staff card.
+cost: The largest of the four. Home gains a second reading of the list — upcomingRanking() from js/formulas.js, which /upcoming already calls, sliced to six — and the lane grid replaces .home-content's single column. The feed leaves its nested window. Still no new field, no new route, and no per-level prose.
+watch: It reopens a decision this repo already made once: the five-count strip was cut because home is not a dashboard. Three lanes of levels is not five counts of one list, but it is denser, and a first-time visitor now meets the project in one line rather than three. If the hero is the thing that has to convince somebody who has never heard of ULL, A holds that better than B does.
+-->
+<style>
+.mk-b .hm-hero { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding-block: 1.9rem 1.7rem; }
+.mk-b .hm-hero__body { max-width: 42rem; }
+.mk-b .hm-title { margin: 0.5rem 0 0; font-size: clamp(1.6rem, 2.4vw, 2.1rem); }
+.mk-b .hm-lead { margin-top: 0.6rem; font-size: 0.84rem; }
+.mk-b .hm-hero__side { display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; flex-shrink: 0; }
+.mk-b .hm-hero__side .hm-social { margin: 0; }
+.mk-b .u-cred { padding: 0.9rem 0; border-top: 1px solid var(--u-line); }
+.mk-b .u-cred__ic { width: 2.1rem; height: 2.1rem; padding: 0.5rem; border-radius: 0.65rem; }
+.mk-b .u-cred__t { font-size: 0.9rem; }
+
+.mk-b .hm-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; padding-block: 0 2rem; }
+.mk-b .hm-lane { padding: 1.5rem 1.6rem 1.5rem 0; }
+.mk-b .hm-lane + .hm-lane { padding-left: 1.6rem; border-left: 1px solid var(--u-line); }
+.mk-b .hm-lane:last-child { padding-right: 0; }
+.mk-b .hm-lane .hm-sec__head { margin-bottom: 0.9rem; }
+.mk-b .hm-lane .u-row { padding: 0.5rem 0.5rem; gap: 0.6rem; }
+.mk-b .hm-lane .u-row__thumb { width: 3.4rem; height: 1.95rem; }
+.mk-b .hm-lane .u-row__lead { width: 1.9rem; font-size: 0.72rem; }
+.mk-b .hm-lane .u-row__name { font-size: 0.81rem; }
+.mk-b .hm-lane .u-row__sub { font-size: 0.68rem; }
+.mk-b .hm-lane .u-pill { padding: 0.16rem 0.5rem; font-size: 0.6rem; }
+.mk-b .hm-lane .hm-row__meter { margin-top: 0.35rem; max-width: none; }
+.mk-b .hm-lane__note { margin: 0 0 0.9rem; font-size: 0.72rem; line-height: 1.55; opacity: 0.42; }
+.mk-b .hm-lane--race .u-row { display: grid; grid-template-columns: 1fr 3.2rem; align-items: center; gap: 0.75rem; }
+.mk-b .hm-lane--race .hm-row__fig { font-size: 0.95rem; font-weight: 700; color: var(--u-accent); }
+.mk-b .hm-credit { display: flex; align-items: flex-start; justify-content: space-between; gap: 3rem; padding-block: 1.5rem 2.25rem; border-top: 1px solid var(--u-line); }
+.mk-b .hm-credit__k { flex-shrink: 0; width: 11rem; }
+.mk-b .hm-credit__k p { margin: 0.5rem 0 0; font-size: 0.72rem; line-height: 1.6; opacity: 0.42; }
+@media (max-width: 1250px) {
+    .mk-b .hm-board { grid-template-columns: 1fr 1fr; }
+    .mk-b .hm-lane:nth-child(3) { grid-column: 1 / -1; padding-left: 0; border-left: 0; border-top: 1px solid var(--u-line); }
+}
+</style>
+
+<div class="mk-shell ull2">
+<!--__B:side__-->
+<div class="hm mk-b">
+
+    <div class="hm-band hm-band--rule">
+        <div class="hm-col hm-hero">
+            <div class="hm-hero__body">
+                <div class="hm-eyebrow">Geometry Dash &middot; Extreme Demons</div>
+                <h1 class="hm-title">Upcoming Levels List</h1>
+                <p class="hm-lead">Every upcoming Top 1&ndash;100 Extreme Demon, ranked by where the staff team projects it will land on the Demonlist once it is verified.</p>
+            </div>
+            <div class="hm-hero__side">
+                <a class="u-btn" href="#">Browse all 479 levels</a>
+                <div class="hm-social">
+                    <a href="#"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5c1.6.4 2.9 1 4.1 1.8a13.9 13.9 0 0 0-14.4 0c1.2-.8 2.6-1.4 4.1-1.8L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 1 11.5 1.3 15a19.9 19.9 0 0 0 6 3l1.2-1.7c-1-.4-1.9-.9-2.7-1.4l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4c-.8.5-1.7 1-2.7 1.4l1.2 1.7a19.9 19.9 0 0 0 6-3c.4-4.1-.6-7.6-2.4-10.6ZM8.5 12.9c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Zm7 0c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Z"/></svg>Discord</a>
+                    <a href="#"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@ull_gd</a>
+                </div>
+            </div>
+        </div>
+        <div class="hm-col"><!--__B:cred3__--></div>
+    </div>
+
+    <div class="hm-col hm-board">
+
+        <section class="hm-lane">
+            <div class="hm-sec__head">
+                <h2 class="u-eyebrow u-eyebrow--lg">Top of the list</h2>
+                <a class="hm-more" href="#">All 479 &rarr;</a>
+            </div>
+            <p class="hm-lane__note">Where the staff team projects each level will place once it is verified.</p>
+            <a class="u-row" href="#">
+                <span class="u-row__lead">#1</span>
+                <span class="u-row__thumb mk-thumb mk-thumb--a"></span>
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Aeternus</span><span class="u-pill u-pill--amber"><i></i>Verifying</span></span>
+                    <span class="u-row__sub">by Riot &middot; open verification</span>
+                    <span class="u-bar u-bar--thin hm-row__meter"><i style="width:100%"></i></span>
+                </span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__lead">#2</span>
+                <span class="u-row__thumb mk-thumb mk-thumb--b"></span>
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Kingdom of Miracalis</span><span class="u-pill u-pill--yellow"><i></i>80%</span></span>
+                    <span class="u-row__sub">by Duke &middot; wPopoff</span>
+                    <span class="u-bar u-bar--thin hm-row__meter"><i style="width:80%"></i></span>
+                </span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__lead">#3</span>
+                <span class="u-row__thumb mk-thumb mk-thumb--c"></span>
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Rebirth The End</span><span class="u-pill u-pill--cyan"><i></i>5%</span></span>
+                    <span class="u-row__sub">by Silence &middot; zLevii</span>
+                    <span class="u-bar u-bar--thin hm-row__meter"><i style="width:5%"></i></span>
+                </span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__lead">#4</span>
+                <span class="u-row__thumb mk-thumb mk-thumb--d"></span>
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">M A N R A Y</span><span class="u-pill u-pill--blue"><i></i>Layout</span></span>
+                    <span class="u-row__sub">by akunakunn &middot; unknown</span>
+                    <span class="u-bar u-bar--thin hm-row__meter"><i style="width:0%"></i></span>
+                </span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__lead">#5</span>
+                <span class="u-row__thumb mk-thumb mk-thumb--e"></span>
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Cyanical</span><span class="u-pill u-pill--amber"><i></i>Verifying</span></span>
+                    <span class="u-row__sub">by qponn &middot; open verification</span>
+                    <span class="u-bar u-bar--thin hm-row__meter"><i style="width:100%"></i></span>
+                </span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__lead">#6</span>
+                <span class="u-row__thumb mk-thumb mk-thumb--f"></span>
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Vehemence</span><span class="u-pill u-pill--red"><i></i>Verifying</span></span>
+                    <span class="u-row__sub">by TBT &middot; verification race</span>
+                    <span class="u-bar u-bar--thin hm-row__meter"><i style="width:100%"></i></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- The top of /upcoming, in that page's own order (upcomingRanking in
+             js/formulas.js). The figure is the same verification percentage
+             the upcoming page prints in its progress column. -->
+        <section class="hm-lane hm-lane--race">
+            <div class="hm-sec__head">
+                <h2 class="u-eyebrow u-eyebrow--lg">Closest to verified</h2>
+                <a class="hm-more" href="#">Upcoming &rarr;</a>
+            </div>
+            <p class="hm-lane__note">How far anyone has got, on the levels furthest through verification.</p>
+            <a class="u-row" href="#">
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Silent Acropolis</span></span>
+                    <span class="u-row__sub">#45 &middot; Hover, 24&ndash;100%</span>
+                    <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:99%"></i></span>
+                </span>
+                <span class="hm-row__fig">99%</span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">GRIEF</span></span>
+                    <span class="u-row__sub">#26 &middot; Doggie, 25&ndash;100%</span>
+                    <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:97%"></i></span>
+                </span>
+                <span class="hm-row__fig">97%</span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">NIGHTFALL</span></span>
+                    <span class="u-row__sub">#217 &middot; nei_gmd, 97%</span>
+                    <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:97%"></i></span>
+                </span>
+                <span class="hm-row__fig">97%</span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Apollyon (murkkat)</span></span>
+                    <span class="u-row__sub">#231 &middot; katzen, 97%</span>
+                    <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:97%"></i></span>
+                </span>
+                <span class="hm-row__fig">97%</span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Eternal Silence</span></span>
+                    <span class="u-row__sub">#44 &middot; noname228gg, 9&ndash;100%</span>
+                    <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:91%"></i></span>
+                </span>
+                <span class="hm-row__fig">9-100%</span>
+            </a>
+            <a class="u-row" href="#">
+                <span class="u-row__body">
+                    <span class="hm-row__head"><span class="u-row__name">Flaklypa</span></span>
+                    <span class="u-row__sub">#464 &middot; Gelforce, 46&ndash;100%</span>
+                    <span class="u-bar u-bar--alt u-bar--thin hm-row__meter"><i style="width:90%"></i></span>
+                </span>
+                <span class="hm-row__fig">90%</span>
+            </a>
+        </section>
+
+        <section class="hm-lane">
+            <div class="hm-sec__head">
+                <h2 class="u-eyebrow u-eyebrow--lg">What changed</h2>
+                <span class="hm-more">42 in 3 days</span>
+            </div>
+            <p class="hm-lane__note">Every placement the staff team has made, newest first.</p>
+            <div class="hm-feed">
+                <div class="hm-feed__date">23 August 2026</div>
+                <div class="hm-change is-down"><span class="hm-change__dot"></span><div><b>Tunnel of Serpent</b> <span class="dim">down, #54 &rarr; #59</span></div></div>
+                <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>Cyberpsychosis (Sobeann)</b> <span class="dim">up, #97 &rarr; #91</span></div></div>
+                <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>Ex Vacuo</b> <span class="dim">up, #233 &rarr; #113</span></div></div>
+                <div class="hm-change is-up"><span class="hm-change__dot"></span><div><b>ARE</b> <span class="dim">up, #257 &rarr; #142</span></div></div>
+                <div class="hm-change is-down"><span class="hm-change__dot"></span><div><b>AICHMIRA</b> <span class="dim">down, #261 &rarr; #476</span></div></div>
+                <div class="hm-feed__date">22 August 2026</div>
+                <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Cyberpsychosis (Karma)</b> <span class="dim">placed at #88</span></div></div>
+                <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Control Nexus</b> <span class="dim">placed at #168</span></div></div>
+                <details class="hm-fold">
+                    <summary><span class="hm-fold__more">Show 35 older changes &darr;</span><span class="hm-fold__less">Show fewer &uarr;</span></summary>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Synthesis</b> <span class="dim">placed at #349</span></div></div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Doppler</b> <span class="dim">placed at #407</span></div></div>
+                    <div class="hm-feed__date">21 August 2026</div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>Rebirth The End</b> <span class="dim">placed at #3</span></div></div>
+                    <div class="hm-change is-new"><span class="hm-change__dot"></span><div><b>FUKOUNA GIRL</b> <span class="dim">placed at #139</span></div></div>
+                </details>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="hm-col hm-credit">
+        <div class="hm-credit__k">
+            <h2 class="u-eyebrow">List editors <span class="u-count">12</span></h2>
+            <p>Roles, contact routes and the full team are on <a href="#" style="text-decoration:underline">Information</a>.</p>
+        </div>
+        <!--__B:editors-line__-->
+    </div>
+
+</div>
+</div>

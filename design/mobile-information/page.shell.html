@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="root">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>__TITLE__ — /mobile/info</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* The page as the app renders it: no review chrome, no phone frame. Open it on
+   an actual phone — that is what this output is for. Theme tokens are copied
+   from css/main.css, .root being ULL's dark default and .root.dark its light
+   theme, the class names inverted exactly as the app has them. */
+:root { color-scheme: dark light; }
+html.root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+}
+html.root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    overflow: hidden;
+}
+body > .m2 { height: 100%; }
+body > .m2 > .m2-scroll { flex: 1; min-height: 0; overflow-y: auto; }
+.mk-ic { display: inline-flex; align-items: center; justify-content: center; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+.mk-ic svg { width: 100%; height: 100%; display: block; }
+/* Role icons ship as two files, -dark being the one for the light theme; this
+   page carries the dark-theme file and inverts it, which is what the app's
+   :src binding does with a second request. */
+html.root.dark .mk-inv { filter: invert(1); }
+
+/* Preview control only — not part of the design. */
+.pv-theme {
+    position: fixed; right: 0.7rem; bottom: 4.2rem; z-index: 99;
+    padding: 0.35rem 0.7rem; border-radius: 2rem;
+    background: rgba(128, 128, 128, 0.14); border: 1px solid rgba(128, 128, 128, 0.3);
+    color: inherit; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.62rem;
+    opacity: 0.35; cursor: pointer;
+}
+.pv-theme:hover { opacity: 0.9; }
+
+/*__SHARED_CSS__*/
+
+/*__MOBILE_CSS__*/
+
+/*__KIT_CSS__*/
+</style>
+</head>
+<body>
+<!--__BODY__-->
+<button class="pv-theme" type="button" onclick="document.documentElement.classList.toggle('dark')">theme</button>
+</body>
+</html>

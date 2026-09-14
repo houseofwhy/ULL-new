@@ -1,0 +1,313 @@
+<!--meta
+title: Index
+tag: one document, nothing hidden behind a tap
+files: js/pages/mobile/MobileInfo.js · css/pages/mobile-info.css
+state: every row expands — Contents opens the jump sheet
+idea: One page, printed in order, from what the list is to the API. Nothing opens over it and nothing is switched away: the two long parts — the fifteen questions and the fourteen guideline sections — are rows that unfold where they stand, and everything short is simply on the page. A Contents bar sticks under the top bar with the part you are in written on it; tapping it raises a sheet listing the seven parts and, under Guidelines, all fourteen sections, so a jump is one tap from anywhere. Every part and every section is an anchor, which is what makes a rule linkable.
+weight: Reading order, and the fold. The parts run in the order a visitor needs them — what the list is, the questions, the pages, the rules, the marks, the staff, the API — and length is controlled by what is folded rather than by what is hidden: a question is one row until you want it, the reference is nineteen short rows and stays open, because folding it would cost more than printing it.
+cost: Middling to high, and the highest to keep honest. No modal and no panel switching, but the page renders every section of the guidelines and every answer at once, so it is by far the most markup on screen; folded rows keep the scroll sane but not the DOM. The Contents bar has to track scroll position to name the part you are in, and the sheet has to be built from the same arrays as the page.
+watch: Length. Fifteen folded questions and fourteen folded sections are twenty-nine rows before the reference legends start, so the Contents bar is not a convenience here — it is the only practical way to reach the API. Watch that opening a row does not push what you were reading off screen, that the anchors survive a fold being closed, and that search results scroll to a row and open it rather than only highlighting it.
+-->
+<style>
+/* ── C. Index ─────────────────────────────────────────────────────────────
+   One document. The only new mechanisms are a fold and a jump sheet. */
+.mk-index { position: relative; overflow: hidden; }
+
+.mk-index .ix-hero { padding: 1.15rem var(--m-pad) 0.9rem; background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 0%, transparent 62%); }
+.mk-index .ix-hero h1 { font-size: 1.55rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.mk-index .ix-hero p { margin-top: 0.5rem; font-size: 0.77rem; line-height: 1.6; opacity: 0.55; }
+.mk-index .ix-more { color: var(--u-accent); font-weight: 600; cursor: pointer; }
+
+.mk-index .ix-search { padding: 0 var(--m-pad) 0.8rem; }
+.mk-index .ix-field { display: flex; align-items: center; gap: 0.55rem; height: var(--m-tap); padding: 0 0.75rem; border-radius: var(--m-r); border: 1px solid var(--u-line); background: var(--u-fill); }
+.mk-index .ix-field input { flex: 1; min-width: 0; border: 0; background: transparent; color: inherit; font-family: inherit; font-size: 0.82rem; outline: none; }
+.mk-index .ix-mag { position: relative; flex-shrink: 0; width: 0.85rem; height: 0.85rem; border: 1.5px solid currentColor; border-radius: 50%; opacity: 0.45; }
+.mk-index .ix-mag::after { content: ''; position: absolute; right: -0.3rem; bottom: -0.3rem; width: 0.42rem; height: 1.5px; background: currentColor; transform: rotate(45deg); }
+.mk-index .ix-results { display: none; margin-top: 0.6rem; }
+.mk-index .ix-search:focus-within .ix-results { display: flex; }
+
+/* ── Contents ──
+   Sticky, and it says where you are. On a page this long it is the navigation,
+   not a convenience. */
+.mk-index .ix-bar {
+    position: sticky; top: 0; z-index: 15;
+    display: flex; align-items: center; gap: 0.6rem;
+    width: 100%; min-height: 2.8rem; padding: 0.5rem var(--m-pad);
+    border: 0; border-top: 1px solid var(--u-line); border-bottom: 1px solid var(--u-line);
+    background: color-mix(in srgb, var(--color-background) 92%, var(--color-on-background));
+    color: var(--color-on-background); font-family: inherit; text-align: left; cursor: pointer;
+}
+.mk-index .ix-bar__k { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.4; }
+.mk-index .ix-bar__n { display: block; margin-top: 0.05rem; font-size: 0.82rem; font-weight: 600; }
+.mk-index .ix-bar__c { margin-left: auto; font-size: 0.62rem; font-weight: 700; opacity: 0.35; font-variant-numeric: tabular-nums; }
+
+/* ── The document ── */
+.mk-index .ix-doc { padding: 0 var(--m-pad) 2rem; }
+.mk-index .ix-part { padding-top: 1.6rem; scroll-margin-top: 3rem; }
+.mk-index .ix-part + .ix-part { margin-top: 1.6rem; border-top: 1px solid var(--u-line); }
+.mk-index .ix-part__head { margin-bottom: 0.9rem; }
+.mk-index .ix-part__head .u-eyebrow { margin-bottom: 0.35rem; }
+.mk-index .ix-part__head h2 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+.mk-index .ix-part__head p { margin-top: 0.4rem; font-size: 0.76rem; line-height: 1.6; opacity: 0.5; }
+
+/* ── A fold ──
+   A question or a guideline section: one row until it is wanted. The marker is
+   a rule of its own so the row reads as tappable without a chevron font. */
+.mk-index .ix-fold { border-bottom: 1px solid var(--u-line); scroll-margin-top: 3rem; }
+.mk-index .ix-fold:first-of-type { border-top: 1px solid var(--u-line); }
+.mk-index .ix-fold > summary {
+    display: flex; align-items: center; gap: 0.7rem;
+    min-height: var(--m-tap); padding: 0.6rem 0;
+    font-size: 0.82rem; font-weight: 600; line-height: 1.4;
+    list-style: none; cursor: pointer;
+}
+.mk-index .ix-fold > summary::-webkit-details-marker { display: none; }
+.mk-index .ix-fold > summary::after {
+    content: ''; flex-shrink: 0; margin-left: auto;
+    width: 0.5rem; height: 0.5rem;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translate(-0.1rem, -0.1rem); opacity: 0.4;
+}
+.mk-index .ix-fold[open] > summary::after { transform: rotate(-135deg) translate(-0.15rem, -0.15rem); }
+.mk-index .ix-fold[open] > summary { color: var(--u-accent); }
+.mk-index .ix-fold__body { padding: 0 0 0.9rem; }
+.mk-index .ix-fold__body .mki-prose p:last-child { margin-bottom: 0; }
+.mk-index .ix-glg { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin: 1.35rem 0 0.15rem; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.mk-index .ix-glg:first-child { margin-top: 0; }
+.mk-index .ix-jump { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.1rem; }
+.mk-index .ix-jump > * { width: 100%; min-height: var(--m-tap); }
+
+/* ── The jump sheet ──
+   The mobile shell's own sheet, anchored to the bottom edge, listing the seven
+   parts and the fourteen sections under Guidelines. */
+.mk-index .ix-sr { position: absolute; opacity: 0; pointer-events: none; }
+.mk-index .ix-scrim, .mk-index .ix-sheet { display: none; }
+.mk-index #ix-jump:checked ~ .ix-scrim { display: block; position: absolute; inset: 0; z-index: 30; background: rgba(0, 0, 0, 0.5); }
+.mk-index #ix-jump:checked ~ .ix-sheet {
+    display: flex; flex-direction: column;
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 31;
+    max-height: 78%;
+    border-radius: 1rem 1rem 0 0; border-top: 1px solid var(--u-line);
+    background: var(--color-background);
+}
+.mk-index .ix-sheet__grip { width: 2.25rem; height: 0.25rem; border-radius: 1rem; background: var(--u-line-2); margin: 0.6rem auto 0.2rem; }
+.mk-index .ix-sheet__head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.7rem var(--m-pad) 0.8rem; }
+.mk-index .ix-sheet__head h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+.mk-index .ix-sheet__body { flex: 1; min-height: 0; overflow-y: auto; padding: 0 var(--m-pad) 1.25rem; }
+.mk-index .ix-to {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    min-height: var(--m-tap); padding: 0.4rem 0;
+    border-top: 1px solid var(--u-line);
+    font-size: 0.86rem; font-weight: 600;
+}
+.mk-index .ix-to span { font-size: 0.62rem; font-weight: 700; opacity: 0.35; font-variant-numeric: tabular-nums; }
+.mk-index .ix-to--sub { padding-left: 0.9rem; font-size: 0.78rem; font-weight: 500; opacity: 0.75; }
+.mk-index .ix-sheet__label { margin: 0.9rem 0 0.15rem; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.3; }
+</style>
+
+<div class="m2 ull2 mki mk-index">
+    <input class="ix-sr" type="checkbox" id="ix-jump" />
+
+<!--__B:topbar__-->
+
+    <div class="m2-scroll">
+        <section class="ix-hero">
+            <h1>Information</h1>
+            <p>
+                The Upcoming Levels List forecasts which Extreme Demons are about to be verified and placed
+                on the Demonlist. This page says how that is decided, what everything on the site means, who
+                to ask, and how to read the whole list as JSON.
+                <a class="ix-more" href="#ix-about">What this list is, in full &rarr;</a>
+            </p>
+        </section>
+
+        <div class="ix-search">
+            <div class="ix-field">
+                <span class="ix-mag"></span>
+                <input type="search" value="proof" placeholder="Search the guidelines, the FAQ, the endpoints and the legends" aria-label="Search this page" />
+            </div>
+            <div class="ix-results mki-hits">
+<!--__B:hits__-->
+            </div>
+        </div>
+
+        <label class="ix-bar" for="ix-jump">
+            <span>
+                <span class="ix-bar__k">Contents</span>
+                <span class="ix-bar__n">What this list is</span>
+            </span>
+            <span class="ix-bar__c">1 / 7</span>
+        </label>
+
+        <div class="ix-doc">
+            <section class="ix-part" id="ix-about">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">Start here</div>
+                    <h2>What this list is</h2>
+                </div>
+<!--__B:about__-->
+                <div class="ix-jump">
+                    <a class="u-btn u-btn--ghost" href="#ix-navigation">What is on each page &rarr;</a>
+                    <a class="u-btn u-btn--ghost" href="#ix-reference">What the marks mean &rarr;</a>
+                </div>
+            </section>
+
+            <section class="ix-part" id="ix-faq">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">Answers &middot; 15 questions</div>
+                    <h2>FAQ</h2>
+                    <p>Submitting a record and what proof it needs, how a level gets listed, how leaderboard points are worked out, and why a total changes when you have submitted nothing. 15 questions in 4 groups, each answered here rather than pointed at the guidelines.</p>
+                </div>
+
+                <div class="ix-glg">Getting on the list <span>5</span></div>
+                <details class="ix-fold" open>
+                    <summary>How does a level get on the list?</summary>
+                    <div class="ix-fold__body mki-prose"><p>Staff select it. There is no queue a creator joins: moderators assess levels against the Level Selection criteria in the guidelines &mdash; classic gameplay, a public recording, an intended release on the official servers and a credible chance of being rated &mdash; and place the ones that pass on the Pending List until an exact position is settled.</p></div>
+                </details>
+                <details class="ix-fold"><summary>My level isn&rsquo;t listed. Can I put it forward?</summary><div class="ix-fold__body mki-prose"><p>Raise it in <code>#list-discussion</code> on the Discord server with a public recording of its current state. It is not a submission form and the staff are not obliged to add it; it goes through the same criteria as everything else.</p></div></details>
+                <details class="ix-fold"><summary>Why is a level on Pending and not on the list?</summary><div class="ix-fold__body mki-prose"><p>It passed selection but has no exact position yet. The Pending List shows the range it is expected to land in and an arrow for which way it is moving inside that range. A level with no usable estimate at all sits under <em>Pending Indefinitely</em>.</p></div></details>
+                <details class="ix-fold"><summary>A level&rsquo;s information is wrong or out of date.</summary><div class="ix-fold__body mki-prose"><p>Report it in <code>#level-update-reporting</code> with something to back it up &mdash; gameplay footage, a statement from the creator, tester feedback. Positions are adjusted on that kind of evidence.</p></div></details>
+                <details class="ix-fold"><summary>Why is a level marked &#128683;?</summary><div class="ix-fold__body mki-prose"><p>It is pending removal: it no longer meets the criteria it was added under, and will come off the list unless that changes.</p></div></details>
+
+                <div class="ix-glg">Records <span>4</span></div>
+                <details class="ix-fold"><summary>How do I submit a record?</summary><div class="ix-fold__body mki-prose"><p>Through the list&rsquo;s Discord server. Read <em>Acceptance of Records</em> in the guidelines first &mdash; a record that arrives without the required proof is rejected before anyone assesses it, not sent back for more.</p></div></details>
+                <details class="ix-fold"><summary>What proof does a record need?</summary><div class="ix-fold__body mki-prose"><p>A complete, uncut playthrough of the record (if your video has cuts, attach the raw footage as well), the level&rsquo;s audio or your clicks, and a cheat indicator and fps/tps display where your mod menu provides them. The record has to be on the version of the level this site lists. The full requirements, including what may be blurred and what may not, are in <em>Requirements for proof of legitimacy</em>.</p></div></details>
+                <details class="ix-fold"><summary>What counts as a world record here?</summary><div class="ix-fold__body mki-prose"><p>Two things are tracked separately: the best completion from 0%, and the world record run &mdash; the longest single segment on the current version of the level, measured from where it started to where it ended.</p></div></details>
+                <details class="ix-fold"><summary>My record was rejected. Can it be reviewed?</summary><div class="ix-fold__body mki-prose"><p>A record rejected because the player changed the level can be reviewed if the creator later made the same change in a new version; ask the staff. Anything rejected for missing proof needs to be resubmitted with the proof.</p></div></details>
+
+                <div class="ix-glg">Points and the leaderboard <span>3</span></div>
+                <details class="ix-fold">
+                    <summary>How are leaderboard points calculated?</summary>
+                    <div class="ix-fold__body mki-prose">
+                        <p>From two things: the level&rsquo;s rank in <strong>All Levels</strong>, and the percentage of your record. A verification is worth twice a 100% record on the same level, and completing a level that is not verified yet &mdash; a layout completion &mdash; is worth 0.8 of a verification.</p>
+                        <div class="mki-scroll">
+                            <table class="mki-tbl mki-tbl--num">
+                                <thead><tr><th></th><th>#1</th><th>#10</th><th>#50</th><th>#100</th></tr></thead>
+                                <tbody>
+                                    <tr><td>100% record</td><td>1459</td><td>1196</td><td>663</td><td>425</td></tr>
+                                    <tr><td>50% record</td><td>851</td><td>698</td><td>387</td><td>248</td></tr>
+                                    <tr><td>Verification</td><td>2919</td><td>2392</td><td>1325</td><td>849</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Position is worth far more than percentage: a 50% on #1 beats a 100% on #100.</p>
+                    </div>
+                </details>
+                <details class="ix-fold"><summary>Why did my total change when I didn&rsquo;t submit anything?</summary><div class="ix-fold__body mki-prose"><p>Because points are calculated from a level&rsquo;s <em>current</em> rank, and on a list of upcoming levels ranks move constantly. Every record on a level that moves is worth a different number of points afterwards.</p></div></details>
+                <details class="ix-fold"><summary>What is &ldquo;layout verified&rdquo;?</summary><div class="ix-fold__body mki-prose"><p>A 100% completion of a level that has not been verified yet &mdash; someone beat it in its undecorated state. It is scored as its own thing, at 0.8 of a verification.</p></div></details>
+
+                <div class="ix-glg">The list itself <span>3</span></div>
+                <details class="ix-fold"><summary>What do the colours in the list mean?</summary><div class="ix-fold__body mki-prose"><p>They are the level&rsquo;s state, from layout through decoration and verification to rated. The full scale is under <a href="#ix-reference">What the marks mean</a> on this page, and it is the same scale as the status pill on a level&rsquo;s own page. Level colouring is a setting &mdash; if names look plain, turn it on in Settings.</p></div></details>
+                <details class="ix-fold"><summary>Is this the Demonlist? Is it official?</summary><div class="ix-fold__body mki-prose"><p>No. ULL is a community project and is not affiliated with RobTop Games. Levels that are already rated are placed in strict accordance with their ranking on <a href="https://pointercrate.com" target="_blank" rel="noopener">Pointercrate</a>, and these guidelines are adapted from the Global Demonlist Guidelines with credit to their authors &mdash; but nothing here is an official ranking.</p></div></details>
+                <details class="ix-fold"><summary>The rules changed and I didn&rsquo;t know.</summary><div class="ix-fold__body mki-prose"><p>Changes are announced in the Discord server. The guidelines on this page are always the current version.</p></div></details>
+            </section>
+
+            <section class="ix-part" id="ix-navigation">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">Navigation &middot; 9 pages</div>
+                    <h2>What is on each page</h2>
+                </div>
+<!--__B:navigation__-->
+            </section>
+
+            <section class="ix-part" id="ix-guidelines">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">The rules &middot; 14 sections</div>
+                    <h2>Guidelines</h2>
+                    <p>How records are accepted, how levels are chosen and positioned, what the staff may and may not do. 14 sections, and the answer to most arguments.</p>
+                </div>
+
+                <div class="ix-glg">General <span>2</span></div>
+                <details class="ix-fold" open>
+                    <summary>Introduction</summary>
+                    <div class="ix-fold__body mki-prose">
+                        <p>These guidelines are directly adapted from, and heavily rely on, the structure and principles of the Global Demonlist Guidelines. We extend our full credit and gratitude to the original authors.</p>
+                        <p>The following text contains information about the guidelines that explain how the Upcoming Level List (hereinafter referred to as &ldquo;the list&rdquo;) works in terms of accepting records, managing levels, recognizing permitted and prohibited software, establishing the duties and areas of responsibility of the list staff.</p>
+                        <p>These rules are subject to change, which will be announced in the list&rsquo;s discord server. Players should stay up to date with any changes to avoid unexpected problems.</p>
+                    </div>
+                </details>
+                <details class="ix-fold"><summary>Glossary</summary><div class="ix-fold__body"><div class="mki-prose"><p>The terms used throughout these guidelines and across the site &mdash; a level&rsquo;s state, records, and the words the list itself uses.</p></div></div></details>
+
+                <div class="ix-glg">Acceptance of Records <span>4</span></div>
+                <details class="ix-fold"><summary>Definition of a World Record</summary><div class="ix-fold__body mki-prose"><p>The two kinds tracked here, and when a level update resets them.</p></div></details>
+                <details class="ix-fold"><summary>Requirements for proof of legitimacy</summary><div class="ix-fold__body mki-prose"><p>What a submission must show before anyone assesses it.</p></div></details>
+                <details class="ix-fold"><summary>Tolerance and leniency policy</summary><div class="ix-fold__body mki-prose"><p>Where the staff give ground, and where they do not.</p></div></details>
+                <details class="ix-fold"><summary>Cheating and penalties</summary><div class="ix-fold__body mki-prose"><p>What counts as cheating, and what follows from it.</p></div></details>
+
+                <div class="ix-glg">Level Placement <span>3</span></div>
+                <details class="ix-fold"><summary>List Structure</summary><div class="ix-fold__body mki-prose"><p>The three tiers and the threshold for each.</p></div></details>
+                <details class="ix-fold"><summary>Level Selection</summary><div class="ix-fold__body mki-prose"><p>The criteria a level is assessed against before it is listed at all.</p></div></details>
+                <details class="ix-fold"><summary>Determining and adjusting level positions</summary><div class="ix-fold__body mki-prose"><p>How a position is arrived at, and what moves it afterwards.</p></div></details>
+
+                <div class="ix-glg">Content Policy <span>2</span></div>
+                <details class="ix-fold"><summary>List records</summary><div class="ix-fold__body mki-prose"><p>What may be shown alongside a record, and what may not.</p></div></details>
+                <details class="ix-fold"><summary>Levels and thumbnails</summary><div class="ix-fold__body mki-prose"><p>The rules for level content and the images this site shows for it.</p></div></details>
+
+                <div class="ix-glg">Technical Support <span>3</span></div>
+                <details class="ix-fold"><summary>Staff roles and their areas of responsibility</summary><div class="ix-fold__body mki-prose"><p>Who does what, from Moderator to List Leader.</p></div></details>
+                <details class="ix-fold"><summary>Ethical standards of list staff</summary><div class="ix-fold__body mki-prose"><p>What the staff hold themselves to.</p></div></details>
+                <details class="ix-fold"><summary>Contacts</summary><div class="ix-fold__body mki-prose"><p>Individual handles for every person on the team.</p></div></details>
+            </section>
+
+            <section class="ix-part" id="ix-reference">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">Reference &middot; 19 marks</div>
+                    <h2>What the marks mean</h2>
+                </div>
+<!--__B:reference__-->
+            </section>
+
+            <section class="ix-part" id="ix-staff">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">Who to talk to &middot; 12 people</div>
+                    <h2>Staff &amp; contact</h2>
+                </div>
+<!--__B:staff__-->
+            </section>
+
+            <section class="ix-part" id="ix-api">
+                <div class="ix-part__head">
+                    <div class="u-eyebrow">Build on it &middot; 9 endpoints</div>
+                    <h2>API documentation</h2>
+                </div>
+<!--__B:api__-->
+            </section>
+        </div>
+    </div>
+
+<!--__B:tabbar__-->
+
+    <label class="ix-scrim" for="ix-jump"></label>
+    <div class="ix-sheet">
+        <div class="ix-sheet__grip"></div>
+        <div class="ix-sheet__head">
+            <h2>Contents</h2>
+            <label class="u-chip u-chip--round" for="ix-jump">Close</label>
+        </div>
+        <div class="ix-sheet__body">
+            <a class="ix-to" href="#ix-about">What this list is</a>
+            <a class="ix-to" href="#ix-faq">FAQ <span>15</span></a>
+            <a class="ix-to" href="#ix-navigation">What is on each page <span>9</span></a>
+            <a class="ix-to" href="#ix-guidelines">Guidelines <span>14</span></a>
+            <div class="ix-sheet__label">Guideline sections</div>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Introduction</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Glossary</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Definition of a World Record</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Requirements for proof of legitimacy</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Tolerance and leniency policy</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Cheating and penalties</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">List Structure</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Level Selection</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Determining and adjusting level positions</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">List records</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Levels and thumbnails</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Staff roles and their areas of responsibility</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Ethical standards of list staff</a>
+            <a class="ix-to ix-to--sub" href="#ix-guidelines">Contacts</a>
+            <div class="ix-sheet__label">And the rest</div>
+            <a class="ix-to" href="#ix-reference">What the marks mean <span>19</span></a>
+            <a class="ix-to" href="#ix-staff">Staff &amp; contact <span>12</span></a>
+            <a class="ix-to" href="#ix-api">API documentation <span>9</span></a>
+        </div>
+    </div>
+</div>

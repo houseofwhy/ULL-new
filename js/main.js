@@ -1,14 +1,21 @@
 import routes from './routes.js';
 import { PAGE_META } from './seo-meta.js';
+import MarksWindow from './components/MarksWindow.js';
 
 export const store = Vue.reactive({
     dark: localStorage.getItem('dark') === null ? false : JSON.parse(localStorage.getItem('dark')),
     thumbnails: localStorage.getItem('thumbnails') === null ? true : JSON.parse(localStorage.getItem('thumbnails')),
     levelColoring: localStorage.getItem('levelColoring') === null ? true : JSON.parse(localStorage.getItem('levelColoring')),
-    benchmarkMode: false,
+    benchmarkMode: localStorage.getItem('benchmarkMode') === null ? false : JSON.parse(localStorage.getItem('benchmarkMode')),
+    // /level/<slug> is the one route that renders on both surfaces — it never
+    // redirects, because every shared link and search result points at it — so
+    // it has to know which chrome to wear. Set below, next to the redirect that
+    // asks the same question.
+    mobile: false,
     authKey: '',
     sidebarOpen: false,
     showSettings: false,
+    showMarks: false,
     showColoringHint: false,
     coloringHintDismissed: localStorage.getItem('coloringHintDismissed') === 'true',
     coloringHintCooldown: (() => {
@@ -52,6 +59,9 @@ document.getElementById('seo-fallback')?.remove();
 const app = Vue.createApp({
     data: () => ({ store }),
 });
+// The marks reader is raised from the shell, not from a page, so the question
+// mark in Settings can answer without navigating away from wherever we are.
+app.component('MarksWindow', MarksWindow);
 // Cloudflare Pages serves a directory URL with a trailing slash, so arriving
 // straight at ull.pages.dev/listmain lands the router on "/listmain/". Every
 // lookup here is keyed without one, and the canonical URL must not grow one
@@ -92,6 +102,8 @@ const isCrawler = () => BOT_UA.test(navigator.userAgent);
 
 // Auto-redirect mobile devices
 const isMobile = () => !isCrawler() && (window.innerWidth <= 768 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent));
+store.mobile = isMobile();
+window.addEventListener('resize', () => { store.mobile = isMobile(); });
 router.beforeEach((to, from, next) => {
     const path = normalizePath(to.path);
     const standalone = path.startsWith('/level/') || path === '/generator' || path === '/admin';

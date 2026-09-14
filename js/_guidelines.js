@@ -11,6 +11,36 @@
 <p>The following text contains information about the guidelines that explain how the Upcoming Level List (hereinafter referred to as \u201cthe list\u201d) works in terms of accepting records, managing levels, recognizing permitted and prohibited software, establishing the duties and areas of responsibility of the list staff.</p>
 <p>These rules are subject to change, which will be announced in the list\u2019s discord server. Players should stay up to date with any changes to avoid unexpected problems.</p>
                 `
+            },
+            {
+                id: 'glossary',
+                title: 'Glossary',
+                content: `
+<p>The terms used throughout these guidelines and across the site.</p>
+<h4>A level\u2019s state</h4>
+<ul>
+<li><strong>Layout</strong> \u2014 a level whose gameplay exists but which has no decoration yet.</li>
+<li><strong>Decoration progress</strong> \u2014 how much of the level\u2019s decoration is finished, as a percentage. It is what colours a level\u2019s name up to the point decoration is complete.</li>
+<li><strong>Verification progress</strong> \u2014 how far anyone has got on the current version of the level, taken from the best record or the longest run. It takes over the name colour once decoration is finished.</li>
+<li><strong>Verified</strong> \u2014 the level has been completed in full and is no longer upcoming.</li>
+<li><strong>Rated</strong> / <strong>Unrated</strong> \u2014 whether the level has received an official in-game rating from the developer. A verified level can sit here unrated for some time.</li>
+<li><strong>Pending</strong> \u2014 the level has passed selection but has no exact position yet; the Pending List shows the range it is expected to land in. <strong>Pending Indefinitely</strong> means not even a range can be estimated yet.</li>
+</ul>
+<h4>Records</h4>
+<ul>
+<li><strong>World record (from 0%)</strong> \u2014 the highest completion percentage achieved from the start of the level. <strong>World record run</strong> \u2014 the longest single segment on the current version, measured between where it started and where it ended. Both are defined in full under <em>Definition of a World Record</em>.</li>
+<li><strong>Verifier</strong> \u2014 the player who will verify the level. <strong>Open Verification</strong> means no verifier has been decided.</li>
+<li><strong>Layout completion</strong> \u2014 a 100% completion of a level that is not verified yet, i.e. beaten in its undecorated state. It is scored separately from an ordinary record.</li>
+</ul>
+<h4>On the list</h4>
+<ul>
+<li><strong>All Levels</strong>, <strong>Main List</strong>, <strong>Future List</strong> \u2014 the three tiers. The order is the same in all three; the threshold to appear at all is what differs. See <em>List Structure</em>.</li>
+<li><strong>Benchmark</strong> \u2014 a verified level kept on the list as a reference point for difficulty. <strong>Benchmark Mode</strong>, in Settings, hides every other verified level and renumbers what is left.</li>
+<li><strong>Remake</strong> \u2014 a new version of a level that already exists.</li>
+<li><strong>NONG</strong> / <strong>NC</strong> \u2014 the level\u2019s music is not hosted on Newgrounds, or is not copyright-free.</li>
+<li><strong>Medium</strong>, <strong>Long</strong>, <strong>XL</strong>, <strong>XXL</strong>, <strong>XXXL</strong> \u2014 how long the gameplay runs.</li>
+</ul>
+                `
             }
         ]
     },

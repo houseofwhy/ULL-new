@@ -46,11 +46,11 @@ probability and quality.</p>
 export const FAQ = [
     {
         q: 'What is the Upcoming Levels List?',
-        a: 'The Upcoming Levels List (ULL) is a community-maintained catalogue of upcoming Top 1–100 Extreme Demons in Geometry Dash — levels that are still in development, decoration or verification and are projected to place on the Demonlist once they are released. It also includes worthy unrated Extreme Demons that would have qualified for a rating at the time they were made.',
+        a: 'The Upcoming Levels List (ULL) is a community-maintained catalogue of upcoming Top 1–135 Extreme Demons in Geometry Dash — levels that are still in development, decoration or verification and are projected to place on the Demonlist once they are released. It also includes worthy unrated Extreme Demons that would have qualified for a rating at the time they were made.',
     },
     {
         q: 'What are upcoming levels in Geometry Dash?',
-        a: 'Upcoming levels are Geometry Dash levels that have been announced or are visibly in development but have not been verified and published yet. In the Extreme Demon community the term usually refers to future Top 1–100 Demonlist contenders: levels still being built, decorated, or attempted by a verifier. The Upcoming Levels List tracks these levels with their creators, verifier, decoration progress, best records and projected placement.',
+        a: 'Upcoming levels are Geometry Dash levels that have been announced or are visibly in development but have not been verified and published yet. In the Extreme Demon community the term usually refers to future Top 1–135 Demonlist contenders: levels still being built, decorated, or attempted by a verifier. The Upcoming Levels List tracks these levels with their creators, verifier, decoration progress, best records and projected placement.',
     },
     {
         q: 'How do I find out which Extreme Demon is coming out next?',
@@ -87,13 +87,13 @@ export const PAGES = [
         title: 'Upcoming Levels List',
         socialTitle: 'Upcoming Levels List — Upcoming Geometry Dash Extreme Demons',
         description:
-            'Upcoming Levels List (ULL) tracks every upcoming Top 1–100 Extreme Demon in Geometry Dash — levels in development, their creators, verifiers, decoration progress and best records, ranked by where they are projected to land on the Demonlist.',
+            'Upcoming Levels List (ULL) tracks every upcoming Top 1–135 Extreme Demon in Geometry Dash — levels in development, their creators, verifiers, decoration progress and best records, ranked by where they are projected to land on the Demonlist.',
         h1: 'Upcoming Levels List',
         type: 'WebPage',
         faq: true,
         body: `
 <p><strong>Upcoming Levels List (ULL)</strong> is a community-maintained catalogue of upcoming
-Top 1&ndash;100 Extreme Demons in <strong>Geometry Dash</strong>, projected to place on the
+Top 1&ndash;135 Extreme Demons in <strong>Geometry Dash</strong>, projected to place on the
 Demonlist once they are verified and published. It forecasts the future of the Demonlist and
 also catalogues worthy unrated Extreme Demons.</p>
 <p>Every entry records the level&rsquo;s creators, its verifier, how far decoration has
@@ -108,8 +108,8 @@ ${TIERS}
   placement decision from the staff team.</li>
   <li><strong><a href="/leaderboard">Leaderboard</a></strong> &mdash; players ranked by the
   verifications, records and runs they hold on listed levels.</li>
-  <li><strong><a href="/events">Events</a></strong> &mdash; the current Level of the Month and the
-  level Closest to Verification.</li>
+  <li><strong><a href="/events">Events</a></strong> &mdash; the Level of the Day, the Level of the
+  Month and the level Closest to Verification.</li>
   <li><strong><a href="/information">Information</a></strong> &mdash; the full guidelines: record
   acceptance, proof requirements, list procedures and staff duties.</li>
 </ul>
@@ -224,7 +224,8 @@ that have been submitted to the Upcoming Levels List but have not yet been given
 Staff assess each one against the levels already listed before it is placed.</p>
 <p>Entries are marked with the placement range they are expected to land in &mdash; Pending #1,
 Top 10, Top 20, Top 30, Top 50, Top 75, or unknown &mdash; and with whether the staff&rsquo;s
-current reading is moving them up or down. Once a decision is made the level moves onto
+current reading is moving them up or down. Each of those ranges is an estimated position on the
+<strong>Demonlist</strong>, not a position on the Upcoming Levels List. Once a decision is made the level moves onto
 <a href="/list">All Levels</a> and, if it qualifies, the <a href="/listmain">Main</a> and
 <a href="/listfuture">Future</a> lists.</p>
 <p>The rules that govern submissions and placement decisions are documented in the
@@ -265,15 +266,17 @@ penalty system are set out in the <a href="/information">guidelines</a>.</p>`,
         priority: '0.7',
         changefreq: 'weekly',
         title: 'ULL — Events',
-        socialTitle: 'Events — Level of the Month & Closest to Verification | Upcoming Levels List',
+        socialTitle: 'Events — Level of the Day, Month & Closest to Verification | Upcoming Levels List',
         description:
-            'The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team.',
+            'The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team.',
         h1: 'Events',
         type: 'WebPage',
         body: `
-<p>The <strong>Events</strong> page highlights two picks from the Upcoming Levels List staff team,
-refreshed as the list moves.</p>
+<p>The <strong>Events</strong> page highlights three picks from the Upcoming Levels List staff
+team, refreshed as the list moves.</p>
 <ul>
+  <li><strong>Level of the Day</strong> &mdash; the upcoming <strong>Geometry Dash Extreme
+  Demon</strong> the staff are pointing at today.</li>
   <li><strong>Level of the Month</strong> &mdash; the upcoming <strong>Geometry Dash Extreme
   Demon</strong> the staff have singled out this month, whether for its progress, its quality or
   the attention it has drawn.</li>

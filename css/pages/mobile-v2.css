@@ -1,0 +1,823 @@
+/* ULL mobile v2 — the phone layer on top of css/ull-v2.css.
+
+   The desktop pages now speak one vocabulary: an eyebrow for every section
+   heading, one status pill on the list's own colour scale, meters for the two
+   progress numbers, stat cards for the records, a definition list for the
+   facts, chips for tags and creators. The mobile tree speaks none of it — it
+   still writes "Status: Decoration 80% done" and "WR From 0: None" as body
+   copy, under headings in a purple that appears nowhere else.
+
+   So this file is deliberately small. Everything a phone shares with the
+   desktop comes from .ull2; what lives here is only what genuinely differs at
+   390px: one column instead of two, a detail that expands under its row
+   instead of sitting beside it, controls within thumb reach, and a type scale
+   one step down.
+
+   Scope: .m2 and .ull2 both sit on the mobile shell (js/pages/Mobile.js), so
+   every page under /mobile/* has both. The templates this came from are in
+   design/mobile/. */
+
+.m2 {
+    /* One step down from the desktop scale. The tokens themselves are .ull2's. */
+    --m-pad: 0.9rem;
+    --m-r: 0.65rem;
+    --m-tap: 2.75rem;   /* nothing tappable is smaller than this */
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Lexend Deca', sans-serif;
+}
+.m2, .m2 * { box-sizing: border-box; }
+.m2 a { color: inherit; text-decoration: none; }
+.m2 h1, .m2 h2, .m2 h3, .m2 p { margin: 0; }
+.m2 h1::before, .m2 h1::after, .m2 h2::before, .m2 h2::after,
+.m2 h3::before, .m2 h3::after, .m2 p::before, .m2 p::after { display: none; }
+
+/* ── Top bar ──────────────────────────────────────────────────────────────
+   Kept from the current mobile shell, minus the pages grid: the destinations
+   move to the tab bar at the bottom, where a thumb reaches them. */
+.m2-top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    height: 3.25rem;
+    padding: 0 var(--m-pad);
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 65%, white) 100%);
+    color: var(--color-on-primary);
+}
+.m2-top__mark { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; }
+.m2-top__ver { margin-left: 0.35rem; font-size: 0.6rem; opacity: 0.7; }
+.m2-top__acts { display: flex; gap: 0.35rem; }
+.m2-top__btn {
+    width: 2.1rem;
+    height: 2.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 0.5rem;
+    /* Transparent at rest. A permanent wash made both buttons look held down. */
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+}
+.m2-top__btn:active,
+.m2-top__btn.active { background: rgba(255, 255, 255, 0.22); }
+
+/* ── Bottom tab bar ───────────────────────────────────────────────────────
+   The same eight destinations the "Pages" popup held, in the order the desktop
+   sidebar lists them. Five fit across a phone; the rest live under More. */
+.m2-nav {
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--u-line);
+    background: color-mix(in srgb, var(--color-background) 92%, var(--color-on-background));
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.m2-nav__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    min-height: 3.1rem;
+    padding: 0.4rem 0.2rem;
+    border: 0;
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    opacity: 0.45;
+    cursor: pointer;
+}
+.m2-nav__item.is-on { opacity: 1; color: color-mix(in srgb, var(--color-primary) 45%, white); }
+.root.dark .m2-nav__item.is-on { color: color-mix(in srgb, var(--color-primary) 75%, black); }
+.m2-nav__ic { width: 1.1rem; height: 1.1rem; }
+
+/* ── Page hero ────────────────────────────────────────────────────────────
+   The desktop's .u-phero, stacked: title, one line of lead, then the page's
+   own figures as chips instead of a boxed stat off to the right. */
+.m2-hero {
+    padding: 1.25rem var(--m-pad) 1rem;
+    border-bottom: 1px solid var(--u-line);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 0%, transparent 62%);
+}
+.m2-hero h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+.m2-hero__eyebrow {
+    margin-bottom: 0.45rem;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    opacity: 0.4;
+}
+.m2-hero p {
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    opacity: 0.5;
+}
+.m2-figs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+.m2-fig {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 2rem;
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.68rem;
+}
+/* On Pending, each figure jumps to the lane it counts. */
+button.m2-fig { cursor: pointer; }
+button.m2-fig:active { background: var(--u-fill-2); }
+.m2-fig b { font-size: 0.88rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.m2-fig span { opacity: 0.5; }
+.m2-fig--lead b { color: var(--u-accent); }
+
+/* Each page fills the shell's scroll container. */
+.m2-page-body { display: flex; flex-direction: column; }
+/* While the shell is waiting for the list, the spinner takes the space the
+   page will. */
+.mob-loading { flex: 1; display: flex; align-items: center; justify-content: center; }
+
+/* ── Body ─────────────────────────────────────────────────────────────── */
+.m2-body { flex: 1; padding: 1rem var(--m-pad) 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.m2-sec__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.7rem; }
+/* One line under a section heading saying what the rows below are picked by. */
+.m2-sec__note { margin: -0.3rem 0 0.75rem; font-size: 0.72rem; line-height: 1.55; opacity: 0.45; }
+.m2-sec__note b { font-weight: 600; opacity: 0.85; }
+.m2-sec__head .u-eyebrow { margin-bottom: 0; }
+.m2-more { font-size: 0.68rem; font-weight: 600; opacity: 0.5; white-space: nowrap; }
+
+/* ── Search ───────────────────────────────────────────────────────────── */
+.m2-search {
+    /* Sticky against .mob-content, which is the scroll container. */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem var(--m-pad);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--u-line);
+}
+/* The glyph is drawn on the bar itself rather than added to each page's
+   markup, so every search field on the phone carries it — levels, upcoming,
+   leaderboard. Same construction as .info-mag on /information: a ring with the
+   handle hung off its corner, both in the text colour at low opacity. */
+.m2-search::before, .m2-search::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    opacity: 0.4;
+    pointer-events: none;
+}
+.m2-search::before {
+    left: calc(var(--m-pad) + 0.72rem);
+    margin-top: -0.42rem;
+    width: 0.62rem;
+    height: 0.62rem;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+}
+.m2-search::after {
+    left: calc(var(--m-pad) + 1.24rem);
+    margin-top: 0.16rem;
+    width: 0.4rem;
+    height: 1.5px;
+    border-radius: 1px;
+    background: currentColor;
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+.m2-search input {
+    flex: 1;
+    min-width: 0;
+    height: var(--m-tap);
+    padding: 0 0.75rem 0 2.15rem;
+    border-radius: var(--m-r);
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.85rem;
+}
+.m2-search input::placeholder { opacity: 0.4; }
+.m2-search__btn {
+    flex-shrink: 0;
+    width: var(--m-tap);
+    height: var(--m-tap);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--m-r);
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    color: inherit;
+    cursor: pointer;
+}
+
+/* ── Level row ────────────────────────────────────────────────────────────
+   Same three parts as the desktop row — rank, thumbnail, name over a
+   secondary line — at tap size, with the trailing figure the page cares
+   about (a status pill on the lists, a percentage on Upcoming). */
+.m2-rows { display: flex; flex-direction: column; }
+/* Inside a card or a section, rows lose the full-bleed rule under the last one. */
+.m2-rows--flush .m2-row:last-child { border-bottom: 0; }
+.m2-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    min-height: var(--m-tap);
+    padding: 0.6rem var(--m-pad);
+    border: 0;
+    border-bottom: 1px solid var(--u-line);
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.m2-row.is-on {
+    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 62%, white) 100%);
+    color: var(--color-on-primary);
+    border-bottom-color: transparent;
+}
+.m2-row__rank {
+    flex-shrink: 0;
+    width: 2.1rem;
+    text-align: right;
+    font-size: 0.78rem;
+    font-weight: 700;
+    opacity: 0.45;
+    font-variant-numeric: tabular-nums;
+}
+.m2-row.is-on .m2-row__rank { opacity: 0.75; }
+.m2-row__thumb {
+    flex-shrink: 0;
+    width: 3.6rem;
+    height: 2.05rem;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    background: var(--u-fill-2);
+}
+.m2-row__body { flex: 1; min-width: 0; }
+.m2-row__name {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.m2-row__sub {
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.45;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.m2-row.is-on .m2-row__sub { opacity: 0.75; }
+.m2-row__end { flex-shrink: 0; margin-left: auto; font-size: 0.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+/* The pill is a label here, not a control: shrink it so a long status still
+   leaves the level's name room. */
+.m2-row .u-pill { flex-shrink: 0; padding: 0.2rem 0.5rem; font-size: 0.6rem; }
+.m2-row__bar { display: block; margin-top: 0.3rem; }
+
+/* ── Expanded detail ──────────────────────────────────────────────────────
+   The desktop's level container, stacked. It opens under the row it belongs
+   to, so the hero repeats the thumbnail rather than the name — the row above
+   already says the name. */
+.m2-detail {
+    /* The scrim has to land on an opaque colour or the blur behind it keeps
+       showing through the bottom of the hero. This is --u-fill resolved
+       against the page, so the block reads the same as any other card. */
+    --m-detail-bg: color-mix(in srgb, #808080 9%, var(--color-background));
+    border-bottom: 1px solid var(--u-line);
+    background: var(--m-detail-bg);
+}
+.m2-detail__hero {
+    position: relative;
+    overflow: hidden;
+    --m-detail-bg: color-mix(in srgb, #808080 9%, var(--color-background));
+}
+.m2-detail__bg {
+    position: absolute;
+    inset: -2rem;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1.75rem) saturate(1.35);
+    opacity: 0.45;
+}
+.root.dark .m2-detail__bg { opacity: 0.3; }
+.m2-detail__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--color-background) 40%, transparent) 0%, var(--m-detail-bg) 92%);
+}
+.m2-detail__head { position: relative; padding: 0.75rem var(--m-pad); }
+.m2-detail__by { font-size: 0.78rem; font-weight: 500; line-height: 1.45; opacity: 0.65; }
+.m2-detail__by b { font-weight: 600; }
+.m2-detail__pills { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.55rem; }
+.m2-detail__body { padding: 0.75rem var(--m-pad) 0.9rem; display: flex; flex-direction: column; gap: 0.8rem; }
+/* The flex gap already separates a heading from what follows it. */
+.m2-detail__body > .u-eyebrow { margin-bottom: 0; }
+
+/* Rank chips scroll sideways rather than wrapping onto a second line. */
+.m2-ranks {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+.m2-ranks::-webkit-scrollbar { display: none; }
+.m2-ranks .u-rank { flex: 0 0 auto; padding: 0.4rem 0.7rem; gap: 0.15rem; }
+.m2-ranks .u-rank__n { font-size: 0.95rem; }
+.m2-ranks .u-rank__l { font-size: 0.5rem; }
+
+.m2-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--m-r);
+    border: 1px solid var(--u-line);
+    background: rgba(0, 0, 0, 0.4);
+}
+.root.dark .m2-video { background: var(--u-fill-2); }
+.m2-tabs { display: flex; gap: 0.3rem; }
+.m2-tab {
+    flex: 1;
+    min-height: 2.2rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--u-line);
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.m2-tab.is-on { opacity: 1; background: var(--color-primary); color: var(--color-on-primary); border-color: transparent; }
+
+/* One column of cards, except the record pair, which fits two-up. Used by the
+   level page, which is the full record; the expanded row is a summary. */
+.m2-cards { display: flex; flex-direction: column; gap: 0.6rem; }
+.m2-cards .u-card { padding: 0.9rem 1rem; }
+.m2-cards .u-stats { grid-template-columns: 1fr 1fr; }
+.m2-actions { display: flex; gap: 0.5rem; }
+.m2-actions > * { flex: 1; min-height: var(--m-tap); }
+
+/* ── Summary ──────────────────────────────────────────────────────────────
+   What an expanded row shows: where the level stands, how far it has got, and
+   the best two records — four short lines. The video, creators, tags, level ID
+   and length are a tap away on the level's own page, which is what the button
+   at the bottom is for. Unfolding the whole record here pushed the next level
+   most of a screen down. */
+.m2-sum { display: flex; flex-direction: column; gap: 0.75rem; }
+.m2-sum__meters { display: flex; flex-direction: column; gap: 0.5rem; }
+.m2-sum__meters .u-meter + .u-meter { margin-top: 0; }
+.m2-sum__recs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.m2-sum__rec { min-width: 0; }
+.m2-sum__k { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; }
+.m2-sum__v {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--u-accent);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+.m2-sum__v--none { color: inherit; opacity: 0.3; font-size: 0.85rem; }
+.m2-sum__u { margin-top: 0.05rem; font-size: 0.66rem; opacity: 0.5; overflow-wrap: anywhere; }
+.m2-sum .u-btn { width: 100%; min-height: var(--m-tap); }
+
+/* The pending-list nudge under a search with few results. */
+.m2-suggest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 1.25rem var(--m-pad);
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--u-line);
+    border-radius: var(--m-r);
+    text-align: center;
+}
+.m2-suggest__k { font-size: 0.72rem; opacity: 0.55; }
+.m2-suggest__name { display: flex; align-items: center; gap: 0.4rem; font-size: 1rem; font-weight: 700; }
+.m2-suggest__name img { width: 1.3rem; height: 1.3rem; flex-shrink: 0; }
+.m2-suggest__name a { text-decoration: underline; }
+.m2-suggest__d { font-size: 0.75rem; opacity: 0.6; }
+.m2-suggest__d a { text-decoration: underline; }
+
+/* A level whose JSON failed to load. */
+.m2-row.is-error { color: var(--color-error); text-decoration: line-through; cursor: not-allowed; }
+
+/* ── Lane (pending) ───────────────────────────────────────────────────── */
+.m2-lane { scroll-margin-top: 1rem; position: relative; overflow: hidden; padding: 1rem 1.1rem; }
+.m2-lane::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--m-tone, transparent); }
+.m2-lane--place  { --m-tone: #5599ff; }
+.m2-lane--move   { --m-tone: #55ee55; }
+.m2-lane--remove { --m-tone: #ff6622; }
+.m2-lane--hold   { --m-tone: #9d9d9d; }
+.root.dark .m2-lane--place  { --m-tone: #3a6cb8; }
+.root.dark .m2-lane--move   { --m-tone: #2f9c2f; }
+.root.dark .m2-lane--remove { --m-tone: #cc511b; }
+.root.dark .m2-lane--hold   { --m-tone: #6f6f6f; }
+.m2-lane .u-eyebrow { color: var(--m-tone); opacity: 1; }
+.m2-lane .u-eyebrow .u-count { color: var(--color-on-background); opacity: 0.45; }
+.m2-plist { display: flex; flex-direction: column; }
+.m2-prow {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.4rem;
+    padding: 0.35rem 0.15rem;
+    font-size: 0.82rem;
+}
+.m2-prow__icon { flex-shrink: 0; width: 1.15rem; height: 1.15rem; }
+.m2-prow__icon--mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    background: var(--u-fill-2);
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+.m2-prow__name { flex: 1; min-width: 0; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.m2-prow__target {
+    flex-shrink: 0;
+    padding: 0.12rem 0.45rem;
+    border-radius: 2rem;
+    border: 1px solid var(--u-line);
+    font-size: 0.62rem;
+    font-weight: 600;
+    opacity: 0.7;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Podium (leaderboard) ─────────────────────────────────────────────── */
+.m2-podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; padding: 0.9rem var(--m-pad); }
+.m2-pod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    min-width: 0;
+    padding: 0.7rem 0.4rem;
+    border-radius: var(--m-r);
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    color: var(--color-on-background);
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+}
+.m2-pod__p { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.m2-pod__n { max-width: 100%; font-size: 0.76rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.m2-pod__s { font-size: 0.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.m2-pod--1 { padding-block: 0.95rem; border-color: color-mix(in srgb, #e0b44a 55%, transparent); background: linear-gradient(180deg, rgba(224,180,74,0.14), transparent 75%); }
+.m2-pod--1 .m2-pod__s { color: #e0b44a; }
+.m2-pod--2 { border-color: color-mix(in srgb, #b9bcc4 45%, transparent); }
+.m2-pod--2 .m2-pod__s { color: #b9bcc4; }
+.m2-pod--3 { border-color: color-mix(in srgb, #c08457 45%, transparent); }
+.m2-pod--3 .m2-pod__s { color: #c08457; }
+.root.dark .m2-pod--2 .m2-pod__s { color: #8b8f98; }
+
+/* The lead figure on an expanded Upcoming row. */
+.m2-total { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+.m2-total b { font-size: 2rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--u-accent); font-variant-numeric: tabular-nums; }
+.m2-total__bar { margin-top: 0.7rem; }
+.m2-total span { display: block; margin-top: 0.3rem; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+/* Score, level, then what the record was — all on one line. The level name is
+   the only part that can give ground, so it is the only part that truncates. */
+.m2-rec {
+    display: grid;
+    grid-template-columns: 3.2rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0;
+}
+.m2-rec + .m2-rec { border-top: 1px solid var(--u-line); }
+.m2-rec__score { text-align: right; font-size: 0.72rem; font-weight: 700; color: var(--u-accent); font-variant-numeric: tabular-nums; }
+.m2-rec__lvl { min-width: 0; font-size: 0.8rem; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.m2-rec__pct { margin-left: 0.35rem; font-size: 0.7rem; font-weight: 600; color: var(--u-accent); font-variant-numeric: tabular-nums; }
+.m2-rec__rank { margin-left: 0.3rem; font-size: 0.66rem; font-weight: 700; opacity: 0.35; }
+.m2-rec__type { font-size: 0.66rem; font-weight: 600; opacity: 0.55; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* ── Feature (events) ─────────────────────────────────────────────────── */
+.m2-feature { border: 1px solid var(--u-line); border-radius: var(--m-r); overflow: hidden; background: var(--u-fill); }
+.m2-feature .u-hero { border: 0; border-radius: 0; border-bottom: 1px solid var(--u-line); }
+.m2-feature .u-hero__inner { padding: 1rem var(--m-pad) 0.9rem; }
+.m2-feature .u-hero__title { font-size: 1.25rem; }
+.m2-tag { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.6rem; }
+.m2-tag b { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--u-accent); }
+.m2-tag span { font-size: 0.64rem; opacity: 0.45; font-variant-numeric: tabular-nums; }
+.m2-tag span::before { content: '·'; margin-right: 0.45rem; }
+.m2-feature__body { padding: 0.9rem var(--m-pad) 1rem; display: flex; flex-direction: column; gap: 0.8rem; }
+
+/* ── Sheet ────────────────────────────────────────────────────────────────
+   Filters and settings, which the current build shows as a centred popup.
+   A bottom sheet puts the actions where the thumb already is. */
+.m2-sheet-scrim { position: fixed; inset: 0; z-index: 300; background: rgba(0, 0, 0, 0.5); }
+.m2-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 301;
+    max-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem 1rem 0 0;
+    border-top: 1px solid var(--u-line);
+    background: var(--color-background);
+}
+.m2-sheet__grip { width: 2.25rem; height: 0.25rem; border-radius: 1rem; background: var(--u-line-2); margin: 0.6rem auto 0.2rem; }
+.m2-sheet__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem var(--m-pad) 0.9rem;
+}
+.m2-sheet__head h2 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.m2-sheet__body { flex: 1; overflow-y: auto; padding: 0 var(--m-pad) 0.75rem; }
+/* The settings rows space themselves with their own dividers, so the body's
+   trailing padding only left a gap between the last row and the footer, and the
+   footer's own rule then sat right under the Theme row's. Filters keeps its
+   rule — there the chips need separating from Reset and Apply. */
+.m2-sheet__body.mob-settings-list { padding-bottom: 0; }
+.m2-sheet__body.mob-settings-list + .m2-sheet__foot { border-top: 0; }
+.m2-sheet__foot { display: flex; gap: 0.5rem; padding: 0.75rem var(--m-pad) 1rem; border-top: 1px solid var(--u-line); }
+.m2-sheet__foot > * { flex: 1; min-height: var(--m-tap); }
+.m2-setting { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: var(--m-tap); }
+.m2-setting + .m2-setting { border-top: 1px solid var(--u-line); }
+.m2-setting__label { font-size: 0.85rem; font-weight: 500; }
+.m2-toggle { display: flex; border-radius: 0.4rem; border: 1px solid var(--u-line); overflow: hidden; }
+.m2-toggle button {
+    min-width: 3rem;
+    min-height: 2rem;
+    border: 0;
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 600;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.m2-toggle button.is-on { opacity: 1; background: var(--color-primary); color: var(--color-on-primary); }
+/* The e2e/list-ui suites drive these toggles through .mob-toggle button.active,
+   which is the same state under the class name the old markup used. */
+.m2-toggle button.active { opacity: 1; background: var(--color-primary); color: var(--color-on-primary); }
+.m2-filters { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.m2-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2.1rem;
+    padding: 0 0.7rem;
+    border-radius: 2rem;
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    font-size: 0.74rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.m2-filter.is-on { border-color: transparent; background: var(--color-primary); color: var(--color-on-primary); }
+/* A destination in the Other sheet. The rule runs the full width of the sheet
+   body rather than the text box, so it lines up with the group labels above it
+   instead of starting a fraction of a pixel in. */
+.m2-pages { display: flex; flex-direction: column; }
+.m2-pages__label {
+    margin: 0.85rem 0 0.15rem;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.3;
+}
+.m2-pages__label:first-child { margin-top: 0; }
+.m2-page {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: var(--m-tap);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+}
+.m2-page + .m2-page { border-top: 1px solid var(--u-line); }
+.m2-page.is-on { color: var(--u-accent); font-weight: 700; }
+
+.m2-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.9rem; }
+.m2-num label { display: block; margin-bottom: 0.3rem; font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.45; }
+.m2-num input {
+    width: 100%;
+    min-height: var(--m-tap);
+    padding: 0 0.7rem;
+    border-radius: var(--m-r);
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    color: inherit;
+    font-family: inherit;
+    font-size: 0.85rem;
+}
+
+/* ── Timeline (home) ──────────────────────────────────────────────────────
+   A bounded window rather than the whole feed: unrolled, Recent Changes pushed
+   the editors card off the end of a long scroll. */
+.m2-changes {
+    max-height: 18rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--u-line);
+    border-radius: var(--m-r);
+    background: color-mix(in srgb, #808080 4%, var(--color-background));
+}
+.m2-tl-date { display: flex; align-items: center; gap: 0.6rem; margin: 0.8rem 0 0.35rem; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.35; }
+.m2-tl-date:first-child { margin-top: 0; }
+.m2-tl-date::after { content: ''; flex: 1; height: 1px; background: var(--u-line); }
+.m2-tl-item { display: grid; grid-template-columns: 0.5rem 1fr; gap: 0.6rem; padding: 0.25rem 0; font-size: 0.78rem; line-height: 1.5; }
+.m2-tl-dot { margin-top: 0.45rem; width: 0.32rem; height: 0.32rem; border-radius: 50%; background: currentColor; opacity: 0.3; }
+.m2-tl-item b { font-weight: 600; }
+.m2-tl-item .dim { opacity: 0.5; }
+.m2-tl-item.is-up .m2-tl-dot { background: #55ee55; opacity: 0.85; }
+.m2-tl-item.is-down .m2-tl-dot { background: #ff6622; opacity: 0.85; }
+.m2-tl-item.is-new .m2-tl-dot { background: var(--color-primary); opacity: 1; }
+
+/* ── Editors (home) ───────────────────────────────────────────────────── */
+.m2-eds { display: flex; flex-direction: column; gap: 0.75rem; }
+.m2-eds__note { margin-top: 0.9rem; font-size: 0.72rem; line-height: 1.6; opacity: 0.45; }
+.m2-eds__label { margin-bottom: 0.25rem; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.3; }
+.m2-ed { display: flex; align-items: center; gap: 0.5rem; min-height: 2.1rem; font-size: 0.82rem; font-weight: 500; }
+.m2-ed__ic { flex-shrink: 0; width: 1.05rem; height: 1.05rem; opacity: 0.7; }
+.m2-ed__role {
+    margin-left: auto;
+    padding: 0.12rem 0.4rem;
+    border-radius: 0.25rem;
+    background: var(--u-fill-2);
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+    white-space: nowrap;
+}
+
+/* ── Home: the first screen ───────────────────────────────────────────────
+   The rest of the mobile tree opens straight onto rows, so its hero is one
+   compact block. Home is the page a visitor lands on, and there the same block
+   read as cramped: an eyebrow, a title, three lines of lead and five count
+   chips wrapping onto two ragged rows, all inside 230px, with the first list
+   row starting immediately under it.
+
+   So these rules — and only these, scoped to the home page, since every other
+   page keeps the compact hero — give the opening room: a larger title with more
+   air around it, and the counts replaced by the credentials bar the desktop
+   carries (.u-cred in css/ull-v2.css), which is a row of icons and lines rather
+   than a grid of cells. The phone takes the first two of its three. */
+.mob-home-page .m2-hero { padding: 2rem var(--m-pad) 1.4rem; border-bottom: 0; }
+.mob-home-page .m2-hero__eyebrow { margin-bottom: 0.7rem; letter-spacing: 0.16em; }
+.mob-home-page .m2-hero h1 { font-size: 1.85rem; line-height: 1.05; letter-spacing: -0.035em; }
+.mob-home-page .m2-hero p { margin-top: 0.8rem; font-size: 0.82rem; line-height: 1.7; opacity: 0.55; }
+
+/* The bar itself is the desktop's; what differs at 390px is its gutter, its
+   type size and the gap between two items rather than three. */
+.mob-home-page .u-cred { gap: 0.8rem 1.4rem; padding: 0.3rem var(--m-pad) 1.4rem; }
+.mob-home-page .u-cred__item { gap: 0.6rem; }
+.mob-home-page .u-cred__ic { width: 2.15rem; height: 2.15rem; padding: 0.5rem; border-radius: 0.65rem; }
+.mob-home-page .u-cred__t { font-size: 0.88rem; }
+.mob-home-page .u-cred__t b { font-size: 1.25em; }
+
+/* The sections below start a little further down, and stand a little further
+   apart, than on the pages that are all rows. */
+.mob-home-page .m2-body { padding-top: 1.25rem; gap: 1.35rem; }
+
+/* ── Home: the spotlight ──────────────────────────────────────────────────
+   41% of the window used to go by before the first level appeared, and what
+   appeared was a name in a row. #1 is introduced here the way /level/<slug>
+   introduces it — .u-hero from css/ull-v2.css with the two meters under it —
+   so the landing screen opens on a level rather than on an advert. The lead
+   above it is two lines rather than four to pay for the room. */
+.mob-home-page .m2-hero { padding: 1.5rem var(--m-pad) 1.1rem; }
+.mob-home-page .m2-hero__eyebrow { margin-bottom: 0.6rem; }
+.mob-home-page .m2-hero h1 { font-size: 1.75rem; }
+.mob-home-page .m2-hero p { margin-top: 0.6rem; font-size: 0.8rem; line-height: 1.6; }
+.mob-home-page .u-cred { padding-bottom: 1.1rem; }
+
+.mob-spot {
+    display: block;
+    margin: 0 var(--m-pad);
+    border-radius: var(--m-r);
+    border: 1px solid var(--u-line);
+    background: var(--u-fill);
+    overflow: hidden;
+}
+.mob-spot .u-hero { border: 0; border-radius: 0; border-bottom: 1px solid var(--u-line); }
+.mob-spot .u-hero__inner { padding: 1rem 0.9rem 0.85rem; align-items: flex-end; }
+.mob-spot .u-hero__title { font-size: 1.3rem; }
+.mob-spot .u-hero__by { margin-top: 0.35rem; font-size: 0.76rem; }
+.mob-spot__k { margin-bottom: 0.4rem; }
+.mob-spot__body { padding: 0.8rem 0.9rem 0.9rem; }
+.mob-spot__foot { margin-top: 0.85rem; }
+.mob-spot__foot .u-btn { min-height: var(--m-tap); }
+
+/* The status pill sits on the name's own line rather than at the end of the
+   row, which leaves the name the width it needs — it used to be a 135px column
+   with the verifier truncated under it — and the decoration reading is drawn
+   under both rather than written into the pill. */
+.mob-row__head { display: flex; align-items: center; gap: 0.45rem; min-width: 0; }
+.mob-row__head .m2-row__name { flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mob-row__head .u-pill { flex-shrink: 0; }
+.mob-row__foot { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.3rem; }
+.mob-row__foot .u-bar { flex: 1; }
+.mob-row__pct { flex-shrink: 0; font-size: 0.62rem; font-weight: 700; opacity: 0.45; font-variant-numeric: tabular-nums; }
+
+/* ── /level/<slug> on a phone ─────────────────────────────────────────────
+   The one route that renders on both surfaces: it never redirects, because
+   every shared link and search result points at it. On a phone it wears the
+   mobile shell (js/components/MobileShell.js) instead of the desktop sidebar
+   and footer, and these are the differences that follow from that — the page
+   is no longer the thing that scrolls, and its hero no longer has to leave a
+   3.5rem gap for a sidebar toggle that is not there any more. The layout
+   itself is the page's own; it already stacks. */
+/* css/main.css gives every <main> `height: 0; flex: 1`, which the desktop
+   stretches back out; inside the shell the page is a plain block in a scroll
+   container, so it has to take its own height. Its children give up the
+   scrollbars that rule hands them for the same reason. */
+.mob-content .level-page { flex: none; height: auto; overflow: visible; }
+.mob-content .level-page > div { overflow-y: visible; }
+/* .m2 zeroes the margin on every h1, h2, h3 and p, because the phone's own
+   components space themselves. The level page brings its spacing with it, and
+   that reset (0,1,1) flattens every one of its (0,1,0) classes — the title ran
+   into the byline and every card heading sat on the line under it. Naming them
+   here puts the page's own rhythm back, with a little more room under the
+   title, which carries more weight at this size. */
+.mob-content .lvl-title { margin: 0; }
+.mob-content .lvl-byline { margin: 1rem 0 0; }
+.mob-content .lvl-h2, .mob-content .lvl-h3 { margin: 0 0 0.9rem; }
+.mob-content .lvl-about { margin: 0; }
+.mob-content .lvl-missing h1 { margin: 0 0 0.75rem; }
+.mob-content .lvl-missing p { margin: 0 0 1.25rem; }
+
+.mob-content .lvl-hero__inner { padding: 1.15rem var(--m-pad) 1.35rem; }
+.mob-content .lvl-crumbs { font-size: 0.68rem; }
+.mob-content .lvl-title { font-size: 1.85rem; line-height: 1.05; }
+.mob-content .lvl-byline { font-size: 0.82rem; }
+.mob-content .lvl-ranks { gap: 0.45rem; }
+.mob-content .lvl-rank { padding: 0.6rem 0.55rem; }
+.mob-content .lvl-body { padding: 1.35rem var(--m-pad) 2rem; gap: 1.35rem; }
+.mob-content .lvl-section { margin-top: 1.75rem; }
+/* Two record cards side by side read as a pair; stacked they read as two
+   unrelated figures, and there is room for the pair at 390px. */
+.mob-content .lvl-wr { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.mob-content .lvl-links .lvl-link { min-height: var(--m-tap); }
+.mob-content .lvl-about { font-size: 0.78rem; }
+.mob-content .lvl-missing { padding: 3rem var(--m-pad); }
+/* css/pages/mobile.css holds the footer two level rows clear of the list above
+   it, which is right on a page of rows and reads as a hole under a page that
+   ends in a paragraph. */
+.mob-content .level-page + .mob-footer { margin-top: 2rem; }

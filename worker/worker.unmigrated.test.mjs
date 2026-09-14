@@ -85,7 +85,8 @@ check('renaming an editor works', r.status === 200, JSON.stringify(r.body));
 check('rename kept the key', db.prepare("SELECT key_hash FROM editor_keys WHERE editor_name='KeresGD'").get().key_hash === db.prepare("SELECT key_hash FROM editor_keys WHERE editor_name='KeresGD'").get().key_hash);
 
 console.log('\n── after running the migration, ordering comes to life ──');
-const mig = (await import('node:fs')).readFileSync(new URL('../scripts/schema-migrations.sql', import.meta.url), 'utf8');
+const mig = (await import('node:fs')).readFileSync(new URL('../scripts/schema-migrations.sql', import.meta.url), 'utf8')
+  .split('\n').filter(l => !l.trim().startsWith('--')).join('\n');
 for (const s of mig.split(';').map(x => x.trim()).filter(Boolean)) {
   try { db.exec(s); } catch (e) { if (!/duplicate column/.test(e.message)) throw e; }
 }

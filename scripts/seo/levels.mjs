@@ -100,7 +100,7 @@ export function levelPage(level, paths) {
 
     const body = `
 <p><strong>${esc(level.name)}</strong> is ${level.isVerified ? 'a verified' : 'an upcoming'}
-Top 1&ndash;100 Extreme Demon in <strong>Geometry Dash</strong>${level.author ? `, hosted by ${esc(level.author)}` : ''},
+Top 1&ndash;135 Extreme Demon in <strong>Geometry Dash</strong>${level.author ? `, hosted by ${esc(level.author)}` : ''},
 currently ranked <strong>#${level.allLevelsRank}</strong> on the
 <a href="/list">Upcoming Levels List</a>.</p>
 <dl class="seo-facts">

@@ -1,0 +1,180 @@
+<!--meta
+title: Home
+route: /
+files: js/pages/Home.js · css/pages/home.css
+problem: The landing page of a level list shows no levels. Above the fold there is a 60-word paragraph and three buttons all styled .home-btn--primary, so nothing is primary; below it, two cards, one of which is a staff roster. A first-time visitor learns what the list is but never sees what is on it, and a returning visitor has to click through to find out what moved.
+change: Keep the hero copy and the two existing cards, and put the list itself on the page between them. Under the hero, three things about the list — how much it holds, how long it has been running and who uses it — as a row of icons and lines; then the top five rows of All Levels rendered with the same row, status pill and rank vocabulary the level page uses. One filled CTA, the rest ghost. Recent Changes becomes a dated timeline instead of a scroll box of dashes.
+-->
+<style>
+.mk-home { display: block; overflow-y: auto; height: 100%; }
+.mk-home .hm-hero { padding: 2.75rem 2.5rem 2.25rem; border-bottom: 1px solid var(--u-line); background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 14%, transparent) 0%, transparent 60%); }
+.mk-home .hm-eyebrow { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; opacity: 0.4; }
+.mk-home .hm-title { margin: 0.7rem 0 0; font-family: inherit; font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 700; line-height: 1; letter-spacing: -0.035em; }
+.mk-home .hm-lead { margin: 1rem 0 0; max-width: 40rem; font-size: 0.92rem; font-weight: 500; line-height: 1.65; opacity: 0.6; }
+.mk-home .hm-cta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
+.mk-home .hm-social { display: flex; gap: 0.45rem; margin-top: 1.1rem; }
+.mk-home .hm-social a { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.75rem; border-radius: 2rem; border: 1px solid var(--u-line); font-size: 0.72rem; font-weight: 500; opacity: 0.6; }
+.mk-home .hm-social a:hover { opacity: 1; border-color: var(--u-line-2); }
+
+/* The bar itself is .u-cred from css/ull-v2.css; the page adds its gutter. */
+.mk-home .u-cred { padding: 1.15rem 2.5rem; border-bottom: 1px solid var(--u-line); }
+
+.mk-home .hm-body { padding: 2rem 2.5rem 2.5rem; display: flex; flex-direction: column; gap: 2rem; }
+.mk-home .hm-sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.85rem; }
+.mk-home .hm-sec-head .u-eyebrow { margin: 0; }
+.mk-home .hm-more { font-size: 0.72rem; font-weight: 600; opacity: 0.5; }
+.mk-home .hm-more:hover { opacity: 1; text-decoration: underline; }
+
+.mk-home .hm-top { display: flex; flex-direction: column; gap: 0.2rem; }
+.mk-home .hm-top .u-row { border: 1px solid transparent; }
+.mk-home .hm-top .u-row:hover { border-color: var(--u-line); }
+
+.mk-home .hm-cols { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.25rem; align-items: start; }
+.mk-home .hm-tl { display: flex; flex-direction: column; gap: 0.15rem; }
+.mk-home .hm-tl-date { display: flex; align-items: center; gap: 0.65rem; margin: 0.9rem 0 0.45rem; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.35; }
+.mk-home .hm-tl-date:first-child { margin-top: 0; }
+.mk-home .hm-tl-date::after { content: ''; flex: 1; height: 1px; background: var(--u-line); }
+.mk-home .hm-tl-item { display: grid; grid-template-columns: 0.55rem 1fr; gap: 0.7rem; padding: 0.3rem 0; font-size: 0.8rem; line-height: 1.55; }
+.mk-home .hm-tl-dot { margin-top: 0.5rem; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: currentColor; opacity: 0.3; }
+.mk-home .hm-tl-item b { font-weight: 600; }
+.mk-home .hm-tl-item span { opacity: 0.5; }
+.mk-home .hm-tl-item.is-up .hm-tl-dot { background: #55ee55; opacity: 0.85; }
+.mk-home .hm-tl-item.is-down .hm-tl-dot { background: #ff6622; opacity: 0.85; }
+.mk-home .hm-tl-item.is-new .hm-tl-dot { background: var(--color-primary); opacity: 1; }
+
+.mk-home .hm-ed { display: flex; flex-direction: column; gap: 0.1rem; }
+.mk-home .hm-ed-group { margin-top: 0.8rem; }
+.mk-home .hm-ed-group:first-child { margin-top: 0; }
+.mk-home .hm-ed-label { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.3; margin-bottom: 0.3rem; }
+.mk-home .hm-ed-row { display: flex; align-items: center; gap: 0.55rem; padding: 0.32rem 0.45rem; border-radius: 0.35rem; font-size: 0.82rem; font-weight: 500; }
+.mk-home .hm-ed-row:hover { background: var(--u-fill); }
+.mk-home .hm-ed-ic { width: 1.05rem; height: 1.05rem; border-radius: 0.25rem; background: var(--u-fill-2); flex-shrink: 0; }
+.mk-home .hm-ed-note { margin: 0 0 1rem; font-size: 0.75rem; line-height: 1.6; opacity: 0.45; }
+@media (max-width: 900px) {
+    .mk-home .u-cred { padding-inline: 1.5rem; gap: 0.7rem 2rem; }
+    .mk-home .hm-cols { grid-template-columns: 1fr; }
+    .mk-home .hm-hero, .mk-home .hm-body { padding-inline: 1.25rem; }
+}
+</style>
+
+<div class="mk-home ull2">
+    <section class="hm-hero">
+        <div class="hm-eyebrow">Geometry Dash · Extreme Demons</div>
+        <h1 class="hm-title">Upcoming Levels List</h1>
+        <p class="hm-lead">A community-maintained catalogue of upcoming Top 1&ndash;100 Extreme Demons, ranked by where the staff team projects each one will land on the Demonlist once it is verified.</p>
+        <div class="hm-cta">
+            <a class="u-btn" href="#">Browse all levels</a>
+            <a class="u-btn u-btn--ghost" href="#">Future List</a>
+            <a class="u-btn u-btn--ghost" href="#">How placement works</a>
+        </div>
+        <div class="hm-social">
+            <a href="#"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5c1.6.4 2.9 1 4.1 1.8a13.9 13.9 0 0 0-14.4 0c1.2-.8 2.6-1.4 4.1-1.8L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 1 11.5 1.3 15a19.9 19.9 0 0 0 6 3l1.2-1.7c-1-.4-1.9-.9-2.7-1.4l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4c-.8.5-1.7 1-2.7 1.4l1.2 1.7a19.9 19.9 0 0 0 6-3c.4-4.1-.6-7.6-2.4-10.6ZM8.5 12.9c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Zm7 0c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Z"/></svg>Discord</a>
+            <a href="#"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@ull_gd</a>
+        </div>
+    </section>
+
+    <div class="u-cred">
+        <div class="u-cred__item"><svg class="u-cred__ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2 13.5 5.2 8 8.2 2.5 5.2Z"/><path d="M2.5 8 8 11 13.5 8"/><path d="M2.5 10.6 8 13.6 13.5 10.6"/></svg><span class="u-cred__t"><b>479</b>levels total</span></div>
+        <div class="u-cred__item"><svg class="u-cred__ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.2 8A6.2 6.2 0 1 1 1.8 8a6.2 6.2 0 0 1 12.4 0Z"/><path d="M8 4.6V8l2.4 1.4"/></svg><span class="u-cred__t"><b>3+</b>years</span></div>
+        <div class="u-cred__item"><svg class="u-cred__ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 2.8h6.4v3.1a3.2 3.2 0 0 1-6.4 0V2.8Z"/><path d="M4.8 3.8H3.2v.9a2.1 2.1 0 0 0 2 2.1"/><path d="M11.2 3.8h1.6v.9a2.1 2.1 0 0 1-2 2.1"/><path d="M8 9.1v2"/><path d="M5.6 13.2h4.8l-.6-2.1H6.2l-.6 2.1Z"/></svg><span class="u-cred__t"><b>1k+</b>users</span></div>
+    </div>
+
+    <div class="hm-body">
+        <section>
+            <div class="hm-sec-head">
+                <h2 class="u-eyebrow u-eyebrow--lg">Top of the list</h2>
+                <a class="hm-more" href="#">All 479 levels &rarr;</a>
+            </div>
+            <div class="hm-top">
+                <a class="u-row" href="#">
+                    <span class="u-row__lead">#1</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--a"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Aeternus</span>
+                        <span class="u-row__sub">by Riot &middot; Open Verification</span>
+                    </span>
+                    <span class="u-pill u-pill--amber"><i></i>Being verified</span>
+                </a>
+                <a class="u-row" href="#">
+                    <span class="u-row__lead">#2</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--b"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Kingdom of Miracalis</span>
+                        <span class="u-row__sub">by Duke &middot; wPopoff</span>
+                    </span>
+                    <span class="u-pill u-pill--yellow"><i></i>Decoration 80%</span>
+                </a>
+                <a class="u-row" href="#">
+                    <span class="u-row__lead">#3</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--c"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Rebirth The End</span>
+                        <span class="u-row__sub">by Silence &middot; zLevii</span>
+                    </span>
+                    <span class="u-pill u-pill--cyan"><i></i>Decoration 5%</span>
+                </a>
+                <a class="u-row" href="#">
+                    <span class="u-row__lead">#4</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--d"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">M A N R A Y</span>
+                        <span class="u-row__sub">by akunakunn &middot; unknown</span>
+                    </span>
+                    <span class="u-pill u-pill--blue"><i></i>Layout</span>
+                </a>
+                <a class="u-row" href="#">
+                    <span class="u-row__lead">#5</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--e"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Cyanical</span>
+                        <span class="u-row__sub">by qponn &middot; Open Verification</span>
+                    </span>
+                    <span class="u-pill u-pill--amber"><i></i>Being verified</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="hm-cols">
+            <section class="u-card u-card--pad">
+                <div class="hm-sec-head">
+                    <h2 class="u-eyebrow">Recent changes</h2>
+                    <a class="hm-more" href="#">Full changelog &rarr;</a>
+                </div>
+                <div class="hm-tl">
+                    <div class="hm-tl-date">28 August 2026</div>
+                    <div class="hm-tl-item is-up"><span class="hm-tl-dot"></span><div><b>Vehemence</b> <span>moved from #9 to #6 on All Levels</span></div></div>
+                    <div class="hm-tl-item is-new"><span class="hm-tl-dot"></span><div><b>Silent Kocmoc</b> <span>added to the Future List at #13</span></div></div>
+                    <div class="hm-tl-date">24 August 2026</div>
+                    <div class="hm-tl-item is-down"><span class="hm-tl-dot"></span><div><b>Heliopolis</b> <span>moved from #18 to #23 on All Levels</span></div></div>
+                    <div class="hm-tl-item"><span class="hm-tl-dot"></span><div><b>Grief</b> <span>decoration updated to 45%</span></div></div>
+                    <div class="hm-tl-item is-up"><span class="hm-tl-dot"></span><div><b>Orochi</b> <span>moved from #41 to #35 on All Levels</span></div></div>
+                </div>
+            </section>
+
+            <section class="u-card u-card--pad">
+                <h2 class="u-eyebrow">List editors <span class="u-count">11</span></h2>
+                <p class="hm-ed-note">Trusted members who add levels, update placements and keep the list accurate.</p>
+                <div class="hm-ed">
+                    <div class="hm-ed-group">
+                        <div class="hm-ed-label">Owner &amp; admin</div>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>QwidziT</a>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>exiled_shade</a>
+                    </div>
+                    <div class="hm-ed-group">
+                        <div class="hm-ed-label">Elder moderators</div>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>niroi</a>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>Keres</a>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>LukeLGamer</a>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>ItzDel1ghtfuL</a>
+                    </div>
+                    <div class="hm-ed-group">
+                        <div class="hm-ed-label">Moderators &amp; developers</div>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>Terralith</a>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>TheCatAstronaut</a>
+                        <a class="hm-ed-row" href="#"><span class="hm-ed-ic"></span>Prometheus</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

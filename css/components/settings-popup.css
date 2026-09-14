@@ -54,6 +54,8 @@
 }
 
 .settings-popup__question {
+    border: 0;
+    font-family: inherit;
     display: inline-flex;
     align-items: center;
     justify-content: center;

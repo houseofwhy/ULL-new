@@ -1,101 +1,14 @@
-/* Shared list page hero */
-.page-list-new.page-with-hero { grid-template-rows: auto 1fr; }
-.page-hero {
-    grid-column: 1 / -1;
-    overflow-y: unset !important;
-    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-    padding: 1rem 1.25rem 1rem 1.75rem;
-    border-bottom: 1px solid rgba(128,128,128,0.15);
-    background: linear-gradient(105deg, rgba(102,10,239,0.07) 0%, transparent 55%);
-    position: relative;
-}
-.page-hero::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    background: linear-gradient(180deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 30%, transparent) 100%);
-}
-.page-hero-content { flex: 1; min-width: 0; }
-.page-hero-badge {
-    display: inline-block;
-    font-family: "Lexend Deca", sans-serif; font-size: 0.6rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    background: rgba(102,10,239,0.1); padding: 0.15rem 0.6rem; border-radius: 2rem; margin-bottom: 0.5rem;
-}
-.root.dark .page-hero-badge { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.page-hero h1 {
-    font-family: "Lexend Deca", sans-serif; font-size: 1.15rem; font-weight: 700;
-    letter-spacing: normal;
-    color: var(--color-on-background); line-height: 1.2; margin: 0 0 0.45rem;
-}
-.page-hero h1::before, .page-hero h1::after { display: none; }
-.page-hero p {
-    font-family: "Lexend Deca", sans-serif; font-size: 0.78rem; letter-spacing: normal;
-    color: var(--color-on-background); opacity: 0.5; line-height: 1.55; margin: 0; max-width: 700px;
-}
-.page-hero p::before, .page-hero p::after { display: none !important; }
-.page-hero-stat {
-    flex-shrink: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
-    padding: 0.6rem 1.2rem; border-radius: 0.65rem;
-    background: rgba(128,128,128,0.06); border: 1px solid rgba(128,128,128,0.12);
-    margin-right: 45px;
-}
-.page-hero-stat-value {
-    font-family: "Lexend Deca", sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-}
-.root.dark .page-hero-stat-value { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.page-hero-stat-label {
-    font-family: "Lexend Deca", sans-serif; font-size: 0.58rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.4; margin-top: 0.25rem;
-}
+/* Page-hero placement.
 
-/* Upcoming Levels Hero */
+   This file used to define the hero twice: .page-hero for the list pages and
+   .upcoming-hero for Upcoming Levels, identical rule for rule apart from the
+   class prefix. The hero itself is now one component, .u-phero in
+   css/ull-v2.css; all that belongs here is where the pages put it.
+
+   Both grids need a header row above the two scrolling columns. */
+.page-list-new.page-with-hero { grid-template-rows: auto 1fr; }
 .page-upcoming { grid-template-rows: auto 1fr; }
-.upcoming-hero {
-    grid-column: 1 / -1;
-    overflow-y: unset !important;
-    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-    padding: 1rem 1.25rem 1rem 1.75rem;
-    border-bottom: 1px solid rgba(128,128,128,0.15);
-    background: linear-gradient(105deg, rgba(102,10,239,0.07) 0%, transparent 55%);
-    position: relative;
-}
-.upcoming-hero::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    background: linear-gradient(180deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 30%, transparent) 100%);
-}
-.upcoming-hero-content { flex: 1; min-width: 0; }
-.upcoming-hero-badge {
-    display: inline-block;
-    font-family: "Lexend Deca", sans-serif; font-size: 0.6rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    background: rgba(102,10,239,0.1); padding: 0.15rem 0.6rem; border-radius: 2rem; margin-bottom: 0.5rem;
-}
-.root.dark .upcoming-hero-badge { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.upcoming-hero h1 {
-    font-family: "Lexend Deca", sans-serif; font-size: 1.15rem; font-weight: 700;
-    letter-spacing: normal;
-    color: var(--color-on-background); line-height: 1.2; margin: 0 0 0.45rem;
-}
-.upcoming-hero h1::before, .upcoming-hero h1::after { display: none; }
-.upcoming-hero p {
-    font-family: "Lexend Deca", sans-serif; font-size: 0.78rem; letter-spacing: normal;
-    color: var(--color-on-background); opacity: 0.5; line-height: 1.55; margin: 0; max-width: 700px;
-}
-.upcoming-hero p::before, .upcoming-hero p::after { display: none !important; }
-.upcoming-hero-stat {
-    flex-shrink: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
-    padding: 0.6rem 1.2rem; border-radius: 0.65rem;
-    background: rgba(128,128,128,0.06); border: 1px solid rgba(128,128,128,0.12);
-    margin-right: 45px;
-}
-.upcoming-hero-stat-value {
-    font-family: "Lexend Deca", sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-}
-.root.dark .upcoming-hero-stat-value { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.upcoming-hero-stat-label {
-    font-family: "Lexend Deca", sans-serif; font-size: 0.58rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.4; margin-top: 0.25rem;
-}
+
+/* The sidebar toggle floats over the top-right of the content on narrower
+   windows; keep the hero's stats clear of it. */
+.page-list-new .u-phero { padding-right: 4rem; }

@@ -1,0 +1,76 @@
+<!--meta
+title: Pending List
+route: /mobile/pending
+files: js/pages/mobile/MobilePending.js
+problem: Four cards under a centred purple headline, each row an icon and a name. The placement a level is waiting for — the one fact the page exists to state — is encoded only in which of six SVG icons is drawn, so "Top 10" and "Top 75" look the same at a glance. There are no counts and no colour separating a placement from a removal; the desktop page gained all three.
+change: The desktop's four lanes, stacked one per row on a phone: the same tint per lane, the same count beside each heading, and the placement spelled out as a chip beside every name. The hero's four counts are buttons that jump to the lane they count, so a long queue is one tap deep rather than a scroll.
+-->
+<div class="m2 ull2">
+    <header class="m2-top">
+        <div><span class="m2-top__mark">ULL</span><span class="m2-top__ver">v2.1.0</span></div>
+        <div class="m2-top__acts">
+            <button class="m2-top__btn" type="button" aria-label="Settings"><span class="mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.4 1.05c-.41-1.4-2.39-1.4-2.8 0l-.1.34a1.46 1.46 0 0 1-2.11.87l-.31-.17c-1.28-.7-2.68.7-1.99 1.99l.17.31a1.46 1.46 0 0 1-.87 2.1l-.34.1c-1.4.42-1.4 2.4 0 2.81l.34.1a1.46 1.46 0 0 1 .87 2.11l-.17.31c-.7 1.28.7 2.68 1.99 1.99l.31-.17a1.46 1.46 0 0 1 2.1.87l.1.34c.42 1.4 2.4 1.4 2.81 0l.1-.34a1.46 1.46 0 0 1 2.11-.87l.31.17c1.28.7 2.68-.7 1.99-1.99l-.17-.31a1.46 1.46 0 0 1 .87-2.1l.34-.1c1.4-.42 1.4-2.4 0-2.81l-.34-.1a1.46 1.46 0 0 1-.87-2.11l.17-.31c.7-1.28-.7-2.68-1.99-1.99l-.31.17a1.46 1.46 0 0 1-2.1-.87l-.1-.34zM8 10.93a2.93 2.93 0 1 1 0-5.86 2.93 2.93 0 0 1 0 5.86z"/></svg></span></button>
+            <a class="m2-top__btn" href="#" aria-label="Discord"><span class="mk-ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5c1.6.4 2.9 1 4.1 1.8a13.9 13.9 0 0 0-14.4 0c1.2-.8 2.6-1.4 4.1-1.8L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 1 11.5 1.3 15a19.9 19.9 0 0 0 6 3l1.2-1.7c-1-.4-1.9-.9-2.7-1.4l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4c-.8.5-1.7 1-2.7 1.4l1.2 1.7a19.9 19.9 0 0 0 6-3c.4-4.1-.6-7.6-2.4-10.6ZM8.5 12.9c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Zm7 0c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Z"/></svg></span></a>
+        </div>
+    </header>
+
+    <div class="m2-scroll">
+        <section class="m2-hero">
+            <h1>Pending List</h1>
+            <p>Levels awaiting a decision from the staff team &mdash; a first placement, a move up or down, a removal, or a hold.</p>
+            <div class="m2-figs">
+                <button class="m2-fig" type="button"><b>5</b><span>placements</span></button>
+                <button class="m2-fig" type="button"><b>2</b><span>movements</span></button>
+                <button class="m2-fig" type="button"><b>27</b><span>removals</span></button>
+                <button class="m2-fig" type="button"><b>2</b><span>on hold</span></button>
+            </div>
+        </section>
+
+        <div class="m2-body">
+            <section class="u-card m2-lane m2-lane--place">
+                <h2 class="u-eyebrow">Pending Placements <span class="u-count">5</span></h2>
+                <div class="m2-plist">
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">1</span><span class="m2-prow__name">Silent Kocmoc</span><span class="m2-prow__target">Top 1</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">10</span><span class="m2-prow__name">Betiru</span><span class="m2-prow__target">Top 10</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">20</span><span class="m2-prow__name">River Cocytos</span><span class="m2-prow__target">Top 20</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">30</span><span class="m2-prow__name">Omega Parts</span><span class="m2-prow__target">Top 30</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">?</span><span class="m2-prow__name">Mekron City</span><span class="m2-prow__target">No info</span></div>
+                </div>
+            </section>
+
+            <section class="u-card m2-lane m2-lane--move">
+                <h2 class="u-eyebrow">Pending Movements <span class="u-count">2</span></h2>
+                <div class="m2-plist">
+                    <div class="m2-prow"><span class="m2-prow__icon mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3.6M4 7.4 8 3.4l4 4"/></svg></span><span class="m2-prow__name">Polar Vortex</span><span class="m2-prow__target">Move up</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v9.4M4 8.6l4 4 4-4"/></svg></span><span class="m2-prow__name">Vivisect</span><span class="m2-prow__target">Move down</span></div>
+                </div>
+            </section>
+
+            <section class="u-card m2-lane m2-lane--remove">
+                <h2 class="u-eyebrow">Pending Removals <span class="u-count">27</span></h2>
+                <div class="m2-plist">
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--mark">&times;</span><span class="m2-prow__name">GAMEEND</span><span class="m2-prow__target">#18</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--mark">&times;</span><span class="m2-prow__name">Stephenson 2-18</span><span class="m2-prow__target">#29</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--mark">&times;</span><span class="m2-prow__name">Infinite Silence</span><span class="m2-prow__target">#43</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--mark">&times;</span><span class="m2-prow__name">QUASAR</span><span class="m2-prow__target">#108</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--mark">&times;</span><span class="m2-prow__name">KURAYAMI</span><span class="m2-prow__target">#109</span></div>
+                </div>
+            </section>
+
+            <section class="u-card m2-lane m2-lane--hold">
+                <h2 class="u-eyebrow">Pending Indefinitely <span class="u-count">2</span></h2>
+                <div class="m2-plist">
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">50</span><span class="m2-prow__name">Orochi</span><span class="m2-prow__target">Top 50</span></div>
+                    <div class="m2-prow"><span class="m2-prow__icon m2-prow__icon--num">?</span><span class="m2-prow__name">Nibelheim</span><span class="m2-prow__target">No info</span></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <nav class="m2-nav">
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.8 8 2.5l5.5 4.3V13a.9.9 0 0 1-.9.9H3.4a.9.9 0 0 1-.9-.9V6.8Z"/><path d="M6.4 13.9V9.2h3.2v4.7"/></svg></span>Home</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5.5 4h8M5.5 8h8M5.5 12h8M2.5 4h.01M2.5 8h.01M2.5 12h.01"/></svg></span>Levels</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 7.3v4M8 4.9h.01"/></svg></span>Information</button>
+        <button class="m2-nav__item is-on" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="3.2" cy="8" r="1.3"/><circle cx="8" cy="8" r="1.3"/><circle cx="12.8" cy="8" r="1.3"/></svg></span>Other</button>
+    </nav>
+</div>

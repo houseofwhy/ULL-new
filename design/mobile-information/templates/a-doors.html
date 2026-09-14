@@ -1,0 +1,290 @@
+<!--meta
+title: Doors
+tag: the desktop hub, stacked
+files: js/pages/mobile/MobileInfo.js · css/pages/mobile-info.css
+state: every door opens — try each one, and tap the search field
+idea: The desktop page, turned on its side. The hero says what the list is and offers the full version at the end of the sentence, the search field sits under it, and the six faces run down the screen in one column in the desktop's own order — FAQ, the site map, the guidelines, the reference, the staff, the API. Each face is still a face: a label, a name, one sentence and the size of what is behind it. Tapping one raises a reader over the whole screen, tab bar included, with its own bar and a close button where the thumb is. The guidelines reader opens on its fourteen sections and pushes one section over the index, which is what the desktop's index-beside-body split becomes when there is no beside.
+weight: The same way the desktop settles it, minus the column spans: order. The FAQ is first because it is what most visitors arrive wanting, and the guidelines face keeps its five group counts because sizing up the rulebook without opening it is the one thing that block has to do. Nothing long is ever on the page — one screen and a half of faces, then everything else is one tap deep.
+cost: Lowest of the three. MobileInfo.js becomes the same component as Information.js with one column and a sheet instead of a centred window: the same ?open= keys, the same seven bodies, the same search index. The phone layer gains a full-screen sheet and the reading kit; nothing else is new.
+watch: Everything is behind a tap, so the counts on the faces are doing real work and the search has to reach inside closed readers or it is decoration. The guidelines are two taps from the page (open, then pick a section) where the desktop is one, and Back has to unwind that in the right order — section, then index, then page. The reader covers the tab bar, so its close button is the only way out and it must be reachable without a scroll.
+-->
+<style>
+/* ── A. Doors ─────────────────────────────────────────────────────────────
+   The hub, stacked. Everything structural comes from .ull2 and mob-v2.css;
+   what is here is the face, the sheet the face opens, and the search field. */
+.mk-doors { position: relative; overflow: hidden; }
+.mk-doors .dr-r { position: absolute; opacity: 0; pointer-events: none; }
+
+/* ── Hero ── */
+.mk-doors .dr-hero { padding: 1.25rem var(--m-pad) 1rem; border-bottom: 1px solid var(--u-line); background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 0%, transparent 62%); }
+.mk-doors .dr-hero h1 { font-size: 1.6rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.mk-doors .dr-hero p { margin-top: 0.55rem; font-size: 0.79rem; line-height: 1.6; opacity: 0.55; }
+.mk-doors .dr-more { color: var(--u-accent); font-weight: 600; cursor: pointer; }
+
+/* ── Search ──
+   Sticky under the top bar. Tapping it shows what it found; on the built page
+   the results appear as you type and each one opens the reader it lives in. */
+.mk-doors .dr-search { position: sticky; top: 0; z-index: 15; padding: 0.7rem var(--m-pad); background: var(--color-background); border-bottom: 1px solid var(--u-line); }
+.mk-doors .dr-field { display: flex; align-items: center; gap: 0.55rem; height: var(--m-tap); padding: 0 0.75rem; border-radius: var(--m-r); border: 1px solid var(--u-line); background: var(--u-fill); }
+.mk-doors .dr-field input { flex: 1; min-width: 0; border: 0; background: transparent; color: inherit; font-family: inherit; font-size: 0.82rem; outline: none; }
+.mk-doors .dr-field input::placeholder { opacity: 0.4; }
+.mk-doors .dr-mag { position: relative; flex-shrink: 0; width: 0.85rem; height: 0.85rem; border: 1.5px solid currentColor; border-radius: 50%; opacity: 0.45; }
+.mk-doors .dr-mag::after { content: ''; position: absolute; right: -0.3rem; bottom: -0.3rem; width: 0.42rem; height: 1.5px; background: currentColor; transform: rotate(45deg); }
+.mk-doors .dr-results { display: none; margin-top: 0.6rem; }
+.mk-doors .dr-search:focus-within .dr-results { display: flex; }
+
+/* ── The faces ──
+   One column, in the desktop's order. A face is a label, a name, one sentence
+   and the size of what is behind it — never the content itself. */
+.mk-doors .dr-doors { display: flex; flex-direction: column; gap: 0.65rem; padding: 1rem var(--m-pad) 1.5rem; }
+.mk-doors .dr-door { display: block; padding: 1rem 1.1rem; border-radius: var(--u-r); background: var(--u-fill); border: 1px solid var(--u-line); cursor: pointer; }
+.mk-doors .dr-door:active { background: var(--u-fill-2); }
+.mk-doors .dr-door .u-eyebrow { margin: 0; }
+.mk-doors .dr-door h2 { margin: 0.4rem 0 0; font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
+.mk-doors .dr-door p { margin-top: 0.35rem; font-size: 0.76rem; line-height: 1.6; opacity: 0.5; }
+.mk-doors .dr-peek { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.75rem; }
+.mk-doors .dr-peek .u-chip { padding: 0.16rem 0.48rem; font-size: 0.64rem; }
+.mk-doors .dr-arrow { display: block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 600; color: var(--u-accent); }
+.mk-doors .dr-groups { display: flex; flex-direction: column; margin: 0.85rem 0 0.9rem; }
+.mk-doors .dr-groups div { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.34rem 0; border-top: 1px solid var(--u-line); font-size: 0.76rem; }
+.mk-doors .dr-groups div span { margin-left: auto; font-size: 0.66rem; opacity: 0.4; font-variant-numeric: tabular-nums; }
+.mk-doors .dr-door .u-btn { width: 100%; min-height: var(--m-tap); }
+.mk-doors .dr-marks { display: flex; align-items: center; gap: 0.7rem; margin-top: 0.85rem; }
+.mk-doors .dr-dots { display: flex; gap: 0.26rem; }
+.mk-doors .dr-dots i { display: block; width: 0.62rem; height: 0.62rem; border-radius: 50%; background: currentColor; color: var(--color-on-background); }
+.mk-doors .dr-icons { display: flex; align-items: center; gap: 0.35rem; padding-left: 0.7rem; border-left: 1px solid var(--u-line-2); }
+.mk-doors .dr-icons img { display: block; width: 1rem; height: 1rem; }
+
+/* ── The reader ──
+   A sheet over the whole screen, tab bar included: the desktop locks the page
+   behind its window, and half a phone screen is not enough to read a rulebook
+   in. Its bar carries the same eyebrow and title the window has on the desk. */
+.mk-doors .dr-sheet { display: none; position: absolute; inset: 0; z-index: 40; flex-direction: column; background: var(--color-background); }
+.mk-doors #dr-about:checked ~ .dr-sheet--about,
+.mk-doors #dr-faq:checked ~ .dr-sheet--faq,
+.mk-doors #dr-navigation:checked ~ .dr-sheet--navigation,
+.mk-doors #dr-guidelines:checked ~ .dr-sheet--guidelines,
+.mk-doors #dr-glsec:checked ~ .dr-sheet--glsec,
+.mk-doors #dr-reference:checked ~ .dr-sheet--reference,
+.mk-doors #dr-staff:checked ~ .dr-sheet--staff,
+.mk-doors #dr-api:checked ~ .dr-sheet--api { display: flex; }
+.mk-doors .dr-bar { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; padding: 0.7rem var(--m-pad); border-bottom: 1px solid var(--u-line); }
+.mk-doors .dr-bar__k { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.35; }
+.mk-doors .dr-bar b { display: block; font-size: 0.95rem; font-weight: 700; line-height: 1.25; }
+.mk-doors .dr-x {
+    flex-shrink: 0; margin-left: auto;
+    display: flex; align-items: center; justify-content: center;
+    width: 2.4rem; height: 2.4rem; border-radius: 0.5rem;
+    border: 1px solid var(--u-line); background: var(--u-fill);
+    font-size: 0.95rem; line-height: 1; opacity: 0.6; cursor: pointer;
+}
+.mk-doors .dr-back { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; margin-left: -0.35rem; border-radius: 0.5rem; font-size: 1.05rem; opacity: 0.6; cursor: pointer; }
+.mk-doors .dr-body { flex: 1; min-height: 0; overflow-y: auto; padding: 1rem var(--m-pad) 2rem; }
+.mk-doors .dr-jump { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.25rem; }
+.mk-doors .dr-jump > * { width: 100%; min-height: var(--m-tap); }
+</style>
+
+<div class="m2 ull2 mki mk-doors">
+    <input class="dr-r" type="radio" name="dr" id="dr-none" checked />
+    <input class="dr-r" type="radio" name="dr" id="dr-about" />
+    <input class="dr-r" type="radio" name="dr" id="dr-faq" />
+    <input class="dr-r" type="radio" name="dr" id="dr-navigation" />
+    <input class="dr-r" type="radio" name="dr" id="dr-guidelines" />
+    <input class="dr-r" type="radio" name="dr" id="dr-glsec" />
+    <input class="dr-r" type="radio" name="dr" id="dr-reference" />
+    <input class="dr-r" type="radio" name="dr" id="dr-staff" />
+    <input class="dr-r" type="radio" name="dr" id="dr-api" />
+
+<!--__B:topbar__-->
+
+    <div class="m2-scroll">
+        <section class="dr-hero">
+            <h1>Information</h1>
+            <p>
+                The Upcoming Levels List forecasts which Extreme Demons are about to be verified and placed
+                on the Demonlist. This page says how that is decided, what everything on the site means, who
+                to ask, and how to read the whole list as JSON.
+                <label class="dr-more" for="dr-about">What this list is, in full &rarr;</label>
+            </p>
+        </section>
+
+        <div class="dr-search">
+            <div class="dr-field">
+                <span class="dr-mag"></span>
+                <input type="search" value="proof" placeholder="Search the page" aria-label="Search this page" />
+            </div>
+            <div class="dr-results mki-hits">
+<!--__B:hits__-->
+            </div>
+        </div>
+
+        <div class="dr-doors">
+            <label class="dr-door" for="dr-faq">
+                <div class="u-eyebrow">Answers &middot; 15 questions</div>
+                <h2>FAQ</h2>
+                <p>Submitting a record and what proof it needs, how a level gets listed, how leaderboard points are worked out, and why a total changes when you have submitted nothing. 15 questions in 4 groups, each answered here rather than pointed at the guidelines.</p>
+                <span class="dr-arrow">All 15 questions &rarr;</span>
+            </label>
+
+            <label class="dr-door" for="dr-navigation">
+                <div class="u-eyebrow">Navigation &middot; 9 pages</div>
+                <h2>What is on each page</h2>
+                <p>Every page on the site and what you will find on it &mdash; the three list tiers and how they differ from each other, pending and upcoming, the leaderboard, events, and a level&rsquo;s own page. Written so you can tell which page answers your question before you open it.</p>
+                <div class="dr-peek">
+                    <span class="u-chip">All Levels</span>
+                    <span class="u-chip">Main List</span>
+                    <span class="u-chip">Future List</span>
+                    <span class="u-chip">A level&rsquo;s page</span>
+                    <span class="u-chip">Upcoming</span>
+                    <span class="u-chip">Pending</span>
+                    <span class="u-chip">Leaderboard</span>
+                    <span class="u-chip">+2</span>
+                </div>
+            </label>
+
+            <label class="dr-door" for="dr-guidelines">
+                <div class="u-eyebrow">The rules</div>
+                <h2>Guidelines</h2>
+                <p>How records are accepted, how levels are chosen and positioned, what the staff may and may not do. 14 sections, and the answer to most arguments.</p>
+                <div class="dr-groups">
+                    <div>General<span>2</span></div>
+                    <div>Acceptance of Records<span>4</span></div>
+                    <div>Level Placement<span>3</span></div>
+                    <div>Content Policy<span>2</span></div>
+                    <div>Technical Support<span>3</span></div>
+                </div>
+                <span class="u-btn">Open the guidelines</span>
+            </label>
+
+            <label class="dr-door" for="dr-reference">
+                <div class="u-eyebrow">Reference &middot; 19 marks</div>
+                <h2>What the marks mean</h2>
+                <p>The colour a level&rsquo;s name is drawn in, and the icons on the Pending List.</p>
+                <div class="dr-marks">
+                    <div class="dr-dots">
+                        <i class="u-pill--blue"></i><i class="u-pill--cyan"></i><i class="u-pill--green"></i><i class="u-pill--yellow"></i>
+                        <i class="u-pill--amber"></i><i class="u-pill--orange"></i><i class="u-pill--red"></i><i class="u-pill--done"></i>
+                    </div>
+                    <div class="dr-icons">
+                        <img src="../../assets/move-up.svg" alt="" />
+                        <img src="../../assets/move-down.svg" alt="" />
+                        <img src="../../assets/1.svg" alt="" />
+                        <img src="../../assets/10.svg" alt="" />
+                        <img src="../../assets/20.svg" alt="" />
+                    </div>
+                </div>
+            </label>
+
+            <label class="dr-door" for="dr-staff">
+                <div class="u-eyebrow">Who to talk to &middot; 12 people</div>
+                <h2>Staff &amp; contact</h2>
+                <p>The team that maintains the list, and where to take a record, a correction, a site bug or a complaint.</p>
+            </label>
+
+            <label class="dr-door" for="dr-api">
+                <div class="u-eyebrow">Build on it &middot; 9 endpoints</div>
+                <h2>API documentation</h2>
+                <p>The whole list as public JSON &mdash; no key, no signup, CORS open.</p>
+                <div class="dr-peek">
+                    <span class="u-chip">/api/list</span>
+                    <span class="u-chip">/api/pending</span>
+                    <span class="u-chip">+7</span>
+                </div>
+            </label>
+        </div>
+    </div>
+
+<!--__B:tabbar__-->
+
+    <!-- ── The readers ──────────────────────────────────────────────────── -->
+    <div class="dr-sheet dr-sheet--about">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">Start here</span><b>What this list is</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:about__-->
+            <div class="dr-jump">
+                <label class="u-btn u-btn--ghost" for="dr-navigation">What is on each page &rarr;</label>
+                <label class="u-btn u-btn--ghost" for="dr-reference">What the marks mean &rarr;</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--faq">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">Answers &middot; 15 questions</span><b>FAQ</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:faq__-->
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--navigation">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">Navigation &middot; 9 pages</span><b>What is on each page</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:navigation__-->
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--guidelines">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">The rules &middot; 14 sections</span><b>Guidelines</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+            <label class="dr-index" for="dr-glsec">
+<!--__B:gl-index__-->
+            </label>
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--glsec">
+        <div class="dr-bar">
+            <label class="dr-back" for="dr-guidelines" aria-label="Back to the index">&lsaquo;</label>
+            <div><span class="dr-bar__k">The rules &middot; 1 of 14</span><b>Guidelines</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:gl-section__-->
+            <div class="mki-updown">
+                <button class="is-off" type="button" disabled></button>
+                <button type="button">Glossary &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--reference">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">Reference &middot; 19 marks</span><b>What the marks mean</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:reference__-->
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--staff">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">Who to talk to</span><b>Staff &amp; contact</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:staff__-->
+        </div>
+    </div>
+
+    <div class="dr-sheet dr-sheet--api">
+        <div class="dr-bar">
+            <div><span class="dr-bar__k">Build on it &middot; 9 endpoints</span><b>API documentation</b></div>
+            <label class="dr-x" for="dr-none" aria-label="Close">&times;</label>
+        </div>
+        <div class="dr-body">
+<!--__B:api__-->
+        </div>
+    </div>
+</div>

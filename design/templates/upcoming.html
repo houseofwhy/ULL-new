@@ -1,0 +1,160 @@
+<!--meta
+title: Upcoming Levels
+route: /upcoming
+files: js/pages/UpcomingLevels.js · css/pages/list-hero.css
+problem: This page ranks levels by how far anyone has got into them, and then never shows that number as anything but a "WR: 20% | Run: 72-100%" caption. Its hero is .page-hero repeated rule for rule under a second name, .upcoming-hero — the two blocks differ only in the class prefix — so the same component is maintained twice. Its detail panel is a cut-down of the list panel: name, dim grey cross-list ranks, best progress, best run, video — and nothing else.
+change: The ranking metric becomes the visual: each row carries the progress bar the ordering is built from, so the list reads as a race rather than an arbitrary order. The panel leads with that same figure at full size, then reuses the level container components below it. The duplicate hero collapses into the shared .u-phero.
+-->
+<style>
+.mk-up { display: grid; grid-template-rows: auto 1fr; height: 100%; min-height: 0; }
+.mk-up .up-cols { display: grid; grid-template-columns: 40% 60%; min-height: 0; }
+.mk-up .mk-col { overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+.mk-up .mk-left { border-right: 1px solid var(--u-line); }
+.mk-up .mk-search { display: flex; gap: 0.6rem; padding: 1rem 1.25rem 0.85rem; }
+.mk-up .mk-search input { flex: 1; padding: 0.55rem 0.7rem; border-radius: var(--u-r-sm); border: 1px solid var(--u-line); background: var(--u-fill); color: inherit; font-family: inherit; font-size: 0.85rem; }
+.mk-up .mk-search input::placeholder { opacity: 0.4; }
+.mk-up .mk-fbtn { width: 2.3rem; border-radius: var(--u-r-sm); border: 1px solid var(--u-line); background: var(--u-fill); color: inherit; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.mk-up .mk-list { flex: 1; overflow-y: auto; padding: 0 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.1rem; }
+.mk-up .up-row { display: grid; grid-template-columns: 2.2rem 4.4rem minmax(0, 1fr) 3rem; align-items: center; gap: 0.7rem; padding: 0.5rem 0.7rem; border-radius: var(--u-r-sm); cursor: pointer; }
+.mk-up .up-row:hover { background: var(--u-fill); }
+.mk-up .up-row.is-on { background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 62%, white) 100%); color: var(--color-on-primary); }
+.mk-up .up-row.is-on .u-row__sub, .mk-up .up-row.is-on .up-row__r { opacity: 0.75; }
+.mk-up .up-row.is-on .u-bar { background: rgba(255,255,255,0.25); }
+.mk-up .up-row.is-on .u-bar i { background: #fff; }
+.mk-up .up-row__r { text-align: right; font-size: 0.82rem; font-weight: 600; opacity: 0.45; font-variant-numeric: tabular-nums; }
+.mk-up .up-row__pct { text-align: right; font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.mk-up .up-row__bar { margin-top: 0.35rem; }
+
+.mk-up .mk-right { display: block; overflow-y: auto; }
+.mk-up .up-hero .u-hero__inner { padding: 1.75rem 1.75rem 1.4rem; }
+.mk-up .up-body { padding: 1.35rem 1.75rem 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.mk-up .up-lead { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; }
+.mk-up .up-lead b { font-size: 2.6rem; font-weight: 700; line-height: 1; letter-spacing: -0.03em; color: var(--u-accent); font-variant-numeric: tabular-nums; }
+.mk-up .up-lead span { display: block; margin-top: 0.4rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.mk-up .up-video { width: 100%; aspect-ratio: 16/9; border-radius: var(--u-r); border: 1px solid var(--u-line); background: var(--u-fill-2); display: flex; align-items: center; justify-content: center; }
+.mk-up .up-play { width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid var(--u-line-2); display: flex; align-items: center; justify-content: center; opacity: 0.45; }
+.mk-up .up-play::after { content: ''; border-left: 0.7rem solid currentColor; border-top: 0.45rem solid transparent; border-bottom: 0.45rem solid transparent; margin-left: 0.2rem; }
+.mk-up .up-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; align-items: start; }
+@media (max-width: 900px) { .mk-up .up-cols { grid-template-columns: 1fr; } .mk-up .mk-left { display: none; } .mk-up .up-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="mk-up ull2">
+    <header class="u-phero">
+        <div class="u-phero__body">
+            <h1>Upcoming Levels</h1>
+            <p>Every level on the list ordered by the furthest anyone has got into it, from the highest record set from 0% and the longest run completed.</p>
+        </div>
+        <div class="u-phero__side">
+            <div class="u-stat"><div class="u-stat__k">Levels</div><span class="u-stat__v">479</span></div>
+        </div>
+    </header>
+
+    <div class="up-cols">
+        <div class="mk-col mk-left">
+            <div class="mk-search">
+                <input type="text" placeholder="Search levels&hellip;" />
+                <button class="mk-fbtn" type="button" aria-label="Filters"><span class="mk-ic mk-ic--filter"></span></button>
+            </div>
+            <div class="mk-list">
+                <div class="up-row is-on">
+                    <span class="up-row__r">#1</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--c"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Rebirth The End</span>
+                        <span class="u-row__sub">run 49&ndash;55% by zLevii</span>
+                        <span class="u-bar u-bar--thin up-row__bar"><i style="width:55%"></i></span>
+                    </span>
+                    <span class="up-row__pct">55%</span>
+                </div>
+                <div class="up-row">
+                    <span class="up-row__r">#2</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--a"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Aeternus</span>
+                        <span class="u-row__sub">run 72&ndash;100% by Chill Guy</span>
+                        <span class="u-bar u-bar--thin up-row__bar"><i style="width:28%"></i></span>
+                    </span>
+                    <span class="up-row__pct">28%</span>
+                </div>
+                <div class="up-row">
+                    <span class="up-row__r">#3</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--f"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Vehemence</span>
+                        <span class="u-row__sub">from 0% &mdash; 24% by Sunkey</span>
+                        <span class="u-bar u-bar--thin up-row__bar"><i style="width:24%"></i></span>
+                    </span>
+                    <span class="up-row__pct">24%</span>
+                </div>
+                <div class="up-row">
+                    <span class="up-row__r">#4</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--e"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Cyanical</span>
+                        <span class="u-row__sub">from 0% &mdash; 20% by dewbbs</span>
+                        <span class="u-bar u-bar--thin up-row__bar"><i style="width:20%"></i></span>
+                    </span>
+                    <span class="up-row__pct">20%</span>
+                </div>
+                <div class="up-row">
+                    <span class="up-row__r">#5</span>
+                    <span class="u-row__thumb mk-thumb mk-thumb--d"></span>
+                    <span class="u-row__body">
+                        <span class="u-row__name">Hateomania</span>
+                        <span class="u-row__sub">from 0% &mdash; 11% by wPopoff</span>
+                        <span class="u-bar u-bar--thin up-row__bar"><i style="width:11%"></i></span>
+                    </span>
+                    <span class="up-row__pct">11%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mk-col mk-right">
+            <header class="u-hero u-hero--flush up-hero">
+                <div class="u-hero__bg mk-thumb--c"></div>
+                <div class="u-hero__scrim"></div>
+                <div class="u-hero__inner">
+                    <div class="u-hero__body">
+                        <h1 class="u-hero__title">Rebirth The End</h1>
+                        <p class="u-hero__by">by <b>Silence</b> &middot; to be verified by <b>zLevii</b></p>
+                    </div>
+                    <div class="u-ranks">
+                        <a class="u-rank u-rank--lead" href="#"><span class="u-rank__n">#3</span><span class="u-rank__l">All Levels</span></a>
+                        <a class="u-rank" href="#"><span class="u-rank__n">#3</span><span class="u-rank__l">Main List</span></a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="up-body">
+                <div class="u-card">
+                    <div class="up-lead">
+                        <div><b>55%</b><span>Furthest progress</span></div>
+                        <span class="u-pill u-pill--cyan"><i></i>Decoration 5% done</span>
+                    </div>
+                    <div class="u-bar u-bar--alt" style="margin-top:0.9rem"><i style="width:55%"></i></div>
+                </div>
+
+                <div class="up-video"><span class="up-play"></span></div>
+
+                <div class="up-grid">
+                    <div class="u-card">
+                        <h3 class="u-eyebrow">World records</h3>
+                        <div class="u-stats">
+                            <div class="u-stat"><div class="u-stat__k">From 0%</div><span class="u-stat__v u-stat__v--none">None</span></div>
+                            <div class="u-stat"><div class="u-stat__k">Best run</div><span class="u-stat__v">49&ndash;55%</span><div class="u-stat__u">zLevii</div></div>
+                        </div>
+                    </div>
+                    <div class="u-card">
+                        <h3 class="u-eyebrow">Details</h3>
+                        <dl class="u-dl">
+                            <dt>Host</dt><dd>Silence</dd>
+                            <dt>Verifier</dt><dd>zLevii</dd>
+                            <dt>Length</dt><dd>13m 8s</dd>
+                            <dt>Updated</dt><dd>16.04.2026</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

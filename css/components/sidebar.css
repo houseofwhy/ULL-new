@@ -188,3 +188,12 @@ html.desktop {
         margin-left: 0;
     }
 }
+
+/* The button that opens the sidebar is hidden on a phone by store.mobile (see
+   index.html), which reads the user agent as well as the width. This is the
+   same answer in CSS, so a viewport this narrow never gets the desktop menu
+   even if the app has not decided yet. */
+@media (max-width: 768px) {
+    .sidebar-toggle, .sidebar-backdrop { display: none !important; }
+    .sidebar { display: none; }
+}

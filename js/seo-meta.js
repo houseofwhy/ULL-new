@@ -5,7 +5,7 @@ export const PAGE_META = {
     "/": {
         "title": "Upcoming Levels List",
         "socialTitle": "Upcoming Levels List — Upcoming Geometry Dash Extreme Demons",
-        "description": "Upcoming Levels List (ULL) tracks every upcoming Top 1–100 Extreme Demon in Geometry Dash — levels in development, their creators, verifiers, decoration progress and best records, ranked by where they are projected to land on the Demonlist."
+        "description": "Upcoming Levels List (ULL) tracks every upcoming Top 1–135 Extreme Demon in Geometry Dash — levels in development, their creators, verifiers, decoration progress and best records, ranked by where they are projected to land on the Demonlist."
     },
     "/list": {
         "title": "ULL — All Levels",
@@ -39,8 +39,8 @@ export const PAGE_META = {
     },
     "/events": {
         "title": "ULL — Events",
-        "socialTitle": "Events — Level of the Month & Closest to Verification | Upcoming Levels List",
-        "description": "The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team."
+        "socialTitle": "Events — Level of the Day, Month & Closest to Verification | Upcoming Levels List",
+        "description": "The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team."
     },
     "/information": {
         "title": "ULL — Information",

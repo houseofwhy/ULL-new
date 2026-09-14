@@ -1,0 +1,550 @@
+<!-- ─────────────────────────────────────────────────────────────────────────
+     The content, once.
+
+     All three templates show the same seven readers — what the desktop page
+     opens in its window: what the list is, the FAQ, the site map, the
+     guidelines, the two legends, the staff and contact routing, and the API
+     reference. What differs between the templates is the container the reader
+     sits in, which is the whole point of comparing them, so the content itself
+     lives here and the build stamps it into each template's slots.
+
+     Every count in this file is the count the shipped page computes from its
+     data: 14 guideline sections in 5 groups, 15 questions in 4 groups, 9 pages,
+     19 marks, 9 endpoints, 9 level fields. Nothing here is content the desktop
+     page does not have.
+     ───────────────────────────────────────────────────────────────────────── -->
+<!--kit-->
+<style>
+/* ── The reading kit ──────────────────────────────────────────────────────
+   Set once for all three mockups, one step down from the desktop reader in
+   css/pages/information.css. Everything structural — cards, pills, chips,
+   eyebrows, buttons, the definition list — is .ull2's and is not repeated. */
+.mki .mki-lead { font-size: 0.85rem; line-height: 1.7; opacity: 0.62; margin: 0 0 1rem; }
+.mki .mki-prose p, .mki .mki-prose li { font-size: 0.8rem; line-height: 1.72; opacity: 0.72; }
+.mki .mki-prose p { margin: 0 0 0.75rem; }
+.mki .mki-prose ul, .mki .mki-prose ol { margin: 0 0 0.85rem; padding-left: 1.05rem; }
+.mki .mki-prose li { margin-bottom: 0.35rem; }
+.mki .mki-prose strong, .mki .mki-prose b { font-weight: 600; opacity: 1; }
+.mki .mki-prose h4, .mki .mki-h4 { margin: 1.35rem 0 0.5rem; font-family: inherit; font-size: 0.85rem; font-weight: 700; line-height: 1.35; }
+.mki .mki-prose a, .mki .mki-link { color: var(--u-accent); text-decoration: underline; text-underline-offset: 0.15em; }
+.mki .mki-note { font-size: 0.75rem; line-height: 1.65; opacity: 0.5; margin: 0 0 0.9rem; }
+.mki code, .mki .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.72rem; }
+
+/* Groups inside a reader: an eyebrow and what it labels. */
+.mki .mki-group + .mki-group { margin-top: 1.5rem; }
+
+/* FAQ. One question per row, the answer under it — the desktop's two columns
+   do not survive 390px, and stacking them keeps the reading order. */
+.mki .mki-q { padding: 0.8rem 0; border-bottom: 1px solid var(--u-line); }
+.mki .mki-q:first-of-type { border-top: 1px solid var(--u-line); }
+.mki .mki-q > b { display: block; font-size: 0.82rem; font-weight: 600; line-height: 1.45; }
+.mki .mki-q .mki-prose { margin-top: 0.35rem; }
+.mki .mki-q .mki-prose p:last-child { margin-bottom: 0; }
+
+/* Anything wider than the screen scrolls in its own box rather than pushing
+   the page sideways: the points table and the example request. */
+.mki .mki-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 0.9rem; }
+.mki .mki-tbl { border-collapse: collapse; font-size: 0.74rem; white-space: nowrap; }
+.mki .mki-tbl th { text-align: left; padding: 0.35rem 0.75rem 0.35rem 0; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; border-bottom: 1px solid var(--u-line); }
+.mki .mki-tbl td { padding: 0.4rem 0.75rem 0.4rem 0; border-bottom: 1px solid var(--u-line); opacity: 0.75; }
+.mki .mki-tbl--num td, .mki .mki-tbl--num th { text-align: right; font-variant-numeric: tabular-nums; }
+.mki .mki-tbl--num td:first-child, .mki .mki-tbl--num th:first-child { text-align: left; }
+.mki .mki-pre { margin: 0 0 0.9rem; padding: 0.75rem 0.85rem; border-radius: var(--u-r-sm); background: var(--u-fill); border: 1px solid var(--u-line); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.68rem; line-height: 1.65; white-space: pre; overflow-x: auto; }
+.mki .mki-pre em { font-style: normal; opacity: 0.5; }
+
+/* The API, phone-shaped: the desktop's two tables are wider than the screen,
+   so each row becomes a line of its own instead of scrolling sideways. */
+.mki .mki-ep { display: block; padding: 0.6rem 0; border-bottom: 1px solid var(--u-line); }
+.mki .mki-ep:first-of-type { border-top: 1px solid var(--u-line); }
+.mki .mki-ep__p { display: flex; align-items: center; gap: 0.45rem; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; font-weight: 500; }
+.mki .mki-get { padding: 0.05rem 0.32rem; border-radius: 0.25rem; background: var(--u-fill-2); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em; opacity: 0.7; }
+.mki .mki-ep__r { display: block; margin-top: 0.2rem; font-size: 0.74rem; line-height: 1.5; opacity: 0.55; }
+.mki .mki-fld { padding: 0.6rem 0; border-bottom: 1px solid var(--u-line); }
+.mki .mki-fld:first-of-type { border-top: 1px solid var(--u-line); }
+.mki .mki-fld__n { display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.73rem; font-weight: 500; }
+.mki .mki-fld__t { font-family: inherit; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.4; }
+.mki .mki-fld__m { display: block; margin-top: 0.2rem; font-size: 0.74rem; line-height: 1.5; opacity: 0.55; }
+
+/* Both legends. The colouring one is drawn with the pills themselves, so it
+   cannot drift from the scale it explains. */
+.mki .mki-legend { display: flex; flex-direction: column; gap: 0.4rem; }
+.mki .mki-legend > div { display: flex; align-items: center; gap: 0.65rem; font-size: 0.76rem; }
+.mki .mki-legend .u-pill { flex-shrink: 0; min-width: 6.6rem; justify-content: center; padding: 0.2rem 0.5rem; font-size: 0.64rem; }
+.mki .mki-legend > div > span:last-child { opacity: 0.55; line-height: 1.4; }
+.mki .mki-legend--icons img { width: 1.15rem; height: 1.15rem; flex-shrink: 0; }
+
+/* Staff. */
+.mki .mki-people { display: flex; flex-direction: column; }
+.mki .mki-person { display: flex; align-items: center; gap: 0.5rem; min-height: 2.3rem; font-size: 0.82rem; }
+.mki .mki-person img { width: 1rem; height: 1rem; flex-shrink: 0; opacity: 0.7; }
+/* The name takes the room; the role chip keeps to its own width. Naming the
+   chip out of this rule matters — every row has two spans in it. */
+.mki .mki-person > a, .mki .mki-person > span:not(.u-chip) { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mki .mki-person a { color: inherit; }
+.mki .mki-person a:hover { color: var(--u-accent); text-decoration: underline; text-underline-offset: 0.15em; }
+.mki .mki-person .u-chip { flex-shrink: 0; margin-left: auto; padding: 0.08rem 0.4rem; font-size: 0.58rem; opacity: 0.6; }
+.mki .mki-links { display: flex; flex-direction: column; gap: 0.5rem; margin: 0.9rem 0; }
+.mki .mki-links > * { width: 100%; min-height: 2.75rem; }
+
+/* The site map. */
+.mki .mki-nav { display: block; padding: 0.7rem 0; border-top: 1px solid var(--u-line); }
+.mki .mki-nav__n { display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap; font-size: 0.84rem; font-weight: 600; line-height: 1.3; }
+.mki .mki-nav__n code { font-size: 0.62rem; font-weight: 400; opacity: 0.35; }
+.mki .mki-nav__d { display: block; margin-top: 0.25rem; font-size: 0.76rem; line-height: 1.6; opacity: 0.55; }
+
+/* The guidelines index: 14 sections under the 5 groups they belong to. */
+.mki .mki-toc { display: flex; flex-direction: column; }
+.mki .mki-toc__g { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin: 1.1rem 0 0.2rem; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.mki .mki-toc__g:first-child { margin-top: 0; }
+.mki .mki-toc__a {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.6rem;
+    width: 100%; min-height: 2.75rem; padding: 0.35rem 0;
+    border: 0; border-top: 1px solid var(--u-line); background: transparent;
+    color: var(--color-on-background); font-family: inherit; font-size: 0.82rem;
+    font-weight: 500; text-align: left; cursor: pointer;
+}
+.mki .mki-toc__a::after { content: '\203A'; font-size: 1rem; opacity: 0.3; }
+.mki .mki-toc__a.is-on { color: var(--u-accent); font-weight: 700; }
+
+/* Previous and next section, at the foot of a guideline section. */
+.mki .mki-updown { display: flex; gap: 0.5rem; margin-top: 1.25rem; }
+.mki .mki-updown > * {
+    flex: 1; min-height: 2.75rem; padding: 0.5rem 0.6rem;
+    border-radius: var(--u-r-sm); border: 1px solid var(--u-line);
+    background: transparent; color: var(--color-on-background);
+    font-family: inherit; font-size: 0.72rem; font-weight: 600; line-height: 1.3;
+    cursor: pointer;
+}
+.mki .mki-updown > *:disabled, .mki .mki-updown > *.is-off { opacity: 0.25; cursor: default; }
+.mki .mki-crumb { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--u-accent); margin-bottom: 0.35rem; }
+.mki .mki-title { margin: 0 0 0.8rem; font-family: inherit; font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
+
+/* Search hits. The field in the hero runs over the guidelines, the FAQ, the
+   endpoints, the level fields and both legends, exactly as the desktop page
+   does; a hit opens whichever part it lives in. */
+.mki .mki-hits { display: flex; flex-direction: column; }
+.mki .mki-hit {
+    display: block; width: 100%; padding: 0.55rem 0.1rem;
+    border: 0; border-top: 1px solid var(--u-line); background: transparent;
+    color: var(--color-on-background); font-family: inherit; text-align: left; cursor: pointer;
+}
+.mki .mki-hit:first-child { border-top: 0; }
+.mki .mki-hit__k { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.mki .mki-hit__t { display: block; margin-top: 0.1rem; font-size: 0.8rem; font-weight: 600; line-height: 1.35; }
+.mki .mki-hit__s { display: block; margin-top: 0.05rem; font-size: 0.7rem; opacity: 0.45; line-height: 1.4; }
+</style>
+<!--/kit-->
+
+<!--b:about-->
+<p class="mki-lead">
+    The Upcoming Levels List catalogues upcoming Top 1&ndash;100 Extreme Demons projected to be verified and
+    placed on the Demonlist, along with unrated Extreme Demons that would have qualified for a rating when
+    they were made. It is a forecast of what the Demonlist is about to look like &mdash; not a record of what
+    has already happened.
+</p>
+<div class="mki-prose">
+    <p>
+        Nothing here is official. Positions are estimates made by the list staff against the criteria written
+        in the guidelines, and they move as levels progress. Levels that are already rated are placed in
+        strict accordance with their ranking on Pointercrate.
+    </p>
+    <h4>The three tiers</h4>
+    <p>The order of levels is the same in all three. What changes is the threshold to appear at all.</p>
+    <ul>
+        <li><strong>All Levels</strong> &mdash; every level with a conceivable chance of being verified and published. A level&rsquo;s rank here is what leaderboard points are calculated from.</li>
+        <li><strong>Main List</strong> &mdash; levels that meet the standards required to be considered for an official rating.</li>
+        <li><strong>Future List</strong> &mdash; levels very likely to be verified and published soon.</li>
+    </ul>
+    <h4>How to read a level</h4>
+    <p>
+        The colour of a name is the level&rsquo;s state, from layout through decoration and verification to
+        rated. Two percentages follow every level &mdash; how much of the decoration is done, and how far the
+        best run has got. The badges are its position in each tier: a level can be #4 in All Levels and #2 in
+        Future List at once.
+    </p>
+</div>
+<!--/b-->
+
+<!--b:faq-->
+<div class="mki-group">
+    <div class="u-eyebrow">Getting on the list</div>
+    <div class="mki-q">
+        <b>How does a level get on the list?</b>
+        <div class="mki-prose"><p>Staff select it. There is no queue a creator joins: moderators assess levels against the Level Selection criteria in the guidelines &mdash; classic gameplay, a public recording, an intended release on the official servers and a credible chance of being rated &mdash; and place the ones that pass on the Pending List until an exact position is settled.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>My level isn&rsquo;t listed. Can I put it forward?</b>
+        <div class="mki-prose"><p>Raise it in <code>#list-discussion</code> on the Discord server with a public recording of its current state. It is not a submission form and the staff are not obliged to add it; it goes through the same criteria as everything else.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>Why is a level on Pending and not on the list?</b>
+        <div class="mki-prose"><p>It passed selection but has no exact position yet. The Pending List shows the range it is expected to land in and an arrow for which way it is moving inside that range. A level with no usable estimate at all sits under <em>Pending Indefinitely</em>.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>A level&rsquo;s information is wrong or out of date.</b>
+        <div class="mki-prose"><p>Report it in <code>#level-update-reporting</code> with something to back it up &mdash; gameplay footage, a statement from the creator, tester feedback. Positions are adjusted on that kind of evidence.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>Why is a level marked &#128683;?</b>
+        <div class="mki-prose"><p>It is pending removal: it no longer meets the criteria it was added under, and will come off the list unless that changes.</p></div>
+    </div>
+</div>
+
+<div class="mki-group">
+    <div class="u-eyebrow">Records</div>
+    <div class="mki-q">
+        <b>How do I submit a record?</b>
+        <div class="mki-prose"><p>Through the list&rsquo;s Discord server. Read <em>Acceptance of Records</em> in the guidelines first &mdash; a record that arrives without the required proof is rejected before anyone assesses it, not sent back for more.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>What proof does a record need?</b>
+        <div class="mki-prose"><p>A complete, uncut playthrough of the record (if your video has cuts, attach the raw footage as well), the level&rsquo;s audio or your clicks, and a cheat indicator and fps/tps display where your mod menu provides them. The record has to be on the version of the level this site lists. The full requirements, including what may be blurred and what may not, are in <em>Requirements for proof of legitimacy</em>.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>What counts as a world record here?</b>
+        <div class="mki-prose"><p>Two things are tracked separately: the best completion from 0%, and the world record run &mdash; the longest single segment on the current version of the level, measured from where it started to where it ended.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>My record was rejected. Can it be reviewed?</b>
+        <div class="mki-prose"><p>A record rejected because the player changed the level can be reviewed if the creator later made the same change in a new version; ask the staff. Anything rejected for missing proof needs to be resubmitted with the proof.</p></div>
+    </div>
+</div>
+
+<div class="mki-group">
+    <div class="u-eyebrow">Points and the leaderboard</div>
+    <div class="mki-q">
+        <b>How are leaderboard points calculated?</b>
+        <div class="mki-prose">
+            <p>From two things: the level&rsquo;s rank in <strong>All Levels</strong>, and the percentage of your record. A verification is worth twice a 100% record on the same level, and completing a level that is not verified yet &mdash; a layout completion &mdash; is worth 0.8 of a verification.</p>
+            <div class="mki-scroll">
+                <table class="mki-tbl mki-tbl--num">
+                    <thead><tr><th></th><th>#1</th><th>#10</th><th>#50</th><th>#100</th></tr></thead>
+                    <tbody>
+                        <tr><td>100% record</td><td>1459</td><td>1196</td><td>663</td><td>425</td></tr>
+                        <tr><td>50% record</td><td>851</td><td>698</td><td>387</td><td>248</td></tr>
+                        <tr><td>Verification</td><td>2919</td><td>2392</td><td>1325</td><td>849</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Position is worth far more than percentage: a 50% on #1 beats a 100% on #100.</p>
+        </div>
+    </div>
+    <div class="mki-q">
+        <b>Why did my total change when I didn&rsquo;t submit anything?</b>
+        <div class="mki-prose"><p>Because points are calculated from a level&rsquo;s <em>current</em> rank, and on a list of upcoming levels ranks move constantly. Every record on a level that moves is worth a different number of points afterwards.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>What is &ldquo;layout verified&rdquo;?</b>
+        <div class="mki-prose"><p>A 100% completion of a level that has not been verified yet &mdash; someone beat it in its undecorated state. It is scored as its own thing, at 0.8 of a verification.</p></div>
+    </div>
+</div>
+
+<div class="mki-group">
+    <div class="u-eyebrow">The list itself</div>
+    <div class="mki-q">
+        <b>What do the colours in the list mean?</b>
+        <div class="mki-prose"><p>They are the level&rsquo;s state, from layout through decoration and verification to rated. The full scale is in the Reference block on this page, and it is the same scale as the status pill on a level&rsquo;s own page. Level colouring is a setting &mdash; if names look plain, turn it on in Settings.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>Is this the Demonlist? Is it official?</b>
+        <div class="mki-prose"><p>No. ULL is a community project and is not affiliated with RobTop Games. Levels that are already rated are placed in strict accordance with their ranking on <a href="https://pointercrate.com" target="_blank" rel="noopener">Pointercrate</a>, and these guidelines are adapted from the Global Demonlist Guidelines with credit to their authors &mdash; but nothing here is an official ranking.</p></div>
+    </div>
+    <div class="mki-q">
+        <b>The rules changed and I didn&rsquo;t know.</b>
+        <div class="mki-prose"><p>Changes are announced in the Discord server. The guidelines on this page are always the current version.</p></div>
+    </div>
+</div>
+<!--/b-->
+
+<!--b:navigation-->
+<p class="mki-lead">Every page on the site, grouped the way the menu groups them.</p>
+<div class="mki-group">
+    <div class="u-eyebrow">Lists</div>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">All Levels <code>/list</code></span>
+        <span class="mki-nav__d">Every level with a conceivable chance of being verified and published, hardest first. The widest of the three tiers, and the one a level&rsquo;s leaderboard points are calculated from &mdash; a record is worth what it is worth because of the level&rsquo;s rank here.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Main List <code>/listmain</code></span>
+        <span class="mki-nav__d">The same order with a higher bar: levels that already meet the standards required to be considered for an official rating. Shorter, and every entry is a serious candidate.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Future List <code>/listfuture</code></span>
+        <span class="mki-nav__d">The strictest tier &mdash; levels with a very high likelihood of being verified and published soon. Read this one if you only want what is about to happen.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">A level&rsquo;s page <code>/level/&hellip;</code></span>
+        <span class="mki-nav__d">One page per level: its state, how much of the decoration is done and how far the best run has got, every record and run with proof, its creators, and its rank in each tier at once.</span>
+    </a>
+</div>
+<div class="mki-group">
+    <div class="u-eyebrow">Other</div>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Upcoming Levels <code>/upcoming</code></span>
+        <span class="mki-nav__d">The same unverified levels, reordered by how close they actually are to being verified rather than by how hard they are. The list of what is about to fall.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Pending List <code>/pending</code></span>
+        <span class="mki-nav__d">Levels that passed selection but have no exact position yet, with the range each is expected to land in and an arrow for which way it is moving inside it.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Leaderboard <code>/leaderboard</code></span>
+        <span class="mki-nav__d">Players ranked by the verifications, records and runs they hold on listed levels. Open a player to see every record behind their total and what each one is worth.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Events <code>/events</code></span>
+        <span class="mki-nav__d">Three levels the list is pointing at right now: one picked for the day, one for the month, and the one closest to being verified.</span>
+    </a>
+    <a class="mki-nav" href="#">
+        <span class="mki-nav__n">Home <code>/</code></span>
+        <span class="mki-nav__d">The size of each tier at a glance, the top of the list, the recent changes feed and the staff team.</span>
+    </a>
+</div>
+<!--/b-->
+
+<!--b:gl-index-->
+<div class="mki-toc">
+    <div class="mki-toc__g">General <span>2</span></div>
+    <span class="mki-toc__a is-on">Introduction</span>
+    <span class="mki-toc__a">Glossary</span>
+    <div class="mki-toc__g">Acceptance of Records <span>4</span></div>
+    <span class="mki-toc__a">Definition of a World Record</span>
+    <span class="mki-toc__a">Requirements for proof of legitimacy</span>
+    <span class="mki-toc__a">Tolerance and leniency policy</span>
+    <span class="mki-toc__a">Cheating and penalties</span>
+    <div class="mki-toc__g">Level Placement <span>3</span></div>
+    <span class="mki-toc__a">List Structure</span>
+    <span class="mki-toc__a">Level Selection</span>
+    <span class="mki-toc__a">Determining and adjusting level positions</span>
+    <div class="mki-toc__g">Content Policy <span>2</span></div>
+    <span class="mki-toc__a">List records</span>
+    <span class="mki-toc__a">Levels and thumbnails</span>
+    <div class="mki-toc__g">Technical Support <span>3</span></div>
+    <span class="mki-toc__a">Staff roles and their areas of responsibility</span>
+    <span class="mki-toc__a">Ethical standards of list staff</span>
+    <span class="mki-toc__a">Contacts</span>
+</div>
+<!--/b-->
+
+<!--b:gl-section-->
+<div class="mki-crumb">General</div>
+<h3 class="mki-title">Introduction</h3>
+<div class="mki-prose">
+    <p>These guidelines are directly adapted from, and heavily rely on, the structure and principles of the Global Demonlist Guidelines. We extend our full credit and gratitude to the original authors.</p>
+    <p>The following text contains information about the guidelines that explain how the Upcoming Level List (hereinafter referred to as &ldquo;the list&rdquo;) works in terms of accepting records, managing levels, recognizing permitted and prohibited software, establishing the duties and areas of responsibility of the list staff.</p>
+    <p>These rules are subject to change, which will be announced in the list&rsquo;s discord server. Players should stay up to date with any changes to avoid unexpected problems.</p>
+</div>
+<!--/b-->
+
+<!--b:gl-glossary-->
+<div class="mki-crumb">General</div>
+<h3 class="mki-title">Glossary</h3>
+<div class="mki-prose">
+    <p>The terms used throughout these guidelines and across the site.</p>
+    <h4>A level&rsquo;s state</h4>
+    <ul>
+        <li><strong>Layout</strong> &mdash; a level whose gameplay exists but which has no decoration yet.</li>
+        <li><strong>Decoration progress</strong> &mdash; how much of the level&rsquo;s decoration is finished, as a percentage. It is what colours a level&rsquo;s name up to the point decoration is complete.</li>
+        <li><strong>Verification progress</strong> &mdash; how far anyone has got on the current version of the level, taken from the best record or the longest run. It takes over the name colour once decoration is finished.</li>
+        <li><strong>Verified</strong> &mdash; the level has been completed in full and is no longer upcoming.</li>
+        <li><strong>Rated</strong> / <strong>Unrated</strong> &mdash; whether the level has received an official in-game rating from the developer. A verified level can sit here unrated for some time.</li>
+        <li><strong>Pending</strong> &mdash; the level has passed selection but has no exact position yet; the Pending List shows the range it is expected to land in. <strong>Pending Indefinitely</strong> means not even a range can be estimated yet.</li>
+    </ul>
+    <h4>Records</h4>
+    <ul>
+        <li><strong>World record (from 0%)</strong> &mdash; the highest completion percentage achieved from the start of the level. <strong>World record run</strong> &mdash; the longest single segment on the current version, measured between where it started and where it ended.</li>
+        <li><strong>Verifier</strong> &mdash; the player who will verify the level. <strong>Open Verification</strong> means no verifier has been decided.</li>
+        <li><strong>Layout completion</strong> &mdash; a 100% completion of a level that is not verified yet, i.e. beaten in its undecorated state. It is scored separately from an ordinary record.</li>
+    </ul>
+    <h4>On the list</h4>
+    <ul>
+        <li><strong>All Levels</strong>, <strong>Main List</strong>, <strong>Future List</strong> &mdash; the three tiers. The order is the same in all three; the threshold to appear at all is what differs.</li>
+        <li><strong>Benchmark</strong> &mdash; a verified level kept on the list as a reference point for difficulty. <strong>Benchmark Mode</strong>, in Settings, hides every other verified level and renumbers what is left.</li>
+        <li><strong>Remake</strong> &mdash; a new version of a level that already exists.</li>
+        <li><strong>NONG</strong> / <strong>NC</strong> &mdash; the level&rsquo;s music is not hosted on Newgrounds, or is not copyright-free.</li>
+        <li><strong>Medium</strong>, <strong>Long</strong>, <strong>XL</strong>, <strong>XXL</strong>, <strong>XXXL</strong> &mdash; how long the gameplay runs.</li>
+    </ul>
+</div>
+<!--/b-->
+
+<!--b:reference-->
+<div class="mki-group">
+    <div class="u-eyebrow">Level colouring</div>
+    <p class="mki-note">A level&rsquo;s name is coloured by its state when Level Coloring is on &mdash; the same scale as the status pill on the level&rsquo;s own page. If names look plain, turn the setting on.</p>
+    <div class="mki-legend">
+        <div><span class="u-pill u-pill--blue"><i></i>Layout</span><span>No decoration yet</span></div>
+        <div><span class="u-pill u-pill--cyan"><i></i>Early deco</span><span>1&ndash;29% decorated</span></div>
+        <div><span class="u-pill u-pill--green"><i></i>Mid deco</span><span>30&ndash;69% decorated</span></div>
+        <div><span class="u-pill u-pill--yellow"><i></i>Late deco</span><span>70&ndash;99% decorated</span></div>
+        <div><span class="u-pill u-pill--amber"><i></i>Deco done</span><span>Decoration finished</span></div>
+        <div><span class="u-pill u-pill--orange"><i></i>Early verify</span><span>Best run 30&ndash;59%</span></div>
+        <div><span class="u-pill u-pill--red"><i></i>Late verify</span><span>Best run 60&ndash;99%</span></div>
+        <div><span class="u-pill u-pill--done"><i></i>Verified</span><span>Beaten, not yet rated</span></div>
+        <div><span class="u-pill"><i></i>Rated</span><span>Verified and rated in game</span></div>
+        <div><span class="u-pill u-pill--done">&#128683;</span><span>Pending removal</span></div>
+    </div>
+</div>
+<div class="mki-group">
+    <div class="u-eyebrow">Pending list icons</div>
+    <p class="mki-note">Icons on the Pending List say where a level is expected to land and which way it is moving inside that range.</p>
+    <div class="mki-legend mki-legend--icons">
+        <div><img src="../../assets/move-up.svg" alt="" /><span>Moving up</span></div>
+        <div><img src="../../assets/move-down.svg" alt="" /><span>Moving down</span></div>
+        <div><img src="../../assets/1.svg" alt="" /><span>Pending #1</span></div>
+        <div><img src="../../assets/10.svg" alt="" /><span>Pending Top 10</span></div>
+        <div><img src="../../assets/20.svg" alt="" /><span>Pending Top 20</span></div>
+        <div><img src="../../assets/30.svg" alt="" /><span>Pending Top 30</span></div>
+        <div><img src="../../assets/50.svg" alt="" /><span>Pending Top 50</span></div>
+        <div><img src="../../assets/75.svg" alt="" /><span>Pending Top 75</span></div>
+        <div><img src="../../assets/question.svg" alt="" /><span>Unknown placement</span></div>
+    </div>
+</div>
+<!--/b-->
+
+<!--b:staff-->
+<p class="mki-lead">
+    Moderators and Elder Moderators determine level positions, place levels, take part in quality control and
+    keep the site up to date. Admins manage a sector of the project&rsquo;s operation; the List Leader oversees
+    the list and its staff.
+</p>
+<div class="mki-group">
+    <div class="u-eyebrow">The team <span class="u-count">12</span></div>
+    <div class="mki-people">
+        <div class="mki-person"><img class="mk-inv" src="../../assets/crown.svg" alt="" /><a href="#">QwidziT</a><span class="u-chip">List Leader</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-gear.svg" alt="" /><a href="#">exiled_shade</a><span class="u-chip">Admin</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" /><a href="#">niroi</a><span class="u-chip">Elder Mod</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" /><a href="#">Keres</a><span class="u-chip">Elder Mod</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" /><a href="#">LukeLGamer</a><span class="u-chip">Elder Mod</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" /><a href="#">ItzDel1ghtfuL</a><span class="u-chip">Elder Mod</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-lock.svg" alt="" /><a href="#">Terralith</a><span class="u-chip">Mod</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/user-lock.svg" alt="" /><a href="#">TheCatAstronaut</a><span class="u-chip">Mod</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/code.svg" alt="" /><a href="#">Prometheus</a><span class="u-chip">Dev</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/code.svg" alt="" /><a href="#">NikoYakorem</a><span class="u-chip">Dev</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/code.svg" alt="" /><a href="#">ausansdev</a><span class="u-chip">Dev</span></div>
+        <div class="mki-person"><img class="mk-inv" src="../../assets/code.svg" alt="" /><span>QwidziT</span><span class="u-chip">Dev</span></div>
+    </div>
+</div>
+<div class="mki-group">
+    <div class="u-eyebrow">Where to take what</div>
+    <dl class="u-dl">
+        <dt>A record</dt><dd>The Discord server</dd>
+        <dt>A level that should be listed</dt><dd>#list-discussion</dd>
+        <dt>Information that is out of date</dt><dd>#level-update-reporting</dd>
+        <dt>Something broken on the site</dt><dd>The site&rsquo;s developer</dd>
+        <dt>A complaint about a staff member</dt><dd>An Admin, or the List Leader</dd>
+    </dl>
+    <div class="mki-links">
+        <a class="u-btn" href="#"><img src="../../assets/discord.svg" alt="" width="14" height="14" />discord.gg/QRX47v2qyC</a>
+        <a class="u-btn u-btn--ghost" href="#"><img class="mk-inv" src="../../assets/x.svg" alt="" width="12" height="12" />@ull_gd</a>
+    </div>
+    <p class="mki-note">Individual handles for the people above are listed under <span class="mki-link">Contacts</span> in the guidelines.</p>
+</div>
+<!--/b-->
+
+<!--b:api-->
+<p class="mki-lead">
+    Everything this site shows comes from a public JSON API. It needs no key, no signup and no referrer, and
+    it sends <code>Access-Control-Allow-Origin: *</code>, so a page or a bot can read the list straight from
+    the browser.
+</p>
+<h4 class="mki-h4">Base URL</h4>
+<div class="mki-pre">https://d1-wrkr.ullteam.workers.dev</div>
+<h4 class="mki-h4">Endpoints</h4>
+<div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/list</span><span class="mki-ep__r">Every level, in rank order</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/list/main</span><span class="mki-ep__r">The Main List</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/list/future</span><span class="mki-ep__r">The Future List</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/levels/{position}</span><span class="mki-ep__r">One level, by its 1-based rank</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/pending</span><span class="mki-ep__r">Pending List entries</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/editors</span><span class="mki-ep__r">The staff list, in the order staff arranged it</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/level-month</span><span class="mki-ep__r">Level of the Month, or null</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/level-verif</span><span class="mki-ep__r">Closest to verification, or null</span></div>
+    <div class="mki-ep"><span class="mki-ep__p"><span class="mki-get">GET</span>/api/recent-changes</span><span class="mki-ep__r">The changes feed, grouped {date, entries[]}</span></div>
+</div>
+<p class="mki-note">
+    Writing to the list needs a staff API key and is not part of the public API. There is no public
+    leaderboard endpoint: the leaderboard is derived from <code>/api/list</code>, by the rules written out
+    under &ldquo;How are leaderboard points calculated?&rdquo; in the FAQ.
+</p>
+<h4 class="mki-h4">Example</h4>
+<div class="mki-pre">curl https://d1-wrkr.ullteam.workers.dev/api/list
+
+<em>[
+  {
+    "path": "manray",
+    "name": "M A N R A Y",
+    "author": "akunakunn",
+    "creators": ["akunakunn", "Wobbly"],
+    "verifier": "Open Verification",
+    "percentFinished": 80,
+    "records": [{ "user": "Zoink", "percent": 61, "hz": 240 }],
+    "isMain": true, "isFuture": false, "isVerified": false,
+    "sort_order": 4
+  },
+  &hellip;
+]</em></div>
+<h4 class="mki-h4">The level object</h4>
+<div>
+    <div class="mki-fld"><span class="mki-fld__n">path <span class="mki-fld__t">string</span></span><span class="mki-fld__m">Slug; the level&rsquo;s page is /level/{path}</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">name, author <span class="mki-fld__t">string</span></span><span class="mki-fld__m">Level name and host</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">creators <span class="mki-fld__t">string[]</span></span><span class="mki-fld__m">Everyone credited</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">verifier <span class="mki-fld__t">string</span></span><span class="mki-fld__m">Verifier, or &ldquo;Open Verification&rdquo;</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">percentFinished <span class="mki-fld__t">number</span></span><span class="mki-fld__m">Decoration progress, 0&ndash;100</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">records, run <span class="mki-fld__t">object[]</span></span><span class="mki-fld__m">{user, link, percent, hz} &mdash; completions and runs</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">tags <span class="mki-fld__t">string[]</span></span><span class="mki-fld__m">Public, Layout, Rated, NONG, &hellip;</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">isMain, isFuture, isVerified, benchmark <span class="mki-fld__t">boolean</span></span><span class="mki-fld__m">Which tiers it is on, and its state</span></div>
+    <div class="mki-fld"><span class="mki-fld__n">sort_order <span class="mki-fld__t">number</span></span><span class="mki-fld__m">Rank in All Levels</span></div>
+</div>
+<h4 class="mki-h4">Fair use</h4>
+<div class="mki-prose">
+    <ul>
+        <li>Cache what you fetch: the list changes a few times a day, not a few times a second.</li>
+        <li>Identify your bot in the user agent if you are polling on a schedule.</li>
+        <li>The data is community work &mdash; credit the list and link back to it.</li>
+        <li>Positions are estimates and change, so treat a stored rank as a snapshot, not a fact.</li>
+    </ul>
+</div>
+<!--/b-->
+
+<!--b:hits-->
+<button class="mki-hit" type="button">
+    <span class="mki-hit__k">Acceptance of Records</span>
+    <span class="mki-hit__t">Requirements for proof of legitimacy</span>
+</button>
+<button class="mki-hit" type="button">
+    <span class="mki-hit__k">Acceptance of Records</span>
+    <span class="mki-hit__t">Cheating and penalties</span>
+</button>
+<button class="mki-hit" type="button">
+    <span class="mki-hit__k">FAQ &middot; Records</span>
+    <span class="mki-hit__t">What proof does a record need?</span>
+</button>
+<button class="mki-hit" type="button">
+    <span class="mki-hit__k">FAQ &middot; Records</span>
+    <span class="mki-hit__t">How do I submit a record?</span>
+</button>
+<button class="mki-hit" type="button">
+    <span class="mki-hit__k">Level field</span>
+    <span class="mki-hit__t">records, run</span>
+    <span class="mki-hit__s">{user, link, percent, hz} &mdash; completions and runs</span>
+</button>
+<!--/b-->
+
+<!--b:topbar-->
+    <header class="m2-top">
+        <div><span class="m2-top__mark">ULL</span><span class="m2-top__ver">v2.1.0</span></div>
+        <div class="m2-top__acts">
+            <button class="m2-top__btn" type="button" aria-label="Settings"><span class="mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.4 1.05c-.41-1.4-2.39-1.4-2.8 0l-.1.34a1.46 1.46 0 0 1-2.11.87l-.31-.17c-1.28-.7-2.68.7-1.99 1.99l.17.31a1.46 1.46 0 0 1-.87 2.1l-.34.1c-1.4.42-1.4 2.4 0 2.81l.34.1a1.46 1.46 0 0 1 .87 2.11l-.17.31c-.7 1.28.7 2.68 1.99 1.99l.31-.17a1.46 1.46 0 0 1 2.1.87l.1.34c.42 1.4 2.4 1.4 2.81 0l.1-.34a1.46 1.46 0 0 1 2.11-.87l.31.17c1.28.7 2.68-.7 1.99-1.99l-.17-.31a1.46 1.46 0 0 1 .87-2.1l.34-.1c1.4-.42 1.4-2.4 0-2.81l-.34-.1a1.46 1.46 0 0 1-.87-2.11l.17-.31c.7-1.28-.7-2.68-1.99-1.99l-.31.17a1.46 1.46 0 0 1-2.1-.87l-.1-.34zM8 10.93a2.93 2.93 0 1 1 0-5.86 2.93 2.93 0 0 1 0 5.86z"/></svg></span></button>
+            <a class="m2-top__btn" href="#" aria-label="Discord"><span class="mk-ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5c1.6.4 2.9 1 4.1 1.8a13.9 13.9 0 0 0-14.4 0c1.2-.8 2.6-1.4 4.1-1.8L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 1 11.5 1.3 15a19.9 19.9 0 0 0 6 3l1.2-1.7c-1-.4-1.9-.9-2.7-1.4l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4c-.8.5-1.7 1-2.7 1.4l1.2 1.7a19.9 19.9 0 0 0 6-3c.4-4.1-.6-7.6-2.4-10.6ZM8.5 12.9c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Zm7 0c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Z"/></svg></span></a>
+        </div>
+    </header>
+<!--/b-->
+
+<!--b:tabbar-->
+    <nav class="m2-nav">
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.8 8 2.5l5.5 4.3V13a.9.9 0 0 1-.9.9H3.4a.9.9 0 0 1-.9-.9V6.8Z"/><path d="M6.4 13.9V9.2h3.2v4.7"/></svg></span>Home</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5.5 4h8M5.5 8h8M5.5 12h8M2.5 4h.01M2.5 8h.01M2.5 12h.01"/></svg></span>Levels</button>
+        <button class="m2-nav__item is-on" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 7.3v4M8 4.9h.01"/></svg></span>Information</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="3.2" cy="8" r="1.3"/><circle cx="8" cy="8" r="1.3"/><circle cx="12.8" cy="8" r="1.3"/></svg></span>Other</button>
+    </nav>
+<!--/b-->

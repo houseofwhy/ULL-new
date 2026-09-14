@@ -1,5 +1,9 @@
 import { store } from '../../main.js';
-import { embed, passesBenchmark, levelThumbnail } from '../../util.js';
+import {
+    passesBenchmark, levelThumbnail, levelSlug,
+    decorationPercent, verificationPercent, verificationLabel, levelStatus,
+    bestRecord, bestRun, recordLink, hasVerifier, verifierLine, levelRanks,
+} from '../../util.js';
 import { mobileStore, applyFilters } from './mobileStore.js';
 
 export default {
@@ -7,97 +11,127 @@ export default {
         pageType: { type: String, default: 'all' },
     },
     template: `
-        <div class="mob-list">
+        <div class="mob-list m2-page-body">
             <button v-if="showScrollTop" class="mob-scroll-top-btn" @click="scrollToTop">
                 <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>
                 Return to top
             </button>
-            <div class="mob-page-hero">
+
+            <section class="m2-hero">
                 <h1 v-if="pageType === 'main'">Main List</h1>
                 <h1 v-else-if="pageType === 'future'">Future List</h1>
                 <h1 v-else>All Levels</h1>
-                <p v-if="pageType === 'main'">The Main List highlights levels that meet the fundamental standards required to be considered for an official rating by the developer (“Rate”). </p>
-                <p v-else-if="pageType === 'future'">This tier functions as a focused preview, listing only levels with a very high likelihood of soon verification and publication.</p>
-                <p v-else>The most comprehensive tier, offering the largest level count and lowest bar for entry.</p>
-            </div>
-            <div class="mob-search-row">
-                <input v-model="mobileStore.search" @input="applyFilters()" class="mob-search" type="text" placeholder="Search levels..." />
-                <button class="mob-search-filter-btn" :class="{ active: mobileStore.openMenu === 'filters' }" @click="mobileStore.openMenu = mobileStore.openMenu === 'filters' ? null : 'filters'" title="Filters">
+                <p v-if="pageType === 'main'">Levels that meet the standards required to be considered for an official rating by the developer (a “Rate”).</p>
+                <p v-else-if="pageType === 'future'">The strictest of the three tiers: only levels with a very high likelihood of being verified and published soon.</p>
+                <p v-else>The widest of the three tiers, with the lowest bar for entry: every level with a conceivable chance of being verified and published.</p>
+                <div class="m2-figs">
+                    <span class="m2-fig m2-fig--lead"><b>{{ visibleCount }}</b><span>levels total</span></span>
+                </div>
+            </section>
+
+            <div class="m2-search">
+                <input v-model="mobileStore.search" @input="applyFilters()" type="text" placeholder="Search levels..." />
+                <button class="m2-search__btn" :class="{ active: mobileStore.openMenu === 'filters' }" @click="mobileStore.openMenu = mobileStore.openMenu === 'filters' ? null : 'filters'" title="Filters">
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/></svg>
                 </button>
             </div>
-            <div v-if="noResults" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem 0;gap:0.5rem;opacity:0.25;text-align:center;color:var(--color-on-background);">
-                <span style="font-size:1.5rem;">🔍</span>
-                <p style="font-size:0.8rem;font-family:'Lexend Deca',sans-serif;">No levels match your search.</p>
+
+            <div v-if="noResults" class="u-empty">
+                <div class="u-empty__t">No levels match your search or filters</div>
+                <div class="u-empty__d">Try a different name, or reset the filters to see everything.</div>
             </div>
-            <div v-for="([level, err], i) in displayList" :key="i" class="mob-level-row" v-show="!level?.isHidden">
-                <button class="mob-level-btn" :class="{ active: selected === i }" @click="selected = selected === i ? -1 : i">
-                    <span class="mob-rank" :style="mobileStore.showColors ? getLevelNameStyle(level, selected === i) : {}">
-                        <span v-if="rankOf(level, i) <= 500">#{{ rankOf(level, i) }}</span>
-                        <span v-else>{{ pageType === 'all' ? 'Londenberg' : pageType === 'main' ? 'Leg' : 'Legacy' }}</span>
-                    </span>
-                    <img v-if="mobileStore.showThumbnails && level" class="mob-thumb" :src="levelThumbnail(level)" alt="" />
-                    <div class="mob-level-info">
-                        <div class="mob-level-name" :style="mobileStore.showColors ? getLevelNameStyle(level, selected === i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected === i ? (!store.dark ? '#ffffff' : '#000000') : '#bbbbbb') : ''}">
-                            {{ level?.name ? (mobileStore.showColors && isOldLevel(level) && !level?.isVerified ? level.name + ' \u{1F6AB}' : level.name) : \`Error (\${err}.json)\` }}
+
+            <div class="m2-rows">
+                <div v-for="([level, err], i) in displayList" :key="i" class="mob-level-row" v-show="!level?.isHidden">
+                    <button class="m2-row" :class="{ 'is-on': selected === i, 'is-error': !level }" @click="selected = selected === i ? -1 : i">
+                        <span class="mob-rank m2-row__rank" :style="mobileStore.showColors ? getLevelNameStyle(level, selected === i) : {}">
+                            <span v-if="rankOf(level, i) <= 500">#{{ rankOf(level, i) }}</span>
+                            <span v-else>{{ pageType === 'all' ? 'Londenberg' : pageType === 'main' ? 'Leg' : 'Legacy' }}</span>
+                        </span>
+                        <img v-if="mobileStore.showThumbnails && level" class="m2-row__thumb" :src="levelThumbnail(level)" alt="" loading="lazy" />
+                        <span class="m2-row__body">
+                            <span class="m2-row__name" :style="mobileStore.showColors ? getLevelNameStyle(level, selected === i) : {fontWeight: level?.isVerified ? 'bold' : 'normal', color: level?.isVerified ? (selected === i ? (!store.dark ? '#ffffff' : '#000000') : '#bbbbbb') : ''}">
+                                {{ level?.name ? (mobileStore.showColors && isOldLevel(level) && !level?.isVerified ? level.name + ' \u{1F6AB}' : level.name) : \`Error (\${err}.json)\` }}
+                            </span>
+                            <span v-if="level" class="m2-row__sub">{{ level.author }} · {{ level.verifier }}</span>
+                        </span>
+                        <span v-if="level && selected !== i" class="u-pill" :class="'u-pill--' + status(level).tone"><i></i>{{ shortStatus(level) }}</span>
+                    </button>
+
+                    <!-- A summary, not the whole record: where it stands, how far it
+                         has got and the best two records. Everything else is on the
+                         level's own page, which the button opens. -->
+                    <div v-if="selected === i && level" class="m2-detail">
+                        <div class="m2-detail__hero">
+                            <div v-if="mobileStore.showThumbnails" class="m2-detail__bg" :style="{ backgroundImage: 'url(' + levelThumbnail(level) + ')' }"></div>
+                            <div class="m2-detail__scrim"></div>
+                            <div class="m2-detail__head">
+                                <p class="m2-detail__by">
+                                    by <b>{{ level.author }}</b>
+                                    <template v-if="verifierLine(level)"> · {{ verifierLine(level).lead }} <b>{{ verifierLine(level).name }}</b></template>
+                                </p>
+                                <div class="m2-detail__pills">
+                                    <span class="u-pill" :class="'u-pill--' + status(level).tone"><i></i>{{ status(level).label }}</span>
+                                    <span v-for="tag in tags(level)" :key="tag" class="u-chip u-chip--round">{{ tag }}</span>
+                                </div>
+                                <div v-if="ranks(level).length" class="m2-ranks">
+                                    <component v-for="rank in ranks(level)" :is="rank.n ? 'router-link' : 'span'" :key="rank.key"
+                                               class="u-rank" :class="{ 'u-rank--lead': rank.lead, 'u-rank--off': !rank.n }"
+                                               :to="rank.n ? rank.to : undefined">
+                                        <span class="u-rank__n">{{ rank.n ? '#' + rank.n : 'N/A' }}</span>
+                                        <span class="u-rank__l">{{ rank.label }}</span>
+                                    </component>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mob-level-sub" v-if="level">
-                            {{ level.author }} · {{ level.verifier }}
+                        <div class="m2-detail__body">
+                            <div class="m2-sum">
+                                <div class="m2-sum__meters">
+                                    <div class="u-meter">
+                                        <div class="u-meter__top"><span>Decoration</span><b>{{ decoration(level) }}%</b></div>
+                                        <div class="u-bar"><i :style="{ width: decoration(level) + '%' }"></i></div>
+                                    </div>
+                                    <div class="u-meter">
+                                        <div class="u-meter__top"><span>Verification</span><b>{{ furthest(level) || 'None' }}</b></div>
+                                        <div class="u-bar u-bar--alt"><i :style="{ width: verification(level) + '%' }"></i></div>
+                                    </div>
+                                </div>
+                                <div class="m2-sum__recs">
+                                    <div class="m2-sum__rec">
+                                        <div class="m2-sum__k">From 0%</div>
+                                        <template v-if="record(level)">
+                                            <a v-if="recordHref(record(level))" class="m2-sum__v" :href="recordHref(record(level))" target="_blank" rel="noopener">{{ record(level).percent }}%</a>
+                                            <span v-else class="m2-sum__v">{{ record(level).percent }}%</span>
+                                            <div class="m2-sum__u">{{ record(level).user }}</div>
+                                        </template>
+                                        <span v-else class="m2-sum__v m2-sum__v--none">None</span>
+                                    </div>
+                                    <div class="m2-sum__rec">
+                                        <div class="m2-sum__k">Best run</div>
+                                        <template v-if="run(level)">
+                                            <a v-if="recordHref(run(level))" class="m2-sum__v" :href="recordHref(run(level))" target="_blank" rel="noopener">{{ run(level).percent }}%</a>
+                                            <span v-else class="m2-sum__v">{{ run(level).percent }}%</span>
+                                            <div class="m2-sum__u">{{ run(level).user }}</div>
+                                        </template>
+                                        <span v-else class="m2-sum__v m2-sum__v--none">None</span>
+                                    </div>
+                                </div>
+                                <router-link v-if="level.path" class="u-btn" :to="'/level/' + slug(level)">Open level page</router-link>
+                            </div>
                         </div>
-                    </div>
-                </button>
-                <div v-if="selected === i && level" class="mob-level-detail">
-                    <div v-if="otherListRanks(level).length" style="font-family:'Lexend Deca',sans-serif;font-size:0.75rem;opacity:0.5;margin-bottom:0.5rem;">
-                        {{ otherListRanks(level).join(' · ') }}
-                    </div>
-                    <div class="mob-author-block">
-                        <div class="mob-author-row"><span class="mob-author-label">Level Author</span><span class="mob-author-value">{{ level.author }}</span></div>
-                        <div class="mob-author-row" v-if="level.creators && level.creators.length"><span class="mob-author-label">Creators</span><span class="mob-author-value">{{ level.creators.join(', ') }}</span></div>
-                        <div class="mob-author-row"><span class="mob-author-label">{{ level.isVerified ? 'Verified by' : 'To be verified by' }}</span><span class="mob-author-value">{{ level.verifier }}</span></div>
-                    </div>
-                    <div class="mob-tags" v-if="level.tags && level.tags.length">
-                        <span v-for="tag in level.tags" class="mob-tag">{{ tag }}</span>
-                    </div>
-                    <div class="mob-status">
-                        <template v-if="level.isVerified">Status: Verified</template>
-                        <template v-else-if="level.percentFinished == 0">Status: Layout</template>
-                        <template v-else-if="level.percentFinished == 100">Status: Being Verified</template>
-                        <template v-else>Status: Decoration {{ level.percentFinished }}% done</template>
-                    </div>
-                    <div v-if="!level.isVerified && level.records[0].percent != 100">
-                        <div v-if="level.records[0].percent != 0" class="mob-wr">
-                            WR From 0: <a v-if="level.records[0].link && level.records[0].link != '#'" :href="level.records[0].link" target="_blank">{{ level.records[0].percent }}% by {{ level.records[0].user }}</a><template v-else>{{ level.records[0].percent }}% by {{ level.records[0].user }}</template>
-                        </div>
-                        <div v-else class="mob-wr">WR From 0: None</div>
-                        <div v-if="level.run[0].percent != '0'" class="mob-wr">
-                            WR Run: <a v-if="level.run[0].link && level.run[0].link != '#'" :href="level.run[0].link" target="_blank">{{ level.run[0].percent }}% by {{ level.run[0].user }}</a><template v-else>{{ level.run[0].percent }}% by {{ level.run[0].user }}</template>
-                        </div>
-                        <div v-else class="mob-wr">WR Run: None</div>
-                    </div>
-                    <div v-if="!level.isVerified && level.records[0].percent == 100" class="mob-wr">
-                        Layout verified by {{ level.records[0].user }}
-                    </div>
-                    <div v-if="level.isVerified" class="mob-showcase-tabs">
-                        <button class="mob-showcase-tab" :class="{ active: toggledShowcase }" @click="toggledShowcase = true">Showcase</button>
-                        <button class="mob-showcase-tab" :class="{ active: !toggledShowcase }" @click="toggledShowcase = false">Verification</button>
-                    </div>
-                    <iframe class="mob-video" :src="getVideo(level)" frameborder="0" allowfullscreen></iframe>
-                    <div class="mob-stats">
-                        <dl class="mob-stat"><dt>ID</dt><dd>{{ (level.id === 'private' && level.leakID != null) ? level.leakID : level.id }}</dd></dl>
-                        <dl class="mob-stat"><dt>Length</dt><dd>{{ Math.floor(level.length/60) }}m {{ level.length%60 }}s</dd></dl>
-                        <dl class="mob-stat"><dt>Updated</dt><dd>{{ level.lastUpd }}</dd></dl>
                     </div>
                 </div>
             </div>
-            <div v-if="pendingSuggestion && (noResults || visibleCount <= 3)" style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin:1.25rem auto;max-width:22rem;padding:1rem 1.25rem;border:1px solid rgba(128,128,128,0.25);border-radius:0.6rem;font-family:'Lexend Deca',sans-serif;text-align:center;color:var(--color-on-background);">
-                <p style="font-size:0.75rem;opacity:0.55;margin:0;">Maybe you were searching for this:</p>
-                <div style="display:flex;align-items:center;gap:0.4rem;">
-                    <img :src="pendingIcon(pendingSuggestion)" alt="" style="width:1.3rem;height:1.3rem;flex-shrink:0;" />
-                    <a v-if="pendingSuggestion.link" :href="pendingSuggestion.link" target="_blank" style="font-size:1rem;font-weight:700;text-decoration:underline;">{{ pendingSuggestion.name }}?</a>
-                    <span v-else style="font-size:1rem;font-weight:700;">{{ pendingSuggestion.name }}?</span>
+
+            <div v-if="pendingSuggestion && (noResults || visibleCount <= 3)" class="m2-suggest">
+                <p class="m2-suggest__k">Maybe you were searching for this:</p>
+                <div class="m2-suggest__name">
+                    <img :src="pendingIcon(pendingSuggestion)" alt="" />
+                    <a v-if="pendingSuggestion.link" :href="pendingSuggestion.link" target="_blank">{{ pendingSuggestion.name }}?</a>
+                    <span v-else>{{ pendingSuggestion.name }}?</span>
                 </div>
-                <p style="font-size:0.72rem;opacity:0.6;margin:0;">{{ pendingDesc(pendingSuggestion) }}</p>
-                <p style="font-size:0.78rem;opacity:0.8;margin:0;">The level is currently in <router-link to="/mobile/pending" style="text-decoration:underline;">Pending List</router-link>.</p>
+                <p class="m2-suggest__d">{{ pendingDesc(pendingSuggestion) }}</p>
+                <p class="m2-suggest__d">The level is currently in <router-link to="/mobile/pending">Pending List</router-link>.</p>
             </div>
         </div>
     `,
@@ -105,7 +139,6 @@ export default {
         store,
         mobileStore,
         selected: -1,
-        toggledShowcase: false,
         showScrollTop: false,
     }),
     computed: {
@@ -128,11 +161,16 @@ export default {
             return ranks;
         },
         noResults() {
-            if (!mobileStore.search.trim()) return false;
+            // Filters empty the list the same way a search does, and the page
+            // owes the reader the same answer either way.
+            if (!this.displayList.length) return false;
             return this.displayList.every(([level]) => !level || level.isHidden);
         },
         visibleCount() {
             return this.displayList.filter(([level]) => level && !level.isHidden).length;
+        },
+        allPaths() {
+            return (mobileStore.rawList || []).map(([level]) => level?.path).filter(Boolean);
         },
         pendingSuggestion() {
             const q = mobileStore.search.toLowerCase().trim();
@@ -160,13 +198,36 @@ export default {
         scrollToTop() {
             if (this._scrollEl) this._scrollEl.scrollTo({ top: 0, behavior: 'smooth' });
         },
-        otherListRanks(level) {
-            if (!level) return [];
-            const out = [];
-            if (this.pageType !== 'all' && level.allLevelsRank) out.push('#' + level.allLevelsRank + ' in All Levels');
-            if (this.pageType !== 'main' && level.mainRank) out.push('#' + level.mainRank + ' in Main List');
-            if (this.pageType !== 'future' && level.futureRank) out.push('#' + level.futureRank + ' in Future List');
-            return out;
+        // The list this row belongs to leads; the others follow.
+        // The same three chips in the same order on every list; only the list
+        // being read is highlighted (js/util.js).
+        ranks(level) { return levelRanks(level, this.pageType, true); },
+        slug(level) {
+            return levelSlug(level.path, this.allPaths);
+        },
+        decoration: decorationPercent,
+        verification: verificationPercent,
+        // The bar is the number, the reading is how it is written: a run says
+        // the span it covers rather than the points it is worth.
+        furthest: verificationLabel,
+        status: levelStatus,
+        record: bestRecord,
+        run: bestRun,
+        recordHref: recordLink,
+        verifierKnown: hasVerifier,
+        verifierLine,
+        // The row has no room for "Decoration 80% done"; the panel spells it out.
+        shortStatus(level) {
+            const s = levelStatus(level);
+            const pf = decorationPercent(level);
+            if (s.label.startsWith('Decoration')) return pf + '%';
+            if (s.label === 'Being verified') return 'Verifying';
+            return s.label;
+        },
+        // The status pill already says what these tags say.
+        tags(level) {
+            const covered = ['verified', 'verifying', 'being verified', 'layout'];
+            return (level?.tags || []).filter((t) => !covered.includes(String(t).toLowerCase()));
         },
         pendingIcon(p) {
             const pl = (p.placement || '?').toString().toLowerCase();
@@ -181,11 +242,6 @@ export default {
             return 'Estimated position: around #' + p.placement;
         },
         levelThumbnail,
-        getVideo(level) {
-            const toStr = v => (v && typeof v === 'string') ? v : '';
-            if (!level.showcase) return embed(toStr(level.verification));
-            return embed(this.toggledShowcase || !level.isVerified ? toStr(level.showcase) : toStr(level.verification));
-        },
         getLevelNameStyle(level, isSelected) {
             if (!level) return {};
             const dark = !this.store.dark;

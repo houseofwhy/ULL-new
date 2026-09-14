@@ -149,43 +149,6 @@ input[type="checkbox"] {
     margin: 0;
 }
 
-.worldrecord {
-    margin-bottom: 1rem;
-}
-
-.best-record .type-body,
-.best-run .type-body {
-    margin-bottom: 1rem;
-}
-
-/* Shitty - is not used */
-
-.shitty .surface {
-    padding: 1.5rem;
-    border: 2px solid var(--color-on-background);;
-}
-
-.shitty header.surface {
-    padding: 0 calc(25vw - 10rem);
-    margin-bottom: 1.5rem;
-    background-color: var(--color-background);
-    color: var(--color-on-background);
-}
-
-.shitty.root {
-    padding: 1.5rem;
-    background-image: url("/assets/april-background.jpg");
-    background-size: cover;
-}
-
-.shitty main {
-    column-gap: 1.5rem;
-}
-
-.toggle-shitty:not(:hover) img {
-    display: none;
-}
-
 header.new {
     padding: 0;
     display: flex;

@@ -1,0 +1,190 @@
+<!--meta
+title: Deck
+tag: phone · C
+surface: mobile
+files: js/pages/mobile/MobileHome.js · css/pages/mobile-v2.css
+idea: The desktop template A, at 390px. The hero keeps its eyebrow and title but loses two of its four lines of lead, so the screen a visitor lands on opens on a level instead of on an advert: the credentials bar, then #1 with its blurred thumbnail, its status pill and both meters, then the next five as rows carrying their status beside the name and their decoration as a bar. Recent Changes keeps the bounded window it scrolls inside, and the editors keep the full card they have, grouped by role, at the foot of the page.
+weight: 321px of the 792px window — 41% — used to go by before the first level, and what appeared was a name in a row. Here the first level starts at roughly 320px and is shown in full: where it stands, how far the decoration got and how far anyone has got through it. And the lane under it is the desktop's, so the two surfaces show the same section under the spotlight.
+cost: The same shape as the desktop template, so both can be built from one pass. The spotlight is .u-hero plus two .u-meter, all shipped; the row modifier is a .u-bar--thin under the existing .m2-row body; the lane is the same slice of the same list the desktop takes.
+watch: The spotlight costs a full thumbnail load on the first paint of the phone's landing page, and it pushes the row list further down than the credentials bar above it does. And the lane is ordered by progress rather than by placement, so its rank column does not count down, which reads as a mistake until the note under the heading is read.
+-->
+<style>
+.mk-c .m2-hero { padding: 1.5rem var(--m-pad) 1.1rem; border-bottom: 0; }
+.mk-c .m2-hero__eyebrow { margin-bottom: 0.6rem; letter-spacing: 0.16em; }
+.mk-c .m2-hero h1 { font-size: 1.75rem; line-height: 1.05; letter-spacing: -0.035em; }
+.mk-c .m2-hero p { margin-top: 0.6rem; font-size: 0.8rem; line-height: 1.6; opacity: 0.55; }
+.mk-c .m2-body { padding-top: 1.25rem; gap: 1.35rem; }
+.mk-c .m2-rows--flush .m2-row { padding-block: 0.55rem; }
+.mk-c .m2-row__body { min-width: 0; }
+.mk-c .u-cred { gap: 0.7rem 1.2rem; }
+.mk-c .u-cred__ic { width: 2rem; height: 2rem; padding: 0.45rem; border-radius: 0.6rem; }
+.mk-c .u-cred__t { font-size: 0.82rem; }
+</style>
+
+<div class="m2 ull2 mk-c">
+<!--__B:topbar__-->
+
+    <div class="m2-scroll mob-home-page">
+
+        <section class="m2-hero">
+            <div class="m2-hero__eyebrow">Geometry Dash &middot; Extreme Demons</div>
+            <h1>Upcoming Levels List</h1>
+            <p>Every upcoming Top 1&ndash;100 Extreme Demon, ranked by where it is projected to land on the Demonlist.</p>
+        </section>
+
+        <!--__B:cred2__-->
+
+        <!-- #1, introduced the way /level/<slug> introduces it. -->
+        <a class="mh-spot" href="#">
+            <div class="u-hero">
+                <div class="u-hero__bg mk-thumb mk-thumb--a"></div>
+                <div class="u-hero__scrim"></div>
+                <div class="u-hero__inner">
+                    <div class="u-hero__body">
+                        <div class="u-eyebrow" style="margin-bottom:0.4rem">Top of the list &middot; #1</div>
+                        <h2 class="u-hero__title">Aeternus</h2>
+                        <p class="u-hero__by">by <b>Riot</b> &middot; on open verification</p>
+                    </div>
+                    <span class="u-pill u-pill--amber"><i></i>Verifying</span>
+                </div>
+            </div>
+            <div class="mh-spot__body">
+                <div class="u-meter">
+                    <div class="u-meter__top"><span>Decoration</span><b>100%</b></div>
+                    <span class="u-bar"><i style="width:100%"></i></span>
+                </div>
+                <div class="u-meter">
+                    <div class="u-meter__top"><span>Furthest anyone has got</span><b>72-100%</b></div>
+                    <span class="u-bar u-bar--alt"><i style="width:28%"></i></span>
+                </div>
+                <div class="mh-spot__foot"><span class="u-btn u-btn--ghost">Open level page</span></div>
+            </div>
+        </a>
+
+        <div class="m2-body">
+
+            <!-- The desktop's lane, at 390px: not the next rows of the list
+                 but the five levels above the hardest verified level, ordered
+                 by how far anyone has got through them. -->
+            <section>
+                <div class="m2-sec__head">
+                    <h2 class="u-eyebrow">Upcoming Top 1 levels</h2>
+                    <a class="m2-more" href="#">Upcoming &rarr;</a>
+                </div>
+                <p class="m2-sec__note">Above <b>Society</b>, the hardest level on the list that is verified, and closest to being verified themselves.</p>
+                <div class="m2-rows m2-rows--flush">
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#26</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--b"></span>
+                        <span class="m2-row__body">
+                            <span class="mob-row__head">
+                                <span class="m2-row__name">GRIEF</span>
+                                <span class="u-pill u-pill--red"><i></i>Verifying</span>
+                            </span>
+                            <span class="m2-row__sub">IcedCave &middot; Doggie</span>
+                            <span class="mob-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:97%"></i></span><span class="mob-row__pct">97% furthest</span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#27</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--c"></span>
+                        <span class="m2-row__body">
+                            <span class="mob-row__head">
+                                <span class="m2-row__name">Sweeping Demon 2</span>
+                                <span class="u-pill u-pill--red"><i></i>Verifying</span>
+                            </span>
+                            <span class="m2-row__sub">Temp &middot; Taiago</span>
+                            <span class="mob-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:86%"></i></span><span class="mob-row__pct">86% furthest</span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#25</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--d"></span>
+                        <span class="m2-row__body">
+                            <span class="mob-row__head">
+                                <span class="m2-row__name">KOCMOC UNLEASHED</span>
+                                <span class="u-pill u-pill--red"><i></i>Verifying</span>
+                            </span>
+                            <span class="m2-row__sub">[cherry] team | Vernam &middot; Arshadow</span>
+                            <span class="mob-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:72%"></i></span><span class="mob-row__pct">19-91% furthest</span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#37</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--e"></span>
+                        <span class="m2-row__body">
+                            <span class="mob-row__head">
+                                <span class="m2-row__name">Artemis 13</span>
+                                <span class="u-pill u-pill--red"><i></i>Verifying</span>
+                            </span>
+                            <span class="m2-row__sub">nxhtrise &middot; Zoink</span>
+                            <span class="mob-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:72%"></i></span><span class="mob-row__pct">72% furthest</span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#24</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--f"></span>
+                        <span class="m2-row__body">
+                            <span class="mob-row__head">
+                                <span class="m2-row__name">EXASPERATION</span>
+                                <span class="u-pill u-pill--yellow"><i></i>95%</span>
+                            </span>
+                            <span class="m2-row__sub">Thycket &middot; Zoink</span>
+                            <span class="mob-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:67%"></i></span><span class="mob-row__pct">67% furthest</span></span>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- A bounded window rather than the whole feed: unrolled, Recent
+                 Changes pushed the editors card off the end of a long scroll. -->
+            <section class="u-card">
+                <h2 class="u-eyebrow">Recent changes</h2>
+                <div class="m2-changes">
+                    <div class="m2-tl-date">23 August 2026</div>
+                    <div class="m2-tl-item is-down"><span class="m2-tl-dot"></span><div><b>Tunnel of Serpent</b> <span class="dim">has been moved down from #54 to #59, above</span> <b>Remorse</b> <span class="dim">and below</span> <b>Amethyst</b></div></div>
+                    <div class="m2-tl-item is-up"><span class="m2-tl-dot"></span><div><b>Cyberpsychosis (Sobeann)</b> <span class="dim">has been moved up from #97 to #91, above</span> <b>ORBIT</b> <span class="dim">and below</span> <b>Energy Wave</b></div></div>
+                    <div class="m2-tl-item is-up"><span class="m2-tl-dot"></span><div><b>Ex Vacuo</b> <span class="dim">has been moved up from #233 to #113, above</span> <b>ANGELBURN</b> <span class="dim">and below</span> <b>BOOBAWAMBA</b></div></div>
+                    <div class="m2-tl-item is-up"><span class="m2-tl-dot"></span><div><b>ARE</b> <span class="dim">has been moved up from #257 to #142, above</span> <b>Thibkign Soace III</b> <span class="dim">and below</span> <b>RONALDO CIRCLES</b></div></div>
+                    <div class="m2-tl-item is-down"><span class="m2-tl-dot"></span><div><b>AICHMIRA</b> <span class="dim">has been moved down from #261 to #476</span></div></div>
+                    <div class="m2-tl-date">22 August 2026</div>
+                    <div class="m2-tl-item is-new"><span class="m2-tl-dot"></span><div><b>Cyberpsychosis (Karma)</b> <span class="dim">has been placed at #88</span></div></div>
+                    <div class="m2-tl-item is-new"><span class="m2-tl-dot"></span><div><b>Control Nexus</b> <span class="dim">has been placed at #168</span></div></div>
+                </div>
+            </section>
+
+            <section class="u-card">
+                <h2 class="u-eyebrow">List editors <span class="u-count">12</span></h2>
+                <div class="m2-eds">
+                    <div>
+                        <div class="m2-eds__label">Owner &amp; admin</div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/crown-dark.svg" alt="" />QwidziT<span class="m2-ed__role">Owner</span></div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-gear-dark.svg" alt="" />exiled_shade<span class="m2-ed__role">Admin</span></div>
+                    </div>
+                    <div>
+                        <div class="m2-eds__label">Elder moderators</div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-shield-dark.svg" alt="" />niroi<span class="m2-ed__role">Elder Mod</span></div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-shield-dark.svg" alt="" />Keres<span class="m2-ed__role">Elder Mod</span></div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-shield-dark.svg" alt="" />LukeLGamer<span class="m2-ed__role">Elder Mod</span></div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-shield-dark.svg" alt="" />ItzDel1ghtfuL<span class="m2-ed__role">Elder Mod</span></div>
+                    </div>
+                    <div>
+                        <div class="m2-eds__label">Moderators</div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-lock-dark.svg" alt="" />Terralith<span class="m2-ed__role">Mod</span></div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/user-lock-dark.svg" alt="" />TheCatAstronaut<span class="m2-ed__role">Mod</span></div>
+                    </div>
+                    <div>
+                        <div class="m2-eds__label">Developers</div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/code-dark.svg" alt="" />Prometheus<span class="m2-ed__role">Dev</span></div>
+                        <div class="m2-ed"><img class="m2-ed__ic mk-inv" src="../../assets/code-dark.svg" alt="" />NikoYakorem<span class="m2-ed__role">Dev</span></div>
+                    </div>
+                </div>
+                <p class="m2-eds__note">Trusted members who add levels, update placements and keep the list accurate.</p>
+            </section>
+
+        </div>
+
+    </div>
+
+<!--__B:tabbar__-->
+</div>

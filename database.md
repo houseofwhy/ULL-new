@@ -12,7 +12,8 @@
 ## 1. Architecture at a glance
 
 - **Frontend**: static site in this repo. Vue 3 (CDN global build, no bundler), Vue Router
-  (hash mode), plain ES modules. Entry point: `index.html` → `js/main.js`.
+  (history mode — `createWebHistory`, see §Routing), plain ES modules. Entry point:
+  `index.html` → `js/main.js`.
 - **Backend**: a single **Cloudflare Worker** (plain JavaScript) that exposes a REST-ish JSON
   API. **Its source code is NOT in this repo** — it is edited via the Cloudflare dashboard
   ("Workers & Pages" → the worker → **Quick Edit**).
@@ -45,11 +46,17 @@
 > `GET /api/recent-changes` to match the frontend. If you change the live Worker, update
 > this file too so they don't drift.
 >
-> **Deploying the 2026-08-24 revision — order matters:**
+> **Deploying — order matters:**
 > 1. Run `scripts/schema-migrations.sql` (adds `editor_keys.sort_order`, creates
->    `recent_changes` and `auth_throttle`).
+>    `recent_changes`, `auth_throttle`, `snapshots`, and the two `audit_log` undo
+>    columns).
 > 2. Paste `worker/worker.js` into Quick Edit → **Deploy**.
 > 3. Optionally seed the feed with `scripts/seed-recent-changes.sql`.
+>
+> **The 2026-09-02 revision is live.** `snapshots` and `audit_log.undo_data` /
+> `undone_at` exist on the D1 database and the Worker that reads them is deployed.
+> Whatever you paste next must keep `GET /api/audit-log` answering a plain array
+> when it is called with no query string — see §3 `audit_log`.
 >
 > ⚠️ **Never paste SQL comments into the D1 Console.** It strips `--` comments before
 > parsing, so a paste that contains only comments (a header block, say) fails with
@@ -153,6 +160,7 @@ Some tags are **auto-assigned by the frontend** and are NOT manually editable: `
 | `editor_name` | TEXT    | display name, shown in "List Editors" and audit log. **The column is `editor_name`, NOT `name`.** |
 | `key_hash`    | TEXT    | SHA-256 hex of the editor's API key |
 | `role`        | TEXT    | one of `owner, admin, seniormod, mod, dev` (DEFAULT `'mod'`) |
+|               |         | `seniormod` displays as **Elder Mod** (`roleLabelMap`, `js/info-windows.js`); the stored key is unchanged |
 | `link`        | TEXT    | profile URL (YouTube etc.), DEFAULT `''` |
 | `sort_order`  | INTEGER | **added 2026-08-24** — manual display order, DEFAULT `0`. `GET /api/editors` sorts by `sort_order ASC, id ASC`; the list is **never alphabetical**. |
 
@@ -216,9 +224,94 @@ CREATE TABLE IF NOT EXISTS audit_log (
     action TEXT,       -- INSERT/UPDATE/MOVE/DELETE/CONFIG_UPDATE/EDITOR_ADD/...
     target TEXT,        -- e.g. the level path or editor name
     details TEXT,       -- freeform
-    timestamp TEXT DEFAULT CURRENT_TIMESTAMP
+    timestamp TEXT DEFAULT CURRENT_TIMESTAMP,
+    undo_data TEXT,     -- the deleted row, as JSON, on deletions only
+    undone_at TEXT      -- ISO-8601 UTC once somebody put it back
 );
 ```
+
+`GET /api/audit-log` reads it a page at a time — `?limit` (max 500), `?before=<id>`
+to continue, `?editor=` and `?action=` to filter — and answers
+`{ entries, total, hasMore }`. It used to be a bare `LIMIT 100` with no way past
+it, so anything older than the last hundred operations could not be read at all.
+
+**A bare call with no query string still answers a plain array of the newest 100
+rows.** One Worker serves this repo and the live site, and the live admin panel
+reads that array directly — removing the fallback breaks its Audit Log tab as soon
+as this Worker deploys. `worker/worker.test.mjs` pins both shapes.
+
+**`undo_data` never leaves the Worker.** A deleted level row is a quarter of a
+megabyte and an `editor_keys` row carries a key hash, so the endpoint strips the
+column and sends `undoable: true` in its place. `POST /api/admin/audit-log/:id/undo`
+is what reads it.
+
+Four actions carry it, and each knows where its row goes back:
+
+| Action | Table | Note |
+|--------|-------|------|
+| `DELETE` | `levels` | re-opens the `sort_order` gap the delete closed, so the level lands where it was |
+| `PENDING_DELETE` | `pending` | |
+| `CHANGE_DELETE` | `recent_changes` | |
+| `EDITOR_DELETE` | `editor_keys` | **restores `key_hash` too** — undoing this gives the editor their API key back, not just their name. The panel says so before it asks. |
+
+An undo refuses rather than overwrites if a row with that key exists again, and
+refuses a second time on the same entry (`undone_at` is set). Undoing is itself
+logged, as `UNDO`.
+
+`GET /api/admin/activity?days=30` groups the same table by editor — how many
+operations each made in the window, how many of them were deletions, and when they
+last wrote. It counts audit lines, so a level edited twice counts twice.
+
+### `snapshots`
+Backs **restoring the list to an earlier state**, from the admin panel's Snapshots
+tab.
+
+```sql
+CREATE TABLE IF NOT EXISTS snapshots (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    taken_at TEXT NOT NULL,               -- ISO-8601 UTC, when it was taken
+    day TEXT NOT NULL,                    -- YYYY-MM-DD (UTC) it is the midnight state of
+    kind TEXT NOT NULL DEFAULT 'auto',    -- auto | restore | manual
+    label TEXT DEFAULT '',
+    format TEXT NOT NULL DEFAULT 'gzip',  -- gzip (base64) | json
+    levels_count INTEGER DEFAULT 0,
+    bytes INTEGER DEFAULT 0,              -- uncompressed size, for the panel
+    data TEXT NOT NULL
+);
+```
+
+**There is no cron, and none is needed.** A snapshot is taken lazily, on the first
+write of each UTC day, from the one place in the Worker every authenticated write
+passes through. At that moment the state *is* the midnight state — that is exactly
+what "no snapshot for today yet" means. A day nobody edited gets no snapshot and
+needs none: the previous one is still the state that day began and ended in.
+
+`data` holds `levels`, `pending`, `recent_changes` and the `levelMonth` /
+`levelVerif` config rows, serialised to JSON and gzipped. The levels table alone is
+~270 KB of JSON today and D1 caps one value at 1 MB, so it is stored compressed
+(~55 KB) rather than growing into that limit. A table that does not exist yet is
+recorded as `null` and left alone on restore rather than emptied.
+
+**`editor_keys` is never captured.** A restore must not resurrect a revoked API key
+nor drop one issued since.
+
+**Retention** — thinned after every snapshot:
+
+| Age | Kept |
+|-----|------|
+| under 7 days | every snapshot |
+| 7–31 days | the earliest of each seven-day bucket |
+| over 31 days | the earliest of each calendar month |
+
+The *earliest* rather than the latest, so "restore to that week" means the state
+the week began in.
+
+**Restoring is never a one-way door.** `POST /api/admin/snapshots/:id/restore`
+snapshots what is live *first*, as `kind = 'restore'`, then applies the chosen one
+in a single `db.batch()` — so it is all-or-nothing, and going back a month and then
+restoring that new "Before restoring to…" point returns everything, including
+whatever was done today after midnight. That is why the guarantee holds without a
+separate undo stack.
 
 ### `auth_throttle`
 Backs the auth brute-force limiter (`authed()` in the Worker). One row per client IP.
@@ -266,9 +359,13 @@ from `data/_recentChanges.json`, then
 It is a `DELETE` + `INSERT` replace, so run it **before** staff start editing the feed
 in the admin panel, not after.
 
-### `leaderboard` / `upcoming`
-Referenced by the reconstructed Worker; the live leaderboard computation in `content.js` is
-largely commented out. Treat as low-priority / verify before relying on them.
+### `leaderboard` / `upcoming` — **do not exist**
+Neither table is created by `scripts/migrate.sql` or `scripts/schema-migrations.sql`, and
+neither ever was. The reconstructed Worker carried a `GET /api/leaderboard` and a
+`GET /api/upcoming` that selected from them, so both answered 500; nothing called either,
+since the site computes both client-side from `/api/list` (`js/leaderboard.js`,
+`js/pages/UpcomingLevels.js`). Both routes were removed. If you see them in an older
+Worker build, that build predates the removal.
 
 ---
 
@@ -417,13 +514,25 @@ missing.
   if the caller's IP is rate-limited** (10 wrong keys in 15 min → 15-min block; see
   `auth_throttle` in section 3). The 429 carries a `Retry-After` header and applies to
   every authed endpoint, not just this one.
-- `GET /api/audit-log` — last 100 audit rows, newest first
+- `GET /api/audit-log` — the whole log, newest first, a page at a time:
+  `?limit` (default 100, max 500), `?before=<id>`, `?editor=`, `?action=`.
+  Returns `{ entries, total, hasMore }`; `undo_data` is stripped and replaced by
+  an `undoable` flag. **Called with no query string at all it answers the plain
+  array of the newest 100 rows it always did** — the live admin panel reads that
+  shape, and one Worker serves both sites
+- `GET /api/admin/activity?days=30` — operations per editor over the window,
+  `{ days, since, editors: [{ editor_name, changes, deletions, last_at }] }`
+- `GET /api/admin/snapshots` — restore points, without the blobs
 - `GET /api/admin/changes` — flat `recent_changes` rows **with ids**, for the admin
   Recent Changes tab: `[{id, date, change, sort_order}]`
 
 **Auth writes (Bearer key required; each logs to `audit_log`):**
-- `PUT /api/levels` — insert (with `insertAt`) or update (by `path`). 25 columns incl.
-  `frameCounter` and `benchmark`.
+- `POST /api/admin/snapshots` — take a snapshot now (`{ label }`)
+- `POST /api/admin/snapshots/:id/restore` — put the list back to it. Snapshots the
+  live state first, so the restore itself can be restored
+- `POST /api/admin/audit-log/:id/undo` — put back a row a deletion removed
+- `PUT /api/levels` — insert (with `insertAt`) or update (by `path`). 23 columns incl.
+  `frameCounter` and `benchmark` (it was 25 before the 2026-08-24 trim; see §4b).
 - `POST /api/levels/move` — body `{path, newPosition}`. Uses rank-lookup (fetch all
   sort_orders, shift the range between current and target) to avoid off-by-N bugs.
 - `DELETE /api/levels/:path` — delete + close the `sort_order` gap. Must NOT match numeric
@@ -469,7 +578,7 @@ the real message reaches the panel. Never remove it.
 |------|-------|
 | `js/content.js` | `/api/list`, `/api/editors`, `/api/pending`, `/api/recent-changes`, `/api/level-month`, `/api/level-verif` |
 | `js/components/AdminLogin.js` | `/api/auth/validate` |
-| `js/pages/Admin.js` | `/api/list`, `/api/levels` (PUT/DELETE), `/api/levels/move`, `/api/level-month`, `/api/level-verif`, `/api/config` (PUT), `/api/editors` (GET/PATCH/DELETE), `/api/editors/reorder` (POST), `/api/admin/add-key`, `/api/pending` (GET), `/api/admin/pending` (POST/PUT), `/api/pending/:id` (DELETE), `/api/admin/changes` (GET/POST/PUT), `/api/admin/changes/reorder` (POST), `/api/admin/changes/:id` (DELETE), `/api/audit-log` |
+| `js/pages/Admin.js` | `/api/list`, `/api/levels` (PUT/DELETE), `/api/levels/move`, `/api/level-month`, `/api/level-verif`, `/api/config` (PUT), `/api/editors` (GET/PATCH/DELETE), `/api/editors/reorder` (POST), `/api/admin/add-key`, `/api/pending` (GET), `/api/admin/pending` (POST/PUT), `/api/pending/:id` (DELETE), `/api/admin/changes` (GET/POST/PUT), `/api/admin/changes/reorder` (POST), `/api/admin/changes/:id` (DELETE), `/api/audit-log`, `/api/admin/activity`, `/api/admin/snapshots` (GET/POST), `/api/admin/snapshots/:id/restore`, `/api/admin/audit-log/:id/undo` |
 | `js/pages/LevelGenerator.js` | `/api/levels` (PUT) |
 | `js/pages/Events.js` | via `content.js`: `/api/level-month`, `/api/level-verif`, `/api/list` |
 
@@ -493,13 +602,36 @@ the real message reaches the panel. Never remove it.
   — the exact condition that colors a level's name orange (≥30) or red (≥60).
   `verifyProgress` = max of best record % and best run span. Fully automatic (removed from the
   admin/generator tag pickers); the frontend adds/removes it on load.
-- **Cross-list position** (`List.js`/`ListMain.js`/`ListFuture.js`, and mobile
-  `MobileList.js`): each level page shows the level's rank in the *other* two lists (e.g.
-  "#12 in All Levels · #3 in Future List"), computed as `allLevelsRank` / `mainRank` /
-  `futureRank` on mount (desktop pages) or in `Mobile.js` (mobile), mirroring Upcoming Levels.
+- **Cross-list position** (`levelRanks` in `js/util.js`, used by
+  `js/components/List/LevelPanel.js`, `js/pages/LevelPage.js`, mobile `MobileList.js` and
+  `MobileUpcoming.js`): every level shows three rank chips — All Levels, Main List, Future
+  List — **always all three and always in that order**, so they do not reshuffle as you
+  move between lists. Only the list you are reading is highlighted. A level that is not on
+  a tier reads **N/A** there, dimmed and not a link, rather than dropping the chip: "not on
+  it" is an answer, an absent chip is a silence. Computed as `allLevelsRank` / `mainRank` /
+  `futureRank` on mount (desktop pages) or in `Mobile.js` (mobile), mirroring Upcoming
+  Levels.
+- **Leaderboard record rows** (`recordProgress` / `recordTypeLabel` in `js/leaderboard.js`,
+  used by `js/pages/Leaderboard.js` and `MobileLeaderboard.js`): a row reads *score →
+  level name and how far the player got → what kind of record it is* — e.g.
+  `+548.8  EXASPERATION 67-100%  Run`. The progress is the record's `percent`, or the
+  `run[].percent` span verbatim for a run; the type comes from how the score was earned.
+- **Design system** (`css/ull-v2.css`, `css/pages/mobile-v2.css`): every page is built
+  from one set of components — eyebrow headings, cards, the status pill, chips, rank chips,
+  meters, stat cards, definition lists, buttons, the page hero, the thumbnail hero, rows and
+  empty states — scoped to `.ull2`, which each page carries on its `<main>`. The mobile
+  layer adds only what differs at 390px. Two rules: components are written `.ull2 .u-thing`
+  so the link reset (`.ull2 a { color: inherit }`, 0,1,1) cannot outrank them, and
+  **`.root.dark` is the light theme** — the class names are inverted throughout the app.
+  The static templates the pages were built from live in `design/`, `design/mobile/`,
+  `design/information/` and `design/mobile-information/`, each with its own review deck.
 - **Level page** (`js/pages/LevelPage.js`, `css/pages/level-page.css`): the standalone
   `/level/<slug>` page renders from the same `/api/list` payload as the list panels and adds
-  **no fields of its own**. Everything on it is either a stored column or derived from one:
+  **no fields of its own**. Every reading below is computed once, in `js/util.js`
+  (`decorationPercent`, `verificationPercent`, `levelStatus`, `bestRecord`, `bestRun`,
+  `recordLink`, `levelLength`, `levelId`, `hasVerifier`, `isOpenVerification`,
+  `verifierLabel`, `verifierLine`, `levelRanks`), and shared with the level container and
+  the mobile pages so nothing is derived twice:
   - **Progress bars.** Decoration is `percentFinished`. Verification is `100` when
     `isVerified`, otherwise the same `verifyProgress` the lists use — `max(best record %,
     widest run span)`, where a run span is `|b − a|` parsed out of a `"a-b"` `run[].percent`.
@@ -509,29 +641,55 @@ the real message reaches the panel. Never remove it.
     green ≥30, cyan ≥1, blue at 0), so a level reads the same in both places.
   - **Tag row** drops `Verified`, `Verifying`, `Being Verified` and `Layout` — the pill
     already says them.
-  - **Byline** reads `verified by X` only when `isVerified`; otherwise **`to be verified by
-    X`**, matching `MobileList.js`'s author block. Hidden entirely when `verifier` is empty,
-    `none` or `unknown`.
+  - **Byline** (`verifierLine` in `js/util.js`, shared with the list panel, the phone's
+    rows and Events) reads `verified by X` when `isVerified`, `to be verified by X` while
+    somebody is on it, and **`on open verification`** when the `verifier` field says Open
+    Verification in any case — nobody has claimed the level, so it is not a person's name.
+    Hidden entirely when `verifier` is empty, `none` or `unknown`.
+  - **Verifier row** in the Details card (`verifierLabel`) says **`unknown`**, lowercase,
+    when there is nobody yet — the same value the list panel and Events show.
   - **`frameCounter`** renders as a `Frame Windows Counter → Watch here` row in the Details
     card, linking the stored URL. The admin panel stores `null` for a blank field
     (`Admin.js`), so the row is skipped when the value is null, undefined or whitespace.
   - **`id`** shows `leakID` when `id === 'private'` and a leak ID exists, else `Private` —
     same rule as the list panels' ID stat.
-- **Open Level Page button** (`List.js`/`ListMain.js`/`ListFuture.js`, `.level-open` in
-  `css/components/level-share.css`): sits on the detail panel's title row, opposite the level
-  name, as a `router-link` to `/level/' + levelSlug(level.path, allPaths)`. Rendered only when
-  the level has a `path`. Distinct from the `.level-share` control further down the panel,
-  which is a link to the same URL but copies it instead of navigating.
+- **Level container** (`js/components/List/LevelPanel.js`, `css/pages/level-panel.css`):
+  one component, rendered by All Levels, Main List, Future List and Upcoming Levels. It is
+  the level page's design at panel size — thumbnail hero, status pill, tags, rank chips,
+  the video with its tabs, then Progress, World records, Details and Creators as cards in
+  **two independent column stacks**, so a short card is never stretched to the height of
+  the one beside it. It ends with **Open level page** (a `router-link` to
+  `/level/' + levelSlug(level.path, allPaths)`, rendered only when the level has a `path`)
+  beside **Share level** (`.level-share`, a link to the same URL that copies it instead of
+  navigating). Upcoming Levels passes `lead-progress`, which swaps the Progress card for
+  the furthest-progress figure the page ranks by.
+- **Mobile level detail** (`MobileList.js`, `MobileUpcoming.js`): the same information at
+  summary length — status pill, tags, rank chips, the two meters, the best record and run,
+  then **Open level page**. The video, creators, ID and length live on the level page;
+  unfolding the whole record under a row pushed the next level most of a screen down.
 - **Pending search fallback** (`List.js`/`ListMain.js`/`ListFuture.js`, `MobileList.js`): when a
   search returns **no matches, or 3 or fewer**, the page checks the pending list (`fetchPending`,
   kept in `this.pending` / `mobileStore.pending`) for an entry whose name contains the query and,
   if found, shows a "Maybe you were searching for this: …?" card below the results, with the
   level's placement icon, an estimated-position line, and a link to the Pending List. Shown when
   `pendingSuggestion && (noResults || visibleCount <= 3)`.
-- **Mobile filters scroll indicator** (`Mobile.js`, `css/pages/mobile.css`): the filters popup's
-  tag list is a bounded scroll area (`.mob-filters-scroll`, max-height 46vh) so Apply/Reset stay
-  visible; a fade + bouncing chevron (`.mob-filters-scroll-hint`) signals more filters and hides
-  once scrolled to the bottom (`filtersAtEnd`).
+- **Mobile sheets** (`Mobile.js`, `css/pages/mobile-v2.css`): Other pages, Filters and
+  Settings all open as one bottom sheet (`.m2-sheet`) anchored to the bottom edge, so Apply
+  and Reset sit where the thumb already is. Filters are a wrapped chip field rather than one
+  check-box per line. The scrim keeps its old class name, `.mob-popup-overlay` —
+  `js/list-ui.test.mjs` taps it to dismiss the sheet, from **above** it, since the sheet
+  itself occupies the lower 78vh.
+- **Recent Changes window** (`Home.js`, `css/pages/home.css`): the feed is a framed
+  scroll box — `.home-feed`, `max-height: 26rem; overflow-y: auto` — sitting in the
+  `.home-cols` grid beside the editors card. Unrolled it ran past the editors and made
+  a page that is already three screens most of a fourth, for a log nobody reads to the
+  end. The mobile equivalent is the same idea one step down: `.m2-changes`,
+  `max-height: 18rem` (`css/pages/mobile-v2.css`).
+
+  > Earlier versions tied the feed's height to the editors card beside it, with
+  > `.home-changes` absolutely positioned inside a `.home-changes-wrap` and a
+  > `.home-card--scroll { min-height: 20rem }` floor. None of those three classes exist
+  > any more; a fixed `max-height` replaced the whole mechanism.
 - **Mobile footer gap** (`css/pages/mobile.css`): `.mob-footer` carries a **fixed**
   `margin-top: calc(var(--mob-level-h) * 2)` — two level rows' worth of blank space,
   always present, whether the page is one search result or the whole list.
@@ -555,7 +713,7 @@ the real message reaches the panel. Never remove it.
     path already exists, so without the guard a new level sharing a name would silently
     overwrite the existing one. Create is disabled and the field turns red.
   - New levels default to the **bottom** of the list, not the top — saving by accident
-    then doesn't shift all 480 levels down.
+    then doesn't shift the whole list down.
   - The standalone `/generator` page still exists and still works, but it is unlinked and
     lacks `rating` and `benchmark`. The admin modal is the complete one.
 - **Add forms sit above their lists** on the Pending and Recent Changes tabs (the card
@@ -580,9 +738,10 @@ the real message reaches the panel. Never remove it.
   - **Reset Filters does not touch it.** It used to set `store.benchmarkMode = false` and
     persist that, silently undoing a setting that lives in the settings popup, not in the
     filters panel. Fixed 2026-08-24; mobile's `resetFilters()` never did this.
-- **Return to top** (`.scroll-top-wrap` / `.scroll-top-btn` in `css/pages/list.css`):
-  desktop List/Main/Future show a floating "Return to top" pill once roughly **ten level
-  rows** have scrolled past, mirroring mobile's `.mob-scroll-top-btn`. The scroll container
+- **Return to top** (`.scroll-top-wrap` / `.scroll-top-btn` in `css/pages/list.css`;
+  `.mob-scroll-top-btn` in `css/pages/mobile.css`): on All Levels, Main List, Future List,
+  Upcoming Levels and the Leaderboard, desktop and mobile alike. The desktop pages show a
+  floating "Return to top" pill once roughly **ten rows** have scrolled past. The scroll container
   is the left column (`.list-container-new`), so the button is its last child and uses
   `position: sticky; bottom; height: 0` to float above the rows without taking space or
   drifting over the level detail pane. The threshold measures one real row
@@ -626,8 +785,10 @@ the real message reaches the panel. Never remove it.
   > lower-ranked level. `upcomingScore()` lost its third argument (`rank`) with it — both
   > call sites now pass two. Ordering depends **only** on progress, so two levels with the
   > same records tie regardless of list position. `node js/upcoming.test.mjs` pins this.
-- **Frame Windows Counter**: if `level.frameCounter` is set, the level card shows a
-  "Frame Windows Counter" row with a "Watch Here" link (List/ListMain/ListFuture pages).
+- **Frame Windows Counter**: if `level.frameCounter` is set, a "Frame Windows Counter"
+  row with a "Watch Here" link appears in the level panel
+  (`js/components/List/LevelPanel.js`) and on the level's own page
+  (`js/pages/LevelPage.js`).
 - **Social links**: the community links are **Discord** (`https://discord.gg/QRX47v2qyC`)
   and **X** (`https://x.com/ull_gd`). Discord alone sits in the desktop sidebar and the
   mobile top bar; **X is deliberately not in either** — it appears in the desktop settings
@@ -647,8 +808,18 @@ the real message reaches the panel. Never remove it.
   `<strong>` and dims the rest, via `v-html`. Everything outside the asterisks is
   HTML-escaped first, so stored text can't inject markup. Change lines and dates come
   straight from `recent_changes`; the admin tab previews with the same function.
-- **Version**: currently **v2.0.0** (shown in `index.html` sidebar and `js/pages/Mobile.js`).
-- **Partners section**: hidden with `v-if="false"` (kept in source) on Home and MobileHome.
+- **Version**: currently **v2.1.0**, written in two places — the sidebar in
+  `index.html` and the phone's top bar in `js/components/MobileShell.js`. The 489
+  static pages under `level/`, `list/`, … carry a copy of the `index.html` shell, so
+  re-run `node scripts/build-seo.mjs` after bumping it or they keep the old number.
+- **A list's "levels total"** is what the list holds, which is what its rank numbers
+  count: a row's rank is its index in the list, so the last row reads `#N` where `N`
+  is that figure. Levels flagged **Pending Removal** (`lastUpd` over a year old, not
+  verified) are hidden from the table but keep their placement, so the heading and
+  the last row disagreed until 2026-09-02 — Main List read 398 under a list ending
+  at #411. A search or a filter still narrows it, and then it reads `"398 of 411"`.
+- **Home's third credential** is `1k+ users` (`js/home-stats.js`). It replaced "Used
+  by the best players", which was the only one of the three a reader could not weigh.
 
 ### Routing & SEO (added 2026-07-08)
 - **History-mode routing**: the router uses `VueRouter.createWebHistory()` (in `js/main.js`),
@@ -692,9 +863,14 @@ the real message reaches the panel. Never remove it.
 > or paste the whole file into the D1 Console (it is deliberately comment-free — see the
 > warning in section 2).
 >
-> The three `ALTER TABLE`s error with **"duplicate column name"** on a database that
-> already has those columns. That is expected and harmless. If pasting the whole file
-> stops at one, paste the statements after it individually.
+> The `ALTER TABLE`s error with **"duplicate column name"** on a database that already
+> has those columns. That is expected and harmless — but the D1 Console can stop at the
+> first error and never reach the statements after it, so on a database that is already
+> migrated paste only the block you are adding, not the whole file.
+>
+> **Applied to the live database:** everything in the file, up to and including the
+> 2026-09-02 block (`snapshots`, `audit_log.undo_data`, `audit_log.undone_at` and their
+> indexes). Adding to the file? Append at the bottom and paste only the new statements.
 
 Idempotent-ish; check first with `PRAGMA table_info(<table>)` before ALTERs.
 ```sql
@@ -764,6 +940,11 @@ hash is stored; a **lost** key means delete + re-add. The **Audit Log** tab show
 - **Renaming**: **Edit** → change the Name field → **Save**. This is *not* a delete + re-add:
   the editor keeps their API key, role, link and position. Only rename via this button —
   deleting and re-adding is what forces a new key on them.
+- **Deleting by mistake**: the **Audit Log** tab has a **Put back** button on the
+  `EDITOR_DELETE` line, and it restores the row whole — including `key_hash`, so the
+  editor's original key works again. That is the difference between undoing a deletion
+  and re-adding them, and it is why the panel asks before doing it. Use it to reverse a
+  slip, not as a way to hand somebody access back after revoking it on purpose.
 
 ### Managing the Recent Changes feed
 Admin panel → **Recent Changes** tab. Each row is one change line.
@@ -844,6 +1025,9 @@ Gotchas learned the hard way:
    fix (add the `link` column, create/seed `config`, restore `/api/auth/validate`, etc.).
 4. Confirm the live Worker still has `/api/auth/validate` and `/api/recent-changes` — restore
    them if the reconstructed copy was deployed over the original.
+5. Before pasting a Worker: `node worker/worker.test.mjs`. And before changing what any
+   endpoint returns, remember that **one Worker serves this repo and the live site** —
+   a shape may be added to, never changed. `GET /api/audit-log` is the standing example.
 
 ---
 
@@ -869,12 +1053,23 @@ Gotchas learned the hard way:
   "Requests without any query are not supported" and runs nothing
 - `sort_order` = level ranking (contiguous integer, shifted on insert/delete/move)
 - Dates use `DD.MM.YYYY`
-- Current site version: **v2.0.0**
+- Every page is built from `css/ull-v2.css` (`.ull2`); mobile adds `css/pages/mobile-v2.css`
+- `.root.dark` is the **light** theme — the class names are inverted throughout the app
+- Component rules are scoped `.ull2 .u-thing`, or the link reset outranks them
+- `seniormod` displays as **Elder Mod**; the stored role key is unchanged
+- Current site version: **v2.1.0** (`index.html` + `js/components/MobileShell.js`,
+  then re-run `scripts/build-seo.mjs`)
+- The admin panel can read the **whole** audit log, put any deletion back, and
+  restore the list to a past midnight — see `audit_log` and `snapshots` in §3
+- `GET /api/audit-log` with **no query string** must keep answering a plain array:
+  one Worker serves this repo and the live site, and the live panel reads that shape
 - Tests: `node worker/worker.test.mjs` (Worker vs. real schema),
   `node worker/worker.unmigrated.test.mjs` (Worker vs. the PRE-migration schema),
   `node worker/worker.throttle.test.mjs` (the auth rate limiter),
   `node js/leaderboard.test.mjs` and `node js/upcoming.test.mjs` (scoring vs. the /data
-  snapshot), `node js/list-ui.test.mjs` (benchmark recounting + Return to top in a
-  browser), `node css/mobile-footer.test.mjs` and
+  snapshot), `node js/util.test.mjs`, `node js/registry.test.mjs`,
+  `node js/list-ui.test.mjs` (benchmark recounting + Return to top, desktop **and**
+  mobile), `node js/pending-ui.test.mjs` (Pending links, desktop **and** mobile),
+  `node css/mobile-footer.test.mjs`, `node js/seo.test.mjs` and
   `node scripts/e2e-test.mjs` (browser, needs `npm i playwright vue@3.2.31 vue-router@4.0.14`)
-- Working branch: `claude/multiple-features-fixes-slberb`
+- Working branch: `main`

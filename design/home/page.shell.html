@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" class="root">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>__TITLE__ — ULL home</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* The page as the app would render it: no review chrome, no frame. Open the
+   phone templates on an actual phone and the desktop ones in a real window —
+   that is what this output is for. Theme tokens are copied from css/main.css,
+   .root being ULL's dark default and .root.dark its light theme, the class
+   names inverted exactly as the app has them. */
+:root { color-scheme: dark light; }
+html.root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+}
+html.root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    overflow: hidden;
+}
+body > .m2 { height: 100%; }
+body > .m2 > .m2-scroll { flex: 1; min-height: 0; overflow-y: auto; }
+body > .mk-shell { height: 100%; }
+
+/* Preview control only — not part of the design. */
+.pv-theme {
+    position: fixed; right: 0.7rem; bottom: 4.2rem; z-index: 99;
+    padding: 0.35rem 0.7rem; border-radius: 2rem;
+    background: rgba(128, 128, 128, 0.14); border: 1px solid rgba(128, 128, 128, 0.3);
+    color: inherit; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.62rem;
+    opacity: 0.35; cursor: pointer;
+}
+.pv-theme:hover { opacity: 0.9; }
+
+/*__SHARED_CSS__*/
+
+/*__MOBILE_CSS__*/
+
+/*__KIT_CSS__*/
+
+/* Mock stand-ins — see the deck's own note. */
+.root .mk-thumb { background-size: cover; background-position: center; }
+.root .mk-thumb--a { background: linear-gradient(135deg, #3b1d6e 0%, #a3357a 55%, #f0803c 100%); }
+.root .mk-thumb--b { background: linear-gradient(135deg, #123c63 0%, #2f7fa8 50%, #8fd4c8 100%); }
+.root .mk-thumb--c { background: linear-gradient(135deg, #4a0f2a 0%, #a11d3c 55%, #e8663f 100%); }
+.root .mk-thumb--d { background: linear-gradient(135deg, #101a33 0%, #2b4a8c 55%, #6fa8dc 100%); }
+.root .mk-thumb--e { background: linear-gradient(135deg, #06333a 0%, #12787f 55%, #7fe0cf 100%); }
+.root .mk-thumb--f { background: linear-gradient(135deg, #2b1338 0%, #6a2a95 55%, #c977e0 100%); }
+.root .mk-ic { display: inline-flex; align-items: center; justify-content: center; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+.root .mk-ic svg { width: 100%; height: 100%; display: block; }
+html.root .mk-inv { filter: none; }
+html.root.dark .mk-inv { filter: invert(1); }
+
+</style>
+</head>
+<body>
+<!--__BODY__-->
+<button class="pv-theme" type="button" onclick="document.documentElement.classList.toggle('dark')">theme</button>
+</body>
+</html>

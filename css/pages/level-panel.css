@@ -1,0 +1,121 @@
+/* The level detail panel — js/components/List/LevelPanel.js.
+
+   /level/<slug> at panel size. The rules here are only the things that differ
+   from the standalone page: the hero is flush with the column rather than a
+   full-bleed banner, the cards sit in a two-up grid instead of a sticky rail,
+   and the video is capped by the column rather than the viewport. Everything
+   else comes from css/ull-v2.css. */
+
+.level-panel {
+    display: block;
+    min-width: 0;
+}
+.level-panel--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.lp-hero .u-hero__inner { padding: 1.75rem 1.75rem 1.4rem; }
+.lp-hero .u-hero__title { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+.lp-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; }
+
+.lp-body {
+    padding: 1.35rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Upcoming Levels ranks by furthest progress and never used to draw it. */
+.lp-lead__top { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; }
+.lp-lead__top b {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--u-accent);
+    font-variant-numeric: tabular-nums;
+}
+.lp-lead__top span {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+}
+.lp-lead__bar { margin-top: 0.9rem; }
+
+.lp-tabs { display: flex; gap: 0.3rem; }
+.lp-tab {
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.45rem;
+    border: 1px solid var(--u-line);
+    background: transparent;
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.76rem;
+    font-weight: 600;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 120ms ease, background-color 120ms ease;
+}
+.lp-tab:hover { opacity: 0.8; }
+.lp-tab.is-on {
+    opacity: 1;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border-color: transparent;
+}
+
+.lp-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--u-r);
+    border: 1px solid var(--u-line);
+    background: rgba(0, 0, 0, 0.4);
+}
+.root.dark .lp-video { background: var(--u-fill); }
+.lp-video--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    opacity: 0.35;
+}
+
+/* Two independent stacks. Under a grid, every card shared a row with the card
+   beside it, so a short card was either stretched to the taller one's height or
+   left a gap under it — neither is what a column of cards should do. */
+.lp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.85rem;
+    align-items: start;
+}
+.lp-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    min-width: 0;
+}
+/* The share control keeps its own pill shape (css/components/level-share.css);
+   align it to the filled button beside it. */
+.lp-actions { display: flex; align-items: stretch; gap: 0.5rem; flex-wrap: wrap; }
+.lp-actions .level-share { align-self: auto; padding-inline: 1rem; border-radius: var(--u-r-sm); }
+
+@media (max-width: 1100px) {
+    .lp-hero .u-hero__inner { padding: 1.35rem 1.25rem 1.1rem; }
+    .lp-body { padding: 1.1rem 1.25rem 1.75rem; }
+    .lp-grid { grid-template-columns: minmax(0, 1fr); }
+    .lp-col { gap: 0.85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lp-tab { transition: none; }
+}

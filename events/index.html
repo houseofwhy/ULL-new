@@ -40,14 +40,14 @@
 
     <!-- seo:head:start -->
     <title>ULL — Events</title>
-    <meta name="description" content="The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team." />
+    <meta name="description" content="The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ull.pages.dev/events" />
-    <meta property="og:title" content="Events — Level of the Month &amp; Closest to Verification | Upcoming Levels List" />
-    <meta property="og:description" content="The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team." />
+    <meta property="og:title" content="Events — Level of the Day, Month &amp; Closest to Verification | Upcoming Levels List" />
+    <meta property="og:description" content="The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team." />
     <meta property="og:url" content="https://ull.pages.dev/events" />
-    <meta name="twitter:title" content="Events — Level of the Month &amp; Closest to Verification | Upcoming Levels List" />
-    <meta name="twitter:description" content="The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team." />
+    <meta name="twitter:title" content="Events — Level of the Day, Month &amp; Closest to Verification | Upcoming Levels List" />
+    <meta name="twitter:description" content="The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team." />
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -56,8 +56,8 @@
               "@type": "WebPage",
               "@id": "https://ull.pages.dev/events#webpage",
               "url": "https://ull.pages.dev/events",
-              "name": "Events — Level of the Month & Closest to Verification | Upcoming Levels List",
-              "description": "The current Level of the Month and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team.",
+              "name": "Events — Level of the Day, Month & Closest to Verification | Upcoming Levels List",
+              "description": "The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team.",
               "inLanguage": "en",
               "isPartOf": {
                 "@id": "https://ull.pages.dev/#website"
@@ -98,18 +98,21 @@
     <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/typography.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/ull-v2.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/list.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/home.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/events.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/list-hero.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/list-pending.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/information.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/level-page.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/level-panel.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/leaderboard.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/mobile.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/pages/mobile-v2.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/pages/mobile-info.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/nav.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/btn.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="/css/components/tabs.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/sidebar.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/filters-popup.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/settings-popup.css" /> -->
@@ -118,11 +121,10 @@
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/level-generator.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/coloring-hint.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/level-share.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="/css/typography-shitty.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/seo-fallback.css" /> -->
     <!-- css:end -->
     <link rel="stylesheet" type="text/css" href="/css/bundle.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
 </head>
@@ -132,9 +134,11 @@
 <div id="seo-fallback">
   <div class="seo-fallback__inner">
     <h1>Events</h1>
-<p>The <strong>Events</strong> page highlights two picks from the Upcoming Levels List staff team,
-refreshed as the list moves.</p>
+<p>The <strong>Events</strong> page highlights three picks from the Upcoming Levels List staff
+team, refreshed as the list moves.</p>
 <ul>
+  <li><strong>Level of the Day</strong> &mdash; the upcoming <strong>Geometry Dash Extreme
+  Demon</strong> the staff are pointing at today.</li>
   <li><strong>Level of the Month</strong> &mdash; the upcoming <strong>Geometry Dash Extreme
   Demon</strong> the staff have singled out this month, whether for its progress, its quality or
   the attention it has drawn.</li>
@@ -146,7 +150,7 @@ every unverified level by the best record and longest run anyone has set on it.<
 <h2>Level of the Month</h2>
 <p><a href="/level/rainy">Rainy</a> by DemOne.</p>
 <h2>Closest to Verification</h2>
-<p><a href="/level/silent-acropolis">Silent Acropolis</a> by ThePurgatory · verifier Hover.</p><p class="seo-stamp">Ranking as of 2026-09-14. Visitors see live data.</p>
+<p><a href="/level/silent-acropolis">Silent Acropolis</a> by ThePurgatory · verifier Hover.</p><p class="seo-stamp">Ranking as of 2026-08-31. Visitors see live data.</p>
     <nav class="seo-fallback__nav" aria-label="Sections">
       <a href="/">Upcoming Levels List</a>
       <a href="/list">All Levels</a>
@@ -166,17 +170,17 @@ every unverified level by the best record and longest run anyone has set on it.<
   </div>
 </div>
     <!-- seo:content:end -->
-<div v-cloak class="root" :class="{ dark: store.dark, shitty: store.shitty }">
+<div v-cloak class="root" :class="{ dark: store.dark }">
     <!-- Vertical Sidebar (PC only) -->
     <!-- Sidebar toggle (visible only when sidebar is collapsed) -->
-    <button v-if="!$route.path.startsWith('/mobile')" class="sidebar-toggle" @click="store.sidebarOpen = !store.sidebarOpen">&#9776;</button>
+    <button v-if="!$route.path.startsWith('/mobile') && !store.mobile" class="sidebar-toggle" @click="store.sidebarOpen = !store.sidebarOpen">&#9776;</button>
     <!-- Sidebar backdrop (overlay mode) -->
-    <div v-if="!$route.path.startsWith('/mobile') && store.sidebarOpen" class="sidebar-backdrop" @click="store.sidebarOpen = false"></div>
+    <div v-if="!$route.path.startsWith('/mobile') && !store.mobile && store.sidebarOpen" class="sidebar-backdrop" @click="store.sidebarOpen = false"></div>
 
     <aside class="sidebar" :class="{ 'sidebar--open': store.sidebarOpen }">
         <router-link to="/" class="sidebar__logo">
             <h2>ULL</h2>
-            <p>v2.0.0</p>
+            <p>v2.1.0</p>
         </router-link>
         <nav class="sidebar__nav">
             <div class="sidebar__section-label">Lists</div>
@@ -220,7 +224,7 @@ every unverified level by the best record and longest run anyone has set on it.<
             <div class="settings-popup__item">
                 <span class="settings-popup__label">
                     Level Coloring
-                    <a class="settings-popup__question" href="/information" target="_blank" title="What is Level Coloring?">?</a>
+                    <button type="button" class="settings-popup__question" title="What the level colours mean" @click="store.showMarks = true">?</button>
                 </span>
                 <div class="settings-popup__toggle">
                     <button class="settings-popup__toggle-btn" :class="{ active: store.levelColoring }" @click="store.levelColoring = true; store.saveSetting('levelColoring', true)">ON</button>
@@ -244,6 +248,10 @@ every unverified level by the best record and longest run anyone has set on it.<
             </a>
         </div>
     </div>
+
+    <!-- What the marks mean, over everything: raised by the question mark beside
+         Level Coloring in Settings. -->
+    <marks-window></marks-window>
 
     <!-- Coloring Hint Popup -->
     <div class="coloring-hint" v-if="store.showColoringHint">

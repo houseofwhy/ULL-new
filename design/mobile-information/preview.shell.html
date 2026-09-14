@@ -1,0 +1,261 @@
+<title>ULL — /mobile/info</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* ── Review chrome ───────────────────────────────────────────────────────
+   The same deck as design/mobile/, with the four notes the /information deck
+   uses: what the idea is, how it settles the weighting, what it costs and what
+   to watch for. Quiet by design — the only thing meant to carry colour is the
+   phone screen. */
+:root {
+    --ground: #f4f3f6;
+    --panel: #ffffff;
+    --ink: #1b1a1f;
+    --muted: #6c6879;
+    --rule: rgba(108, 104, 121, 0.2);
+    --rule-soft: rgba(108, 104, 121, 0.11);
+    --accent: #5b12d6;
+    --warn: #b4541f;
+    --ok: #1f7a53;
+    --bezel: #26242c;
+    --shadow: 0 2px 6px rgba(27, 26, 31, 0.06), 0 24px 60px rgba(27, 26, 31, 0.13);
+    --sans: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #100f14; --panel: #17161c; --ink: #eceaf2; --muted: #9b96a8;
+        --rule: rgba(155, 150, 168, 0.22); --rule-soft: rgba(155, 150, 168, 0.12);
+        --accent: #a583f7; --warn: #e2915c; --ok: #63c79b; --bezel: #000000;
+        --shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+}
+:root[data-theme="dark"] {
+    --ground: #100f14; --panel: #17161c; --ink: #eceaf2; --muted: #9b96a8;
+    --rule: rgba(155, 150, 168, 0.22); --rule-soft: rgba(155, 150, 168, 0.12);
+    --accent: #a583f7; --warn: #e2915c; --ok: #63c79b; --bezel: #000000;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); }
+
+.wrap { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; max-width: 94rem; margin: 0 auto; padding: 3rem 2.5rem 6rem; }
+
+/* ── Rail ── */
+.rail { position: sticky; top: 2rem; align-self: start; display: flex; flex-direction: column; gap: 1.5rem; }
+.rail__brand { display: flex; flex-direction: column; gap: 0.3rem; }
+.rail__brand b { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+.rail__brand span { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); }
+.rail__nav { display: flex; flex-direction: column; gap: 0.1rem; border-left: 1px solid var(--rule); }
+.rail__item { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.5rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; text-decoration: none; color: inherit; }
+.rail__item b { font-size: 0.82rem; font-weight: 500; }
+.rail__item code { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); }
+.rail__item:hover { border-left-color: var(--rule); }
+.rail__item.is-on { border-left-color: var(--accent); }
+.rail__item.is-on b { font-weight: 700; }
+.rail__toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    padding: 0.6rem 0.8rem; border: 1px solid var(--rule); border-radius: 0.5rem;
+    background: var(--panel); color: inherit; font-family: var(--mono); font-size: 0.66rem;
+    cursor: pointer; text-align: left;
+}
+.rail__toggle:hover { border-color: var(--accent); }
+.rail__toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rail__toggle b { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; }
+
+/* ── Intro ── */
+.intro { margin-bottom: 3.5rem; }
+.intro__eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.intro h1 { margin: 0.8rem 0 0; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em; text-wrap: balance; }
+.intro__lead { margin: 1.1rem 0 0; max-width: 42rem; font-size: 0.98rem; line-height: 1.7; color: var(--muted); }
+.intro__lead b { color: var(--ink); font-weight: 600; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1px; margin-top: 2.25rem; background: var(--rule-soft); border: 1px solid var(--rule-soft); border-radius: 0.6rem; overflow: hidden; }
+.rules div { background: var(--panel); padding: 1rem 1.15rem; }
+.rules dt { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.rules dd { margin: 0.45rem 0 0; font-size: 0.82rem; line-height: 1.55; }
+
+/* ── Parity table ── */
+.parity { width: 100%; margin-top: 2.25rem; border-collapse: collapse; font-size: 0.82rem; }
+.parity caption { text-align: left; font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); padding-bottom: 0.7rem; }
+.parity th, .parity td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+.parity th { font-weight: 600; }
+.parity thead th { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+.parity td:last-child { color: var(--muted); }
+.parity .yes { color: var(--ok); font-family: var(--mono); font-size: 0.72rem; }
+
+/* ── Page section ── */
+.pg { padding-top: 3.5rem; border-top: 1px solid var(--rule); margin-top: 3.5rem; }
+.pg:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+.pg__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.pg__label { display: flex; align-items: baseline; gap: 0.8rem; flex-wrap: wrap; }
+.pg__label h2 { margin: 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+.pg__n, .pg__files { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+.pg__n { padding: 0.15rem 0.5rem; border: 1px solid var(--rule); border-radius: 0.3rem; }
+.pg__idea { margin: 0 0 1.75rem; max-width: 52rem; font-size: 0.92rem; line-height: 1.75; }
+.pg__cols { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: start; }
+.pg__notes { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 2rem; }
+.note { padding-left: 0.9rem; border-left: 2px solid var(--rule); }
+.note--weight { border-left-color: var(--accent); }
+.note--cost { border-left-color: var(--rule); }
+.note--watch { border-left-color: var(--warn); }
+.note__k { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.note p { margin: 0.5rem 0 0; font-size: 0.88rem; line-height: 1.75; }
+.note__state { margin-top: 1rem; font-family: var(--mono); font-size: 0.68rem; color: var(--accent); }
+
+/* ── Phone ──
+   390×844 at 1:1: a mockup for a phone is judged at the size it is read at. */
+.phone { position: relative; width: 414px; padding: 12px; border-radius: 2.75rem; background: var(--bezel); box-shadow: var(--shadow); flex-shrink: 0; }
+.phone__screen {
+    position: relative;
+    width: 390px;
+    height: 844px;
+    overflow: hidden;
+    border-radius: 2.1rem;
+    /* Contains the mockups' own absolutely positioned sheets. */
+    transform: translateZ(0);
+}
+.phone__screen > .m2 { height: 100%; }
+.phone__screen .m2-scroll { flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: none; }
+.phone__screen .m2-scroll::-webkit-scrollbar { display: none; }
+
+/* ── App theme tokens, copied from css/main.css so the mockups render in the
+      real palette. .root is ULL's dark default; .root.dark is its light theme
+      — the class names are inverted in the app and kept that way here. ── */
+[data-mock].root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+    background: var(--color-background);
+    color: var(--color-on-background);
+}
+[data-mock].root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+
+/*__SHARED_CSS__*/
+
+/*__MOBILE_CSS__*/
+
+/*__KIT_CSS__*/
+
+/* ── Mock stand-ins ──────────────────────────────────────────────────────
+   The icon box. The SVGs themselves live in the templates, since they are the
+   site's own assets rather than something the deck invents. */
+[data-mock] .mk-ic { display: inline-flex; align-items: center; justify-content: center; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+[data-mock] .mk-ic svg { width: 100%; height: 100%; display: block; }
+/* Role icons ship as two files, -dark being the one for the light theme; these
+   mockups carry the dark-theme file and invert it, which is what the app's
+   :src binding does with a second request. The pending-list icons carry their
+   own colours and are never inverted. */
+[data-mock].root.dark .mk-inv { filter: invert(1); }
+
+@media (max-width: 1280px) {
+    .pg__cols { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .pg__notes { position: static; }
+}
+@media (max-width: 1000px) {
+    .wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem 4rem; }
+    .rail { position: static; }
+    .rail__nav { flex-direction: row; flex-wrap: wrap; border-left: 0; }
+    .rail__item { border-left: 0; border-bottom: 2px solid transparent; }
+    .rail__item.is-on { border-left: 0; border-bottom-color: var(--accent); }
+    .phone { width: 100%; max-width: 414px; }
+    .phone__screen { width: 100%; }
+    .parity { display: block; overflow-x: auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+    <aside class="rail">
+        <div class="rail__brand">
+            <b>ULL &mdash; /mobile/info</b>
+            <span>3 templates &middot; pick one</span>
+        </div>
+        <nav class="rail__nav">
+        <!--__NAV__-->
+        </nav>
+        <button class="rail__toggle" id="theme-toggle" type="button">
+            <b>Mockup theme</b>
+            <span id="theme-name">Dark</span>
+        </button>
+    </aside>
+
+    <main>
+        <div class="intro">
+            <div class="intro__eyebrow">Design proposal</div>
+            <h1>The last page on the phone that is still on the old styling</h1>
+            <p class="intro__lead">
+                The desktop <b>/information</b> has been rebuilt as a hub: a hero that says what the list is,
+                one search field over everything, and six faces that open a reader &mdash; the FAQ, the site
+                map, the guidelines, the two legends, the staff and contact routing, and the API. The phone
+                still shows the page it showed before that: an editor list, two legends written out as
+                sentences, and the guidelines in a scroll box inside a scrolling page. <b>It is missing four
+                of the six blocks entirely.</b>
+            </p>
+            <p class="intro__lead">
+                These are three ways to put the same content on a 390px screen. All three carry everything
+                the desktop page has and nothing it does not; what differs is where the long reads live &mdash;
+                <b>behind a door</b>, <b>on a shelf</b>, or <b>printed in one document</b>.
+            </p>
+            <dl class="rules">
+                <div><dt>Constraint</dt><dd>Everything the desktop page has, nothing it doesn't.</dd></div>
+                <div><dt>Reused</dt><dd>css/ull-v2.css and css/pages/mobile-v2.css as they ship: pill, chip, eyebrow, card, button, definition list, sheet, tab bar.</dd></div>
+                <div><dt>New</dt><dd>A reading kit for the phone &mdash; the prose, legends, endpoint and field lists the reader needs &mdash; shared by all three.</dd></div>
+                <div><dt>Same content</dt><dd>One copy of every block, stamped into all three templates by the build.</dd></div>
+            </dl>
+
+            <table class="parity">
+                <caption>What the desktop page has, and where each template puts it</caption>
+                <thead><tr><th>On the desktop</th><th>A. Doors</th><th>B. Shelf</th><th>C. Index</th></tr></thead>
+                <tbody>
+                    <tr><th>Hero, and &ldquo;what this list is, in full&rdquo;</th><td>Hero &rarr; reader</td><td>Hero &rarr; Start segment</td><td>Hero &rarr; first part</td></tr>
+                    <tr><th>Search over everything on the page</th><td class="yes">under the hero</td><td class="yes">under the hero</td><td class="yes">under the hero</td></tr>
+                    <tr><th>FAQ &mdash; 15 questions in 4 groups</th><td>Face &rarr; reader</td><td>Segment</td><td>15 folded rows</td></tr>
+                    <tr><th>Navigation &mdash; 9 pages</th><td>Face &rarr; reader</td><td>Segment</td><td>Printed</td></tr>
+                    <tr><th>Guidelines &mdash; 14 sections in 5 groups</th><td>Face &rarr; index &rarr; section</td><td>Segment + group row</td><td>14 folded rows</td></tr>
+                    <tr><th>Reference &mdash; 19 marks, both legends</th><td>Face &rarr; reader</td><td>Segment</td><td>Printed</td></tr>
+                    <tr><th>Staff &amp; contact, and the routing table</th><td>Face &rarr; reader</td><td>Segment</td><td>Printed</td></tr>
+                    <tr><th>API &mdash; 9 endpoints, 9 fields, fair use</th><td>Face &rarr; reader</td><td>Segment</td><td>Printed</td></tr>
+                    <tr><th>A URL per window (<code>?open=</code>), Back closes it</th><td class="yes">per reader</td><td class="yes">per segment</td><td class="yes">per anchor</td></tr>
+                    <tr><th>Footer</th><td colspan="3">The mobile shell already draws one under every page (js/pages/Mobile.js), so none of the three repeats it.</td></tr>
+                    <tr><th>Ctrl&nbsp;K hint on the search field</th><td colspan="3">Dropped in all three: there is no Ctrl key on a phone. It is the only thing on the desktop page none of these carries.</td></tr>
+                </tbody>
+            </table>
+        </div>
+<!--__SECTIONS__-->
+    </main>
+</div>
+
+<script>
+(function () {
+    var views = document.querySelectorAll('[data-mock]');
+    var btn = document.getElementById('theme-toggle');
+    var name = document.getElementById('theme-name');
+    var light = false;
+    btn.addEventListener('click', function () {
+        light = !light;
+        // In the app, .dark on .root selects the LIGHT palette. Kept as-is.
+        views.forEach(function (v) { v.classList.toggle('dark', light); });
+        name.textContent = light ? 'Light' : 'Dark';
+    });
+
+    var items = [].slice.call(document.querySelectorAll('.rail__item'));
+    var seen = new Map();
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { seen.set(e.target.id, e.intersectionRatio); });
+        var best = null;
+        seen.forEach(function (ratio, id) { if (!best || ratio > best.ratio) best = { id: id, ratio: ratio }; });
+        if (!best || !best.ratio) return;
+        items.forEach(function (a) { a.classList.toggle('is-on', a.getAttribute('href') === '#' + best.id); });
+    }, { threshold: [0, 0.15, 0.4, 0.75] });
+    document.querySelectorAll('.pg').forEach(function (s) { obs.observe(s); });
+})();
+</script>

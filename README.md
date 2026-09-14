@@ -1,7 +1,7 @@
 # Upcoming Levels List (ULL)
 
 **Upcoming Levels List (ULL)** is a community-maintained catalogue of upcoming
-Top 1–100 Extreme Demons in Geometry Dash projected to place on the Demonlist.
+Top 1–135 Extreme Demons in Geometry Dash projected to place on the Demonlist.
 It aims to forecast future rankings, including worthy unrated levels.
 
 🌐 **Website:** https://ull.pages.dev  ·  💬 **Discord:** https://discord.gg/QRX47v2qyC  ·  𝕏 **X:** [@ull_gd](https://x.com/ull_gd)
@@ -51,7 +51,12 @@ its staff team.
 | List Moderator | **Qponn** | Discord `@q.ponn` · X `@qponnx` |
 | List Moderator | **Blaster1337** | Discord `@blastuh` · X `@TheFakeBlaster` |
 | Website Coder | **Prometheus** | Discord `@prometheus.dev` |
+| Developer | **Niko** | — |
 
+> This table is a copy. The roster the site shows comes from `GET /api/editors`, which
+> is what to trust if the two disagree — a name added in the admin panel appears on the
+> site immediately and here only when someone remembers.
+>
 > The order staff appear in on the site is set by hand in the admin panel
 > (Editors tab → ▲ / ▼) and is stored on `editor_keys.sort_order` — the site never
 > sorts them alphabetically. Renaming an editor there keeps their API key, role,
@@ -121,7 +126,7 @@ no authentication.
 | `GET /api/list/future` | Levels on the Future List |
 | `GET /api/levels/{position}` | The single level at a given 1-based rank |
 | `GET /api/pending` | Pending List entries |
-| `GET /api/editors` | The staff/editor list (`{name, role, link}`) |
+| `GET /api/editors` | The staff/editor list (`{name, role, link, sort_order}`) |
 | `GET /api/level-month` | The current Level of the Month (or `null`) |
 | `GET /api/level-verif` | The current Closest to Verification (or `null`) |
 | `GET /api/recent-changes` | Recent changes feed, grouped by date |
@@ -198,10 +203,11 @@ Generated — **do not edit by hand**:
 | `llms.txt` | Plain-text brief for AI crawlers and answer engines |
 | `js/seo-meta.js` | Titles/descriptions for client-side navigations |
 
-### The hourly refresh
+### Refreshing the pre-rendered HTML
 
-`.github/workflows/refresh-content.yml` keeps the pre-rendered HTML in step with
-the live list:
+There is no CI — this repository has no `.github/` directory and nothing runs on a
+schedule. Keeping the pre-rendered HTML in step with the live list is three commands,
+run by hand and committed:
 
 ```bash
 node scripts/fetch-data.mjs     # API -> data/_seo-snapshot.json
@@ -252,11 +258,16 @@ the status pill already says them.
 `frameCounter` shows up as a **Frame Windows Counter → Watch here** row in
 Details, and the row is omitted entirely when the field is null or blank.
 
-The list panels on All Levels, Main List and Future List each carry an **Open
-Level Page** button on the title row (`.level-open`, in
-`css/components/level-share.css`) — a real `router-link` to `/level/<slug>`, so it
-can also be middle-clicked or copied. The "Share level" control lower down is
-unchanged and still copies the URL rather than navigating.
+The level container on All Levels, Main List, Future List and Upcoming Levels is
+one component, `js/components/List/LevelPanel.js`. It ends with **Open level
+page** — a `router-link` to `/level/<slug>` — beside **Share level**, an ordinary
+`<a href="/level/…">` that copies the URL on click instead of navigating, so it
+can still be middle-clicked, right-click-copied and crawled. On mobile the
+expanded row carries the same Open level page button.
+
+`node js/seo.test.mjs` pins the share control's markup and behaviour: a real
+link, the words "Share level", a click that copies an absolute URL and does not
+navigate away.
 
 The slug comes from the level's API `path`, not its name, because **staff rename
 levels regularly and a URL that 404s throws away whatever ranking and inbound
@@ -306,15 +317,164 @@ Run `node js/seo.test.mjs` after any change here.
 
 ---
 
+## Design system
+
+Every page is built from one set of components rather than its own styling.
+
+| File | What it is |
+|------|------------|
+| `css/ull-v2.css` | The shared layer. Eyebrow headings, cards, the status pill, chips, rank chips, meters, stat cards, definition lists, buttons, the page hero, the thumbnail hero, rows and empty states. Scoped to `.ull2`, which every page carries on its `<main>`. |
+| `css/pages/mobile-v2.css` | Only what differs at 390px: one column, a detail that expands under its row, the tab bar, the bottom sheet, and a type scale one step down. Everything else on mobile comes from `ull-v2.css` unchanged. |
+| `js/components/List/LevelPanel.js` | The level container, rendered by All Levels, Main List, Future List and Upcoming Levels. |
+| `css/pages/mobile-info.css` | The phone's Information page. It carries `.info-page` as well as `.mob-info`, so the prose, legends, tables and people rows come from `css/pages/information.css` unchanged and this file holds only the 390px differences. |
+| `js/util.js` | The shared readings a level page and a list row both need: `levelStatus`, `decorationPercent`, `verificationEvidence`, `verificationPercent`, `verificationLabel`, `bestRecord`, `bestRun`, `recordLink`, `levelLength`, `levelId`, `hasVerifier`, `isOpenVerification`, `verifierLabel`, `verifierLine`, `levelRanks`. Derive nothing twice. |
+| `js/info-windows.js` | The Information page's seven windows, their counts and the one search index over the guidelines, the FAQ, the endpoints, the level fields and both legends. Read by the desktop page and the phone. |
+| `js/components/MarksLegend.js` | The two legends — the colour scale and the Pending icons — without a window around them. Used by the Information page's reader, the phone's sheet and `MarksWindow`, so the three cannot drift. |
+| `js/components/MarksWindow.js` | The same legends raised over whatever page you are on, above the settings popup. The `?` beside Level Coloring in Settings sets `store.showMarks` rather than linking away. Registered globally in `js/main.js`. |
+| `js/home-stats.js` | The three things the home page says about the list, their icons and their copy. The desktop shows all three, the phone the first two. |
+| `js/leaderboard.js` | Scoring, plus `recordProgress` and `recordTypeLabel` — how far a record got and what kind of record it is, on both surfaces. |
+
+### The admin panel remembers everything
+
+Three things the panel does that are worth knowing before editing the Worker:
+
+- **The audit log has no ceiling.** `GET /api/audit-log` is paged — `?limit`,
+  `?before=<id>`, `?editor=`, `?action=` — and returns `{ entries, total, hasMore }`.
+  It used to be a bare `LIMIT 100`, so anything older than the last hundred
+  operations could not be read at all. **A call with no query string still answers
+  the plain array it always did**, because one Worker serves this repo and the live
+  site: dropping that fallback breaks the other site's Audit Log tab the moment this
+  Worker deploys. Beside it, `GET /api/admin/activity` groups
+  the same table by editor over a window (30 days by default): how much each of them
+  did, and how much of that was deletions.
+- **Deletions are reversible.** Every `DELETE` handler stores the row it removed on
+  its own audit line, and `POST /api/admin/audit-log/:id/undo` puts it back — a
+  level lands at the `sort_order` it had, and undoing an editor deletion restores
+  their API key, which the panel warns about before it asks. The row itself never
+  crosses the wire.
+- **The list can be put back to a past midnight.** A snapshot is taken lazily on the
+  first write of each UTC day, so no cron is needed: at that moment the state *is*
+  the midnight state. Restoring snapshots what is live first, which is what makes
+  going back a month and then forward again lossless. Retention thins to one a week
+  after a week and one a month after a month. See
+  [database.md](database.md#snapshots) for the whole design — including why
+  `editor_keys` is never captured.
+
+Three readings are written once and shared, so a level says the same thing
+wherever it appears — the list panel, its own page, the phone's rows, Events:
+
+- **The verifier line** (`verifierLine`). Nobody has claimed an open
+  verification, so it reads **on open verification**, not "to be verified by
+  Open Verification" — matched case-insensitively, since the field is typed by
+  hand. A finished level is "verified by X"; one in progress, "to be verified by
+  X"; an undecided verifier has no line at all.
+- **The verifier row** in a facts list (`verifierLabel`) says **unknown**,
+  lowercase, when there is nobody yet — `none` and `unknown` both mean that.
+- **The rank chips** (`levelRanks`). Always all three tiers, always in the same
+  order — All Levels, Main List, Future List — so they do not reshuffle as you
+  move between lists. A tier the level is not on reads **N/A** rather than
+  disappearing, and only the list you are reading is highlighted.
+- **A list's "levels total"** is what the list holds, not what is on screen. A
+  row's rank is its index in the list, so the last row reads `#N` where `N` is that
+  total — and the heading used to print the *visible* count instead, which is
+  smaller by however many levels are hidden. Levels flagged **Pending Removal**
+  (untouched for a year) are hidden from the table but keep their placement, so
+  Main List read 398 under a list whose last row said #411. When a search or a
+  filter narrows the view the heading says `"398 of 411"`; the always-hidden ones
+  are the page's normal state, not a narrowing, so they do not trigger that.
+- **How far anyone has got** is measured once and written twice.
+  `verificationEvidence` picks the winning reading — the highest record from 0%,
+  or the longest span of a run, whichever reaches further — and says which kind
+  it is. `verificationPercent` is the number it is worth: it sets every meter's
+  width, the status tones, and the order of Upcoming Levels. `verificationLabel`
+  is how it reads, and the two disagree on purpose. **A run from 72% to the end
+  of a level is worth 28 points and is written `72-100%`**, the way the Best run
+  card has always written it, because "28%" beside a level somebody has played
+  from 72% to the finish is not what happened. A record reads as the single
+  figure it reached. Empty when nobody has got anywhere, so each caller says
+  `None` in its own voice.
+
+**Search fields are one component.** The box is a `<label class="search-field">`,
+the input inside it is borderless, and the glyph is `.info-mag` — a ring and a
+handle drawn in CSS in `css/pages/information.css`, not an asset. All Levels,
+Main List, Future List, Upcoming Levels, the Leaderboard and the admin toolbar
+share it; `/information` and `/pending` carry the same mark on their own boxes,
+and the phone draws it on `.m2-search` itself so every field in the mobile tree
+has one without asking for it. The input keeps `.search-new` — `js/list-ui.test.mjs`
+types into that selector.
+
+Two rules worth knowing before editing:
+
+- **Scope components one level deeper.** Every rule in `ull-v2.css` is written
+  `.ull2 .u-thing`, not `.u-thing`. The link reset `.ull2 a { color: inherit }`
+  scores 0,1,1 and silently beats an unscoped `.u-btn` at 0,1,0, which leaves a
+  filled button drawing body-text colour on its own primary fill.
+- **`.root.dark` is the *light* theme.** The class names are inverted throughout
+  the app. Kept that way deliberately; don't "fix" it in one file.
+
+### Design decks
+
+`design/` holds the static templates the pages were built from, plus the review
+decks that render them. There are five:
+
+```bash
+node design/build-preview.mjs                     # the desktop pages
+node design/mobile/build-preview.mjs              # the /mobile/* tree
+node design/information/build-preview.mjs         # /information
+node design/mobile-information/build-preview.mjs  # /mobile/info — three templates, A shipped
+node design/home/build-preview.mjs                # home, both surfaces — four templates, A and C shipped
+```
+
+**Every deck reads the shipped stylesheets directly** — `css/ull-v2.css`, and
+`css/pages/mobile-v2.css` where a phone is drawn — so a mockup cannot claim a
+component the site does not have. None of them keeps a copy: `design/mobile/`
+did, as `mob-v2.css`, and it drifted. Each deck has its own README with the
+argument behind it.
+
+### The mobile shell
+
+`js/components/MobileShell.js` is the chrome every phone screen wears: a top bar
+with Settings and Discord, a four-tab bar along the bottom (Home, Levels,
+Information, Other), one bottom sheet used for Other pages, Filters and
+Settings, and the footer. Whatever the route draws goes in its slot.
+
+Two components use it. `js/pages/Mobile.js` loads the data for the whole
+`/mobile/*` tree and passes its `<router-view>` through the shell.
+`js/pages/LevelPage.js` wears the same shell on a phone and a passthrough
+wrapper on the desktop, decided by `store.mobile` — `/level/<slug>` is the one
+route that renders on both surfaces, because it never redirects: every shared
+link and search result points at it, so its URL must not change. On a phone it
+gets the shell rather than the desktop sidebar and footer; the page's own layout
+is untouched.
+
+Watch the specificity when a desktop page is rendered inside the shell:
+`.m2 h1, .m2 h2, .m2 h3, .m2 p { margin: 0 }` scores (0,1,1) and flattens every
+(0,1,0) spacing class the page brings with it. `css/pages/mobile-v2.css` names
+the ones the level page needs and puts them back.
+
+Some class names in the mobile markup are test hooks rather than styling:
+`.mob-level-row`, `.mob-rank`, `.mob-pending-card`, `.mob-pending-row`,
+`.mob-settings-list`, `.mob-setting-row`, `.mob-toggle`, `.mob-topbar-btn` and
+`.mob-popup-overlay` are asserted on by `js/list-ui.test.mjs` and
+`js/pending-ui.test.mjs`. Keep them on the elements they name.
+
+---
+
 ## Deploying
 
 The Worker and its D1 database are managed in the Cloudflare dashboard, not from this
 repo. In order:
 
-1. **D1 Console** → paste `scripts/schema-migrations.sql` (whole file).
-   `ALTER TABLE` steps may report "duplicate column name" — that just means the column
-   already exists.
+1. **D1 Console** → paste `scripts/schema-migrations.sql`. `ALTER TABLE` steps report
+   "duplicate column name" on a database that already has the column — harmless, but the
+   console can stop at the first error, so on an already-migrated database paste only the
+   block you are adding rather than the whole file. The live database is migrated through
+   the 2026-09-02 block (`snapshots`, `audit_log.undo_data`, `audit_log.undone_at`).
 2. **Workers & Pages → the worker → Edit code** → paste `worker/worker.js` → **Deploy**.
+   **One Worker serves this repo and the live site**, so a response shape may only be
+   added to, never changed: `GET /api/audit-log` still answers a plain array when called
+   with no query string, because the live admin panel reads it that way. Run
+   `node worker/worker.test.mjs` before pasting — it pins both shapes.
 3. *(optional)* **D1 Console** → paste `scripts/seed-recent-changes.sql` to seed the
    Recent Changes feed. It replaces every row, so only run it before staff start
    editing the feed in the admin panel.
@@ -345,6 +505,14 @@ node scripts/e2e-test.mjs               # home page + admin panel in Chromium
 node js/seo.test.mjs                    # per-URL metadata, crawler + no-JS behaviour
 node js/pending-ui.test.mjs             # Pending List links (desktop + mobile)
 ```
+
+`node worker/worker.test.mjs` is the one to run after any Worker change: it covers
+the audit log's paging and its bare-call shape, per-editor activity, snapshot
+retention, the restore round trip, and undoing each of the four deletions. The admin
+panel's side of all of that is in `scripts/e2e-test.mjs`.
+
+`js/list-ui.test.mjs` and `js/pending-ui.test.mjs` drive the mobile tree as well
+as the desktop one, so run both after touching either.
 
 ## Security
 

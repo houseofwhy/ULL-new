@@ -128,7 +128,9 @@ await ctx.route('https://fonts.gstatic.com/**', r => r.fulfill({ status: 200, bo
 await ctx.route('https://d1-wrkr.ullteam.workers.dev/**', async (route) => {
   const r = route.request();
   const wres = await worker.fetch(
-    new Request(base + new URL(r.url()).pathname, {
+    // Keep the query string: the audit log is paged with ?limit/&before, and
+    // dropping it here silently served page one for every request.
+    new Request(base + new URL(r.url()).pathname + new URL(r.url()).search, {
       method: r.method(), headers: r.headers(), body: r.postData() ?? undefined,
     }), env);
   await route.fulfill({
@@ -150,7 +152,11 @@ const dates = await p.$$eval('.home-changes-date', els => els.map(e => e.textCon
 check('recent changes render, newest first',
   dates[0] === 'August 23, 2026' && dates.length === 3, JSON.stringify(dates));
 check('change text is bolded', (await p.$$eval('.home-change strong', e => e.length)) > 0);
-const homeEditors = await p.$$eval('.info-editor', els => els.map(e => e.querySelector('span,a').textContent.trim()));
+// The home page draws each editor as one .home-editor chip (an <a> when they
+// have a link, a <span> when they do not). This used to look for .info-editor,
+// a class the Information page dropped when it became a hub — so the list came
+// back empty and the check had been silently failing.
+const homeEditors = await p.$$eval('.home-editor', els => els.map(e => e.textContent.trim()));
 check('editors are in DB order, not alphabetical',
   homeEditors.join(',') === 'QwidziT,exiled_shade,Keres,Prometheus', JSON.stringify(homeEditors));
 const xLinks = await p.$$eval('a[href="https://x.com/ull_gd"]', els => els.length);
@@ -318,6 +324,105 @@ for (const [tab, title] of [['Pending', 'Add Pending Entry'], ['Recent Changes',
   check(`${tab}: "${title}" is above the list`, order === 'card-first', String(order));
   check(`${tab}: the Add card is really "${title}"`,
     (await p.textContent('.admin-card-title')).trim() === title);
+}
+
+console.log('\n── admin: the whole audit log, not the last hundred ──');
+// 120 writes, so a page of 100 cannot hold them and the old cap would hide the rest.
+for (let i = 0; i < 120; i++) {
+  await worker.fetch(new Request(base + '/api/config', {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ e2eProbe: String(i) }),
+  }), env);
+}
+await p.click('.admin-tab:has-text("Audit Log")');
+await p.waitForSelector('.admin-table tbody tr');
+const auditRows = () => p.$$eval('.admin-table tbody tr', e => e.length);
+check('a page is 100 rows', await auditRows() === 100, String(await auditRows()));
+const shown = await p.textContent('.admin-count');
+check('the panel says how many there are in total', /of\s[\d,]+/.test(shown), shown);
+check('and offers the rest', await p.$('.admin-more button') !== null);
+await p.click('.admin-more button');
+await p.waitForFunction(() => document.querySelectorAll('.admin-table tbody tr').length > 100);
+check('loading more appends older entries', await auditRows() > 100, String(await auditRows()));
+
+console.log('\n── admin: who did how much ──');
+check('the activity panel is there', await p.$('.admin-activity') !== null);
+const cells = await p.$$eval('.admin-activity__cell .admin-activity__who', e => e.map(x => x.textContent.trim()));
+check('it names the editors who wrote', cells.includes('QwidziT'), JSON.stringify(cells));
+const topCount = await p.textContent('.admin-activity__cell .admin-activity__n');
+check('with a count each', Number(topCount.replace(/\D/g, '')) > 100, topCount);
+await p.click('.admin-activity__cell');
+await p.waitForFunction(() => document.querySelectorAll('.admin-table tbody tr').length <= 100);
+check('clicking one filters the log to that editor',
+  (await p.$$eval('.admin-table tbody tr td:nth-child(2)', e => [...new Set(e.map(x => x.textContent.trim()))])).length === 1);
+await p.click('.admin-activity__cell.is-on');
+await p.waitForTimeout(400);
+
+console.log('\n── admin: a deletion can be put back ──');
+// Delete a change line through the panel, then undo it from the log.
+await p.click('.admin-tab:has-text("Recent Changes")');
+await p.waitForSelector('.admin-table tbody tr');
+const changesBefore = await p.$$eval('.admin-table tbody tr', e => e.length);
+await p.click('.admin-table tbody tr:nth-child(1) button:has-text("Delete")');
+await p.waitForFunction((n) => document.querySelectorAll('.admin-table tbody tr').length === n, changesBefore - 1);
+check('the change is gone', await p.$$eval('.admin-table tbody tr', e => e.length) === changesBefore - 1);
+
+await p.click('.admin-tab:has-text("Audit Log")');
+await p.waitForSelector('.admin-table tbody tr');
+check('the deletion offers a Put back button',
+  await p.$('.admin-table tbody tr:nth-child(1) button:has-text("Put back")') !== null);
+await p.click('.admin-table tbody tr:nth-child(1) button:has-text("Put back")');
+await p.waitForFunction(() =>
+  document.querySelector('.admin-table tbody tr:nth-child(2)')?.textContent.includes('undone')
+  || [...document.querySelectorAll('.admin-table tbody tr')].some(r => r.textContent.includes('undone')));
+check('the log marks it undone', (await p.textContent('.admin-table')).includes('undone'));
+await p.click('.admin-tab:has-text("Recent Changes")');
+await p.waitForSelector('.admin-table tbody tr');
+check('and the change is back',
+  await p.$$eval('.admin-table tbody tr', e => e.length) === changesBefore,
+  String(await p.$$eval('.admin-table tbody tr', e => e.length)));
+
+console.log('\n── admin: restoring the list to an earlier state ──');
+await p.click('.admin-tab:has-text("Snapshots")');
+await p.waitForSelector('.admin-table tbody tr, .admin-empty');
+check('the day of writes left a snapshot to restore to',
+  await p.$$eval('.admin-table tbody tr', e => e.length) >= 1);
+check('it is labelled with the day it stands for',
+  /\d{4}-\d{2}-\d{2}/.test(await p.textContent('.admin-table tbody tr:nth-child(1)')));
+const levelCount = async () => (await (await fetch(base + '/api/list')).json()).length;
+const liveNow = await levelCount();
+check('there are levels to lose', liveNow > 0, String(liveNow));
+
+// The oldest snapshot is the automatic one, taken before the very first write
+// of the day — when the list was still empty. Restoring it should empty it.
+const oldestRow = await p.$$eval('.admin-table tbody tr', rows => rows.length);
+await p.click(`.admin-table tbody tr:nth-child(${oldestRow}) button:has-text("Restore")`);
+await p.waitForFunction((n) => document.querySelectorAll('.admin-table tbody tr').length > n, oldestRow);
+check('restoring really puts the list back to that state', await levelCount() === 0, String(await levelCount()));
+check('and leaves a way back', (await p.textContent('.admin-table')).includes('Before restoring to'));
+
+// The way back: the point the restore left behind carries everything that was
+// live a moment ago, including today's edits.
+const backRow = await p.evaluate(() => {
+  const rows = [...document.querySelectorAll('.admin-table tbody tr')];
+  return rows.findIndex(r => r.textContent.includes('Before restoring to')) + 1;
+});
+await p.click(`.admin-table tbody tr:nth-child(${backRow}) button:has-text("Restore")`);
+await p.waitForFunction((n) => document.querySelectorAll('.admin-table tbody tr').length > n, oldestRow + 1);
+check('going back returns every level that was live', await levelCount() === liveNow,
+  `${await levelCount()} vs ${liveNow}`);
+
+if (process.env.E2E_SHOTS) {
+  const dir = process.env.E2E_SHOTS;
+  await p.click('.admin-tab:has-text("Audit Log")');
+  await p.waitForSelector('.admin-activity');
+  await p.waitForTimeout(400);
+  await p.screenshot({ path: `${dir}/admin-audit.png` });
+  await p.click('.admin-tab:has-text("Snapshots")');
+  await p.waitForSelector('.admin-table tbody tr, .admin-empty');
+  await p.waitForTimeout(400);   // let the tab underline finish its transition
+  await p.screenshot({ path: `${dir}/admin-snapshots.png` });
 }
 
 console.log('\n── console health ──');

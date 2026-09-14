@@ -1,0 +1,298 @@
+<title>ULL Mobile Templates</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* ── Review chrome ───────────────────────────────────────────────────────
+   Quiet by design: the only thing on this page meant to carry colour is the
+   phone screen. Same deck as the desktop proposal, laid out for tall mockups
+   rather than wide ones — the notes sit beside the phone, not above it. */
+:root {
+    --ground: #f4f3f6;
+    --panel: #ffffff;
+    --ink: #1b1a1f;
+    --muted: #6c6879;
+    --rule: rgba(108, 104, 121, 0.2);
+    --rule-soft: rgba(108, 104, 121, 0.11);
+    --accent: #5b12d6;
+    --warn: #b4541f;
+    --bezel: #26242c;
+    --shadow: 0 2px 6px rgba(27, 26, 31, 0.06), 0 24px 60px rgba(27, 26, 31, 0.13);
+    --sans: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #100f14;
+        --panel: #17161c;
+        --ink: #eceaf2;
+        --muted: #9b96a8;
+        --rule: rgba(155, 150, 168, 0.22);
+        --rule-soft: rgba(155, 150, 168, 0.12);
+        --accent: #a583f7;
+        --warn: #e2915c;
+        --bezel: #000000;
+        --shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+}
+:root[data-theme="dark"] {
+    --ground: #100f14;
+    --panel: #17161c;
+    --ink: #eceaf2;
+    --muted: #9b96a8;
+    --rule: rgba(155, 150, 168, 0.22);
+    --rule-soft: rgba(155, 150, 168, 0.12);
+    --accent: #a583f7;
+    --warn: #e2915c;
+    --bezel: #000000;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); }
+
+.wrap { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; max-width: 94rem; margin: 0 auto; padding: 3rem 2.5rem 6rem; }
+
+/* ── Rail ── */
+.rail { position: sticky; top: 2rem; align-self: start; display: flex; flex-direction: column; gap: 1.5rem; }
+.rail__brand { display: flex; flex-direction: column; gap: 0.3rem; }
+.rail__brand b { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+.rail__brand span { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); }
+.rail__nav { display: flex; flex-direction: column; gap: 0.1rem; border-left: 1px solid var(--rule); }
+.rail__item { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.5rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; text-decoration: none; color: inherit; }
+.rail__item b { font-size: 0.82rem; font-weight: 500; }
+.rail__item code { font-family: var(--mono); font-size: 0.6rem; color: var(--muted); }
+.rail__item:hover { border-left-color: var(--rule); }
+.rail__item.is-on { border-left-color: var(--accent); }
+.rail__item.is-on b { font-weight: 700; }
+.rail__toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    padding: 0.6rem 0.8rem; border: 1px solid var(--rule); border-radius: 0.5rem;
+    background: var(--panel); color: inherit; font-family: var(--mono); font-size: 0.66rem;
+    cursor: pointer; text-align: left;
+}
+.rail__toggle:hover { border-color: var(--accent); }
+.rail__toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rail__toggle b { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; }
+
+/* ── Intro ── */
+.intro { margin-bottom: 3.5rem; }
+.intro__eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.intro h1 { margin: 0.8rem 0 0; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em; text-wrap: balance; }
+.intro__lead { margin: 1.1rem 0 0; max-width: 42rem; font-size: 0.98rem; line-height: 1.7; color: var(--muted); }
+.intro__lead b { color: var(--ink); font-weight: 600; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1px; margin-top: 2.25rem; background: var(--rule-soft); border: 1px solid var(--rule-soft); border-radius: 0.6rem; overflow: hidden; }
+.rules div { background: var(--panel); padding: 1rem 1.15rem; }
+.rules dt { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.rules dd { margin: 0.45rem 0 0; font-size: 0.82rem; line-height: 1.55; }
+
+/* ── Parity table ── */
+.parity { width: 100%; margin-top: 2.25rem; border-collapse: collapse; font-size: 0.82rem; }
+.parity caption { text-align: left; font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); padding-bottom: 0.7rem; }
+.parity th, .parity td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+.parity th { font-weight: 600; white-space: nowrap; }
+.parity thead th { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+.parity td:last-child { color: var(--muted); }
+
+/* ── Page section ── */
+.pg { padding-top: 3.5rem; border-top: 1px solid var(--rule); margin-top: 3.5rem; }
+.pg:first-of-type { border-top: 0; margin-top: 0; padding-top: 0; }
+.pg__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+.pg__label { display: flex; align-items: baseline; gap: 0.8rem; flex-wrap: wrap; }
+.pg__label h2 { margin: 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+.pg__route, .pg__files { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+.pg__route { padding: 0.15rem 0.5rem; border: 1px solid var(--rule); border-radius: 0.3rem; }
+.pg__cols { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: start; }
+.pg__notes { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 2rem; }
+.note { padding-left: 0.9rem; border-left: 2px solid var(--rule); }
+.note--problem { border-left-color: var(--warn); }
+.note--change { border-left-color: var(--accent); }
+.note__k { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.note p { margin: 0.5rem 0 0; font-size: 0.88rem; line-height: 1.75; }
+
+/* ── Phone ──
+   A 390×844 screen at 1:1 — the mockups are meant to be judged at the size
+   they will be read at, so the frame is not scaled down. */
+.phone {
+    position: relative;
+    width: 414px;
+    padding: 12px;
+    border-radius: 2.75rem;
+    background: var(--bezel);
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+}
+.phone__screen {
+    position: relative;
+    width: 390px;
+    height: 844px;
+    overflow: hidden;
+    border-radius: 2.1rem;
+}
+/* Each mockup scrolls inside its own screen. */
+.phone__screen > .m2 { height: 100%; }
+.phone__screen .m2-scroll { flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: none; }
+.phone__screen .m2-scroll::-webkit-scrollbar { display: none; }
+
+/* ── App theme tokens, copied from css/main.css so the mockups render in the
+      real palette. .root is ULL's dark default; .root.dark is its light theme
+      — the class names are inverted in the app and kept that way here. ── */
+[data-mock].root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+    background: var(--color-background);
+    color: var(--color-on-background);
+}
+[data-mock].root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+
+/*__SHARED_CSS__*/
+
+/*__MOBILE_CSS__*/
+
+/* ── Mock stand-ins ──────────────────────────────────────────────────────
+   Level thumbnails are YouTube stills on the real site; the deck cannot load
+   them, so each is a stable colour field standing in for the artwork. Scoped
+   one level deep so they outrank the component layer's own placeholder fill. */
+[data-mock] .mk-thumb { background-size: cover; background-position: center; }
+[data-mock] .mk-thumb--a { background: linear-gradient(135deg, #3b1d6e 0%, #a3357a 55%, #f0803c 100%); }
+[data-mock] .mk-thumb--b { background: linear-gradient(135deg, #123c63 0%, #2f7fa8 50%, #8fd4c8 100%); }
+[data-mock] .mk-thumb--c { background: linear-gradient(135deg, #4a0f2a 0%, #a11d3c 55%, #e8663f 100%); }
+[data-mock] .mk-thumb--d { background: linear-gradient(135deg, #101a33 0%, #2b4a8c 55%, #6fa8dc 100%); }
+[data-mock] .mk-thumb--e { background: linear-gradient(135deg, #06333a 0%, #12787f 55%, #7fe0cf 100%); }
+[data-mock] .mk-thumb--f { background: linear-gradient(135deg, #2b1338 0%, #6a2a95 55%, #c977e0 100%); }
+
+/* The icon box. The SVGs themselves live in the templates, since they are the
+   site's own assets rather than something the deck invents. */
+[data-mock] .mk-ic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+}
+[data-mock] .mk-ic svg { width: 100%; height: 100%; display: block; }
+[data-mock] .m2-prow__icon--num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    background: rgba(128, 128, 128, 0.18);
+    font-size: 0.55rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Level-page mockup bits that belong to css/pages/level-page.css on the site. */
+[data-mock] .mk-crumbs { display: flex; flex-wrap: wrap; gap: 0.35rem; font-size: 0.66rem; opacity: 0.55; margin-bottom: 0.7rem; }
+[data-mock] .mk-crumbs b { font-weight: 600; }
+[data-mock] .mk-lvl-title { font-size: 2rem; font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+
+@media (max-width: 1280px) {
+    .pg__cols { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .pg__notes { position: static; }
+}
+@media (max-width: 1000px) {
+    .wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem 4rem; }
+    .rail { position: static; }
+    .rail__nav { flex-direction: row; flex-wrap: wrap; border-left: 0; }
+    .rail__item { border-left: 0; border-bottom: 2px solid transparent; }
+    .rail__item.is-on { border-left: 0; border-bottom-color: var(--accent); }
+    .phone { width: 100%; max-width: 414px; }
+    .phone__screen { width: 100%; }
+    .parity { display: block; overflow-x: auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+    <aside class="rail">
+        <div class="rail__brand">
+            <b>ULL Mobile</b>
+            <span>8 templates &middot; v2</span>
+        </div>
+        <nav class="rail__nav">
+        <!--__NAV__-->
+        </nav>
+        <button class="rail__toggle" id="theme-toggle" type="button">
+            <b>Mockup theme</b>
+            <span id="theme-name">Dark</span>
+        </button>
+    </aside>
+
+    <main>
+        <div class="intro">
+            <div class="intro__eyebrow">Design proposal</div>
+            <h1>The phone gets the same vocabulary as the desk</h1>
+            <p class="intro__lead">
+                The desktop pages now speak one language: an eyebrow for every section heading, one status
+                pill on the list's own colour scale, meters for the two progress numbers, stat cards for the
+                records, a definition list for the facts, chips for tags and creators. <b>The mobile tree
+                speaks none of it.</b> It still writes &ldquo;Status: Decoration 80% done&rdquo; and
+                &ldquo;WR From 0: None&rdquo; as sentences, under headings in a purple that appears nowhere
+                else, and it is missing a dozen things the desktop gained along the way.
+            </p>
+            <p class="intro__lead">
+                So these templates add almost no CSS. Everything a phone shares with the desktop comes from
+                <b>css/ull-v2.css</b> unchanged; the new file is small and holds only what genuinely differs
+                at 390px &mdash; one column, a detail that expands under its row instead of sitting beside
+                it, controls within thumb reach, and a type scale one step down.
+            </p>
+            <dl class="rules">
+                <div><dt>Constraint</dt><dd>Every feature the desktop has, nothing the desktop doesn't.</dd></div>
+                <div><dt>Reused</dt><dd>css/ull-v2.css as-is: pill, meter, stat, card, chip, rank, eyebrow, button, empty state.</dd></div>
+                <div><dt>New</dt><dd>One stylesheet for the phone: rows, the expanded detail, the tab bar and the sheet.</dd></div>
+                <div><dt>Not covered</dt><dd>Information, which the desktop has not been reworked for yet either.</dd></div>
+            </dl>
+
+            <table class="parity">
+                <caption>What the desktop gained and the phone never got</caption>
+                <thead><tr><th>Page</th><th>Missing on mobile today</th></tr></thead>
+                <tbody>
+                    <tr><th>Home</th><td>Count strip, top five levels, dated timeline with tone dots, editors grouped by role</td></tr>
+                    <tr><th>Level detail</th><td>Thumbnail hero, status pill, rank chips, progress meters, record cards, creators chips, Open level page, Share level</td></tr>
+                    <tr><th>Upcoming</th><td>Progress bar per row, furthest-progress lead, the level container's cards</td></tr>
+                    <tr><th>Leaderboard</th><td>Podium, total as a display figure, record type pills, aligned score column</td></tr>
+                    <tr><th>Pending</th><td>Per-lane counts, lane tints, the placement each level waits for spelled out</td></tr>
+                    <tr><th>Events</th><td>Thumbnail hero, status pill, tags, details, and the desktop's ordering</td></tr>
+                    <tr><th>/level/&lt;slug&gt;</th><td>Any mobile chrome at all &mdash; a shared link lands outside the app</td></tr>
+                </tbody>
+            </table>
+        </div>
+<!--__SECTIONS__-->
+    </main>
+</div>
+
+<script>
+(function () {
+    var views = document.querySelectorAll('[data-mock]');
+    var btn = document.getElementById('theme-toggle');
+    var name = document.getElementById('theme-name');
+    var light = false;
+    btn.addEventListener('click', function () {
+        light = !light;
+        // In the app, .dark on .root selects the LIGHT palette. Kept as-is.
+        views.forEach(function (v) { v.classList.toggle('dark', light); });
+        name.textContent = light ? 'Light' : 'Dark';
+    });
+
+    var items = [].slice.call(document.querySelectorAll('.rail__item'));
+    var seen = new Map();
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { seen.set(e.target.id, e.intersectionRatio); });
+        var best = null;
+        seen.forEach(function (ratio, id) { if (!best || ratio > best.ratio) best = { id: id, ratio: ratio }; });
+        if (!best || !best.ratio) return;
+        items.forEach(function (a) { a.classList.toggle('is-on', a.getAttribute('href') === '#' + best.id); });
+    }, { threshold: [0, 0.15, 0.4, 0.75] });
+    document.querySelectorAll('.pg').forEach(function (s) { obs.observe(s); });
+})();
+</script>

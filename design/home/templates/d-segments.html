@@ -1,0 +1,219 @@
+<!--meta
+title: Segments
+tag: phone · D
+surface: mobile
+files: js/pages/mobile/MobileHome.js · css/pages/mobile-v2.css
+idea: The desktop template B, at 390px, where three lanes cannot sit side by side. The hero shrinks to two lines and a credentials row, and under it a segment bar that sticks to the top of the scroll — Top of the list, Closest to verified, What changed — with one lane on screen at a time. Nothing is two screens down any more: every one of the three answers is one tap from the landing screen, and each lane is its own scroll from its own top. The editors become a credit row at the foot of every lane.
+weight: The page is 2062px of scroll today, and its second and third blocks — a feed nobody can reach past a nested scroll box, and a 499px staff roster — are the bottom two thirds of it. Segments make the page one screen deep in every direction. The middle lane is new to the phone: the levels closest to being verified is the reading /mobile/upcoming already orders by, and it is the one thing on this site that changes week to week.
+cost: A segment bar is state on the component plus the shipped .m2-tab styling; the lanes are the rows the page already renders. It needs mobileStore.rawList, which the phone already holds, and upcomingRanking() from js/formulas.js, which /mobile/upcoming already calls. The bar is the same pattern the /mobile/info deck proposed as its Shelf template, so the phone would have one segmented page and one hub page.
+watch: Segments hide two thirds of the page behind a tap, and a visitor who does not notice the bar sees only the top six levels — the same trap the old "Other Pages ▼" accordion set, one level up. It also splits what is one scroll on the desktop into three on the phone, so the two surfaces stop matching block for block, which every template in design/mobile/ was careful to keep.
+-->
+<style>
+.mk-d .m2-hero { padding: 1.35rem var(--m-pad) 0.9rem; border-bottom: 0; }
+.mk-d .m2-hero__eyebrow { margin-bottom: 0.5rem; letter-spacing: 0.16em; }
+.mk-d .m2-hero h1 { font-size: 1.6rem; line-height: 1.05; letter-spacing: -0.035em; }
+.mk-d .m2-hero p { margin-top: 0.5rem; font-size: 0.78rem; line-height: 1.55; opacity: 0.55; }
+.mk-d .u-cred { gap: 0.6rem 1.1rem; padding: 0.2rem var(--m-pad) 0.9rem; }
+.mk-d .u-cred__ic { width: 1.9rem; height: 1.9rem; padding: 0.42rem; border-radius: 0.55rem; }
+.mk-d .u-cred__t { font-size: 0.78rem; }
+.mk-d .mh-lanes { padding: 0.9rem 0 0; }
+.mk-d .mh-lane__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; padding: 0 var(--m-pad); margin-bottom: 0.6rem; }
+.mk-d .mh-lane__head .u-eyebrow { margin: 0; }
+.mk-d .mh-lane__note { margin: 0 var(--m-pad) 0.8rem; font-size: 0.72rem; line-height: 1.55; opacity: 0.42; }
+.mk-d .mh-lane .m2-rows { padding: 0 var(--m-pad); }
+.mk-d .mh-lane--race .m2-row { display: grid; grid-template-columns: 1fr 2.9rem; align-items: center; gap: 0.7rem; }
+.mk-d .mh-lane--race .mh-row__pct { font-size: 0.92rem; font-weight: 700; opacity: 1; color: var(--u-accent); text-align: right; }
+.mk-d .mh-feed { padding: 0 var(--m-pad); }
+.mk-d .mh-credit { margin-top: 1.25rem; padding-bottom: 1.25rem; }
+</style>
+
+<div class="m2 ull2 mk-d">
+<!--__B:topbar__-->
+
+    <div class="m2-scroll mob-home-page">
+
+        <section class="m2-hero">
+            <div class="m2-hero__eyebrow">Geometry Dash &middot; Extreme Demons</div>
+            <h1>Upcoming Levels List</h1>
+            <p>Every upcoming Top 1&ndash;100 Extreme Demon, ranked by where it is projected to land on the Demonlist.</p>
+        </section>
+
+        <!--__B:cred2__-->
+
+        <!-- Radios so the deck switches lanes without script. In the built page
+             this is one value on the component, and a query key so a lane can
+             be linked to. -->
+        <input type="radio" name="seg" id="seg-top" checked />
+        <input type="radio" name="seg" id="seg-close" />
+        <input type="radio" name="seg" id="seg-new" />
+        <div class="mh-segs">
+            <label for="seg-top">Top</label>
+            <label for="seg-close">Closest</label>
+            <label for="seg-new">Changed</label>
+        </div>
+
+        <div class="mh-lanes">
+
+            <section class="mh-lane mh-lane--top">
+                <div class="mh-lane__head">
+                    <h2 class="u-eyebrow">Top of the list</h2>
+                    <a class="m2-more" href="#">All 479 &rarr;</a>
+                </div>
+                <p class="mh-lane__note">Where the staff team projects each level will place once it is verified.</p>
+                <div class="m2-rows m2-rows--flush">
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#1</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--a"></span>
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Aeternus</span><span class="u-pill u-pill--amber"><i></i>Verifying</span></span>
+                            <span class="m2-row__sub">Riot &middot; open verification</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--thin"><i style="width:100%"></i></span><span class="mh-row__pct">72-100% furthest</span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#2</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--b"></span>
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Kingdom of Miracalis</span><span class="u-pill u-pill--yellow"><i></i>80%</span></span>
+                            <span class="m2-row__sub">Duke &middot; wPopoff</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--thin"><i style="width:80%"></i></span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#3</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--c"></span>
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Rebirth The End</span><span class="u-pill u-pill--cyan"><i></i>5%</span></span>
+                            <span class="m2-row__sub">Silence &middot; zLevii</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--thin"><i style="width:5%"></i></span><span class="mh-row__pct">49-55% furthest</span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#4</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--d"></span>
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">M A N R A Y</span><span class="u-pill u-pill--blue"><i></i>Layout</span></span>
+                            <span class="m2-row__sub">akunakunn &middot; unknown</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--thin"><i style="width:0%"></i></span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#5</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--e"></span>
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Cyanical</span><span class="u-pill u-pill--amber"><i></i>Verifying</span></span>
+                            <span class="m2-row__sub">qponn &middot; open verification</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--thin"><i style="width:100%"></i></span></span>
+                        </span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#6</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--f"></span>
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Vehemence</span><span class="u-pill u-pill--red"><i></i>Verifying</span></span>
+                            <span class="m2-row__sub">TBT &middot; verification race</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--thin"><i style="width:100%"></i></span><span class="mh-row__pct">40-100% furthest</span></span>
+                        </span>
+                    </a>
+                </div>
+                <div class="mh-credit">
+                    <a class="mh-credit__row" href="#"><span class="mh-credit__t"><b>12</b> list editors keep this accurate</span><span class="mh-credit__go">Meet them &rarr;</span></a>
+                </div>
+            </section>
+
+            <section class="mh-lane mh-lane--race mh-lane--close">
+                <div class="mh-lane__head">
+                    <h2 class="u-eyebrow">Closest to verified</h2>
+                    <a class="m2-more" href="#">Upcoming &rarr;</a>
+                </div>
+                <p class="mh-lane__note">How far anyone has got, on the levels furthest through verification.</p>
+                <div class="m2-rows m2-rows--flush">
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Silent Acropolis</span></span>
+                            <span class="m2-row__sub">#45 &middot; Hover, 24&ndash;100%</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:99%"></i></span></span>
+                        </span>
+                        <span class="mh-row__pct">99%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">GRIEF</span></span>
+                            <span class="m2-row__sub">#26 &middot; Doggie, 25&ndash;100%</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:97%"></i></span></span>
+                        </span>
+                        <span class="mh-row__pct">97%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">NIGHTFALL</span></span>
+                            <span class="m2-row__sub">#217 &middot; nei_gmd, 97%</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:97%"></i></span></span>
+                        </span>
+                        <span class="mh-row__pct">97%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Apollyon (murkkat)</span></span>
+                            <span class="m2-row__sub">#231 &middot; katzen, 97%</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:97%"></i></span></span>
+                        </span>
+                        <span class="mh-row__pct">97%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Eternal Silence</span></span>
+                            <span class="m2-row__sub">#44 &middot; noname228gg, 9&ndash;100%</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:91%"></i></span></span>
+                        </span>
+                        <span class="mh-row__pct">9-100%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__body">
+                            <span class="mh-row__head"><span class="m2-row__name">Flaklypa</span></span>
+                            <span class="m2-row__sub">#464 &middot; Gelforce, 46&ndash;100%</span>
+                            <span class="mh-row__foot"><span class="u-bar u-bar--alt u-bar--thin"><i style="width:90%"></i></span></span>
+                        </span>
+                        <span class="mh-row__pct">90%</span>
+                    </a>
+                </div>
+                <div class="mh-credit">
+                    <a class="mh-credit__row" href="#"><span class="mh-credit__t"><b>12</b> list editors keep this accurate</span><span class="mh-credit__go">Meet them &rarr;</span></a>
+                </div>
+            </section>
+
+            <section class="mh-lane mh-lane--new">
+                <div class="mh-lane__head">
+                    <h2 class="u-eyebrow">What changed</h2>
+                    <span class="m2-more">42 in 3 days</span>
+                </div>
+                <p class="mh-lane__note">Every placement the staff team has made, newest first.</p>
+                <div class="mh-feed">
+                    <div class="mh-feed__date">23 August 2026</div>
+                    <div class="mh-change is-down"><span class="mh-change__dot"></span><div><b>Tunnel of Serpent</b> <span class="dim">moved down, #54 &rarr; #59</span></div></div>
+                    <div class="mh-change is-up"><span class="mh-change__dot"></span><div><b>Cyberpsychosis (Sobeann)</b> <span class="dim">moved up, #97 &rarr; #91</span></div></div>
+                    <div class="mh-change is-up"><span class="mh-change__dot"></span><div><b>Ex Vacuo</b> <span class="dim">moved up, #233 &rarr; #113</span></div></div>
+                    <div class="mh-change is-up"><span class="mh-change__dot"></span><div><b>ARE</b> <span class="dim">moved up, #257 &rarr; #142</span></div></div>
+                    <div class="mh-change is-down"><span class="mh-change__dot"></span><div><b>AICHMIRA</b> <span class="dim">moved down, #261 &rarr; #476</span></div></div>
+                    <div class="mh-change is-up"><span class="mh-change__dot"></span><div><b>Silentman Adventures</b> <span class="dim">moved up, #185 &rarr; #157</span></div></div>
+                    <div class="mh-change is-up"><span class="mh-change__dot"></span><div><b>The Lightning Rod</b> <span class="dim">moved up, #253 &rarr; #237</span></div></div>
+                    <div class="mh-feed__date">22 August 2026</div>
+                    <div class="mh-change is-new"><span class="mh-change__dot"></span><div><b>Cyberpsychosis (Karma)</b> <span class="dim">placed at #88</span></div></div>
+                    <div class="mh-change is-new"><span class="mh-change__dot"></span><div><b>Control Nexus</b> <span class="dim">placed at #168</span></div></div>
+                    <div class="mh-change is-new"><span class="mh-change__dot"></span><div><b>Synthesis</b> <span class="dim">placed at #349</span></div></div>
+                    <div class="mh-change is-new"><span class="mh-change__dot"></span><div><b>Doppler</b> <span class="dim">placed at #407</span></div></div>
+                    <div class="mh-feed__date">21 August 2026</div>
+                    <div class="mh-change is-new"><span class="mh-change__dot"></span><div><b>Rebirth The End</b> <span class="dim">placed at #3</span></div></div>
+                    <div class="mh-change is-new"><span class="mh-change__dot"></span><div><b>FUKOUNA GIRL</b> <span class="dim">placed at #139</span></div></div>
+                </div>
+                <div class="mh-credit">
+                    <a class="mh-credit__row" href="#"><span class="mh-credit__t"><b>12</b> list editors keep this accurate</span><span class="mh-credit__go">Meet them &rarr;</span></a>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+<!--__B:tabbar__-->
+</div>

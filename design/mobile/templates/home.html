@@ -1,0 +1,126 @@
+<!--meta
+title: Home
+route: /mobile/home
+files: js/pages/mobile/MobileHome.js · css/pages/mobile.css
+problem: A purple centred headline, four full-width stacked buttons and an "Other Pages ▼" accordion fill the whole first screen without showing a single level. Below that, Recent Changes is a flat run of em-dashes inside a bordered scroll box and the editors are one undifferentiated list. The desktop home gained a count strip, the top five levels, a dated timeline and editors grouped by role; none of it crossed over.
+change: The same four blocks as the desktop, stacked: hero, the count strip, the top five levels as tap rows with their status pill, the timeline with its coloured dots, the editors grouped. The four navigation buttons go: those destinations are the tab bar at the bottom of every page now. Under the hero sits the desktop's credentials bar — how much the list holds, how long it has been running — rather than five count chips inside it: home is the only page with a hero this size, so it is the only one that gets the room. The desktop's third item, who uses it, does not fit a phone line and is dropped.
+-->
+<div class="m2 ull2">
+    <header class="m2-top">
+        <div><span class="m2-top__mark">ULL</span><span class="m2-top__ver">v2.1.0</span></div>
+        <div class="m2-top__acts">
+            <button class="m2-top__btn" type="button" aria-label="Settings"><span class="mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.4 1.05c-.41-1.4-2.39-1.4-2.8 0l-.1.34a1.46 1.46 0 0 1-2.11.87l-.31-.17c-1.28-.7-2.68.7-1.99 1.99l.17.31a1.46 1.46 0 0 1-.87 2.1l-.34.1c-1.4.42-1.4 2.4 0 2.81l.34.1a1.46 1.46 0 0 1 .87 2.11l-.17.31c-.7 1.28.7 2.68 1.99 1.99l.31-.17a1.46 1.46 0 0 1 2.1.87l.1.34c.42 1.4 2.4 1.4 2.81 0l.1-.34a1.46 1.46 0 0 1 2.11-.87l.31.17c1.28.7 2.68-.7 1.99-1.99l-.17-.31a1.46 1.46 0 0 1 .87-2.1l.34-.1c1.4-.42 1.4-2.4 0-2.81l-.34-.1a1.46 1.46 0 0 1-.87-2.11l.17-.31c.7-1.28-.7-2.68-1.99-1.99l-.31.17a1.46 1.46 0 0 1-2.1-.87l-.1-.34zM8 10.93a2.93 2.93 0 1 1 0-5.86 2.93 2.93 0 0 1 0 5.86z"/></svg></span></button>
+            <a class="m2-top__btn" href="#" aria-label="Discord"><span class="mk-ic"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.3.5c1.6.4 2.9 1 4.1 1.8a13.9 13.9 0 0 0-14.4 0c1.2-.8 2.6-1.4 4.1-1.8L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.6 8 1 11.5 1.3 15a19.9 19.9 0 0 0 6 3l1.2-1.7c-1-.4-1.9-.9-2.7-1.4l.5-.4a14.2 14.2 0 0 0 11.4 0l.5.4c-.8.5-1.7 1-2.7 1.4l1.2 1.7a19.9 19.9 0 0 0 6-3c.4-4.1-.6-7.6-2.4-10.6ZM8.5 12.9c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Zm7 0c-1 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.8.9 1.7 1.9c0 1-.7 1.9-1.7 1.9Z"/></svg></span></a>
+        </div>
+    </header>
+
+    <div class="m2-scroll mob-home-page">
+        <section class="m2-hero">
+            <div class="m2-hero__eyebrow">Geometry Dash &middot; Extreme Demons</div>
+            <h1>Upcoming Levels List</h1>
+            <p>A community-maintained catalogue of upcoming Top 1&ndash;100 Extreme Demons, ranked by where the staff team projects each will land on the Demonlist.</p>
+        </section>
+
+        <div class="u-cred">
+            <div class="u-cred__item"><svg class="u-cred__ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2 13.5 5.2 8 8.2 2.5 5.2Z"/><path d="M2.5 8 8 11 13.5 8"/><path d="M2.5 10.6 8 13.6 13.5 10.6"/></svg><span class="u-cred__t"><b>479</b>levels total</span></div>
+            <div class="u-cred__item"><svg class="u-cred__ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.2 8A6.2 6.2 0 1 1 1.8 8a6.2 6.2 0 0 1 12.4 0Z"/><path d="M8 4.6V8l2.4 1.4"/></svg><span class="u-cred__t"><b>3+</b>years</span></div>
+        </div>
+
+        <div class="m2-body">
+            <section>
+                <div class="m2-sec__head">
+                    <h2 class="u-eyebrow">Top of the list</h2>
+                    <a class="m2-more" href="#">All 479 &rarr;</a>
+                </div>
+                <div class="m2-rows">
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#1</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--a"></span>
+                        <span class="m2-row__body">
+                            <span class="m2-row__name">Aeternus</span>
+                            <span class="m2-row__sub">Riot &middot; Open Verification</span>
+                        </span>
+                        <span class="u-pill u-pill--amber"><i></i>Verifying</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#2</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--b"></span>
+                        <span class="m2-row__body">
+                            <span class="m2-row__name">Kingdom of Miracalis</span>
+                            <span class="m2-row__sub">Duke &middot; wPopoff</span>
+                        </span>
+                        <span class="u-pill u-pill--yellow"><i></i>80%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#3</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--c"></span>
+                        <span class="m2-row__body">
+                            <span class="m2-row__name">Rebirth The End</span>
+                            <span class="m2-row__sub">Silence &middot; zLevii</span>
+                        </span>
+                        <span class="u-pill u-pill--cyan"><i></i>5%</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#4</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--d"></span>
+                        <span class="m2-row__body">
+                            <span class="m2-row__name">M A N R A Y</span>
+                            <span class="m2-row__sub">akunakunn &middot; unknown</span>
+                        </span>
+                        <span class="u-pill u-pill--blue"><i></i>Layout</span>
+                    </a>
+                    <a class="m2-row" href="#">
+                        <span class="m2-row__rank">#5</span>
+                        <span class="m2-row__thumb mk-thumb mk-thumb--e"></span>
+                        <span class="m2-row__body">
+                            <span class="m2-row__name">Cyanical</span>
+                            <span class="m2-row__sub">qponn &middot; Open Verification</span>
+                        </span>
+                        <span class="u-pill u-pill--amber"><i></i>Verifying</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="u-card">
+                <h2 class="u-eyebrow">Recent changes</h2>
+                <div class="m2-changes">
+                    <div class="m2-tl-date">28 August 2026</div>
+                    <div class="m2-tl-item is-up"><span class="m2-tl-dot"></span><div><b>Vehemence</b> <span class="dim">moved up from #9 to #6</span></div></div>
+                    <div class="m2-tl-item is-new"><span class="m2-tl-dot"></span><div><b>Silent Kocmoc</b> <span class="dim">added to the Future List at #13</span></div></div>
+                    <div class="m2-tl-date">24 August 2026</div>
+                    <div class="m2-tl-item is-down"><span class="m2-tl-dot"></span><div><b>Heliopolis</b> <span class="dim">moved down from #18 to #23</span></div></div>
+                    <div class="m2-tl-item"><span class="m2-tl-dot"></span><div><b>Grief</b> <span class="dim">decoration updated to 45%</span></div></div>
+                </div>
+            </section>
+
+            <section class="u-card">
+                <h2 class="u-eyebrow">List editors <span class="u-count">15</span></h2>
+                <div class="m2-eds">
+                    <div>
+                        <div class="m2-eds__label">Owner &amp; admin</div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.6 4.6 4 8.2l3.4-5 3.4 5 2.4-3.6.9 8.2H.7l.9-8.2Z"/></svg></span>QwidziT<span class="m2-ed__role">Owner</span></div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.4 1.05c-.41-1.4-2.39-1.4-2.8 0l-.1.34a1.46 1.46 0 0 1-2.11.87l-.31-.17c-1.28-.7-2.68.7-1.99 1.99l.17.31a1.46 1.46 0 0 1-.87 2.1l-.34.1c-1.4.42-1.4 2.4 0 2.81l.34.1a1.46 1.46 0 0 1 .87 2.11l-.17.31c-.7 1.28.7 2.68 1.99 1.99l.31-.17a1.46 1.46 0 0 1 2.1.87l.1.34c.42 1.4 2.4 1.4 2.81 0l.1-.34a1.46 1.46 0 0 1 2.11-.87l.31.17c1.28.7 2.68-.7 1.99-1.99l-.17-.31a1.46 1.46 0 0 1 .87-2.1l.34-.1c1.4-.42 1.4-2.4 0-2.81l-.34-.1a1.46 1.46 0 0 1-.87-2.11l.17-.31c.7-1.28-.7-2.68-1.99-1.99l-.31.17a1.46 1.46 0 0 1-2.1-.87l-.1-.34zM8 10.93a2.93 2.93 0 1 1 0-5.86 2.93 2.93 0 0 1 0 5.86z"/></svg></span>exiled_shade<span class="m2-ed__role">Admin</span></div>
+                    </div>
+                    <div>
+                        <div class="m2-eds__label">Elder moderators</div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.6 13.3 3v5c0 3-2.2 5.4-5.3 6.4C4.9 13.4 2.7 11 2.7 8V3L8 1.6Z"/></svg></span>niroi<span class="m2-ed__role">Elder Mod</span></div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.6 13.3 3v5c0 3-2.2 5.4-5.3 6.4C4.9 13.4 2.7 11 2.7 8V3L8 1.6Z"/></svg></span>Keres<span class="m2-ed__role">Elder Mod</span></div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.6 13.3 3v5c0 3-2.2 5.4-5.3 6.4C4.9 13.4 2.7 11 2.7 8V3L8 1.6Z"/></svg></span>LukeLGamer<span class="m2-ed__role">Elder Mod</span></div>
+                    </div>
+                    <div>
+                        <div class="m2-eds__label">Moderators</div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="7" width="9.2" height="6.6" rx="1.2"/><path d="M5.7 7V5.2a2.3 2.3 0 0 1 4.6 0V7"/></svg></span>Terralith<span class="m2-ed__role">Mod</span></div>
+                        <div class="m2-ed"><span class="m2-ed__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="7" width="9.2" height="6.6" rx="1.2"/><path d="M5.7 7V5.2a2.3 2.3 0 0 1 4.6 0V7"/></svg></span>TheCatAstronaut<span class="m2-ed__role">Mod</span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <nav class="m2-nav">
+        <button class="m2-nav__item is-on" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.8 8 2.5l5.5 4.3V13a.9.9 0 0 1-.9.9H3.4a.9.9 0 0 1-.9-.9V6.8Z"/><path d="M6.4 13.9V9.2h3.2v4.7"/></svg></span>Home</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5.5 4h8M5.5 8h8M5.5 12h8M2.5 4h.01M2.5 8h.01M2.5 12h.01"/></svg></span>Levels</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><path d="M8 7.3v4M8 4.9h.01"/></svg></span>Information</button>
+        <button class="m2-nav__item" type="button"><span class="m2-nav__ic mk-ic"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="3.2" cy="8" r="1.3"/><circle cx="8" cy="8" r="1.3"/><circle cx="12.8" cy="8" r="1.3"/></svg></span>Other</button>
+    </nav>
+</div>

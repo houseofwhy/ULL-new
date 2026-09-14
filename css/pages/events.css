@@ -1,0 +1,119 @@
+/* Events — js/pages/Events.js.
+
+   The page used to borrow .info-hero, .info-content and .home-card from two
+   other pages, so editing the home page edited this one. It now owns its
+   layout, and its three features share one block rather than three: Level of
+   the Day at full width, the other two side by side beneath it. */
+
+.events-page {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    font-family: "Lexend Deca", sans-serif;
+}
+.events-page, .events-page * { box-sizing: border-box; }
+.events-page h1, .events-page h2, .events-page h3, .events-page p { margin: 0; padding: 0; }
+.events-page h1::before, .events-page h1::after,
+.events-page h2::before, .events-page h2::after,
+.events-page h3::before, .events-page h3::after,
+.events-page p::before, .events-page p::after { display: none; }
+
+/* ── Hero ── */
+.events-hero {
+    padding: 2.25rem 2.5rem 1.75rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 12%, transparent) 0%, transparent 62%);
+}
+.events-hero h1 {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+.events-hero p {
+    max-width: 38rem;
+    margin-top: 0.7rem !important;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    opacity: 0.5;
+}
+
+/* ── Features ── */
+.events-body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.75rem 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.events-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+.events-feature {
+    border: 1px solid rgba(128, 128, 128, 0.22);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: rgba(128, 128, 128, 0.09);
+}
+.events-feature .u-hero {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.22);
+}
+.events-feature .u-hero__inner { padding: 1.4rem 1.5rem 1.2rem; }
+.events-feature--sm .u-hero__title { font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
+
+/* What differs between the three features is the label and the date, which is
+   exactly what differs about them — so they read as one line. Pushed apart with
+   space-between the date landed against the inner edge of the rank chip, adrift
+   in the middle of the card with nothing to align to. */
+.events-tag {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+}
+.events-tag b {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: color-mix(in srgb, var(--color-primary) 45%, white);
+}
+.root.dark .events-tag b { color: color-mix(in srgb, var(--color-primary) 75%, black); }
+.events-tag span {
+    font-size: 0.68rem;
+    opacity: 0.45;
+    font-variant-numeric: tabular-nums;
+}
+.events-tag span::before { content: '·'; margin-right: 0.5rem; }
+
+.events-cols {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 1.25rem;
+    padding: 1.15rem 1.5rem 1.35rem;
+}
+.events-single {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.15rem 1.5rem 1.35rem;
+}
+.events-chips { margin-top: 1rem; }
+.events-btn-icon { width: 0.9rem; height: 0.9rem; }
+
+@media (max-width: 1100px) {
+    .events-hero { padding: 2rem 1.5rem 1.5rem; }
+    .events-body { padding: 1.5rem 1.5rem 2rem; }
+    .events-pair, .events-cols { grid-template-columns: minmax(0, 1fr); }
+}

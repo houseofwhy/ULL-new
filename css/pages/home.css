@@ -14,165 +14,241 @@
 .home-page h3::before, .home-page h3::after,
 .home-page h4::before, .home-page h4::after { display: none; }
 
-/* ── HERO ── */
-.home-hero {
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 2rem;
-    background: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(102,10,239,0.14) 0%, transparent 65%);
-    border-bottom: 1px solid rgba(128,128,128,0.1);
-    position: relative;
+/* ── ONE MEASURE ──
+   The page used to have two. `.home-hero` padded 2.5rem off the main region's
+   left edge while `.home-content` was a 1100px column centred in whatever was
+   left, so the hero's left edge and the body's were 72px apart at 1440 and
+   312px apart at 1920 — the wider the window, the more the page read as two
+   documents stacked. Everything now sits on `.home-col`, and a band that wants
+   to run the full width does it behind that column rather than instead of it. */
+.home-col {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding-inline: 2.5rem;
 }
-.home-hero-content {
-    display: flex;
-    flex-direction: column;
+.home-band {
+    background: linear-gradient(150deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 0%, transparent 62%);
+}
+
+/* ── HERO ──
+   The copy about the list on the left, the level it is about on the right —
+   source order and column order agree, so the h1 is the first thing in the
+   markup and the first thing on the screen.
+
+   The paragraph fills its column rather than stopping at a 32rem cap, which is
+   what left a ragged band of nothing between the text and the card beside it,
+   and both edges are the page's: the copy starts where every row below it
+   starts, and the card ends where they end. */
+.home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
     align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    max-width: 640px;
+    /* Block only. A `padding` shorthand here would reset the inline padding
+       .home-col sets, which is what put the hero 40px to the left of every
+       other row on the page. */
+    padding-block: 2.75rem 2.25rem;
+}
+.home-hero__body { min-width: 0; }
+/* Before the list arrives there is no spotlight, so the hero is one column
+   rather than one column and an empty gap. */
+.home-hero--solo { grid-template-columns: minmax(0, 1fr); }
+.home-hero-eyebrow {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    opacity: 0.4;
 }
 .home-hero-title {
-    font-size: 3.5rem;
+    margin-top: 0.7rem !important;
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
     font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
     color: var(--color-on-background);
 }
 .home-hero-desc {
-    font-size: 1rem;
-    font-weight: 400;
+    margin-top: 0.9rem !important;
+    font-size: 0.88rem;
+    font-weight: 500;
     line-height: 1.65;
     color: var(--color-on-background);
-    opacity: 0.5;
-    max-width: 500px;
+    opacity: 0.58;
 }
 .home-hero-actions {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0.25rem;
+    margin-top: 1.4rem;
 }
-.home-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.65rem 1.4rem;
-    border-radius: 0.5rem;
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 120ms ease, transform 120ms ease;
-    border: none;
-    line-height: 1;
-}
-.home-btn--primary {
-    background: linear-gradient(135deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 70%, #a855f7) 100%);
-    color: white;
-}
-.home-btn--primary:hover { opacity: 0.85; transform: translateY(-1px); }
-
 .home-hero-social {
     display: flex;
-    gap: 0.6rem;
-    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
 }
 .home-social-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    padding: 0.45rem 0.9rem;
-    border-radius: 0.4rem;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
     font-family: "Lexend Deca", sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.7rem;
     font-weight: 500;
     text-decoration: none;
     color: var(--color-on-background);
-    background: rgba(128,128,128,0.07);
-    border: 1px solid rgba(128,128,128,0.15);
+    border: 1px solid rgba(128,128,128,0.22);
     opacity: 0.6;
-    transition: opacity 100ms ease;
+    transition: opacity 100ms ease, border-color 100ms ease;
 }
-.home-social-btn:hover { opacity: 1; }
-.home-social-btn img { width: 1rem; height: 1rem; }
+.home-social-btn:hover { opacity: 1; border-color: rgba(128,128,128,0.38); }
+.home-social-btn img { width: 0.95rem; height: 0.95rem; }
+
+/* ── SPOTLIGHT ──
+   `.u-hero` from css/ull-v2.css — the level page's blurred-thumbnail header —
+   with the two meters under it. No new component: the level page and the events
+   feature cards already introduce a level exactly this way. */
+.home-spot {
+    display: block;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(128,128,128,0.22);
+    background: rgba(128,128,128,0.09);
+    overflow: hidden;
+    transition: border-color 120ms ease;
+}
+.home-spot:hover { border-color: rgba(128,128,128,0.38); }
+.home-page .home-spot .u-hero { border: 0; border-radius: 0; border-bottom: 1px solid rgba(128,128,128,0.22); }
+.home-page .home-spot .u-hero__inner { padding: 1.35rem 1.25rem 1.15rem; }
+.home-page .home-spot .u-hero__title { font-size: 1.5rem; }
+.home-spot__k { margin-bottom: 0.5rem !important; }
+.home-spot__body { padding: 1rem 1.25rem 1.15rem; }
+.home-spot__foot { margin-top: 1.1rem; }
+
+/* ── CREDENTIALS ──
+   Three things about the list rather than five counts of it: how much it holds,
+   how long it has been running, and who uses it. The component is `.u-cred` in
+   css/ull-v2.css, shared with the phone, which takes the first two. What the
+   page adds is the measure it sits on and the rule under it. */
+.home-cred {
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem;
+}
+.home-cred .u-cred {
+    padding-top: 1.15rem;
+    border-top: 1px solid rgba(128,128,128,0.22);
+}
 
 /* ── CONTENT ── */
-.home-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+/* The gutter comes from .home-col; only the block padding is the section's. */
+.home-content { padding-block: 1.75rem 2.5rem; }
 
-/* ── CARD ── */
-.home-card {
-    background: var(--color-background-hover);
-    border: 1px solid rgba(128,128,128,0.15);
-    border-radius: 0.75rem;
-    padding: 1.75rem;
-    transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+/* ── SECTIONS ── */
+.home-section__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
 }
-.home-card:hover {
-    border-color: rgba(128,128,128,0.55);
-    box-shadow: 0 0 0 2px rgba(128,128,128,0.18), 0 6px 24px rgba(0,0,0,0.1);
-    transform: scale(1.006);
+.home-section__head .u-eyebrow { margin-bottom: 0; }
+.home-section__note {
+    margin-bottom: 0.9rem !important;
+    max-width: 46rem;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    opacity: 0.45;
 }
-.home-card__title {
-    font-size: 0.95rem;
-    font-weight: 700;
+.home-section__note b { font-weight: 600; opacity: 0.85; }
+.home-more {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-on-background);
+    opacity: 0.5;
+    white-space: nowrap;
+}
+.home-more:hover { opacity: 1; text-decoration: underline; }
+
+/* ── THE ROW, RE-MEASURED ──
+   `.u-row` pushes its trailing element to the far right with margin-left:auto.
+   That is right in a 360px phone row and wrong in a 1036px desktop one: the
+   status pill used to end up 907px from the name it describes at 1440, and
+   1007px at 1920. The pill now sits on the name's own line; the trailing slot
+   carries the one figure worth aligning down a column, which is how far anyone
+   has got. The meter fills the width on purpose — a long bar is the one thing a
+   wide row does better than a narrow one, and it makes the five comparable. */
+.home-top { display: flex; flex-direction: column; gap: 0.15rem; }
+.home-row {
+    display: grid;
+    grid-template-columns: 2rem 4.6rem minmax(0, 1fr) 6.75rem;
+    align-items: center;
+    gap: 0.85rem;
+    border: 1px solid transparent;
+    padding-block: 0.6rem;
+}
+.home-row:hover { border-color: rgba(128,128,128,0.22); }
+.home-row__head { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
+.home-row__head .u-row__name { flex: 0 1 auto; }
+.home-page .home-row__head .u-pill { flex-shrink: 0; padding: 0.18rem 0.55rem; font-size: 0.62rem; }
+.home-row__meter { margin-top: 0.4rem; }
+.home-row__fig {
+    text-align: right;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+.home-row__fig span {
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 0.55rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    margin-bottom: 1.25rem;
+    letter-spacing: 0.08em;
+    opacity: 0.4;
 }
-.root.dark .home-card__title { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+.home-row__fig--none { opacity: 0.3; font-weight: 500; }
 
-/* ── 2-COL GRID ── */
-.home-grid-2col {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    align-items: stretch;
+/* ── TWO COLUMNS UNDER THE ROWS ── */
+.home-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 18rem;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(128,128,128,0.22);
 }
-.home-grid-2col > .home-card {
+
+/* ── RECENT CHANGES ──
+   A framed window the feed scrolls inside. There is no changelog route to send
+   a reader to, so every entry is here; unrolled into the page's own flow it ran
+   past the editors beside it and made the page most of a screen longer for a
+   log nobody reads to the end. */
+.home-feed {
     display: flex;
     flex-direction: column;
-    min-height: 0;
-}
-
-/* ── RECENT CHANGES ── */
-.home-card--scroll {
-    min-height: 0;
-    overflow: hidden;
-}
-.home-changes {
-    height: 354px;
+    max-height: 26rem;
     overflow-y: auto;
     scrollbar-width: thin;
-    border: 1px solid rgba(128,128,128,0.1);
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.18);
     border-radius: 0.5rem;
-    padding: 1rem;
-    background: rgba(128,128,128,0.03);
+    background: rgba(128, 128, 128, 0.04);
 }
 .home-changes-date {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 0.62rem;
+    gap: 0.7rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-on-background);
     opacity: 0.35;
-    margin: 1.25rem 0 0.85rem;
+    margin: 1rem 0 0.45rem;
 }
-.home-changes-date:first-child { margin-top: 0; }
-.home-changes-date::before,
+.home-feed > .home-changes-date:first-child { margin-top: 0; }
 .home-changes-date::after {
     content: '';
     flex: 1;
@@ -180,286 +256,82 @@
     background: rgba(128,128,128,0.18);
 }
 .home-change {
-    font-size: 0.8rem;
-    line-height: 1.65;
-    padding: 0.15rem 0;
+    display: grid;
+    grid-template-columns: 0.5rem 1fr;
+    gap: 0.7rem;
+    font-size: 0.79rem;
+    line-height: 1.55;
+    padding: 0.3rem 0;
     color: var(--color-on-background);
 }
+.home-change__dot {
+    margin-top: 0.5rem;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.3;
+}
+.home-change.is-up .home-change__dot { background: #55ee55; opacity: 0.85; }
+.home-change.is-down .home-change__dot { background: #ff6622; opacity: 0.85; }
+.home-change.is-new .home-change__dot { background: var(--color-primary); opacity: 1; }
+.root.dark .home-change.is-up .home-change__dot { background: #2f9c2f; }
+.root.dark .home-change.is-down .home-change__dot { background: #cc511b; }
 .home-change .dim { opacity: 0.45; }
 .home-change strong { font-weight: 600; }
 
-/* ── EDITORS DESC ── */
-.home-editors-desc {
-    font-size: 0.78rem;
-    font-weight: 400;
-    color: var(--color-on-background);
-    opacity: 0.5;
-    line-height: 1.6;
-    margin-bottom: 1rem !important;
-}
-
-/* ── LEVEL CARD SHARED (LotM + CTV) ── */
-.home-level-period {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    background: rgba(102,10,239,0.1);
-    padding: 0.15rem 0.55rem;
-    border-radius: 2rem;
-    margin-bottom: 0.85rem;
-}
-.root.dark .home-level-period { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.home-level-name {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--color-on-background);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 5px;
-}
-.home-level-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-.home-level-thumb {
-    flex-shrink: 0;
-    width: 120px;
-    aspect-ratio: 16/9;
-    border-radius: 0.4rem;
-    background: rgba(128,128,128,0.08);
-    border: 1px solid rgba(128,128,128,0.12);
-    overflow: hidden;
-}
-.home-level-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.home-level-meta { display: flex; flex-direction: column; min-width: 0; }
-.home-level-info {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    font-size: 0.75rem;
-}
-.home-level-rank {
-    font-weight: 700;
-    color: var(--color-on-background);
-    opacity: 0.35;
-}
-.home-level-author {
-    font-weight: 400;
-    color: var(--color-on-background);
-    opacity: 0.5;
-}
-.home-level-sep {
-    color: var(--color-on-background);
-    opacity: 0.2;
-}
-.home-level-id {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    font-variant-numeric: tabular-nums;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    background: rgba(102,10,239,0.12);
-    padding: 0.12rem 0.45rem;
-    border-radius: 0.3rem;
-    border: 1px solid rgba(102,10,239,0.2);
-}
-.root.dark .home-level-id { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-
-/* ── RECORD ROWS ── */
-.home-record-box {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    border: 1px solid rgba(128,128,128,0.1);
-    border-radius: 0.5rem;
-    padding: 0.35rem;
-    background: rgba(128,128,128,0.03);
-}
-.home-record-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
-.home-record-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0.6rem;
-    border-radius: 0.4rem;
-    text-decoration: none;
-    transition: background 100ms ease;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.home-record-row:hover {
-    background: rgba(128,128,128,0.06);
-    border-color: rgba(128,128,128,0.1);
-}
-.home-record-pct {
-    font-size: 1rem;
-    font-weight: 700;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    min-width: 5rem;
-    font-variant-numeric: tabular-nums;
-}
-.root.dark .home-record-pct { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.home-record-player {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-on-background);
-    flex: 1;
-}
-.home-record-label {
-    font-size: 0.6rem;
+/* ── EDITORS ──
+   Twelve names in a bordered card was 465px of the page and half its
+   below-fold weight, for a roster that is also on /information. They are a
+   line of names now, still grouped by seniority and still in the order the
+   database returns them. */
+.home-editors { display: flex; flex-direction: column; gap: 0.85rem; }
+.home-editors-group__label {
+    font-size: 0.58rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-on-background);
-    opacity: 0.25;
-    white-space: nowrap;
+    letter-spacing: 0.1em;
+    opacity: 0.3;
+    margin-bottom: 0.35rem;
 }
-
-/* ── CTV / DISCORD BUTTONS ── */
-.home-ctv-card { display: flex !important; flex-direction: column; }
-.home-lotm-card { display: flex !important; flex-direction: column; }
-.home-ctv-btn,
-.home-discord-btn {
+.home-editors-line { display: flex; flex-wrap: wrap; gap: 0.3rem 0.35rem; }
+.home-editor {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    margin-top: auto;
-    padding-top: 1.5rem;
-    align-self: flex-start;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: color-mix(in srgb, var(--color-primary) 65%, white);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 100ms ease;
-}
-.root.dark .home-ctv-btn,
-.root.dark .home-discord-btn { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.home-ctv-btn:hover,
-.home-discord-btn:hover { opacity: 1; }
-.home-ctv-btn::after { content: ' →'; }
-.home-discord-btn img { width: 0.9rem; height: 0.9rem; margin-right: 3px; }
-
-/* ── EVENTS PAGE ── */
-.events-content { max-width: 1400px; }
-.events-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
-    align-items: start;
-}
-.events-lotd-card { grid-column: 1 / 3; }
-.events-lotd-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 0.75rem;
-}
-.events-info-label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: color-mix(in srgb, var(--color-primary) 80%, white);
-    margin-bottom: 0.85rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
-}
-.events-stat-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-}
-.events-stat-key {
-    font-size: 0.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.4;
-    margin-bottom: 0.2rem;
-}
-.events-stat-val {
-    font-size: 0.875rem;
-}
-.events-tags { margin-top: 0.85rem; }
-
-.home-lotd-date {
-    margin-top: 25px;
-    font-size: 0.78rem;
-    opacity: 0.45;
-    font-family: "Lexend Deca", sans-serif;
-    text-align: center;
-}
-
-/* ── PARTNERS ── */
-.home-partners-grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-.home-partner {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(128,128,128,0.12);
-    text-decoration: none;
-    transition: border-color 150ms ease, background 150ms ease;
-    background: rgba(128,128,128,0.03);
-}
-.home-partner:hover {
-    border-color: rgba(128,128,128,0.25);
-    background: rgba(128,128,128,0.06);
-}
-.home-partner-logo {
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 0.4rem;
-    background: rgba(128,128,128,0.08);
-    border: 1px solid rgba(128,128,128,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.home-partner-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 0.4rem; }
-.home-partner-logo-placeholder {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.35rem;
-    background: rgba(128,128,128,0.2);
-}
-.home-partner-name {
-    font-size: 0.82rem;
-    font-weight: 700;
+    gap: 0.4rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 2rem;
+    background: rgba(128,128,128,0.09);
+    border: 1px solid rgba(128,128,128,0.22);
     color: var(--color-on-background);
+    text-decoration: none;
+    font-size: 0.74rem;
+    font-weight: 500;
     line-height: 1.3;
+    transition: border-color 100ms ease;
 }
-.home-partner-desc {
-    font-size: 0.72rem;
+.home-editor:hover { border-color: rgba(128,128,128,0.38); }
+.home-editor--lead { background: rgba(128,128,128,0.13); font-weight: 600; }
+.home-editor img { width: 0.85rem; height: 0.85rem; opacity: 0.7; flex-shrink: 0; }
+.home-editors-desc {
+    margin-top: 1rem !important;
+    font-size: 0.74rem;
     font-weight: 400;
     color: var(--color-on-background);
-    opacity: 0.42;
-    line-height: 1.55;
+    opacity: 0.45;
+    line-height: 1.6;
 }
+.home-editors-desc a { color: inherit; text-decoration: underline; }
 
 /* ── FOOTER ── */
 .home-page .site-footer { margin-top: 50px; }
+
+/* ── NARROW ──
+   The desktop pages are only served above 900px (below it the router sends
+   visitors to /mobile), but the window can still be dragged narrower. */
+@media (max-width: 1100px) {
+    .home-col { padding-inline: 1.5rem; }
+    .home-hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.25rem; }
+    .home-cols { grid-template-columns: 1fr; gap: 2rem; }
+    .home-page .u-cred { gap: 0.7rem 2rem; }
+}

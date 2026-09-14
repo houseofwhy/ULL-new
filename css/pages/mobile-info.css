@@ -1,112 +1,261 @@
-/* Information */
-.mob-info { padding: 0; display: flex; flex-direction: column; }
-.mob-info *, .mob-info { font-family: "Lexend Deca", sans-serif; box-sizing: border-box; }
-.mob-info h1, .mob-info h2, .mob-info h3, .mob-info h4, .mob-info p { margin: 0; padding: 0; }
-.mob-info h1::before, .mob-info h1::after, .mob-info h2::before, .mob-info h2::after,
-.mob-info h3::before, .mob-info h3::after, .mob-info h4::before, .mob-info h4::after { display: none; }
+/* ── /mobile/info ─────────────────────────────────────────────────────────────
+   The desktop hub (css/pages/information.css) stacked for a 390px screen.
 
-.mob-info-hero { text-align: center; padding: 2.5rem 1.25rem 2rem; background: linear-gradient(180deg, rgba(102,10,239,0.25) 0%, transparent 100%); border-bottom: 1px solid rgba(128,128,128,0.15); }
-.root.dark .mob-info-hero { background: linear-gradient(180deg, rgba(102,10,239,0.15) 0%, transparent 100%); }
-.mob-info-hero h1 { font-size: 1.6rem; font-weight: 700; color: #c084fc; margin-bottom: 16px; line-height: 1.2; letter-spacing: -0.02em; }
-.root.dark .mob-info-hero h1 { color: #7c3aed; }
-.mob-info-hero p { font-size: 0.82rem; font-weight: 400; color: var(--color-on-background); opacity: 0.5; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+   The page carries BOTH .info-page and .mob-info, which is the whole idea: the
+   prose, the FAQ rows, the legends, the people, the site map, the tables and
+   the code blocks are the same components the desktop reader uses, and they
+   come from information.css unchanged. This file holds only what genuinely
+   differs on a phone — a type scale one step down, controls at tap size, one
+   column instead of two, and a reader that covers the screen instead of a
+   window in the middle of one. It loads after information.css, so where the two
+   set the same property at the same specificity, this one wins.
 
-.mob-info-content { padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 1rem; }
+   Components still come from css/ull-v2.css (.u-eyebrow, .u-chip, .u-pill,
+   .u-btn, .u-dl, .u-count) and the phone shell from css/pages/mobile-v2.css. */
 
-.mob-info-card { background: var(--color-background-hover); border: 1px solid rgba(128,128,128,0.15); border-radius: 0.75rem; padding: 1.25rem; }
-.mob-info-card__title { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: color-mix(in srgb, var(--color-primary) 65%, white); margin-bottom: 0.75rem; }
-.root.dark .mob-info-card__title,
-.dark .mob-info-card__title { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+/* The shell's .mob-content is the scroll container. The page is not a second
+   one — the desktop's own notes call that nesting the bug it was. */
+.mob-info {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    overflow: visible;
+}
+/* While the reader is open the shell behind it must not scroll under it. This
+   is the desktop's .info-page--locked, applied where the scrolling happens. */
+.mob-content--locked { overflow: hidden; }
 
-/* mob editors */
-.mob-info-editors { display: flex; flex-direction: column; gap: 0.35rem; }
-.mob-info-editor { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.4rem; border-radius: 0.3rem; }
-.mob-info-editor img { width: 1rem; height: 1rem; opacity: 0.7; }
-.mob-info-editor a, .mob-info-editor span { color: var(--color-on-background); text-decoration: none; font-size: 0.8rem; font-weight: 500; line-height: 1.6; }
-.mob-info-editor a:hover { text-decoration: underline; }
-.mob-info-role { font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.1rem 0.35rem; border-radius: 0.2rem; background: rgba(128,128,128,0.15); color: var(--color-on-background); opacity: 0.5; margin-left: auto; white-space: nowrap; }
-.mob-info-role-owner { background: rgba(255,180,50,0.15); color: #ffcc55; opacity:1; }
-.mob-info-role-admin { background: rgba(100,180,255,0.15); color: #77bbff; opacity:1; }
-.mob-info-role-seniormod { background: rgba(100,220,180,0.15); color: #66ddaa; opacity:1; }
-.mob-info-role-dev { background: rgba(200,100,255,0.15); color: #cc88ff; opacity:1; }
+/* ── Hero ── */
+.mob-info .info-hero {
+    padding: 1.25rem var(--m-pad) 1rem;
+    background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 13%, transparent) 0%, transparent 62%);
+}
+.mob-info .info-hero h1 { font-size: 1.6rem; letter-spacing: -0.03em; }
+.mob-info .info-hero p { margin-top: 0.55rem; font-size: 0.79rem; line-height: 1.6; }
 
-/* mob legend */
-.mob-info-legend { display: flex; flex-direction: column; gap: 0.45rem; }
-.mob-info-legend-row { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 400; line-height: 1.6; color: var(--color-on-background); }
-.mob-info-legend-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; flex-shrink: 0; }
-.mob-info-legend-label { color: var(--color-on-background); opacity: 0.4; font-size: 0.7rem; margin-left: auto; white-space: nowrap; }
-.mob-info-coloring-desc { font-size: 0.75rem; font-weight: 400; color: var(--color-on-background); opacity: 0.5; margin-bottom: 16px !important; line-height: 1.6; }
+/* ── Search ──
+   Sticky under the top bar, at tap height, and full width: the desktop's
+   32rem-wide field is wider than the screen. The Ctrl K hint is dropped — there
+   is no Ctrl key on a phone, and it is the only thing on the desktop page this
+   one does not carry. */
+.mob-info-find {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    padding: 0.7rem var(--m-pad);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--u-line);
+}
+.mob-info .info-search {
+    width: 100%;
+    height: var(--m-tap);
+    margin-top: 0;
+    padding: 0 0.75rem;
+    border-radius: var(--m-r);
+    border-color: var(--u-line);
+}
+.mob-info .info-search__field { font-size: 0.85rem; }
+/* A hit is two or three short lines rather than three columns. */
+.mob-info .info-results { max-height: 60vh; }
+.mob-info .info-result {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+    min-height: var(--m-tap);
+    padding: 0.5rem 0.6rem;
+}
+.mob-info .info-result__k { width: auto; max-width: 100%; }
+.mob-info .info-result__t { font-size: 0.82rem; font-weight: 600; line-height: 1.35; }
+.mob-info .info-result__s { max-width: 100%; }
 
-/* mob pending */
-.mob-info-pending { display: flex; flex-direction: column; gap: 0.35rem; }
-.mob-info-pending-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 400; padding: 0.25rem 0.4rem; color: var(--color-on-background); }
-.mob-info-pending-row img { width: 1.2rem; height: 1.2rem; }
+/* ── The six faces ──
+   One column, in the desktop's order. The blocks themselves are .info-block and
+   need nothing from here; only the container and the two sizes the desktop
+   gives its three-row guidelines block do. */
+.mob-info-doors {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1rem var(--m-pad) 1.5rem;
+}
+/* On the desktop the guidelines face carries a wash of the brand colour, which
+   is how it holds the eye in a twelve-column grid of six. In one phone column
+   there is nothing to hold it against, and the wash only makes one of six
+   cards look like a different kind of thing — so here it is the same grey as
+   the rest. */
+.mob-info .info-block--gl { padding: 1rem 1.1rem; background: var(--u-fill); }
+.mob-info .info-block--gl::before { content: none; }
+.mob-info .info-block--gl h2 { font-size: 1.25rem; }
+.mob-info .info-block--gl p { font-size: 0.78rem; }
+.mob-info .info-groups { margin: 0.85rem 0 0.9rem; }
+.mob-info .info-block--gl .u-btn { align-self: stretch; min-height: var(--m-tap); }
 
-/* mob guidelines */
-.mob-info-gl { background: var(--color-background-hover); border: 1px solid rgba(128,128,128,0.15); border-radius: 0.75rem; overflow: hidden; }
-.mob-info-gl-header { padding: 1.25rem; border-bottom: 1px solid rgba(128,128,128,0.15); }
-.mob-info-gl-header h2 { font-size: 1.1rem; font-weight: 700; color: var(--color-on-background); line-height: 1.3; }
-.mob-info-gl-header p { font-size: 0.75rem; font-weight: 400; color: var(--color-on-background); opacity: 0.5; margin-top: 0.25rem; }
-.mob-info-gl-search { display: block; width: 100%; margin-top: 0.75rem; padding: 0.45rem 0.75rem; background: rgba(128,128,128,0.08); border: 1px solid rgba(128,128,128,0.3); border-radius: 0.4rem; color: var(--color-on-background); font-family: "Lexend Deca", sans-serif; font-size: 0.75rem; font-weight: 400; line-height: 1.4; }
-.mob-info-gl-search:focus { outline: 2px solid var(--color-primary); }
-.mob-info-gl-search::placeholder { color: var(--color-on-background); opacity: 0.35; }
+/* ── The reader ──
+   The desktop's .info-win — the same fixed overlay, the same bar, the same
+   body, so its typography, its code chips and its heading sizes carry over —
+   filling the screen rather than putting a window in the middle of one. Half a
+   phone screen is not enough to read a rulebook in, so it covers the tab bar
+   too, and its close button is what gets you out. */
+.mob-info-sheet {
+    flex-direction: column;
+    padding: 0;
+    background: var(--color-background);
+    backdrop-filter: none;
+}
+.mob-info-sheet:focus { outline: none; }
+.mob-info-sheet__bar {
+    gap: 0.6rem;
+    padding: 0.6rem var(--m-pad);
+}
+.mob-info-sheet__label { flex: 1; min-width: 0; }
+.mob-info-sheet__label b { display: block; font-size: 0.95rem; font-weight: 700; line-height: 1.25; }
+.mob-info-back, .mob-info-x {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--color-on-background);
+    line-height: 1;
+    opacity: 0.6;
+}
+.mob-info-x { border: 1px solid var(--u-line); background: var(--u-fill); font-size: 1.1rem; }
+.mob-info-back { margin-left: -0.4rem; border: 0; font-size: 1.35rem; }
+.mob-info-back:active, .mob-info-x:active { opacity: 1; }
+.mob-info-sheet__body {
+    flex: 1;
+    min-height: 0;
+    /* The sheet's own scroll must not chain to the shell underneath it. */
+    overscroll-behavior: contain;
+    padding: 1rem var(--m-pad) 2rem;
+}
 
-/* mob toc */
-.mob-info-toc { border-bottom: 1px solid rgba(128,128,128,0.15); padding: 0.75rem 0; display: flex; flex-wrap: wrap; gap: 0.25rem; padding-left: 1rem; padding-right: 1rem; }
-.mob-info-toc-group { width: 100%; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-on-background); opacity: 0.4; padding: 0.5rem 0 0.2rem; }
-.mob-info-toc-group:first-child { padding-top: 0; }
-.mob-info-toc-link { display: inline-block; padding: 0.3rem 0.6rem; font-size: 0.7rem; font-weight: 500; color: var(--color-on-background); opacity: 0.45; text-decoration: none; cursor: pointer; border-radius: 0.3rem; transition: all 100ms ease; }
-.mob-info-toc-link:hover { opacity: 0.8; background: rgba(128,128,128,0.05); }
-.mob-info-toc-link.active { color: color-mix(in srgb, var(--color-primary) 65%, white); opacity: 1; background: rgba(102,10,239,0.1); }
-.root.dark .mob-info-toc-link.active,
-.dark .mob-info-toc-link.active { color: color-mix(in srgb, var(--color-primary) 65%, black); }
+/* ── Reading, one step down from the desktop reader ── */
+.mob-info .info-win h3 { margin-bottom: 0.8rem; font-size: 1.15rem; }
+.mob-info .info-lead { font-size: 0.85rem; line-height: 1.7; margin-bottom: 1rem; }
+.mob-info .info-prose p, .mob-info .info-prose li { font-size: 0.8rem; line-height: 1.72; }
+.mob-info .info-prose p { margin-bottom: 0.75rem; }
+.mob-info .info-prose h4 { margin: 1.35rem 0 0.5rem; font-size: 0.85rem; }
+.mob-info .info-h4 { margin: 1.35rem 0 0.5rem; font-size: 0.85rem; }
+.mob-info .info-note { font-size: 0.75rem; line-height: 1.65; }
+.mob-info .info-q { padding: 0.8rem 0; }
+.mob-info .info-q > b { font-size: 0.82rem; }
+.mob-info .info-q .info-prose p { font-size: 0.78rem; }
+.mob-info .info-faqg + .info-faqg { margin-top: 1.5rem; }
+.mob-info .info-pre { font-size: 0.68rem; line-height: 1.65; padding: 0.75rem 0.85rem; }
+/* The points table in the FAQ is authored in js/_info.js, so it arrives as
+   markup: it can only be made to fit, not restructured. */
+.mob-info .info-tbl { font-size: 0.72rem; margin-bottom: 0.9rem; }
+.mob-info .info-tbl th, .mob-info .info-tbl td { padding: 0.35rem 0.4rem 0.35rem 0; }
+/* Two columns never fit; every "beside" on this page is a "below". */
+.mob-info .info-cols { grid-template-columns: 1fr; gap: 1.5rem; }
+.mob-info .info-winlinks { flex-direction: column; }
+.mob-info .info-winlinks > * { width: 100%; min-height: var(--m-tap); }
+.mob-info .info-legend > div { gap: 0.65rem; font-size: 0.76rem; }
+.mob-info .info-legend .u-pill { min-width: 6.6rem; padding: 0.2rem 0.5rem; font-size: 0.64rem; }
+.mob-info .info-nav { padding: 0.7rem 0; }
+.mob-info .info-nav__n { flex-wrap: wrap; gap: 0.45rem; font-size: 0.84rem; }
+.mob-info .info-nav__d { font-size: 0.76rem; }
+.mob-info .info-person { min-height: 2.3rem; padding: 0; font-size: 0.82rem; }
+.mob-info .info-person a, .mob-info .info-person > span:not(.u-chip) {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
-/* mob gl content */
-.mob-info-gl-content { padding: 1.25rem; }
-.mob-info-gl-group-header { margin-top: 2rem; margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(128,128,128,0.15); }
-.mob-info-gl-group-header:first-child { margin-top: 0; }
-.mob-info .mob-info-gl-group-header h2 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: color-mix(in srgb, var(--color-primary) 65%, white); line-height: 1.3; }
-.root.dark .mob-info-gl-group-header h2,
-.dark .mob-info-gl-group-header h2 { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.mob-info-gl-intro { margin-bottom: 1.25rem; padding: 0.75rem 1rem; background: rgba(128,128,128,0.04); border-left: 3px solid rgba(128,128,128,0.2); border-radius: 0 0.3rem 0.3rem 0; }
-.mob-info-gl-intro p { font-size: 0.75rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.6; }
-.mob-info-gl-intro p + p { margin-top: 0.5rem; }
-.mob-info-gl-section { margin-bottom: 2rem; }
-.mob-info .mob-info-gl-section h3 { font-size: 0.85rem; font-weight: 700; color: var(--color-on-background); line-height: 1.4; margin-bottom: 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid rgba(128,128,128,0.08); }
-.mob-info .mob-info-gl-section h4 { font-size: 0.78rem; font-weight: 700; color: var(--color-on-background); opacity: 0.85; line-height: 1.4; margin-top: 1.25rem; margin-bottom: 0.5rem; }
-.mob-info-gl-section p { font-size: 0.75rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.75; }
-.mob-info-gl-section p + p { margin-top: 0.6rem; }
-.mob-info-gl-section ul, .mob-info-gl-section ol { margin: 0.5rem 0 0.5rem 1.2rem; padding: 0; font-size: 0.75rem; font-weight: 400; line-height: 1.7; color: var(--color-on-background); opacity: 0.75; }
-.mob-info-gl-section ol { list-style-type: decimal; }
-.mob-info-gl-section ul { list-style-type: disc; }
-.mob-info-gl-section li { margin-bottom: 0.3rem; padding-left: 0.2rem; }
-.mob-info-gl-section li ul, .mob-info-gl-section li ol { margin-top: 0.25rem; opacity: 1; }
-.mob-info-gl-section li ol { list-style-type: lower-alpha; }
-.mob-info-gl-section li li ol { list-style-type: lower-roman; }
-.mob-info-gl-section li ul { list-style-type: circle; }
-.mob-info-gl-section li li ul { list-style-type: square; }
-.mob-info-gl-section strong { font-weight: 600; opacity: 1; color: var(--color-on-background); }
-.mob-info-gl-section a { color: color-mix(in srgb, var(--color-primary) 65%, white); text-decoration: underline; text-decoration-color: transparent; }
-.mob-info-gl-section a:hover { text-decoration-color: currentColor; }
-.root.dark .mob-info-gl-section a,
-.dark .mob-info-gl-section a { color: color-mix(in srgb, var(--color-primary) 65%, black); }
-.mob-info-gl-section .gl-contacts-grid { display: grid !important; grid-template-columns: 1fr; gap: 0.5rem; }
-.mob-info-gl-section .gl-contact-card { background: rgba(128,128,128,0.06); border: 1px solid rgba(128,128,128,0.12); border-radius: 0.5rem; padding: 0.65rem 0.85rem; }
-.mob-info-gl-section .gl-contact-role { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: color-mix(in srgb, var(--color-primary) 60%, white); margin-bottom: 0.2rem; }
-.mob-info-gl-section .gl-contact-name { font-size: 0.8rem; font-weight: 700; color: var(--color-on-background); margin-bottom: 0.1rem; }
-.mob-info-gl-section .gl-contact-detail { font-size: 0.65rem; font-weight: 400; color: var(--color-on-background); opacity: 0.45; margin-bottom: 0.2rem; }
-.mob-info-gl-section .gl-contact-links span { font-size: 0.65rem; font-weight: 400; color: var(--color-on-background); opacity: 0.55; }
-.mob-info-gl-no-results { padding: 2rem 1rem; opacity: 0.25; text-align: center; color: var(--color-on-background); }
-.mob-info-gl-no-results span { font-size: 1.5rem; }
-.mob-info-gl-no-results p { font-size: 0.8rem; }
+/* ── The guidelines index ──
+   The desktop reads its fourteen sections from a column beside the text. A
+   phone has no beside, so the index is the first screen of the reader and a
+   section is pushed over it. (.info-toc is hidden under 1100px by
+   information.css; this is the control that replaces it, at tap size.) */
+.mob-info-toc { display: flex; flex-direction: column; }
+.mob-info-toc__g {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin: 1.1rem 0 0.2rem;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+}
+.mob-info-toc__g:first-child { margin-top: 0; }
+.mob-info-toc__g span { font-variant-numeric: tabular-nums; }
+.mob-info-toc__a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    width: 100%;
+    min-height: var(--m-tap);
+    padding: 0.35rem 0;
+    border: 0;
+    border-top: 1px solid var(--u-line);
+    background: transparent;
+    color: var(--color-on-background);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-align: left;
+}
+.mob-info-toc__a::after { content: '\203A'; font-size: 1rem; opacity: 0.3; }
+.mob-info-toc__a:active { color: var(--u-accent); }
 
-/* mob info footer */
-.mob-info-footer { margin-top: 2rem; border-top: 1px solid rgba(128,128,128,0.15); padding: 1.5rem 1.25rem; }
-.mob-info-footer h3 { font-size: 0.9rem; font-weight: 700; color: var(--color-on-background); margin-bottom: 0.5rem; line-height: 1.3; }
-.mob-info-footer > p { font-size: 0.7rem; font-weight: 400; color: var(--color-on-background); opacity: 0.4; line-height: 1.6; margin-bottom: 1.25rem; }
-.mob-info-footer-links { display: flex; gap: 2rem; margin-bottom: 1.25rem; }
-.mob-info-footer-col h4 { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-on-background); opacity: 0.4; margin-bottom: 0.4rem; }
-.mob-info-footer-col a { display: block; font-size: 0.72rem; color: var(--color-on-background); opacity: 0.4; text-decoration: none; padding: 0.15rem 0; }
-.mob-info-footer-bottom { padding-top: 1rem; border-top: 1px solid rgba(128,128,128,0.15); }
-.mob-info-footer-bottom p { font-size: 0.62rem; line-height: 1.4; color: var(--color-on-background); opacity: 0.2; }
-.mob-info-footer-bottom p::before, .mob-info-footer-bottom p::after { display: none; }
+/* Previous and next section, at the foot of a section. Two tap targets rather
+   than the desktop's two lines of text. */
+.mob-info-updown { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+.mob-info-updown button {
+    flex: 1;
+    min-height: var(--m-tap);
+    padding: 0.5rem 0.6rem;
+    border-radius: var(--u-r-sm);
+    border: 1px solid var(--u-line);
+    background: transparent;
+    color: var(--color-on-background);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.mob-info-updown button:disabled { opacity: 0.25; cursor: default; }
+
+/* ── The API, phone-shaped ──
+   The desktop draws two tables; both are wider than the screen, so each row
+   becomes a line of its own rather than a sideways scroll. Same fields, same
+   order, same source (js/_info.js). */
+.mob-info-rows { display: flex; flex-direction: column; margin-bottom: 0.9rem; }
+.mob-info-ep, .mob-info-fld { padding: 0.6rem 0; border-bottom: 1px solid var(--u-line); }
+.mob-info-ep:first-child, .mob-info-fld:first-child { border-top: 1px solid var(--u-line); }
+.mob-info-ep__p {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+.mob-info-ep__r, .mob-info-fld__m { display: block; margin-top: 0.2rem; font-size: 0.74rem; line-height: 1.5; opacity: 0.55; }
+.mob-info-fld__n {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.73rem;
+    font-weight: 500;
+}
+.mob-info-fld__t {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.4;
+}

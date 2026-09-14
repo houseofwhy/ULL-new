@@ -86,12 +86,6 @@ main.page-list--pending .list-container {
     padding-right: 2rem;
     max-width: 48rem;
 }
-.page-list .level-container .level .level-authors {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-auto-rows: max-content;
-    gap: 1rem;
-}
 .page-list .level-container .level .video {
     aspect-ratio: 16/9;
 }
@@ -171,6 +165,10 @@ main.page-list--pending .list-container {
     grid-template-columns: 40% 60%;
     height: 100%;
     overflow: hidden;
+    /* main in css/main.css sets column-gap: 2rem. The columns here already add
+       up to 100% and are separated by a border, so the gap pushed the right
+       column 32px past the edge, where overflow: hidden clipped it. */
+    column-gap: 0;
 }
 
 .page-list-new > div {
@@ -183,8 +181,10 @@ main.page-list--pending .list-container {
 }
 
 
+/* The panel (js/components/List/LevelPanel.js) carries its own padding so its
+   hero can run to the edge of the column, the way it does on /level/<slug>. */
 .page-list-new .level-container-new {
-    padding: 2rem 4rem 2rem 1rem;
+    padding: 0;
 }
 
 
@@ -199,26 +199,51 @@ main.page-list--pending .list-container {
 }
 
 
-.search-new {
+/* ── The search field ──
+   One construction for every search bar the site draws: the box is the label,
+   the input inside it is borderless, and the glyph is .info-mag from
+   css/pages/information.css — drawn in CSS rather than shipped as an asset.
+   /information and /pending were already built this way and the phone draws
+   the same mark on .m2-search; All Levels, Main List, Future List, Upcoming
+   Levels, the Leaderboard and the admin toolbar had a bare bordered input with
+   no mark at all, and now share this one. */
+.search-field {
     flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     padding: 0.6rem 0.75rem;
     background-color: rgba(255, 255, 255, 0.05);
-    color: var(--color-on-background);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
-    font-family: inherit;
-    font-size: 0.9rem;
     box-sizing: border-box;
+    cursor: text;
+    transition: border-color 120ms ease;
 }
-
-.search-new:focus {
+.search-field:focus-within {
     outline: 2px solid var(--color-primary);
     background-color: rgba(255, 255, 255, 0.1);
 }
-
-.root.dark .search-new {
+.root.dark .search-field {
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.search-new {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    outline: none;
+    color: var(--color-on-background);
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+.search-new::placeholder { color: var(--color-on-background); opacity: 0.42; }
+.search-new::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 .filters-btn {
     flex-shrink: 0;
@@ -243,6 +268,8 @@ main.page-list--pending .list-container {
 
 /* Level sub-info (author | verifier) */
 .level-info {
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
@@ -255,6 +282,23 @@ main.page-list--pending .list-container {
     font-weight: 500;
 }
 
+
+/* Upcoming Levels: the column is ordered by furthest progress, so each row
+   carries the bar that ordering is built from, and the reading itself sits at
+   the end of the row where the eye can run down it. */
+.up-row__bar { margin-top: 0.2rem; width: 12rem; max-width: 100%; }
+.up-row__pct {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-left: 0.75rem;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+}
+.page-list-new .list .level.active .up-row__bar { background: rgba(255, 255, 255, 0.28); }
+.page-list-new .list .level.active .up-row__bar i { background: #fff; }
 
 /* Reuse list styles within new layout */
 .page-list-new .list {
@@ -309,88 +353,18 @@ main.page-list--pending .list-container {
     opacity: 0.7;
 }
 
-.page-list-new .level-container-new .level {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    max-width: none;
-}
-
-.page-list-new .level-container-new .level .level-authors {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-auto-rows: max-content;
-    gap: 1rem;
-}
-.page-list-new .level-container-new .level .video {
-    aspect-ratio: 16/9;
-}
-.page-list-new .level-container-new .level .stats {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    gap: 2rem;
-}
-.page-list-new .level-container-new .level .stats li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Leaderboard overrides */
-.page-list-new.page-leaderboard {
-    grid-template-columns: 1fr 1.5fr;
-    max-width: none;
-    margin: 0;
-    column-gap: 0;
-    grid-template-rows: 1fr;
-}
+/* Leaderboard: same two-column shell as the lists, but with a header row for
+   the shared hero. Its own look lives in css/pages/leaderboard.css. */
 .page-list-new.page-leaderboard .list-container-new {
-    padding: 1.5rem 0 1.5rem 1rem;
+    padding: 1.5rem 0 0 1rem;
     border-right: 1px solid rgba(128, 128, 128, 0.15);
     overflow-y: auto;
     scrollbar-width: thin;
 }
 .page-list-new.page-leaderboard .level-container-new {
-    padding: 2rem;
+    padding: 0;
     overflow-y: auto;
     scrollbar-width: thin;
-}
-.page-leaderboard .search-row--leaderboard {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-.page-leaderboard .search-row--leaderboard .search-new {
-    max-width: 100%;
-}
-.page-leaderboard .list .level button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: calc(100% - 20px);
-}
-.page-list-new.page-leaderboard .level-container-new .level {
-    max-width: none;
-    width: 100%;
-}
-
-/* Shitty (legacy) */
-
-.shitty .page-list .list .level button {
-    background-color: transparent;
-    padding: 1rem 0;
-}
-
-.shitty .page-list .list .level button:hover {
-    background-color: #eee;
-    color: black !important;
-}
-
-.shitty .page-list .list .level.active button {
-    background-color: transparent;
-    color: orange;
 }
 
 .unlisted-name {

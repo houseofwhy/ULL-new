@@ -1,10 +1,10 @@
 import { store } from "../main.js";
-import { embed, passesBenchmark, assignBenchmarkRanks, displayRank, levelThumbnail, levelSlug } from '../util.js';
+import { passesBenchmark, assignBenchmarkRanks, displayRank, levelThumbnail } from '../util.js';
 import { score } from "../score.js";
 import { fetchEditors, fetchList, fetchPending } from "../content.js";
 
 import Spinner from "../components/Spinner.js";
-import LevelAuthors from "../components/List/LevelAuthors.js";
+import LevelPanel from "../components/List/LevelPanel.js";
 
 const roleIconMap = {
     owner: "crown",
@@ -15,26 +15,27 @@ const roleIconMap = {
 };
 
 export default {
-    components: { Spinner, LevelAuthors },
+    components: { Spinner, LevelPanel },
     template: `
     <main v-if="loading" class="surface" style="display:flex;align-items:center;justify-content:center;">
         <Spinner></Spinner>
     </main>
-    <main v-else class="page-list-new page-with-hero">
-        <div class="page-hero">
-            <div class="page-hero-content">
-                <div class="page-hero-badge">.../#/listfuture</div>
+    <main v-else class="page-list-new page-with-hero ull2">
+        <div class="u-phero">
+            <div class="u-phero__body">
                 <h1>Future List</h1>
-                <p>This tier functions as a focused preview, listing only levels with a very high likelihood of soon verification and publication. It represents the most immediate and probable future additions to the Demonlist.</p>
+                <p>The strictest of the three tiers: only levels with a very high likelihood of being verified and published soon. Read this one for what is coming out next.</p>
             </div>
-            <div class="page-hero-stat">
-                <span class="page-hero-stat-value">{{ visibleCount }}</span>
-                <span class="page-hero-stat-label">levels total</span>
+            <div class="u-phero__side">
+                <div class="u-stat"><div class="u-stat__k">levels total</div><span class="u-stat__v">{{ heroCount }}</span></div>
             </div>
         </div>
         <div class="list-container-new surface">
             <div class="search-row">
-                <input v-model="search" class="search-new" type="text" placeholder="Search levels..." />
+                <label class="search-field">
+                    <span class="info-mag" aria-hidden="true"></span>
+                    <input v-model="search" class="search-new" type="text" placeholder="Search levels..." />
+                </label>
                 <button class="filters-btn" @click="showFilters = true" title="Filters">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/></svg>
                 </button>
@@ -62,7 +63,7 @@ export default {
             </table>
             <div v-if="noResults" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem 0;gap:0.5rem;opacity:0.25;text-align:center;color:var(--color-on-background);">
                 <span style="font-size:2rem;">🔍</span>
-                <p style="font-size:0.85rem;font-family:'Lexend Deca',sans-serif;">No levels match your search.</p>
+                <p style="font-size:0.85rem;font-family:'Lexend Deca',sans-serif;">No levels match your search or filters.</p>
             </div>
             <div v-if="pendingSuggestion && (noResults || visibleCount <= 3)" style="display:flex;flex-direction:column;align-items:center;gap:0.55rem;margin:1.5rem auto 1rem;max-width:26rem;padding:1.25rem 1.5rem;border:1px solid rgba(128,128,128,0.25);border-radius:0.6rem;font-family:'Lexend Deca',sans-serif;text-align:center;color:var(--color-on-background);">
                 <p style="font-size:0.82rem;opacity:0.55;margin:0;">Maybe you were searching for this:</p>
@@ -82,113 +83,7 @@ export default {
             </div>
         </div>
         <div class="level-container-new surface">
-            <div class="level" v-if="level">
-                <div class="level-head">
-                    <div class="level-head__text">
-                        <h1>{{ level.name }}</h1>
-                        <div v-if="level.allLevelsRank || level.mainRank" class="cross-list-ranks" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;font-family:'Lexend Deca',sans-serif;font-size:0.9rem;opacity:0.45;margin-top:0.6rem;">
-                            <span v-if="level.allLevelsRank">#{{ level.allLevelsRank }} in All Levels</span>
-                            <span v-if="level.mainRank">{{ level.allLevelsRank ? '· ' : '' }}#{{ level.mainRank }} in Main List</span>
-                        </div>
-                    </div>
-                    <router-link v-if="level.path" class="level-open"
-                                 :to="'/level/' + levelSlug(level.path, allPaths)">
-                        <span>Open Level Page</span>
-                        <svg class="level-open__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor"
-                             stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M6.5 3.5H4a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 4 13.5h7a1.5 1.5 0 0 0 1.5-1.5V9.5" />
-                            <path d="M9.5 2.5h4v4" />
-                            <path d="M13.5 2.5 7.5 8.5" />
-                        </svg>
-                    </router-link>
-                </div>
-                <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier" :isVerified="level.isVerified"></LevelAuthors>
-                <div style="display:flex; flex-wrap:wrap;">
-                    <div v-for="tag in level.tags" class="tag">{{tag}}</div>
-                </div>
-                <div>
-                    <div v-if="!level.isVerified && level.records[0].percent != 100">
-                        <div v-if="!level.isVerified && level.records[0].percent != 0" class="worldrecord">
-                            <p class="type-body">
-                                World Record - From 0: <a v-if="level.records[0].link && level.records[0].link != '#'" :href="level.records[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.records[0].percent}}% by {{level.records[0].user}}</a><template v-else>{{level.records[0].percent}}% by {{level.records[0].user}}</template>
-                            </p>
-                        </div>
-                        <div v-if="!level.isVerified && level.records[0].percent == 0" class="worldrecord">
-                            <p class="type-body">World Record - From 0: None</p>
-                        </div>
-                        <div v-if="!level.isVerified && level.run[0].percent != '0'" class="worldrecord">
-                            <p class="type-body">
-                                World Record - Run: <a v-if="level.run[0].link && level.run[0].link != '#'" :href="level.run[0].link" target="_blank" style="text-decoration: underline; cursor: pointer;">{{level.run[0].percent}}% by {{level.run[0].user}}</a><template v-else>{{level.run[0].percent}}% by {{level.run[0].user}}</template>
-                            </p>
-                        </div>
-                        <div v-if="!level.isVerified && level.run[0].percent == '0'" class="worldrecord">
-                            <p class="type-body">World Record - Run: None</p>
-                        </div>
-                    </div>
-                    <div v-if="!level.isVerified && level.records[0].percent == 100" class="worldrecord">
-                        <p class="type-body">Layout verified by {{level.records[0].user}}</p>
-                    </div>
-                    <div class="lvlstatus">
-                        <p class="type-body">
-                            <template v-if="level.isVerified">Status: Verified</template>
-                            <template v-if="level.percentFinished == 0">Status: Layout</template>
-                            <template v-if="level.percentFinished == 100 && !level.isVerified">Status: Being Verified</template>
-                            <template v-if="level.percentFinished != 0 && level.percentFinished != 100">Status: Decoration being made - {{level.percentFinished}}% done</template>
-                        </p>
-                    </div>
-                </div>
-                <div v-if="level.isVerified" class="tabs">
-                    <button class="tab" :class="{selected: toggledShowcase || !level.isVerified}" @click="toggledShowcase = true">
-                        <span class="type-label-lg">Showcase</span>
-                    </button>
-                    <template v-if="level.isVerified">
-                        <button class="tab type-label-lg" :class="{selected: !toggledShowcase}" @click="toggledShowcase = false">
-                            <span class="type-label-lg">Verification</span>
-                        </button>
-                    </template>
-                </div>
-                <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
-                <ul class="stats">
-                    <li>
-                        <div class="type-title-sm">ID</div>
-                        <p>{{ (level.id === "private" && level.leakID != null) ? level.leakID : level.id }}</p>
-                    </li>
-                    <li>
-                        <div class="type-title-sm">Length</div>
-                        <p>{{Math.floor(level.length/60)}}m {{level.length%60}}s</p>
-                    </li>
-                    <li>
-                        <div class="type-title-sm">Last Update</div>
-                        <p>{{level.lastUpd}}</p>
-                    </li>
-                </ul>
-                <a v-if="level.path" class="level-share"
-                   :class="{ 'level-share--copied': copiedPath === level.path }"
-                   :href="'/level/' + levelSlug(level.path, allPaths)"
-                   @click.prevent="copyLevelLink(level)">
-                    <svg v-if="copiedPath === level.path" class="level-share__icon" viewBox="0 0 16 16"
-                         fill="none" stroke="currentColor" stroke-width="1.8"
-                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M3 8.5l3.2 3.2L13 5" />
-                    </svg>
-                    <svg v-else class="level-share__icon" viewBox="0 0 16 16"
-                         fill="none" stroke="currentColor" stroke-width="1.5"
-                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M6.6 9.4a2.9 2.9 0 0 0 4.1 0l2-2a2.9 2.9 0 1 0-4.1-4.1l-.6.6" />
-                        <path d="M9.4 6.6a2.9 2.9 0 0 0-4.1 0l-2 2a2.9 2.9 0 1 0 4.1 4.1l.6-.6" />
-                    </svg>
-                    <span>{{ copiedPath === level.path ? 'Link copied' : 'Share level' }}</span>
-                </a>
-                <ul class="stats" v-if="level.frameCounter">
-                    <li>
-                        <div class="type-title-sm">Frame Windows Counter</div>
-                        <p><a :href="level.frameCounter" target="_blank" style="text-decoration:underline;cursor:pointer;">Watch Here</a></p>
-                    </li>
-                </ul>
-            </div>
-            <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                <p>Select a level</p>
-            </div>
+            <LevelPanel :level="level" :all-paths="allPaths" current="future"></LevelPanel>
         </div>
 
         <!-- Filters Popup -->
@@ -243,10 +138,6 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        toggledShowcase: false,
-        // Which level's link was just copied, so the share button can confirm.
-        copiedPath: '',
-        copiedTimer: null,
         showFilters: false,
         statusFilters: [
             { active: false, name: "Public", key: "Public" },
@@ -293,7 +184,9 @@ export default {
             return (this.list || []).map(([level]) => level?.path).filter(Boolean);
         },
         noResults() {
-            if (!this.list || !this.search.trim()) return false;
+            // Filters empty the list the same way a search does, and the page
+            // owes the reader the same answer either way.
+            if (!this.list || !this.list.length) return false;
             return this.list.every(([level]) => !level || level.isHidden);
         },
         pendingSuggestion() {
@@ -304,13 +197,28 @@ export default {
         visibleCount() {
             return (this.list || []).filter(([level]) => level && !level.isHidden).length;
         },
+        // What the list holds, which is what its rank numbers count: a row's
+        // rank is its index in this list, so the last row reads #N where N is
+        // this. The hero used to print visibleCount instead, and the two
+        // disagreed by however many levels were hidden — the ones flagged
+        // Pending Removal are hidden from the table but keep their placement,
+        // so the heading said 398 while the last row read #411.
+        listedCount() {
+            return (this.list || []).filter(([level]) => level).length;
+        },
+        // Whether the reader has narrowed the view themselves. Levels hidden
+        // because they are pending removal are not a narrowing — they are the
+        // page's normal state — so they must not turn the count into "N of M".
+        isNarrowed() {
+            if (this.search.trim()) return true;
+            if (this.minDecoration > 0 || this.minVerification > 0) return true;
+            return [...this.statusFilters, ...this.lengthFilters, ...this.otherFilters].some((f) => f.active);
+        },
+        heroCount() {
+            return this.isNarrowed ? `${this.visibleCount} of ${this.listedCount}` : this.listedCount;
+        },
         level() {
             return this.list[this.selected]?.[0];
-        },
-        video() {
-            if (!this.level) return '';
-            if (!this.level.showcase) return embed(this.level.verification);
-            return embed(this.toggledShowcase || !this.level.isVerified ? this.level.showcase : this.level.verification);
         },
     },
     async mounted() {
@@ -362,9 +270,6 @@ export default {
     beforeUnmount() {
         if (this._scrollEl) this._scrollEl.removeEventListener('scroll', this._onScroll);
     },
-    unmounted() {
-        clearTimeout(this.copiedTimer);
-    },
     methods: {
         displayRank,
         // The left column (.list-container-new) is the scroll container. Show the
@@ -387,7 +292,6 @@ export default {
         scrollToTop() {
             if (this._scrollEl) this._scrollEl.scrollTo({ top: 0, behavior: 'smooth' });
         },
-        embed,
         score,
         getLevelNameStyle(level, isSelected) {
             if (!level) return {};
@@ -420,37 +324,7 @@ export default {
             else color = dark ? (isSelected ? '#88bbff' : '#5599ff') : (isSelected ? '#6c95cc' : '#447acc');
             return { color, fontWeight: level.isVerified ? 'bold' : 'normal' };
         },
-        levelSlug,
         levelThumbnail,
-        async copyLevelLink(level) {
-            const url = window.location.origin + '/level/' + levelSlug(level.path, this.allPaths);
-            let copied = false;
-            try {
-                await navigator.clipboard.writeText(url);
-                copied = true;
-            } catch {
-                // Clipboard API needs a secure context and permission; fall back
-                // to a throwaway selection, which works anywhere.
-                const field = document.createElement('textarea');
-                field.value = url;
-                field.setAttribute('readonly', '');
-                field.style.position = 'fixed';
-                field.style.opacity = '0';
-                document.body.appendChild(field);
-                field.select();
-                try { copied = document.execCommand('copy'); } catch { copied = false; }
-                field.remove();
-            }
-            // If neither route worked, navigate instead — the link still leads
-            // somewhere useful rather than doing nothing.
-            if (!copied) {
-                this.$router.push('/level/' + levelSlug(level.path, this.allPaths));
-                return;
-            }
-            this.copiedPath = level.path;
-            clearTimeout(this.copiedTimer);
-            this.copiedTimer = setTimeout(() => { this.copiedPath = ''; }, 2000);
-        },
         isOldLevel(level) {
             if (!level.lastUpd) return false;
             const parts = level.lastUpd.split('.');

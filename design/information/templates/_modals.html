@@ -1,0 +1,446 @@
+<!-- ─────────────────────────────────────────────────────────────────────────
+     Shared modal layer. A, C and E all open the same reader; what differs
+     between them is the surface in front of it, which is the whole point of
+     comparing them. The build injects this file at each template's MODALS slot
+     and substitutes __P__ with the template's name, so the ids and the radio
+     group are unique per mockup.
+
+     Radios rather than :target: a radio does not move the scroll position or
+     rewrite the URL, which keeps three mockups on one deck page independent.
+     In the app this is a route or a piece of component state.
+     ───────────────────────────────────────────────────────────────────────── -->
+<style>
+.mk-__P__ .mkm-r { position: absolute; opacity: 0; pointer-events: none; }
+.mk-__P__ .mkm {
+    display: none; position: absolute; inset: 0; z-index: 20;
+    background: color-mix(in srgb, var(--color-background) 82%, transparent);
+    backdrop-filter: blur(0.35rem);
+    padding: 2.5rem;
+}
+/*__OPEN_RULES__*/
+
+.mk-__P__ .mkm__scrim { position: absolute; inset: 0; cursor: default; }
+.mk-__P__ .mkm__win {
+    position: relative; margin: auto; display: flex; flex-direction: column;
+    width: min(64rem, 100%); max-height: 100%;
+    border-radius: var(--u-r); border: 1px solid var(--u-line-2);
+    background: var(--color-background);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+.root.dark .mk-__P__ .mkm__win { box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.18); }
+.mk-__P__ .mkm--sm .mkm__win { width: min(38rem, 100%); }
+.mk-__P__ .mkm__bar { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.35rem; border-bottom: 1px solid var(--u-line); flex-shrink: 0; }
+.mk-__P__ .mkm__bar b { font-size: 0.95rem; font-weight: 700; }
+.mk-__P__ .mkm__bar .mkm__k { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.35; }
+.mk-__P__ .mkm__find { margin-left: auto; width: 15rem; padding: 0.4rem 0.7rem; border-radius: var(--u-r-sm); background: var(--u-fill); border: 1px solid var(--u-line); font-size: 0.74rem; opacity: 0.45; }
+.mk-__P__ .mkm__x { display: flex; align-items: center; gap: 0.4rem; font-size: 0.74rem; opacity: 0.5; cursor: pointer; white-space: nowrap; }
+.mk-__P__ .mkm__x:hover { opacity: 0.9; }
+.mk-__P__ .mkm__body { overflow-y: auto; padding: 1.75rem 2rem 2.25rem; }
+.mk-__P__ .mkm__split { display: grid; grid-template-columns: 15rem minmax(0, 1fr); overflow: hidden; }
+.mk-__P__ .mkm__toc { border-right: 1px solid var(--u-line); overflow-y: auto; padding: 1.1rem 0 1.5rem; }
+.mk-__P__ .mkm__tocg { padding: 0.9rem 1.35rem 0.3rem; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.mk-__P__ .mkm__tocg:first-child { padding-top: 0; }
+.mk-__P__ .mkm__toc a { display: block; padding: 0.33rem 1.35rem; font-size: 0.77rem; line-height: 1.45; opacity: 0.5; border-left: 2px solid transparent; }
+.mk-__P__ .mkm__toc a.on { opacity: 1; font-weight: 600; color: var(--u-accent); border-left-color: var(--color-primary); background: var(--u-fill); }
+
+/* Reading typography, one setting for every modal. */
+.mk-__P__ .mkm h3 { margin: 0 0 0.9rem; font-family: inherit; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+.mk-__P__ .mkm h4 { margin: 1.6rem 0 0.55rem; font-family: inherit; font-size: 0.9rem; font-weight: 600; }
+.mk-__P__ .mkm p, .mk-__P__ .mkm li { font-size: 0.85rem; line-height: 1.78; opacity: 0.72; }
+.mk-__P__ .mkm p { margin: 0 0 0.85rem; max-width: 46rem; }
+.mk-__P__ .mkm ul { margin: 0 0 0.9rem; padding-left: 1.1rem; max-width: 46rem; }
+.mk-__P__ .mkm li { margin-bottom: 0.4rem; }
+.mk-__P__ .mkm a.lk { color: var(--u-accent); text-decoration: underline; text-underline-offset: 0.15em; }
+.mk-__P__ .mkm__crumb { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--u-accent); margin-bottom: 0.5rem; }
+.mk-__P__ .mkm__lead { font-size: 0.92rem !important; line-height: 1.75; opacity: 0.6; margin-bottom: 1.6rem; }
+
+.mk-__P__ .mkm__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.mk-__P__ .mkm__q { padding: 0.9rem 0; border-bottom: 1px solid var(--u-line); }
+.mk-__P__ .mkm__q:first-of-type { border-top: 1px solid var(--u-line); }
+.mk-__P__ .mkm__q b { display: block; font-size: 0.86rem; font-weight: 600; line-height: 1.45; }
+.mk-__P__ .mkm__q p { margin: 0.35rem 0 0; font-size: 0.81rem; }
+.mk-__P__ .mkm code, .mk-__P__ .mkm .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; }
+
+.mk-__P__ .mkm__tbl { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin-bottom: 1.2rem; }
+.mk-__P__ .mkm__tbl th { text-align: left; padding: 0.4rem 1rem 0.4rem 0; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; border-bottom: 1px solid var(--u-line); }
+.mk-__P__ .mkm__tbl td { padding: 0.42rem 1rem 0.42rem 0; border-bottom: 1px solid var(--u-line); opacity: 0.75; vertical-align: top; }
+.mk-__P__ .mkm__tbl td.mono { opacity: 1; }
+.mk-__P__ .mkm__tbl--num td, .mk-__P__ .mkm__tbl--num th { text-align: right; font-variant-numeric: tabular-nums; }
+.mk-__P__ .mkm__tbl--num td:first-child, .mk-__P__ .mkm__tbl--num th:first-child { text-align: left; }
+.mk-__P__ .mkm__pre { margin: 0 0 1.2rem; padding: 0.85rem 1rem; border-radius: var(--u-r-sm); background: var(--u-fill); border: 1px solid var(--u-line); font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; line-height: 1.7; white-space: pre; overflow-x: auto; }
+.mk-__P__ .mkm__pre em { font-style: normal; opacity: 0.45; }
+.mk-__P__ .mkm__get { display: inline-block; margin-right: 0.5rem; padding: 0.05rem 0.35rem; border-radius: 0.25rem; background: var(--u-fill-2); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700; opacity: 0.7; }
+
+.mk-__P__ .mkm__legend { display: grid; gap: 0.45rem; }
+.mk-__P__ .mkm__legend > div { display: flex; align-items: center; gap: 0.85rem; font-size: 0.8rem; }
+.mk-__P__ .mkm__legend .u-pill { min-width: 9rem; justify-content: center; }
+.mk-__P__ .mkm__legend > div > span:last-child { opacity: 0.55; }
+
+.mk-__P__ .mkm__nav { display: block; padding: 0.6rem 0; border-top: 1px solid var(--u-line); }
+.mk-__P__ .mkm__nav:hover .mkm__navn { color: var(--u-accent); }
+.mk-__P__ .mkm__navn { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.86rem; font-weight: 600; line-height: 1.3; transition: color 120ms ease; }
+.mk-__P__ .mkm__navn code { font-size: 0.65rem; font-weight: 400; opacity: 0.35; }
+.mk-__P__ .mkm__navd { display: block; margin-top: 0.25rem; font-size: 0.78rem; line-height: 1.65; opacity: 0.55; }
+.mk-__P__ .mkm--reference .mkm__legend { margin-top: 0.9rem; }
+.mk-__P__ .mkm__people { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem 1.5rem; }
+.mk-__P__ .mkm__p { display: flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0; font-size: 0.84rem; }
+.mk-__P__ .mkm__p .u-chip { margin-left: auto; padding: 0.1rem 0.45rem; font-size: 0.61rem; opacity: 0.6; }
+.mk-__P__ .mkm__map { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.mk-__P__ .mkm__mapc { display: block; padding: 0.75rem 0.9rem; }
+.mk-__P__ .mkm__mapc b { display: block; font-size: 0.82rem; font-weight: 600; }
+.mk-__P__ .mkm__mapc span { display: block; margin-top: 0.25rem; font-size: 0.74rem; line-height: 1.5; opacity: 0.5; }
+.mk-__P__ .mkm__links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.1rem; }
+</style>
+
+<!--__RADIOS__-->
+
+<!--m:guidelines-->
+<div class="mkm mkm--guidelines">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">The rules</span><b>Guidelines</b>
+            <div class="mkm__find">Search the guidelines&hellip;</div>
+            <label class="mkm__x" for="__P__-m-none">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__split">
+            <nav class="mkm__toc">
+                <div class="mkm__tocg">General</div>
+                <a href="#">Introduction</a>
+                <a href="#">Glossary</a>
+                <div class="mkm__tocg">Acceptance of Records</div>
+                <a href="#">Definition of a World Record</a>
+                <a class="on" href="#">Proof of legitimacy</a>
+                <a href="#">Tolerance and leniency</a>
+                <a href="#">Cheating and penalties</a>
+                <div class="mkm__tocg">Level Placement</div>
+                <a href="#">List structure</a>
+                <a href="#">Level selection</a>
+                <a href="#">Determining positions</a>
+                <div class="mkm__tocg">Content Policy</div>
+                <a href="#">List records</a>
+                <a href="#">Levels and thumbnails</a>
+                <div class="mkm__tocg">Technical Support</div>
+                <a href="#">Staff roles</a>
+                <a href="#">Ethical standards</a>
+            </nav>
+            <div class="mkm__body">
+                <div class="mkm__crumb">Acceptance of Records</div>
+                <h3>Requirements for proof of legitimacy</h3>
+                <p>Before submitting a record, you must familiarise yourself with the list of mandatory proof of legitimacy, as well as the requirements for it, to ensure that the record you are submitting complies with them &mdash; otherwise it will be rejected immediately, before the verification stage.</p>
+                <h4>1. Video recording of the record</h4>
+                <p>The recording must show the attempt in full, from its starting percentage to the point of death or to 100%. It may contain editing elements intended to conceal the player&rsquo;s personal information, in which case the original recording must be linked in the notes field.</p>
+                <ul>
+                    <li>the level must be the version listed on this site;</li>
+                    <li>the endscreen must be visible, or the recording must continue past the completion;</li>
+                    <li>cuts are permitted only where the raw footage is attached alongside.</li>
+                </ul>
+                <h4>2. Audio</h4>
+                <p>In-game source audio or clicks. Either is accepted, both are strongly preferred; where neither is present, raw footage that has them must be attached.</p>
+                <h4>3. Indicators</h4>
+                <p>A cheat indicator, and an fps/tps display where the mod menu provides one. Neither is strictly mandatory, but a record without them is assessed more strictly and may be asked for raw footage.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/m-->
+
+<!--m:faq-->
+<div class="mkm mkm--faq">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Answers</span><b>FAQ</b>
+            <div class="mkm__find">Search 14 questions&hellip;</div>
+            <label class="mkm__x" for="__P__-m-none">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">Getting on the list</div>
+                    <div class="mkm__q"><b>How does a level get on the list?</b><p>Staff select it. There is no queue a creator joins: moderators assess levels against the Level Selection criteria &mdash; classic gameplay, a public recording, an intended official-server release and a credible chance of being rated &mdash; and place the ones that pass on the Pending List until an exact position is settled.</p></div>
+                    <div class="mkm__q"><b>My level isn&rsquo;t listed. Can I put it forward?</b><p>Raise it in <code>#list-discussion</code> with a public recording of its current state. It is not a submission form, and it goes through the same criteria as everything else.</p></div>
+                    <div class="mkm__q"><b>Why is a level on Pending and not on the list?</b><p>It passed selection but has no exact position yet. Pending shows the range it is expected to land in and whether it is moving up or down inside it.</p></div>
+                    <div class="mkm__q"><b>A level&rsquo;s information is wrong.</b><p>Report it in <code>#level-update-reporting</code> with something to back it up &mdash; footage, a creator statement, tester feedback.</p></div>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Records</div>
+                    <div class="mkm__q"><b>How do I submit a record?</b><p>Through the Discord server. Read <a class="lk" href="#">Acceptance of Records</a> first &mdash; a record without the required proof is rejected before it is assessed, not sent back for more.</p></div>
+                    <div class="mkm__q"><b>What proof does a record need?</b><p>A complete uncut playthrough (raw footage attached if your video has cuts), source audio or clicks, and a cheat indicator and fps/tps display where your mod menu provides them &mdash; on the version of the level this site lists.</p></div>
+                    <div class="mkm__q"><b>What counts as a world record here?</b><p>Two things, tracked separately: the best completion from 0%, and the longest single run on the current version of the level.</p></div>
+                    <div class="mkm__q"><b>My record was rejected. Can it be reviewed?</b><p>Records rejected because the player changed the level are reviewable if the creator later made the same change in a new version. Anything rejected for missing proof needs resubmitting with the proof.</p></div>
+                </div>
+            </div>
+            <h4>How points are calculated</h4>
+            <p>From two things only: the level&rsquo;s rank in <b>All Levels</b>, and the percentage of the record. A verification is worth twice a 100% record on the same level; completing a level that is not verified yet is worth 0.8 of a verification.</p>
+            <table class="mkm__tbl mkm__tbl--num" style="max-width:34rem">
+                <thead><tr><th></th><th>#1</th><th>#10</th><th>#50</th><th>#100</th></tr></thead>
+                <tbody>
+                    <tr><td>100% record</td><td>1459</td><td>1196</td><td>663</td><td>425</td></tr>
+                    <tr><td>50% record</td><td>851</td><td>698</td><td>387</td><td>248</td></tr>
+                    <tr><td>Verification</td><td>2919</td><td>2392</td><td>1325</td><td>849</td></tr>
+                </tbody>
+            </table>
+            <p>Position is worth far more than percentage: a 50% on #1 beats a 100% on #100. And because points follow a level&rsquo;s <em>current</em> rank, a total changes when levels move, without anyone submitting anything.</p>
+        </div>
+    </div>
+</div>
+<!--/m-->
+
+<!--m:about-->
+<div class="mkm mkm--about">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Start here</span><b>What this list is</b>
+            <label class="mkm__x" for="__P__-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">The Upcoming Levels List catalogues upcoming Top 1&ndash;100 Extreme Demons projected to be verified and placed on the Demonlist, along with unrated Extreme Demons that would have qualified for a rating when they were made. It is a forecast of what the Demonlist is about to look like &mdash; not a record of what has already happened.</p>
+            <p>Nothing here is official. Positions are estimates made by the list staff against written criteria, and they move as levels progress. Levels that are already rated are placed in strict accordance with their ranking on Pointercrate.</p>
+            <h4>Where is what</h4>
+            <div class="mkm__map">
+                <a class="u-card mkm__mapc" href="#"><b>All Levels</b><span>Every level with a conceivable chance. A level&rsquo;s rank here is what leaderboard points are calculated from.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Main List</b><span>The same order, higher bar: levels that meet the standards for an official rating.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Future List</b><span>The highest bar of the three &mdash; levels very likely to be verified and published soon.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Pending</b><span>Accepted but not yet placed, with the expected range and the direction it is moving.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Upcoming</b><span>The same levels ordered by how close they are to verification rather than by difficulty.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Leaderboard</b><span>Players ranked by what their records, runs and verifications are worth.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Events</b><span>Level of the Day, Level of the Month, and the level closest to verification.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>A level&rsquo;s page</b><span>Status, progress, records, creators, and its rank in each tier.</span></a>
+            </div>
+            <h4>How to read a level</h4>
+            <p>The colour of a name is the level&rsquo;s state, from layout through decoration and verification to rated. Two percentages follow every level &mdash; how much of the decoration is done, and how far the best run has got. The badges are its position in each tier: a level can be #4 in All Levels and #2 in Future List at once.</p>
+        </div>
+    </div>
+</div>
+<!--/m-->
+
+<!--m:staff-->
+<div class="mkm mkm--staff">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Who to talk to</span><b>Staff &amp; contact</b>
+            <label class="mkm__x" for="__P__-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">Moderators and Elder Moderators determine level positions, place levels, take part in quality control and keep the site up to date. Admins manage a sector of the project&rsquo;s operation; the List Leader oversees the list and its staff.</p>
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">The team <span class="u-count">12</span></div>
+                    <div class="mkm__people">
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/crown.svg" alt="" width="15" height="15" /><b>QwidziT</b><span class="u-chip">Leader</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-gear.svg" alt="" width="15" height="15" /><b>exiled_shade</b><span class="u-chip">Admin</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" width="15" height="15" /><b>niroi</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" width="15" height="15" /><b>Keres</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" width="15" height="15" /><b>LukeLGamer</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-shield.svg" alt="" width="15" height="15" /><b>ItzDel1ghtfuL</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-lock.svg" alt="" width="15" height="15" /><b>Terralith</b><span class="u-chip">Mod</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/user-lock.svg" alt="" width="15" height="15" /><b>TheCatAstronaut</b><span class="u-chip">Mod</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/code.svg" alt="" width="15" height="15" /><b>Prometheus</b><span class="u-chip">Dev</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/code.svg" alt="" width="15" height="15" /><b>NikoYakorem</b><span class="u-chip">Dev</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/code.svg" alt="" width="15" height="15" /><b>ausansdev</b><span class="u-chip">Dev</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="../../assets/code.svg" alt="" width="15" height="15" /><b>QwidziT</b><span class="u-chip">Dev</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Where to take what</div>
+                    <dl class="u-dl">
+                        <dt>A record</dt><dd>The Discord server</dd>
+                        <dt>A level that should be listed</dt><dd>#list-discussion</dd>
+                        <dt>Information that is out of date</dt><dd>#level-update-reporting</dd>
+                        <dt>Something broken on the site</dt><dd>Prometheus</dd>
+                        <dt>A complaint about staff</dt><dd>An Admin, or the List Leader</dd>
+                    </dl>
+                    <div class="mkm__links">
+                        <a class="u-btn" href="#"><img src="../../assets/discord.svg" alt="" width="14" height="14" />discord.gg/QRX47v2qyC</a>
+                        <a class="u-btn u-btn--ghost" href="#"><img class="mk-inv" src="../../assets/x.svg" alt="" width="12" height="12" />@ull_gd</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/m-->
+
+<!--m:api-->
+<div class="mkm mkm--api">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Build on it</span><b>API documentation</b>
+            <div class="mkm__find">Search endpoints and fields&hellip;</div>
+            <label class="mkm__x" for="__P__-m-none">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">Everything this site shows comes from a public JSON API. It needs no key, no signup and no referrer, and it sends <code>Access-Control-Allow-Origin: *</code>, so a page or a bot can read the list straight from the browser.</p>
+            <h4>Base URL</h4>
+            <div class="mkm__pre">https://d1-wrkr.ullteam.workers.dev</div>
+            <h4>Endpoints</h4>
+            <table class="mkm__tbl">
+                <thead><tr><th style="width:19rem">Path</th><th>Returns</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/list</td><td>Every level, in rank order</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/list/main</td><td>The Main List</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/list/future</td><td>The Future List</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/levels/{position}</td><td>One level, by its 1-based rank</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/pending</td><td>Pending List entries</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/editors</td><td>The staff list, in the order staff arranged it</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/level-month</td><td>Level of the Month, or <code>null</code></td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/level-verif</td><td>Closest to verification, or <code>null</code></td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/recent-changes</td><td>The changes feed, grouped <code>{date, entries[]}</code></td></tr>
+                </tbody>
+            </table>
+            <p>Writing to the list needs a staff API key and is not part of the public API. There is no public leaderboard endpoint: the leaderboard is derived from <code>/api/list</code>, and the same rules are written out under &ldquo;How points are calculated&rdquo; in the FAQ.</p>
+            <h4>Example</h4>
+            <div class="mkm__pre">curl https://d1-wrkr.ullteam.workers.dev/api/list
+
+<em>[
+  {
+    "path": "manray",
+    "name": "M A N R A Y",
+    "author": "akunakunn",
+    "creators": ["akunakunn", "Wobbly"],
+    "verifier": "Open Verification",
+    "percentFinished": 80,
+    "records": [{ "user": "Zoink", "percent": 61, "hz": 240 }],
+    "isMain": true, "isFuture": false, "isVerified": false,
+    "sort_order": 4
+  },
+  …
+]</em></div>
+            <h4>The level object</h4>
+            <table class="mkm__tbl">
+                <thead><tr><th style="width:11rem">Field</th><th style="width:7rem">Type</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono">path</td><td>string</td><td>Slug; the level&rsquo;s URL is <code>/level/{path}</code></td></tr>
+                    <tr><td class="mono">name, author</td><td>string</td><td>Level name and host</td></tr>
+                    <tr><td class="mono">creators</td><td>string[]</td><td>Everyone credited</td></tr>
+                    <tr><td class="mono">verifier</td><td>string</td><td>Verifier, or <code>"Open Verification"</code></td></tr>
+                    <tr><td class="mono">percentFinished</td><td>number</td><td>Decoration progress, 0&ndash;100</td></tr>
+                    <tr><td class="mono">records, run</td><td>object[]</td><td><code>{user, link, percent, hz}</code> &mdash; completions and runs</td></tr>
+                    <tr><td class="mono">tags</td><td>string[]</td><td><code>Public</code>, <code>Layout</code>, <code>Rated</code>, &hellip;</td></tr>
+                    <tr><td class="mono">isMain, isFuture, isVerified, benchmark</td><td>boolean</td><td>Which tiers it is on, and its state</td></tr>
+                    <tr><td class="mono">sort_order</td><td>number</td><td>Rank in All Levels</td></tr>
+                </tbody>
+            </table>
+            <p>Twelve further fields &mdash; <code>id</code>, <code>rating</code>, <code>length</code>, <code>percentToQualify</code>, <code>lastUpd</code>, the video URLs &mdash; are documented in full in the repository&rsquo;s README.</p>
+            <h4>Fair use</h4>
+            <ul>
+                <li>cache what you fetch: the list changes a few times a day, not a few times a second;</li>
+                <li>identify your bot in the user agent if you are polling on a schedule;</li>
+                <li>the data is community work &mdash; credit the list and link back to it;</li>
+                <li>positions are estimates and change, so treat a stored rank as a snapshot, not a fact.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/m-->
+
+<!--m:navigation-->
+<div class="mkm mkm--navigation">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Navigation &middot; 9 pages</span><b>What is on each page</b>
+            <label class="mkm__x" for="__P__-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">Every page on the site, grouped the way the menu groups them.</p>
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">Lists</div>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">All Levels <code>/list</code></span>
+                        <span class="mkm__navd">Every level with a conceivable chance of being verified and published, hardest first. The widest of the three tiers, and the one a level&rsquo;s leaderboard points are calculated from &mdash; a record is worth what it is worth because of the level&rsquo;s rank <em>here</em>.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Main List <code>/listmain</code></span>
+                        <span class="mkm__navd">The same order with a higher bar: levels that already meet the standards required to be considered for an official rating. Shorter, and every entry is a serious candidate.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Future List <code>/listfuture</code></span>
+                        <span class="mkm__navd">The strictest tier &mdash; levels with a very high likelihood of being verified and published soon. Read this one if you only want what is about to happen.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">A level&rsquo;s page <code>/level/&hellip;</code></span>
+                        <span class="mkm__navd">One page per level: its state, how much of the decoration is done and how far the best run has got, every record and run with proof, its creators, and its rank in each tier at once.</span>
+                    </a>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Other</div>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Upcoming Levels <code>/upcoming</code></span>
+                        <span class="mkm__navd">The same unverified levels, reordered by how close they actually are to being verified rather than by how hard they are. The list of what is about to fall.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Pending List <code>/pending</code></span>
+                        <span class="mkm__navd">Levels that passed selection but have no exact position yet, with the range each is expected to land in and an arrow for which way it is moving inside it.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Leaderboard <code>/leaderboard</code></span>
+                        <span class="mkm__navd">Players ranked by the verifications, records and runs they hold on listed levels. Open a player to see every record behind their total and what each one is worth.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Events <code>/events</code></span>
+                        <span class="mkm__navd">Three levels the list is pointing at right now: one picked for the day, one for the month, and the one closest to being verified.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Home <code>/</code></span>
+                        <span class="mkm__navd">The size of each tier at a glance, the top of the list, the recent changes feed and the staff team.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/m-->
+
+<!--m:reference-->
+<div class="mkm mkm--reference">
+    <label class="mkm__scrim" for="__P__-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Reference &middot; 19 marks</span><b>What the marks mean</b>
+            <label class="mkm__x" for="__P__-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">Level colouring</div>
+                    <p style="font-size:0.8rem">A level&rsquo;s name is coloured by its state when Level Coloring is on &mdash; the same scale as the status pill on the level&rsquo;s own page. If names look plain, turn the setting on.</p>
+                    <div class="mkm__legend">
+                        <div><span class="u-pill u-pill--blue"><i></i>Layout</span><span>No decoration yet</span></div>
+                        <div><span class="u-pill u-pill--cyan"><i></i>Early deco</span><span>1&ndash;29% decorated</span></div>
+                        <div><span class="u-pill u-pill--green"><i></i>Mid deco</span><span>30&ndash;69% decorated</span></div>
+                        <div><span class="u-pill u-pill--yellow"><i></i>Late deco</span><span>70&ndash;99% decorated</span></div>
+                        <div><span class="u-pill u-pill--amber"><i></i>Deco done</span><span>Decoration finished</span></div>
+                        <div><span class="u-pill u-pill--orange"><i></i>Early verify</span><span>Best run 30&ndash;59%</span></div>
+                        <div><span class="u-pill u-pill--red"><i></i>Late verify</span><span>Best run 60&ndash;99%</span></div>
+                        <div><span class="u-pill u-pill--done"><i></i>Verified</span><span>Beaten, not yet rated</span></div>
+                        <div><span class="u-pill"><i></i>Rated</span><span>Verified and rated in game</span></div>
+                        <div><span class="u-pill u-pill--done">&#128683;</span><span>Pending removal</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Pending list icons</div>
+                    <p style="font-size:0.8rem">Icons on the Pending List say where a level is expected to land and which way it is moving inside that range.</p>
+                    <div class="mkm__legend">
+                        <div><img src="../../assets/move-up.svg" alt="" width="18" height="18" /><span>Moving up</span></div>
+                        <div><img src="../../assets/move-down.svg" alt="" width="18" height="18" /><span>Moving down</span></div>
+                        <div><img src="../../assets/1.svg" alt="" width="18" height="18" /><span>Pending #1</span></div>
+                        <div><img src="../../assets/10.svg" alt="" width="18" height="18" /><span>Pending Top 10</span></div>
+                        <div><img src="../../assets/20.svg" alt="" width="18" height="18" /><span>Pending Top 20</span></div>
+                        <div><img src="../../assets/30.svg" alt="" width="18" height="18" /><span>Pending Top 30</span></div>
+                        <div><img src="../../assets/50.svg" alt="" width="18" height="18" /><span>Pending Top 50</span></div>
+                        <div><img src="../../assets/75.svg" alt="" width="18" height="18" /><span>Pending Top 75</span></div>
+                        <div><img src="../../assets/question.svg" alt="" width="18" height="18" /><span>Unknown placement</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/m-->

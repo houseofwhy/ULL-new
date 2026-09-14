@@ -1,0 +1,240 @@
+<title>ULL — /information</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* ─────────────────────────────────────────────────────────────────────────
+   Review chrome, taken from design/preview.shell.html so this deck and the
+   page deck read as one thing. Deliberately quiet: the only colour on the
+   page should be inside the mockups.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+    --ground: #f4f3f6;
+    --panel: #ffffff;
+    --ink: #1b1a1f;
+    --muted: #6c6879;
+    --rule: rgba(108, 104, 121, 0.2);
+    --rule-soft: rgba(108, 104, 121, 0.11);
+    --accent: #5b12d6;
+    --warn: #b4541f;
+    --shadow: 0 1px 2px rgba(27, 26, 31, 0.05), 0 12px 34px rgba(27, 26, 31, 0.07);
+    --sans: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #100f14; --panel: #17161c; --ink: #eceaf2; --muted: #9b96a8;
+        --rule: rgba(155, 150, 168, 0.22); --rule-soft: rgba(155, 150, 168, 0.12);
+        --accent: #a583f7; --warn: #e2915c;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+}
+:root[data-theme="dark"] {
+    --ground: #100f14; --panel: #17161c; --ink: #eceaf2; --muted: #9b96a8;
+    --rule: rgba(155, 150, 168, 0.22); --rule-soft: rgba(155, 150, 168, 0.12);
+    --accent: #a583f7; --warn: #e2915c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); }
+
+.wrap { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; max-width: 98rem; margin: 0 auto; padding: 3rem 2.5rem 6rem; }
+
+/* ── Rail ── */
+.rail { position: sticky; top: 2rem; align-self: start; display: flex; flex-direction: column; gap: 1.5rem; }
+.rail__brand { display: flex; flex-direction: column; gap: 0.3rem; }
+.rail__brand b { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+.rail__brand span { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); }
+.rail__nav { display: flex; flex-direction: column; gap: 0.1rem; border-left: 1px solid var(--rule); }
+.rail__item { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.5rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; text-decoration: none; color: inherit; }
+.rail__item b { font-size: 0.82rem; font-weight: 500; }
+.rail__item code { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
+.rail__item:hover { border-left-color: var(--rule); }
+.rail__item.is-on { border-left-color: var(--accent); }
+.rail__item.is-on b { font-weight: 700; }
+.rail__toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    padding: 0.6rem 0.8rem; border: 1px solid var(--rule); border-radius: 0.5rem;
+    background: var(--panel); color: inherit; font-family: var(--mono); font-size: 0.66rem;
+    cursor: pointer; text-align: left;
+}
+.rail__toggle:hover { border-color: var(--accent); }
+.rail__toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rail__toggle b { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; }
+.rail__hint { font-family: var(--mono); font-size: 0.6rem; line-height: 1.6; color: var(--muted); }
+
+/* ── Intro ── */
+.intro { margin-bottom: 3.5rem; }
+.intro__eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.intro h1 { margin: 0.8rem 0 0; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em; text-wrap: balance; }
+.intro__lead { margin: 1.1rem 0 0; max-width: 46rem; font-size: 0.98rem; line-height: 1.7; color: var(--muted); }
+.intro__lead b { color: var(--ink); font-weight: 600; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1px; margin-top: 2.25rem; background: var(--rule-soft); border: 1px solid var(--rule-soft); border-radius: 0.6rem; overflow: hidden; }
+.rules div { background: var(--panel); padding: 1rem 1.15rem; }
+.rules dt { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.rules dd { margin: 0.45rem 0 0; font-size: 0.82rem; line-height: 1.55; }
+
+.sect { margin-top: 2.5rem; }
+.sect h3 { margin: 0 0 0.9rem; font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+.faults { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+.faults li { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.7rem; font-size: 0.85rem; line-height: 1.6; color: var(--muted); }
+.faults b { font-family: var(--mono); font-size: 0.7rem; color: var(--warn); }
+.faults span b { font-family: var(--sans); font-size: inherit; color: var(--ink); font-weight: 600; }
+.faults code { font-family: var(--mono); font-size: 0.78rem; color: var(--ink); }
+
+/* ── Page section ── */
+.pg { padding-top: 3.5rem; border-top: 1px solid var(--rule); margin-top: 3.5rem; }
+.pg__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.pg__label { display: flex; align-items: baseline; gap: 0.8rem; }
+.pg__label h2 { margin: 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+.pg__n { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); padding: 0.15rem 0.5rem; border: 1px solid var(--rule); border-radius: 0.3rem; }
+.pg__files { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+.pg__idea { margin: 1.1rem 0 0; max-width: 52rem; font-size: 0.92rem; line-height: 1.7; }
+.pg__notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; margin: 1.5rem 0 1.75rem; }
+.note { padding-left: 0.9rem; border-left: 2px solid var(--rule); }
+.note--weight { border-left-color: var(--accent); }
+.note--cost { border-left-color: var(--rule); }
+.note--watch { border-left-color: var(--warn); }
+.note__k { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.note p { margin: 0.5rem 0 0; font-size: 0.85rem; line-height: 1.7; }
+
+/* ── Mock frame ── */
+.frame { border: 1px solid var(--rule); border-radius: 0.7rem; overflow: hidden; box-shadow: var(--shadow); background: var(--panel); }
+.frame__bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--rule); background: var(--panel); }
+.frame__bar span { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--rule); }
+.frame__bar code { margin-left: 0.6rem; font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
+.frame__bar em { margin-left: auto; font-family: var(--mono); font-size: 0.62rem; font-style: normal; color: var(--accent); }
+.frame__view { height: 46rem; overflow: hidden; display: flex; flex-direction: column; }
+.frame__view > * { flex: 1; min-height: 0; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   The app's own theme tokens, copied from css/main.css so the mockups render
+   in the real palette. .root is ULL's dark default; .root.dark is its light
+   theme — the class names are inverted in the app and kept that way here.
+   ───────────────────────────────────────────────────────────────────────── */
+[data-mock].root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+    background: var(--color-background);
+    color: var(--color-on-background);
+}
+[data-mock].root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+/* Role icons ship as two files, -dark being the one for the light theme; the
+   mocks carry the dark-theme file and invert it under .root.dark, which is what
+   the app's :src binding does with a second request. The pending-list icons are
+   not in that set — they carry their own colours — so they never get .mk-inv. */
+[data-mock].root.dark .mk-inv { filter: invert(1); }
+
+/*__COMPONENT_CSS__*/
+
+@media (max-width: 1200px) {
+    .wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem 4rem; }
+    .rail { position: static; }
+    .rail__nav { flex-direction: row; flex-wrap: wrap; border-left: 0; }
+    .rail__item { border-left: 0; border-bottom: 2px solid transparent; }
+    .rail__item.is-on { border-left: 0; border-bottom-color: var(--accent); }
+    .frame__view { height: 40rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+    <aside class="rail">
+        <div class="rail__brand">
+            <b>/information</b>
+            <span>hub &middot; desktop</span>
+        </div>
+        <nav class="rail__nav">
+        <!--__NAV__-->
+        </nav>
+        <button class="rail__toggle" id="theme-toggle" type="button">
+            <b>Mockup theme</b>
+            <span id="theme-name">Dark</span>
+        </button>
+        <p class="rail__hint">The mockup is live &mdash; open a block, close a window. It is also a standalone page at pages/c-hub.html.</p>
+    </aside>
+
+    <main>
+        <div class="intro">
+            <div class="intro__eyebrow">Design proposal</div>
+            <h1>The hub, and what is behind each block</h1>
+            <p class="intro__lead">
+                <b>/information holds six things</b> &mdash; what the list is and where everything on the site
+                lives, the guidelines, two legends, the FAQ, who to talk to, and the API &mdash; and today it
+                stacks the four it has as cards of roughly equal size. The Pending List legend, nine rows of
+                icons, is given a full-width card; the guidelines, thirteen sections across five groups, are
+                given a 600&nbsp;px window to be read through. Weight on the page is the opposite of weight in
+                the content.
+            </p>
+            <p class="intro__lead">
+                This rebuilds it as a hub of six faces. Each carries a label, a name, one sentence and the
+                size of what is behind it &mdash; &ldquo;14 questions&rdquo;, &ldquo;9 pages&rdquo;,
+                &ldquo;19 marks&rdquo;, &ldquo;9 endpoints&rdquo; &mdash; and every one of them opens the same
+                reader over the page. The hero says what the list is, offers the full version at the end of the
+                sentence, and puts one search field under it. The blocks run in the order people arrive
+                wanting them: the <b>FAQ</b> first, the <b>navigation</b> beside it, the <b>guidelines</b>
+                three rows down the left, and the <b>reference</b>, <b>staff</b> and <b>API</b> stacked to
+                their right. At 1440&nbsp;px the whole page is one screen and a nudge.
+            </p>
+            <p class="intro__lead">
+                It is built from <b>css/ull-v2.css</b>, the component layer the rest of the site was rebuilt
+                on, so it introduces no new card, heading or button. The copy for the sections that did not
+                exist &mdash; what the list is, the navigation, the FAQ, the API &mdash; is drafted in
+                <b>design/information/copy.md</b>, and the mockup renders that draft rather than lorem.
+            </p>
+            <dl class="rules">
+                <div><dt>Scope</dt><dd>Desktop only, as asked. The mobile route <code>/mobile/info</code> is untouched.</dd></div>
+                <div><dt>Sections</dt><dd>The five agreed, plus navigation and API. Submitting and points are FAQ entries; the glossary is a guidelines section.</dd></div>
+                <div><dt>New data</dt><dd>None. Editors come from <code>data/_editors.json</code>, guidelines from <code>js/_guidelines.js</code>, endpoints from <code>worker/worker.js</code>.</dd></div>
+                <div><dt>Dropped</dt><dd>A. Shelf, B. Manual, D. Document and E. Tiles. All four are in git history if any is wanted back.</dd></div>
+            </dl>
+
+            <div class="sect">
+                <h3>What is wrong with the page today</h3>
+                <ol class="faults">
+                    <li><b>01</b><span><b>The legends outweigh the guidelines.</b> <code>.info-cards</code> is a 1fr&nbsp;1fr grid and the Pending legend is given <code>grid-column: 1 / -1</code> by an inline style, so nine icon rows occupy the full page width while the entire rulebook is read through a <code>max-height: 600px</code> pane below it.</span></li>
+                    <li><b>02</b><span><b>The guidelines scroll inside a page that scrolls.</b> <code>.info-guidelines-content</code> is its own scroll container inside <code>.info-page</code>, so the wheel does one thing or the other depending on where the pointer is. <code>Information.js</code> carries an IntersectionObserver whose only job is to switch that inner <code>overflow-y</code> on and off &mdash; a workaround for a nesting that does not need to exist.</span></li>
+                    <li><b>03</b><span><b>The colouring legend redraws a component the site already has.</b> Ten swatches are written as inline <code>style="background:#5599ff"</code>, and those ten hex values are the same scale as <code>.u-pill--blue</code> &hellip; <code>.u-pill--done</code> in <code>css/ull-v2.css</code>. The legend for a colour system should be drawn with the colour system, or it will drift from it.</span></li>
+                    <li><b>04</b><span><b>Nothing tells a first-time visitor where anything is.</b> The hero defines the list in four lines and the next thing on the page is a list of editors. There is no map of the site, and no answer to the questions that bring people here &mdash; how to submit, how points are earned &mdash; anywhere on it.</span></li>
+                    <li><b>05</b><span><b>The card hover from the pending page is here too.</b> <code>.info-guidelines:hover</code> applies <code>transform: scale(1.006)</code>, which nudges the layout under the pointer. The same tic was removed from the other pages in the last pass.</span></li>
+                </ol>
+            </div>
+        </div>
+<!--__SECTIONS__-->
+    </main>
+</div>
+
+<script>
+(function () {
+    var views = document.querySelectorAll('[data-mock]');
+    var btn = document.getElementById('theme-toggle');
+    var name = document.getElementById('theme-name');
+    var light = false;
+    btn.addEventListener('click', function () {
+        light = !light;
+        // In the app, .dark on .root selects the LIGHT palette. Kept as-is.
+        views.forEach(function (v) { v.classList.toggle('dark', light); });
+        name.textContent = light ? 'Light' : 'Dark';
+    });
+
+    var items = [].slice.call(document.querySelectorAll('.rail__item'));
+    var seen = new Map();
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { seen.set(e.target.id, e.intersectionRatio); });
+        var best = null;
+        seen.forEach(function (ratio, id) { if (!best || ratio > best.ratio) best = { id: id, ratio: ratio }; });
+        if (!best || !best.ratio) return;
+        items.forEach(function (a) { a.classList.toggle('is-on', a.getAttribute('href') === '#' + best.id); });
+    }, { threshold: [0, 0.15, 0.4, 0.75] });
+    document.querySelectorAll('.pg').forEach(function (s) { obs.observe(s); });
+})();
+</script>

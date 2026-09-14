@@ -42,3 +42,25 @@ CREATE TABLE IF NOT EXISTS audit_log (
     details TEXT,
     timestamp TEXT DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS snapshots (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    taken_at TEXT NOT NULL,
+    day TEXT NOT NULL,
+    kind TEXT NOT NULL DEFAULT 'auto',
+    label TEXT DEFAULT '',
+    format TEXT NOT NULL DEFAULT 'gzip',
+    levels_count INTEGER DEFAULT 0,
+    bytes INTEGER DEFAULT 0,
+    data TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_snapshots_day ON snapshots(day);
+
+CREATE INDEX IF NOT EXISTS idx_snapshots_taken_at ON snapshots(taken_at);
+
+ALTER TABLE audit_log ADD COLUMN undo_data TEXT;
+
+ALTER TABLE audit_log ADD COLUMN undone_at TEXT;
+
+CREATE INDEX IF NOT EXISTS idx_audit_log_timestamp ON audit_log(timestamp);

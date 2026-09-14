@@ -1,0 +1,1235 @@
+<title>ULL — /information</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+/* ─────────────────────────────────────────────────────────────────────────
+   Review chrome, taken from design/preview.shell.html so this deck and the
+   page deck read as one thing. Deliberately quiet: the only colour on the
+   page should be inside the mockups.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+    --ground: #f4f3f6;
+    --panel: #ffffff;
+    --ink: #1b1a1f;
+    --muted: #6c6879;
+    --rule: rgba(108, 104, 121, 0.2);
+    --rule-soft: rgba(108, 104, 121, 0.11);
+    --accent: #5b12d6;
+    --warn: #b4541f;
+    --shadow: 0 1px 2px rgba(27, 26, 31, 0.05), 0 12px 34px rgba(27, 26, 31, 0.07);
+    --sans: 'Lexend Deca', ui-sans-serif, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #100f14; --panel: #17161c; --ink: #eceaf2; --muted: #9b96a8;
+        --rule: rgba(155, 150, 168, 0.22); --rule-soft: rgba(155, 150, 168, 0.12);
+        --accent: #a583f7; --warn: #e2915c;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+}
+:root[data-theme="dark"] {
+    --ground: #100f14; --panel: #17161c; --ink: #eceaf2; --muted: #9b96a8;
+    --rule: rgba(155, 150, 168, 0.22); --rule-soft: rgba(155, 150, 168, 0.12);
+    --accent: #a583f7; --warn: #e2915c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); }
+
+.wrap { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; max-width: 98rem; margin: 0 auto; padding: 3rem 2.5rem 6rem; }
+
+/* ── Rail ── */
+.rail { position: sticky; top: 2rem; align-self: start; display: flex; flex-direction: column; gap: 1.5rem; }
+.rail__brand { display: flex; flex-direction: column; gap: 0.3rem; }
+.rail__brand b { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+.rail__brand span { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); }
+.rail__nav { display: flex; flex-direction: column; gap: 0.1rem; border-left: 1px solid var(--rule); }
+.rail__item { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.5rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; text-decoration: none; color: inherit; }
+.rail__item b { font-size: 0.82rem; font-weight: 500; }
+.rail__item code { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
+.rail__item:hover { border-left-color: var(--rule); }
+.rail__item.is-on { border-left-color: var(--accent); }
+.rail__item.is-on b { font-weight: 700; }
+.rail__toggle {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    padding: 0.6rem 0.8rem; border: 1px solid var(--rule); border-radius: 0.5rem;
+    background: var(--panel); color: inherit; font-family: var(--mono); font-size: 0.66rem;
+    cursor: pointer; text-align: left;
+}
+.rail__toggle:hover { border-color: var(--accent); }
+.rail__toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rail__toggle b { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; }
+.rail__hint { font-family: var(--mono); font-size: 0.6rem; line-height: 1.6; color: var(--muted); }
+
+/* ── Intro ── */
+.intro { margin-bottom: 3.5rem; }
+.intro__eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.intro h1 { margin: 0.8rem 0 0; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.035em; text-wrap: balance; }
+.intro__lead { margin: 1.1rem 0 0; max-width: 46rem; font-size: 0.98rem; line-height: 1.7; color: var(--muted); }
+.intro__lead b { color: var(--ink); font-weight: 600; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1px; margin-top: 2.25rem; background: var(--rule-soft); border: 1px solid var(--rule-soft); border-radius: 0.6rem; overflow: hidden; }
+.rules div { background: var(--panel); padding: 1rem 1.15rem; }
+.rules dt { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.rules dd { margin: 0.45rem 0 0; font-size: 0.82rem; line-height: 1.55; }
+
+.sect { margin-top: 2.5rem; }
+.sect h3 { margin: 0 0 0.9rem; font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+.faults { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+.faults li { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.7rem; font-size: 0.85rem; line-height: 1.6; color: var(--muted); }
+.faults b { font-family: var(--mono); font-size: 0.7rem; color: var(--warn); }
+.faults span b { font-family: var(--sans); font-size: inherit; color: var(--ink); font-weight: 600; }
+.faults code { font-family: var(--mono); font-size: 0.78rem; color: var(--ink); }
+
+/* ── Page section ── */
+.pg { padding-top: 3.5rem; border-top: 1px solid var(--rule); margin-top: 3.5rem; }
+.pg__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.pg__label { display: flex; align-items: baseline; gap: 0.8rem; }
+.pg__label h2 { margin: 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+.pg__n { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); padding: 0.15rem 0.5rem; border: 1px solid var(--rule); border-radius: 0.3rem; }
+.pg__files { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+.pg__idea { margin: 1.1rem 0 0; max-width: 52rem; font-size: 0.92rem; line-height: 1.7; }
+.pg__notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; margin: 1.5rem 0 1.75rem; }
+.note { padding-left: 0.9rem; border-left: 2px solid var(--rule); }
+.note--weight { border-left-color: var(--accent); }
+.note--cost { border-left-color: var(--rule); }
+.note--watch { border-left-color: var(--warn); }
+.note__k { font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.note p { margin: 0.5rem 0 0; font-size: 0.85rem; line-height: 1.7; }
+
+/* ── Mock frame ── */
+.frame { border: 1px solid var(--rule); border-radius: 0.7rem; overflow: hidden; box-shadow: var(--shadow); background: var(--panel); }
+.frame__bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--rule); background: var(--panel); }
+.frame__bar span { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--rule); }
+.frame__bar code { margin-left: 0.6rem; font-family: var(--mono); font-size: 0.62rem; color: var(--muted); }
+.frame__bar em { margin-left: auto; font-family: var(--mono); font-size: 0.62rem; font-style: normal; color: var(--accent); }
+.frame__view { height: 46rem; overflow: hidden; display: flex; flex-direction: column; }
+.frame__view > * { flex: 1; min-height: 0; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   The app's own theme tokens, copied from css/main.css so the mockups render
+   in the real palette. .root is ULL's dark default; .root.dark is its light
+   theme — the class names are inverted in the app and kept that way here.
+   ───────────────────────────────────────────────────────────────────────── */
+[data-mock].root {
+    --color-background: #1c1b1f;
+    --color-on-background: #ffffff;
+    --color-background-hover: #27262c;
+    --color-primary: #660aef;
+    --color-on-primary: #ffffff;
+    background: var(--color-background);
+    color: var(--color-on-background);
+}
+[data-mock].root.dark {
+    --color-background: #ffffff;
+    --color-on-background: #000000;
+    --color-background-hover: #eeeeee;
+    --color-primary: #3e00f9;
+    --color-on-primary: #ffffff;
+}
+/* Role icons ship as two files, -dark being the one for the light theme; the
+   mocks carry the dark-theme file and invert it under .root.dark, which is what
+   the app's :src binding does with a second request. The pending-list icons are
+   not in that set — they carry their own colours — so they never get .mk-inv. */
+[data-mock].root.dark .mk-inv { filter: invert(1); }
+
+/* ULL v2 — the shared component layer extracted from the level page.
+
+   The /level/<slug> page already solved most of this site's design problems in
+   one file: neutral tokens that survive both themes, uppercase micro-labels,
+   flat cards on a tinted fill, one status scale, meters, and no inline styles.
+   Everything below is that vocabulary lifted out of css/pages/level-page.css so
+   the home, list, leaderboard, upcoming, pending and events pages can speak it
+   too, instead of each re-inventing a card and a heading.
+
+   Nothing here invents data. Every value a component displays already exists in
+   data/<level>.json or is derived from it the way the list already derives it.
+   The design/ directory holds the static templates these components came from.
+
+   Scope: anything inside an element carrying .ull2. Drop the class on <main>.
+
+   Every rule below is written as `.ull2 .u-thing` rather than `.u-thing`, and
+   that is deliberate. The link reset `.ull2 a { color: inherit }` scores 0,1,1;
+   an unscoped `.u-btn { color: var(--color-on-primary) }` scores 0,1,0 and
+   silently loses to it, so a filled button renders with body-text colour on its
+   own primary fill. css/pages/level-page.css has this exact bug today: its
+   `.level-page a { color: inherit }` beats `.lvl-link`, which is why the filled
+   "Showcase video" button on /level/<slug> is not drawing in --color-on-primary.
+   Scoping every component one level deeper puts them all at 0,2,0 and settles
+   the cascade. */
+
+.ull2 {
+    /* Neutral greys — one set of values reads correctly on both grounds, which
+       is why the level page never needed a .root.dark override for its cards. */
+    --u-line: rgba(128, 128, 128, 0.22);
+    --u-line-2: rgba(128, 128, 128, 0.38);
+    --u-fill: rgba(128, 128, 128, 0.09);
+    --u-fill-2: rgba(128, 128, 128, 0.13);
+    --u-accent: color-mix(in srgb, var(--color-primary) 45%, white);
+
+    --u-r: 0.75rem;
+    --u-r-sm: 0.5rem;
+    --u-gap: 0.85rem;
+
+    font-family: 'Lexend Deca', sans-serif;
+}
+.root.dark .ull2 { --u-accent: color-mix(in srgb, var(--color-primary) 75%, black); }
+.ull2, .ull2 * { box-sizing: border-box; }
+.ull2 a { color: inherit; text-decoration: none; }
+/* css/typography.css hangs ::before/::after spacers off every heading and
+   paragraph to trim leading. These components set their own line-heights, so
+   the spacers only add stray gaps. */
+.ull2 h1::before, .ull2 h1::after, .ull2 h2::before, .ull2 h2::after,
+.ull2 h3::before, .ull2 h3::after, .ull2 h4::before, .ull2 h4::after,
+.ull2 p::before, .ull2 p::after, .ull2 dt::before, .ull2 dt::after { display: none; }
+
+/* ── Eyebrow ──────────────────────────────────────────────────────────────
+   The single section heading on the site. Replaces .home-card__title,
+   .pending-card__title, .events-info-label and four <h3> treatments, all of
+   which said the same thing in four sizes and two colours. */
+.ull2 .u-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.9rem;
+    font-family: inherit;
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    opacity: 0.45;
+}
+.ull2 .u-eyebrow--lg { font-size: 0.7rem; }
+.ull2 .u-count {
+    padding: 0.12rem 0.42rem;
+    border-radius: 1rem;
+    background: var(--u-fill-2);
+    font-size: 0.62rem;
+    letter-spacing: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────
+   Flat fill + hairline. No shadow, no hover-scale: the pending page's
+   transform: scale(1.006) on hover nudges its neighbours and reads as a bug. */
+.ull2 .u-card {
+    padding: 1.15rem 1.25rem;
+    border-radius: var(--u-r);
+    background: var(--u-fill);
+    border: 1px solid var(--u-line);
+}
+.ull2 .u-card--pad { padding: 1.5rem 1.6rem; }
+.ull2 a.u-card, .ull2 button.u-card { display: block; width: 100%; text-align: left; cursor: pointer; transition: border-color 120ms ease; }
+.ull2 a.u-card:hover, .ull2 button.u-card:hover { border-color: var(--u-line-2); }
+
+/* ── Status pill ──────────────────────────────────────────────────────────
+   One scale, shared with the list's level-name colouring, so a level reads the
+   same in the row, in the panel, on its own page and in an events card.
+   Replaces "Status: Decoration being made - 80% done" set as body copy. */
+.ull2 .u-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.28rem 0.72rem;
+    border-radius: 2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+    border: 1px solid currentColor;
+}
+.ull2 .u-pill i { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.ull2 .u-pill--done { color: #9d9d9d; }
+.ull2 .u-pill--red { color: #ff5555; }
+.ull2 .u-pill--orange { color: #ff6622; }
+.ull2 .u-pill--amber { color: #ffaa44; }
+.ull2 .u-pill--yellow { color: #ffee55; }
+.ull2 .u-pill--green { color: #55ee55; }
+.ull2 .u-pill--cyan { color: #33dddd; }
+.ull2 .u-pill--blue { color: #5599ff; }
+.root.dark .ull2 .u-pill--done { color: #6f6f6f; }
+.root.dark .ull2 .u-pill--red { color: #cc4444; }
+.root.dark .ull2 .u-pill--orange { color: #cc511b; }
+.root.dark .ull2 .u-pill--amber { color: #b87a24; }
+.root.dark .ull2 .u-pill--yellow { color: #9a9022; }
+.root.dark .ull2 .u-pill--green { color: #2f9c2f; }
+.root.dark .ull2 .u-pill--cyan { color: #1d8f8f; }
+.root.dark .ull2 .u-pill--blue { color: #3a6cb8; }
+
+/* ── Chip ─────────────────────────────────────────────────────────────────
+   Tags, creators, filter values. Replaces .tag and .lvl-creator. */
+.ull2 .u-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    font-size: 0.74rem;
+    font-weight: 500;
+    line-height: 1.3;
+    background: var(--u-fill);
+    border: 1px solid var(--u-line);
+}
+.ull2 .u-chip--round { border-radius: 2rem; }
+.ull2 .u-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+/* ── Rank chip ────────────────────────────────────────────────────────────
+   Cross-list placement. Currently rendered as dimmed body text
+   ("#12 in Main List · #7 in Future List") in three different components. */
+.ull2 .u-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.28rem;
+    padding: 0.7rem 1rem;
+    border-radius: var(--u-r-sm);
+    background: color-mix(in srgb, var(--color-background) 65%, transparent);
+    border: 1px solid var(--u-line);
+    transition: border-color 120ms ease, transform 120ms ease;
+}
+.ull2 .u-rank:hover { border-color: var(--u-line-2); transform: translateY(-1px); }
+.ull2 .u-rank--lead {
+    background: linear-gradient(150deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 55%, white) 130%);
+    border-color: transparent;
+    color: var(--color-on-primary);
+}
+.ull2 .u-rank--lead:hover { border-color: transparent; }
+/* A tier the level is not on still gets a chip, so "not on it" reads as an
+   answer rather than as an omission — dimmed, and not a link to a list the
+   level is not in. */
+.ull2 .u-rank--off { opacity: 0.4; }
+.ull2 .u-rank--off:hover { border-color: var(--u-line); transform: none; }
+.ull2 .u-rank__n { font-size: 1.35rem; font-weight: 700; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.ull2 .u-rank__l { font-size: 0.55rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.6; white-space: nowrap; }
+.ull2 .u-rank--lead .u-rank__l { opacity: 0.85; }
+.ull2 .u-ranks { display: flex; gap: 0.5rem; flex-shrink: 0; }
+
+/* ── Meter ────────────────────────────────────────────────────────────────
+   Decoration and verification progress. Both numbers already drive sorting and
+   colouring; this is the first place either is drawn rather than written out. */
+.ull2 .u-meter + .u-meter { margin-top: 0.9rem; }
+.ull2 .u-meter__top { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.74rem; margin-bottom: 0.4rem; }
+.ull2 .u-meter__top span { opacity: 0.55; }
+.ull2 .u-meter__top b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.ull2 .u-bar { display: block; height: 0.35rem; border-radius: 1rem; background: var(--u-fill-2); overflow: hidden; }
+.ull2 .u-bar i { display: block; height: 100%; border-radius: 1rem; background: linear-gradient(90deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 45%, white)); }
+.ull2 .u-bar--alt i { background: linear-gradient(90deg, #e0762c, #ffc46b); }
+/* Inline in a list row: no labels, just the reading. */
+.ull2 .u-bar--thin { height: 0.22rem; }
+
+/* ── Stat ─────────────────────────────────────────────────────────────────
+   A single figure with a label under it. Replaces .page-hero-stat,
+   .upcoming-hero-stat (an exact duplicate of it), and the world-record boxes. */
+.ull2 .u-stat {
+    padding: 0.75rem 0.9rem;
+    border-radius: var(--u-r-sm);
+    background: var(--u-fill);
+    border: 1px solid var(--u-line);
+    min-width: 0;
+}
+.ull2 .u-stat__k { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; }
+.ull2 .u-stat__v {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--u-accent);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+.ull2 a.u-stat__v:hover { text-decoration: underline; }
+.ull2 .u-stat__v--none { color: inherit; opacity: 0.28; font-size: 1.05rem; }
+.ull2 .u-stat__u { margin-top: 0.15rem; font-size: 0.7rem; opacity: 0.5; overflow-wrap: anywhere; }
+.ull2 .u-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: 0.6rem; }
+
+/* ── Definition list ──────────────────────────────────────────────────────
+   Level facts. Replaces the .stats <ul> with justify-content: space-evenly,
+   which drifts apart on a wide panel and collides on a narrow one. */
+.ull2 .u-dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+    gap: 0.55rem 1rem;
+    font-size: 0.78rem;
+}
+.ull2 .u-dl dt { font-family: inherit; font-size: 0.78rem; font-weight: 500; line-height: inherit; text-transform: none; opacity: 0.45; }
+.ull2 .u-dl dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.ull2 .u-dl a { color: var(--u-accent); text-decoration: underline; text-underline-offset: 0.15em; }
+
+/* ── Buttons ──────────────────────────────────────────────────────────────
+   Home currently gives three side-by-side links .home-btn--primary, so none of
+   them is primary. One filled, the rest ghost. */
+.ull2 .u-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--u-r-sm);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: opacity 120ms ease, background-color 120ms ease, border-color 120ms ease;
+}
+.ull2 .u-btn:hover { opacity: 0.88; }
+.ull2 .u-btn--ghost { background: transparent; color: var(--color-on-background); border-color: var(--u-line-2); font-weight: 500; }
+.ull2 .u-btn--ghost:hover { background: var(--u-fill-2); opacity: 1; }
+.ull2 .u-btn--block { display: flex; width: 100%; }
+.ull2 .u-btn--ok { color: #3fbf7f; border-color: #3fbf7f; background: rgba(63, 191, 127, 0.1); }
+.ull2 .u-btn:focus-visible { outline: 2px solid var(--u-accent); outline-offset: 2px; }
+
+/* ── Page hero ────────────────────────────────────────────────────────────
+   css/pages/list-hero.css defines .page-hero and .upcoming-hero as two
+   byte-for-byte identical blocks. One component, one rule set. */
+.ull2 .u-phero {
+    grid-column: 1 / -1;
+    overflow-y: unset !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.1rem 1.75rem;
+    border-bottom: 1px solid var(--u-line);
+    background: linear-gradient(105deg, color-mix(in srgb, var(--color-primary) 8%, transparent) 0%, transparent 55%);
+    position: relative;
+}
+.ull2 .u-phero::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, color-mix(in srgb, var(--color-primary) 30%, transparent) 100%);
+}
+.ull2 .u-phero__body { flex: 1; min-width: 0; }
+.ull2 .u-phero h1 { margin: 0 0 0.4rem; font-family: inherit; font-size: 1.15rem; font-weight: 700; letter-spacing: normal; line-height: 1.2; }
+.ull2 .u-phero p { margin: 0; max-width: 44rem; font-size: 0.78rem; line-height: 1.55; opacity: 0.5; letter-spacing: normal; }
+.ull2 .u-phero__side { display: flex; gap: 0.5rem; flex-shrink: 0; }
+/* In the hero the label is wider than the figure, so a left-aligned figure sits
+   off to one side of its own box. Centre both against each other. */
+.ull2 .u-phero__side .u-stat { text-align: center; }
+
+/* ── Thumbnail hero ───────────────────────────────────────────────────────
+   The level page's blurred-thumbnail header, reusable: the level detail panel,
+   the events feature cards and the home spotlight all introduce a level and
+   should introduce it the same way. */
+.ull2 .u-hero { position: relative; overflow: hidden; border-radius: var(--u-r); border: 1px solid var(--u-line); }
+.ull2 .u-hero--flush { border-radius: 0; border: 0; border-bottom: 1px solid var(--u-line); }
+.ull2 .u-hero__bg { position: absolute; inset: -3rem; background-size: cover; background-position: center; filter: blur(2.25rem) saturate(1.35); opacity: 0.5; transform: scale(1.1); }
+.root.dark .ull2 .u-hero__bg { opacity: 0.35; }
+.ull2 .u-hero__scrim {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--color-background) 50%, transparent) 0%, var(--color-background) 94%),
+        linear-gradient(100deg, color-mix(in srgb, var(--color-primary) 40%, transparent) 0%, transparent 62%);
+}
+.ull2 .u-hero__inner { position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; padding: 1.6rem 1.5rem 1.35rem; }
+.ull2 .u-hero__body { flex: 1; min-width: 0; }
+.ull2 .u-hero__title { margin: 0; font-family: inherit; font-size: clamp(1.5rem, 3.2vw, 2.2rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance; }
+.ull2 .u-hero__by { margin: 0.55rem 0 0; font-size: 0.85rem; font-weight: 500; line-height: 1.4; opacity: 0.65; }
+.ull2 .u-hero__by b { font-weight: 600; }
+
+/* ── Row ──────────────────────────────────────────────────────────────────
+   A level or player line: thumbnail, name, secondary line, trailing figure.
+   Pending, upcoming, leaderboard and home all draw a version of this today. */
+.ull2 .u-rows { display: flex; flex-direction: column; }
+.ull2 .u-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: var(--u-r-sm);
+    transition: background-color 100ms ease;
+    min-width: 0;
+}
+.ull2 .u-row:hover { background: var(--u-fill); }
+.ull2 .u-row__lead { flex-shrink: 0; width: 2.1rem; text-align: right; font-size: 0.78rem; font-weight: 700; opacity: 0.4; font-variant-numeric: tabular-nums; }
+.ull2 .u-row__thumb { flex-shrink: 0; width: 4.4rem; height: 2.5rem; border-radius: 0.3rem; object-fit: cover; background: var(--u-fill-2); display: block; }
+.ull2 .u-row__body { flex: 1; min-width: 0; }
+.ull2 .u-row__name { display: block; font-size: 0.85rem; font-weight: 600; line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ull2 .u-row__sub { display: block; margin-top: 0.15rem; font-size: 0.72rem; font-weight: 500; opacity: 0.45; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ull2 .u-row__end { flex-shrink: 0; margin-left: auto; font-size: 0.74rem; opacity: 0.5; font-variant-numeric: tabular-nums; }
+
+/* ── Credentials row ──────────────────────────────────────────────────────
+   Three things about the list — how much it holds, how long it has been
+   running, who uses it — drawn as an icon and a line each. The home page puts
+   it under its hero on both surfaces (the phone takes the first two of the
+   three), which is why it lives here and not in either page's stylesheet.
+   Each page adds only its own gutter and the rule under it. */
+.ull2 .u-cred { display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem 3rem; }
+.ull2 .u-cred__item { display: flex; align-items: center; gap: 0.85rem; min-width: 0; }
+/* The mark is a badge, not a bullet: at 1.15rem beside a line of body copy
+   these read as decoration, and each of the three is meant to land as
+   something the list has earned. */
+.ull2 .u-cred__ic {
+    width: 2.6rem;
+    height: 2.6rem;
+    flex-shrink: 0;
+    padding: 0.62rem;
+    border-radius: 0.8rem;
+    background: var(--u-fill);
+    color: var(--u-accent);
+}
+.ull2 .u-cred__t { font-size: 1.02rem; font-weight: 600; line-height: 1.3; opacity: 0.85; }
+.ull2 .u-cred__t b {
+    margin-right: 0.35em;
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    opacity: 1;
+    color: var(--u-accent);
+}
+
+/* ── Empty state ──────────────────────────────────────────────────────────
+   Currently an emoji and a sentence, written inline at four call sites. */
+.ull2 .u-empty { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 2.5rem 1rem; text-align: center; opacity: 0.35; }
+.ull2 .u-empty__t { font-size: 0.85rem; font-weight: 600; }
+.ull2 .u-empty__d { font-size: 0.78rem; opacity: 0.8; }
+
+@media (prefers-reduced-motion: reduce) {
+    .ull2 .u-rank, .ull2 .u-btn, .ull2 .u-row, .ull2 .u-card { transition: none; }
+    .ull2 .u-rank:hover { transform: none; }
+}
+
+
+@media (max-width: 1200px) {
+    .wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem 4rem; }
+    .rail { position: static; }
+    .rail__nav { flex-direction: row; flex-wrap: wrap; border-left: 0; }
+    .rail__item { border-left: 0; border-bottom: 2px solid transparent; }
+    .rail__item.is-on { border-left: 0; border-bottom-color: var(--accent); }
+    .frame__view { height: 40rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+    <aside class="rail">
+        <div class="rail__brand">
+            <b>/information</b>
+            <span>hub &middot; desktop</span>
+        </div>
+        <nav class="rail__nav">
+        <a class="rail__item is-on" href="#hub"><b>C. Hub</b><code>answers up front, doors for the long reads</code></a>
+        </nav>
+        <button class="rail__toggle" id="theme-toggle" type="button">
+            <b>Mockup theme</b>
+            <span id="theme-name">Dark</span>
+        </button>
+        <p class="rail__hint">The mockup is live &mdash; open a block, close a window. It is also a standalone page at pages/c-hub.html.</p>
+    </aside>
+
+    <main>
+        <div class="intro">
+            <div class="intro__eyebrow">Design proposal</div>
+            <h1>The hub, and what is behind each block</h1>
+            <p class="intro__lead">
+                <b>/information holds six things</b> &mdash; what the list is and where everything on the site
+                lives, the guidelines, two legends, the FAQ, who to talk to, and the API &mdash; and today it
+                stacks the four it has as cards of roughly equal size. The Pending List legend, nine rows of
+                icons, is given a full-width card; the guidelines, thirteen sections across five groups, are
+                given a 600&nbsp;px window to be read through. Weight on the page is the opposite of weight in
+                the content.
+            </p>
+            <p class="intro__lead">
+                This rebuilds it as a hub of six faces. Each carries a label, a name, one sentence and the
+                size of what is behind it &mdash; &ldquo;14 questions&rdquo;, &ldquo;9 pages&rdquo;,
+                &ldquo;19 marks&rdquo;, &ldquo;9 endpoints&rdquo; &mdash; and every one of them opens the same
+                reader over the page. The hero says what the list is, offers the full version at the end of the
+                sentence, and puts one search field under it. The blocks run in the order people arrive
+                wanting them: the <b>FAQ</b> first, the <b>navigation</b> beside it, the <b>guidelines</b>
+                three rows down the left, and the <b>reference</b>, <b>staff</b> and <b>API</b> stacked to
+                their right. At 1440&nbsp;px the whole page is one screen and a nudge.
+            </p>
+            <p class="intro__lead">
+                It is built from <b>css/ull-v2.css</b>, the component layer the rest of the site was rebuilt
+                on, so it introduces no new card, heading or button. The copy for the sections that did not
+                exist &mdash; what the list is, the navigation, the FAQ, the API &mdash; is drafted in
+                <b>design/information/copy.md</b>, and the mockup renders that draft rather than lorem.
+            </p>
+            <dl class="rules">
+                <div><dt>Scope</dt><dd>Desktop only, as asked. The mobile route <code>/mobile/info</code> is untouched.</dd></div>
+                <div><dt>Sections</dt><dd>The five agreed, plus navigation and API. Submitting and points are FAQ entries; the glossary is a guidelines section.</dd></div>
+                <div><dt>New data</dt><dd>None. Editors come from <code>data/_editors.json</code>, guidelines from <code>js/_guidelines.js</code>, endpoints from <code>worker/worker.js</code>.</dd></div>
+                <div><dt>Dropped</dt><dd>A. Shelf, B. Manual, D. Document and E. Tiles. All four are in git history if any is wanted back.</dd></div>
+            </dl>
+
+            <div class="sect">
+                <h3>What is wrong with the page today</h3>
+                <ol class="faults">
+                    <li><b>01</b><span><b>The legends outweigh the guidelines.</b> <code>.info-cards</code> is a 1fr&nbsp;1fr grid and the Pending legend is given <code>grid-column: 1 / -1</code> by an inline style, so nine icon rows occupy the full page width while the entire rulebook is read through a <code>max-height: 600px</code> pane below it.</span></li>
+                    <li><b>02</b><span><b>The guidelines scroll inside a page that scrolls.</b> <code>.info-guidelines-content</code> is its own scroll container inside <code>.info-page</code>, so the wheel does one thing or the other depending on where the pointer is. <code>Information.js</code> carries an IntersectionObserver whose only job is to switch that inner <code>overflow-y</code> on and off &mdash; a workaround for a nesting that does not need to exist.</span></li>
+                    <li><b>03</b><span><b>The colouring legend redraws a component the site already has.</b> Ten swatches are written as inline <code>style="background:#5599ff"</code>, and those ten hex values are the same scale as <code>.u-pill--blue</code> &hellip; <code>.u-pill--done</code> in <code>css/ull-v2.css</code>. The legend for a colour system should be drawn with the colour system, or it will drift from it.</span></li>
+                    <li><b>04</b><span><b>Nothing tells a first-time visitor where anything is.</b> The hero defines the list in four lines and the next thing on the page is a list of editors. There is no map of the site, and no answer to the questions that bring people here &mdash; how to submit, how points are earned &mdash; anywhere on it.</span></li>
+                    <li><b>05</b><span><b>The card hover from the pending page is here too.</b> <code>.info-guidelines:hover</code> applies <code>transform: scale(1.006)</code>, which nudges the layout under the pointer. The same tic was removed from the other pages in the last pass.</span></li>
+                </ol>
+            </div>
+        </div>
+
+    <section class="pg" id="hub">
+        <div class="pg__head">
+            <div class="pg__label">
+                <h2>C. Hub</h2>
+                <code class="pg__n">answers up front, doors for the long reads</code>
+            </div>
+            <code class="pg__files">pages/c-hub.html &middot; js/pages/Information.js · css/pages/information.css</code>
+        </div>
+        <p class="pg__idea">The page answers first and files second. The hero says what the list is and offers the full version at the end of the sentence; under it a search field that covers everything on the page. Then six blocks, sized by weight and ordered by what a visitor most often arrives wanting: the FAQ first, the navigation beside it — every page on the site with a paragraph on what is actually in it — then the guidelines running down the left with the reference, the staff and the API stacked beside them. Nothing long is ever <em>on</em> the hub. The reference is the exception, because it is nineteen short rows and hiding it would cost more space than printing it.</p>
+        <div class="pg__notes">
+            <div class="note note--weight">
+                <div class="note__k">How it settles the weighting</div>
+                <p>Column span and nothing else, because no block holds enough content to argue with it: the guidelines take seven of twelve columns and three rows, the navigation takes seven in row one, and the FAQ, reference, staff and API are the five-column remainder. The two legends are one block rather than two, so nineteen rows of lookup can no longer take a section's worth of page.</p>
+            </div>
+            <div class="note note--cost">
+                <div class="note__k">What it costs to build</div>
+                <p>Middling. The page is static markup; the doors need one modal component with a scroll lock, focus trap and Escape handling, used seven times. The navigation copy and the API block are the only genuinely new writing.</p>
+            </div>
+            <div class="note note--watch">
+                <div class="note__k">What to watch for</div>
+                <p>Everything is behind a click now, so the counts on the faces are doing real work and the search field has to reach inside closed blocks or it is decoration. Each window also needs a URL of its own (/information?open=api) or a rule cannot be linked, and Back must close it rather than leave the page. The row-1 blocks sit on the mirrored column split of the rows below them &mdash; 5 + 7 against 7 + 5 &mdash; so the outer edges line up but the internal one moves.</p>
+            </div>
+        </div>
+        <div class="frame">
+            <div class="frame__bar"><span></span><span></span><span></span><code>ull.pages.dev/information</code><em>every door opens — try each one</em></div>
+            <div class="frame__view root" data-mock>
+<style>
+.mk-hub { position: relative; display: flex; flex-direction: column; height: 100%; overflow: hidden; }
+.mk-hub .hub-scroll { flex: 1; min-height: 0; overflow-y: auto; }
+
+/* ── Hero ── */
+.mk-hub .hub-hero { padding: 2.25rem 2.5rem 1.9rem; border-bottom: 1px solid var(--u-line); background: linear-gradient(150deg, color-mix(in srgb, var(--color-primary) 14%, transparent) 0%, transparent 58%); }
+.mk-hub .hub-hero h1 { margin: 0; font-family: inherit; font-size: 2.1rem; font-weight: 700; line-height: 1.08; letter-spacing: -0.035em; }
+.mk-hub .hub-hero p { margin: 0.8rem 0 0; max-width: 46rem; font-size: 0.88rem; line-height: 1.7; opacity: 0.55; }
+.mk-hub .hub-more { color: var(--u-accent); font-weight: 600; cursor: pointer; white-space: nowrap; }
+.mk-hub .hub-more:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.mk-hub .hub-search { display: flex; align-items: center; gap: 0.6rem; width: min(32rem, 100%); margin-top: 1.35rem; padding: 0.6rem 0.9rem; border-radius: var(--u-r-sm); background: var(--u-fill); border: 1px solid var(--u-line-2); font-size: 0.82rem; opacity: 0.6; cursor: text; }
+.mk-hub .hub-search:hover { opacity: 0.85; }
+.mk-hub .hub-search b { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 500; opacity: 0.65; }
+.mk-hub .hub-mag { width: 0.85rem; height: 0.85rem; border: 1.5px solid currentColor; border-radius: 50%; position: relative; flex-shrink: 0; opacity: 0.7; }
+.mk-hub .hub-mag::after { content: ''; position: absolute; right: -0.28rem; bottom: -0.28rem; width: 0.4rem; height: 1.5px; background: currentColor; transform: rotate(45deg); }
+
+/* ── The blocks ──
+   Twelve columns. Row 1 is 5 + 7 and the rows under it are 7 + 5, so the
+   guidelines and the navigation are the same width and the page's outer edges
+   hold, while the FAQ sits first — top left, where reading starts.
+
+   Every block is a face, not a container: a label, a name, one sentence and the
+   size of what is behind it. Nothing on the page is the content itself. */
+.mk-hub .hub-body { padding: 1.9rem 2.5rem 2.5rem; display: grid; grid-template-columns: repeat(12, 1fr); gap: 0.85rem; align-items: start; }
+.mk-hub .hub-door { display: flex; flex-direction: column; text-align: left; cursor: pointer; padding: 1.2rem 1.35rem; border-radius: var(--u-r); background: var(--u-fill); border: 1px solid var(--u-line); transition: border-color 120ms ease, background-color 120ms ease; }
+.mk-hub .hub-door:hover { border-color: var(--u-line-2); background: var(--u-fill-2); }
+.mk-hub .hub-door h2 { margin: 0.45rem 0 0; font-family: inherit; font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.mk-hub .hub-door p { margin: 0.45rem 0 0; font-size: 0.78rem; line-height: 1.6; opacity: 0.5; }
+.mk-hub .hub-peek { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: auto; padding-top: 0.9rem; }
+.mk-hub .hub-faqmore { margin-top: auto; padding-top: 0.9rem; font-size: 0.74rem; font-weight: 600; color: var(--u-accent); }
+.mk-hub .hub-peek .u-chip { font-size: 0.66rem; padding: 0.18rem 0.5rem; }
+
+.mk-hub .hub-faq { grid-column: span 5; align-self: stretch; }
+.mk-hub .hub-nav { grid-column: span 7; align-self: stretch; }
+.mk-hub .hub-gl { grid-column: span 7; grid-row: 2 / 5; align-self: stretch; background: linear-gradient(160deg, color-mix(in srgb, var(--color-primary) 10%, transparent) 0%, var(--u-fill) 62%); }
+.mk-hub .hub-ref { grid-column: 8 / -1; grid-row: 2; }
+.mk-hub .hub-staff { grid-column: 8 / -1; grid-row: 3; }
+.mk-hub .hub-api { grid-column: 8 / -1; grid-row: 4; }
+
+/* The guidelines face is the one that carries a little more, because it is the
+   one thing on the page nobody should have to open to size up. */
+.mk-hub .hub-gl { padding: 1.5rem 1.6rem; }
+.mk-hub .hub-gl h2 { font-size: 1.75rem; }
+.mk-hub .hub-gl p { font-size: 0.85rem; max-width: 32rem; }
+.mk-hub .hub-groups { display: grid; gap: 0.1rem; margin: 1.35rem 0 1.25rem; flex: 1; align-content: space-between; }
+.mk-hub .hub-groups div { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.34rem 0; border-top: 1px solid var(--u-line); font-size: 0.79rem; }
+.mk-hub .hub-groups div span { margin-left: auto; font-size: 0.68rem; opacity: 0.4; font-variant-numeric: tabular-nums; }
+.mk-hub .hub-gl .u-btn { align-self: flex-start; margin-top: auto; }
+
+/* A strip of what is inside, at a glance: eight of the ten colours and five of
+   the nine icons, no labels. It says "colours and icons live here" and nothing
+   more, which is the whole job of a face. */
+.mk-hub .hub-marks { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.95rem; }
+.mk-hub .hub-dots { display: flex; gap: 0.26rem; }
+.mk-hub .hub-dots i { width: 0.62rem; height: 0.62rem; border-radius: 50%; display: block; }
+.mk-hub .hub-icons { display: flex; align-items: center; gap: 0.3rem; padding-left: 0.75rem; border-left: 1px solid var(--u-line-2); }
+</style>
+
+<div class="mk-hub ull2">
+    <!-- ─────────────────────────────────────────────────────────────────────────
+     Shared modal layer. A, C and E all open the same reader; what differs
+     between them is the surface in front of it, which is the whole point of
+     comparing them. The build injects this file at each template's MODALS slot
+     and substitutes hub with the template's name, so the ids and the radio
+     group are unique per mockup.
+
+     Radios rather than :target: a radio does not move the scroll position or
+     rewrite the URL, which keeps three mockups on one deck page independent.
+     In the app this is a route or a piece of component state.
+     ───────────────────────────────────────────────────────────────────────── -->
+<style>
+.mk-hub .mkm-r { position: absolute; opacity: 0; pointer-events: none; }
+.mk-hub .mkm {
+    display: none; position: absolute; inset: 0; z-index: 20;
+    background: color-mix(in srgb, var(--color-background) 82%, transparent);
+    backdrop-filter: blur(0.35rem);
+    padding: 2.5rem;
+}
+.mk-hub #hub-m-guidelines:checked ~ .mkm--guidelines,
+.mk-hub #hub-m-faq:checked ~ .mkm--faq,
+.mk-hub #hub-m-about:checked ~ .mkm--about,
+.mk-hub #hub-m-navigation:checked ~ .mkm--navigation,
+.mk-hub #hub-m-reference:checked ~ .mkm--reference,
+.mk-hub #hub-m-staff:checked ~ .mkm--staff,
+.mk-hub #hub-m-api:checked ~ .mkm--api { display: flex; }
+
+.mk-hub .mkm__scrim { position: absolute; inset: 0; cursor: default; }
+.mk-hub .mkm__win {
+    position: relative; margin: auto; display: flex; flex-direction: column;
+    width: min(64rem, 100%); max-height: 100%;
+    border-radius: var(--u-r); border: 1px solid var(--u-line-2);
+    background: var(--color-background);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+.root.dark .mk-hub .mkm__win { box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.18); }
+.mk-hub .mkm--sm .mkm__win { width: min(38rem, 100%); }
+.mk-hub .mkm__bar { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.35rem; border-bottom: 1px solid var(--u-line); flex-shrink: 0; }
+.mk-hub .mkm__bar b { font-size: 0.95rem; font-weight: 700; }
+.mk-hub .mkm__bar .mkm__k { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.35; }
+.mk-hub .mkm__find { margin-left: auto; width: 15rem; padding: 0.4rem 0.7rem; border-radius: var(--u-r-sm); background: var(--u-fill); border: 1px solid var(--u-line); font-size: 0.74rem; opacity: 0.45; }
+.mk-hub .mkm__x { display: flex; align-items: center; gap: 0.4rem; font-size: 0.74rem; opacity: 0.5; cursor: pointer; white-space: nowrap; }
+.mk-hub .mkm__x:hover { opacity: 0.9; }
+.mk-hub .mkm__body { overflow-y: auto; padding: 1.75rem 2rem 2.25rem; }
+.mk-hub .mkm__split { display: grid; grid-template-columns: 15rem minmax(0, 1fr); overflow: hidden; }
+.mk-hub .mkm__toc { border-right: 1px solid var(--u-line); overflow-y: auto; padding: 1.1rem 0 1.5rem; }
+.mk-hub .mkm__tocg { padding: 0.9rem 1.35rem 0.3rem; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.mk-hub .mkm__tocg:first-child { padding-top: 0; }
+.mk-hub .mkm__toc a { display: block; padding: 0.33rem 1.35rem; font-size: 0.77rem; line-height: 1.45; opacity: 0.5; border-left: 2px solid transparent; }
+.mk-hub .mkm__toc a.on { opacity: 1; font-weight: 600; color: var(--u-accent); border-left-color: var(--color-primary); background: var(--u-fill); }
+
+/* Reading typography, one setting for every modal. */
+.mk-hub .mkm h3 { margin: 0 0 0.9rem; font-family: inherit; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+.mk-hub .mkm h4 { margin: 1.6rem 0 0.55rem; font-family: inherit; font-size: 0.9rem; font-weight: 600; }
+.mk-hub .mkm p, .mk-hub .mkm li { font-size: 0.85rem; line-height: 1.78; opacity: 0.72; }
+.mk-hub .mkm p { margin: 0 0 0.85rem; max-width: 46rem; }
+.mk-hub .mkm ul { margin: 0 0 0.9rem; padding-left: 1.1rem; max-width: 46rem; }
+.mk-hub .mkm li { margin-bottom: 0.4rem; }
+.mk-hub .mkm a.lk { color: var(--u-accent); text-decoration: underline; text-underline-offset: 0.15em; }
+.mk-hub .mkm__crumb { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--u-accent); margin-bottom: 0.5rem; }
+.mk-hub .mkm__lead { font-size: 0.92rem !important; line-height: 1.75; opacity: 0.6; margin-bottom: 1.6rem; }
+
+.mk-hub .mkm__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.mk-hub .mkm__q { padding: 0.9rem 0; border-bottom: 1px solid var(--u-line); }
+.mk-hub .mkm__q:first-of-type { border-top: 1px solid var(--u-line); }
+.mk-hub .mkm__q b { display: block; font-size: 0.86rem; font-weight: 600; line-height: 1.45; }
+.mk-hub .mkm__q p { margin: 0.35rem 0 0; font-size: 0.81rem; }
+.mk-hub .mkm code, .mk-hub .mkm .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; }
+
+.mk-hub .mkm__tbl { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin-bottom: 1.2rem; }
+.mk-hub .mkm__tbl th { text-align: left; padding: 0.4rem 1rem 0.4rem 0; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; border-bottom: 1px solid var(--u-line); }
+.mk-hub .mkm__tbl td { padding: 0.42rem 1rem 0.42rem 0; border-bottom: 1px solid var(--u-line); opacity: 0.75; vertical-align: top; }
+.mk-hub .mkm__tbl td.mono { opacity: 1; }
+.mk-hub .mkm__tbl--num td, .mk-hub .mkm__tbl--num th { text-align: right; font-variant-numeric: tabular-nums; }
+.mk-hub .mkm__tbl--num td:first-child, .mk-hub .mkm__tbl--num th:first-child { text-align: left; }
+.mk-hub .mkm__pre { margin: 0 0 1.2rem; padding: 0.85rem 1rem; border-radius: var(--u-r-sm); background: var(--u-fill); border: 1px solid var(--u-line); font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; line-height: 1.7; white-space: pre; overflow-x: auto; }
+.mk-hub .mkm__pre em { font-style: normal; opacity: 0.45; }
+.mk-hub .mkm__get { display: inline-block; margin-right: 0.5rem; padding: 0.05rem 0.35rem; border-radius: 0.25rem; background: var(--u-fill-2); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700; opacity: 0.7; }
+
+.mk-hub .mkm__legend { display: grid; gap: 0.45rem; }
+.mk-hub .mkm__legend > div { display: flex; align-items: center; gap: 0.85rem; font-size: 0.8rem; }
+.mk-hub .mkm__legend .u-pill { min-width: 9rem; justify-content: center; }
+.mk-hub .mkm__legend > div > span:last-child { opacity: 0.55; }
+
+.mk-hub .mkm__nav { display: block; padding: 0.6rem 0; border-top: 1px solid var(--u-line); }
+.mk-hub .mkm__nav:hover .mkm__navn { color: var(--u-accent); }
+.mk-hub .mkm__navn { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.86rem; font-weight: 600; line-height: 1.3; transition: color 120ms ease; }
+.mk-hub .mkm__navn code { font-size: 0.65rem; font-weight: 400; opacity: 0.35; }
+.mk-hub .mkm__navd { display: block; margin-top: 0.25rem; font-size: 0.78rem; line-height: 1.65; opacity: 0.55; }
+.mk-hub .mkm--reference .mkm__legend { margin-top: 0.9rem; }
+.mk-hub .mkm__people { display: grid; grid-template-columns: 1fr 1fr; gap: 0.1rem 1.5rem; }
+.mk-hub .mkm__p { display: flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0; font-size: 0.84rem; }
+.mk-hub .mkm__p .u-chip { margin-left: auto; padding: 0.1rem 0.45rem; font-size: 0.61rem; opacity: 0.6; }
+.mk-hub .mkm__map { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.mk-hub .mkm__mapc { display: block; padding: 0.75rem 0.9rem; }
+.mk-hub .mkm__mapc b { display: block; font-size: 0.82rem; font-weight: 600; }
+.mk-hub .mkm__mapc span { display: block; margin-top: 0.25rem; font-size: 0.74rem; line-height: 1.5; opacity: 0.5; }
+.mk-hub .mkm__links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.1rem; }
+</style>
+
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-none" checked />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-guidelines" />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-faq" />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-about" />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-navigation" />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-reference" />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-staff" />
+<input class="mkm-r" type="radio" name="hub-m" id="hub-m-api" />
+
+<div class="mkm mkm--guidelines">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">The rules</span><b>Guidelines</b>
+            <div class="mkm__find">Search the guidelines&hellip;</div>
+            <label class="mkm__x" for="hub-m-none">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__split">
+            <nav class="mkm__toc">
+                <div class="mkm__tocg">General</div>
+                <a href="#">Introduction</a>
+                <a href="#">Glossary</a>
+                <div class="mkm__tocg">Acceptance of Records</div>
+                <a href="#">Definition of a World Record</a>
+                <a class="on" href="#">Proof of legitimacy</a>
+                <a href="#">Tolerance and leniency</a>
+                <a href="#">Cheating and penalties</a>
+                <div class="mkm__tocg">Level Placement</div>
+                <a href="#">List structure</a>
+                <a href="#">Level selection</a>
+                <a href="#">Determining positions</a>
+                <div class="mkm__tocg">Content Policy</div>
+                <a href="#">List records</a>
+                <a href="#">Levels and thumbnails</a>
+                <div class="mkm__tocg">Technical Support</div>
+                <a href="#">Staff roles</a>
+                <a href="#">Ethical standards</a>
+            </nav>
+            <div class="mkm__body">
+                <div class="mkm__crumb">Acceptance of Records</div>
+                <h3>Requirements for proof of legitimacy</h3>
+                <p>Before submitting a record, you must familiarise yourself with the list of mandatory proof of legitimacy, as well as the requirements for it, to ensure that the record you are submitting complies with them &mdash; otherwise it will be rejected immediately, before the verification stage.</p>
+                <h4>1. Video recording of the record</h4>
+                <p>The recording must show the attempt in full, from its starting percentage to the point of death or to 100%. It may contain editing elements intended to conceal the player&rsquo;s personal information, in which case the original recording must be linked in the notes field.</p>
+                <ul>
+                    <li>the level must be the version listed on this site;</li>
+                    <li>the endscreen must be visible, or the recording must continue past the completion;</li>
+                    <li>cuts are permitted only where the raw footage is attached alongside.</li>
+                </ul>
+                <h4>2. Audio</h4>
+                <p>In-game source audio or clicks. Either is accepted, both are strongly preferred; where neither is present, raw footage that has them must be attached.</p>
+                <h4>3. Indicators</h4>
+                <p>A cheat indicator, and an fps/tps display where the mod menu provides one. Neither is strictly mandatory, but a record without them is assessed more strictly and may be asked for raw footage.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mkm mkm--faq">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Answers</span><b>FAQ</b>
+            <div class="mkm__find">Search 14 questions&hellip;</div>
+            <label class="mkm__x" for="hub-m-none">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">Getting on the list</div>
+                    <div class="mkm__q"><b>How does a level get on the list?</b><p>Staff select it. There is no queue a creator joins: moderators assess levels against the Level Selection criteria &mdash; classic gameplay, a public recording, an intended official-server release and a credible chance of being rated &mdash; and place the ones that pass on the Pending List until an exact position is settled.</p></div>
+                    <div class="mkm__q"><b>My level isn&rsquo;t listed. Can I put it forward?</b><p>Raise it in <code>#list-discussion</code> with a public recording of its current state. It is not a submission form, and it goes through the same criteria as everything else.</p></div>
+                    <div class="mkm__q"><b>Why is a level on Pending and not on the list?</b><p>It passed selection but has no exact position yet. Pending shows the range it is expected to land in and whether it is moving up or down inside it.</p></div>
+                    <div class="mkm__q"><b>A level&rsquo;s information is wrong.</b><p>Report it in <code>#level-update-reporting</code> with something to back it up &mdash; footage, a creator statement, tester feedback.</p></div>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Records</div>
+                    <div class="mkm__q"><b>How do I submit a record?</b><p>Through the Discord server. Read <a class="lk" href="#">Acceptance of Records</a> first &mdash; a record without the required proof is rejected before it is assessed, not sent back for more.</p></div>
+                    <div class="mkm__q"><b>What proof does a record need?</b><p>A complete uncut playthrough (raw footage attached if your video has cuts), source audio or clicks, and a cheat indicator and fps/tps display where your mod menu provides them &mdash; on the version of the level this site lists.</p></div>
+                    <div class="mkm__q"><b>What counts as a world record here?</b><p>Two things, tracked separately: the best completion from 0%, and the longest single run on the current version of the level.</p></div>
+                    <div class="mkm__q"><b>My record was rejected. Can it be reviewed?</b><p>Records rejected because the player changed the level are reviewable if the creator later made the same change in a new version. Anything rejected for missing proof needs resubmitting with the proof.</p></div>
+                </div>
+            </div>
+            <h4>How points are calculated</h4>
+            <p>From two things only: the level&rsquo;s rank in <b>All Levels</b>, and the percentage of the record. A verification is worth twice a 100% record on the same level; completing a level that is not verified yet is worth 0.8 of a verification.</p>
+            <table class="mkm__tbl mkm__tbl--num" style="max-width:34rem">
+                <thead><tr><th></th><th>#1</th><th>#10</th><th>#50</th><th>#100</th></tr></thead>
+                <tbody>
+                    <tr><td>100% record</td><td>1459</td><td>1196</td><td>663</td><td>425</td></tr>
+                    <tr><td>50% record</td><td>851</td><td>698</td><td>387</td><td>248</td></tr>
+                    <tr><td>Verification</td><td>2919</td><td>2392</td><td>1325</td><td>849</td></tr>
+                </tbody>
+            </table>
+            <p>Position is worth far more than percentage: a 50% on #1 beats a 100% on #100. And because points follow a level&rsquo;s <em>current</em> rank, a total changes when levels move, without anyone submitting anything.</p>
+        </div>
+    </div>
+</div>
+
+<div class="mkm mkm--about">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Start here</span><b>What this list is</b>
+            <label class="mkm__x" for="hub-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">The Upcoming Levels List catalogues upcoming Top 1&ndash;100 Extreme Demons projected to be verified and placed on the Demonlist, along with unrated Extreme Demons that would have qualified for a rating when they were made. It is a forecast of what the Demonlist is about to look like &mdash; not a record of what has already happened.</p>
+            <p>Nothing here is official. Positions are estimates made by the list staff against written criteria, and they move as levels progress. Levels that are already rated are placed in strict accordance with their ranking on Pointercrate.</p>
+            <h4>Where is what</h4>
+            <div class="mkm__map">
+                <a class="u-card mkm__mapc" href="#"><b>All Levels</b><span>Every level with a conceivable chance. A level&rsquo;s rank here is what leaderboard points are calculated from.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Main List</b><span>The same order, higher bar: levels that meet the standards for an official rating.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Future List</b><span>The highest bar of the three &mdash; levels very likely to be verified and published soon.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Pending</b><span>Accepted but not yet placed, with the expected range and the direction it is moving.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Upcoming</b><span>The same levels ordered by how close they are to verification rather than by difficulty.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Leaderboard</b><span>Players ranked by what their records, runs and verifications are worth.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>Events</b><span>Level of the Day, Level of the Month, and the level closest to verification.</span></a>
+                <a class="u-card mkm__mapc" href="#"><b>A level&rsquo;s page</b><span>Status, progress, records, creators, and its rank in each tier.</span></a>
+            </div>
+            <h4>How to read a level</h4>
+            <p>The colour of a name is the level&rsquo;s state, from layout through decoration and verification to rated. Two percentages follow every level &mdash; how much of the decoration is done, and how far the best run has got. The badges are its position in each tier: a level can be #4 in All Levels and #2 in Future List at once.</p>
+        </div>
+    </div>
+</div>
+
+<div class="mkm mkm--navigation">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Navigation &middot; 9 pages</span><b>What is on each page</b>
+            <label class="mkm__x" for="hub-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">Every page on the site, grouped the way the menu groups them.</p>
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">Lists</div>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">All Levels <code>/list</code></span>
+                        <span class="mkm__navd">Every level with a conceivable chance of being verified and published, hardest first. The widest of the three tiers, and the one a level&rsquo;s leaderboard points are calculated from &mdash; a record is worth what it is worth because of the level&rsquo;s rank <em>here</em>.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Main List <code>/listmain</code></span>
+                        <span class="mkm__navd">The same order with a higher bar: levels that already meet the standards required to be considered for an official rating. Shorter, and every entry is a serious candidate.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Future List <code>/listfuture</code></span>
+                        <span class="mkm__navd">The strictest tier &mdash; levels with a very high likelihood of being verified and published soon. Read this one if you only want what is about to happen.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">A level&rsquo;s page <code>/level/&hellip;</code></span>
+                        <span class="mkm__navd">One page per level: its state, how much of the decoration is done and how far the best run has got, every record and run with proof, its creators, and its rank in each tier at once.</span>
+                    </a>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Other</div>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Upcoming Levels <code>/upcoming</code></span>
+                        <span class="mkm__navd">The same unverified levels, reordered by how close they actually are to being verified rather than by how hard they are. The list of what is about to fall.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Pending List <code>/pending</code></span>
+                        <span class="mkm__navd">Levels that passed selection but have no exact position yet, with the range each is expected to land in and an arrow for which way it is moving inside it.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Leaderboard <code>/leaderboard</code></span>
+                        <span class="mkm__navd">Players ranked by the verifications, records and runs they hold on listed levels. Open a player to see every record behind their total and what each one is worth.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Events <code>/events</code></span>
+                        <span class="mkm__navd">Three levels the list is pointing at right now: one picked for the day, one for the month, and the one closest to being verified.</span>
+                    </a>
+                    <a class="mkm__nav" href="#">
+                        <span class="mkm__navn">Home <code>/</code></span>
+                        <span class="mkm__navd">The size of each tier at a glance, the top of the list, the recent changes feed and the staff team.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mkm mkm--reference">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Reference &middot; 19 marks</span><b>What the marks mean</b>
+            <label class="mkm__x" for="hub-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">Level colouring</div>
+                    <p style="font-size:0.8rem">A level&rsquo;s name is coloured by its state when Level Coloring is on &mdash; the same scale as the status pill on the level&rsquo;s own page. If names look plain, turn the setting on.</p>
+                    <div class="mkm__legend">
+                        <div><span class="u-pill u-pill--blue"><i></i>Layout</span><span>No decoration yet</span></div>
+                        <div><span class="u-pill u-pill--cyan"><i></i>Early deco</span><span>1&ndash;29% decorated</span></div>
+                        <div><span class="u-pill u-pill--green"><i></i>Mid deco</span><span>30&ndash;69% decorated</span></div>
+                        <div><span class="u-pill u-pill--yellow"><i></i>Late deco</span><span>70&ndash;99% decorated</span></div>
+                        <div><span class="u-pill u-pill--amber"><i></i>Deco done</span><span>Decoration finished</span></div>
+                        <div><span class="u-pill u-pill--orange"><i></i>Early verify</span><span>Best run 30&ndash;59%</span></div>
+                        <div><span class="u-pill u-pill--red"><i></i>Late verify</span><span>Best run 60&ndash;99%</span></div>
+                        <div><span class="u-pill u-pill--done"><i></i>Verified</span><span>Beaten, not yet rated</span></div>
+                        <div><span class="u-pill"><i></i>Rated</span><span>Verified and rated in game</span></div>
+                        <div><span class="u-pill u-pill--done">&#128683;</span><span>Pending removal</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Pending list icons</div>
+                    <p style="font-size:0.8rem">Icons on the Pending List say where a level is expected to land and which way it is moving inside that range.</p>
+                    <div class="mkm__legend">
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjNGNhZjUwIiBkPSJNMTIgNEw0IDEyaDZ2OGg0di04aDZ6Ii8+PC9zdmc+Cg==" alt="" width="18" height="18" /><span>Moving up</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZjQ0MzM2IiBkPSJNMTIgMjBsLTgtOGg2VjRoNHY4aDZ6Ii8+PC9zdmc+Cg==" alt="" width="18" height="18" /><span>Moving down</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNGRkQ3MDAiPjE8L3RleHQ+PC9zdmc+Cg==" alt="" width="18" height="18" /><span>Pending #1</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNDMEMwQzAiPjEwPC90ZXh0Pjwvc3ZnPgo=" alt="" width="18" height="18" /><span>Pending Top 10</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNDRDdGMzIiPjIwPC90ZXh0Pjwvc3ZnPgo=" alt="" width="18" height="18" /><span>Pending Top 20</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM0Q0FGNTAiPjMwPC90ZXh0Pjwvc3ZnPgo=" alt="" width="18" height="18" /><span>Pending Top 30</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMyMTk2RjMiPjUwPC90ZXh0Pjwvc3ZnPgo=" alt="" width="18" height="18" /><span>Pending Top 50</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM5QzI3QjAiPjc1PC90ZXh0Pjwvc3ZnPgo=" alt="" width="18" height="18" /><span>Pending Top 75</span></div>
+                        <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNGRjU3MjIiPj88L3RleHQ+PC9zdmc+Cg==" alt="" width="18" height="18" /><span>Unknown placement</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mkm mkm--staff">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Who to talk to</span><b>Staff &amp; contact</b>
+            <label class="mkm__x" for="hub-m-none" style="margin-left:auto">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">Moderators and Elder Moderators determine level positions, place levels, take part in quality control and keep the site up to date. Admins manage a sector of the project&rsquo;s operation; the List Leader oversees the list and its staff.</p>
+            <div class="mkm__cols">
+                <div>
+                    <div class="u-eyebrow">The team <span class="u-count">12</span></div>
+                    <div class="mkm__people">
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNTc2IDEzNmMwIDIyLjA5LTE3LjkxIDQwLTQwIDQwYy0uMjQ4IDAtLjQ1NTEtLjEyNjYtLjcwMzEtLjEzMDVsLTUwLjUyIDI3Ny45QzQ4MiA0NjguOSA0NjguOCA0ODAgNDUzLjMgNDgwSDEyMi43Yy0xNS40NiAwLTI4LjcyLTExLjA2LTMxLjQ4LTI2LjI3TDQwLjcxIDE3NS45QzQwLjQ2IDE3NS45IDQwLjI1IDE3NiAzOS4xIDE3NmMtMjIuMDkgMC00MC0xNy45MS00MC00MFMxNy45MSA5NiAzOS4xIDk2czQwIDE3LjkxIDQwIDQwYzAgOC45OTgtMy41MjEgMTYuODktOC41MzcgMjMuNTdsODkuNjMgNzEuN2MxNS45MSAxMi43MyAzOS41IDcuNTQ0IDQ4LjYxLTEwLjY4bDU3LjYtMTE1LjJDMjU1LjEgOTguMzQgMjQ3LjEgODYuMzQgMjQ3LjEgNzJDMjQ3LjEgNDkuOTEgMjY1LjkgMzIgMjg4IDMyczM5LjEgMTcuOTEgMzkuMSA0MGMwIDE0LjM0LTcuOTYzIDI2LjM0LTE5LjMgMzMuNGw1Ny42IDExNS4yYzkuMTExIDE4LjIyIDMyLjcxIDIzLjQgNDguNjEgMTAuNjhsODkuNjMtNzEuN0M0OTkuNSAxNTIuOSA0OTYgMTQ0LjEgNDk2IDEzNkM0OTYgMTEzLjkgNTEzLjkgOTYgNTM2IDk2UzU3NiAxMTMuOSA1NzYgMTM2eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>QwidziT</b><span class="u-chip">Leader</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNDI1LjEgNDgyLjZjLTIuMzAzLTEuMjUtNC41NzItMi41NTktNi44MDktMy45M2wtNy44MTggNC40OTNjLTYuMDAyIDMuNTA0LTEyLjgzIDUuMzUyLTE5Ljc1IDUuMzUyYy0xMC43MSAwLTIxLjEzLTQuNDkyLTI4Ljk3LTEyLjc1Yy0xOC40MS0yMC4wOS0zMi4yOS00NC4xNS00MC4yMi02OS45Yy01LjM1Mi0xOC4wNiAyLjM0My0zNi44NyAxNy44My00NS4yNGw4LjAxOC00LjY2OWMtLjA2NjQtMi42MjEtLjA2NjQtNS4yNDIgMC03Ljg1OWwtNy42NTUtNC40NjFjLTEyLjMtNi45NTMtMTkuNC0xOS42Ni0xOS42NC0zMy4zOEMzMDUuNiAzMDYuMyAyOTAuNCAzMDQgMjc0LjcgMzA0SDE3My4zQzc3LjYxIDMwNCAwIDM4MS43IDAgNDc3LjRDMCA0OTYuNSAxNS41MiA1MTIgMzQuNjYgNTEySDQxMy4zYzUuNzI3IDAgMTAuOS0xLjcyNyAxNS42Ni00LjE4OGMtMi4yNzEtNC45ODQtMy44Ni0xMC4zLTMuODYtMTYuMDZWNDgyLjZ6TTIyNCAyNTZjNzAuNyAwIDEyOC01Ny4zMSAxMjgtMTI4UzI5NC43IDAgMjI0IDBDMTUzLjMgMCA5NiA1Ny4zMSA5NiAxMjhTMTUzLjMgMjU2IDIyNCAyNTZ6TTYxMC41IDM3My4zYzIuNjI1LTE0IDIuNjI1LTI4LjUgMC00Mi41bDI1Ljc1LTE1YzMtMS42MjUgNC4zNzUtNS4xMjUgMy4zNzUtOC41Yy02Ljc1LTIxLjUtMTguMjUtNDEuMTMtMzMuMjUtNTcuMzhjLTIuMjUtMi41LTYtMy4xMjUtOS0xLjM3NWwtMjUuNzUgMTQuODhjLTEwLjg4LTkuMjUtMjMuMzgtMTYuNS0zNi44OC0yMS4yNVYyMTIuM2MwLTMuMzc1LTIuNS02LjM3NS01Ljc1LTdjLTIyLjI1LTUtNDUtNC44NzUtNjYuMjUgMGMtMy4yNSAuNjI1LTUuNjI1IDMuNjI1LTUuNjI1IDd2MjkuODhjLTEzLjUgNC43NS0yNiAxMi0zNi44OCAyMS4yNUwzOTQuNCAyNDguNWMtMi44NzUtMS43NS02LjYyNS0xLjEyNS05IDEuMzc1Yy0xNSAxNi4yNS0yNi41IDM1Ljg4LTMzLjEzIDU3LjM4Yy0xIDMuMzc1IC4zNzUxIDYuODc1IDMuMjUgOC41bDI1Ljc1IDE1Yy0yLjUgMTQtMi41IDI4LjUgMCA0Mi41bC0yNS43NSAxNWMtMyAxLjYyNS00LjI1IDUuMTI1LTMuMjUgOC41YzYuNjI1IDIxLjUgMTguMTMgNDEgMzMuMTMgNTcuMzhjMi4zNzUgMi41IDYgMy4xMjUgOSAxLjM3NWwyNS44OC0xNC44OGMxMC44OCA5LjI1IDIzLjM4IDE2LjUgMzYuODggMjEuMjV2MjkuODhjMCAzLjM3NSAyLjM3NSA2LjM3NSA1LjYyNSA3YzIyLjM4IDUgNDUgNC44NzUgNjYuMjUgMGMzLjI1LS42MjUgNS43NS0zLjYyNSA1Ljc1LTd2LTI5Ljg4YzEzLjUtNC43NSAyNi0xMiAzNi44OC0yMS4yNWwyNS43NSAxNC44OGMyLjg3NSAxLjc1IDYuNzUgMS4xMjUgOS0xLjM3NWMxNS0xNi4yNSAyNi41LTM1Ljg4IDMzLjI1LTU3LjM4YzEtMy4zNzUtLjM3NTEtNi44NzUtMy4zNzUtOC41TDYxMC41IDM3My4zek00OTYgNDAwLjVjLTI2Ljc1IDAtNDguNS0yMS43NS00OC41LTQ4LjVzMjEuNzUtNDguNSA0OC41LTQ4LjVjMjYuNzUgMCA0OC41IDIxLjc1IDQ4LjUgNDguNVM1MjIuOCA0MDAuNSA0OTYgNDAwLjV6Ii8+PC9zdmc+" alt="" width="15" height="15" /><b>exiled_shade</b><span class="u-chip">Admin</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNjIyLjMgMjcxLjFsLTExNS4xLTQ1LjAxYy00LjEyNS0xLjYyOS0xMi42Mi0zLjc1NC0yMi4yNSAwTDM2OS44IDI3MS4xQzM1OSAyNzUuMiAzNTIgMjg1LjEgMzUyIDI5NS4xYzAgMTExLjYgNjguNzUgMTg4LjggMTMyLjkgMjEzLjljOS42MjUgMy43NSAxOCAxLjYyNSAyMi4yNSAwQzU1OC40IDQ4OS45IDY0MCA0MjAuNSA2NDAgMjk1LjFDNjQwIDI4NS4xIDYzMyAyNzUuMiA2MjIuMyAyNzEuMXpNNDk2IDQ2Mi40VjI3My4ybDk1LjUgMzcuMzhDNTg1LjkgMzk3LjggNTMwLjYgNDQ2IDQ5NiA0NjIuNHpNMjI0IDI1NmM3MC43IDAgMTI4LTU3LjMxIDEyOC0xMjhTMjk0LjcgMCAyMjQgMEMxNTMuMyAwIDk2IDU3LjMxIDk2IDEyOFMxNTMuMyAyNTYgMjI0IDI1NnpNMzIwLjYgMzEwLjNDMzA1LjkgMzA2LjMgMjkwLjYgMzA0IDI3NC43IDMwNEgxNzMuM0M3Ny42MSAzMDQgMCAzODEuNyAwIDQ3Ny40QzAgNDk2LjUgMTUuNTIgNTEyIDM0LjY2IDUxMkg0MTMuM2MzLjE0MyAwIDUuOTY3LTEuMDA0IDguODYxLTEuNzg5QzM2OS43IDQ2OS44IDMyNC4xIDQwMC4zIDMyMC42IDMxMC4zeiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>niroi</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNjIyLjMgMjcxLjFsLTExNS4xLTQ1LjAxYy00LjEyNS0xLjYyOS0xMi42Mi0zLjc1NC0yMi4yNSAwTDM2OS44IDI3MS4xQzM1OSAyNzUuMiAzNTIgMjg1LjEgMzUyIDI5NS4xYzAgMTExLjYgNjguNzUgMTg4LjggMTMyLjkgMjEzLjljOS42MjUgMy43NSAxOCAxLjYyNSAyMi4yNSAwQzU1OC40IDQ4OS45IDY0MCA0MjAuNSA2NDAgMjk1LjFDNjQwIDI4NS4xIDYzMyAyNzUuMiA2MjIuMyAyNzEuMXpNNDk2IDQ2Mi40VjI3My4ybDk1LjUgMzcuMzhDNTg1LjkgMzk3LjggNTMwLjYgNDQ2IDQ5NiA0NjIuNHpNMjI0IDI1NmM3MC43IDAgMTI4LTU3LjMxIDEyOC0xMjhTMjk0LjcgMCAyMjQgMEMxNTMuMyAwIDk2IDU3LjMxIDk2IDEyOFMxNTMuMyAyNTYgMjI0IDI1NnpNMzIwLjYgMzEwLjNDMzA1LjkgMzA2LjMgMjkwLjYgMzA0IDI3NC43IDMwNEgxNzMuM0M3Ny42MSAzMDQgMCAzODEuNyAwIDQ3Ny40QzAgNDk2LjUgMTUuNTIgNTEyIDM0LjY2IDUxMkg0MTMuM2MzLjE0MyAwIDUuOTY3LTEuMDA0IDguODYxLTEuNzg5QzM2OS43IDQ2OS44IDMyNC4xIDQwMC4zIDMyMC42IDMxMC4zeiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>Keres</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNjIyLjMgMjcxLjFsLTExNS4xLTQ1LjAxYy00LjEyNS0xLjYyOS0xMi42Mi0zLjc1NC0yMi4yNSAwTDM2OS44IDI3MS4xQzM1OSAyNzUuMiAzNTIgMjg1LjEgMzUyIDI5NS4xYzAgMTExLjYgNjguNzUgMTg4LjggMTMyLjkgMjEzLjljOS42MjUgMy43NSAxOCAxLjYyNSAyMi4yNSAwQzU1OC40IDQ4OS45IDY0MCA0MjAuNSA2NDAgMjk1LjFDNjQwIDI4NS4xIDYzMyAyNzUuMiA2MjIuMyAyNzEuMXpNNDk2IDQ2Mi40VjI3My4ybDk1LjUgMzcuMzhDNTg1LjkgMzk3LjggNTMwLjYgNDQ2IDQ5NiA0NjIuNHpNMjI0IDI1NmM3MC43IDAgMTI4LTU3LjMxIDEyOC0xMjhTMjk0LjcgMCAyMjQgMEMxNTMuMyAwIDk2IDU3LjMxIDk2IDEyOFMxNTMuMyAyNTYgMjI0IDI1NnpNMzIwLjYgMzEwLjNDMzA1LjkgMzA2LjMgMjkwLjYgMzA0IDI3NC43IDMwNEgxNzMuM0M3Ny42MSAzMDQgMCAzODEuNyAwIDQ3Ny40QzAgNDk2LjUgMTUuNTIgNTEyIDM0LjY2IDUxMkg0MTMuM2MzLjE0MyAwIDUuOTY3LTEuMDA0IDguODYxLTEuNzg5QzM2OS43IDQ2OS44IDMyNC4xIDQwMC4zIDMyMC42IDMxMC4zeiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>LukeLGamer</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNjIyLjMgMjcxLjFsLTExNS4xLTQ1LjAxYy00LjEyNS0xLjYyOS0xMi42Mi0zLjc1NC0yMi4yNSAwTDM2OS44IDI3MS4xQzM1OSAyNzUuMiAzNTIgMjg1LjEgMzUyIDI5NS4xYzAgMTExLjYgNjguNzUgMTg4LjggMTMyLjkgMjEzLjljOS42MjUgMy43NSAxOCAxLjYyNSAyMi4yNSAwQzU1OC40IDQ4OS45IDY0MCA0MjAuNSA2NDAgMjk1LjFDNjQwIDI4NS4xIDYzMyAyNzUuMiA2MjIuMyAyNzEuMXpNNDk2IDQ2Mi40VjI3My4ybDk1LjUgMzcuMzhDNTg1LjkgMzk3LjggNTMwLjYgNDQ2IDQ5NiA0NjIuNHpNMjI0IDI1NmM3MC43IDAgMTI4LTU3LjMxIDEyOC0xMjhTMjk0LjcgMCAyMjQgMEMxNTMuMyAwIDk2IDU3LjMxIDk2IDEyOFMxNTMuMyAyNTYgMjI0IDI1NnpNMzIwLjYgMzEwLjNDMzA1LjkgMzA2LjMgMjkwLjYgMzA0IDI3NC43IDMwNEgxNzMuM0M3Ny42MSAzMDQgMCAzODEuNyAwIDQ3Ny40QzAgNDk2LjUgMTUuNTIgNTEyIDM0LjY2IDUxMkg0MTMuM2MzLjE0MyAwIDUuOTY3LTEuMDA0IDguODYxLTEuNzg5QzM2OS43IDQ2OS44IDMyNC4xIDQwMC4zIDMyMC42IDMxMC4zeiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>ItzDel1ghtfuL</b><span class="u-chip">Elder</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNTkyIDI4OEg1NzZWMjEyLjdjMC00MS44NC0zMC4wMy04MC4wNC03MS42Ni04NC4yN0M0NTYuNSAxMjMuNiA0MTYgMTYxLjEgNDE2IDIwOFYyODhoLTE2QzM3My42IDI4OCAzNTIgMzA5LjYgMzUyIDMzNnYxMjhjMCAyNi40IDIxLjYgNDggNDggNDhoMTkyYzI2LjQgMCA0OC0yMS42IDQ4LTQ4di0xMjhDNjQwIDMwOS42IDYxOC40IDI4OCA1OTIgMjg4ek00OTYgNDMyYy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzUxMy42IDQzMiA0OTYgNDMyek01MjggMjg4aC02NFYyMDhjMC0xNy42MiAxNC4zOC0zMiAzMi0zMnMzMiAxNC4zOCAzMiAzMlYyODh6TTIyNCAyNTZjNzAuNyAwIDEyOC01Ny4zMSAxMjgtMTI4UzI5NC43IDAgMjI0IDBDMTUzLjMgMCA5NiA1Ny4zMSA5NiAxMjhTMTUzLjMgMjU2IDIyNCAyNTZ6TTMyMCAzMzZjMC04LjY3MiAxLjczOC0xNi44NyA0LjMwMy0yNC43QzMwOC42IDMwNi42IDI5MS45IDMwNCAyNzQuNyAzMDRIMTczLjNDNzcuNjEgMzA0IDAgMzgxLjcgMCA0NzcuNEMwIDQ5Ni41IDE1LjUyIDUxMiAzNC42NiA1MTJoMzAxLjdDMzI2LjMgNDk4LjYgMzIwIDQ4Mi4xIDMyMCA0NjRWMzM2eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>Terralith</b><span class="u-chip">Mod</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNTkyIDI4OEg1NzZWMjEyLjdjMC00MS44NC0zMC4wMy04MC4wNC03MS42Ni04NC4yN0M0NTYuNSAxMjMuNiA0MTYgMTYxLjEgNDE2IDIwOFYyODhoLTE2QzM3My42IDI4OCAzNTIgMzA5LjYgMzUyIDMzNnYxMjhjMCAyNi40IDIxLjYgNDggNDggNDhoMTkyYzI2LjQgMCA0OC0yMS42IDQ4LTQ4di0xMjhDNjQwIDMwOS42IDYxOC40IDI4OCA1OTIgMjg4ek00OTYgNDMyYy0xNy42MiAwLTMyLTE0LjM4LTMyLTMyczE0LjM4LTMyIDMyLTMyczMyIDE0LjM4IDMyIDMyUzUxMy42IDQzMiA0OTYgNDMyek01MjggMjg4aC02NFYyMDhjMC0xNy42MiAxNC4zOC0zMiAzMi0zMnMzMiAxNC4zOCAzMiAzMlYyODh6TTIyNCAyNTZjNzAuNyAwIDEyOC01Ny4zMSAxMjgtMTI4UzI5NC43IDAgMjI0IDBDMTUzLjMgMCA5NiA1Ny4zMSA5NiAxMjhTMTUzLjMgMjU2IDIyNCAyNTZ6TTMyMCAzMzZjMC04LjY3MiAxLjczOC0xNi44NyA0LjMwMy0yNC43QzMwOC42IDMwNi42IDI5MS45IDMwNCAyNzQuNyAzMDRIMTczLjNDNzcuNjEgMzA0IDAgMzgxLjcgMCA0NzcuNEMwIDQ5Ni41IDE1LjUyIDUxMiAzNC42NiA1MTJoMzAxLjdDMzI2LjMgNDk4LjYgMzIwIDQ4Mi4xIDMyMCA0NjRWMzM2eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>TheCatAstronaut</b><span class="u-chip">Mod</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNDE0LjggNDAuNzlMMjg2LjggNDg4LjhDMjgxLjkgNTA1LjggMjY0LjIgNTE1LjYgMjQ3LjIgNTEwLjhDMjMwLjIgNTA1LjkgMjIwLjQgNDg4LjIgMjI1LjIgNDcxLjJMMzUzLjIgMjMuMjFDMzU4LjEgNi4yMTYgMzc1LjgtMy42MjQgMzkyLjggMS4yMzJDNDA5LjggNi4wODcgNDE5LjYgMjMuOCA0MTQuOCA0MC43OUg0MTQuOHpNNTE4LjYgMTIxLjRMNjMwLjYgMjMzLjRDNjQzLjEgMjQ1LjkgNjQzLjEgMjY2LjEgNjMwLjYgMjc4LjZMNTE4LjYgMzkwLjZDNTA2LjEgNDAzLjEgNDg1LjkgNDAzLjEgNDczLjQgMzkwLjZDNDYwLjkgMzc4LjEgNDYwLjkgMzU3LjkgNDczLjQgMzQ1LjRMNTYyLjcgMjU2TDQ3My40IDE2Ni42QzQ2MC45IDE1NC4xIDQ2MC45IDEzMy45IDQ3My40IDEyMS40QzQ4NS45IDEwOC45IDUwNi4xIDEwOC45IDUxOC42IDEyMS40VjEyMS40ek0xNjYuNiAxNjYuNkw3Ny4yNSAyNTZMMTY2LjYgMzQ1LjRDMTc5LjEgMzU3LjkgMTc5LjEgMzc4LjEgMTY2LjYgMzkwLjZDMTU0LjEgNDAzLjEgMTMzLjkgNDAzLjEgMTIxLjQgMzkwLjZMOS4zNzIgMjc4LjZDLTMuMTI0IDI2Ni4xLTMuMTI0IDI0NS45IDkuMzcyIDIzMy40TDEyMS40IDEyMS40QzEzMy45IDEwOC45IDE1NC4xIDEwOC45IDE2Ni42IDEyMS40QzE3OS4xIDEzMy45IDE3OS4xIDE1NC4xIDE2Ni42IDE2Ni42VjE2Ni42eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>Prometheus</b><span class="u-chip">Dev</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNDE0LjggNDAuNzlMMjg2LjggNDg4LjhDMjgxLjkgNTA1LjggMjY0LjIgNTE1LjYgMjQ3LjIgNTEwLjhDMjMwLjIgNTA1LjkgMjIwLjQgNDg4LjIgMjI1LjIgNDcxLjJMMzUzLjIgMjMuMjFDMzU4LjEgNi4yMTYgMzc1LjgtMy42MjQgMzkyLjggMS4yMzJDNDA5LjggNi4wODcgNDE5LjYgMjMuOCA0MTQuOCA0MC43OUg0MTQuOHpNNTE4LjYgMTIxLjRMNjMwLjYgMjMzLjRDNjQzLjEgMjQ1LjkgNjQzLjEgMjY2LjEgNjMwLjYgMjc4LjZMNTE4LjYgMzkwLjZDNTA2LjEgNDAzLjEgNDg1LjkgNDAzLjEgNDczLjQgMzkwLjZDNDYwLjkgMzc4LjEgNDYwLjkgMzU3LjkgNDczLjQgMzQ1LjRMNTYyLjcgMjU2TDQ3My40IDE2Ni42QzQ2MC45IDE1NC4xIDQ2MC45IDEzMy45IDQ3My40IDEyMS40QzQ4NS45IDEwOC45IDUwNi4xIDEwOC45IDUxOC42IDEyMS40VjEyMS40ek0xNjYuNiAxNjYuNkw3Ny4yNSAyNTZMMTY2LjYgMzQ1LjRDMTc5LjEgMzU3LjkgMTc5LjEgMzc4LjEgMTY2LjYgMzkwLjZDMTU0LjEgNDAzLjEgMTMzLjkgNDAzLjEgMTIxLjQgMzkwLjZMOS4zNzIgMjc4LjZDLTMuMTI0IDI2Ni4xLTMuMTI0IDI0NS45IDkuMzcyIDIzMy40TDEyMS40IDEyMS40QzEzMy45IDEwOC45IDE1NC4xIDEwOC45IDE2Ni42IDEyMS40QzE3OS4xIDEzMy45IDE3OS4xIDE1NC4xIDE2Ni42IDE2Ni42VjE2Ni42eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>NikoYakorem</b><span class="u-chip">Dev</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNDE0LjggNDAuNzlMMjg2LjggNDg4LjhDMjgxLjkgNTA1LjggMjY0LjIgNTE1LjYgMjQ3LjIgNTEwLjhDMjMwLjIgNTA1LjkgMjIwLjQgNDg4LjIgMjI1LjIgNDcxLjJMMzUzLjIgMjMuMjFDMzU4LjEgNi4yMTYgMzc1LjgtMy42MjQgMzkyLjggMS4yMzJDNDA5LjggNi4wODcgNDE5LjYgMjMuOCA0MTQuOCA0MC43OUg0MTQuOHpNNTE4LjYgMTIxLjRMNjMwLjYgMjMzLjRDNjQzLjEgMjQ1LjkgNjQzLjEgMjY2LjEgNjMwLjYgMjc4LjZMNTE4LjYgMzkwLjZDNTA2LjEgNDAzLjEgNDg1LjkgNDAzLjEgNDczLjQgMzkwLjZDNDYwLjkgMzc4LjEgNDYwLjkgMzU3LjkgNDczLjQgMzQ1LjRMNTYyLjcgMjU2TDQ3My40IDE2Ni42QzQ2MC45IDE1NC4xIDQ2MC45IDEzMy45IDQ3My40IDEyMS40QzQ4NS45IDEwOC45IDUwNi4xIDEwOC45IDUxOC42IDEyMS40VjEyMS40ek0xNjYuNiAxNjYuNkw3Ny4yNSAyNTZMMTY2LjYgMzQ1LjRDMTc5LjEgMzU3LjkgMTc5LjEgMzc4LjEgMTY2LjYgMzkwLjZDMTU0LjEgNDAzLjEgMTMzLjkgNDAzLjEgMTIxLjQgMzkwLjZMOS4zNzIgMjc4LjZDLTMuMTI0IDI2Ni4xLTMuMTI0IDI0NS45IDkuMzcyIDIzMy40TDEyMS40IDEyMS40QzEzMy45IDEwOC45IDE1NC4xIDEwOC45IDE2Ni42IDEyMS40QzE3OS4xIDEzMy45IDE3OS4xIDE1NC4xIDE2Ni42IDE2Ni42VjE2Ni42eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>ausansdev</b><span class="u-chip">Dev</span></div>
+                        <div class="mkm__p"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNNDE0LjggNDAuNzlMMjg2LjggNDg4LjhDMjgxLjkgNTA1LjggMjY0LjIgNTE1LjYgMjQ3LjIgNTEwLjhDMjMwLjIgNTA1LjkgMjIwLjQgNDg4LjIgMjI1LjIgNDcxLjJMMzUzLjIgMjMuMjFDMzU4LjEgNi4yMTYgMzc1LjgtMy42MjQgMzkyLjggMS4yMzJDNDA5LjggNi4wODcgNDE5LjYgMjMuOCA0MTQuOCA0MC43OUg0MTQuOHpNNTE4LjYgMTIxLjRMNjMwLjYgMjMzLjRDNjQzLjEgMjQ1LjkgNjQzLjEgMjY2LjEgNjMwLjYgMjc4LjZMNTE4LjYgMzkwLjZDNTA2LjEgNDAzLjEgNDg1LjkgNDAzLjEgNDczLjQgMzkwLjZDNDYwLjkgMzc4LjEgNDYwLjkgMzU3LjkgNDczLjQgMzQ1LjRMNTYyLjcgMjU2TDQ3My40IDE2Ni42QzQ2MC45IDE1NC4xIDQ2MC45IDEzMy45IDQ3My40IDEyMS40QzQ4NS45IDEwOC45IDUwNi4xIDEwOC45IDUxOC42IDEyMS40VjEyMS40ek0xNjYuNiAxNjYuNkw3Ny4yNSAyNTZMMTY2LjYgMzQ1LjRDMTc5LjEgMzU3LjkgMTc5LjEgMzc4LjEgMTY2LjYgMzkwLjZDMTU0LjEgNDAzLjEgMTMzLjkgNDAzLjEgMTIxLjQgMzkwLjZMOS4zNzIgMjc4LjZDLTMuMTI0IDI2Ni4xLTMuMTI0IDI0NS45IDkuMzcyIDIzMy40TDEyMS40IDEyMS40QzEzMy45IDEwOC45IDE1NC4xIDEwOC45IDE2Ni42IDEyMS40QzE3OS4xIDEzMy45IDE3OS4xIDE1NC4xIDE2Ni42IDE2Ni42VjE2Ni42eiIvPjwvc3ZnPg==" alt="" width="15" height="15" /><b>QwidziT</b><span class="u-chip">Dev</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="u-eyebrow">Where to take what</div>
+                    <dl class="u-dl">
+                        <dt>A record</dt><dd>The Discord server</dd>
+                        <dt>A level that should be listed</dt><dd>#list-discussion</dd>
+                        <dt>Information that is out of date</dt><dd>#level-update-reporting</dd>
+                        <dt>Something broken on the site</dt><dd>Prometheus</dd>
+                        <dt>A complaint about staff</dt><dd>An Admin, or the List Leader</dd>
+                    </dl>
+                    <div class="mkm__links">
+                        <a class="u-btn" href="#"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzEiIGhlaWdodD0iNTUiIHZpZXdCb3g9IjAgMCA3MSA1NSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxwYXRoIGQ9Ik02MC4xMDQ1IDQuODk3OEM1NS41NzkyIDIuODIxNCA1MC43MjY1IDEuMjkxNiA0NS42NTI3IDAuNDE1NDJDNDUuNTYwMyAwLjM5ODUxIDQ1LjQ2OCAwLjQ0MDc2OSA0NS40MjA0IDAuNTI1Mjg5QzQ0Ljc5NjMgMS42MzUzIDQ0LjEwNSAzLjA4MzQgNDMuNjIwOSA0LjIyMTZDMzguMTYzNyAzLjQwNDYgMzIuNzM0NSAzLjQwNDYgMjcuMzg5MiA0LjIyMTZDMjYuOTA1IDMuMDU4MSAyNi4xODg2IDEuNjM1MyAyNS41NjE3IDAuNTI1Mjg5QzI1LjUxNDEgMC40NDM1ODkgMjUuNDIxOCAwLjQwMTMzIDI1LjMyOTQgMC40MTU0MkMyMC4yNTg0IDEuMjg4OCAxNS40MDU3IDIuODE4NiAxMC44Nzc2IDQuODk3OEMxMC44Mzg0IDQuOTE0NyAxMC44MDQ4IDQuOTQyOSAxMC43ODI1IDQuOTc5NUMxLjU3Nzk1IDE4LjczMDkgLTAuOTQzNTYxIDMyLjE0NDMgMC4yOTM0MDggNDUuMzkxNEMwLjI5OTAwNSA0NS40NTYyIDAuMzM1Mzg2IDQ1LjUxODIgMC4zODU3NjEgNDUuNTU3NkM2LjQ1ODY2IDUwLjAxNzQgMTIuMzQxMyA1Mi43MjQ5IDE4LjExNDcgNTQuNTE5NUMxOC4yMDcxIDU0LjU0NzcgMTguMzA1IDU0LjUxMzkgMTguMzYzOCA1NC40Mzc4QzE5LjcyOTUgNTIuNTcyOCAyMC45NDY5IDUwLjYwNjMgMjEuOTkwNyA0OC41MzgzQzIyLjA1MjMgNDguNDE3MiAyMS45OTM1IDQ4LjI3MzUgMjEuODY3NiA0OC4yMjU2QzE5LjkzNjYgNDcuNDkzMSAxOC4wOTc5IDQ2LjYgMTYuMzI5MiA0NS41ODU4QzE2LjE4OTMgNDUuNTA0MSAxNi4xNzgxIDQ1LjMwNCAxNi4zMDY4IDQ1LjIwODJDMTYuNjc5IDQ0LjkyOTMgMTcuMDUxMyA0NC42MzkxIDE3LjQwNjcgNDQuMzQ2MUMxNy40NzEgNDQuMjkyNiAxNy41NjA2IDQ0LjI4MTMgMTcuNjM2MiA0NC4zMTUxQzI5LjI1NTggNDkuNjIwMiA0MS44MzU0IDQ5LjYyMDIgNTMuMzE3OSA0NC4zMTUxQzUzLjM5MzUgNDQuMjc4NSA1My40ODMxIDQ0LjI4OTggNTMuNTUwMiA0NC4zNDMzQzUzLjkwNTcgNDQuNjM2MyA1NC4yNzc5IDQ0LjkyOTMgNTQuNjUyOSA0NS4yMDgyQzU0Ljc4MTYgNDUuMzA0IDU0Ljc3MzIgNDUuNTA0MSA1NC42MzMzIDQ1LjU4NThDNTIuODY0NiA0Ni42MTk3IDUxLjAyNTkgNDcuNDkzMSA0OS4wOTIxIDQ4LjIyMjhDNDguOTY2MiA0OC4yNzA3IDQ4LjkxMDIgNDguNDE3MiA0OC45NzE4IDQ4LjUzODNDNTAuMDM4IDUwLjYwMzQgNTEuMjU1NCA1Mi41Njk5IDUyLjU5NTkgNTQuNDM1QzUyLjY1MTkgNTQuNTEzOSA1Mi43NTI2IDU0LjU0NzcgNTIuODQ1IDU0LjUxOTVDNTguNjQ2NCA1Mi43MjQ5IDY0LjUyOSA1MC4wMTc0IDcwLjYwMTkgNDUuNTU3NkM3MC42NTUxIDQ1LjUxODIgNzAuNjg4NyA0NS40NTkgNzAuNjk0MyA0NS4zOTQyQzcyLjE3NDcgMzAuMDc5MSA2OC4yMTQ3IDE2Ljc3NTcgNjAuMTk2OCA0Ljk4MjNDNjAuMTc3MiA0Ljk0MjkgNjAuMTQzNyA0LjkxNDcgNjAuMTA0NSA0Ljg5NzhaTTIzLjcyNTkgMzcuMzI1M0MyMC4yMjc2IDM3LjMyNTMgMTcuMzQ1MSAzNC4xMTM2IDE3LjM0NTEgMzAuMTY5M0MxNy4zNDUxIDI2LjIyNSAyMC4xNzE3IDIzLjAxMzMgMjMuNzI1OSAyMy4wMTMzQzI3LjMwOCAyMy4wMTMzIDMwLjE2MjYgMjYuMjUzMiAzMC4xMDY2IDMwLjE2OTNDMzAuMTA2NiAzNC4xMTM2IDI3LjI4IDM3LjMyNTMgMjMuNzI1OSAzNy4zMjUzWk00Ny4zMTc4IDM3LjMyNTNDNDMuODE5NiAzNy4zMjUzIDQwLjkzNzEgMzQuMTEzNiA0MC45MzcxIDMwLjE2OTNDNDAuOTM3MSAyNi4yMjUgNDMuNzYzNiAyMy4wMTMzIDQ3LjMxNzggMjMuMDEzM0M1MC45IDIzLjAxMzMgNTMuNzU0NSAyNi4yNTMyIDUzLjY5ODYgMzAuMTY5M0M1My42OTg2IDM0LjExMzYgNTAuOSAzNy4zMjUzIDQ3LjMxNzggMzcuMzI1M1oiIGZpbGw9IiNmZmZmZmYiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMCI+CjxyZWN0IHdpZHRoPSI3MSIgaGVpZ2h0PSI1NSIgZmlsbD0iIzAwMDAwMCIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=" alt="" width="14" height="14" />discord.gg/QRX47v2qyC</a>
+                        <a class="u-btn u-btn--ghost" href="#"><img class="mk-inv" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48cGF0aCBkPSJNMTguMjQ0IDIuMjVoMy4zMDhsLTcuMjI3IDguMjYgOC41MDIgMTEuMjRIMTYuMTdsLTUuMjE0LTYuODE3TDQuOTkgMjEuNzVIMS42OGw3LjczLTguODM1TDEuMjU0IDIuMjVIOC4wOGw0LjcxMyA2LjIzMXptLTEuMTYxIDE3LjUyaDEuODMzTDcuMDg0IDQuMTI2SDUuMTE3eiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPgo=" alt="" width="12" height="12" />@ull_gd</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mkm mkm--api">
+    <label class="mkm__scrim" for="hub-m-none"></label>
+    <div class="mkm__win">
+        <div class="mkm__bar">
+            <span class="mkm__k">Build on it</span><b>API documentation</b>
+            <div class="mkm__find">Search endpoints and fields&hellip;</div>
+            <label class="mkm__x" for="hub-m-none">Close <span class="u-chip">Esc</span></label>
+        </div>
+        <div class="mkm__body">
+            <p class="mkm__lead">Everything this site shows comes from a public JSON API. It needs no key, no signup and no referrer, and it sends <code>Access-Control-Allow-Origin: *</code>, so a page or a bot can read the list straight from the browser.</p>
+            <h4>Base URL</h4>
+            <div class="mkm__pre">https://d1-wrkr.ullteam.workers.dev</div>
+            <h4>Endpoints</h4>
+            <table class="mkm__tbl">
+                <thead><tr><th style="width:19rem">Path</th><th>Returns</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/list</td><td>Every level, in rank order</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/list/main</td><td>The Main List</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/list/future</td><td>The Future List</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/levels/{position}</td><td>One level, by its 1-based rank</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/pending</td><td>Pending List entries</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/editors</td><td>The staff list, in the order staff arranged it</td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/level-month</td><td>Level of the Month, or <code>null</code></td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/level-verif</td><td>Closest to verification, or <code>null</code></td></tr>
+                    <tr><td class="mono"><span class="mkm__get">GET</span>/api/recent-changes</td><td>The changes feed, grouped <code>{date, entries[]}</code></td></tr>
+                </tbody>
+            </table>
+            <p>Writing to the list needs a staff API key and is not part of the public API. There is no public leaderboard endpoint: the leaderboard is derived from <code>/api/list</code>, and the same rules are written out under &ldquo;How points are calculated&rdquo; in the FAQ.</p>
+            <h4>Example</h4>
+            <div class="mkm__pre">curl https://d1-wrkr.ullteam.workers.dev/api/list
+
+<em>[
+  {
+    "path": "manray",
+    "name": "M A N R A Y",
+    "author": "akunakunn",
+    "creators": ["akunakunn", "Wobbly"],
+    "verifier": "Open Verification",
+    "percentFinished": 80,
+    "records": [{ "user": "Zoink", "percent": 61, "hz": 240 }],
+    "isMain": true, "isFuture": false, "isVerified": false,
+    "sort_order": 4
+  },
+  …
+]</em></div>
+            <h4>The level object</h4>
+            <table class="mkm__tbl">
+                <thead><tr><th style="width:11rem">Field</th><th style="width:7rem">Type</th><th>Meaning</th></tr></thead>
+                <tbody>
+                    <tr><td class="mono">path</td><td>string</td><td>Slug; the level&rsquo;s URL is <code>/level/{path}</code></td></tr>
+                    <tr><td class="mono">name, author</td><td>string</td><td>Level name and host</td></tr>
+                    <tr><td class="mono">creators</td><td>string[]</td><td>Everyone credited</td></tr>
+                    <tr><td class="mono">verifier</td><td>string</td><td>Verifier, or <code>"Open Verification"</code></td></tr>
+                    <tr><td class="mono">percentFinished</td><td>number</td><td>Decoration progress, 0&ndash;100</td></tr>
+                    <tr><td class="mono">records, run</td><td>object[]</td><td><code>{user, link, percent, hz}</code> &mdash; completions and runs</td></tr>
+                    <tr><td class="mono">tags</td><td>string[]</td><td><code>Public</code>, <code>Layout</code>, <code>Rated</code>, &hellip;</td></tr>
+                    <tr><td class="mono">isMain, isFuture, isVerified, benchmark</td><td>boolean</td><td>Which tiers it is on, and its state</td></tr>
+                    <tr><td class="mono">sort_order</td><td>number</td><td>Rank in All Levels</td></tr>
+                </tbody>
+            </table>
+            <p>Twelve further fields &mdash; <code>id</code>, <code>rating</code>, <code>length</code>, <code>percentToQualify</code>, <code>lastUpd</code>, the video URLs &mdash; are documented in full in the repository&rsquo;s README.</p>
+            <h4>Fair use</h4>
+            <ul>
+                <li>cache what you fetch: the list changes a few times a day, not a few times a second;</li>
+                <li>identify your bot in the user agent if you are polling on a schedule;</li>
+                <li>the data is community work &mdash; credit the list and link back to it;</li>
+                <li>positions are estimates and change, so treat a stored rank as a snapshot, not a fact.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="hub-scroll">
+        <section class="hub-hero">
+            <h1>Information</h1>
+            <p>
+                The Upcoming Levels List forecasts which Extreme Demons are about to be verified and placed on
+                the Demonlist. This page says how that is decided, what everything on the site means, who to
+                ask, and how to read the whole list as JSON.
+                <label class="hub-more" for="hub-m-about">What this list is, in full &rarr;</label>
+            </p>
+            <label class="hub-search" for="hub-m-none">
+                <span class="hub-mag"></span>
+                Search the guidelines, the FAQ, the endpoints and the legends
+                <b>Ctrl K</b>
+            </label>
+        </section>
+
+        <div class="hub-body">
+            <!-- Row 1 -->
+            <label class="hub-door hub-faq" for="hub-m-faq">
+                <div class="u-eyebrow" style="margin:0">Answers &middot; 14 questions</div>
+                <h2>FAQ</h2>
+                <p>Submitting a record and what proof it needs, how a level gets listed, how leaderboard points are worked out, and why a total changes when you have submitted nothing. Fourteen questions in four groups, each answered here rather than pointed at the guidelines.</p>
+                <span class="hub-faqmore">All 14 questions &rarr;</span>
+            </label>
+
+            <label class="hub-door hub-nav" for="hub-m-navigation">
+                <div class="u-eyebrow" style="margin:0">Navigation &middot; 9 pages</div>
+                <h2>What is on each page</h2>
+                <p>Every page on the site and what you will find on it &mdash; the three list tiers and how they differ from each other, pending and upcoming, the leaderboard, events, and a level&rsquo;s own page. Written so you can tell which page answers your question before you open it.</p>
+                <div class="hub-peek">
+                    <span class="u-chip">All Levels</span>
+                    <span class="u-chip">Main List</span>
+                    <span class="u-chip">Future List</span>
+                    <span class="u-chip">Pending</span>
+                    <span class="u-chip">Upcoming</span>
+                    <span class="u-chip">Leaderboard</span>
+                    <span class="u-chip">Events</span>
+                    <span class="u-chip">+2</span>
+                </div>
+            </label>
+
+            <!-- Rows 2–4, left -->
+            <label class="hub-door hub-gl" for="hub-m-guidelines">
+                <div class="u-eyebrow" style="margin:0">The rules</div>
+                <h2>Guidelines</h2>
+                <p>How records are accepted, how levels are chosen and positioned, what the staff may and may not do. Thirteen sections, and the answer to most arguments.</p>
+                <div class="hub-groups">
+                    <div>General<span>2</span></div>
+                    <div>Acceptance of Records<span>4</span></div>
+                    <div>Level Placement<span>3</span></div>
+                    <div>Content Policy<span>2</span></div>
+                    <div>Technical Support<span>2</span></div>
+                </div>
+                <span class="u-btn">Open the guidelines</span>
+            </label>
+
+            <!-- Rows 2–4, right -->
+            <label class="hub-door hub-ref" for="hub-m-reference">
+                <div class="u-eyebrow" style="margin:0">Reference &middot; 19 marks</div>
+                <h2>What the marks mean</h2>
+                <p>The colour a level&rsquo;s name is drawn in, and the icons on the Pending List.</p>
+                <div class="hub-marks">
+                    <div class="hub-dots">
+                        <i style="background:#5599ff"></i><i style="background:#33dddd"></i><i style="background:#55ee55"></i><i style="background:#ffee55"></i><i style="background:#ffaa44"></i><i style="background:#ff6622"></i><i style="background:#ff5555"></i><i style="background:#bbbbbb"></i>
+                    </div>
+                    <div class="hub-icons">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjNGNhZjUwIiBkPSJNMTIgNEw0IDEyaDZ2OGg0di04aDZ6Ii8+PC9zdmc+Cg==" alt="" width="14" height="14" />
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZjQ0MzM2IiBkPSJNMTIgMjBsLTgtOGg2VjRoNHY4aDZ6Ii8+PC9zdmc+Cg==" alt="" width="14" height="14" />
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNGRkQ3MDAiPjE8L3RleHQ+PC9zdmc+Cg==" alt="" width="14" height="14" />
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNDMEMwQzAiPjEwPC90ZXh0Pjwvc3ZnPgo=" alt="" width="14" height="14" />
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNGRjU3MjIiPj88L3RleHQ+PC9zdmc+Cg==" alt="" width="14" height="14" />
+                    </div>
+                </div>
+            </label>
+
+            <label class="hub-door hub-staff" for="hub-m-staff">
+                <div class="u-eyebrow" style="margin:0">Who to talk to &middot; 12 people</div>
+                <h2>Staff &amp; contact</h2>
+                <p>The team that maintains the list, and where to take a record, a correction, a site bug or a complaint.</p>
+            </label>
+
+            <label class="hub-door hub-api" for="hub-m-api">
+                <div class="u-eyebrow" style="margin:0">Build on it &middot; 9 endpoints</div>
+                <h2>API documentation</h2>
+                <p>The whole list as public JSON &mdash; no key, no signup, CORS open.</p>
+                <div class="hub-peek">
+                    <span class="u-chip">/api/list</span>
+                    <span class="u-chip">/api/pending</span>
+                    <span class="u-chip">+7</span>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    </main>
+</div>
+
+<script>
+(function () {
+    var views = document.querySelectorAll('[data-mock]');
+    var btn = document.getElementById('theme-toggle');
+    var name = document.getElementById('theme-name');
+    var light = false;
+    btn.addEventListener('click', function () {
+        light = !light;
+        // In the app, .dark on .root selects the LIGHT palette. Kept as-is.
+        views.forEach(function (v) { v.classList.toggle('dark', light); });
+        name.textContent = light ? 'Light' : 'Dark';
+    });
+
+    var items = [].slice.call(document.querySelectorAll('.rail__item'));
+    var seen = new Map();
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { seen.set(e.target.id, e.intersectionRatio); });
+        var best = null;
+        seen.forEach(function (ratio, id) { if (!best || ratio > best.ratio) best = { id: id, ratio: ratio }; });
+        if (!best || !best.ratio) return;
+        items.forEach(function (a) { a.classList.toggle('is-on', a.getAttribute('href') === '#' + best.id); });
+    }, { threshold: [0, 0.15, 0.4, 0.75] });
+    document.querySelectorAll('.pg').forEach(function (s) { obs.observe(s); });
+})();
+</script>
