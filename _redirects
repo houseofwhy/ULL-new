@@ -9,6 +9,7 @@
 # Anything else — /mobile/*, /generator, /admin, unknown URLs — falls through to
 # the SPA shell and is handled by the Vue router (200 = rewrite, URL unchanged).
 # seo:redirects:start
+/level/silent-fortress                               /level/silent-fortressfin        301
 # seo:redirects:end
 
 /*    /index.html    200
