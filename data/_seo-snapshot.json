@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T19:29:35.267Z",
+  "fetchedAt": "2026-09-14T23:13:23.850Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -46,8 +46,8 @@
       "records": [
         {
           "user": "dewbbs",
-          "link": "https://youtu.be/hMh2waoolfQ?si=Uo8niCG6PFz-C3x4",
-          "percent": 20,
+          "link": "https://youtu.be/qt9UEprkezg?is=WflQ7b9RKHHAFwVc",
+          "percent": 23,
           "hz": 240
         }
       ],
@@ -481,8 +481,8 @@
       "run": [
         {
           "user": "Xtra8nuggies",
-          "link": "https://youtu.be/QsmsmV_mjnE?t=5445",
-          "percent": "47-95",
+          "link": "https://youtu.be/TaWJUvDdTT8?is=jggHCpuPCvYujkC8",
+          "percent": "6-59",
           "hz": 240
         }
       ],
@@ -1010,7 +1010,7 @@
       "length": 92,
       "percentToQualify": 1,
       "percentFinished": 40,
-      "lastUpd": "02.09.2026",
+      "lastUpd": "12.09.2026",
       "tags": [
         "Long",
         "Remake"
@@ -5965,7 +5965,7 @@
       "creators": [
         "Westt"
       ],
-      "verifier": "unknown",
+      "verifier": "ScoffGD, dewbbs",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=5Fe1wxPmjEQ",
       "thumbnail": null,
@@ -5974,10 +5974,11 @@
       "rating": 1,
       "length": 80,
       "percentToQualify": 1,
-      "percentFinished": 65,
-      "lastUpd": "16.05.2026",
+      "percentFinished": 100,
+      "lastUpd": "12.09.2026",
       "tags": [
-        "Long"
+        "Long",
+        "Finished"
       ],
       "records": [
         {
@@ -7100,7 +7101,7 @@
       "verifier": "BONN GD",
       "verification": "",
       "showcase": "https://youtu.be/LMsjqNrN17Q?si=EJLjklUugu20DSGi",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -7126,8 +7127,8 @@
       "run": [
         {
           "user": "BONN GD",
-          "link": "#",
-          "percent": "58-100",
+          "link": "https://youtu.be/mjVDLgEvVhU?is=bmgpA4UQdBimbB1v",
+          "percent": "47-100",
           "hz": 0
         }
       ],
@@ -8297,8 +8298,8 @@
       "run": [
         {
           "user": "LordVaderCraft",
-          "link": "https://www.youtube.com/watch?v=tP_O6i71274",
-          "percent": "44-100",
+          "link": "https://youtu.be/aMPMHVbPeck?is=6UB3kTWLo5MF2t2T",
+          "percent": "22-96",
           "hz": 240
         }
       ],
@@ -10433,8 +10434,8 @@
       "rating": 1,
       "length": 220,
       "percentToQualify": 1,
-      "percentFinished": 45,
-      "lastUpd": "31.07.2025",
+      "percentFinished": 75,
+      "lastUpd": "12.09.2026",
       "tags": [
         "XL",
         "NONG"
@@ -11989,7 +11990,7 @@
       "verifier": "Open Verification",
       "verification": "",
       "showcase": "https://youtu.be/15wb7RLledU",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "104984889",
       "rating": 1,
@@ -12014,8 +12015,8 @@
       "run": [
         {
           "user": "Krowsong",
-          "link": "https://fxtwitter.com/kkrowsongg/status/2062871012610580630?s=46",
-          "percent": "57-100",
+          "link": "https://youtu.be/uxm6Iknvqn4?is=x0jflNTSO1O2imtL",
+          "percent": "41-100",
           "hz": 240
         }
       ],
@@ -14687,13 +14688,14 @@
       "tags": [
         "Long",
         "Remake",
-        "Verifying"
+        "Verifying",
+        "Layout"
       ],
       "records": [
         {
-          "user": "GMitzy",
-          "link": "https://www.youtube.com/watch?v=J5ZFrwEkbGg",
-          "percent": 54,
+          "user": "Cala",
+          "link": "https://youtu.be/K_a9cZVJeDw?is=jlExAPQW1DdilQfR",
+          "percent": 63,
           "hz": 0
         }
       ],
@@ -14829,7 +14831,7 @@
       "verifier": "GMDCrawfish",
       "verification": "",
       "showcase": "https://youtu.be/musjVNDVQyA?si=MV3NjNpds6WU-Pff",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -14844,9 +14846,9 @@
       ],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
+          "user": "Beggo",
+          "link": "#",
+          "percent": 72,
           "hz": 0
         }
       ],
@@ -16843,8 +16845,8 @@
       "records": [
         {
           "user": "Gamingbyte",
-          "link": "https://www.youtube.com/watch?v=5qKdEvpkbvA",
-          "percent": 73,
+          "link": "https://youtu.be/y3gHFz7h7Ro?is=A0e8-HuWch6BuSVP",
+          "percent": 74,
           "hz": 0
         }
       ],
@@ -19764,7 +19766,7 @@
       "verifier": "Duv",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=t22_kH1gJpI",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -19781,8 +19783,8 @@
       "records": [
         {
           "user": "Duv",
-          "link": "https://youtu.be/D_KCLO72uco",
-          "percent": 33,
+          "link": "https://youtu.be/gULznJ3aiH8?is=TKAM64YXuHT9ZBbk",
+          "percent": 89,
           "hz": 0
         }
       ],
@@ -20857,8 +20859,8 @@
         {
           "user": "DylanADV",
           "link": "https://youtu.be/3Bjz3MWuIPo",
-          "percent": 0,
-          "hz": 83
+          "percent": 83,
+          "hz": ""
         }
       ],
       "run": [
@@ -22332,18 +22334,18 @@
       "creators": [],
       "verifier": "Shyne",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=ae9lrf2Antk",
-      "thumbnail": "",
+      "showcase": "https://youtu.be/5SYh54mZ9Sw?t=116&is=jhh70cjwqxAGWtEO",
+      "thumbnail": null,
       "frameCounter": null,
-      "id": "125825037",
+      "id": "private",
       "rating": 1,
       "length": 75,
       "percentToQualify": 1,
-      "percentFinished": 75,
-      "lastUpd": "29.03.2026",
+      "percentFinished": 100,
+      "lastUpd": "11.09.2026",
       "tags": [
-        "Public",
-        "Long"
+        "Long",
+        "Finished"
       ],
       "records": [
         {
@@ -22486,18 +22488,18 @@
       ],
       "records": [
         {
-          "user": "Zeronium",
-          "link": "https://youtu.be/iytXr2brrsU?si=VOg_Zv8F-uApVV0q",
-          "percent": 33,
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": 0,
+          "hz": 0
         }
       ],
       "run": [
         {
-          "user": "Zeronium",
-          "link": "https://youtu.be/iytXr2brrsU?si=VOg_Zv8F-uApVV0q",
-          "percent": "32-66",
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
         }
       ],
       "isVerified": true,
