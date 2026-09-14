@@ -1,31 +1,55 @@
-# Moving the site to the main repo (`houseofwhy/ULL-new`)
+# Syncing designtest into the main repo (`houseofwhy/ULL-new`)
 
 This repo (`Upcoming-Levels-List/ULL-designtest`) is the test build. This guide moves
-its finished code into **`houseofwhy/ULL-new`**, which becomes the live site, while
-**keeping ULL-new's existing git history** and **keeping the same D1 API backend**.
+its finished code into **`houseofwhy/ULL-new`**, the live site at `https://ull.pages.dev`,
+while **keeping ULL-new's git history**, **keeping the same D1 API backend**, and
+**keeping the few files that must differ between the test build and the live site**.
+
+> **Status.** The first move was done on **2026-09-14** (ULL-new commits `7c3be1bf` →
+> `02a80022`, safety tag `pre-designtest-migration-2026-09-14`). This guide is what was
+> actually done then, so it doubles as the procedure for every later sync from
+> designtest to live.
 
 Both sites talk to the same Cloudflare Worker at `https://d1-wrkr.ullteam.workers.dev`,
 so the **frontend move needs no Worker deploy** — the admin panel and API keep working
 the moment the new frontend lands.
 
-> **The design is not the only thing that changed.** Since the 2026-08-31 resync
-> (`8eec3e5`), `worker/worker.js` has also gained the admin activity and snapshots
-> endpoints and lost two dead ones, and `scripts/schema-migrations.sql` has gained the
-> `snapshots` table and the `audit_log` undo columns. Whether that matters depends on
-> what is **deployed**, not on what is committed — Step 0b checks. The repo copy of the
-> Worker is version control, not the running code.
+> The repo copy of the Worker (`worker/worker.js`) is version control, not the running
+> code. Whether a sync also owes a Worker deploy or a schema migration depends on what is
+> **deployed** — Step 0b checks.
 
-> Do this from a normal terminal on your machine, not from a Claude session (a session
-> is usually scoped to one repo and can't push to both).
+---
+
+## What is different between designtest and live — keep these
+
+A wholesale copy of designtest over ULL-new is almost right. These four paths are the
+exception, and Step 1 restores them from ULL-new after the copy:
+
+| Path | Live (ULL-new) | designtest | Why it matters |
+|------|----------------|------------|----------------|
+| `robots.txt` | `Allow: /`, per-crawler rules, `Sitemap:` | `Disallow: /` | designtest's copy **de-indexes the live site** |
+| `.github/workflows/refresh-content.yml` | present | absent | the hourly job that keeps the crawler-visible pages current |
+| `data/_seo-snapshot.json` | refreshed hourly by that job | stale | the generated pages are built from it |
+| `data/_level-registry.json` | refreshed hourly | stale | carries slug history — lose it and renamed levels lose their 301 redirects |
+
+**The content bot.** `refresh-content.yml` runs at **:25 past every hour (UTC)**. It fetches
+the live API, runs `build-css` and `build-seo`, and commits
+`Refresh static list content [skip ci]` straight to `main`. It only ever touches generated
+files (`data/_seo-snapshot.json`, `data/_level-registry.json`, `level/`, the page
+`index.html` files, `sitemap.xml`, `llms.txt`, `_redirects`, `js/seo-meta.js`,
+`css/bundle.css`). Two consequences:
+
+- ULL-new's `main` gains a commit most hours. That is expected, not someone's work.
+- Push well away from :25, or the push races the bot (Step 4 covers a rejected push).
 
 ---
 
 ## Before you start
 
-- You can push to both repos.
-- `git` is installed (`git --version`).
-- Decide the live domain. If it is **not** `https://ull.pages.dev`, you'll edit five
-  places in Step 3.
+- You can push to both repos, and have clones of both on one machine.
+- `git` and Node 22+ are installed (`git --version`, `node --version`).
+- Decide the live domain. If it is **not** `https://ull.pages.dev`, you'll edit the
+  places listed in Step 3.
 
 ---
 
@@ -40,101 +64,96 @@ git checkout main
 git pull origin main
 git status --short          # must be empty before you go on
 
-git tag pre-designtest-migration
-git push origin pre-designtest-migration
+TAG=pre-designtest-sync-$(date +%Y-%m-%d)
+git tag "$TAG"
+git push origin "$TAG"
 ```
 
-If anything goes wrong later: `git reset --hard pre-designtest-migration && git push --force`.
-
-> If ULL-new's default branch is `master` rather than `main`, substitute it in every
-> command from here on.
+Use a dated tag name: `pre-designtest-migration` already exists (it points at an August
+2026 attempt) and must not be moved. If anything goes wrong later:
+`git reset --hard "$TAG" && git push --force origin main`.
 
 ---
 
 ## Step 0b — check what you would overwrite, and what is deployed
 
-Step 1 replaces ULL-new's tree **wholesale**. Anything committed to ULL-new since
-designtest last resynced from it — **2026-08-31** — would be reverted by it. Usually
-there is nothing, because the site's content lives in D1 rather than the repo, but check
-rather than assume:
+Step 1 replaces ULL-new's tree wholesale, so anything **hand-committed** to ULL-new since
+the last sync (**2026-09-14**) would be reverted. Filter out the bot's commits — they are
+covered by keeping `data/` and regenerating:
 
 ```bash
-git remote add designtest https://github.com/Upcoming-Levels-List/ULL-designtest.git
-git fetch designtest main
+git remote add designtest https://github.com/Upcoming-Levels-List/ULL-designtest.git   # once
+git fetch origin designtest
 
-# What ULL-new has committed since the resync. Empty output = nothing to lose.
-git log --oneline --since=2026-08-31 origin/main
+# Human commits on ULL-new since the last sync. Empty output = nothing to lose.
+git log --since=2026-09-14 --format='%h %an %s' origin/main | grep -v "Refresh static list content"
 ```
 
-The two histories share no commits — designtest copied ULL-new's *files* on that date, not
-its commits — so compare them by content, not with a `A..B` range, which would list
-everything:
+If that prints anything, look at it (`git show --stat <sha>`) and port the change into
+designtest first, or carry it across by hand after Step 1.
+
+Also check for files that exist only in ULL-new — the replace deletes them:
 
 ```bash
-# The data the generated pages are built from. Empty = the two agree.
-git diff --stat designtest/main origin/main -- data/
+git diff --name-status --diff-filter=A designtest/main origin/main
 ```
 
-If both print nothing, go to Step 1: the wholesale replace loses nothing.
+Expect the four paths from the table above, plus any level pages the bot generated for
+levels added since designtest's snapshot (`level/<slug>/index.html`, which Step 2b
+regenerates). Anything else, decide per file.
 
-If either prints something, look at what changed (`git show --stat <sha>`) and decide per
-file. The one that would actually hurt is `data/`, and the generated pages built from it
-(`level/*/index.html`, `sitemap.xml`, `llms.txt`, `js/seo-meta.js`) — those all come from
-`data/_seo-snapshot.json`, so if ULL-new's data is newer, refresh designtest's snapshot
-from the live API before Step 1 rather than carrying an older one across:
-
-```bash
-# In the designtest clone, not ULL-new:
-node scripts/fetch-data.mjs && node scripts/build-seo.mjs
-git commit -am "Refresh the SEO snapshot and regenerate before the move"
-git push
-```
+`git diff --stat designtest/main origin/main -- data/` is **almost never empty** — the bot
+refreshes `data/` hourly and designtest's copy is stale. That is expected, and the reason
+Step 1 keeps ULL-new's `data/`.
 
 Then check what the live Worker actually serves, since both sites share it:
 
 ```bash
-# These two routes were removed because they queried tables no migration creates.
-#   404 = the current Worker is deployed (the route is gone).
-#   500 = an older Worker is live, still routing them into a missing table.
+# Two routes removed from the repo Worker because they query tables no migration creates.
+#   404 = the current repo Worker is deployed (the routes are gone).
+#   500 = the deployed Worker still has them; harmless, nothing calls them.
 curl -s -o /dev/null -w "leaderboard %{http_code}\n" https://d1-wrkr.ullteam.workers.dev/api/leaderboard
 curl -s -o /dev/null -w "upcoming    %{http_code}\n" https://d1-wrkr.ullteam.workers.dev/api/upcoming
 
-# The admin routes the newer Worker added.
+# Admin routes added by the newer Worker.
 #   401 = deployed and asking for a key, which is correct.
-#   404 = the deployed Worker predates them; the admin panel's Snapshots and
-#         Activity tabs will not work until you deploy worker/worker.js.
+#   404 = the deployed Worker predates them — Step 7 applies.
 curl -s -o /dev/null -w "snapshots   %{http_code}\n" https://d1-wrkr.ullteam.workers.dev/api/admin/snapshots
+curl -s -o /dev/null -w "activity    %{http_code}\n" https://d1-wrkr.ullteam.workers.dev/api/admin/activity
 ```
 
-So `404 / 404 / 401` means the Worker is current and Step 7 is a no-op.
-`500 / 500 / 404` means it is the older build and Step 7 applies.
+| Result | Meaning |
+|--------|---------|
+| `404 / 404 / 401 / 401` | Deployed Worker = repo Worker. Step 7 is a no-op. |
+| `500 / 500 / 401 / 401` | **The state on 2026-09-14.** Deployed Worker = repo Worker except the two dead routes are still routed. Step 7 is optional (it only removes those two 500s). |
+| `500 / 500 / 404 / 404` | Older Worker. Step 7 applies. |
 
-Neither result blocks the move — the public site only reads `/api/list` and friends. It
-tells you whether you also owe a Worker deploy and a schema migration afterwards
-(Step 7).
+Neither result blocks the sync — the public site only reads `/api/list` and friends.
 
 ---
 
-## Step 1 — bring in the designtest tree as one commit
-
-From inside the `ULL-new` clone:
+## Step 1 — bring in the designtest tree, then restore the live-only files
 
 ```bash
-# The remote and fetch are from Step 0b; re-fetch in case you pushed since.
-git fetch designtest main
+git fetch origin designtest
 
 # Replace the working tree wholesale with designtest's, keeping ULL-new's history.
 git rm -rq .
 git checkout designtest/main -- .
 git commit -m "Replace site with the ULL-designtest build (API-backed)"
+
+# Put back what must differ on the live site (see the table at the top).
+git checkout "$TAG" -- robots.txt .github/workflows/refresh-content.yml \
+    data/_seo-snapshot.json data/_level-registry.json
+git commit -m "Keep the live site's robots.txt, content workflow and newer data"
 ```
 
 **Why `git rm -rq .` first:** it guarantees files that exist in ULL-new but *not* in
 designtest are actually deleted, instead of lingering as stale leftovers. `git checkout`
-then lays down the exact designtest tree. History is preserved; this is one revertible
-commit (`git revert HEAD` undoes it cleanly).
+then lays down the exact designtest tree. Untracked and ignored files (`node_modules/`,
+`.idea/`) are not touched.
 
-Do **not** push yet — do Step 2 first.
+Do **not** push yet.
 
 ---
 
@@ -144,35 +163,55 @@ Cloudflare Pages serves **every file in the repo** at the URL root. That is exac
 database dump once leaked. So before pushing:
 
 ```bash
-# Stale copies of the /data directory — not used by the site, and nothing to do
-# with the `snapshots` D1 table, which lives in the database rather than the repo.
-git rm -r data.backup data.old 2>/dev/null
+# design/ is the drafts and preview area — home-page templates, the information-page
+# mockups and their copy decks. Nothing serves or links to it, but Pages would publish
+# every file at the URL root. It stays in designtest, which is where it belongs.
+git rm -rq design
 
-# Never commit a DB dump: a full editor_keys export contains every key hash.
-git rm backup-before-migrate.sql 2>/dev/null   # already gone from designtest; harmless if absent
+# Stale copies of /data and DB dumps. Already gone from designtest; harmless if absent.
+git rm -rq --ignore-unmatch data.backup data.old backup-before-migrate.sql
 
-# design/ is the drafts and preview area — four home-page templates, the
-# information-page mockups and their copy decks. Nothing serves it and nothing
-# links to it, but Cloudflare Pages would publish all 57 files at the URL root.
-# Drop it from the live site; it stays in designtest, which is where it belongs.
-git rm -rq design 2>/dev/null
-
-git commit -m "Drop stale snapshots, drafts and any DB dumps before going live" 2>/dev/null || true
+git commit -m "Drop the design/ drafts before going live"
 ```
 
 Keep:
 
 - **`_redirects`** at the repo root — **required.** Without it, refreshing or deep-linking
   any route (`/list`, `/events`) returns a server 404, because routing is history-mode.
-- **`data/`** — the migration and test scripts read it.
-- **`worker/`** — the version-controlled copy of the Worker (not served in any harmful way;
-  it's just JS).
+- **`data/`** — the build and test scripts read it.
+- **`worker/`** — the version-controlled copy of the Worker (just JS, nothing secret).
+- **`.github/`** — the content bot.
 
-Quick sanity check that nothing sensitive is about to ship:
+Sanity check that nothing sensitive ships and the live-only files survived:
 
 ```bash
-git grep -nI "key_hash" -- '*.sql' '*.json'    # should print nothing
+git grep -nI "key_hash" -- '*.sql' '*.json'                 # should print nothing
 test -f _redirects && echo "_redirects present" || echo "MISSING _redirects"
+test -f .github/workflows/refresh-content.yml && echo "workflow present" || echo "MISSING workflow"
+grep -q "^Disallow: /$" robots.txt && echo "ROBOTS BLOCKS THE SITE" || echo "robots.txt ok"
+```
+
+---
+
+## Step 2b — refresh the data and regenerate the pages
+
+The generated pages carry a copy of the app shell from `index.html`, so after a design
+change every one of them must be rebuilt — from current data, not designtest's snapshot:
+
+```bash
+node scripts/fetch-data.mjs     # writes nothing unless the API answered sanely
+node scripts/build-css.mjs
+node scripts/build-seo.mjs
+git add -A
+git commit -m "Refresh the snapshot from the live API and regenerate static pages"
+```
+
+Quick check against the pre-sync state — the level pages should match one for one,
+and the redirects should survive:
+
+```bash
+diff <(git ls-tree -d --name-only "$TAG" level/) <(git ls-tree -d --name-only HEAD level/)   # new/removed levels only
+grep -A3 "seo:redirects:start" _redirects
 ```
 
 ---
@@ -185,17 +224,17 @@ Skip this if the live domain is `https://ull.pages.dev`. Otherwise:
 |------|----------------|
 | `scripts/seo/content.mjs` | `SITE.origin` — **the source**; every generated page derives from it |
 | `js/main.js` | the `SITE_ORIGIN` constant |
-| `robots.txt` | the `Sitemap:` line |
+| `robots.txt` | the header comment and the `Sitemap:` line |
 | generated pages | `index.html`, `sitemap.xml`, `llms.txt`, `js/seo-meta.js` and every `*/index.html` — do **not** hand-edit, regenerate them |
 
-The domain is baked into 488 generated files, so edit the two sources and rebuild rather
-than sed-ing the output:
+The domain is baked into hundreds of generated files, so edit the sources and rebuild
+rather than sed-ing the output:
 
 ```bash
 sed -i "s#https://ull.pages.dev#https://YOUR-DOMAIN#g" scripts/seo/content.mjs js/main.js robots.txt
-node scripts/build-seo.mjs      # rewrites index.html, every page, sitemap, llms.txt, seo-meta
+node scripts/build-seo.mjs
 git diff --stat
-grep -rl "ull.pages.dev" . --exclude-dir=.git | head    # should print nothing
+grep -rl "ull.pages.dev" . --exclude-dir=.git --exclude-dir=node_modules | head    # should print nothing
 git commit -am "Point canonical/SEO URLs at the live domain"
 ```
 
@@ -203,59 +242,103 @@ git commit -am "Point canonical/SEO URLs at the live domain"
 
 ## Step 4 — run the checks, then push
 
-Everything runs locally; there is no CI. The UI suites need Chromium and the two CDN
-libraries, which they map to `node_modules` by exact filename:
+There is no test CI — the only workflow is the content bot. Run the suites locally.
+
+Install the test dependencies **into the repo, without writing package files**:
 
 ```bash
-npm i playwright vue@3.2.31 vue-router@4.0.14
+npm i --prefix . --no-save --no-package-lock playwright vue@3.2.31 vue-router@4.0.14
 npx playwright install chromium
+```
 
+Both flags matter. A plain `npm i` creates `package.json` and `package-lock.json`, which
+are not gitignored and Pages would serve. Without `--prefix .`, npm installs into the
+nearest *parent* folder that has a `package.json` — the UI tests then can't find
+`node_modules/vue/...`, and the parent project's dependencies get reinstalled.
+
+The UI suites launch Chromium from `$CHROMIUM_PATH`, defaulting to a Linux sandbox path.
+Point it at a real browser:
+
+```bash
+export CHROMIUM_PATH="$(node -e "console.log(require('playwright').chromium.executablePath())")"
+# Windows, if Playwright's Chromium won't start: use Edge
+# export CHROMIUM_PATH="C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+```
+
+```bash
 node worker/worker.test.mjs            # 87 passed
 node worker/worker.throttle.test.mjs   # 14 passed
 node worker/worker.unmigrated.test.mjs # 20 passed
-node js/util.test.mjs
-node js/upcoming.test.mjs
-node js/leaderboard.test.mjs
-node js/registry.test.mjs
+node js/util.test.mjs                  # all passed
+node js/registry.test.mjs              # all passed
+node js/upcoming.test.mjs              # 7 passed
+node js/leaderboard.test.mjs           # 14 passed
 node js/list-ui.test.mjs               # 27 passed — drives the real list pages
 node js/pending-ui.test.mjs            # 16 passed
-node js/seo.test.mjs                   # slow (~5 min): checks all 488 generated pages
+node js/seo.test.mjs                   # slow (~5 min): checks every generated page
 ```
 
-Also confirm the generated files match their sources — if either build prints a diff,
-someone edited generated output by hand:
+On Windows, `upcoming`, `leaderboard` and `list-ui` fail with `ENOENT ... C:\C:\...` and
+`seo.test` times out on `/list` — see Troubleshooting. Those are test-harness problems,
+not site problems; they fail the same way on an untouched designtest checkout.
+
+Confirm the generated files match their sources — if a build prints a diff, someone
+edited generated output by hand:
 
 ```bash
 node scripts/build-css.mjs && node scripts/build-seo.mjs
 git status --short          # expect nothing, or only the sitemap's lastmod dates
 ```
 
-Then:
+Then push — not between :20 and :30 past the hour UTC, when the bot runs:
 
 ```bash
+git fetch origin && git log --oneline main..origin/main    # empty = the bot hasn't pushed since
 git push origin main
 ```
 
-History is intact; the new commits sit on top. `node_modules/` is gitignored, so the
-install above will not follow you into the commit.
+**If the push is rejected** because the bot landed a commit first:
+
+```bash
+git fetch origin
+git rebase origin/main
+# Conflicts can only be in generated files. Take the bot's data, regenerate on top:
+git checkout --ours -- data/          # during a rebase, "ours" = origin/main
+node scripts/fetch-data.mjs && node scripts/build-css.mjs && node scripts/build-seo.mjs
+git add -A && git rebase --continue   # repeat for each commit that stops
+git push origin main
+```
 
 ---
 
-## Step 5 — point Cloudflare Pages at ULL-new
+## Step 5 — Cloudflare Pages
 
-In the Cloudflare dashboard → **Workers & Pages** → the Pages project → **Settings**:
+The Pages project already builds `houseofwhy/ULL-new` `main` into `https://ull.pages.dev`,
+with no build command and `/` as the output directory. A push deploys it — on
+2026-09-14 the new `index.html` was live about 15 seconds after the push.
 
-- **Build & deployments → Source:** connect `houseofwhy/ULL-new`, production branch `main`.
-- **Build command:** *empty* (there is no build step).
-- **Build output directory:** `/` (the repo root is the site).
-
-Trigger a deploy (pushing in Step 4 usually does this automatically).
+If the project ever needs reconnecting: dashboard → **Workers & Pages** → the Pages
+project → **Settings** → **Build & deployments**: source `houseofwhy/ULL-new`, production
+branch `main`, build command *empty*, output directory `/`.
 
 ---
 
-## Step 6 — verify on the deploy preview *before* going live
+## Step 6 — verify on the live site
 
-Open the preview URL Cloudflare gives you and check:
+From a shell (in Git Bash, prefix with `MSYS_NO_PATHCONV=1` or `/list` is rewritten into a
+Windows path):
+
+```bash
+B=https://ull.pages.dev
+# The deploy is live when this matches your commit's index.html:
+[ "$(curl -s $B/ | sha1sum)" = "$(git show origin/main:index.html | sha1sum)" ] && echo live
+curl -s $B/robots.txt | head -4                  # must say Allow: /, not Disallow: /
+for u in /list /events /pending /information; do
+  curl -sL -o /dev/null -w "$u %{http_code} %{url_effective}\n" "$B$u"   # 200 each
+done
+```
+
+Then in a browser:
 
 1. **Home** — Recent Changes and List Editors both populate.
 2. **`/list`** — levels load.
@@ -271,15 +354,23 @@ Open the preview URL Cloudflare gives you and check:
 8. **On a phone or a 390px window** — the tab bar sits at the bottom and stays there
    while the page scrolls.
 
-If all eight pass, promote the deployment / point the custom domain at it.
+After the next :25 bot run, check GitHub → Actions → *Refresh static content* succeeded
+on the new tree.
 
 ---
 
 ## Step 7 — the Worker and the schema, only if Step 0b said so
 
-Skip entirely if Step 0b showed 404/404/401. Otherwise the deployed Worker predates the
-admin activity and snapshots endpoints, and the public site is fine but the admin panel's
-Snapshots and Activity tabs will not be. Run the migration **before** deploying the
+As of 2026-09-14 the D1 schema is fully migrated (`snapshots` table, `audit_log.undo_data`
+and `audit_log.undone_at` all present) and the deployed Worker has the admin activity and
+snapshots endpoints. Check the schema yourself in the D1 Console:
+
+```sql
+SELECT name FROM sqlite_master WHERE type='table';
+SELECT name FROM pragma_table_info('audit_log');
+```
+
+If the admin routes returned 404 in Step 0b, run the migration **before** deploying the
 Worker that reads those columns:
 
 ```bash
@@ -291,53 +382,73 @@ written with `CREATE TABLE IF NOT EXISTS` / `CREATE INDEX IF NOT EXISTS`, so re-
 is safe; the two `ALTER TABLE audit_log ADD COLUMN` lines are not, and error harmlessly if
 the columns already exist.
 
+If Step 0b showed only the `500 / 500` dead routes, deploying `worker/worker.js` removes
+them; no migration needed. Optional.
+
 Nothing here affects the public site — it reads none of these routes.
 
 ---
 
 ## Troubleshooting
 
+**The live `robots.txt` says `Disallow: /`.**
+designtest's copy went live — Step 1's restore was skipped. The site will drop out of
+search results. Fix immediately: `git checkout "$TAG" -- robots.txt`, commit, push.
+
+**The content bot stopped committing / the Actions tab has no workflow.**
+`.github/workflows/refresh-content.yml` was deleted by the wholesale replace. Restore it
+from the tag the same way.
+
+**A renamed level's old URL now 404s instead of redirecting.**
+designtest's older `data/_level-registry.json` went live and the slug history is gone.
+Restore `data/_level-registry.json` from the tag, re-run `node scripts/build-seo.mjs`,
+commit.
+
+**`git tag` says the tag already exists.**
+`pre-designtest-migration` is taken. Use a dated name as in Step 0; never move an existing
+safety tag.
+
 **Refreshing `/list` or `/events` gives a 404 (but clicking links works).**
 `_redirects` is missing or not at the repo root. Confirm `test -f _redirects`, that its
-one rule is `/*  /index.html  200`, and redeploy. This only takes effect on a Cloudflare
+last rule is `/*  /index.html  200`, and redeploy. This only takes effect on a Cloudflare
 Pages deploy, never when opening files locally.
 
 **The whole site is blank / "Failed to load list."**
 The frontend can't reach the Worker. Open
 `https://d1-wrkr.ullteam.workers.dev/api/list` directly — if that itself errors, the
-problem is the Worker or D1, not this move (see `database.md`). If it returns JSON, check
+problem is the Worker or D1, not this sync (see `database.md`). If it returns JSON, check
 the browser console on the site for a CORS or mixed-content error.
 
 **Editors or Recent Changes are empty, but levels load.**
 The D1 migration hasn't been run, or the Worker is an old build. This is a backend state,
-unrelated to the move — run `scripts/schema-migrations.sql` and redeploy `worker/worker.js`
+unrelated to the sync — run `scripts/schema-migrations.sql` and redeploy `worker/worker.js`
 per the deploy box in `database.md` §2. (The current Worker degrades instead of erroring,
 so an empty list here means "migration not run," not "broken.")
 
 **The admin panel's Snapshots tab says the table does not exist.**
-Also a backend state, and also unrelated to the move: the `snapshots` table and the two
-`audit_log` undo columns come from the same `scripts/schema-migrations.sql`. Until it is
-run, the Worker keeps writing audit lines without undo data and takes no snapshots — it
-does not error.
+Also a backend state: the `snapshots` table and the two `audit_log` undo columns come from
+`scripts/schema-migrations.sql`. Until it is run, the Worker keeps writing audit lines
+without undo data and takes no snapshots — it does not error.
 
 **Admin save says "Network error."**
 Almost always the Worker threw before it could send CORS headers — check the Worker logs
-in the Cloudflare dashboard. See `database.md` §4b; it is not caused by this move.
+in the Cloudflare dashboard. See `database.md` §4b; it is not caused by this sync.
 
-**A file I deleted in Step 2 is still live on the site.**
-Cloudflare Pages caches. Confirm the file is gone from `main` on GitHub, then redeploy; a
-fresh deployment replaces the whole asset set. If a secret was among them, treat it as
-exposed and rotate it (deleting a file does not un-publish what was already served) — for
-API keys, see `SECURITY.md`.
+**A file I deleted is still served on the site.**
+Cloudflare's edge cache (`CF-Cache-Status: HIT`). After the 2026-09-14 move, `/notes.txt`
+kept serving its old (empty) copy for a while. Confirm the file is gone from `main`
+(`git ls-files <path>` prints nothing); it clears when the cache expires, or redeploy. If a
+secret was among the deleted files, treat it as exposed and rotate it — deleting a file
+does not un-publish what was already served. For API keys, see `SECURITY.md`.
 
 **`git checkout designtest/main -- .` left files from ULL-new I didn't want.**
 You skipped the `git rm -rq .` in Step 1, so only overlapping paths were overwritten and
-ULL-new's extras survived. Reset and redo Step 1: `git reset --hard pre-designtest-migration`.
+ULL-new's extras survived. Reset and redo Step 1: `git reset --hard "$TAG"`.
 
-**I need to undo the whole move after pushing.**
-`git revert` the migration commit (keeps history), or, if nothing else has landed since,
-`git reset --hard pre-designtest-migration && git push --force origin main`. Force-pushing
-rewrites history — only do it if no one else has pulled in the meantime.
+**I need to undo the whole sync after pushing.**
+`git revert` the sync commits (keeps history), or, if nothing else has landed since,
+`git reset --hard "$TAG" && git push --force origin main`. Force-pushing rewrites history
+and discards any bot commits made since — only do it if no one else has pulled.
 
 **The site works, but the `?` in Settings opens a new tab, or a deep-linked page looks
 like the old design.**
@@ -352,12 +463,32 @@ Only `css/bundle.css` is served — `index.html` has every other `<link>` commen
 then run `node scripts/build-css.mjs`. Editing `bundle.css` directly is overwritten by the
 next build.
 
+**A UI test fails with `browserType.launch: Failed to launch chromium because executable
+doesn't exist at /opt/pw-browsers/...`.**
+`CHROMIUM_PATH` is not set — see Step 4.
+
+**A UI test fails with `spawn UNKNOWN` (Windows).**
+The Chromium binary itself won't start — running it directly reports "side-by-side
+configuration is incorrect". Point `CHROMIUM_PATH` at Microsoft Edge instead (Step 4);
+the suites pass on it.
+
+**`upcoming`, `leaderboard` or `list-ui` test fails with `ENOENT ... 'C:\C:\Users\...'`.**
+Those three build their root path with `new URL('..', import.meta.url).pathname`, which
+on Windows yields `/C:/...`. Run them on Linux/macOS/WSL, or from a temporary copy that
+uses `fileURLToPath(new URL('..', import.meta.url))` (the fix `pending-ui` and `seo`
+already use). Delete the copy afterwards.
+
+**`js/seo.test.mjs` times out on `/list` waiting for `networkidle` (Windows).**
+Seen on Windows with Edge, on an untouched designtest checkout as well, with no request
+left open — a harness/browser issue, not the site. Rely on the `list-ui` suite plus the
+Step 6 checks there, or run `seo.test` on Linux.
+
 **`js/list-ui.test.mjs` times out waiting for `.list tr`.**
 The test harness maps the two CDN `<script>` URLs to `node_modules` by exact filename. If
 `index.html` moves to a different Vue build or version, that map stops matching, Vue never
 loads and the page renders nothing. Update the map at the top of the three UI tests to the
-URL `index.html` now uses.
+URL `index.html` now uses. Also check `node_modules/` is in the repo (Step 4's `--prefix .`).
 
 **Old bookmarks with `/#/list` (hash URLs) — do they still work?**
 Yes. `js/main.js` rewrites any `#/…` URL to its clean path on load, so old links keep
-working after the move.
+working.

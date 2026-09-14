@@ -483,9 +483,9 @@ repo. In order:
 > "Requests without any query are not supported". Both `.sql` files above are kept
 > comment-free for that reason — don't add header comments to them.
 
-Moving this build to another repo as the live site? See
-[docs/MOVE-TO-MAIN-REPO.md](docs/MOVE-TO-MAIN-REPO.md) — step-by-step, with a
-troubleshooting section.
+Syncing this build into the live site (`houseofwhy/ULL-new`)? See
+[docs/MOVE-TO-MAIN-REPO.md](docs/MOVE-TO-MAIN-REPO.md) — step-by-step, including the
+files that must stay different on live, with a troubleshooting section.
 
 ### Tests
 
