@@ -5,7 +5,7 @@
 
 import {
     thumbnailUrl, youtubeThumbnail, levelThumbnail, getYoutubeIdFromUrl,
-    verificationPercent, verificationLabel,
+    verificationPercent, verificationLabel, verificationSpan,
 } from './util.js';
 
 let failed = 0;
@@ -75,6 +75,21 @@ is('nothing yet measures zero', verificationPercent({ records: [{ user: 'none', 
 is('and writes nothing, so the caller can say None', verificationLabel({ records: [{ user: 'none', percent: 0 }], run: [] }), '');
 is('a run with no span is not a reading', verificationLabel({ records: [], run: [{ user: 'x', percent: '0' }] }), '');
 is('no level', verificationLabel(null), '');
+
+console.log('\n── and placed where it actually sits, for the meters ──');
+// The span is what the bar draws. A 72-100 run is 28 points long but belongs at
+// the END of the bar; drawing it from the left would point at the wrong part of
+// the level.
+const span = (level) => JSON.stringify(verificationSpan(level));
+is('a run covers the part of the level it was played on', span(RUN), '{"from":72,"to":100}');
+is('the record it beats starts at 0', span(REC), '{"from":0,"to":97}');
+is('a verified level covers all of it', span({ isVerified: true }), '{"from":0,"to":100}');
+is('nothing yet covers nothing', span({ records: [{ user: 'none', percent: 0 }], run: [] }), '{"from":0,"to":0}');
+is('no level', span(null), '{"from":0,"to":0}');
+is('a backwards range is read low-to-high',
+    span({ records: [], run: [{ user: 'x', percent: '100-72' }] }), '{"from":72,"to":100}');
+is('a range beyond the level is clamped',
+    span({ records: [], run: [{ user: 'x', percent: '80-140' }] }), '{"from":80,"to":100}');
 
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

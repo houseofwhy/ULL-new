@@ -1,6 +1,6 @@
 import {
     embed, levelThumbnail, levelSlug,
-    decorationPercent, verificationPercent, verificationLabel, levelStatus,
+    decorationPercent, verificationPercent, verificationSpan, verificationLabel, levelStatus,
     bestRecord, bestRun, recordLink, levelLength, levelId, hasVerifier,
     verifierLabel, verifierLine, levelRanks,
 } from '../../util.js';
@@ -70,7 +70,7 @@ export default {
                 </div>
                 <span class="u-pill" :class="'u-pill--' + status.tone"><i></i>{{ status.label }}</span>
             </div>
-            <div class="u-bar u-bar--alt lp-lead__bar"><i :style="{ width: verification + '%' }"></i></div>
+            <div class="u-bar u-bar--alt lp-lead__bar"><i :style="verifBarStyle"></i></div>
         </div>
 
         <div v-if="hasBothVideos" class="lp-tabs">
@@ -93,7 +93,7 @@ export default {
                     </div>
                     <div class="u-meter">
                         <div class="u-meter__top"><span>Verification</span><b>{{ furthest || 'None' }}</b></div>
-                        <div class="u-bar u-bar--alt"><i :style="{ width: verification + '%' }"></i></div>
+                        <div class="u-bar u-bar--alt"><i :style="verifBarStyle"></i></div>
                     </div>
                 </div>
                 <div class="u-card">
@@ -169,6 +169,12 @@ export default {
         verifierKnown() { return hasVerifier(this.level); },
         decoration() { return decorationPercent(this.level); },
         verification() { return verificationPercent(this.level); },
+        // Offset the fill to where the evidence actually sits, so a 72-100 run
+        // highlights the last 28% of the bar rather than the first.
+        verifBarStyle() {
+            const { from, to } = verificationSpan(this.level);
+            return { marginLeft: from + '%', width: (to - from) + '%' };
+        },
         // The meter's width is the number; the reading is how it is written
         // — a run says the span it covers, not the points it is worth.
         furthest() { return verificationLabel(this.level); },

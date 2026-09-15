@@ -142,7 +142,12 @@ export default {
             <div v-if="openKey === 'guidelines'" class="info-win__split">
                 <nav class="info-toc">
                     <template v-for="group in guidelinesData" :key="group.id">
-                        <div class="info-toc__g">{{ group.group }}</div>
+                        <button
+                            type="button"
+                            class="info-toc__g"
+                            :class="{ 'is-on': group.id === activeGroup.id }"
+                            @click="goSection(group.sections[0].id)"
+                        >{{ group.group }}</button>
                         <button
                             v-for="section in group.sections"
                             :key="section.id"
@@ -154,15 +159,17 @@ export default {
                     </template>
                 </nav>
                 <div class="info-win__body" ref="body">
-                    <div class="info-crumb">{{ current.group }}</div>
-                    <h3>{{ current.title }}</h3>
-                    <div class="info-prose" v-html="current.content"></div>
+                    <div class="info-crumb">{{ activeGroup.group }}</div>
+                    <section v-for="section in activeGroup.sections" :key="section.id" :id="'gl-' + section.id">
+                        <h3>{{ section.title }}</h3>
+                        <div class="info-prose" v-html="section.content"></div>
+                    </section>
                     <div class="info-updown">
-                        <button type="button" :disabled="!prevSection" @click="prevSection && goSection(prevSection.id)">
-                            <span v-if="prevSection">&larr; {{ prevSection.title }}</span>
+                        <button type="button" :disabled="!prevGroup" @click="prevGroup && goSection(prevGroup.sections[0].id)">
+                            <span v-if="prevGroup">&larr; {{ prevGroup.group }}</span>
                         </button>
-                        <button type="button" :disabled="!nextSection" @click="nextSection && goSection(nextSection.id)">
-                            <span v-if="nextSection">{{ nextSection.title }} &rarr;</span>
+                        <button type="button" :disabled="!nextGroup" @click="nextGroup && goSection(nextGroup.sections[0].id)">
+                            <span v-if="nextGroup">{{ nextGroup.group }} &rarr;</span>
                         </button>
                     </div>
                 </div>
@@ -360,14 +367,18 @@ export default {
             const id = this.$route.query.section;
             return flatSections.some((s) => s.id === id) ? id : flatSections[0].id;
         },
-        current() {
-            return flatSections.find((s) => s.id === this.activeSection) || flatSections[0];
+        // A module is what the window shows: every section in it, one after the
+        // other. activeSection still says which one to scroll to, so a search
+        // hit and a deep link keep landing on the exact rule they name.
+        activeGroup() {
+            return guidelinesData.find((g) => g.sections.some((sec) => sec.id === this.activeSection))
+                || guidelinesData[0];
         },
-        sectionIndex() {
-            return flatSections.findIndex((s) => s.id === this.current.id);
+        groupIndex() {
+            return guidelinesData.findIndex((g) => g.id === this.activeGroup.id);
         },
-        prevSection() { return flatSections[this.sectionIndex - 1] || null; },
-        nextSection() { return flatSections[this.sectionIndex + 1] || null; },
+        prevGroup() { return guidelinesData[this.groupIndex - 1] || null; },
+        nextGroup() { return guidelinesData[this.groupIndex + 1] || null; },
         navPreview() {
             return navigationData.flatMap((g) => g.pages.map((p) => p.name)).slice(0, 7);
         },
@@ -387,8 +398,12 @@ export default {
         },
         close() {
             if (this.pushed > 0) {
-                this.pushed -= 1;
-                this.$router.back();
+                // Unwind every entry this component pushed in one step. Going
+                // back a single one would only return to the previously opened
+                // window, which reads as the popup refusing to close.
+                const steps = this.pushed;
+                this.pushed = 0;
+                this.$router.go(-steps);
                 return;
             }
             // Arrived straight at /information?open=…: there is nothing of ours
@@ -400,11 +415,24 @@ export default {
         },
         goSection(id) {
             if (this.openKey === 'guidelines') {
-                this.pushed += 1;
-                this.$router.push({ query: { ...this.$route.query, open: 'guidelines', section: id } });
+                // Moving around inside the open window is not a new place to
+                // come back to, so replace rather than push: Esc and the browser
+                // Back button both close the window instead of retracing every
+                // module that was looked at.
+                this.$router.replace({ query: { ...this.$route.query, open: 'guidelines', section: id } });
             } else {
                 this.open('guidelines', id);
             }
+        },
+        // Scroll the body to the active section. Measured against the body's own
+        // box rather than scrollIntoView, which would also scroll the page
+        // behind the window.
+        showSection() {
+            const body = this.$refs.body;
+            if (!body) return;
+            if (this.activeGroup.sections[0]?.id === this.activeSection) { body.scrollTop = 0; return; }
+            const el = body.querySelector('#gl-' + CSS.escape(this.activeSection));
+            if (el) body.scrollTop += el.getBoundingClientRect().top - body.getBoundingClientRect().top;
         },
         openHit(hit) {
             this.query = '';
@@ -424,13 +452,17 @@ export default {
     },
     watch: {
         openKey(key) {
-            if (!key) return;
-            this.$nextTick(() => this.$refs.win?.focus());
+            // Closed by any route — Esc, the browser Back button, the backdrop.
+            // Clearing the count here keeps it from drifting above the number of
+            // entries actually on the stack.
+            if (!key) { this.pushed = 0; return; }
+            this.$nextTick(() => { this.$refs.win?.focus(); this.showSection(); });
         },
-        // A different section is a different read: start it at the top rather
-        // than wherever the previous one was scrolled to.
+        // The module already on screen holds the section asked for, so move to
+        // it rather than reloading: a named section scrolls into view, and the
+        // first one in a module starts that module at the top.
         activeSection() {
-            this.$nextTick(() => { if (this.$refs.body) this.$refs.body.scrollTop = 0; });
+            this.$nextTick(() => this.showSection());
         },
     },
     async mounted() {

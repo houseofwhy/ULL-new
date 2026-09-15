@@ -264,6 +264,27 @@ export function verificationPercent(level) {
     return best ? Math.max(0, Math.min(100, best.value)) : 0;
 }
 
+// Where that reading sits on the level, as { from, to } in percent. The meters
+// read this rather than the bare number, for the same reason the label is
+// written as a span: a run covering 72% to 100% is 28 percentage points long,
+// but drawing those 28 points from the left edge puts them at the wrong end of
+// the level entirely. A record is measured from 0%, and a verified level covers
+// the whole thing, so both of those start at 0.
+export function verificationSpan(level) {
+    const best = verificationEvidence(level);
+    if (!best) return { from: 0, to: 0 };
+    const clamp = (n) => Math.max(0, Math.min(100, Number(n) || 0));
+    if (best.kind === 'run') {
+        const parts = String(best.entry?.percent ?? '').split('-').map(Number);
+        // verificationEvidence only accepts a run once this parses, but the
+        // meter should not depend on that: fall back to a span off the left.
+        if (parts.length === 2 && parts.every(Number.isFinite)) {
+            return { from: clamp(Math.min(...parts)), to: clamp(Math.max(...parts)) };
+        }
+    }
+    return { from: 0, to: clamp(best.value) };
+}
+
 // The same reading, written rather than measured. Empty where nobody has got
 // anywhere yet, so a caller can fall back to its own "None".
 export function verificationLabel(level) {

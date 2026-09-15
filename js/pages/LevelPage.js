@@ -2,7 +2,7 @@ import { store } from '../main.js';
 import { fetchList } from '../content.js';
 import {
     embed, levelThumbnail, levelForSlug,
-    decorationPercent, verificationPercent, verificationLabel, levelStatus,
+    decorationPercent, verificationPercent, verificationSpan, verificationLabel, levelStatus,
     bestRecord, bestRun, recordLink, levelLength, levelId, hasVerifier,
     verifierLabel, verifierLine, levelRanks,
 } from '../util.js';
@@ -93,7 +93,7 @@ export default {
                         </div>
                         <div class="lvl-meter">
                             <div class="lvl-meter__top"><span>Verification</span><b>{{ furthest || 'None' }}</b></div>
-                            <div class="lvl-bar lvl-bar--alt"><i :style="{ width: verification + '%' }"></i></div>
+                            <div class="lvl-bar lvl-bar--alt"><i :style="verifBarStyle"></i></div>
                         </div>
                     </div>
 
@@ -195,9 +195,15 @@ export default {
         verification() {
             return verificationPercent(this.level);
         },
-        // The meter is drawn from the number; the reading beside it is written
-        // the way the evidence reads, so a run from 72% to the end says
-        // "72-100%" rather than the 28 points it is worth (js/util.js).
+        // Offset the fill to where the evidence actually sits, so a 72-100 run
+        // highlights the last 28% of the bar rather than the first.
+        verifBarStyle() {
+            const { from, to } = verificationSpan(this.level);
+            return { marginLeft: from + '%', width: (to - from) + '%' };
+        },
+        // The meter is drawn as the span it covers; the reading beside it is
+        // written the same way, so a run from 72% to the end says "72-100%"
+        // rather than the 28 points it is worth (js/util.js).
         furthest() {
             return verificationLabel(this.level);
         },
