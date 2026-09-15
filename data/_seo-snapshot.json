@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T07:53:10.058Z",
+  "fetchedAt": "2026-09-15T13:41:15.464Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -16782,14 +16782,14 @@
       "verifier": "jenath",
       "verification": "https://youtu.be/eRhgaF0r5Q0?si=RMJ9qrJ92Wkq5Og-",
       "showcase": "https://youtu.be/guAFFTTnXcM?si=L7JJfuXH0IAMROFK",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "96314787",
       "rating": 1,
       "length": 104,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "20/10/2023",
+      "lastUpd": "20.10.2023",
       "tags": [
         "Long",
         "Rated",
@@ -17134,7 +17134,7 @@
       "length": 126,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "9/3/2023",
+      "lastUpd": "09.03.2023",
       "tags": [
         "XL",
         "Quality",
