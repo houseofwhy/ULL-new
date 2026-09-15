@@ -1,5 +1,5 @@
 import {
-    levelThumbnail, levelSlug, verificationPercent, verificationLabel, levelStatus,
+    levelThumbnail, levelSlug, verificationPercent, verificationBarStyle, verificationLabel, levelStatus,
     bestRecord, bestRun, recordLink, hasVerifier, verifierLine, levelRanks,
 } from '../../util.js';
 import { upcomingRanking } from '../../formulas.js';
@@ -40,7 +40,11 @@ export default {
                         <span class="m2-row__body">
                             <span class="m2-row__name">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             <span class="m2-row__sub" v-if="level">{{ progressLabel(level) }}</span>
-                            <!-- The bar the ordering is built from. -->
+                            <!-- The bar the ordering is built from, so this one stays a
+                                 magnitude drawn from the left: the rows are sorted by how far
+                                 anyone got, and offsetting each to where its run happens to sit
+                                 would stop the column being comparable at a glance. The
+                                 per-level meter in the detail below does show the span. -->
                             <span v-if="level" class="u-bar u-bar--thin m2-row__bar"><i :style="{ width: progress(level) + '%' }"></i></span>
                         </span>
                         <span v-if="level" class="m2-row__end">{{ furthest(level) || 'None' }}</span>
@@ -74,7 +78,7 @@ export default {
                                     <div class="m2-total">
                                         <div><b>{{ furthest(level) || 'None' }}</b><span>Furthest progress</span></div>
                                     </div>
-                                    <div class="u-bar u-bar--alt m2-total__bar"><i :style="{ width: progress(level) + '%' }"></i></div>
+                                    <div class="u-bar u-bar--alt m2-total__bar"><i :style="verifBar(level)"></i></div>
                                 </div>
                                 <div class="m2-sum__recs">
                                     <div class="m2-sum__rec">
@@ -147,6 +151,7 @@ export default {
         },
         levelThumbnail,
         progress: verificationPercent,
+        verifBar: verificationBarStyle,
         // The bar is the number; the figure is how it reads (js/util.js).
         furthest: verificationLabel,
         status: levelStatus,

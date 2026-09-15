@@ -270,6 +270,13 @@ export function verificationPercent(level) {
 // but drawing those 28 points from the left edge puts them at the wrong end of
 // the level entirely. A record is measured from 0%, and a verified level covers
 // the whole thing, so both of those start at 0.
+// The inline style that draws that span on a meter fill. Every surface shows
+// the same reading, so they all place it the same way from one place.
+export function verificationBarStyle(level) {
+    const { from, to } = verificationSpan(level);
+    return { marginLeft: from + '%', width: (to - from) + '%' };
+}
+
 export function verificationSpan(level) {
     const best = verificationEvidence(level);
     if (!best) return { from: 0, to: 0 };

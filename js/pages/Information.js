@@ -357,6 +357,10 @@ export default {
         // Whether this component pushed the ?open= entry, so closing can go back
         // rather than stacking another entry on the history.
         pushed: 0,
+        // Whether the route already had a window open when this component
+        // mounted. If it did, unwinding our own entries lands back on it rather
+        // than on a closed page, so Close has to drop the query as well.
+        baseOpen: false,
     }),
     computed: {
         openKey() {
@@ -388,6 +392,9 @@ export default {
         // fields and both legends; it is shared with /mobile/info.
         results() { return searchInformation(this.query); },
     },
+    created() {
+        this.baseOpen = WINDOWS.includes(this.$route.query.open);
+    },
     methods: {
         roleLabel,
         open(key, section) {
@@ -397,17 +404,16 @@ export default {
             this.$router.push({ query });
         },
         close() {
-            if (this.pushed > 0) {
-                // Unwind every entry this component pushed in one step. Going
-                // back a single one would only return to the previously opened
-                // window, which reads as the popup refusing to close.
-                const steps = this.pushed;
-                this.pushed = 0;
-                this.$router.go(-steps);
-                return;
-            }
-            // Arrived straight at /information?open=…: there is nothing of ours
-            // to go back to, so drop the query without growing the history.
+            // Unwind every entry this component pushed in one step. Going back a
+            // single one would only return to the previously opened window,
+            // which reads as the popup refusing to close.
+            const steps = this.pushed;
+            this.pushed = 0;
+            if (steps > 0 && !this.baseOpen) { this.$router.go(-steps); return; }
+            // Either nothing of ours is on the stack, or what is underneath is
+            // itself an open window because the page was opened on one. Drop the
+            // query instead, so Close always means closed.
+            this.baseOpen = false;
             const query = { ...this.$route.query };
             delete query.open;
             delete query.section;

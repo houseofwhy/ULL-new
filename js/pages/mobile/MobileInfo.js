@@ -148,7 +148,7 @@ export default {
          rulebook in. -->
     <div v-if="openKey" class="info-win mob-info-sheet" role="dialog" aria-modal="true" :aria-label="winTitle" ref="sheet" tabindex="-1">
         <div class="info-win__bar mob-info-sheet__bar">
-            <button v-if="atSection" type="button" class="mob-info-back" @click="backToIndex()" aria-label="Back to the sections">&lsaquo;</button>
+            <button v-if="atModule" type="button" class="mob-info-back" @click="backToIndex()" aria-label="Back to the modules">&lsaquo;</button>
             <div class="mob-info-sheet__label">
                 <span class="info-win__k">{{ winEyebrow }}</span>
                 <b>{{ winTitle }}</b>
@@ -221,33 +221,33 @@ export default {
                 </div>
             </template>
 
-            <!-- Guidelines: the index, then one section over it. The desktop
-                 puts the two side by side; a phone has no beside. -->
-            <template v-else-if="openKey === 'guidelines' && !atSection">
+            <!-- Guidelines: the index, then one module over it. The desktop
+                 puts the two side by side; a phone has no beside. A module is
+                 the unit either way — opening one gives all of its sections. -->
+            <template v-else-if="openKey === 'guidelines' && !atModule">
                 <nav class="mob-info-toc">
-                    <template v-for="group in guidelinesData" :key="group.id">
-                        <div class="mob-info-toc__g">{{ group.group }}<span>{{ group.sections.length }}</span></div>
-                        <button
-                            v-for="section in group.sections"
-                            :key="section.id"
-                            type="button"
-                            class="mob-info-toc__a"
-                            @click="goSection(section.id)"
-                        >{{ section.title }}</button>
-                    </template>
+                    <button
+                        v-for="group in guidelinesData"
+                        :key="group.id"
+                        type="button"
+                        class="mob-info-toc__a mob-info-toc__mod"
+                        @click="goSection(group.sections[0].id)"
+                    >{{ group.group }}<span>{{ group.sections.length }}</span></button>
                 </nav>
             </template>
 
             <template v-else-if="openKey === 'guidelines'">
-                <div class="info-crumb">{{ current.group }}</div>
-                <h3>{{ current.title }}</h3>
-                <div class="info-prose" v-html="current.content"></div>
+                <div class="info-crumb">{{ activeGroup.group }}</div>
+                <section v-for="section in activeGroup.sections" :key="section.id" :id="'gl-' + section.id">
+                    <h3>{{ section.title }}</h3>
+                    <div class="info-prose" v-html="section.content"></div>
+                </section>
                 <div class="mob-info-updown">
-                    <button type="button" :disabled="!prevSection" @click="prevSection && goSection(prevSection.id)">
-                        <span v-if="prevSection">&larr; {{ prevSection.title }}</span>
+                    <button type="button" :disabled="!prevGroup" @click="prevGroup && goSection(prevGroup.sections[0].id)">
+                        <span v-if="prevGroup">&larr; {{ prevGroup.group }}</span>
                     </button>
-                    <button type="button" :disabled="!nextSection" @click="nextSection && goSection(nextSection.id)">
-                        <span v-if="nextSection">{{ nextSection.title }} &rarr;</span>
+                    <button type="button" :disabled="!nextGroup" @click="nextGroup && goSection(nextGroup.sections[0].id)">
+                        <span v-if="nextGroup">{{ nextGroup.group }} &rarr;</span>
                     </button>
                 </div>
             </template>
@@ -361,6 +361,10 @@ export default {
         // Whether this component pushed the ?open= entry, so closing can go back
         // rather than stacking another entry on the history.
         pushed: 0,
+        // Whether the route already had a window open when this component
+        // mounted. If it did, unwinding our own entries lands back on it rather
+        // than on a closed page, so Close has to drop the query as well.
+        baseOpen: false,
     }),
     computed: {
         // The staff list is loaded once by the shell, for every mobile page.
@@ -371,29 +375,35 @@ export default {
         },
         // No ?section= means the guidelines are showing their index, which is
         // the state the desktop has no equivalent of: there, the index is always
-        // beside the section.
-        atSection() {
+        // beside the module.
+        atModule() {
             return this.openKey === 'guidelines'
                 && flatSections.some((s) => s.id === this.$route.query.section);
         },
-        current() {
-            return flatSections.find((s) => s.id === this.$route.query.section) || flatSections[0];
+        // ?section= still names a section so search hits and deep links land on
+        // the rule they name; the module holding it is what gets shown.
+        activeGroup() {
+            const id = this.$route.query.section;
+            return guidelinesData.find((g) => g.sections.some((sec) => sec.id === id)) || guidelinesData[0];
         },
-        sectionIndex() {
-            return flatSections.findIndex((s) => s.id === this.current.id);
+        groupIndex() {
+            return guidelinesData.findIndex((g) => g.id === this.activeGroup.id);
         },
-        prevSection() { return flatSections[this.sectionIndex - 1] || null; },
-        nextSection() { return flatSections[this.sectionIndex + 1] || null; },
+        prevGroup() { return guidelinesData[this.groupIndex - 1] || null; },
+        nextGroup() { return guidelinesData[this.groupIndex + 1] || null; },
         navPreview() {
             return navigationData.flatMap((g) => g.pages.map((p) => p.name)).slice(0, 7);
         },
         winTitle() { return WINDOW_TITLES[this.openKey] || ''; },
         winEyebrow() {
-            if (this.atSection) return `The rules · ${this.sectionIndex + 1} of ${sectionCount}`;
+            if (this.atModule) return `The rules · ${this.groupIndex + 1} of ${guidelinesData.length}`;
             if (this.openKey === 'guidelines') return `The rules · ${sectionCount} sections`;
             return WINDOW_EYEBROWS[this.openKey] || '';
         },
         results() { return searchInformation(this.query); },
+    },
+    created() {
+        this.baseOpen = WINDOWS.includes(this.$route.query.open);
     },
     methods: {
         roleLabel,
@@ -404,37 +414,56 @@ export default {
             this.$router.push({ query });
         },
         close() {
-            if (this.pushed > 0) {
-                this.pushed -= 1;
-                this.$router.back();
-                return;
-            }
-            // Arrived straight at /mobile/info?open=…: there is nothing of ours
-            // to go back to, so drop the query without growing the history.
+            // Close means closed, from the index or from inside a module. Backing
+            // out one entry would only surface the index again.
+            const steps = this.pushed;
+            this.pushed = 0;
+            if (steps > 0 && !this.baseOpen) { this.$router.go(-steps); return; }
+            // Either nothing of ours is on the stack, or what is underneath is
+            // the sheet itself because the page was opened on it — a shared link
+            // to a module does exactly that. Drop the query instead.
+            this.baseOpen = false;
             const query = { ...this.$route.query };
             delete query.open;
             delete query.section;
             this.$router.replace({ query });
         },
         goSection(id) {
-            if (this.openKey === 'guidelines') {
-                this.pushed += 1;
-                this.$router.push({ query: { ...this.$route.query, open: 'guidelines', section: id } });
+            if (this.openKey !== 'guidelines') { this.open('guidelines', id); return; }
+            const query = { ...this.$route.query, open: 'guidelines', section: id };
+            if (this.atModule) {
+                // Module to module is not a step back out of anything, so it
+                // replaces: the back gesture still returns to the index rather
+                // than retracing every module opened along the way.
+                this.$router.replace({ query });
             } else {
-                this.open('guidelines', id);
+                // Index to module is a real step, and the one the back chevron
+                // and the phone's back gesture both undo.
+                this.pushed += 1;
+                this.$router.push({ query });
             }
         },
-        // Back out of a section to the index the same way Close backs out of the
-        // reader, so the phone's back gesture and this button agree.
+        // Back out of a module to the index the same way Close backs out of the
+        // reader, so the phone's back gesture and this button agree. The count
+        // is settled by the atModule watcher, which sees both routes out.
         backToIndex() {
             if (this.pushed > 0) {
-                this.pushed -= 1;
                 this.$router.back();
                 return;
             }
             const query = { ...this.$route.query };
             delete query.section;
             this.$router.replace({ query });
+        },
+        // Scroll the sheet to the named section, measured against the sheet's own
+        // box rather than scrollIntoView, which would move the shell behind it.
+        showSection() {
+            const body = this.$refs.body;
+            if (!body) return;
+            const id = this.$route.query.section;
+            if (!id || this.activeGroup.sections[0]?.id === id) { body.scrollTop = 0; return; }
+            const el = body.querySelector('#gl-' + CSS.escape(id));
+            if (el) body.scrollTop += el.getBoundingClientRect().top - body.getBoundingClientRect().top;
         },
         openHit(hit) {
             this.query = '';
@@ -456,12 +485,20 @@ export default {
     watch: {
         openKey(key) {
             this.lockShell(!!key);
-            if (key) this.$nextTick(() => this.$refs.sheet?.focus());
+            // Closed by any route — the button, the phone's back gesture. Clearing
+            // the count keeps it from drifting above what is on the stack.
+            if (!key) { this.pushed = 0; return; }
+            this.$nextTick(() => this.$refs.sheet?.focus());
         },
-        // A different section is a different read: start it at the top rather
-        // than wherever the previous one was scrolled to.
-        current() {
-            this.$nextTick(() => { if (this.$refs.body) this.$refs.body.scrollTop = 0; });
+        // Leaving a module drops the entry that opened it, whether that was the
+        // back chevron or the phone's own gesture.
+        atModule(now, was) {
+            if (was && !now && this.pushed > 0) this.pushed -= 1;
+        },
+        // A different module is a different read: start it at the top, or at the
+        // section a search hit or deep link named.
+        activeGroup() {
+            this.$nextTick(() => this.showSection());
         },
     },
     mounted() {

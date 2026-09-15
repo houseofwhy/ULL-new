@@ -1,6 +1,6 @@
 import {
     embed, levelThumbnail, levelSlug,
-    decorationPercent, verificationPercent, verificationSpan, verificationLabel, levelStatus,
+    decorationPercent, verificationPercent, verificationBarStyle, verificationLabel, levelStatus,
     bestRecord, bestRun, recordLink, levelLength, levelId, hasVerifier,
     verifierLabel, verifierLine, levelRanks,
 } from '../../util.js';
@@ -171,10 +171,7 @@ export default {
         verification() { return verificationPercent(this.level); },
         // Offset the fill to where the evidence actually sits, so a 72-100 run
         // highlights the last 28% of the bar rather than the first.
-        verifBarStyle() {
-            const { from, to } = verificationSpan(this.level);
-            return { marginLeft: from + '%', width: (to - from) + '%' };
-        },
+        verifBarStyle() { return verificationBarStyle(this.level); },
         // The meter's width is the number; the reading is how it is written
         // — a run says the span it covers, not the points it is worth.
         furthest() { return verificationLabel(this.level); },

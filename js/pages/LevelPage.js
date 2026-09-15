@@ -2,7 +2,7 @@ import { store } from '../main.js';
 import { fetchList } from '../content.js';
 import {
     embed, levelThumbnail, levelForSlug,
-    decorationPercent, verificationPercent, verificationSpan, verificationLabel, levelStatus,
+    decorationPercent, verificationPercent, verificationBarStyle, verificationLabel, levelStatus,
     bestRecord, bestRun, recordLink, levelLength, levelId, hasVerifier,
     verifierLabel, verifierLine, levelRanks,
 } from '../util.js';
@@ -197,10 +197,7 @@ export default {
         },
         // Offset the fill to where the evidence actually sits, so a 72-100 run
         // highlights the last 28% of the bar rather than the first.
-        verifBarStyle() {
-            const { from, to } = verificationSpan(this.level);
-            return { marginLeft: from + '%', width: (to - from) + '%' };
-        },
+        verifBarStyle() { return verificationBarStyle(this.level); },
         // The meter is drawn as the span it covers; the reading beside it is
         // written the same way, so a run from 72% to the end says "72-100%"
         // rather than the 28 points it is worth (js/util.js).

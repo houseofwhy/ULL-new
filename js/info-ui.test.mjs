@@ -5,7 +5,9 @@
 //   - Esc closes the window outright, however many modules were looked at
 //     before pressing it,
 //   - the verification meter is drawn where the evidence sits, so a 72-100 run
-//     fills the last 28% of the bar rather than the first.
+//     fills the last 28% of the bar rather than the first,
+//   - the phone's guidelines sheet works the same way: modules in the index,
+//     every section of one when it is opened, and Close closing outright.
 //
 // Requires playwright in the directory you run from:  npm i playwright vue@3.2.31 vue-router@4.0.14
 // Run:  node js/info-ui.test.mjs
@@ -126,6 +128,31 @@ console.log('\n── Esc closes the window, not the last module ──');
     await page.close();
 }
 
+console.log('\n── opened by clicking, Esc unwinds it properly ──');
+{
+    // The other branch of close(): the window was pushed by this page rather
+    // than arrived at, so Esc goes back rather than dropping the query.
+    const page = await newPage();
+    await page.goto(`${base}/information`, { waitUntil: 'load' });
+    await page.waitForSelector('.info-block--gl', { timeout: 15000 });
+    await page.click('.info-block--gl');
+    await page.waitForSelector('.info-win__body section', { timeout: 15000 });
+    for (let i = 1; i < Math.min(3, guidelinesData.length); i++) {
+        await page.locator('.info-toc__g').nth(i).click();
+        await page.waitForTimeout(200);
+    }
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(500);
+    check(await page.$('.info-win') === null, 'one Esc closed it');
+    check(!page.url().includes('open='), 'and left no window in the URL', page.url().replace(base, ''));
+
+    // Back should return to the page as it was, not reopen what we just closed.
+    await page.goBack();
+    await page.waitForTimeout(500);
+    check(await page.$('.info-win') === null, 'Back does not reopen the closed window');
+    await page.close();
+}
+
 console.log('\n── the meter is drawn where the run actually sits ──');
 {
     const page = await newPage();
@@ -144,6 +171,47 @@ console.log('\n── the meter is drawn where the run actually sits ──');
     check(Math.abs(box.startPct - 72) < 1, 'the fill starts at 72%', box.startPct.toFixed(1) + '%');
     check(Math.abs(box.widthPct - 28) < 1, 'and is 28% wide', box.widthPct.toFixed(1) + '%');
     check(box.startPct > 50, 'so it highlights the END of the level, not the start');
+    await page.close();
+}
+
+console.log('\n── the phone shows modules too ──');
+{
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    for (const [u, f] of Object.entries({
+        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js': 'node_modules/vue/dist/vue.global.prod.js',
+        'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
+    })) await page.route(u, (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
+    for (const h of ['https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
+        await page.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+    await page.route('https://d1-wrkr.ullteam.workers.dev/**', (r) =>
+        r.fulfill({ status: 200, contentType: 'application/json', body: '[]' }));
+
+    await page.goto(`${base}/mobile/info?open=guidelines`, { waitUntil: 'load' });
+    await page.waitForSelector('.mob-info-toc__mod', { timeout: 15000 });
+
+    const mods = await page.$$eval('.mob-info-toc__mod', (els) => els.map((e) => e.textContent.trim()));
+    check(mods.length === guidelinesData.length, 'the index lists modules, not sections', `${mods.length} rows`);
+
+    // Open the second module: its whole contents should arrive at once.
+    await page.locator('.mob-info-toc__mod').nth(1).click();
+    await page.waitForTimeout(400);
+    const headings = await page.$$eval('.mob-info-sheet__body section h3', (els) => els.map((e) => e.textContent.trim()));
+    check(headings.length === second.sections.length,
+        `every section of "${second.group}" is on screen`, `${headings.length} of ${second.sections.length}`);
+    check(second.sections.every((sec) => headings.includes(sec.title)), 'and they are the right ones');
+
+    // The chevron steps back out to the index, as it did before.
+    await page.click('.mob-info-back');
+    await page.waitForTimeout(400);
+    check(await page.$('.mob-info-toc__mod') !== null, 'the back chevron returns to the index');
+
+    // Close from inside a module closes the sheet rather than surfacing the index.
+    await page.locator('.mob-info-toc__mod').nth(2).click();
+    await page.waitForTimeout(300);
+    await page.click('.mob-info-x');
+    await page.waitForTimeout(500);
+    check(await page.$('.mob-info-sheet') === null, 'Close from inside a module closes the sheet');
+    check(!page.url().includes('open='), 'and the ?open= query is gone', page.url().replace(base, ''));
     await page.close();
 }
 

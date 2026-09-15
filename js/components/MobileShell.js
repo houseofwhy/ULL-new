@@ -19,7 +19,7 @@ export default {
     <header class="mob-topbar m2-top">
         <router-link to="/mobile/home" class="mob-topbar-logo">
             <span class="m2-top__mark">ULL</span>
-            <span class="m2-top__ver">v2.1.0</span>
+            <span class="m2-top__ver">v2.1.1</span>
         </router-link>
         <nav class="m2-top__acts">
             <button class="mob-topbar-btn m2-top__btn" :class="{ active: mobileStore.openMenu === 'settings' }" @click="toggleMenu('settings')" title="Settings">

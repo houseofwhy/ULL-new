@@ -2,7 +2,7 @@ import { store } from '../../main.js';
 import { fetchRecentChanges } from '../../content.js';
 import {
     levelThumbnail, levelSlug, levelStatus,
-    decorationPercent, verificationPercent, verificationLabel, verifierLine,
+    decorationPercent, verificationPercent, verificationBarStyle, verificationLabel, verifierLine,
 } from '../../util.js';
 import { mobileStore } from './mobileStore.js';
 import { homeStats } from '../../home-stats.js';
@@ -76,7 +76,7 @@ export default {
                     </div>
                     <div class="u-meter">
                         <div class="u-meter__top"><span>Furthest anyone has got</span><b>{{ spotlight.furthest || 'None' }}</b></div>
-                        <span class="u-bar u-bar--alt"><i :style="{ width: spotlight.progress + '%' }"></i></span>
+                        <span class="u-bar u-bar--alt"><i :style="spotlight.progressBar"></i></span>
                     </div>
                     <div class="mob-spot__foot"><span class="u-btn u-btn--ghost u-btn--block">Open level page</span></div>
                 </div>
@@ -106,7 +106,7 @@ export default {
                                 </span>
                                 <span class="m2-row__sub">{{ entry.level.author }}<template v-if="entry.verifier"> · {{ entry.verifier.name }}</template></span>
                                 <span class="mob-row__foot">
-                                    <span class="u-bar u-bar--alt u-bar--thin"><i :style="{ width: entry.progress + '%' }"></i></span>
+                                    <span class="u-bar u-bar--alt u-bar--thin"><i :style="entry.progressBar"></i></span>
                                     <span v-if="entry.furthest" class="mob-row__pct">{{ entry.furthest }} furthest</span>
                                 </span>
                             </span>
@@ -217,6 +217,7 @@ export default {
                 verifier: verifierLine(level),
                 decoration: pf,
                 progress: verificationPercent(level),
+            progressBar: verificationBarStyle(level),
                 furthest: verificationLabel(level),
                 // The row has no room for "Decoration 80% done".
                 short: status.label.startsWith('Decoration') ? pf + '%'

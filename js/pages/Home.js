@@ -2,7 +2,7 @@ import { store } from '../main.js';
 import { fetchEditors, fetchRecentChanges, fetchList } from '../content.js';
 import {
     levelThumbnail, levelSlug, levelStatus,
-    decorationPercent, verificationPercent, verificationLabel, verifierLine,
+    decorationPercent, verificationPercent, verificationBarStyle, verificationLabel, verifierLine,
 } from '../util.js';
 import { homeStats } from '../home-stats.js';
 import Footer from '../components/Footer.js';
@@ -100,7 +100,7 @@ export default {
                     </div>
                     <div class="u-meter">
                         <div class="u-meter__top"><span>Furthest anyone has got</span><b>{{ spotlight.furthest || 'None' }}</b></div>
-                        <span class="u-bar u-bar--alt"><i :style="{ width: spotlight.progress + '%' }"></i></span>
+                        <span class="u-bar u-bar--alt"><i :style="spotlight.progressBar"></i></span>
                     </div>
                     <div class="home-spot__foot"><span class="u-btn u-btn--ghost u-btn--block">Open level page</span></div>
                 </div>
@@ -145,7 +145,7 @@ export default {
                         <span class="u-row__sub">
                             by {{ entry.level.author }}<template v-if="entry.verifier"> &middot; {{ entry.verifier.lead }} {{ entry.verifier.name }}</template>
                         </span>
-                        <span class="u-bar u-bar--alt u-bar--thin home-row__meter"><i :style="{ width: entry.progress + '%' }"></i></span>
+                        <span class="u-bar u-bar--alt u-bar--thin home-row__meter"><i :style="entry.progressBar"></i></span>
                     </span>
                     <span class="home-row__fig" :class="{ 'home-row__fig--none': !entry.furthest }">
                         {{ entry.furthest || '&mdash;' }}<span>furthest</span>
@@ -255,6 +255,7 @@ export default {
             verifier: verifierLine(level),
             decoration: decorationPercent(level),
             progress: verificationPercent(level),
+            progressBar: verificationBarStyle(level),
             furthest: verificationLabel(level),
         });
 

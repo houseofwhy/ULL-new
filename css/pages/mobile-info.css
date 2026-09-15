@@ -175,20 +175,6 @@
    section is pushed over it. (.info-toc is hidden under 1100px by
    information.css; this is the control that replaces it, at tap size.) */
 .mob-info-toc { display: flex; flex-direction: column; }
-.mob-info-toc__g {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.6rem;
-    margin: 1.1rem 0 0.2rem;
-    font-size: 0.55rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.4;
-}
-.mob-info-toc__g:first-child { margin-top: 0; }
-.mob-info-toc__g span { font-variant-numeric: tabular-nums; }
 .mob-info-toc__a {
     display: flex;
     align-items: center;
@@ -207,6 +193,21 @@
 }
 .mob-info-toc__a::after { content: '\203A'; font-size: 1rem; opacity: 0.3; }
 .mob-info-toc__a:active { color: var(--u-accent); }
+/* A module row carries how many sections opening it will give you. */
+.mob-info-toc__mod span {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.4;
+}
+
+/* The sections of a module run together as one read, the same as the desktop. */
+.mob-info-sheet__body > section + section {
+    margin-top: 1.9rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--u-line);
+}
 
 /* Previous and next section, at the foot of a section. Two tap targets rather
    than the desktop's two lines of text. */
