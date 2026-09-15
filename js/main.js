@@ -54,7 +54,8 @@ if (window.location.hash.startsWith('#/')) {
 // inside <body id="app">, which is also Vue's in-DOM template. Remove it before
 // createApp/mount so Vue never compiles it, and so it does not linger next to
 // the real UI once the app is running.
-document.getElementById('seo-fallback')?.remove();
+const seoFallback = document.getElementById('seo-fallback');
+seoFallback?.remove();
 
 const app = Vue.createApp({
     data: () => ({ store }),
@@ -123,7 +124,18 @@ if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
 }
 
 app.use(router);
-app.mount('#app');
+// The static block was removed above so Vue would never compile it. If the mount
+// itself throws, put it back instead of leaving a blank page, and tell the boot
+// shield in index.html to reveal it. On success, cancel that failsafe.
+try {
+    app.mount('#app');
+    document.documentElement.classList.add('app-ready');
+    clearTimeout(window.__ullBootFailsafe);
+} catch (err) {
+    if (seoFallback) document.body.appendChild(seoFallback);
+    document.documentElement.classList.add('boot-failed');
+    throw err;
+}
 
 // Close sidebar overlay when resizing past the collapse breakpoint
 window.addEventListener('resize', () => {

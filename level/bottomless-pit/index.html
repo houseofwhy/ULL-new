@@ -19,7 +19,15 @@
          The static content block below exists for crawlers that do not execute
          JavaScript; a visitor must never see it, so it is hidden the moment we
          know scripting is on. The page then holds the theme's own background
-         until Vue paints, rather than a white or half-styled screen. -->
+         until Vue paints, rather than a white or half-styled screen.
+
+         Hiding that block is only safe while the app is actually going to boot.
+         If the module graph never finishes — a dropped request, or a crawler
+         that gives up part-way through the imports — then the static block is
+         hidden AND the app tree is still [v-cloak]ed, so the page renders
+         completely blank. The failsafe below brings the static content back in
+         that case. main.js marks the root app-ready once Vue has mounted, which
+         makes both triggers no-ops on a healthy load. -->
     <script>
         (function () {
             var root = document.documentElement;
@@ -27,11 +35,26 @@
             var light = false;
             try { light = JSON.parse(localStorage.getItem('dark')) === true; } catch (e) { /* private mode */ }
             root.style.background = light ? '#ffffff' : '#1c1b1f';
+
+            function bootFailed() {
+                if (root.className.indexOf('app-ready') === -1 && root.className.indexOf('boot-failed') === -1) {
+                    root.className += ' boot-failed';
+                }
+            }
+            // 'load' is the precise signal: it fires once every module request
+            // has settled, succeeded or failed, and always after a successful
+            // mount. The timer only covers the case where a request hangs and
+            // 'load' therefore never arrives at all.
+            window.addEventListener('load', bootFailed);
+            window.__ullBootFailsafe = setTimeout(bootFailed, 5000);
         })();
     </script>
     <style>
         html { background: #1c1b1f; }
         html.js #seo-fallback { display: none !important; }
+        /* One class more specific than the rule above, so a failed boot puts the
+           static content back rather than leaving the visitor a blank page. */
+        html.js.boot-failed #seo-fallback { display: block !important; }
     </style>
 
     <link rel="icon" href="/ull_icon.png" />
