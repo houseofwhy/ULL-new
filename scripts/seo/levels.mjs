@@ -165,6 +165,8 @@ moves as the level progresses.</p>`;
         dir: `level/${slug}`,
         priority: '0.5',
         changefreq: 'weekly',
+        // The level's own last-updated date, for <lastmod> in the sitemap.
+        lastmod: isoDate(level.lastUpd),
         title: `ULL — ${level.name}`,
         socialTitle: `${level.name} — Geometry Dash Extreme Demon | Upcoming Levels List`,
         description,

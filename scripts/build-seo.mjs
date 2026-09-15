@@ -46,6 +46,38 @@ const annotateOne = (level) => annotated.get(level.path) ?? level;
 const stripTags = (s) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const today = new Date().toISOString().slice(0, 10);
 
+// <lastmod> has to mean something: Google stops trusting the whole sitemap once
+// every URL claims to have changed on the last build. Level pages carry their
+// own lastUpd, and the static pages keep whatever date the previous sitemap
+// gave them unless their generated HTML actually changed this run.
+const SITEMAP_FILE = path.join(ROOT, 'sitemap.xml');
+const previousLastmod = new Map();
+if (fs.existsSync(SITEMAP_FILE)) {
+    const xml = fs.readFileSync(SITEMAP_FILE, 'utf8');
+    for (const block of xml.match(/<url>[\s\S]*?<\/url>/g) ?? []) {
+        const loc = /<loc>([^<]*)<\/loc>/.exec(block);
+        const mod = /<lastmod>([^<]*)<\/lastmod>/.exec(block);
+        if (loc && mod) previousLastmod.set(loc[1], mod[1]);
+    }
+}
+
+// Unchanged output keeps its old date; anything new or genuinely different is
+// stamped today. Falls back to today for a URL the previous sitemap never had.
+// Level pages whose lastUpd is missing or unparseable come through here too
+// (with changed=false), so an unknown date stays put instead of churning daily.
+const keptLastmod = (route, changed) => {
+    const prev = previousLastmod.get(SITE.origin + route);
+    return !changed && prev ? prev : today;
+};
+
+// Writes only when the bytes differ, and reports whether they did, so an
+// unchanged page neither churns its mtime nor bumps its <lastmod>.
+function writeIfChanged(dest, content) {
+    const changed = !fs.existsSync(dest) || fs.readFileSync(dest, 'utf8') !== content;
+    if (changed) fs.writeFileSync(dest, content);
+    return changed;
+}
+
 function emptyRegion(html, start, end) {
     const a = html.indexOf(start);
     const b = html.indexOf(end);
@@ -207,14 +239,16 @@ const raw = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 let shell = emptyRegion(raw, HEAD_START, HEAD_END);
 shell = emptyRegion(shell, BODY_START, BODY_END);
 
+const pageChanged = new Map();
 for (const page of PAGES) {
     let out = fillRegion(shell, HEAD_START, HEAD_END, buildHead(page));
     out = fillRegion(out, BODY_START, BODY_END, buildBody(page));
 
     const dest = page.dir ? path.join(ROOT, page.dir, 'index.html') : path.join(ROOT, 'index.html');
     fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.writeFileSync(dest, out);
-    console.log('wrote', path.relative(ROOT, dest), `(${(out.length / 1024).toFixed(1)} KB)`);
+    const changed = writeIfChanged(dest, out);
+    pageChanged.set(page.route, changed);
+    console.log('wrote', path.relative(ROOT, dest), `(${(out.length / 1024).toFixed(1)} KB)`, changed ? '' : '[unchanged]');
 }
 
 // ── level pages ─────────────────────────────────────────────────────────────
@@ -240,7 +274,7 @@ for (const item of levelPlan) {
     out = fillRegion(out, BODY_START, BODY_END, buildBody(page));
     const dest = path.join(ROOT, page.dir, "index.html");
     fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.writeFileSync(dest, out);
+    writeIfChanged(dest, out);
 }
 console.log("wrote " + liveCount + " level page(s), " + retiredCount + " retired, " + levelRedirects.length + " redirect(s)");
 
@@ -277,20 +311,20 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${PAGES.map(
     (p) => `  <url>
     <loc>${SITE.origin}${p.route}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${keptLastmod(p.route, pageChanged.get(p.route))}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`
 ).join('\n')}
 ${levelPages.filter((p) => !p.noindex).map((p) => `  <url>
     <loc>${SITE.origin}${p.route}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${p.lastmod || keptLastmod(p.route, false)}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`).join('\n')}
 </urlset>
 `;
-fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
+fs.writeFileSync(SITEMAP_FILE, sitemap);
 console.log('wrote sitemap.xml');
 
 // js/seo-meta.js — the same titles and descriptions, for client-side
