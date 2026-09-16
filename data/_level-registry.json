@@ -1782,7 +1782,7 @@
       "name": "Infinite Silence",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "injury": {
@@ -2726,7 +2726,7 @@
       "name": "Rebirth The End",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "reckless": {
