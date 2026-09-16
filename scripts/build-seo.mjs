@@ -29,6 +29,8 @@ const HEAD_START = '<!-- seo:head:start -->';
 const HEAD_END = '<!-- seo:head:end -->';
 const BODY_START = '<!-- seo:content:start -->';
 const BODY_END = '<!-- seo:content:end -->';
+const PRELOAD_START = '<!-- seo:preload:start -->';
+const PRELOAD_END = '<!-- seo:preload:end -->';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -239,11 +241,43 @@ ${inner}
 </div>`;
 }
 
+// ── the module graph ────────────────────────────────────────────────────────
+// A browser discovers imports only as it parses each module, so a graph four
+// levels deep costs four round trips before the entry can run — and if any one
+// request is dropped, the entry never runs at all, because an ES module waits
+// on every import it declares. Googlebot's renderer dropped seven of these.
+// Declaring them here makes them all discoverable from the HTML, in one go.
+function moduleGraph(entry) {
+    const found = new Set();
+    const queue = [entry];
+    while (queue.length) {
+        const file = queue.shift();
+        if (found.has(file) || !fs.existsSync(file)) continue;
+        found.add(file);
+        const src = fs.readFileSync(file, 'utf8');
+        for (const [, spec] of src.matchAll(/(?:^|\n)\s*import\s[^'"]*['"]([^'"]+)['"]/g)) {
+            if (!spec.startsWith('.')) continue;
+            queue.push(path.resolve(path.dirname(file), spec));
+        }
+    }
+    // The entry is already fetched by its own <script>; sorted so the list is
+    // stable between builds rather than dependent on walk order.
+    found.delete(entry);
+    return [...found].map((f) => '/' + path.relative(ROOT, f).split(path.sep).join('/')).sort();
+}
+
+const preloads = moduleGraph(path.join(ROOT, 'js', 'main.js'));
+const preloadHtml = preloads.map((href) => `    <link rel="modulepreload" href="${href}" />`).join('\n');
+
 // ── write ───────────────────────────────────────────────────────────────────
 
 const raw = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 let shell = emptyRegion(raw, HEAD_START, HEAD_END);
 shell = emptyRegion(shell, BODY_START, BODY_END);
+shell = emptyRegion(shell, PRELOAD_START, PRELOAD_END);
+// The same for every page, so it is filled once into the shell.
+shell = fillRegion(shell, PRELOAD_START, PRELOAD_END, preloadHtml);
+console.log(`declared ${preloads.length} module(s) for preload`);
 
 const pageChanged = new Map();
 for (const page of PAGES) {
