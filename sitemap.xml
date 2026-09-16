@@ -253,6 +253,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/artemis-13</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/ascension-to-heaven</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -991,12 +997,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/eurus</loc>
-    <lastmod>2025-06-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/every-end</loc>
     <lastmod>2025-03-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1197,12 +1197,6 @@
   <url>
     <loc>https://ull.pages.dev/level/glass-chapel</loc>
     <lastmod>2026-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/goliath</loc>
-    <lastmod>2025-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2059,12 +2053,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/quasar</loc>
-    <lastmod>2025-09-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/rainy</loc>
     <lastmod>2025-07-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2527,12 +2515,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/tapioca</loc>
-    <lastmod>2025-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/taron</loc>
     <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -2691,12 +2673,6 @@
   <url>
     <loc>https://ull.pages.dev/level/theory-of-sevvend</loc>
     <lastmod>2026-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/theory-of-silence</loc>
-    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

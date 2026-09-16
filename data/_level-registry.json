@@ -266,11 +266,11 @@
       "redirectTo": null
     },
     "artemis-13": {
-      "path": "artemis_13",
+      "path": "artemis 13",
       "name": "Artemis 13",
       "firstSeen": "2026-08-30",
-      "lastSeen": "2026-08-30",
-      "retiredAt": "2026-08-30",
+      "lastSeen": "2026-09-16",
+      "retiredAt": null,
       "redirectTo": null
     },
     "ascension-to-heaven": {
@@ -1262,7 +1262,7 @@
       "name": "EURUS",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "every-end": {
@@ -1542,7 +1542,7 @@
       "name": "Goliath",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "graveyard": {
@@ -2694,7 +2694,7 @@
       "name": "QUASAR",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "rainy": {
@@ -3342,7 +3342,7 @@
       "name": "TAPIOCA",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "taron": {
@@ -3566,7 +3566,7 @@
       "name": "Theory of Silence",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-16",
-      "retiredAt": null,
+      "retiredAt": "2026-09-16",
       "redirectTo": null
     },
     "theta": {
