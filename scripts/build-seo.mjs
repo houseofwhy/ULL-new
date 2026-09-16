@@ -21,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 import { SITE, NAV, PAGES, FAQ } from './seo/content.mjs';
 import { guidelinesData } from '../js/_guidelines.js';
 import { readRegistry, planPages } from './seo/registry.mjs';
-import { levelPage, retiredPage, bakedBlocks, annotate } from './seo/levels.mjs';
+import { levelPage, retiredPage, bakedBlocks, listSchemas, annotate } from './seo/levels.mjs';
 import { levelSlug } from '../js/util.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -37,6 +37,8 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const SNAPSHOT_FILE = path.join(ROOT, 'data', '_seo-snapshot.json');
 const snapshot = fs.existsSync(SNAPSHOT_FILE) ? JSON.parse(fs.readFileSync(SNAPSHOT_FILE, 'utf8')) : null;
 const baked = snapshot ? bakedBlocks(snapshot) : {};
+// The same rankings the baked tables show, as ItemList — see scripts/seo/levels.mjs.
+const rankings = snapshot ? listSchemas(snapshot) : {};
 const registry = readRegistry(ROOT);
 const levelPlan = snapshot ? planPages(registry, snapshot.levels) : [];
 // Cross-list positions are only knowable from the full ordering, so annotate
@@ -143,6 +145,10 @@ function jsonLd(page) {
             ],
         });
     }
+
+    // A ranking page says what it ranks, so the order is readable as data and
+    // not only as a table.
+    if (rankings[page.route]) graph.push(rankings[page.route]);
 
     if (page.faq) {
         graph.push({

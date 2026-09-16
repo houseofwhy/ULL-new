@@ -241,6 +241,43 @@ function tail(shown, total, where) {
 
 const stamp = (snapshot) => `<p class="seo-stamp">Ranking as of ${new Date(snapshot.fetchedAt).toISOString().slice(0, 10)}. Visitors see live data.</p>`;
 
+// The ranking each list page shows, as schema.org ItemList.
+//
+// bakedBlocks() below renders these same four selections as tables for people;
+// this is the same thing stated for machines, which is what lets a search or
+// answer engine read the ranking rather than infer it from a table. Capped at
+// the same MAX_ROWS, so the markup never claims more than the page shows.
+export function listSchemas(snapshot) {
+    const levels = annotate(snapshot.levels || []);
+    const paths = levels.map((l) => l.path);
+    const out = {};
+
+    const build = (route, name, rows) => {
+        if (!rows.length) return;
+        const url = SITE.origin + route;
+        out[route] = {
+            '@type': 'ItemList',
+            '@id': url + '#ranking',
+            name,
+            // Position 1 is the top of the list, so the positions ascend.
+            itemListOrder: 'https://schema.org/ItemListOrderAscending',
+            numberOfItems: rows.length,
+            itemListElement: rows.map((level, i) => ({
+                '@type': 'ListItem',
+                position: i + 1,
+                url: SITE.origin + levelUrl(level, paths),
+                name: level.name,
+            })),
+        };
+    };
+
+    build('/list', 'All Levels', levels.slice(0, MAX_ROWS));
+    build('/listmain', 'Main List', levels.filter((l) => l.mainRank).slice(0, MAX_ROWS));
+    build('/listfuture', 'Future List', levels.filter((l) => l.futureRank).slice(0, MAX_ROWS));
+    build('/upcoming', 'Upcoming Levels', upcomingRanking(levels.map((l) => ({ ...l }))).slice(0, MAX_ROWS));
+    return out;
+}
+
 export function bakedBlocks(snapshot) {
     const levels = annotate(snapshot.levels || []);
     const paths = levels.map((l) => l.path);

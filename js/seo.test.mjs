@@ -44,15 +44,14 @@ const server = createServer((req, res) => {
 await new Promise((r) => server.listen(0, r));
 const base = `http://localhost:${server.address().port}`;
 
-// The CDNs and the live API are not reachable offline — serve Vue
-// from node_modules and stub the rest so the app boots as it does in production.
+// Vue ships from this origin now, so the local server already serves it and
+// there is no CDN left to stand in for — only the live API needs stubbing.
+// delayMs still holds Vue back, for the case that checks the static block does
+// not flash while the app is starting.
 async function stubExternals(ctx, delayMs = 0) {
-    for (const [u, f] of Object.entries({
-        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js': 'node_modules/vue/dist/vue.global.prod.js',
-        'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
-    })) await ctx.route(u, async (r) => {
-        if (delayMs) await new Promise((done) => setTimeout(done, delayMs));
-        r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') });
+    if (delayMs) await ctx.route('**/vendor/vue*.js', async (r) => {
+        await new Promise((done) => setTimeout(done, delayMs));
+        r.continue();
     });
     for (const h of ['https://cdnjs.cloudflare.com/**', 'https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
         await ctx.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));

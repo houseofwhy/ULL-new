@@ -58,10 +58,6 @@ const check = (cond, name, detail = '') => {
 // suites do, and keep the API quiet.
 async function newPage() {
     const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
-    for (const [u, f] of Object.entries({
-        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js': 'node_modules/vue/dist/vue.global.prod.js',
-        'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
-    })) await page.route(u, (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
     for (const h of ['https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
         await page.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
     await page.route('https://d1-wrkr.ullteam.workers.dev/**', (r) =>
@@ -177,10 +173,6 @@ console.log('\n── the meter is drawn where the run actually sits ──');
 console.log('\n── the phone shows modules too ──');
 {
     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
-    for (const [u, f] of Object.entries({
-        'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js': 'node_modules/vue/dist/vue.global.prod.js',
-        'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
-    })) await page.route(u, (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') }));
     for (const h of ['https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
         await page.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
     await page.route('https://d1-wrkr.ullteam.workers.dev/**', (r) =>

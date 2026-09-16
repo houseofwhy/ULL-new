@@ -1,0 +1,7 @@
+# Cloudflare Pages response headers.
+
+# The vendored libraries carry their version in the filename, so the contents at
+# a given URL never change and the browser never has to revalidate them. An
+# upgrade lands on a new filename, which is a new URL, so nothing goes stale.
+/vendor/*
+  Cache-Control: public, max-age=31536000, immutable

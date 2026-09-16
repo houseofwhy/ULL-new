@@ -241,8 +241,14 @@
     <!-- <link rel="stylesheet" type="text/css" href="/css/components/seo-fallback.css" /> -->
     <!-- css:end -->
     <link rel="stylesheet" type="text/css" href="/css/bundle.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
+    <!-- Vue and the router are served from this origin rather than a CDN. They
+         are the first thing main.js touches, so a third-party host that is slow,
+         blocked or unreachable does not delay the app — it stops it starting at
+         all, which is how Googlebot came to record a blank page for /list. The
+         version is in the filename, so these URLs never change contents and are
+         cached immutably (see _headers). -->
+    <script src="/vendor/vue-3.2.31.global.prod.js"></script>
+    <script src="/vendor/vue-router-4.0.14.global.prod.js"></script>
     <script type="module" src="/js/main.js"></script>
 </head>
 

@@ -44,19 +44,11 @@ const base = `http://localhost:${server.address().port}`;
 
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
 
-// The CDNs are not reachable offline, so serve Vue from node_modules exactly as
-// js/seo.test.mjs does. Without this every case would "fail to boot" for the
-// wrong reason and the healthy-path assertions would be meaningless.
-const VUE_CDN = {
-    'https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.prod.js': 'node_modules/vue/dist/vue.global.prod.js',
-    'https://cdn.jsdelivr.net/npm/vue-router@4.0.14/dist/vue-router.global.prod.js': 'node_modules/vue-router/dist/vue-router.global.prod.js',
-};
+// Vue ships from this origin now, so the server above already serves it and
+// there is no CDN to stand in for. serveVue: false blocks that local request
+// instead, which reproduces the same missing-global failure.
 async function stubExternals(ctx, { serveVue = true } = {}) {
-    for (const [u, f] of Object.entries(VUE_CDN)) {
-        await ctx.route(u, (r) => (serveVue
-            ? r.fulfill({ status: 200, contentType: 'text/javascript', body: readFileSync(f, 'utf8') })
-            : r.abort()));
-    }
+    if (!serveVue) await ctx.route('**/vendor/vue-*.js', (r) => r.abort());
     for (const h of ['https://fonts.googleapis.com/**', 'https://fonts.gstatic.com/**'])
         await ctx.route(h, (r) => r.fulfill({ status: 200, contentType: 'text/css', body: '' }));
     await ctx.route('https://d1-wrkr.ullteam.workers.dev/**', (r) =>
@@ -127,7 +119,7 @@ console.log('\n── boot fails on a level page ──');
     await page.close();
 }
 
-console.log('\n── boot fails: the Vue CDN is unreachable (the fingerprint Googlebot recorded) ──');
+console.log('\n── boot fails: Vue itself does not load (the fingerprint Googlebot recorded) ──');
 {
     const page = await browser.newPage();
     await stubExternals(page, { serveVue: false });
@@ -138,6 +130,7 @@ console.log('\n── boot fails: the Vue CDN is unreachable (the fingerprint Go
     const s = await visibleState(page);
     // main.js:5 is `Vue.reactive(...)`, above the line that removes the static
     // block — so a missing Vue global leaves the block in the DOM untouched.
+    // Vendoring Vue makes this far less likely; it does not make it impossible.
     check(errors.some((e) => /Vue is not defined/.test(e)), 'reproduces "Vue is not defined"', errors[0] || '');
     check(s.fallbackPresent, 'static block was never removed');
     check(s.fallbackVisible, 'static block is VISIBLE (not a blank page)');
