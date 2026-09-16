@@ -311,27 +311,67 @@ if (fs.existsSync(levelRoot)) {
     console.log("wrote _redirects (" + levelRedirects.length + " level redirect(s))");
 }
 
-// sitemap.xml
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+// sitemap.xml, plus the same URLs split behind an index.
+//
+// Search Console has reported "Couldn't fetch" on /sitemap.xml since the first
+// submission, with Last read empty and 0 URLs discovered — while Googlebot's own
+// live test of that exact URL returns the XML, and the file serves 200 as
+// application/xml. The fetch works; the Sitemaps report does not accept it. The
+// index below carries the identical URLs under different names, so submitting it
+// says whether the problem follows the content or sticks to that one URL.
+//
+// It is a normal structure either way, not a workaround: splitting the nine
+// static pages from the several hundred level pages lets their very different
+// change rates be read separately, and an index is what this would need anyway
+// past 50,000 URLs.
+const entry = (e) => `  <url>
+    <loc>${e.loc}</loc>
+    <lastmod>${e.lastmod}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`;
+
+const urlset = (entries) => `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${PAGES.map(
-    (p) => `  <url>
-    <loc>${SITE.origin}${p.route}</loc>
-    <lastmod>${keptLastmod(p.route, pageChanged.get(p.route))}</lastmod>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>`
-).join('\n')}
-${levelPages.filter((p) => !p.noindex).map((p) => `  <url>
-    <loc>${SITE.origin}${p.route}</loc>
-    <lastmod>${p.lastmod || keptLastmod(p.route, false)}</lastmod>
-    <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>`).join('\n')}
+${entries.map(entry).join('\n')}
 </urlset>
 `;
-fs.writeFileSync(SITEMAP_FILE, sitemap);
-console.log('wrote sitemap.xml');
+
+const pageEntries = PAGES.map((p) => ({
+    loc: SITE.origin + p.route,
+    lastmod: keptLastmod(p.route, pageChanged.get(p.route)),
+    changefreq: p.changefreq,
+    priority: p.priority,
+}));
+const levelEntries = levelPages.filter((p) => !p.noindex).map((p) => ({
+    loc: SITE.origin + p.route,
+    lastmod: p.lastmod || keptLastmod(p.route, false),
+    changefreq: p.changefreq,
+    priority: p.priority,
+}));
+
+fs.writeFileSync(SITEMAP_FILE, urlset([...pageEntries, ...levelEntries]));
+fs.writeFileSync(path.join(ROOT, 'sitemap-pages.xml'), urlset(pageEntries));
+fs.writeFileSync(path.join(ROOT, 'sitemap-levels.xml'), urlset(levelEntries));
+
+// The index's own dates are the newest date inside each child, so they move only
+// when something in that child actually moved. ISO dates sort as strings.
+const newest = (entries) => entries.reduce((max, e) => (e.lastmod > max ? e.lastmod : max), entries[0]?.lastmod ?? today);
+const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${SITE.origin}/sitemap-pages.xml</loc>
+    <lastmod>${newest(pageEntries)}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${SITE.origin}/sitemap-levels.xml</loc>
+    <lastmod>${newest(levelEntries)}</lastmod>
+  </sitemap>
+</sitemapindex>
+`;
+fs.writeFileSync(path.join(ROOT, 'sitemap-index.xml'), sitemapIndex);
+console.log(`wrote sitemap.xml (${pageEntries.length + levelEntries.length} URLs), and sitemap-index.xml over `
+    + `sitemap-pages.xml (${pageEntries.length}) + sitemap-levels.xml (${levelEntries.length})`);
 
 // js/seo-meta.js — the same titles and descriptions, for client-side
 // navigations inside the SPA. Generated so there is one source of truth.

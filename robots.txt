@@ -61,4 +61,6 @@ Disallow: /_backuplist.json
 Disallow: /_backuppending.json
 Disallow: /data/
 
+# Both are the same URLs: the flat file, and the same set behind an index.
 Sitemap: https://ull.pages.dev/sitemap.xml
+Sitemap: https://ull.pages.dev/sitemap-index.xml
