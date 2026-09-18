@@ -56,23 +56,23 @@
                 id: 'world-record',
                 title: 'Definition of a World Record',
                 content: `
-<p>World records are categorized into two distinct types, each with specific criteria:</p>
+<p>The list recognizes two types of world record:</p>
 <ul>
 <li><strong>World Record (WR):</strong> The highest completion percentage achieved from 0% on the current version of the level (see \u201cVersion Relevance\u201d below).</li>
-<li><strong>World Record Run (WR Run):</strong> The longest recorded segment (run) performed on the current version of the level. A \u201crun\u201d is defined as a segment from a starting percentage to the point of death or to 100% if completed. Length is measured by the difference between these percentages.</li>
+<li><strong>World Record Run (WR Run):</strong> The longest recorded segment (run) performed on the current version of the level. A \u201crun\u201d is a segment from a starting percentage to the point of death, or to 100% if completed; its length is the difference between these percentages.</li>
 </ul>
 <h4>Version Relevance &amp; Record Validity</h4>
-<p>The validity of a record is intrinsically tied to the relevant version of the level. The following rules apply:</p>
+<p>A record is valid only for the version of the level on which it was set.</p>
 <ul>
-<li><strong>Substantial Changes:</strong> If a level update introduces substantial changes that significantly increase its overall difficulty, all previous world records for that level are reset and considered obsolete.</li>
-<li><strong>Minor Changes:</strong> For updates with minor alterations, several scenarios are possible:
+<li><strong>Substantial Changes:</strong> If an update significantly increases the level\u2019s overall difficulty, all previous world records for that level are reset.</li>
+<li><strong>Minor Changes:</strong> For updates with minor alterations:
 <ul>
 <li>If the level verifier changes without a significant increase in difficulty, the existing world record remains valid.</li>
 <li>If the difficulty increases moderately, a new record (even with a lower length) may supersede the old one, at the moderators\u2019 discretion, based on the new context.</li>
 <li>In the case of an open verification process for the level, only the higher percentage is considered for the record, without adjustments for difficulty differences between versions.</li>
 </ul>
 </li>
-<li><strong>Levels in Development:</strong> If a level is in the decoration phase and does not have an updated gameplay layout, records set on the original layout are permitted. Once the gameplay is changed, only records on the new version are allowed.</li>
+<li><strong>Levels in Development:</strong> If a level is in the decoration phase and its gameplay layout is unchanged, records set on the original layout are permitted. Once the gameplay is changed, only records on the new version are allowed.</li>
 </ul>
                 `
             },
@@ -236,21 +236,21 @@
         group: 'Level Placement',
         id: 'placement',
         intro: `
-<p>This section of the guidelines covers the rules for adding levels to the list and determining their rank. It explains how levels are selected, positioned, and periodically reassessed.</p>
-<p>Furthermore, it defines the distinction between the three core categories: \u201cAll Levels\u201d, the \u201cMain List\u201d, and the \u201cFuture List\u201d.</p>
+<p>This section of the guidelines covers the rules for adding levels to the list: how they are selected, positioned, and periodically reassessed.</p>
+<p>It also defines the distinction between the three tiers: \u201cAll Levels\u201d, the \u201cMain List\u201d, and the \u201cFuture List\u201d.</p>
         `,
         sections: [
             {
                 id: 'list-structure',
                 title: 'List Structure',
                 content: `
-<p>The Upcoming Level List is organized into three distinct tiers: All Levels, Main List, and Future List. While the relative positioning of levels is consistent across all tiers, each tier employs different inclusion standards, creating a hierarchy of probability and quality.</p>
+<p>The Upcoming Level List is organized into three tiers: All Levels, Main List, and Future List. The relative positioning of levels is consistent across all tiers. The tiers differ only in their inclusion standards.</p>
 <h4>All Levels</h4>
-<p>This tier serves as the most comprehensive catalogue, featuring the largest number of levels and the lowest inclusion threshold. Its purpose is to list every level that has a conceivable chance of being verified and published, providing a broad overview of the upcoming landscape.</p>
+<p>The tier with the lowest inclusion threshold, containing the entire ULL: levels that are of sufficient quality and have a possibility of being verified in the future.</p>
 <h4>Main List</h4>
-<p>Serving a similar purpose as the \u201cAll Levels\u201d tier but with more stringent criteria, the Main List highlights levels that meet the fundamental standards required to be considered for an official rating by the developer (\u201cRate\u201d). It acts as a curated filter for higher-potential candidates.</p>
+<p>Contains all levels that are considered to be rate-worthy \u2014 those meeting the fundamental standards required to be considered for an official rating by the developer (\u201cRate\u201d) \u2014 and which as a result have a higher chance of being added to the Demonlist if they are verified.</p>
 <h4>Future List</h4>
-<p>This tier maintains the highest standards of the three. It functions as a focused preview, listing only levels with a very high likelihood of soon verification and publication. It represents the most immediate and probable future additions to the demonlist.</p>
+<p>The tier with the highest standards, containing levels that are expected to be verified in approximately a year or less.</p>
                 `
             },
             {
@@ -260,12 +260,12 @@
 <p>This section defines the standards that determine a level\u2019s eligibility for inclusion in the Upcoming Level List and its placement within specific tiers. Levels that pass the selection process are placed in the Pending List. There you can also find information about the approximate position of a particular level. It will be added to the list as soon as its exact position is determined.</p>
 
 <h4>1. Universal Standards</h4>
-<p>All levels, regardless of the target tier, must satisfy the following fundamental conditions:</p>
+<p>All levels, regardless of the target tier, must satisfy the following conditions:</p>
 <ul>
 <li>The level must be based on the Classic game type. There is currently no platformer list.</li>
 <li>Levels are selected from those that are going to be published on the game\u2019s official servers. If a level is expected to be published on a private server, it will not be considered at all.</li>
 <li>The level must have a public recording available.</li>
-<li>The level must demonstrate a credible potential to receive an official in-game rating. This is assessed through general criteria:
+<li>The level must demonstrate credible potential to receive an official in-game rating, assessed by the following criteria:
 <ol>
 <li>The level\u2019s gameplay must last at least 30 seconds;</li>
 <li>The proposed version of the level is official (recognized by its original creator);</li>
@@ -279,10 +279,10 @@
 </ul>
 
 <h4>2. Tier-Specific Standards</h4>
-<p>Beyond the universal prerequisites, each tier enforces additional filters:</p>
+<p>Each tier enforces additional criteria:</p>
 <p><strong>All Levels Tier</strong></p>
 <ul>
-<li>The level must exhibit sufficient quality to pass a vote among designated evaluators. This subjective assessment considers overall composition, object use, concept and execution, use of colors, etc;</li>
+<li>The level must exhibit sufficient quality to pass a vote among designated evaluators. The assessment is subjective and considers composition, object use, concept and execution, use of colors, etc;</li>
 <li>Levels on layout state are admitted only if the layout demonstrates notable quality or if the creator has a proven track record of completing projects.</li>
 </ul>
 <p><strong>Main List Tier</strong></p>
@@ -292,7 +292,7 @@
 </ul>
 <p><strong>Future List Tier</strong></p>
 <ul>
-<li>The level must represent the highest echelon of quality or have substantial records set on it, indicating a very high and imminent likelihood of verification.</li>
+<li>The level must be of the highest quality or have substantial records set on it, indicating that verification is expected in approximately a year or less.</li>
 <li>Levels on layout stage and levels with just-begun decoration are not eligible for this tier, but rare exceptions can be made.</li>
 </ul>
 

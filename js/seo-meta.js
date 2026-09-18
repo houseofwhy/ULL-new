@@ -5,42 +5,42 @@ export const PAGE_META = {
     "/": {
         "title": "Upcoming Levels List",
         "socialTitle": "Upcoming Levels List — Upcoming Geometry Dash Extreme Demons",
-        "description": "Upcoming Levels List (ULL) tracks every upcoming Top 1–135 Extreme Demon in Geometry Dash — levels in development, their creators, verifiers, decoration progress and best records, ranked by where they are projected to land on the Demonlist."
+        "description": "The Upcoming Levels List ranks every list-worthy upcoming Extreme Demon in Geometry Dash, alongside verified levels, to project what the Demonlist will look like in the future."
     },
     "/list": {
         "title": "ULL — All Levels",
         "socialTitle": "All Levels — Every Upcoming Extreme Demon | Upcoming Levels List",
-        "description": "The complete Upcoming Levels List catalogue: every Geometry Dash Extreme Demon in development with a chance of being verified and placed on the Demonlist, ranked with creators, verifiers, decoration progress and records."
+        "description": "All Levels contains the entire ULL: upcoming Geometry Dash Extreme Demons that are of sufficient quality and have a possibility of being verified in the future."
     },
     "/listmain": {
         "title": "ULL — Main List",
         "socialTitle": "Main List — Rate-Worthy Upcoming Extreme Demons | Upcoming Levels List",
-        "description": "The Main List holds the upcoming Geometry Dash Extreme Demons that meet the fundamental standards required to be considered for an official rating, ranked by projected Demonlist placement."
+        "description": "The Main List contains all upcoming Geometry Dash Extreme Demons considered to be rate-worthy, which as a result have a higher chance of being added to the Demonlist if they are verified."
     },
     "/listfuture": {
         "title": "ULL — Future List",
         "socialTitle": "Future List — Extreme Demons Closest to Release | Upcoming Levels List",
-        "description": "The Future List is the strictest Upcoming Levels List tier: Geometry Dash Extreme Demons with a very high likelihood of imminent verification and publication, ranked by projected Demonlist position."
+        "description": "The Future List contains upcoming Geometry Dash Extreme Demons that are expected to be verified in approximately a year or less, ranked by projected Demonlist position."
     },
     "/upcoming": {
         "title": "ULL — Upcoming Levels",
         "socialTitle": "Upcoming Levels — Closest to Verification | Upcoming Levels List",
-        "description": "Which upcoming Geometry Dash Extreme Demon is closest to being verified? Unverified levels ranked by the best record and longest run anyone has achieved on them, updated as new progress comes in."
+        "description": "Upcoming Levels ranks Geometry Dash Extreme Demons in the verification stage by how much progress their best run has made, from greatest to least."
     },
     "/pending": {
         "title": "ULL — Pending List",
         "socialTitle": "Pending List — Levels Awaiting Placement | Upcoming Levels List",
-        "description": "Levels submitted to the Upcoming Levels List and awaiting a placement decision from the staff team, with their expected placement range and whether they are moving up or down."
+        "description": "Pending levels are due for a change to their position: to be placed on the Upcoming Levels List, moved up or down, or removed. Markers represent expected Demonlist placements."
     },
     "/leaderboard": {
         "title": "ULL — Leaderboard",
         "socialTitle": "Leaderboard — Top Players on Upcoming Extreme Demons | Upcoming Levels List",
-        "description": "Players ranked by the verifications, layout completions, records and runs they hold on upcoming Geometry Dash Extreme Demons, scored by each level’s position on the Upcoming Levels List."
+        "description": "The Upcoming Levels List leaderboard ranks players based on runs they have on upcoming Geometry Dash Extreme Demons and verifications of levels, both rated and unrated."
     },
     "/events": {
         "title": "ULL — Events",
         "socialTitle": "Events — Level of the Day, Month & Closest to Verification | Upcoming Levels List",
-        "description": "The current Level of the Day and Level of the Month, and the upcoming Geometry Dash Extreme Demon closest to verification, picked by the Upcoming Levels List staff team."
+        "description": "Event levels are noteworthy upcoming Geometry Dash Extreme Demons chosen by the ULL staff team: Daily and Monthly levels, and the closest level to verification."
     },
     "/information": {
         "title": "ULL — Information",

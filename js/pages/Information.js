@@ -196,9 +196,9 @@ export default {
                         <p>All three tiers use the same order. They differ only in how strict the
                         threshold to appear on them is.</p>
                         <ul>
-                            <li><strong>All Levels</strong> &mdash; every level with a conceivable chance of being verified and published. A level&rsquo;s rank here is what leaderboard points are calculated from.</li>
-                            <li><strong>Main List</strong> &mdash; levels that meet the standards required to be considered for an official rating.</li>
-                            <li><strong>Future List</strong> &mdash; levels very likely to be verified and published soon.</li>
+                            <li><strong>All Levels</strong> &mdash; the entire ULL: levels of sufficient quality with a possibility of being verified in the future. A level&rsquo;s rank here is what leaderboard points are calculated from.</li>
+                            <li><strong>Main List</strong> &mdash; levels considered to be rate-worthy, which have a higher chance of being added to the Demonlist if they are verified.</li>
+                            <li><strong>Future List</strong> &mdash; levels expected to be verified in approximately a year or less.</li>
                         </ul>
                         <h4>How to read a level</h4>
                         <p>
