@@ -24,7 +24,7 @@ export default {
         <div class="u-phero">
             <div class="u-phero__body">
                 <h1>All Levels</h1>
-                <p>The widest of the three tiers, with the lowest bar for entry: every level with a conceivable chance of being verified and published, hardest first. A level’s rank here is what its records are worth on the leaderboard.</p>
+                <p>This list contains the entire ULL: levels that are of sufficient quality and have a possibility of being verified in the future.</p>
             </div>
             <div class="u-phero__side">
                 <div class="u-stat"><div class="u-stat__k">levels total</div><span class="u-stat__v">{{ heroCount }}</span></div>

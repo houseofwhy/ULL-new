@@ -36,7 +36,7 @@ export default {
 <main v-else class="events-page surface ull2">
     <section class="events-hero">
         <h1>Events</h1>
-        <p>Three levels the list is pointing at right now &mdash; one picked for the day, one for the month, and the one closest to being verified.</p>
+        <p>Event levels are noteworthy levels chosen by the staff team, intended to encourage progress. There are Daily and Monthly levels, as well as the closest level to verification.</p>
     </section>
 
     <div class="events-body">

@@ -28,7 +28,7 @@ export default {
         <div class="u-phero">
             <div class="u-phero__body">
                 <h1>Leaderboard</h1>
-                <p>This page shows the top players ranked according to their records set on upcoming levels as well as according to their verifications of levels on the Demonlist.</p>
+                <p>The Leaderboard ranks players based on runs they have on upcoming levels and verifications of levels, both rated and unrated.</p>
             </div>
             <div class="u-phero__side">
                 <div class="u-stat"><div class="u-stat__k">Players</div><span class="u-stat__v">{{ players.length }}</span></div>

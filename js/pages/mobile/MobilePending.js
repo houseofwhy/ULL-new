@@ -5,7 +5,7 @@ export default {
         <div class="mob-pending-page m2-page-body">
             <section class="m2-hero">
                 <h1>Pending List</h1>
-                <p>Levels awaiting a decision from the staff team — a first placement, a move up or down, a removal, or a hold. Each marker is the level's estimated position on the <strong>Demonlist</strong>, not on this list.</p>
+                <p>Pending levels are due for a change to their position. They are expected to either be placed on the list, moved up or down, or removed. Some levels are held here until there is more information to make a decision. Markers represent expected <strong>Demonlist</strong> placements, not placements on this list.</p>
                 <div class="m2-figs">
                     <button class="m2-fig" type="button" @click="jumpTo('place')"><b>{{ placements.length }}</b><span>placements</span></button>
                     <button class="m2-fig" type="button" @click="jumpTo('move')"><b>{{ movements.length }}</b><span>movements</span></button>

@@ -24,7 +24,7 @@ export default {
         <div class="u-phero">
             <div class="u-phero__body">
                 <h1>Future List</h1>
-                <p>The strictest of the three tiers: only levels with a very high likelihood of being verified and published soon. Read this one for what is coming out next.</p>
+                <p>The Future List contains levels that are expected to be verified in approximately a year or less.</p>
             </div>
             <div class="u-phero__side">
                 <div class="u-stat"><div class="u-stat__k">levels total</div><span class="u-stat__v">{{ heroCount }}</span></div>

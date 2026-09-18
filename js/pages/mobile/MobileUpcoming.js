@@ -14,7 +14,7 @@ export default {
             </button>
             <section class="m2-hero">
                 <h1>Upcoming Levels</h1>
-                <p>Levels closest to verification, ranked by the highest progress achieved toward completing them.</p>
+                <p>Upcoming Levels ranks levels in the verification stage by how much progress their best run has made, from greatest to least.</p>
                 <div class="m2-figs">
                     <span class="m2-fig m2-fig--lead"><b>{{ lbList.length }}</b><span>levels</span></span>
                 </div>

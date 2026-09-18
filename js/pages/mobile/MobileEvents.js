@@ -20,7 +20,7 @@ export default {
         <div class="mob-events-page m2-page-body">
             <section class="m2-hero">
                 <h1>Events</h1>
-                <p>Three levels the list is pointing at right now — one for the day, one for the month, and the one closest to being verified.</p>
+                <p>Event levels are noteworthy levels chosen by the staff team, intended to encourage progress. There are Daily and Monthly levels, as well as the closest level to verification.</p>
             </section>
 
             <div class="m2-body">

@@ -16,7 +16,7 @@ export default {
         <div class="u-phero">
             <div class="u-phero__body">
                 <h1>Upcoming Levels</h1>
-                <p>Catalogue of levels on the Upcoming Levels List closest to verification, ranked by highest progress achieved toward completing the level.</p>
+                <p>Upcoming Levels ranks levels in the verification stage by how much progress their best run has made, from greatest to least.</p>
             </div>
             <div class="u-phero__side">
                 <div class="u-stat"><div class="u-stat__k">Levels</div><span class="u-stat__v">{{ list.length }}</span></div>

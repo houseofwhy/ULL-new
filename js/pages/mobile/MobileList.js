@@ -21,9 +21,9 @@ export default {
                 <h1 v-if="pageType === 'main'">Main List</h1>
                 <h1 v-else-if="pageType === 'future'">Future List</h1>
                 <h1 v-else>All Levels</h1>
-                <p v-if="pageType === 'main'">Levels that meet the standards required to be considered for an official rating by the developer (a “Rate”).</p>
-                <p v-else-if="pageType === 'future'">The strictest of the three tiers: only levels with a very high likelihood of being verified and published soon.</p>
-                <p v-else>The widest of the three tiers, with the lowest bar for entry: every level with a conceivable chance of being verified and published.</p>
+                <p v-if="pageType === 'main'">The Main List contains all levels that are considered to be rate-worthy and as a result have a higher chance of being added to the Demonlist if they are verified.</p>
+                <p v-else-if="pageType === 'future'">The Future List contains levels that are expected to be verified in approximately a year or less.</p>
+                <p v-else>This list contains the entire ULL: levels that are of sufficient quality and have a possibility of being verified in the future.</p>
                 <div class="m2-figs">
                     <span class="m2-fig m2-fig--lead"><b>{{ visibleCount }}</b><span>levels total</span></span>
                 </div>

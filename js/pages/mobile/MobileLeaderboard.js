@@ -10,7 +10,7 @@ export default {
             </button>
             <section class="m2-hero">
                 <h1>Leaderboard</h1>
-                <p>Top players ranked by their records on upcoming levels and their verifications of Demonlist levels.</p>
+                <p>The Leaderboard ranks players based on runs they have on upcoming levels and verifications of levels, both rated and unrated.</p>
                 <div class="m2-figs">
                     <span class="m2-fig m2-fig--lead"><b>{{ mobileStore.players.length }}</b><span>players</span></span>
                 </div>

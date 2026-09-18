@@ -22,17 +22,17 @@ export const navigationData = [
             {
                 name: 'All Levels',
                 to: '/list',
-                desc: 'The widest of the three tiers, with the lowest bar for entry: every level with a conceivable chance of being verified and published, hardest first. A level’s rank here is what its records are worth on the leaderboard.',
+                desc: 'This list contains the entire ULL: levels that are of sufficient quality and have a possibility of being verified in the future.',
             },
             {
                 name: 'Main List',
                 to: '/listmain',
-                desc: 'Levels that meet the standards required to be considered for an official rating by the developer (a “Rate”). The same order as All Levels, with everything below that bar left out.',
+                desc: 'The Main List contains all levels that are considered to be rate-worthy and as a result have a higher chance of being added to the Demonlist if they are verified.',
             },
             {
                 name: 'Future List',
                 to: '/listfuture',
-                desc: 'The strictest of the three tiers: only levels with a very high likelihood of being verified and published soon. Read this one for what is coming out next.',
+                desc: 'The Future List contains levels that are expected to be verified in approximately a year or less.',
             },
             {
                 name: 'A level’s page',
@@ -48,22 +48,22 @@ export const navigationData = [
             {
                 name: 'Upcoming Levels',
                 to: '/upcoming',
-                desc: 'Catalogue of levels on the Upcoming Levels List closest to verification, ranked by highest progress achieved toward completing the level.',
+                desc: 'Upcoming Levels ranks levels in the verification stage by how much progress their best run has made, from greatest to least.',
             },
             {
                 name: 'Pending List',
                 to: '/pending',
-                desc: 'Levels awaiting a decision from the staff team — a first placement, a move up or down, a removal, or a hold with no decision expected soon.',
+                desc: 'Pending levels are due for a change to their position. They are expected to either be placed on the list, moved up or down, or removed. Some levels are held here until there is more information to make a decision. Markers represent expected Demonlist placements, not placements on this list.',
             },
             {
                 name: 'Leaderboard',
                 to: '/leaderboard',
-                desc: 'This page shows the top players ranked according to their records set on upcoming levels as well as according to their verifications of levels on the Demonlist.',
+                desc: 'The Leaderboard ranks players based on runs they have on upcoming levels and verifications of levels, both rated and unrated.',
             },
             {
                 name: 'Events',
                 to: '/events',
-                desc: 'Three levels the list is pointing at right now — one picked for the day, one for the month, and the one closest to being verified.',
+                desc: 'Event levels are noteworthy levels chosen by the staff team, intended to encourage progress. There are Daily and Monthly levels, as well as the closest level to verification.',
             },
             {
                 name: 'Home',
