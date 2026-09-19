@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-19T01:17:56.437Z",
+  "fetchedAt": "2026-09-19T06:02:11.245Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -132,7 +132,7 @@
         "Ado",
         "Skylark"
       ],
-      "verifier": "",
+      "verifier": "Open verification",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=XmgFU61aSxE",
       "thumbnail": "https://www.youtube.com/watch?v=XmgFU61aSxE",
@@ -160,10 +160,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Vain",
+          "link": "https://www.youtube.com/watch?v=ArL-ZuElsHU",
+          "percent": "84-90",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -1152,7 +1152,7 @@
       "records": [
         {
           "user": "Zoink",
-          "link": "https://youtu.be/Hld_6Bmzu8M?si=1cR4RmCvBPWHSniW",
+          "link": "https://www.youtube.com/watch?v=emqFcmPqBPs&t=7065s",
           "percent": 51,
           "hz": 240
         }
@@ -2484,7 +2484,7 @@
       "verifier": "Swiborg",
       "verification": "",
       "showcase": "https://youtu.be/03EwCewqZWo?si=mKmFujUZ8Sn_tDEA",
-      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7TYzEseGklr6_zKQuvCz8C0nHWwn89Orpb0kX1SRhsTKr7cPOzOuSnqE&s=10",
+      "thumbnail": "https://i.ytimg.com/vi/-pGOLwc8f7I/maxresdefault.jpg",
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -2590,7 +2590,7 @@
       "verifier": "ImJuls",
       "verification": "",
       "showcase": "https://youtu.be/vdTcrx13bkk?si=JGVv1njIv6Puk3JZ",
-      "thumbnail": "https://i.ytimg.com/vi/qegh06JiWJQ/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAMFvxjIOWCj1J40gDDxb3fMUSrNg",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -3378,9 +3378,9 @@
       ],
       "run": [
         {
-          "user": "Stefan Boss",
-          "link": "https://youtu.be/E7rn2IphGfw?si=2JWDFnQos95lJQY_",
-          "percent": "21-97",
+          "user": "Waltty",
+          "link": "https://youtu.be/GiykgnJa6JQ?is=BShI7Fj8VRWbiJ1R",
+          "percent": "14-100",
           "hz": 0
         }
       ],
@@ -4079,7 +4079,7 @@
       "verifier": "Zoink",
       "verification": "https://www.youtube.com/watch?v=9fsZ014qB3s",
       "showcase": "https://www.youtube.com/watch?v=mgQL2xeviN8",
-      "thumbnail": null,
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ7V-ELsKR8iOMPIfpSTCscOSRljELpPTQhIFRBgfrSQ&s=10",
       "frameCounter": null,
       "id": "86407629",
       "rating": 1,
@@ -4364,7 +4364,7 @@
       "verifier": "Nickname",
       "verification": "https://youtu.be/JG-qcvVkZFw?si=risom7nLdy0aBg-0",
       "showcase": "https://youtu.be/mHg2jrzpkxs",
-      "thumbnail": "https://i.ytimg.com/vi/mHg2jrzpkxs/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB4LLTpr1qZp5OJDir6VDr3ixHudA",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "142896409",
       "rating": 1,
@@ -4392,7 +4392,7 @@
         {
           "user": "none",
           "link": "",
-          "percent": "",
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -4575,7 +4575,7 @@
       "verifier": "Zoink",
       "verification": "https://www.youtube.com/watch?v=QKcv8DkNPd0",
       "showcase": " https://youtu.be/kCfra4c2n4Y?si=FfANT0sbUUbc4FZ_",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/S_SbLjQgruo/maxresdefault.jpg",
       "frameCounter": null,
       "id": "133175713",
       "rating": 1,
@@ -4603,7 +4603,7 @@
         {
           "user": "none",
           "link": "",
-          "percent": "",
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -5151,8 +5151,8 @@
       "records": [
         {
           "user": "teraaa",
-          "link": "https://www.youtube.com/watch?v=Thf3zFHVxvc",
-          "percent": 52,
+          "link": "https://www.youtube.com/live/q_qKaXURlKM?si=WwRnyQ6__XEksXvY&t=4807",
+          "percent": 60,
           "hz": 0
         }
       ],
@@ -5596,10 +5596,10 @@
         "Galchi",
         "GDSkele"
       ],
-      "verifier": "unknown",
+      "verifier": "agonom",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=CVXC2_bveBQ",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -5614,17 +5614,17 @@
       ],
       "records": [
         {
-          "user": "Laniakea",
-          "link": "https://www.youtube.com/watch?v=p4_MSX_8BC4",
-          "percent": 64,
+          "user": "agonom",
+          "link": "https://youtu.be/U4JypjeB1gI?is=bemSrUvRkgv2uuOZ",
+          "percent": 40,
           "hz": 240
         }
       ],
       "run": [
         {
-          "user": "Laniakea",
-          "link": "https://youtu.be/TnObKqv3hwc",
-          "percent": "33-100",
+          "user": "agonom",
+          "link": "https://www.youtube.com/watch?v=19kMxxX4nBs",
+          "percent": "65-100",
           "hz": 240
         }
       ],
@@ -6167,7 +6167,7 @@
         {
           "user": "BONN GD",
           "link": "#",
-          "percent": 21,
+          "percent": 25,
           "hz": 0
         }
       ],
@@ -7216,7 +7216,7 @@
       "verifier": "SaturMan",
       "verification": "",
       "showcase": "https://youtu.be/lDQyS9rEsV0?si=XI7fPdNMsHoaiYBS",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -7231,8 +7231,8 @@
       "records": [
         {
           "user": "SaturMan",
-          "link": "https://youtu.be/qGEHWa9tkLY?si=wVJohpe6nuPi3v4U",
-          "percent": 66,
+          "link": "https://youtu.be/ZGKXEGvFH20?is=kkcU22KqsdObz1ix",
+          "percent": 59,
           "hz": 0
         }
       ],
@@ -7413,8 +7413,8 @@
       "records": [
         {
           "user": "Diamond",
-          "link": "https://www.youtube.com/live/PknC5na8x0k?t=18843&si=bPpYwgT8D8YxPzWf",
-          "percent": 69,
+          "link": "",
+          "percent": 91,
           "hz": 0
         }
       ],
@@ -9441,15 +9441,15 @@
       "creators": [],
       "verifier": "Clara",
       "verification": "",
-      "showcase": "https://youtu.be/-t6JKMGsD-A?si=P4rMmDmJIDjS3JHc",
-      "thumbnail": "",
+      "showcase": "https://youtu.be/paO1vQ1a86Q",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "118808795",
       "rating": 1,
       "length": 94,
       "percentToQualify": 1,
       "percentFinished": 35,
-      "lastUpd": "12.10.2025",
+      "lastUpd": "26.6.2026",
       "tags": [
         "Long",
         "NONG"
@@ -10298,7 +10298,7 @@
       ],
       "verifier": "unknown",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=F6RFaGHddRA",
+      "showcase": "https://youtu.be/Ivtb7GUbm08",
       "thumbnail": "https://i.imgur.com/CLmusz4.png",
       "frameCounter": null,
       "id": "private",
@@ -10791,14 +10791,14 @@
       "verifier": "Blyfl",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=1PEgXEgdO2k",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 0,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "03.05.2026",
+      "lastUpd": "18.09.2026",
       "tags": [],
       "records": [
         {
@@ -14480,16 +14480,16 @@
       "records": [
         {
           "user": "Cala",
-          "link": "https://youtu.be/K_a9cZVJeDw?is=jlExAPQW1DdilQfR",
-          "percent": 63,
+          "link": "https://youtu.be/lW7Cu0WjSM4",
+          "percent": 68,
           "hz": 0
         }
       ],
       "run": [
         {
-          "user": "GMitzy",
-          "link": "https://youtu.be/_PSRYZD1Ass?si=q8BTqD7PVxhiyFXd&t=106",
-          "percent": "33-100",
+          "user": "Cala",
+          "link": "https://youtu.be/LDQ1rN4EtOE",
+          "percent": "32-100",
           "hz": 0
         }
       ],
@@ -15749,14 +15749,14 @@
       "verifier": "Zeroxy",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=kPQJtJdLuQc",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 75,
       "percentToQualify": 1,
       "percentFinished": 13,
-      "lastUpd": "05.09.2025",
+      "lastUpd": "16.09.2026",
       "tags": [
         "Long"
       ],
@@ -16007,7 +16007,7 @@
       "verifier": "PolterGhast",
       "verification": "https://www.youtube.com/watch?v=RUBbpsTR5eU",
       "showcase": "https://youtu.be/8HpDleYxDQA",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/HDMMEpCWncg/maxresdefault.jpg",
       "frameCounter": null,
       "id": "113443235",
       "rating": 1,
@@ -18056,7 +18056,7 @@
       "verifier": "LordVadercraft",
       "verification": "https://youtu.be/U6e6DD32noM?si=od1S-o_PXI2RO97q",
       "showcase": "https://www.youtube.com/watch?v=pKJUmSJR22Y",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/iMotNcRfVJw/maxresdefault.jpg",
       "frameCounter": null,
       "id": "82544060",
       "rating": 1,
@@ -19164,7 +19164,7 @@
       "verifier": "Whizkid05",
       "verification": "https://www.youtube.com/watch?v=l52ApE4HWkY",
       "showcase": "https://www.youtube.com/watch?v=pJkq8IbGXIU&pp=ygUNZGVja3MgZGFyayBnZNIHCQmRCgGHKiGM7w%3D%3D",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/g58F3lpThxY/hqdefault.jpg",
       "frameCounter": null,
       "id": "95719795",
       "rating": 1,
@@ -19711,7 +19711,7 @@
       "verifier": "wPopoff",
       "verification": "https://www.youtube.com/watch?v=4QiHP3jpGnk&source_ve_path=MTc4NDI0",
       "showcase": "https://www.youtube.com/watch?v=h55wbCsem9E",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/FqLZ7Aimh_U/maxresdefault.jpg",
       "frameCounter": null,
       "id": "105593215",
       "rating": 1,
@@ -20250,7 +20250,7 @@
       "verifier": "wwdonut",
       "verification": "https://youtu.be/6N8u_byYoZo?si=WWPxfP4rltebtPQj",
       "showcase": "https://www.youtube.com/watch?v=wgw4Y4Ie1os",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/P89sYZZCqW4/maxresdefault.jpg",
       "frameCounter": null,
       "id": "82249742",
       "rating": 1,
@@ -20536,7 +20536,7 @@
       "verifier": "spcreat",
       "verification": "https://youtu.be/lUNvV1k19HA?si=_-PuJ2E7NnypR9Xd",
       "showcase": "https://youtu.be/mxPUmf2tsQE?si=r2Va2N06D4q1pRPa",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/zQJGawNLO3M/maxresdefault.jpg",
       "frameCounter": null,
       "id": "93340783",
       "rating": 1,
@@ -20765,7 +20765,7 @@
       "verifier": "ultrakawaHD",
       "verification": "https://www.youtube.com/watch?v=a_Bqa8l9Xtc",
       "showcase": "https://www.youtube.com/watch?v=_vyMFc4_La0",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/Wulmwh1EO6s/maxresdefault.jpg",
       "frameCounter": null,
       "id": "72315402",
       "rating": 1,
@@ -20814,7 +20814,7 @@
       "verifier": "Sevant",
       "verification": "https://www.youtube.com/watch?v=BN7DxkMaQfg",
       "showcase": "https://youtu.be/UwVVKqSfVLU?si=PJxvw8c5I3L7D7Aa",
-      "thumbnail": "",
+      "thumbnail": "https://i.ytimg.com/vi/kjGx6Mq4QwI/maxresdefault.jpg",
       "frameCounter": null,
       "id": "73214186",
       "rating": 1,
@@ -21509,7 +21509,7 @@
       "verifier": "Dolphy",
       "verification": "https://www.youtube.com/watch?v=9YYQBbrsV5Y",
       "showcase": "https://www.youtube.com/watch?v=JptG7rwti1U",
-      "thumbnail": null,
+      "thumbnail": "https://i.ytimg.com/vi/lMNNBBOjYg8/maxresdefault.jpg",
       "frameCounter": null,
       "id": "59075347",
       "rating": 1,
@@ -22042,7 +22042,7 @@
       "length": 84,
       "percentToQualify": 1,
       "percentFinished": 10,
-      "lastUpd": "28.08.2026",
+      "lastUpd": "18.09.2026",
       "tags": [
         "Long"
       ],
@@ -22075,7 +22075,7 @@
       "creators": [],
       "verifier": "Shyne",
       "verification": "",
-      "showcase": "https://youtu.be/5SYh54mZ9Sw?t=116&is=jhh70cjwqxAGWtEO",
+      "showcase": "https://youtu.be/5SYh54mZ9Sw",
       "thumbnail": null,
       "frameCounter": null,
       "id": "private",
@@ -22213,7 +22213,7 @@
       "verifier": "Zeronium",
       "verification": "https://www.youtube.com/watch?v=8i5GfTqb6oE",
       "showcase": "https://youtu.be/8xo2A4-wmxU?si=ZXzf56De07EdRzTn",
-      "thumbnail": "https://i.imgur.com/PVq46ak.jpeg",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "148297431",
       "rating": 1,
@@ -22984,7 +22984,7 @@
       "verifier": "nSwish",
       "verification": "https://www.youtube.com/watch?v=wpS5PSHmji0",
       "showcase": "https://youtu.be/Ah-PcqwqRTQ?si=TCZGZt-1I-6o157R",
-      "thumbnail": "https://i.ytimg.com/vi/SJ7SIDO5sj4/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAN5CvexsIPOgiWIMwlejLPKh29-Q",
+      "thumbnail": "https://pbs.twimg.com/media/F2jcRFuXQAAnb3R.jpg",
       "frameCounter": null,
       "id": "60978746",
       "rating": 1,
@@ -23406,7 +23406,7 @@
       "verifier": "ALiveWizard",
       "verification": "https://www.youtube.com/watch?v=YrJTfWjeAS0",
       "showcase": "https://www.youtube.com/watch?v=rd5MED7ezOk&pp=ygUTYyBzaGFycCBnZCBzaG93Y2FzZQ%3D%3D",
-      "thumbnail": null,
+      "thumbnail": "https://i.ytimg.com/vi/nw7s-4el1T0/sddefault.jpg",
       "frameCounter": null,
       "id": "90342920",
       "rating": 1,
@@ -24479,7 +24479,7 @@
       "id": 300,
       "name": "BAD TO THE BONE",
       "placement": "20",
-      "link": "https://www.youtube.com/watch?v=RkCcNOBM584",
+      "link": "https://youtu.be/5QwzW_YwPSI",
       "sort_order": null,
       "indefinite": 0
     },
@@ -24959,7 +24959,7 @@
       "id": 374,
       "name": "ALONEWITHU",
       "placement": "10",
-      "link": "https://www.youtube.com/watch?v=h7zK5R3aAao",
+      "link": "https://youtu.be/XQKY86-c2Hg?si=R07Hd9gREmd3qS6s",
       "sort_order": null,
       "indefinite": 0
     },
@@ -25026,6 +25026,110 @@
       "link": "https://youtu.be/60-JsK6b7pA?is=vFc2F7y1YrDeAKme",
       "sort_order": null,
       "indefinite": 1
+    },
+    {
+      "id": 384,
+      "name": "DIEntch",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=9x-RfjvSlG4",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 385,
+      "name": "Antumbral",
+      "placement": "10",
+      "link": "https://www.youtube.com/watch?v=JxDcsSEftjk",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 386,
+      "name": "A N G E L I C",
+      "placement": "1",
+      "link": "https://www.youtube.com/watch?v=Kw21hj6znj8",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 387,
+      "name": "Abyssal",
+      "placement": "50",
+      "link": "https://www.youtube.com/watch?v=5SedAwnWggU",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 388,
+      "name": "Talent Shredder",
+      "placement": "?",
+      "link": "https://youtu.be/Q6hSGFi3tyQ",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 389,
+      "name": "MISERYPLANET",
+      "placement": "75",
+      "link": "https://youtu.be/8jYJxjjsgT8?is=FEFfX6vHKPxXt2c2",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 390,
+      "name": "Industry Hell",
+      "placement": "20",
+      "link": "https://youtu.be/hequlC_hMGA",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 391,
+      "name": "DaNgEr",
+      "placement": "30",
+      "link": "https://youtu.be/PgJ-YZflFVw",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 392,
+      "name": "pull on ALL OF THEM",
+      "placement": "1",
+      "link": "https://youtu.be/qXlzVuvt_Sk",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 393,
+      "name": "SELF DESTRUCT",
+      "placement": "10",
+      "link": "https://youtu.be/RboRNI-JFq0",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 394,
+      "name": "Cookie",
+      "placement": "1",
+      "link": "https://youtu.be/fIjfhCA2E18",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 395,
+      "name": "Transcendence",
+      "placement": "?",
+      "link": "https://youtu.be/5l4-h-rbKuY",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 396,
+      "name": "Blue Control",
+      "placement": "30",
+      "link": "https://youtu.be/wjOc-S9o3d8",
+      "sort_order": null,
+      "indefinite": 0
     }
   ],
   "editors": [
@@ -25104,7 +25208,7 @@
     {
       "name": "Gosdas",
       "role": "mod",
-      "link": "",
+      "link": "https://www.youtube.com/@GosdasGaming",
       "sort_order": 12
     },
     {
@@ -25162,6 +25266,26 @@
     }
   },
   "recentChanges": [
+    {
+      "date": "September 16th, 2026",
+      "entries": [
+        "- **Theory of Silence** (#388) has been removed due to no longer meeting main-list difficulty standards",
+        "- **Goliath** (#288) has been removed due to inactivity",
+        "- **EURUS** (#227) has been removed due to inactivity",
+        "- **Quasar** (#112) has been removed due to inactivity",
+        "- **Tapioca** (#107) has been removed due to inactivity",
+        "- **Infinite Silence** (#48) has been removed due to inactivity",
+        "- **Rebirth The End** (#3) has been removed due to breaking difficulty standards (Now pending indefinitely)",
+        "- **Ultra Realistik** has been moved up from #144 to #142, above **sedentary** and below **Stoicism**",
+        "- **ARE** has been moved up from #150 to #129, above **Silent Circles (cherryteam)** and below **Blue Machine**",
+        "- **Africa Circles** has been moved up from #84 to #70, above **IT MEANS EVERYTHING** and below **Haunted**",
+        "- **I N J U R Y** has been moved up from #181 to #68, above **Haunted** and below **Silent Clubstep II**",
+        "- **Banshee** has been moved down from #48 to #87, above **SILENT OPPENHEIMER** and below **Galaxy Collapse**",
+        "- **Glass Chapel** has been moved up from #75 to #73, above **Flamewall** and below **Misanthrope**",
+        "- **Heliopolis** has been moved up from #27 to #24, above **Vivisect** and below **EGO**",
+        "- **Artemis 13** has been placed at #41, above **Society** and below **Cascade**"
+      ]
+    },
     {
       "date": "September 6th, 2026",
       "entries": [
