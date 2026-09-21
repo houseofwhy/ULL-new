@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T06:33:41.988Z",
+  "fetchedAt": "2026-09-21T14:21:26.765Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -182,16 +182,15 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/ZIGRQPfy8iM?si=k4eCoH1tNb9FaRmx",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 98,
       "percentToQualify": 1,
-      "percentFinished": 0,
+      "percentFinished": 5,
       "lastUpd": "10.08.2026",
       "tags": [
-        "Layout",
         "Long",
         "NC",
         "NONG"
@@ -398,7 +397,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 8
@@ -557,7 +556,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 11
     },
@@ -746,7 +745,7 @@
       "verifier": "Dramel",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=kBtedf_Ic2s",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "135988251",
       "rating": 1,
@@ -777,7 +776,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 16
     },
@@ -907,7 +906,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 19
@@ -1716,7 +1715,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 36
     },
@@ -2513,7 +2512,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 53
     },
@@ -3006,7 +3005,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 63
     },
@@ -3048,7 +3047,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 64
@@ -3317,12 +3316,12 @@
       "rating": 1,
       "length": 76,
       "percentToQualify": 60,
-      "percentFinished": 100,
+      "percentFinished": 60,
       "lastUpd": "30.05.2026",
       "tags": [
         "Long",
-        "Finished",
-        "Verifying"
+        "Verifying",
+        "NC"
       ],
       "records": [
         {
@@ -5698,10 +5697,10 @@
         "iGrimes",
         "pes11"
       ],
-      "verifier": "Denni",
+      "verifier": "Nickname",
       "verification": "",
       "showcase": "https://youtu.be/R4xWESvcvts?si=uYNUgnBKWIM0t7Zv",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -5732,7 +5731,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 119
     },
@@ -5975,7 +5974,7 @@
       "verifier": "w3rty",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=VH46-PmmrSg",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -6004,7 +6003,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 125
     },
@@ -6816,7 +6815,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 143
@@ -7020,7 +7019,7 @@
       "verifier": "Arshadow",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=k6heXn-yGGU",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -7051,7 +7050,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 148
     },
@@ -7682,7 +7681,7 @@
       "verifier": "Whizkid05",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=QbrkUUSW_H0&pp=ygURdGVldGggZm9ydHJlc3MgaWk=",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -7713,7 +7712,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 161
     },
@@ -9429,7 +9428,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 197
@@ -9568,7 +9567,7 @@
       "verifier": "剣部立地入学許可証 [s ice]",
       "verification": "",
       "showcase": "https://youtu.be/x4Sa64sycV8?si=9mlFivCzEvSkE_vE",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -9598,7 +9597,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 201
     },
@@ -10102,7 +10101,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=RzpUiUBNGoc",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "123696821",
       "rating": 1,
@@ -10133,7 +10132,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 211
     },
@@ -11362,7 +11361,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 234
     },
@@ -12972,7 +12971,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=OSRTwCwmDO4",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -13002,7 +13001,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 267
     },
@@ -13339,7 +13338,7 @@
       "verifier": "HSW",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=0lTIB9D0pZM",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -13370,7 +13369,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 275
     },
@@ -17364,10 +17363,10 @@
         "Liquidox",
         "ssskkk"
       ],
-      "verifier": "Unknown",
+      "verifier": "Xalval",
       "verification": "",
       "showcase": "https://youtu.be/PQ3SJBLzrRI?si=oKunqFR7vOmKqUsP",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -17392,7 +17391,7 @@
         {
           "user": "none",
           "link": "",
-          "percent": 0,
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -21145,7 +21144,7 @@
       "verifier": "Open Verification",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=ZJFgr_4_mP8",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "136233204",
       "rating": 1,
@@ -21177,8 +21176,8 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
-      "isFuture": true,
+      "isMain": false,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 427
     },
