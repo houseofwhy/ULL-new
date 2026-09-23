@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T11:51:50.751Z",
+  "fetchedAt": "2026-09-23T17:16:16.582Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -12351,8 +12351,8 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
-      "isFuture": true,
+      "isMain": false,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 254
     },
@@ -13048,7 +13048,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 268
@@ -13193,7 +13193,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/ug3Z7mObjY4?si=o3tTVn8xVHk4u2c5",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -13225,7 +13225,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 272
@@ -13520,7 +13520,7 @@
       "verifier": "nickname09",
       "verification": "",
       "showcase": "https://youtu.be/jUL3y-3wYmU",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -13541,7 +13541,7 @@
       ],
       "run": [
         {
-          "user": "",
+          "user": "none",
           "link": "",
           "percent": "0",
           "hz": 0
@@ -13549,7 +13549,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 279
     },
@@ -13936,7 +13936,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 285
     },
@@ -15281,7 +15281,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/XS2_ER1ug6Y?si=AYWFGbU2R1ZSMufm",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -15311,7 +15311,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 314
@@ -15736,7 +15736,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 323
     },
@@ -15938,7 +15938,7 @@
       "verifier": "Lomeno",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=zYJIrh1JPvY",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -15967,7 +15967,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 328
@@ -16057,7 +16057,7 @@
       "verifier": "mariner",
       "verification": "",
       "showcase": "https://youtu.be/VdA-N0V5PjA?si=dLJeZsB7zZSbpka8",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -16087,7 +16087,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 330
@@ -16657,7 +16657,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=FcvfWRmKbxk",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -16685,7 +16685,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 342
@@ -16853,7 +16853,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/LNX8WFl71x0?si=ln-ol9UtAhfAnIxC",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -16881,7 +16881,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 346
@@ -17071,7 +17071,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/FKcapSx8dUA?si=6EI4xhFtJkIxeMmT",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -17099,7 +17099,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 350
@@ -17938,7 +17938,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 366
     },
@@ -18137,7 +18137,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 370
     },
@@ -19816,7 +19816,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=OT9IveYVHyY",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -19844,7 +19844,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 401
@@ -20613,7 +20613,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 415
     },
@@ -21362,7 +21362,7 @@
       "verifier": "Versed/jet",
       "verification": "",
       "showcase": "https://youtu.be/XYkk-ET22Ws?si=3B6iEy7dbv9qzj3d",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -21391,7 +21391,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 431
@@ -23176,7 +23176,7 @@
       "verifier": "Jif",
       "verification": "",
       "showcase": "https://youtu.be/8vJrw3xAHTA?si=24I2FZ4AYjfXP-H0",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -23204,7 +23204,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 466
