@@ -1492,7 +1492,12 @@ export default {
         // Same **bold** rendering the home page and mobile home use, so the admin
         // preview matches what visitors will see.
         formatChange(text) {
-            const html = (text || '')
+            // The “— ” below is this table's own bullet, so an entry whose text
+            // already opens with a dash of its own would render as “— -”. Only a
+            // standalone leading dash is dropped; one attached to what follows
+            // (“-5 positions”) is part of the text.
+            const body = (text || '').replace(/^\s*[-\u2013\u2014](?=\s|$)\s*/, '');
+            const html = body
                 .split(/(\*\*[^*]+\*\*)/)
                 .map(part => part.startsWith('**') && part.endsWith('**')
                     ? `<strong>${escapeHtml(part.slice(2, -2))}</strong>`
