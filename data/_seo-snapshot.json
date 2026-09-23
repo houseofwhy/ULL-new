@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T21:29:50.028Z",
+  "fetchedAt": "2026-09-23T00:44:11.143Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -6825,7 +6825,7 @@
       "name": "CONVERGENCE",
       "author": "Vantevia",
       "creators": [],
-      "verifier": "johnlikesdiamond",
+      "verifier": "Open verification",
       "verification": "",
       "showcase": "https://youtu.be/cy2XRtuZdeE",
       "thumbnail": "https://i.ytimg.com/vi/DourxnvdU5E/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB6L4LMGEm2ibiM6ySPAgQk6EOdqg",
@@ -6835,7 +6835,7 @@
       "length": 83,
       "percentToQualify": 1,
       "percentFinished": 88,
-      "lastUpd": "23.06.2026",
+      "lastUpd": "22.09.2026",
       "tags": [
         "Long",
         "Public"
