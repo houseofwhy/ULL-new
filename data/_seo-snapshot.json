@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T06:06:56.413Z",
+  "fetchedAt": "2026-09-23T11:51:50.751Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -2630,7 +2630,7 @@
       "verifier": "TenshoSDK",
       "verification": "",
       "showcase": "https://youtu.be/Ah7_RJpzZj8",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -2658,7 +2658,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 56
@@ -5219,7 +5219,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://m.youtube.com/watch?v=1DRrmRCN9lE",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -5247,7 +5247,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 109
@@ -6437,7 +6437,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 135
@@ -8419,7 +8419,7 @@
       "verifier": "Streamy450",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=m4Bmh7kosWg",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -8450,7 +8450,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 176
     },
@@ -9071,7 +9071,7 @@
       "verifier": "Draxit / ItzDexii",
       "verification": "",
       "showcase": "https://youtu.be/jSbJBz5OMSE?si=6znddWRVrJ-6miul",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -9102,7 +9102,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 190
@@ -9470,7 +9470,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 198
@@ -9845,7 +9845,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 205
     },
@@ -11093,7 +11093,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 228
     },
@@ -11875,7 +11875,7 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=xroIY3kdg5E",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -11903,7 +11903,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 245
