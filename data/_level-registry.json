@@ -78,7 +78,7 @@
       "name": "Aethernal Silence",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-24",
-      "retiredAt": null,
+      "retiredAt": "2026-09-24",
       "redirectTo": null
     },
     "africa-circles": {
@@ -94,7 +94,7 @@
       "name": "A.G.I.T.E",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-24",
-      "retiredAt": null,
+      "retiredAt": "2026-09-24",
       "redirectTo": null
     },
     "allopsychic": {
@@ -2195,7 +2195,7 @@
     },
     "midnight-vivisection": {
       "path": "midnight(vivisection)",
-      "name": "Midnight (VivisectionGD)",
+      "name": "Midnight (hasuopf)",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-24",
       "retiredAt": null,
@@ -2318,7 +2318,7 @@
       "name": "Necropolis II",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-24",
-      "retiredAt": null,
+      "retiredAt": "2026-09-24",
       "redirectTo": null
     },
     "nervhell": {
@@ -2366,7 +2366,7 @@
       "name": "Night of Nights",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-24",
-      "retiredAt": null,
+      "retiredAt": "2026-09-24",
       "redirectTo": null
     },
     "nightfall": {
@@ -3262,7 +3262,7 @@
       "name": "Stephenson 2-18",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-24",
-      "retiredAt": null,
+      "retiredAt": "2026-09-24",
       "redirectTo": null
     },
     "stoicism": {

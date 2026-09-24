@@ -109,20 +109,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/aethernal-silence</loc>
-    <lastmod>2025-09-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/africa-circles</loc>
     <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/agite</loc>
-    <lastmod>2025-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1771,12 +1759,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/necropolis-ii</loc>
-    <lastmod>2025-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/nervhell</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -1803,12 +1785,6 @@
   <url>
     <loc>https://ull.pages.dev/level/nibelheim</loc>
     <lastmod>2026-02-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/night-of-nights</loc>
-    <lastmod>2025-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2455,12 +2431,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/stephenson-2-18</loc>
-    <lastmod>2025-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/stoicism</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -2528,7 +2498,7 @@
   </url>
   <url>
     <loc>https://ull.pages.dev/level/teeth-fortress-ii</loc>
-    <lastmod>2025-06-06</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
