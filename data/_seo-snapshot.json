@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T19:19:10.444Z",
+  "fetchedAt": "2026-09-24T22:33:28.244Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1185,7 +1185,7 @@
       "length": 71,
       "percentToQualify": 1,
       "percentFinished": 60,
-      "lastUpd": "18.09.2025",
+      "lastUpd": "04.11.2025",
       "tags": [
         "Long"
       ],
@@ -3050,7 +3050,7 @@
       "length": 65,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "24.09.2025",
+      "lastUpd": "31.05.2026",
       "tags": [
         "Long",
         "Finished",
@@ -6742,20 +6742,21 @@
       "name": "CONVERGENCE",
       "author": "Vantevia",
       "creators": [],
-      "verifier": "Open verification",
+      "verifier": "Open Verification",
       "verification": "",
-      "showcase": "https://youtu.be/cy2XRtuZdeE",
+      "showcase": "https://www.youtube.com/watch?v=5aeeEsnf788",
       "thumbnail": "https://i.ytimg.com/vi/DourxnvdU5E/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB6L4LMGEm2ibiM6ySPAgQk6EOdqg",
       "frameCounter": null,
       "id": "130654073",
       "rating": 1,
       "length": 83,
       "percentToQualify": 1,
-      "percentFinished": 88,
-      "lastUpd": "22.09.2026",
+      "percentFinished": 100,
+      "lastUpd": "24.09.2026",
       "tags": [
         "Long",
-        "Public"
+        "Public",
+        "Finished"
       ],
       "records": [
         {
@@ -6774,7 +6775,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": false,
+      "isMain": true,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 142
