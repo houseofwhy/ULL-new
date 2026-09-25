@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T22:33:28.244Z",
+  "fetchedAt": "2026-09-25T01:38:26.590Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -8151,14 +8151,14 @@
       "verifier": "Whizkid05",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=8k7B_UJicnA",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 90,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "14.08.2025",
+      "lastUpd": "10.09.2026",
       "tags": [
         "Long",
         "Verifying",
@@ -8197,14 +8197,14 @@
       "verifier": "Cuatrocientos",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=qDXCBRs8BGc&pp=ygUIcmFpbnkgZ2Q=",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "110566657",
       "rating": 1,
       "length": 87,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "20.07.2025",
+      "lastUpd": "15.02.2026",
       "tags": [
         "Public",
         "Finished",
@@ -8214,8 +8214,8 @@
       ],
       "records": [
         {
-          "user": "Shurikon",
-          "link": "https://www.youtube.com/watch?v=cMSX4le97I4&pp=0gcJCcYJAYcqIYzv",
+          "user": "mamo",
+          "link": "https://www.youtube.com/watch?v=lHhzfMOGzL8",
           "percent": 20,
           "hz": 0
         }
@@ -8344,7 +8344,7 @@
       "length": 85,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "10.08.2025",
+      "lastUpd": "20.04.2026",
       "tags": [
         "Long",
         "Finished",
@@ -11452,22 +11452,23 @@
     },
     {
       "path": "betaxh",
-      "name": "BetaxH",
+      "name": "BethxH",
       "author": "Yonaka",
       "creators": [],
       "verifier": "unknown",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=Vd96juzbD-E",
-      "thumbnail": "",
+      "showcase": "https://www.youtube.com/watch?v=VvQRu0KbNew",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 72,
       "percentToQualify": 1,
       "percentFinished": 45,
-      "lastUpd": "15.07.2025",
+      "lastUpd": "02.09.2026",
       "tags": [
-        "Long"
+        "Long",
+        "Finished"
       ],
       "records": [
         {
@@ -13921,16 +13922,17 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=wwGAlT2VFkg",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 488,
       "percentToQualify": 1,
       "percentFinished": 90,
-      "lastUpd": "20.07.2025",
+      "lastUpd": "02.04.2026",
       "tags": [
-        "XXXL"
+        "XXXL",
+        "XXL"
       ],
       "records": [
         {
@@ -18991,14 +18993,14 @@
       "verifier": "FHippo",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=vjvKQfaPCk0&feature=youtu.be&sttick=0",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 54,
       "percentToQualify": 1,
       "percentFinished": 40,
-      "lastUpd": "27.07.2025",
+      "lastUpd": "13.02.2026",
       "tags": [
         "Medium"
       ],
@@ -23005,14 +23007,14 @@
       "verifier": "KugelBlitZ",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=55zVuNJL54I",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 129,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "16.09.2025",
+      "lastUpd": "24.01.2026",
       "tags": [
         "XL",
         "Remake",
@@ -23900,14 +23902,14 @@
       "verifier": "Hippo",
       "verification": "",
       "showcase": "https://youtu.be/OmFO24FKthA",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 43,
       "percentToQualify": 40,
       "percentFinished": 70,
-      "lastUpd": "23.08.2025",
+      "lastUpd": "18.03.2026",
       "tags": [
         "Verifying",
         "Medium"
