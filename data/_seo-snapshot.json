@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-25T07:59:02.490Z",
+  "fetchedAt": "2026-09-25T13:57:14.550Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -24917,6 +24917,14 @@
       "name": "Blue Control",
       "placement": "30",
       "link": "https://youtu.be/wjOc-S9o3d8",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 397,
+      "name": "Necropolis II",
+      "placement": "75",
+      "link": "",
       "sort_order": null,
       "indefinite": 0
     }
