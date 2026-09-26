@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-26T19:59:02.878Z",
+  "fetchedAt": "2026-09-26T22:59:17.068Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -3173,51 +3173,6 @@
       "sort_order": 66
     },
     {
-      "path": "haunted",
-      "name": "Haunted",
-      "author": "LenaKitty",
-      "creators": [
-        "LenaKitty"
-      ],
-      "verifier": "",
-      "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=UCRHWWveWzM",
-      "thumbnail": null,
-      "frameCounter": null,
-      "id": "private",
-      "rating": 1,
-      "length": 0,
-      "percentToQualify": 1,
-      "percentFinished": 100,
-      "lastUpd": "29.08.2026",
-      "tags": [
-        "Finished",
-        "Medium",
-        "NONG"
-      ],
-      "records": [
-        {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
-        }
-      ],
-      "run": [
-        {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
-        }
-      ],
-      "isVerified": false,
-      "isMain": true,
-      "isFuture": false,
-      "benchmark": false,
-      "sort_order": 67
-    },
-    {
       "path": "africa circles",
       "name": "Africa Circles",
       "author": "LinearGD",
@@ -3260,7 +3215,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 68
+      "sort_order": 67
     },
     {
       "path": "it means everything (quivert)",
@@ -3304,7 +3259,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 69
+      "sort_order": 68
     },
     {
       "path": "misanthrope",
@@ -3346,7 +3301,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 70
+      "sort_order": 69
     },
     {
       "path": "glass chapel",
@@ -3392,7 +3347,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 71
+      "sort_order": 70
     },
     {
       "path": "flamewall",
@@ -3555,7 +3510,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 72
+      "sort_order": 71
     },
     {
       "path": "silent jumper",
@@ -3597,7 +3552,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 73
+      "sort_order": 72
     },
     {
       "path": "tight clubstep",
@@ -3640,7 +3595,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 74
+      "sort_order": 73
     },
     {
       "path": "fairy knife hell",
@@ -3685,7 +3640,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 75
+      "sort_order": 74
     },
     {
       "path": "darkmatter01",
@@ -3724,7 +3679,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 76
+      "sort_order": 75
     },
     {
       "path": "sacrilege",
@@ -3765,7 +3720,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 77
+      "sort_order": 76
     },
     {
       "path": "nebulous",
@@ -3806,7 +3761,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 78
+      "sort_order": 77
     },
     {
       "path": "lawet",
@@ -3849,7 +3804,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 79
+      "sort_order": 78
     },
     {
       "path": "sin",
@@ -3891,7 +3846,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 80
+      "sort_order": 79
     },
     {
       "path": "graveyard",
@@ -3934,7 +3889,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 81
+      "sort_order": 80
     },
     {
       "path": "theory of sevvend",
@@ -3983,7 +3938,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 82
+      "sort_order": 81
     },
     {
       "path": "tidal wave",
@@ -4031,7 +3986,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": true,
-      "sort_order": 83
+      "sort_order": 82
     },
     {
       "path": "galaxy collapse",
@@ -4072,7 +4027,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 84
+      "sort_order": 83
     },
     {
       "path": "banshee",
@@ -4118,7 +4073,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 85
+      "sort_order": 84
     },
     {
       "path": "silent oppenheimer",
@@ -4164,7 +4119,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 86
+      "sort_order": 85
     },
     {
       "path": "chaoz_devotion",
@@ -4208,7 +4163,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 87
+      "sort_order": 86
     },
     {
       "path": "cyberpsychosis_karma287",
@@ -4257,7 +4212,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 88
+      "sort_order": 87
     },
     {
       "path": "green bullet",
@@ -4316,7 +4271,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 89
+      "sort_order": 88
     },
     {
       "path": "inferno ruins",
@@ -4359,7 +4314,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 90
+      "sort_order": 89
     },
     {
       "path": "energy_wave",
@@ -4405,7 +4360,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 91
+      "sort_order": 90
     },
     {
       "path": "cyberpsychosis_sobeann",
@@ -4451,7 +4406,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 92
+      "sort_order": 91
     },
     {
       "path": "orbit",
@@ -4527,7 +4482,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 93
+      "sort_order": 92
     },
     {
       "path": "bloom",
@@ -4579,7 +4534,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 94
+      "sort_order": 93
     },
     {
       "path": "ryxuee",
@@ -4622,7 +4577,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 95
+      "sort_order": 94
     },
     {
       "path": "time attack",
@@ -4664,7 +4619,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 96
+      "sort_order": 95
     },
     {
       "path": "labyrinth",
@@ -4708,7 +4663,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 97
+      "sort_order": 96
     },
     {
       "path": "aquamarine_thepurgatory",
@@ -4767,7 +4722,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 98
+      "sort_order": 97
     },
     {
       "path": "antarctic lights",
@@ -4817,7 +4772,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 99
+      "sort_order": 98
     },
     {
       "path": "tiki tiki circles",
@@ -4862,7 +4817,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 100
+      "sort_order": 99
     },
     {
       "path": "bad trip",
@@ -4907,7 +4862,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 101
+      "sort_order": 100
     },
     {
       "path": "eviscerate",
@@ -4952,7 +4907,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 102
+      "sort_order": 101
     },
     {
       "path": "nullscapes",
@@ -4999,7 +4954,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 103
+      "sort_order": 102
     },
     {
       "path": "water",
@@ -5040,7 +4995,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 104
+      "sort_order": 103
     },
     {
       "path": "escalator",
@@ -5084,7 +5039,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 105
+      "sort_order": 104
     },
     {
       "path": "mercury",
@@ -5126,7 +5081,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 106
+      "sort_order": 105
     },
     {
       "path": "a_n_i",
@@ -5167,7 +5122,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 107
+      "sort_order": 106
     },
     {
       "path": "bluescreen",
@@ -5208,7 +5163,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 108
+      "sort_order": 107
     },
     {
       "path": "overdrive",
@@ -5250,7 +5205,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 109
+      "sort_order": 108
     },
     {
       "path": "bottomless pit",
@@ -5296,7 +5251,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 110
+      "sort_order": 109
     },
     {
       "path": "kurayami",
@@ -5338,7 +5293,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 111
+      "sort_order": 110
     },
     {
       "path": "quanteuse processing",
@@ -5387,7 +5342,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": true,
-      "sort_order": 112
+      "sort_order": 111
     },
     {
       "path": "limewire",
@@ -5433,7 +5388,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 113
+      "sort_order": 112
     },
     {
       "path": "boobawamba",
@@ -5482,7 +5437,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 114
+      "sort_order": 113
     },
     {
       "path": "ex vacuo",
@@ -5548,7 +5503,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 115
+      "sort_order": 114
     },
     {
       "path": "angelburn",
@@ -5591,7 +5546,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 116
+      "sort_order": 115
     },
     {
       "path": "furioso",
@@ -5650,7 +5605,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 117
+      "sort_order": 116
     },
     {
       "path": "sakupen_circles_nick24",
@@ -5698,7 +5653,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 118
+      "sort_order": 117
     },
     {
       "path": "lesopowal",
@@ -5747,7 +5702,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 119
+      "sort_order": 118
     },
     {
       "path": "finaltheory",
@@ -5789,7 +5744,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 120
+      "sort_order": 119
     },
     {
       "path": "tragic",
@@ -5833,7 +5788,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 121
+      "sort_order": 120
     },
     {
       "path": "the_bloop",
@@ -5881,7 +5836,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 122
+      "sort_order": 121
     },
     {
       "path": "taron",
@@ -5922,7 +5877,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 123
+      "sort_order": 122
     },
     {
       "path": "ouroboros",
@@ -5969,7 +5924,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 124
+      "sort_order": 123
     },
     {
       "path": "crimson heart",
@@ -6013,7 +5968,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 125
+      "sort_order": 124
     },
     {
       "path": "blue machine",
@@ -6054,7 +6009,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 126
+      "sort_order": 125
     },
     {
       "path": "are",
@@ -6099,7 +6054,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 127
+      "sort_order": 126
     },
     {
       "path": "silent circles (cherry team)",
@@ -6143,7 +6098,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 128
+      "sort_order": 127
     },
     {
       "path": "clandestine",
@@ -6185,7 +6140,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 129
+      "sort_order": 128
     },
     {
       "path": "the silent zone",
@@ -6226,7 +6181,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 130
+      "sort_order": 129
     },
     {
       "path": "hymn for the weekend",
@@ -6274,7 +6229,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 131
+      "sort_order": 130
     },
     {
       "path": "nihilum",
@@ -6316,7 +6271,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 132
+      "sort_order": 131
     },
     {
       "path": "woofel",
@@ -6357,7 +6312,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 133
+      "sort_order": 132
     },
     {
       "path": "every end",
@@ -6414,7 +6369,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 134
+      "sort_order": 133
     },
     {
       "path": "layers",
@@ -6458,7 +6413,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 135
+      "sort_order": 134
     },
     {
       "path": "thibkign soace III",
@@ -6503,7 +6458,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 136
+      "sort_order": 135
     },
     {
       "path": "penumbral",
@@ -6552,7 +6507,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 137
+      "sort_order": 136
     },
     {
       "path": "quantum dominator",
@@ -6601,7 +6556,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 138
+      "sort_order": 137
     },
     {
       "path": "buckministerfullerene",
@@ -6642,7 +6597,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 139
+      "sort_order": 138
     },
     {
       "path": "sulfur",
@@ -6688,7 +6643,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 140
+      "sort_order": 139
     },
     {
       "path": "stoicism",
@@ -6737,7 +6692,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 141
+      "sort_order": 140
     },
     {
       "path": "ultra realistik",
@@ -6786,7 +6741,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 142
+      "sort_order": 141
     },
     {
       "path": "sedentary",
@@ -6829,7 +6784,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 143
+      "sort_order": 142
     },
     {
       "path": "convergence",
@@ -6872,7 +6827,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 144
+      "sort_order": 143
     },
     {
       "path": "forbidden",
@@ -6924,7 +6879,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 145
+      "sort_order": 144
     },
     {
       "path": "silent clubstep",
@@ -6971,7 +6926,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 146
+      "sort_order": 145
     },
     {
       "path": "fukuona girl",
@@ -7017,7 +6972,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 147
+      "sort_order": 146
     },
     {
       "path": "ashley wave trials",
@@ -7064,7 +7019,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 148
+      "sort_order": 147
     },
     {
       "path": "ronaldo circles",
@@ -7116,7 +7071,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 149
+      "sort_order": 148
     },
     {
       "path": "ultra paracosm",
@@ -7166,7 +7121,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 150
+      "sort_order": 149
     },
     {
       "path": "chromedoll",
@@ -7210,7 +7165,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 151
+      "sort_order": 150
     },
     {
       "path": "max_nrg",
@@ -7266,7 +7221,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 152
+      "sort_order": 151
     },
     {
       "path": "andromeda",
@@ -7314,7 +7269,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": true,
-      "sort_order": 153
+      "sort_order": 152
     },
     {
       "path": "dignity",
@@ -7358,6 +7313,51 @@
       "isVerified": false,
       "isMain": true,
       "isFuture": true,
+      "benchmark": false,
+      "sort_order": 153
+    },
+    {
+      "path": "haunted",
+      "name": "Haunted",
+      "author": "LenaKitty",
+      "creators": [
+        "LenaKitty"
+      ],
+      "verifier": "",
+      "verification": "",
+      "showcase": "https://www.youtube.com/watch?v=UCRHWWveWzM",
+      "thumbnail": null,
+      "frameCounter": null,
+      "id": "private",
+      "rating": 1,
+      "length": 0,
+      "percentToQualify": 1,
+      "percentFinished": 100,
+      "lastUpd": "29.08.2026",
+      "tags": [
+        "Finished",
+        "Medium",
+        "NONG"
+      ],
+      "records": [
+        {
+          "user": "none",
+          "link": "",
+          "percent": 0,
+          "hz": 0
+        }
+      ],
+      "run": [
+        {
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
+        }
+      ],
+      "isVerified": false,
+      "isMain": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 154
     },
@@ -11092,18 +11092,18 @@
       "tags": [],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
+          "user": "Guit Guit",
+          "link": "https://www.youtube.com/watch?v=-zOzdx9okK4",
+          "percent": 63,
           "hz": 0
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Guit Guit",
+          "link": "https://www.youtube.com/watch?v=-__1UXbUl3k",
+          "percent": "18-81",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -12046,7 +12046,7 @@
       "creators": [],
       "verifier": "fusion425",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=VGIsMJksLyE&pp=0gcJCaMLAYcqIYzv",
+      "showcase": "https://youtu.be/CSuSbJhiaR8?si=tARJdBdZsUfmGMbc",
       "thumbnail": "https://i.ytimg.com/vi/_lpEUAcu_KA/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBQkSJN1F1HxTSJxve99AeQyEPUZw",
       "frameCounter": null,
       "id": "private",
@@ -18908,65 +18908,6 @@
       "sort_order": 384
     },
     {
-      "path": "theta",
-      "name": "Theta",
-      "author": "YouKnowWhoGD",
-      "creators": [
-        "Wohazas",
-        "YouKnowWhoGD",
-        "Rinjello",
-        "Celestia",
-        "Triforce",
-        "Anglified",
-        "zyronix",
-        "aerstarr343",
-        "Blinddattler",
-        "LordVaderCraft",
-        "xenith",
-        "DoSh7t",
-        "DMQ",
-        "DolaBill",
-        "BiboxGD",
-        "Diamond",
-        "finleyy"
-      ],
-      "verifier": "ItzMiraGD",
-      "verification": "",
-      "showcase": "https://youtu.be/BLzQ6QhjHGM?si=eG3dxhN8BXFQz1-9",
-      "thumbnail": "",
-      "frameCounter": null,
-      "id": "private",
-      "rating": 1,
-      "length": 182,
-      "percentToQualify": 1,
-      "percentFinished": 5,
-      "lastUpd": "23.10.2025",
-      "tags": [
-        "XL"
-      ],
-      "records": [
-        {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
-        }
-      ],
-      "run": [
-        {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
-        }
-      ],
-      "isVerified": false,
-      "isMain": true,
-      "isFuture": false,
-      "benchmark": false,
-      "sort_order": 385
-    },
-    {
       "path": "damascus",
       "name": "Damascus",
       "author": "Dzeser",
@@ -19079,7 +19020,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": true,
-      "sort_order": 386
+      "sort_order": 385
     },
     {
       "path": "rest_in_peace",
@@ -19125,7 +19066,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 387
+      "sort_order": 386
     },
     {
       "path": "nautical_nebula",
@@ -19173,7 +19114,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 388
+      "sort_order": 387
     },
     {
       "path": "null",
@@ -19214,7 +19155,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 389
+      "sort_order": 388
     },
     {
       "path": "decks_dark",
@@ -19261,7 +19202,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 390
+      "sort_order": 389
     },
     {
       "path": "saryyx_never_clear",
@@ -19317,7 +19258,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 391
+      "sort_order": 390
     },
     {
       "path": "darkhold",
@@ -19365,7 +19306,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 392
+      "sort_order": 391
     },
     {
       "path": "cryostasis",
@@ -19421,7 +19362,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 393
+      "sort_order": 392
     },
     {
       "path": "ultra_kira_ii",
@@ -19472,7 +19413,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 394
+      "sort_order": 393
     },
     {
       "path": "the_yangire",
@@ -19544,7 +19485,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 395
+      "sort_order": 394
     },
     {
       "path": "fiberglass",
@@ -19603,7 +19544,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 396
+      "sort_order": 395
     },
     {
       "path": "the_only_wish",
@@ -19662,7 +19603,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 397
+      "sort_order": 396
     },
     {
       "path": "scream_attack",
@@ -19711,7 +19652,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 398
+      "sort_order": 397
     },
     {
       "path": "climax",
@@ -19759,7 +19700,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 399
+      "sort_order": 398
     },
     {
       "path": "ordinary",
@@ -19808,7 +19749,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 400
+      "sort_order": 399
     },
     {
       "path": "trakines",
@@ -19863,7 +19804,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 401
+      "sort_order": 400
     },
     {
       "path": "turmoiled",
@@ -19910,7 +19851,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 402
+      "sort_order": 401
     },
     {
       "path": "excelsus",
@@ -19957,7 +19898,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 403
+      "sort_order": 402
     },
     {
       "path": "nage",
@@ -20003,7 +19944,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 404
+      "sort_order": 403
     },
     {
       "path": "distortion",
@@ -20057,7 +19998,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 405
+      "sort_order": 404
     },
     {
       "path": "moonflower",
@@ -20105,7 +20046,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 406
+      "sort_order": 405
     },
     {
       "path": "m i s f o r t u n e",
@@ -20152,7 +20093,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 407
+      "sort_order": 406
     },
     {
       "path": "wavterminal",
@@ -20199,7 +20140,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 408
+      "sort_order": 407
     },
     {
       "path": "sinister_silence",
@@ -20347,7 +20288,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 409
+      "sort_order": 408
     },
     {
       "path": "the_jet_engine",
@@ -20394,7 +20335,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 410
+      "sort_order": 409
     },
     {
       "path": "trickshot",
@@ -20441,7 +20382,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 411
+      "sort_order": 410
     },
     {
       "path": "midnight(zyuko)",
@@ -20489,7 +20430,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 412
+      "sort_order": 411
     },
     {
       "path": "netherix",
@@ -20537,7 +20478,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 413
+      "sort_order": 412
     },
     {
       "path": "doppler",
@@ -20585,7 +20526,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 414
+      "sort_order": 413
     },
     {
       "path": "cimmerian_shade",
@@ -20633,7 +20574,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 415
+      "sort_order": 414
     },
     {
       "path": "predatorcore",
@@ -20678,7 +20619,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 416
+      "sort_order": 415
     },
     {
       "path": "psychopath",
@@ -20725,7 +20666,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 417
+      "sort_order": 416
     },
     {
       "path": "cucumber_caverns",
@@ -20772,7 +20713,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 418
+      "sort_order": 417
     },
     {
       "path": "final_level",
@@ -20815,7 +20756,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 419
+      "sort_order": 418
     },
     {
       "path": "arcturus",
@@ -20864,7 +20805,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 420
+      "sort_order": 419
     },
     {
       "path": "diabolic_clubstep",
@@ -20912,7 +20853,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 421
+      "sort_order": 420
     },
     {
       "path": "epimethean",
@@ -20954,7 +20895,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 422
+      "sort_order": 421
     },
     {
       "path": "silent_bloodbath",
@@ -20996,7 +20937,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 423
+      "sort_order": 422
     },
     {
       "path": "beeline",
@@ -21048,7 +20989,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 424
+      "sort_order": 423
     },
     {
       "path": "sneeth",
@@ -21090,7 +21031,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 425
+      "sort_order": 424
     },
     {
       "path": "dreamstep",
@@ -21139,7 +21080,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 426
+      "sort_order": 425
     },
     {
       "path": "enchanting skylight",
@@ -21193,7 +21134,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 427
+      "sort_order": 426
     },
     {
       "path": "crystal edge",
@@ -21242,7 +21183,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 428
+      "sort_order": 427
     },
     {
       "path": "hitorigoto",
@@ -21291,7 +21232,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 429
+      "sort_order": 428
     },
     {
       "path": "sonic_wave_infinity",
@@ -21363,7 +21304,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 430
+      "sort_order": 429
     },
     {
       "path": "funky_amalgamation",
@@ -21411,7 +21352,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 431
+      "sort_order": 430
     },
     {
       "path": "atropos",
@@ -21457,7 +21398,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 432
+      "sort_order": 431
     },
     {
       "path": "spectrolux",
@@ -21503,7 +21444,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 433
+      "sort_order": 432
     },
     {
       "path": "heavenly sakupen",
@@ -21550,7 +21491,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 434
+      "sort_order": 433
     },
     {
       "path": "tartarus",
@@ -21608,7 +21549,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": true,
-      "sort_order": 435
+      "sort_order": 434
     },
     {
       "path": "dimensional_vortex",
@@ -21656,7 +21597,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 436
+      "sort_order": 435
     },
     {
       "path": "ikea_level",
@@ -21697,7 +21638,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 437
+      "sort_order": 436
     },
     {
       "path": "notartarus",
@@ -21747,7 +21688,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 438
+      "sort_order": 437
     },
     {
       "path": "coalescence",
@@ -21799,7 +21740,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 439
+      "sort_order": 438
     },
     {
       "path": "kyoto",
@@ -21845,7 +21786,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 440
+      "sort_order": 439
     },
     {
       "path": "ronaldohouse",
@@ -21891,7 +21832,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 441
+      "sort_order": 440
     },
     {
       "path": "waterfall",
@@ -21965,7 +21906,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 442
+      "sort_order": 441
     },
     {
       "path": "e_n_d",
@@ -22015,7 +21956,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 443
+      "sort_order": 442
     },
     {
       "path": "ufo_on_track_of_rage",
@@ -22080,7 +22021,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 444
+      "sort_order": 443
     },
     {
       "path": "spider_bite",
@@ -22129,7 +22070,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 445
+      "sort_order": 444
     },
     {
       "path": "k4l1b3r",
@@ -22171,7 +22112,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 446
+      "sort_order": 445
     },
     {
       "path": "jigsaw",
@@ -22246,7 +22187,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 447
+      "sort_order": 446
     },
     {
       "path": "lost_in_time_2",
@@ -22310,7 +22251,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 448
+      "sort_order": 447
     },
     {
       "path": "delta",
@@ -22382,7 +22323,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 449
+      "sort_order": 448
     },
     {
       "path": "between duality",
@@ -22430,7 +22371,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 450
+      "sort_order": 449
     },
     {
       "path": "erosion",
@@ -22473,7 +22414,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 451
+      "sort_order": 450
     },
     {
       "path": "bpata_mpaka",
@@ -22530,7 +22471,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 452
+      "sort_order": 451
     },
     {
       "path": "the_wonder_of_you",
@@ -22580,7 +22521,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 453
+      "sort_order": 452
     },
     {
       "path": "natural disaster",
@@ -22641,7 +22582,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 454
+      "sort_order": 453
     },
     {
       "path": "romper",
@@ -22683,7 +22624,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 455
+      "sort_order": 454
     },
     {
       "path": "hurt",
@@ -22730,7 +22671,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 456
+      "sort_order": 455
     },
     {
       "path": "dualist",
@@ -22778,7 +22719,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 457
+      "sort_order": 456
     },
     {
       "path": "mysterycore",
@@ -22825,7 +22766,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 458
+      "sort_order": 457
     },
     {
       "path": "sanctity",
@@ -22871,7 +22812,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 459
+      "sort_order": 458
     },
     {
       "path": "echoes_of_phantasm",
@@ -22938,7 +22879,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 460
+      "sort_order": 459
     },
     {
       "path": "exceptional",
@@ -22986,7 +22927,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 461
+      "sort_order": 460
     },
     {
       "path": "the_golden",
@@ -23041,7 +22982,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 462
+      "sort_order": 461
     },
     {
       "path": "sunrise_scourge",
@@ -23082,7 +23023,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 463
+      "sort_order": 462
     },
     {
       "path": "ef",
@@ -23128,7 +23069,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 464
+      "sort_order": 463
     },
     {
       "path": "oblivion",
@@ -23179,7 +23120,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 465
+      "sort_order": 464
     },
     {
       "path": "viprin_ufo",
@@ -23234,7 +23175,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 466
+      "sort_order": 465
     },
     {
       "path": "death corridor (kugelblitz)",
@@ -23277,7 +23218,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 467
+      "sort_order": 466
     },
     {
       "path": "network",
@@ -23326,7 +23267,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 468
+      "sort_order": 467
     },
     {
       "path": "plastic_death",
@@ -23373,7 +23314,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 469
+      "sort_order": 468
     },
     {
       "path": "terminal_rampancy",
@@ -23420,7 +23361,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 470
+      "sort_order": 469
     },
     {
       "path": "c sharp",
@@ -23467,7 +23408,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 471
+      "sort_order": 470
     },
     {
       "path": "l o v e",
@@ -23514,7 +23455,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 472
+      "sort_order": 471
     },
     {
       "path": "verdant_landscape",
@@ -23561,7 +23502,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 473
+      "sort_order": 472
     },
     {
       "path": "flaklypa",
@@ -23603,7 +23544,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 474
+      "sort_order": 473
     },
     {
       "path": "levigo",
@@ -23651,7 +23592,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 475
+      "sort_order": 474
     },
     {
       "path": "unknown",
@@ -23707,7 +23648,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 476
+      "sort_order": 475
     },
     {
       "path": "lunaphobia",
@@ -23751,7 +23692,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 477
+      "sort_order": 476
     },
     {
       "path": "demons",
@@ -23797,7 +23738,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 478
+      "sort_order": 477
     },
     {
       "path": "atomic_cannon_mkiii",
@@ -23848,7 +23789,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 479
+      "sort_order": 478
     },
     {
       "path": "blooming_blossoms",
@@ -23895,7 +23836,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 480
+      "sort_order": 479
     },
     {
       "path": "black_rose",
@@ -23936,7 +23877,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 481
+      "sort_order": 480
     },
     {
       "path": "reality_spirituality",
@@ -23983,7 +23924,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 482
+      "sort_order": 481
     },
     {
       "path": "shukketsu",
@@ -24035,7 +23976,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 483
+      "sort_order": 482
     },
     {
       "path": "spirit_overclock",
@@ -24082,7 +24023,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 484
+      "sort_order": 483
     },
     {
       "path": "mangle",
@@ -24127,7 +24068,7 @@
       "isMain": false,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 485
+      "sort_order": 484
     },
     {
       "path": "cyberian",
@@ -24171,7 +24112,7 @@
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
-      "sort_order": 486
+      "sort_order": 485
     },
     {
       "path": "deadly_corridor_remake",
@@ -24215,7 +24156,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 487
+      "sort_order": 486
     },
     {
       "path": "idontknowwhatisthis",
@@ -24259,7 +24200,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 488
+      "sort_order": 487
     },
     {
       "path": "breakcore",
@@ -24306,7 +24247,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 489
+      "sort_order": 488
     },
     {
       "path": "checked_steam",
@@ -24353,7 +24294,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
-      "sort_order": 490
+      "sort_order": 489
     },
     {
       "path": "critical_heat_zeniux",
@@ -24401,7 +24342,7 @@
       "isMain": true,
       "isFuture": true,
       "benchmark": true,
-      "sort_order": 491
+      "sort_order": 490
     }
   ],
   "pending": [
