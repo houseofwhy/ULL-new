@@ -1449,6 +1449,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "forbidden": {
+      "path": "forbidden",
+      "name": "Forbidden",
+      "firstSeen": "2026-09-26",
+      "lastSeen": "2026-09-26",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "forest-of-spikes": {
       "path": "forest of spikes",
       "name": "FOREST OF SPIKES",
@@ -3413,6 +3421,14 @@
       "path": "the_aether_trial",
       "name": "The Aether Trial",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-26",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "the-ben": {
+      "path": "the ben",
+      "name": "the ben",
+      "firstSeen": "2026-09-26",
       "lastSeen": "2026-09-26",
       "retiredAt": null,
       "redirectTo": null
