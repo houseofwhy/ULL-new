@@ -223,6 +223,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/arctic-lights-bug-fi</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/arcturus</loc>
     <lastmod>2021-08-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -897,6 +903,12 @@
   <url>
     <loc>https://ull.pages.dev/level/edge-of-destiny</loc>
     <lastmod>2023-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/ef</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2025,6 +2037,12 @@
   <url>
     <loc>https://ull.pages.dev/level/quanteuse-processing</loc>
     <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/quantum-dominator</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

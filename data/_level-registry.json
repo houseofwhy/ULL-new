@@ -241,6 +241,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "arctic-lights-bug-fi": {
+      "path": "arctic lights bug fi",
+      "name": "Arctic Lights bug fi",
+      "firstSeen": "2026-09-26",
+      "lastSeen": "2026-09-26",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "arcturus": {
       "path": "arcturus",
       "name": "arcturus",
@@ -1141,6 +1149,14 @@
       "path": "edge of destiny",
       "name": "Edge of Destiny",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-09-26",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "ef": {
+      "path": "ef",
+      "name": "EF",
+      "firstSeen": "2026-09-26",
       "lastSeen": "2026-09-26",
       "retiredAt": null,
       "redirectTo": null
@@ -2689,6 +2705,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "quantum-dominator": {
+      "path": "quantum dominator",
+      "name": "Quantum Dominator",
+      "firstSeen": "2026-09-26",
+      "lastSeen": "2026-09-26",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "quasar": {
       "path": "quasar",
       "name": "QUASAR",
@@ -3579,7 +3603,7 @@
     },
     "thibkign-soace-iii": {
       "path": "thibkign soace III",
-      "name": "thibkign soace III",
+      "name": "XALVALSTEP",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-09-26",
       "retiredAt": null,
