@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T08:21:58.877Z",
+  "fetchedAt": "2026-09-27T14:08:40.137Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -25203,6 +25203,12 @@
     }
   },
   "recentChanges": [
+    {
+      "date": "September 27, 2026",
+      "entries": [
+        "- **Theta** (#385) has been removed due to getting cancelled"
+      ]
+    },
     {
       "date": "September 26, 2026",
       "entries": [
