@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-30T19:29:52.848Z",
+  "fetchedAt": "2026-09-30T23:58:47.667Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -53,9 +53,9 @@
       ],
       "run": [
         {
-          "user": "Chill Guy",
-          "link": "https://youtu.be/KJKza9jnLNs?si=mCiaU3dnNzWf-_54",
-          "percent": "72-100",
+          "user": "Bacon",
+          "link": "https://youtu.be/Qckw6uNj6Es?is=7GTHKbPqRYutS9-9",
+          "percent": "66-96",
           "hz": 240
         }
       ],
@@ -3276,7 +3276,7 @@
       "length": 342,
       "percentToQualify": 1,
       "percentFinished": 70,
-      "lastUpd": "31.10.2025",
+      "lastUpd": "26.09.2026",
       "tags": [
         "Verifying",
         "XXL"
@@ -6723,10 +6723,10 @@
       ],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
+          "user": "marley",
+          "link": "Video: https://youtu.be/30Cmf9vjYh8",
+          "percent": 39,
+          "hz": 240
         }
       ],
       "run": [
@@ -10715,27 +10715,29 @@
         "niroi"
       ],
       "verifier": "Lobster",
-      "verification": "",
+      "verification": "https://youtu.be/zxojmwuEBo0?is=Ih-jL1jkk6Ym-Cry",
       "showcase": "https://youtu.be/zolzjLY7Mxs?si=QWB98WBPf5ET2REW",
       "thumbnail": "https://i.ytimg.com/vi/mtC0dfgl_V0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLArSL7t6nvWrQSco0J04tyG5tnvGw",
       "frameCounter": null,
-      "id": "private",
+      "id": "85174455",
       "rating": 1,
       "length": 708,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "13.05.2026",
+      "lastUpd": "26.09.2026",
       "tags": [
         "XXXL+",
         "Finished",
         "Verifying",
-        "Remake"
+        "Remake",
+        "Public",
+        "Unrated"
       ],
       "records": [
         {
-          "user": "Lobster",
-          "link": "https://youtu.be/X0uqmrkzfHI?si=bsgW-O9El86clI_R",
-          "percent": 93,
+          "user": "none",
+          "link": "",
+          "percent": 0,
           "hz": 0
         }
       ],
@@ -10747,7 +10749,7 @@
           "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
@@ -11352,7 +11354,7 @@
       "length": 108,
       "percentToQualify": 1,
       "percentFinished": 60,
-      "lastUpd": "29.10.2025",
+      "lastUpd": "28.09.2026",
       "tags": [
         "Long",
         "Quality",
@@ -23510,37 +23512,40 @@
       "author": "cheapy",
       "creators": [],
       "verifier": "Gelforce",
-      "verification": "",
+      "verification": "https://youtu.be/Ed_ri7XJY2A?is=Pdz4Ujzuw9lhSpYV",
       "showcase": "https://youtu.be/hfVsyXUGfCg?si=qI4hFL1ed_o7HBby",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
-      "id": "private",
+      "id": "149473531",
       "rating": 1,
       "length": 96,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "20.10.2025",
+      "lastUpd": "27.09.2026",
       "tags": [
         "Verifying",
-        "Long"
+        "Long",
+        "Public",
+        "Unrated",
+        "Finished"
       ],
       "records": [
         {
-          "user": "Gelforce",
-          "link": "https://youtu.be/hfVsyXUGfCg?si=qI4hFL1ed_o7HBby",
-          "percent": 90,
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": 0,
+          "hz": 0
         }
       ],
       "run": [
         {
-          "user": "Gelforce",
-          "link": "https://youtu.be/eDdMBcwrpAk?si=lnDDZMpS2mhHWQkH",
-          "percent": "46-100",
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
