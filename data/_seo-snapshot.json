@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-30T23:58:47.667Z",
+  "fetchedAt": "2026-10-01T06:10:46.924Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -236,10 +236,10 @@
       "percentFinished": 100,
       "lastUpd": "30.06.2026",
       "tags": [
-        "Long",
         "Open Verification",
         "Finished",
-        "Public"
+        "Public",
+        "Medium"
       ],
       "records": [
         {
