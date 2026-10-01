@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-01T06:10:46.924Z",
+  "fetchedAt": "2026-10-01T13:34:03.207Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1876,7 +1876,7 @@
       "tags": [
         "Finished",
         "Public",
-        "Unrated"
+        "Rated"
       ],
       "records": [
         {
@@ -10569,7 +10569,7 @@
     },
     {
       "path": "herr machine",
-      "name": "HERR machine",
+      "name": "Herr Machine",
       "author": "HerrTeam",
       "creators": [
         "unknown"
@@ -24424,14 +24424,6 @@
       "indefinite": 0
     },
     {
-      "id": 293,
-      "name": "Chaoz Devotion",
-      "placement": "10",
-      "link": "https://youtu.be/M_uBKUuLbZk?si=3WbUBkyuvahCcfGN",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
       "id": 298,
       "name": "SwiftVortex",
       "placement": "20",
@@ -25076,6 +25068,22 @@
       "name": "Necropolis II",
       "placement": "75",
       "link": "",
+      "sort_order": null,
+      "indefinite": 1
+    },
+    {
+      "id": 398,
+      "name": "Time To Say Goodbye",
+      "placement": "30",
+      "link": "https://www.youtube.com/watch?v=N8DdFejofMg",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 399,
+      "name": "Leilos",
+      "placement": "75",
+      "link": "https://www.youtube.com/watch?v=s2m7dd-m8Lk",
       "sort_order": null,
       "indefinite": 0
     }
