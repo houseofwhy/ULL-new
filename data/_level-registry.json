@@ -1473,6 +1473,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "forgotten-power": {
+      "path": "forgotten power",
+      "name": "Forgotten Power",
+      "firstSeen": "2026-10-02",
+      "lastSeen": "2026-10-02",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "fracture": {
       "path": "fracture",
       "name": "Fracture",
@@ -1749,6 +1757,14 @@
       "path": "hymn for the weekend",
       "name": "Hymn For The Weekend",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-10-02",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "icy-monument": {
+      "path": "icy monument",
+      "name": "Icy Monument",
+      "firstSeen": "2026-10-02",
       "lastSeen": "2026-10-02",
       "retiredAt": null,
       "redirectTo": null
@@ -2077,6 +2093,14 @@
       "path": "lunatic eyes",
       "name": "Lunatic Eyes",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-10-02",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "lunoshe-processing": {
+      "path": "lunoshe processing",
+      "name": "lunoshe processing",
+      "firstSeen": "2026-10-02",
       "lastSeen": "2026-10-02",
       "retiredAt": null,
       "redirectTo": null
@@ -2550,7 +2574,7 @@
       "name": "OUTLAST",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-10-02",
-      "retiredAt": null,
+      "retiredAt": "2026-10-02",
       "redirectTo": null
     },
     "overdrive": {
@@ -3022,7 +3046,7 @@
       "name": "Silent Bloodbath",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-10-02",
-      "retiredAt": null,
+      "retiredAt": "2026-10-02",
       "redirectTo": null
     },
     "silent-circles-bunny": {
@@ -3125,6 +3149,14 @@
       "path": "silent oppenheimer",
       "name": "SILENT OPPENHEIMER",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-10-02",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silentium-dynamas": {
+      "path": "silentium dynamas",
+      "name": "Silentium Dynamas",
+      "firstSeen": "2026-10-02",
       "lastSeen": "2026-10-02",
       "retiredAt": null,
       "redirectTo": null
@@ -3689,6 +3721,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "time-to-say-goodbye": {
+      "path": "time to say goodbye",
+      "name": "Time To Say Goodbye",
+      "firstSeen": "2026-10-02",
+      "lastSeen": "2026-10-02",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "toxic-rush-iii": {
       "path": "toxic rush iii",
       "name": "Toxic Rush III",
@@ -3811,7 +3851,7 @@
     },
     "ultra-realistik": {
       "path": "ultra realistik",
-      "name": "Ultra Realistik",
+      "name": "Ultra RealistiK",
       "firstSeen": "2026-09-01",
       "lastSeen": "2026-10-02",
       "retiredAt": null,
