@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-02T23:05:16.744Z",
+  "fetchedAt": "2026-10-03T02:06:41.976Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -2751,7 +2751,7 @@
       "verifier": "wPopoff",
       "verification": "https://www.youtube.com/watch?v=4lfkzz1VCbA",
       "showcase": "https://www.youtube.com/watch?v=bcxqTbxhOe0",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "119550490",
       "rating": 1,
