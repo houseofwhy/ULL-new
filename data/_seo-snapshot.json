@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-03T02:06:41.976Z",
+  "fetchedAt": "2026-10-03T08:19:10.011Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -24410,7 +24410,7 @@
       "verifier": "breakcore11",
       "verification": "https://youtu.be/_H3KOVLE6gs?si=SMKyKitUEVaZU3m4",
       "showcase": "https://www.youtube.com/watch?v=x-TZ0xrYLZU&pp=ygUMQnJlYWtjb3JlIGdk",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "123674931",
       "rating": 1,
@@ -24422,8 +24422,8 @@
         "Public",
         "Finished",
         "Long",
-        "Unrated",
-        "Verified"
+        "Verified",
+        "Rated"
       ],
       "records": [
         {
