@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-05T01:04:55.015Z",
+  "fetchedAt": "2026-10-05T07:12:50.953Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1385,37 +1385,39 @@
       "showcase": "https://www.youtube.com/watch?v=Wd0DIyujh2g",
       "thumbnail": null,
       "frameCounter": null,
-      "id": "private",
+      "id": "149992717",
       "rating": 1,
       "length": 170,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "19.06.2026",
+      "lastUpd": "04.10.2026",
       "tags": [
         "Finished",
         "Verifying",
         "XL",
-        "Remake"
+        "Remake",
+        "Public",
+        "Rated"
       ],
       "records": [
         {
-          "user": "Doggie",
-          "link": "https://www.youtube.com/watch?v=Emd2tWP2FkI",
-          "percent": 97,
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": 0,
+          "hz": 0
         }
       ],
       "run": [
         {
-          "user": "Doggie",
-          "link": "https://youtu.be/JZ6rLQoP7Y0?si=pb4H0xpd4WuX8_9i",
-          "percent": "25-100",
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
-      "isFuture": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 29
     },
