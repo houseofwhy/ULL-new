@@ -201,6 +201,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "antumbral": {
+      "path": "antumbral",
+      "name": "Antumbral",
+      "firstSeen": "2026-10-05",
+      "lastSeen": "2026-10-05",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "apocalyptic-trilogy": {
       "path": "apocalyptic trilogy",
       "name": "Apocalyptic Trilogy",
@@ -1633,6 +1641,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "hail": {
+      "path": "hail",
+      "name": "HAIL",
+      "firstSeen": "2026-10-05",
+      "lastSeen": "2026-10-05",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "hard-white-and-long": {
       "path": "hard white and long",
       "name": "HARD WHITE AND LONG",
@@ -2449,6 +2465,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "noblesse": {
+      "path": "noblesse",
+      "name": "noblesse",
+      "firstSeen": "2026-10-05",
+      "lastSeen": "2026-10-05",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "nomad": {
       "path": "nomad",
       "name": "NOMAD",
@@ -2885,6 +2909,14 @@
       "path": "ryxuee",
       "name": "rYxUEE",
       "firstSeen": "2026-09-01",
+      "lastSeen": "2026-10-05",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "sabotage": {
+      "path": "sabotage",
+      "name": "SABOTAGE",
+      "firstSeen": "2026-10-05",
       "lastSeen": "2026-10-05",
       "retiredAt": null,
       "redirectTo": null
