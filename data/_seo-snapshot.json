@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-10T18:43:13.247Z",
+  "fetchedAt": "2026-10-10T22:42:38.340Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -54,8 +54,8 @@
       "run": [
         {
           "user": "Bacon",
-          "link": "https://youtu.be/Qckw6uNj6Es?is=7GTHKbPqRYutS9-9",
-          "percent": "66-96",
+          "link": "https://www.youtube.com/live/zezrU50EvFw?t=4200&is=TY-cw6QI6_xmlOR6",
+          "percent": "66-100",
           "hz": 240
         }
       ],
@@ -922,7 +922,7 @@
       "length": 92,
       "percentToQualify": 1,
       "percentFinished": 40,
-      "lastUpd": "23.09.2026",
+      "lastUpd": "07.10.2026",
       "tags": [
         "Long",
         "Remake"
@@ -1218,14 +1218,14 @@
       "verifier": "Zoink",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=6AxgWd-JXvA&t=65s",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 300,
       "percentToQualify": 68,
       "percentFinished": 95,
-      "lastUpd": "20.08.2026",
+      "lastUpd": "30.09.2026",
       "tags": [
         "XXL",
         "NONG",
@@ -1404,8 +1404,8 @@
       "records": [
         {
           "user": "Taiago",
-          "link": " https://youtu.be/kZJaeY4d0_M?si=Mo0awQUJUANkQHRL",
-          "percent": 86,
+          "link": "https://www.youtube.com/live/9Tdp7g2OXyI?t=4789&is=749ZxpEvL0muOkSg",
+          "percent": 87,
           "hz": 0
         }
       ],
@@ -1608,7 +1608,7 @@
       "length": 300,
       "percentToQualify": 1,
       "percentFinished": 60,
-      "lastUpd": "10.04.2026",
+      "lastUpd": "02.10.2026",
       "tags": [
         "XXL",
         "NONG",
@@ -1698,7 +1698,7 @@
       "length": 341,
       "percentToQualify": 1,
       "percentFinished": 50,
-      "lastUpd": "24.09.2026",
+      "lastUpd": "08.10.2026",
       "tags": [
         "XXXL+",
         "Quality"
@@ -3693,7 +3693,7 @@
       "creators": [],
       "verifier": "Sharkified",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=mULQdsPjPWg",
+      "showcase": "https://www.youtube.com/watch?v=MczAL-lRpMI",
       "thumbnail": null,
       "frameCounter": "https://www.youtube.com/shorts/vkLcbnyzAwA",
       "id": "private",
@@ -3701,8 +3701,10 @@
       "length": 0,
       "percentToQualify": 1,
       "percentFinished": 0,
-      "lastUpd": "01.09.2026",
-      "tags": [],
+      "lastUpd": "05.09.2026",
+      "tags": [
+        "Finished"
+      ],
       "records": [
         {
           "user": "none",
@@ -4747,8 +4749,8 @@
       "run": [
         {
           "user": "marley",
-          "link": "https://www.youtube.com/watch?v=NcHDho6L1ys",
-          "percent": "47-100",
+          "link": "https://youtu.be/GtptgKVvz0w ",
+          "percent": "40-100",
           "hz": 240
         }
       ],
@@ -5723,8 +5725,8 @@
       "records": [
         {
           "user": "agonom",
-          "link": "https://youtu.be/U4JypjeB1gI?is=bemSrUvRkgv2uuOZ",
-          "percent": 40,
+          "link": "https://www.youtube.com/watch?v=qOKlIGaW1no",
+          "percent": 45,
           "hz": 240
         }
       ],
@@ -7908,8 +7910,8 @@
       "records": [
         {
           "user": "Niroi",
-          "link": "Video  https://youtu.be/5EaHQ3musMQ?si=pMbtPDbb-M0e0G4g",
-          "percent": 47,
+          "link": "https://www.youtube.com/watch?v=bLp10dNnJdc",
+          "percent": 56,
           "hz": 240
         }
       ],
@@ -11168,9 +11170,9 @@
       ],
       "run": [
         {
-          "user": "RicoLP",
-          "link": "https://www.youtube.com/watch?v=EKh495gjfYw",
-          "percent": "75-100",
+          "user": "ItzMira",
+          "link": " https://www.youtube.com/live/1v9DZaOVcvg?t=3532s",
+          "percent": "65-92",
           "hz": 0
         }
       ],
@@ -14893,8 +14895,8 @@
       "records": [
         {
           "user": "Beggo",
-          "link": "#",
-          "percent": 72,
+          "link": "https://www.youtube.com/watch?v=WE6L4eBnr2o",
+          "percent": 85,
           "hz": 0
         }
       ],
@@ -17640,14 +17642,14 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=NtH9bbe2j60",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 496,
       "percentToQualify": 1,
       "percentFinished": 70,
-      "lastUpd": "16.04.2026",
+      "lastUpd": "06.10.2026",
       "tags": [
         "XXXL"
       ],
@@ -25384,7 +25386,7 @@
     },
     {
       "id": 399,
-      "name": "Leilos",
+      "name": "Lielos",
       "placement": "75",
       "link": "https://www.youtube.com/watch?v=s2m7dd-m8Lk",
       "sort_order": null,
