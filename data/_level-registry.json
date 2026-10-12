@@ -1438,7 +1438,7 @@
       "name": "Flaklypa",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-10-12",
-      "retiredAt": null,
+      "retiredAt": "2026-10-12",
       "redirectTo": null
     },
     "flamewall": {
@@ -4078,7 +4078,7 @@
       "name": "WRACKNESS",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-10-12",
-      "retiredAt": null,
+      "retiredAt": "2026-10-12",
       "redirectTo": null
     },
     "wrath": {
