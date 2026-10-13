@@ -1093,12 +1093,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/finaltheory</loc>
-    <lastmod>2025-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/fingerdash-v5</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -1407,6 +1401,12 @@
   <url>
     <loc>https://ull.pages.dev/level/injury</loc>
     <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/innards-xarve</loc>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2949,12 +2949,6 @@
   <url>
     <loc>https://ull.pages.dev/level/wavterminal</loc>
     <lastmod>2025-11-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/when-i-fall</loc>
-    <lastmod>2025-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

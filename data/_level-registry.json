@@ -203,7 +203,7 @@
     },
     "antumbral": {
       "path": "antumbral",
-      "name": "Antumbral",
+      "name": "UMBRIEL",
       "firstSeen": "2026-10-05",
       "lastSeen": "2026-10-13",
       "retiredAt": null,
@@ -1414,7 +1414,7 @@
       "name": "FinalTheory",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-10-13",
-      "retiredAt": null,
+      "retiredAt": "2026-10-13",
       "redirectTo": null
     },
     "fingerdash-v5": {
@@ -1853,6 +1853,14 @@
       "path": "injury",
       "name": "I N J U R Y",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-10-13",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "innards-xarve": {
+      "path": "innards xarve",
+      "name": "INNARDS (xarve)",
+      "firstSeen": "2026-10-13",
       "lastSeen": "2026-10-13",
       "retiredAt": null,
       "redirectTo": null
@@ -2467,7 +2475,7 @@
     },
     "noblesse": {
       "path": "noblesse",
-      "name": "noblesse",
+      "name": "Noblesse",
       "firstSeen": "2026-10-05",
       "lastSeen": "2026-10-13",
       "retiredAt": null,
@@ -4014,7 +4022,7 @@
       "name": "When I Fall",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-10-13",
-      "retiredAt": null,
+      "retiredAt": "2026-10-13",
       "redirectTo": null
     },
     "white-abyss": {
