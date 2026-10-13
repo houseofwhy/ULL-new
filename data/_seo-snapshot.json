@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T19:22:33.231Z",
+  "fetchedAt": "2026-10-13T23:20:59.679Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -224,12 +224,12 @@
       "creators": [
         "qponn"
       ],
-      "verifier": "Open Verification",
+      "verifier": "Intopr",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=2TdZXwoznFM",
       "thumbnail": null,
       "frameCounter": null,
-      "id": "143836454",
+      "id": "private",
       "rating": 1,
       "length": 53,
       "percentToQualify": 1,
@@ -238,7 +238,6 @@
       "tags": [
         "Open Verification",
         "Finished",
-        "Public",
         "Medium"
       ],
       "records": [
@@ -252,7 +251,7 @@
       "run": [
         {
           "user": "qponn",
-          "link": "Teraa has achieved a new WR of 52% on Escalator!   https://youtu.be/Thf3zFHVxvc?si=oAGZtdj6BvQ3WSmo  <@&1276055922002886706>",
+          "link": "https://youtu.be/6t9KCDyXKJE?is=qb5PeA88QBtVOxss",
           "percent": "79-100",
           "hz": 240
         }
@@ -3644,7 +3643,12 @@
       "path": "darkmatter01",
       "name": "DARKMATTER",
       "author": "Celestius",
-      "creators": [],
+      "creators": [
+        "Celestius",
+        "SeeingstarsGD",
+        "Akoru",
+        "Hypoxic"
+      ],
       "verifier": "Sharkified",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=MczAL-lRpMI",
@@ -3654,10 +3658,13 @@
       "rating": 1,
       "length": 0,
       "percentToQualify": 1,
-      "percentFinished": 0,
+      "percentFinished": 100,
       "lastUpd": "05.09.2026",
       "tags": [
-        "Finished"
+        "Finished",
+        "Long",
+        "NONG",
+        "Quality"
       ],
       "records": [
         {
@@ -3677,7 +3684,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 75
     },
