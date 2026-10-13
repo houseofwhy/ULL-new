@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T03:39:35.486Z",
+  "fetchedAt": "2026-10-13T11:57:25.174Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -6794,7 +6794,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 142
@@ -7169,7 +7169,7 @@
         }
       ],
       "isVerified": false,
-      "isMain": true,
+      "isMain": false,
       "isFuture": false,
       "benchmark": false,
       "sort_order": 150
@@ -7930,7 +7930,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 165
     },
@@ -16455,7 +16455,7 @@
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 337
     },
@@ -16772,20 +16772,22 @@
         "whyfour4"
       ],
       "verifier": "turtlgd",
-      "verification": "",
+      "verification": "https://www.youtube.com/watch?v=Y4EOxGXp5vo",
       "showcase": "https://www.youtube.com/watch?v=4jFTz9VtS5w",
       "thumbnail": null,
       "frameCounter": "https://www.youtube.com/watch?v=4jFTz9VtS5w&t=85",
-      "id": "private",
+      "id": "149551048",
       "rating": 1,
       "length": 81,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "15.08.2026",
+      "lastUpd": "14.08.2026",
       "tags": [
         "Finished",
         "Long",
-        "Remake"
+        "Remake",
+        "Public",
+        "Unrated"
       ],
       "records": [
         {
@@ -19532,15 +19534,15 @@
       ],
       "run": [
         {
-          "user": "none",
+          "user": "manugrk",
           "link": "",
-          "percent": "0",
-          "hz": 0
+          "percent": "65-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
       "isMain": true,
-      "isFuture": false,
+      "isFuture": true,
       "benchmark": false,
       "sort_order": 396
     },
@@ -24882,14 +24884,6 @@
       "name": "MODERATE TALKING",
       "placement": "50",
       "link": "https://www.youtube.com/watch?v=ibIW3d_XogE",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
-      "id": 327,
-      "name": "Sylentium Dynamas",
-      "placement": "50",
-      "link": "https://youtu.be/4jFTz9VtS5w?si=WRGcyLZ_C_byKucc",
       "sort_order": null,
       "indefinite": 0
     },
