@@ -331,6 +331,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/bad-to-the-bone</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/bad-trip</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
