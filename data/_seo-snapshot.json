@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-14T13:51:38.725Z",
+  "fetchedAt": "2026-10-14T18:44:15.163Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -160,9 +160,9 @@
       ],
       "run": [
         {
-          "user": "Vain",
-          "link": "https://www.youtube.com/watch?v=ArL-ZuElsHU",
-          "percent": "84-90",
+          "user": "blizzard",
+          "link": "https://youtu.be/xe-DgDW_WO4?is=iaeJQ97bmNwVHZrv",
+          "percent": "62-75",
           "hz": 240
         }
       ],
