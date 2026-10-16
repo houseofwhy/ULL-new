@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-16T17:32:16.825Z",
+  "fetchedAt": "2026-10-16T21:24:42.738Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -5466,7 +5466,7 @@
         "hsam",
         "xolarzz"
       ],
-      "verifier": "hsam",
+      "verifier": "carv",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=9u04i2863RE",
       "thumbnail": "https://i.ytimg.com/vi/i225RC4t0c4/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDCkZ_3BPkoGiEhcW9hD64tR2zYvA",
@@ -6300,8 +6300,8 @@
       "run": [
         {
           "user": "BONN GD",
-          "link": "https://youtu.be/mjVDLgEvVhU?is=bmgpA4UQdBimbB1v",
-          "percent": "47-100",
+          "link": "https://www.youtube.com/watch?v=1oydiX_eRCY",
+          "percent": "36-100",
           "hz": 0
         }
       ],
@@ -9205,10 +9205,10 @@
       "creators": [
         "maxfs"
       ],
-      "verifier": "Clara Clarinha",
+      "verifier": "vsce",
       "verification": "",
       "showcase": "https://youtu.be/IGTcquuJUIo?si=aOeWhfzao07y-A0C",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -11184,8 +11184,8 @@
       "run": [
         {
           "user": "ItzMira",
-          "link": " https://www.youtube.com/live/1v9DZaOVcvg?t=3532s",
-          "percent": "65-92",
+          "link": "https://www.youtube.com/watch?v=XlSYm3Fbjak",
+          "percent": "65-100",
           "hz": 0
         }
       ],
@@ -12350,18 +12350,18 @@
       ],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
+          "user": "xarve",
+          "link": "https://www.youtube.com/watch?v=Wv4RCXEOBZ0",
+          "percent": "",
           "hz": 0
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "xarve",
+          "link": "https://www.youtube.com/watch?v=VA4V2FjenMo",
+          "percent": "60",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -14580,7 +14580,7 @@
       "rating": 1,
       "length": 64,
       "percentToQualify": 1,
-      "percentFinished": 50,
+      "percentFinished": 75,
       "lastUpd": "27.08.2026",
       "tags": [
         "Long"
@@ -15336,7 +15336,7 @@
       "verifier": "T4G",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=Asl2I4SVCcA",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -15350,8 +15350,8 @@
       "records": [
         {
           "user": "T4G",
-          "link": "https://www.youtube.com/watch?v=kmwc4IS6uik",
-          "percent": 44,
+          "link": "https://www.youtube.com/watch?v=tmjhQ9_7TBc",
+          "percent": 74,
           "hz": 0
         }
       ],
@@ -15659,7 +15659,7 @@
       "verifier": "ZygisDij",
       "verification": "https://youtu.be/WGU71RFygJs?si=1SzMVEmWZ-g5XiL3",
       "showcase": "https://youtu.be/rsuRYFJyMiE",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "116430752",
       "rating": 1,
@@ -15676,17 +15676,17 @@
       ],
       "records": [
         {
-          "user": "ZygisDij",
-          "link": "https://www.youtube.com/watch?v=dF7_DLR9nDw",
-          "percent": 73,
+          "user": "none",
+          "link": "",
+          "percent": 0,
           "hz": 0
         }
       ],
       "run": [
         {
-          "user": "ZygisDij",
-          "link": "https://www.youtube.com/watch?v=r4lApR_cAe4",
-          "percent": "36-100",
+          "user": "none",
+          "link": "",
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -16819,7 +16819,7 @@
           "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
@@ -18854,20 +18854,22 @@
         "KrazyGFX"
       ],
       "verifier": "Sightless",
-      "verification": "",
+      "verification": "https://www.youtube.com/watch?v=1UJMDkiFxqM",
       "showcase": "https://www.youtube.com/watch?v=Wtf0HRfTxp8",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
-      "id": "private",
+      "id": "142746629",
       "rating": 1,
       "length": 0,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "12.06.2026",
+      "lastUpd": "28.07.2026",
       "tags": [
         "Finished",
         "Long",
-        "NONG"
+        "NONG",
+        "Unrated",
+        "Public"
       ],
       "records": [
         {
@@ -18879,13 +18881,13 @@
       ],
       "run": [
         {
-          "user": "Sightless",
-          "link": "https://www.youtube.com/watch?v=8a-aIH0CzyM",
-          "percent": "44-100",
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
       "isFuture": false,
       "benchmark": false,
@@ -24847,9 +24849,9 @@
     },
     {
       "id": 318,
-      "name": "Goldcrest Calamity",
+      "name": "Levels",
       "placement": "50",
-      "link": "https://youtu.be/VJ8B8pKRWjw",
+      "link": "https://www.youtube.com/watch?v=-KFuRVTLU0Q",
       "sort_order": null,
       "indefinite": 0
     },
