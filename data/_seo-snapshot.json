@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-19T07:55:54.153Z",
+  "fetchedAt": "2026-10-19T15:44:41.431Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -24744,14 +24744,6 @@
       "indefinite": 0
     },
     {
-      "id": 300,
-      "name": "BAD TO THE BONE",
-      "placement": "20",
-      "link": "https://youtu.be/5QwzW_YwPSI",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
       "id": 301,
       "name": "Narine",
       "placement": "20",
@@ -24780,14 +24772,6 @@
       "name": "Dreamcore",
       "placement": "20",
       "link": "https://www.youtube.com/watch?v=m7F8ERVIK4c",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
-      "id": 307,
-      "name": "I Hate Myself",
-      "placement": "20",
-      "link": "https://youtu.be/R_2HNfGs9d0?si=UnGI65owWIAGSY1L",
       "sort_order": null,
       "indefinite": 0
     },
