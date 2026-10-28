@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-28T00:37:35.904Z",
+  "fetchedAt": "2026-10-28T06:55:40.852Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1557,7 +1557,7 @@
       "creators": [],
       "verifier": "unknown",
       "verification": "",
-      "showcase": "https://youtu.be/AxzWjSRZd2Q",
+      "showcase": "https://www.youtube.com/watch?v=1e92j8ZgIHE",
       "thumbnail": "https://i.imgur.com/5fkhjKG.jpeg",
       "frameCounter": null,
       "id": "private",
@@ -1565,7 +1565,7 @@
       "length": 72,
       "percentToQualify": 21,
       "percentFinished": 35,
-      "lastUpd": "27.02.2026",
+      "lastUpd": "27.10.2026",
       "tags": [
         "Long",
         "Quality"
@@ -1697,7 +1697,7 @@
       "length": 341,
       "percentToQualify": 1,
       "percentFinished": 50,
-      "lastUpd": "08.10.2026",
+      "lastUpd": "26.10.2026",
       "tags": [
         "XXXL+",
         "Quality"
@@ -3276,12 +3276,13 @@
       "length": 201,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "15.04.2026",
+      "lastUpd": "25.10.2026",
       "tags": [
         "XXL",
         "Quality",
         "Verifying",
-        "Finished"
+        "Finished",
+        "Public"
       ],
       "records": [
         {
@@ -3613,7 +3614,7 @@
       "length": 134,
       "percentToQualify": 1,
       "percentFinished": 35,
-      "lastUpd": "05.04.2026",
+      "lastUpd": "14.10.2026",
       "tags": [
         "XL"
       ],
@@ -4794,8 +4795,8 @@
       "run": [
         {
           "user": "GGonop",
-          "link": "https://fxtwitter.com/GGonop/status/2022731868802875737?t=MvzANatO-Q7Jsqa1O7bW2g&s=19",
-          "percent": "29-100",
+          "link": "https://www.youtube.com/watch?v=XBNo9eW-Tpg",
+          "percent": "13-100",
           "hz": 0
         }
       ],
@@ -5039,7 +5040,7 @@
       "length": 0,
       "percentToQualify": 0,
       "percentFinished": 45,
-      "lastUpd": "15.09.2026",
+      "lastUpd": "22.10.2026",
       "tags": [
         "XL",
         "NONG"
@@ -5073,7 +5074,7 @@
       "creators": [
         "SiaGMD"
       ],
-      "verifier": "unknown",
+      "verifier": "blyfi",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=nMqgobwkbR8",
       "thumbnail": null,
@@ -5083,11 +5084,12 @@
       "length": 81,
       "percentToQualify": 1,
       "percentFinished": 90,
-      "lastUpd": "24.06.2026",
+      "lastUpd": "22.10.2026",
       "tags": [
         "Long",
         "NC",
-        "NONG"
+        "NONG",
+        "Finished"
       ],
       "records": [
         {
@@ -7029,10 +7031,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Theitha",
+          "link": "https://www.youtube.com/watch?v=1WMbqAJiZ0c",
+          "percent": "25",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -8861,8 +8863,8 @@
       "records": [
         {
           "user": "LordVaderCraft",
-          "link": "https://www.youtube.com/watch?v=bk_JXPUFpPQ",
-          "percent": 66,
+          "link": "https://www.youtube.com/watch?v=1WMbqAJiZ0c",
+          "percent": 71,
           "hz": 240
         }
       ],
@@ -11369,9 +11371,9 @@
       "run": [
         {
           "user": "Duv",
-          "link": "https://youtu.be/QRLCUqj4f24?si=8SmYWVPZ_SUO1SYt",
-          "percent": "25-100",
-          "hz": 0
+          "link": "https://www.youtube.com/watch?v=_CU4a5iQcro",
+          "percent": "8-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -13345,15 +13347,15 @@
       "creators": [],
       "verifier": "Netermind",
       "verification": "",
-      "showcase": "https://youtu.be/tevl27ehNT0",
-      "thumbnail": "",
+      "showcase": "https://www.youtube.com/watch?v=FbSvDTU6qXg",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 229,
       "percentToQualify": 1,
       "percentFinished": 15,
-      "lastUpd": "19.02.2026",
+      "lastUpd": "27.10.2026",
       "tags": [
         "XL"
       ],
@@ -14567,14 +14569,14 @@
       "verifier": "Taiago",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=85nZPttveNg",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 78,
       "percentToQualify": 1,
       "percentFinished": 15,
-      "lastUpd": "10.12.2025",
+      "lastUpd": "26.10.2026",
       "tags": [
         "Long",
         "Remake"
@@ -19728,14 +19730,14 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=3ZpnGAcZMsE",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 84,
       "percentToQualify": 1,
       "percentFinished": 50,
-      "lastUpd": "05.06.2026",
+      "lastUpd": "25.10.2026",
       "tags": [
         "Long"
       ],
@@ -20837,7 +20839,7 @@
       "length": 64,
       "percentToQualify": 1,
       "percentFinished": 2,
-      "lastUpd": "05.10.2026",
+      "lastUpd": "23.10.2026",
       "tags": [
         "Long"
       ],
@@ -25236,6 +25238,142 @@
       "name": "Lielos",
       "placement": "75",
       "link": "https://www.youtube.com/watch?v=s2m7dd-m8Lk",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 400,
+      "name": "SKRTSKRTSKRTSKRT",
+      "placement": "20",
+      "link": "https://www.youtube.com/watch?v=bmZv7-jsTLE",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 401,
+      "name": "Insanity",
+      "placement": "30",
+      "link": "https://www.youtube.com/watch?v=ux9rqAlAyYM",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 402,
+      "name": "Dark Energy",
+      "placement": "1",
+      "link": "https://www.youtube.com/watch?v=taTnJGdD2W0",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 403,
+      "name": "3IMA",
+      "placement": "50",
+      "link": "https://www.youtube.com/watch?v=b-hLqYtpDhQ",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 404,
+      "name": "Desolation Row",
+      "placement": "10",
+      "link": "https://x.com/bemqsososcare/status/2101677497909719305",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 405,
+      "name": "CYANIDE",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=0drcDlKB0GM",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 406,
+      "name": "Forsaken Frost",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=_dP3TZhrOZY",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 407,
+      "name": "Kilith",
+      "placement": "50",
+      "link": "https://www.youtube.com/watch?v=YcOeIuhI8Mk",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 408,
+      "name": "Devesto Level",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=9sWNo2-UQT0",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 409,
+      "name": "Project Airborne",
+      "placement": "1",
+      "link": "https://www.youtube.com/watch?v=2XO6QnmH3XM",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 410,
+      "name": "ANIMA IMMORTALIS",
+      "placement": "1",
+      "link": "https://www.youtube.com/watch?v=KlZV5RoNG84",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 411,
+      "name": "The Zuck",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=EoISZV65K3U",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 412,
+      "name": "ChaotiX Wave",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=SqwqTsAZPuo",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 413,
+      "name": "BASSDOWN",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=G0tOLwl8jys",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 414,
+      "name": "SuperGeraldKaizo5",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=gMp8EiXDyKg",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 415,
+      "name": "Down Bass Evolution",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=XsezHoRUNYM",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 416,
+      "name": "CRUSH",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=sgceXtR6Dq4",
       "sort_order": null,
       "indefinite": 0
     }
