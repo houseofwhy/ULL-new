@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-28T06:55:40.852Z",
+  "fetchedAt": "2026-10-28T14:09:01.713Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -24831,7 +24831,7 @@
       "placement": "50",
       "link": "https://www.youtube.com/watch?v=ibIW3d_XogE",
       "sort_order": null,
-      "indefinite": 0
+      "indefinite": 1
     },
     {
       "id": 328,
@@ -25376,6 +25376,54 @@
       "link": "https://www.youtube.com/watch?v=sgceXtR6Dq4",
       "sort_order": null,
       "indefinite": 0
+    },
+    {
+      "id": 417,
+      "name": "Celestial Showdown X",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=FZ2lyW_5pAY",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 418,
+      "name": "put on ALL OF THEM",
+      "placement": "1",
+      "link": "https://www.youtube.com/watch?v=qXlzVuvt_Sk",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 419,
+      "name": "Irradiated Planet",
+      "placement": "20",
+      "link": "https://www.youtube.com/watch?v=r0-A2S9HqUY",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 420,
+      "name": "Mindflow",
+      "placement": "?",
+      "link": "https://www.youtube.com/watch?v=JlbF4XzUyQE",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 421,
+      "name": "INNARDS (True)",
+      "placement": "50",
+      "link": "https://www.youtube.com/watch?v=JlbF4XzUyQE",
+      "sort_order": null,
+      "indefinite": 1
+    },
+    {
+      "id": 422,
+      "name": "Duralusgore",
+      "placement": "50",
+      "link": "",
+      "sort_order": null,
+      "indefinite": 1
     }
   ],
   "editors": [
