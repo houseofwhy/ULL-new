@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-31T23:28:47.321Z",
+  "fetchedAt": "2026-11-01T06:26:43.894Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1214,21 +1214,21 @@
       "name": "EXASPERATION",
       "author": "Thycket",
       "creators": [],
-      "verifier": "Zoink",
+      "verifier": " Sergiusz, Agonom, Spookkd, Hover, NickwoYT",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=6AxgWd-JXvA&t=65s",
+      "showcase": "https://youtu.be/vkOT5Oooi2Q?si=T0UirGXmUav7L0Fs",
       "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 300,
       "percentToQualify": 68,
-      "percentFinished": 95,
+      "percentFinished": 100,
       "lastUpd": "30.09.2026",
       "tags": [
         "XXL",
-        "NONG",
-        "Verifying"
+        "Verifying",
+        "Finished"
       ],
       "records": [
         {
@@ -5002,10 +5002,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "wity",
+          "link": "https://youtu.be/c9lULdirQhI?si=LiVLmP6aJXflacaE",
+          "percent": "62-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -9495,7 +9495,7 @@
       "creators": [],
       "verifier": "katzengd",
       "verification": "",
-      "showcase": "https://youtu.be/vPNL_qAAJEY?si=stkeQ_r9AqmYje7m",
+      "showcase": "https://youtu.be/bOLrM41XhaI?si=kf7aWgK5kyBU2zw6",
       "thumbnail": "https://i.ytimg.com/vi/bOLrM41XhaI/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBA-5pVlPBX9F1AQuC1OzzXGrXN8g",
       "frameCounter": null,
       "id": "private",
