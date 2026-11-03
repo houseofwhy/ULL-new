@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-03T12:06:07.935Z",
+  "fetchedAt": "2026-11-03T19:39:15.771Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -54,8 +54,8 @@
       "run": [
         {
           "user": "Bacon",
-          "link": "https://www.youtube.com/live/zezrU50EvFw?t=4200&is=TY-cw6QI6_xmlOR6",
-          "percent": "66-100",
+          "link": "https://youtu.be/m0gtnrgfoN0?si=-sY7Ya_vf-3rXdmK",
+          "percent": "60-100",
           "hz": 240
         }
       ],
@@ -245,7 +245,7 @@
           "user": "Soar2297",
           "link": "https://www.youtube.com/watch?v=SKrfgsNPrXE",
           "percent": 10,
-          "hz": 1
+          "hz": 240
         }
       ],
       "run": [
@@ -292,7 +292,7 @@
           "user": "kamkam_gd",
           "link": "https://www.youtube.com/watch?v=h57vzlpIQww",
           "percent": 14,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
@@ -1115,7 +1115,7 @@
           "user": "Zoink",
           "link": "https://www.youtube.com/watch?v=8U0NPdsK8s4&t=5870s",
           "percent": "37-100",
-          "hz": 670
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -1213,7 +1213,40 @@
       "path": "exasperation",
       "name": "EXASPERATION",
       "author": "Thycket",
-      "creators": [],
+      "creators": [
+        "Thycket",
+        "Akunakun",
+        "Ice Rod",
+        "Kacuuu",
+        "STEP SunyX",
+        "arclight",
+        "yoyortfour",
+        "M3dinaGX",
+        "XCMines",
+        "Sycro",
+        "Chuckgamer1",
+        "태리",
+        "MinigunGD77",
+        "Fleym",
+        "EliGabRet",
+        "Pastel Pink",
+        "drakarmin",
+        "GDNashit",
+        "KeStar Kes",
+        "YoshiSDK",
+        "schizonek",
+        "Gother",
+        "deltaaimee",
+        "Duke",
+        "syleri",
+        "Skywalker2016 GD",
+        "Juan Diego Alvarez",
+        "Crowlley",
+        "NotTheRealMoney",
+        "joa",
+        "intrizgd",
+        "meepr :3"
+      ],
       "verifier": " Sergiusz, Agonom, Spookkd, Hover, NickwoYT",
       "verification": "",
       "showcase": "https://youtu.be/vkOT5Oooi2Q?si=T0UirGXmUav7L0Fs",
@@ -1862,7 +1895,16 @@
       "name": "Society",
       "author": "Neomarbilan",
       "creators": [
-        "Neomarbilan and More | Unknown"
+        "Neomarbilan",
+        "Tusol",
+        "Aleph",
+        "IL1ghtly0ne",
+        "Exxxzor",
+        "SunFl0werBoy",
+        "UndercookedWaffle",
+        "Ashirymafik",
+        "Ex3r0",
+        "MattsNibbles"
       ],
       "verifier": "wPopoff",
       "verification": "https://youtu.be/3CoEaH1CM7o?si=YNnsA5_Z_8I4-hHK",
@@ -2524,7 +2566,7 @@
           "user": "Al3xTT",
           "link": "https://www.youtube.com/watch?v=mkeBeHo1J8E",
           "percent": 43,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
@@ -2532,7 +2574,7 @@
           "user": "Mizukii",
           "link": "https://youtu.be/cD3o9bOf_0w?si=2LEemy0fj5VpM5UX",
           "percent": "38-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -2587,13 +2629,22 @@
       "name": "Silent Circles (Starchman)",
       "author": "Starchman",
       "creators": [
-        "starchman",
-        "and unknown"
+        "Sailent",
+        "Cyrillic",
+        "Starchman",
+        "tripfw",
+        "Acomet",
+        "Remec",
+        "Emerald1",
+        "Rzsnt",
+        "NSheyld",
+        "V0lt4r1s",
+        "Jet27"
       ],
       "verifier": "dewbbs",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=6RCgII1G4Kw&list=RD6RCgII1G4Kw&start_radio=1&pp=ygUYc2lsZW50IGNpcmNsZXMgc3RhcmNobWFuoAcB",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -2803,7 +2854,7 @@
       ],
       "verifier": "Serpentical",
       "verification": "",
-      "showcase": "https://youtu.be/rcHE78QQSp8?si=8ezRZAKLyesoguvR",
+      "showcase": "https://youtu.be/HQ1KzJqe024?si=d5YLQk_CpWTL1fj3",
       "thumbnail": "https://img.youtube.com/vi/W8H_-KZG-1s/mqdefault.jpg",
       "frameCounter": null,
       "id": "private",
@@ -2822,7 +2873,7 @@
           "user": "Tunnel of Serpent",
           "link": "https://youtu.be/NtMZGXKdHxY?is=DacRU1LP3d20NopV",
           "percent": 60,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
@@ -2830,7 +2881,7 @@
           "user": "Serpentical",
           "link": "https://www.youtube.com/watch?v=V3T8oUPawwQ",
           "percent": "21-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -3044,7 +3095,7 @@
       ],
       "verifier": "Jenath",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=ynFCKsoSROk",
+      "showcase": "https://www.youtube.com/watch?v=zQXLi6fJ85Q",
       "thumbnail": "https://i.ytimg.com/vi/NcF3TK5vTU8/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBgJZm81Eltvksqmq-4IIX64KqxDw",
       "frameCounter": null,
       "id": "87390648",
@@ -3064,15 +3115,15 @@
           "user": "Jenath",
           "link": "https://fxtwitter.com/jenath_jd/status/1917238599277273111",
           "percent": 37,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
         {
           "user": "Jenath",
-          "link": "https://www.youtube.com/watch?v=f5XHRAZsXl4",
-          "percent": "54-100",
-          "hz": 0
+          "link": "https://fixupx.com/jenath_jd/status/2116211992273031479?s=46",
+          "percent": "41-90",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -3198,9 +3249,9 @@
       "records": [
         {
           "user": "Waltty",
-          "link": "https://www.youtube.com/watch?v=EVYaQ0dUnhs",
-          "percent": 95,
-          "hz": 0
+          "link": "https://youtu.be/XpBPEftY2BU?si=lqbtmgAsut4pLDbX",
+          "percent": 96,
+          "hz": 240
         }
       ],
       "run": [
@@ -3208,7 +3259,7 @@
           "user": "Waltty",
           "link": "https://youtu.be/GiykgnJa6JQ?is=BShI7Fj8VRWbiJ1R",
           "percent": "14-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -3221,8 +3272,152 @@
       "path": "misanthrope",
       "name": "Misanthrope",
       "author": "Lordvadercraft",
-      "creators": [],
-      "verifier": "Laser",
+      "creators": [
+        "Awedsy",
+        "Giron",
+        "Mentrillum",
+        "Luqualizer",
+        "Sevant",
+        "Shyv",
+        "WeoWeoTeo",
+        "GMDBlue",
+        "Stormfly",
+        "Platnuu",
+        "npesta",
+        "Riot",
+        "Blackmg",
+        "CairoX",
+        "Dorami",
+        "Realvet",
+        "Kevelia",
+        "Brittank88",
+        "DreamZoneGD",
+        "Surv",
+        "Doggie",
+        "GMDElite",
+        "Rubrum",
+        "Pooch",
+        "JakeM2436",
+        "Freddydash",
+        "Metalface221",
+        "Solarion",
+        "Seturan",
+        "Devilmine",
+        "RpgRaketti",
+        "moonlightmari",
+        "Endlevel",
+        "Zephal",
+        "MythicalTG",
+        "Smokes",
+        "CatioGD",
+        "Wormfodder",
+        "Rob Buck",
+        "Lumpy",
+        "Meatius",
+        "Gboy",
+        "Allan",
+        "th31",
+        "Zeroya",
+        "vitesse",
+        "ASBCHazel",
+        "Yoshikawa",
+        "Sunix",
+        "düsker",
+        "SkyJax",
+        "tygrysek",
+        "Wooshi",
+        "Sohn0924",
+        "Angeleffect",
+        "Kaith",
+        "TGI",
+        "Cody",
+        "Quantum",
+        "mix991",
+        "Hko",
+        "Nexus",
+        "Beepoh",
+        "Kapinapi",
+        "Superex",
+        "PLoLek",
+        "GDSean",
+        "TrusTa",
+        "not",
+        "BoldStep",
+        "GunnerBones",
+        "Cyclic",
+        "nSwish",
+        "filqh",
+        "nwolc",
+        "Neiro",
+        "Hequinox",
+        "Zanna83",
+        "Golden",
+        "Blaireswip",
+        "Powerbomb",
+        "Knobbelboy",
+        "Tyguy124",
+        "Cyrillic",
+        "Dagger",
+        "Landest",
+        "Slypp",
+        "icedcave",
+        "AlexTD",
+        "LordVadercraft",
+        "Hilo",
+        "galofuf",
+        "Vart",
+        "Vortrox",
+        "Gabs",
+        "MetaManZ",
+        "Mullsy",
+        "MrDash",
+        "Moosh",
+        "Votchi",
+        "BrianTheBurger",
+        "zenith",
+        "Technical",
+        "TheShadowRealm",
+        "Mycrafted",
+        "DreamTide",
+        "ViruZ",
+        "Cinci",
+        "zNymo98",
+        "Galaxxyss",
+        "Michigun",
+        "roadbose",
+        "Sonic80",
+        "Zylenox",
+        "Exenity",
+        "MaJackO",
+        "Ninetales",
+        "Hyperbola",
+        "Septagon7",
+        "maxfs",
+        "SrGuillester",
+        "EroGamer",
+        "Vexion",
+        "Kruso",
+        "Prototype",
+        "gablor",
+        "MrSpaghetti",
+        "KrmaL",
+        "Renn241",
+        "DiskJoker",
+        "GeometryJosh",
+        "Skylarky",
+        "Iza",
+        "KugelBlitZ",
+        "Waivve",
+        "AlexPain24",
+        "nebulakuca",
+        "Atomic",
+        "Darnox",
+        "Viprin",
+        "ZenthicAlpha",
+        "GaidenHertuny",
+        "Noice"
+      ],
+      "verifier": "iIiLaSeRiIi",
       "verification": "",
       "showcase": "https://youtu.be/DN1nbB9T3qk",
       "thumbnail": "https://i.ytimg.com/vi/wtgiO1zcFog/maxresdefault.jpg",
@@ -3250,7 +3445,7 @@
           "user": "SaitamaGD",
           "link": "https://youtu.be/AgB_Ua5MMt0?si=ozUAITDGCZHrSMg3",
           "percent": "22-90",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -3294,7 +3489,7 @@
       ],
       "run": [
         {
-          "user": "iIiLaseriIi",
+          "user": "iIiLaSeRiIi",
           "link": "https://www.youtube.com/watch?v=KjkoO3pS96M",
           "percent": "65-100",
           "hz": 0
@@ -3559,7 +3754,17 @@
       "name": "FAIRY KNIFE HELL",
       "author": "EternaswipVMAX",
       "creators": [
-        "EternaswipVMAX & pretty much unknown"
+        "EternaswipVMAX",
+        "zipixbox",
+        "2whatt",
+        "swagmasta001",
+        "rxknephew",
+        "Brittank88",
+        "RealVet",
+        "ItsHybrid",
+        "gd iris",
+        "wespdx",
+        "CDMusic"
       ],
       "verifier": "Open Verification",
       "verification": "",
@@ -3587,9 +3792,9 @@
       ],
       "run": [
         {
-          "user": "enzollz",
-          "link": "https://youtu.be/F-SxpVAZW4U?si=KczHIuJ8HsS1e1Jj",
-          "percent": "31-54",
+          "user": "Zachi",
+          "link": "https://www.youtube.com/watch?v=-45S5pPUkOg",
+          "percent": "52-100",
           "hz": 240
         }
       ],
@@ -4467,7 +4672,7 @@
       "verifier": "Open Verification",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=PtsyAeDLSws",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "130734729",
       "rating": 1,
@@ -4486,15 +4691,15 @@
           "user": "lolwut",
           "link": "https://www.youtube.com/watch?v=KMhUCXyUHVs",
           "percent": 23,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "lolwut",
+          "link": "https://youtu.be/PYCSbl3fycM?si=E87vWaoheaqjGNjc&t=100",
+          "percent": "78-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -4532,7 +4737,7 @@
           "user": "Guille N.S",
           "link": "https://youtu.be/zT-lZSIt0Ps?si=EEBZaeTtYdRcBsGO",
           "percent": 78,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
@@ -4540,7 +4745,7 @@
           "user": "Guille N.S",
           "link": "https://www.youtube.com/watch?v=LHjNGQcUQkI",
           "percent": "36-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -4789,7 +4994,7 @@
           "user": "GGonop",
           "link": "https://youtu.be/bvU88Sm5Naw?si=xYZLaJ6oU3uZaLzg",
           "percent": 68,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
@@ -4797,7 +5002,7 @@
           "user": "GGonop",
           "link": "https://www.youtube.com/watch?v=XBNo9eW-Tpg",
           "percent": "13-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -4876,7 +5081,7 @@
       "verifier": "ROZE",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=SBBwiLDuovc",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -4894,18 +5099,18 @@
       ],
       "records": [
         {
-          "user": "none",
+          "user": "ROZE",
           "link": "",
-          "percent": 0,
-          "hz": 0
+          "percent": 52,
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
+          "user": "ROZE",
           "link": "",
-          "percent": "0",
-          "hz": 0
+          "percent": "49-85",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -4994,10 +5199,10 @@
       ],
       "records": [
         {
-          "user": "none",
+          "user": "wity",
           "link": "",
-          "percent": 0,
-          "hz": 0
+          "percent": 29,
+          "hz": 240
         }
       ],
       "run": [
@@ -5383,9 +5588,9 @@
       "run": [
         {
           "user": "ItzMira",
-          "link": "https://www.youtube.com/watch?v=XlSYm3Fbjak",
-          "percent": "65-100",
-          "hz": 0
+          "link": "https://youtu.be/u8sxxfDe9e0",
+          "percent": "56-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -5532,7 +5737,45 @@
       "path": "escalator",
       "name": "Escalator",
       "author": "Neomarbilan",
-      "creators": [],
+      "creators": [
+        "Neomarbilan",
+        "Toeu",
+        "Areulek",
+        "Tabuss1YT",
+        "Isuddenly",
+        "Crazey",
+        "Owner1l2",
+        "Pes11",
+        "Banaffect",
+        "Lyskov",
+        "Cyzno",
+        "Frodix",
+        "ZunoOfficial",
+        "Tusol",
+        "Ex3ro",
+        "GGcat",
+        "GGPro90",
+        "Lil_tryuku",
+        "Hazzz895",
+        "MattStuff",
+        "Otto",
+        "Zordy",
+        "Oleeeeg",
+        "The_Erko",
+        "L1ghtlyone",
+        "Scaundrella",
+        "Shadow_Lord",
+        "PixelGD",
+        "ErzhanmGMD",
+        "Ploof",
+        "Playgame16",
+        "Opally",
+        "Cooke",
+        "Wonderfoll",
+        "Toos",
+        "Yp_real",
+        "Hantein"
+      ],
       "verifier": "teraaa",
       "verification": "",
       "showcase": "https://youtu.be/wyGXMC2I-j8?si=isvMI7aTVKHkXYKQ",
@@ -5553,17 +5796,17 @@
       "records": [
         {
           "user": "teraaa",
-          "link": "https://www.youtube.com/watch?v=d4xnClZTw7I&t=4700s",
-          "percent": 62,
-          "hz": 0
+          "link": "https://www.youtube.com/watch?v=xkBIaHQ9Gmo",
+          "percent": 83,
+          "hz": 240
         }
       ],
       "run": [
         {
           "user": "teraaa",
-          "link": "https://youtu.be/wuh5wafLKvw?si=VKNPP6xvHVVATIPS",
-          "percent": "4-73",
-          "hz": 0
+          "link": "https://youtu.be/E4qgNtl51jc?is=tTS_PY1WUozAFZJ6",
+          "percent": "23-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -6117,7 +6360,7 @@
         {
           "user": "agonom",
           "link": "https://www.youtube.com/watch?v=19kMxxX4nBs",
-          "percent": "65-100",
+          "percent": "64-100",
           "hz": 240
         }
       ],
@@ -6331,10 +6574,25 @@
       "name": "The Bloop",
       "author": "murkkat",
       "creators": [
-        "murkkat"
+        "murkkat",
+        "Mr. Git",
+        "Zackattack111",
+        "TripL",
+        "CharlieDanger",
+        "katzen",
+        "deltaaimee",
+        "SP4RKURCH1N",
+        "ToxicJohnson",
+        "eveee",
+        "Mr. Spread",
+        "super79",
+        "Spectical",
+        "C0mical",
+        "Billzer",
+        "Armani"
       ],
       "verifier": "Zoink",
-      "verification": "https://www.youtube.com/live/H8GPB9L97Cs?si=p6k8vqDhioYNJyNV&t=6748s",
+      "verification": "https://www.youtube.com/watch?v=ROuXHSKEhHA",
       "showcase": "https://www.youtube.com/watch?v=R4orUe_rGfk&pp=ygUSdGhlIGJsb29wIHZlcmlmaWVk",
       "thumbnail": "https://i.ytimg.com/vi/R4orUe_rGfk/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLA7Hz3_AkgRVQN0hIi2GWOetdkfEg",
       "frameCounter": null,
@@ -6526,9 +6784,9 @@
       "records": [
         {
           "user": "BONN GD",
-          "link": "#",
-          "percent": 25,
-          "hz": 0
+          "link": "https://youtu.be/UIqCxoEPlUU?si=9LxNfgjZsqIOaesu",
+          "percent": 37,
+          "hz": 240
         }
       ],
       "run": [
@@ -6536,7 +6794,7 @@
           "user": "BONN GD",
           "link": "https://www.youtube.com/watch?v=1oydiX_eRCY",
           "percent": "36-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -6911,9 +7169,9 @@
       "creators": [
         "hasuopf"
       ],
-      "verifier": "unknown",
+      "verifier": "lanx",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=R_2HNfGs9d0",
+      "showcase": "https://www.youtube.com/watch?v=2ighoQ_WCOc",
       "thumbnail": null,
       "frameCounter": null,
       "id": "private",
@@ -7005,7 +7263,7 @@
         "S4zerix",
         "ItsKiubiGD"
       ],
-      "verifier": "unknown",
+      "verifier": "Theitha",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=XRyYakntepU",
       "thumbnail": null,
@@ -7023,17 +7281,17 @@
       ],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
+          "user": "Theitha",
+          "link": "https://www.youtube.com/watch?v=1WMbqAJiZ0c",
+          "percent": 25,
+          "hz": 240
         }
       ],
       "run": [
         {
           "user": "Theitha",
-          "link": "https://www.youtube.com/watch?v=1WMbqAJiZ0c",
-          "percent": "25",
+          "link": "https://youtu.be/VCnhdUHAwfg?si=Byz7O2jn5-oZiQmQ",
+          "percent": "59-100",
           "hz": 240
         }
       ],
@@ -7499,10 +7757,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "cdjuliet_",
+          "link": "https://www.twitch.tv/cdjuliet_/clip/PiliableAmusedTriangleHassaanChop-OP8M2FzSNlci5Inz?range=all",
+          "percent": "26-35",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -7881,15 +8139,15 @@
           "user": "Sevant",
           "link": "https://youtu.be/wAxS2PWA2tA?si=fM_zdF5DIoET5rSf",
           "percent": 64,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
         {
           "user": "Sevant",
-          "link": "https://youtu.be/wAxS2PWA2tA?si=fM_zdF5DIoET5rSf",
-          "percent": "43-100",
-          "hz": 0
+          "link": "https://youtu.be/keQtr4pDotc?si=LzXd6VeMe1KSNjJA",
+          "percent": "15-78",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -8335,14 +8593,14 @@
       ],
       "verifier": "unknown",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=l5_r96n_G1U",
-      "thumbnail": null,
+      "showcase": "https://www.youtube.com/watch?v=ldnelwU_TwA ",
+      "thumbnail": "https://www.youtube.com/watch?v=ldnelwU_TwA",
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 53,
       "percentToQualify": 1,
-      "percentFinished": 70,
+      "percentFinished": 85,
       "lastUpd": "31.08.2026",
       "tags": [
         "Long"
@@ -8611,12 +8869,15 @@
     {
       "path": "sanguine",
       "name": "Sanguine",
-      "author": "RafaBirds GD",
-      "creators": [],
+      "author": "ItsMeGeoGD",
+      "creators": [
+        "ItsMeGeoGD",
+        "Yrdr"
+      ],
       "verifier": "spookkd",
       "verification": "https://www.youtube.com/watch?v=cBVlGzobmsA",
       "showcase": "https://www.youtube.com/watch?v=xPUHo4FbvqU",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "146538900",
       "rating": 1,
@@ -8643,7 +8904,7 @@
         {
           "user": "none",
           "link": "",
-          "percent": "",
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -9047,15 +9308,15 @@
           "user": "Streamy450",
           "link": "https://www.youtube.com/watch?v=UzYaZsBvOJU",
           "percent": 47,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Streamy450",
+          "link": "https://youtu.be/2Ia620MFWuU?si=9XsYS0PbzNqEjTjY",
+          "percent": "42-92",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -9116,7 +9377,7 @@
       "verifier": "Open Verification",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=WO9eZms_syU&list=PLA1GTehyUHW4OLbTtkUqukLVQFkVn1A5X&index=267&pp=iAQB",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "75447432",
       "rating": 1,
@@ -9134,17 +9395,17 @@
       "records": [
         {
           "user": "SHALLLLLOW",
-          "link": "https://www.youtube.com/watch?v=UXwRSo8cx8U",
-          "percent": 45,
-          "hz": 0
+          "link": "https://www.youtube.com/watch?v=lCmNbqHn9hA",
+          "percent": 49,
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "rchamber",
+          "link": "https://www.youtube.com/watch?v=04aetG0rI84",
+          "percent": "45-66",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -9879,22 +10140,23 @@
       "percentFinished": 100,
       "lastUpd": "31.12.2025",
       "tags": [
-        "XL"
+        "XL",
+        "Finished"
       ],
       "records": [
         {
           "user": "T4G",
           "link": "https://www.youtube.com/watch?v=tmjhQ9_7TBc",
           "percent": 74,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "T4G",
+          "link": "https://www.youtube.com/watch?v=cnY1S_MbnpA",
+          "percent": "40-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -9913,8 +10175,8 @@
       ],
       "verifier": "unknown",
       "verification": "",
-      "showcase": "https://youtu.be/AEdjhzGSexI?si=LzYPzhYKBePADXfL",
-      "thumbnail": "",
+      "showcase": "https://www.youtube.com/watch?v=DAfb-gLCmjE",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -10562,11 +10824,13 @@
       "path": "metropolis",
       "name": "METROPOLIS",
       "author": "KZLR",
-      "creators": [],
+      "creators": [
+        "KZLR"
+      ],
       "verifier": "Ascended",
       "verification": "https://youtu.be/JtWMtMFdK24?si=i323xl0SwWcDXb97",
       "showcase": "https://youtu.be/E0MsK-a_w4c?si=5iifbO7vBW8L8wWh",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "144560194",
       "rating": 1,
@@ -10583,7 +10847,7 @@
       ],
       "records": [
         {
-          "user": "",
+          "user": "none",
           "link": "",
           "percent": 0,
           "hz": 0
@@ -10591,9 +10855,9 @@
       ],
       "run": [
         {
-          "user": "",
+          "user": "none",
           "link": "",
-          "percent": "",
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -11363,9 +11627,9 @@
       "records": [
         {
           "user": "Duv",
-          "link": "https://youtu.be/gULznJ3aiH8?is=TKAM64YXuHT9ZBbk",
-          "percent": 89,
-          "hz": 0
+          "link": "https://www.youtube.com/watch?v=PG6zD9mOjCY",
+          "percent": 97,
+          "hz": 240
         }
       ],
       "run": [
@@ -11551,12 +11815,19 @@
       "name": "Based After Based",
       "author": "akunakun",
       "creators": [
-        "akunakun"
+        "akunakun",
+        "Bedrock",
+        "Etherial",
+        "Dshifter",
+        "DashyGTC",
+        "Harsh",
+        "PastelPink",
+        "Eyeless Jack"
       ],
       "verifier": "DiamondSplash",
       "verification": "https://www.youtube.com/watch?v=yQBFyUvB3lY",
       "showcase": "https://www.youtube.com/watch?v=Eq7iEkPNVdQ",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "110534288",
       "rating": 1,
@@ -12238,10 +12509,10 @@
       ],
       "records": [
         {
-          "user": "garbag",
-          "link": "https://fxtwitter.com/JifStuff/status/2064450100554866770/video/1?s=46",
-          "percent": 56,
-          "hz": 0
+          "user": "Krowsong",
+          "link": "https://www.youtube.com/watch?v=mynFJNQH8VE",
+          "percent": 72,
+          "hz": 240
         }
       ],
       "run": [
@@ -12429,10 +12700,13 @@
     {
       "path": "innards xarve",
       "name": "INNARDS (xarve)",
-      "author": "xarve & Microzz",
+      "author": "xarve & Tolstyh",
       "creators": [
+        "Cinci",
+        "Kaito",
         "xarve",
-        "tolstyh"
+        "Microzz",
+        "Tolstyh"
       ],
       "verifier": "xarve",
       "verification": "",
@@ -12453,16 +12727,16 @@
       "records": [
         {
           "user": "xarve",
-          "link": "https://www.youtube.com/watch?v=Wv4RCXEOBZ0",
-          "percent": "",
-          "hz": 0
+          "link": "https://www.youtube.com/watch?v=VA4V2FjenMo",
+          "percent": 60,
+          "hz": 240
         }
       ],
       "run": [
         {
           "user": "xarve",
-          "link": "https://www.youtube.com/watch?v=VA4V2FjenMo",
-          "percent": "60",
+          "link": "https://youtu.be/Wv4RCXEOBZ0?si=zw6Y5ZsbMbIvYX84",
+          "percent": "16-86",
           "hz": 240
         }
       ],
@@ -12705,21 +12979,21 @@
       "author": "[cherry] team | Vernam",
       "creators": [
         "Vernam",
-        "spkgmd",
-        "Synd",
         "Vinty",
-        "sauz",
-        "Bli",
+        "Hantein",
+        "Synd",
+        "kivvvi",
+        "spk",
+        "Cauer",
+        "Sauzzeth",
         "Xatz",
-        "kivvi",
         "Deadlox",
-        "CUAER",
-        "Hantein"
+        "Bli"
       ],
       "verifier": "Zoink",
       "verification": "https://www.youtube.com/watch?v=2CxE-UWCIG4",
       "showcase": "https://www.youtube.com/watch?v=x8cLduwFqbo",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "87665224",
       "rating": 1,
@@ -12810,14 +13084,12 @@
       "author": "zander12",
       "creators": [
         "zander12",
-        "Renn241",
-        "Vortrox",
-        "Devilmine"
+        "Renn241"
       ],
       "verifier": "LordVadercraft",
       "verification": "https://youtu.be/UFpfgXBQzhY?si=tNQut0qjZ_jbMz_d",
       "showcase": "https://www.youtube.com/watch?v=UPPSMAqTA2w",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "141320499",
       "rating": 1,
@@ -13052,12 +13324,25 @@
       "name": "VOID",
       "author": "eEddy",
       "creators": [
-        "eEddy"
+        "eEddy",
+        "waru",
+        "ZingXD",
+        "tret08",
+        "Samzaya",
+        "Dutter",
+        "Lion34",
+        "niom",
+        "xenzzx",
+        "VinhDz7",
+        "TusBee",
+        "KarmaVIP",
+        "Yuri Kitsuki",
+        "veshel"
       ],
       "verifier": "veshel",
       "verification": "https://youtu.be/uMv8iGVpeCc?si=YzO-W8Th3hJzTE7r",
       "showcase": "https://youtu.be/cdnLcnlEO5Q?si=-pCD-mq6sSmvMA_0",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "143671277",
       "rating": 1,
@@ -13097,14 +13382,15 @@
     {
       "path": "ace",
       "name": "Ace",
-      "author": "Aidsen",
+      "author": "TheBigCheese69",
       "creators": [
-        "Aidsen"
+        "TheBigCheese69",
+        "TenshoSDK"
       ],
       "verifier": "Aidsen",
       "verification": "https://www.youtube.com/watch?v=7uYghOdos8I",
       "showcase": "https://youtu.be/Y-amw14icK0",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "138215607",
       "rating": 1,
@@ -14709,8 +14995,10 @@
       "path": "diviners sage",
       "name": "diviners sage",
       "author": "kwipkat",
-      "creators": [],
-      "verifier": "Karma",
+      "creators": [
+        "kwipkat"
+      ],
+      "verifier": "aubbie",
       "verification": "https://youtu.be/0_VSfH6Bedg?si=uXBZbu_vAKpRr4mX",
       "showcase": "https://youtu.be/oUsqDb0Aw6c",
       "thumbnail": null,
@@ -14851,7 +15139,7 @@
       "creators": [
         "Ido26"
       ],
-      "verifier": "GMitzy",
+      "verifier": "Cala",
       "verification": "",
       "showcase": "https://youtu.be/75woVCCPYbw",
       "thumbnail": null,
@@ -14866,14 +15154,14 @@
         "Long",
         "Remake",
         "Verifying",
-        "Layout"
+        "Finished"
       ],
       "records": [
         {
           "user": "Cala",
-          "link": "https://youtu.be/lW7Cu0WjSM4",
-          "percent": 68,
-          "hz": 0
+          "link": "https://youtu.be/e8TLaJaiFWU",
+          "percent": 73,
+          "hz": 240
         }
       ],
       "run": [
@@ -14881,7 +15169,7 @@
           "user": "Cala",
           "link": "https://youtu.be/LDQ1rN4EtOE",
           "percent": "32-100",
-          "hz": 0
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -14997,8 +15285,23 @@
       "path": "supadupasonic",
       "name": "SupaDupaSonic",
       "author": "russianluigi",
-      "creators": [],
-      "verifier": "GMDCrawfish",
+      "creators": [
+        "russianluigi",
+        "Zoomifly",
+        "Sergio El Nino",
+        "LongNub",
+        "Frski",
+        "Youngs6",
+        "Russianluigi",
+        "Robianny",
+        "Abdurahman",
+        "ItsZii",
+        "TheGamerDash",
+        "Blaster1337",
+        "Brownii",
+        "Atomic"
+      ],
+      "verifier": "Beggo",
       "verification": "",
       "showcase": "https://youtu.be/musjVNDVQyA?si=MV3NjNpds6WU-Pff",
       "thumbnail": null,
@@ -15019,15 +15322,15 @@
           "user": "Beggo",
           "link": "https://www.youtube.com/watch?v=WE6L4eBnr2o",
           "percent": 85,
-          "hz": 0
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Beggo",
+          "link": "https://www.youtube.com/watch?v=QqRbLfsSej4",
+          "percent": "29-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -15335,7 +15638,17 @@
       "path": "blossom",
       "name": "Blossom",
       "author": "Lexy",
-      "creators": [],
+      "creators": [
+        "Bop",
+        "Lexy",
+        "Zen526",
+        "Xefernt",
+        "Weaver",
+        "ZbartuxZ",
+        "Suntanfin",
+        "ItzTsumiki",
+        "DuckieTrix"
+      ],
       "verifier": "fusion425",
       "verification": "",
       "showcase": "https://youtu.be/CSuSbJhiaR8?si=tARJdBdZsUfmGMbc",
@@ -15364,10 +15677,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "fusion425",
+          "link": "https://www.youtube.com/watch?v=49V1RtMZ9eo",
+          "percent": "49-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -15479,12 +15792,13 @@
       "name": "NOMAD",
       "author": "ReeseVT",
       "creators": [
-        "waitingforaredlplacement"
+        "ReeseVT",
+        "danielsbadkarma"
       ],
       "verifier": "Laniakea",
       "verification": "https://www.youtube.com/watch?v=H2TkHbEX__A",
       "showcase": "https://www.youtube.com/watch?v=-UFgk6agPLI",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "115077305",
       "rating": 1,
@@ -15855,7 +16169,15 @@
       "path": "nervhell",
       "name": "NervHell",
       "author": "ASVTeam",
-      "creators": [],
+      "creators": [
+        "ItzTsumiki",
+        "Niom",
+        "SparkyConjure",
+        "NhanGD",
+        "verunya",
+        "ComSuonCoXuong",
+        "Akoru"
+      ],
       "verifier": "ChopBlox",
       "verification": "https://youtu.be/1zrvPgDAoaA?si=iFLq8WoCccNlZGo6",
       "showcase": "https://www.youtube.com/watch?v=MDDBibzeJew",
@@ -16497,7 +16819,7 @@
       "creators": [
         "FoodyNooby"
       ],
-      "verifier": "",
+      "verifier": "FoodyNooby",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=lCv9sDWdFcM",
       "thumbnail": null,
@@ -16514,18 +16836,18 @@
       ],
       "records": [
         {
-          "user": "none",
+          "user": "FoodyNooby",
           "link": "",
-          "percent": 0,
-          "hz": 0
+          "percent": 43,
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
+          "user": "FoodyNooby",
           "link": "",
-          "percent": "0",
-          "hz": 0
+          "percent": "51-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -16881,14 +17203,15 @@
     {
       "path": "haunted ship",
       "name": "Haunted Ship",
-      "author": "AWESOME ME",
+      "author": "AWESOMEME360",
       "creators": [
-        "AWESOME ME"
+        "Gnamolor",
+        "AWESOMEME360"
       ],
       "verifier": "Gnamolor",
       "verification": "https://www.youtube.com/watch?v=22l59QGmL48",
       "showcase": "https://www.youtube.com/watch?v=kSSijblkjdE",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "143523624",
       "rating": 1,
@@ -17080,14 +17403,14 @@
     {
       "path": "gaggatrondra",
       "name": "Gaggatrondra",
-      "author": "MoistyJc",
+      "author": "JCMoon",
       "creators": [
-        "MoistyJc"
+        "JCMoon"
       ],
       "verifier": "Zeronium",
       "verification": "https://youtu.be/A4G41vw6Cf0?si=ksjop9_xkbRB1Q-q",
       "showcase": "https://youtu.be/z_EkJcLJz2g?si=y498Qqrryaif-vfe",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "114990369",
       "rating": 1,
@@ -17150,9 +17473,9 @@
       "records": [
         {
           "user": "Gamingbyte",
-          "link": "https://youtu.be/y3gHFz7h7Ro?is=A0e8-HuWch6BuSVP",
-          "percent": 74,
-          "hz": 0
+          "link": "https://youtu.be/r7vPS-k4Ud0?si=-D1J4deiBIWhTTrE",
+          "percent": 81,
+          "hz": 240
         }
       ],
       "run": [
@@ -17425,9 +17748,11 @@
     {
       "path": "losing_your_mind",
       "name": "Losing Your Mind",
-      "author": "GDgalaxygaming",
-      "creators": [],
-      "verifier": "iliLaserili",
+      "author": "GalaxyGaming",
+      "creators": [
+        "GalaxyGaming"
+      ],
+      "verifier": "iIiLaSeRiIi",
       "verification": "https://www.youtube.com/watch?v=LXp7t5gjyX8",
       "showcase": "https://www.youtube.com/watch?v=OdNqIMzLRzE&list=RDOdNqIMzLRzE&index=1",
       "thumbnail": "https://i.imgur.com/VQRbRLl.jpeg",
@@ -17580,12 +17905,13 @@
       "name": "The Catacombs",
       "author": "Cersia",
       "creators": [
-        "Cersia"
+        "Cersia",
+        "SnapShocked"
       ],
       "verifier": "Slithium",
       "verification": "https://www.youtube.com/watch?v=T9-75lfKVQg",
       "showcase": "https://youtu.be/7EXwNGmphGM?si=8taw8mtBYSfMkVHr",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "104232191",
       "rating": 1,
@@ -17780,11 +18106,14 @@
         "Aerae",
         "Lebi06",
         "Juhou",
-        "GrenadeOfTacos"
+        "GrenadeOfTacos",
+        "KuraiYonaka",
+        "Isane",
+        "AnGyung"
       ],
       "verifier": "unknown",
       "verification": "",
-      "showcase": "https://youtu.be/FBsnHMHM1vY",
+      "showcase": "https://youtu.be/K-hB0IrcpNw?si=80tJC5BJlFhCWX6h",
       "thumbnail": "https://i.ytimg.com/vi/IcG1W3_GsZg/maxresdefault.jpg",
       "frameCounter": null,
       "id": "private",
@@ -17792,7 +18121,7 @@
       "length": 342,
       "percentToQualify": 1,
       "percentFinished": 70,
-      "lastUpd": "29.11.2025",
+      "lastUpd": "30.10.2026",
       "tags": [
         "Remake",
         "XXXL+"
@@ -18725,15 +19054,15 @@
           "user": "DylanADV",
           "link": "https://youtu.be/3Bjz3MWuIPo",
           "percent": 83,
-          "hz": ""
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "DylanADV",
+          "link": "https://www.youtube.com/watch?v=aWAa-cBdwwE",
+          "percent": "28-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -18903,7 +19232,7 @@
         "Apunch",
         "KrazyGFX"
       ],
-      "verifier": "Sightless",
+      "verifier": "stuffingbrained",
       "verification": "https://www.youtube.com/watch?v=1UJMDkiFxqM",
       "showcase": "https://www.youtube.com/watch?v=Wtf0HRfTxp8",
       "thumbnail": null,
@@ -18951,10 +19280,10 @@
         "Renn241",
         "GhostVandalf"
       ],
-      "verifier": "iliLaserili",
+      "verifier": "iIiLaSeRiIi",
       "verification": "https://www.youtube.com/watch?v=KzK62PkWOJ0",
       "showcase": "https://www.youtube.com/watch?v=xg93mOaaG5I",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "81011195",
       "rating": 1,
@@ -19601,7 +19930,7 @@
       "run": [
         {
           "user": "manugrk",
-          "link": "",
+          "link": "https://fxtwitter.com/manugrk/status/2109483097553039505?s=20",
           "percent": "65-100",
           "hz": 240
         }
@@ -20016,7 +20345,7 @@
       "verifier": "GoKill",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=H_YoUzzChSo&pp=ygUQc2NyZWFtIGF0dGFjayBnZA%3D%3D",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
@@ -20030,18 +20359,18 @@
       ],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
+          "user": "GoKill",
+          "link": "https://www.youtube.com/live/rL_iASyJEZM",
+          "percent": 50,
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "GoKill",
+          "link": "https://www.youtube.com/live/rL_iASyJEZM",
+          "percent": "18-91",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -20965,7 +21294,18 @@
       "name": "Cucumber Caverns",
       "author": "irsdorkage",
       "creators": [
-        "irsdorkage"
+        "irsdorkage",
+        "qerw1",
+        "MasonPlayzPC",
+        "Robocoin",
+        "Qazzy",
+        "Exenity",
+        "RMT 0615",
+        "Aykirra",
+        "EricXD",
+        "Sariastuff",
+        "nab",
+        "zeba"
       ],
       "verifier": "Lol amaZon",
       "verification": "https://youtu.be/gEnyn23HkMQ?si=Bzbtf9nrfX-GJQks",
@@ -22334,7 +22674,16 @@
       "path": "k4l1b3r",
       "name": "KALIBER",
       "author": "Shyne",
-      "creators": [],
+      "creators": [
+        "Shyne",
+        "smango",
+        "Yerylik",
+        "KuiperBelt",
+        "Magmeta",
+        "Woofel",
+        "kelvinfanguy2",
+        "Ebie"
+      ],
       "verifier": "Shyne",
       "verification": "",
       "showcase": "https://youtu.be/5SYh54mZ9Sw",
@@ -22352,18 +22701,18 @@
       ],
       "records": [
         {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
+          "user": "Shyne",
+          "link": "https://cdn.discordapp.com/attachments/1178159398145765509/1565003300875673825/KALIBER_39_new_percents.mp4?ex=6aeb3b67&is=6ae9e9e7&hm=900cc0ae8592e37aff71ea174ec17e5ee8ea1e533a149020c8eaf7500e58524d&",
+          "percent": 39,
+          "hz": 240
         }
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "Shyne",
+          "link": "https://youtu.be/tMyRu4FBd_o",
+          "percent": "69-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
@@ -22481,7 +22830,7 @@
       "rating": 1,
       "length": 164,
       "percentToQualify": 1,
-      "percentFinished": 20,
+      "percentFinished": 100,
       "lastUpd": "04.09.2026",
       "tags": [
         "XL",
@@ -22751,10 +23100,10 @@
         "AVRG",
         "Cairox"
       ],
-      "verifier": "iIiLaseriIi",
+      "verifier": "iIiLaSeRiIi",
       "verification": "https://youtu.be/_0GqdSFmG_8?si=LGGVYKCmT9xsQEqR",
       "showcase": "https://www.youtube.com/watch?v=G0AhmpiqJqQ&pp=ygUTbmF0dXJhbCBkaXNhc3RlciBnZA%3D%3D",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "107741051",
       "rating": 1,
@@ -22889,12 +23238,12 @@
       "name": "H U R T",
       "author": "kaapycatz",
       "creators": [
-        "kappycatz"
+        "kaapycatz"
       ],
       "verifier": "Serpentical",
       "verification": "https://youtu.be/F6fe7LugwdY?si=ODaqX6S8Q_xaYMoo",
       "showcase": "https://youtu.be/YZ_ad0HV3ok?si=hCUvmvQRexe5ew69",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "116548933",
       "rating": 1,
@@ -22936,12 +23285,14 @@
       "name": "Dualist",
       "author": "Syncroned",
       "creators": [
-        "Syncroned, Cluncherp, TwanDash"
+        "Syncroned",
+        "Cluncherp",
+        "TwanDash"
       ],
       "verifier": "Draks",
       "verification": "https://www.youtube.com/watch?v=6ntYaDqBqu4",
       "showcase": "https://www.youtube.com/watch?v=FMsk4iJ2Xzc",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "130464801",
       "rating": 1,
@@ -23211,7 +23562,7 @@
       "length": 84,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "17.10.2020",
+      "lastUpd": "17.04.2020",
       "tags": [
         "Public",
         "Finished",
@@ -23439,7 +23790,21 @@
       "path": "death corridor (kugelblitz)",
       "name": "Death Corridor",
       "author": "KaotikJumper",
-      "creators": [],
+      "creators": [
+        "Kaotik",
+        "KugelBlitZ",
+        "Zynvire",
+        "Zimnior",
+        "Bread",
+        "Airswipe",
+        "Deosive",
+        "Ossy",
+        "Sycro",
+        "00zero",
+        "Pennutoh",
+        "Playerwombat",
+        "gmd vort3x"
+      ],
       "verifier": "KugelBlitZ",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=55zVuNJL54I",
@@ -23769,14 +24134,14 @@
     {
       "path": "verdant_landscape",
       "name": "Verdant Landscape",
-      "author": "Nishy",
+      "author": "Nisha",
       "creators": [
-        "Nishy"
+        "Nisha"
       ],
-      "verifier": "Nishy",
+      "verifier": "Nisha",
       "verification": "https://youtu.be/wjZxkS5KC0A?si=k4ZQtI5eAhytFfFC",
       "showcase": "https://www.youtube.com/watch?v=FSl73M-Hnao",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "76543324",
       "rating": 1,
@@ -23914,7 +24279,13 @@
       "author": "YouknowwhoGD & fwe",
       "creators": [
         "YouknowwhoGD",
-        "fwe & more // Unknown at the moment"
+        "fwefwe",
+        "CelestialCat",
+        "civi",
+        "solarion",
+        "limit",
+        "Artimeows",
+        "Arct"
       ],
       "verifier": "fusion425",
       "verification": "https://www.youtube.com/watch?v=4uwSVZBrtfg",
@@ -24345,9 +24716,9 @@
       "verifier": "AVRG",
       "verification": "https://youtu.be/Cvsv5lnMqYc?si=o5h5JGt21DCLMvCj",
       "showcase": "https://youtu.be/DAHgInqeNMU?si=xXiIkA5jxH1UaLPN",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
-      "id": "private",
+      "id": "142098786",
       "rating": 1,
       "length": 38,
       "percentToQualify": 1,
@@ -24356,21 +24727,24 @@
       "tags": [
         "Medium",
         "Finished",
-        "Verifying"
+        "Verifying",
+        "Public",
+        "Unrated",
+        "NONG"
       ],
       "records": [
         {
-          "user": "AVRG",
-          "link": "https://www.twitch.tv/videos/2769809780",
-          "percent": 60,
+          "user": "none",
+          "link": "",
+          "percent": 0,
           "hz": 0
         }
       ],
       "run": [
         {
-          "user": "AVRG",
-          "link": "https://www.twitch.tv/videos/2769809780",
-          "percent": "49-100",
+          "user": "none",
+          "link": "",
+          "percent": "0",
           "hz": 0
         }
       ],
@@ -24470,9 +24844,12 @@
     },
     {
       "path": "idontknowwhatisthis",
-      "name": "idontknowwhatisthis",
+      "name": "idontknowwhatthisis",
       "author": "YeldA",
-      "creators": [],
+      "creators": [
+        "puhyuu",
+        "YeldA"
+      ],
       "verifier": "YeldA",
       "verification": "https://www.youtube.com/watch?v=Dg9Q6s8EOlg",
       "showcase": "https://www.youtube.com/watch?v=nmsGLSN0itU",
@@ -25437,70 +25814,76 @@
       "name": "niroi",
       "role": "seniormod",
       "link": "https://www.youtube.com/@niroi_",
-      "sort_order": 2
+      "sort_order": 1
     },
     {
       "name": "Keres",
       "role": "seniormod",
       "link": "https://www.youtube.com/@keres9580",
-      "sort_order": 3
+      "sort_order": 2
     },
     {
       "name": "LukeLGamer",
       "role": "seniormod",
       "link": "https://www.youtube.com/@LukeLGamer34",
-      "sort_order": 4
+      "sort_order": 3
     },
     {
       "name": "ItzDel1ghtfuL",
       "role": "seniormod",
       "link": "https://www.youtube.com/@ItzDel1ghtfuLTCD",
-      "sort_order": 5
+      "sort_order": 4
     },
     {
       "name": "Terralith",
       "role": "mod",
       "link": "https://www.youtube.com/@terralithgd",
-      "sort_order": 6
+      "sort_order": 5
     },
     {
       "name": "Vantevia",
       "role": "mod",
       "link": "https://www.youtube.com/@vantev1a",
-      "sort_order": 7
+      "sort_order": 6
     },
     {
       "name": "TheCatAstronaut",
       "role": "mod",
       "link": "https://www.youtube.com/@skylily1325",
-      "sort_order": 8
+      "sort_order": 7
     },
     {
       "name": "Qponn",
       "role": "mod",
       "link": "https://www.youtube.com/@qponngd",
-      "sort_order": 9
+      "sort_order": 8
     },
     {
       "name": "Blaster1337",
       "role": "mod",
       "link": "https://youtube.com/@Blasters",
-      "sort_order": 10
-    },
-    {
-      "name": "ado",
-      "role": "mod",
-      "link": "https://www.youtube.com/channel/UCDUA8egBYIu2t4D9bMpHPpQ",
-      "sort_order": 11
+      "sort_order": 9
     },
     {
       "name": "Gosdas",
       "role": "mod",
       "link": "https://www.youtube.com/@GosdasGaming",
-      "sort_order": 12
+      "sort_order": 10
     },
     {
       "name": "UnknownGon0",
+      "role": "mod",
+      "link": "",
+      "sort_order": 11
+    },
+    {
+      "name": "Lexy",
+      "role": "mod",
+      "link": "https://www.youtube.com/channel/UCf8tekSgAheuM8Eh_eoj6AQ",
+      "sort_order": 12
+    },
+    {
+      "name": "Supreme",
       "role": "mod",
       "link": "",
       "sort_order": 13
