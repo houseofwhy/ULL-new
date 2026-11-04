@@ -1662,9 +1662,16 @@ export default {
             const body = await res.json();
             if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
             // A worker deployed before this change answers with a bare array.
-            return Array.isArray(body)
+            const page = Array.isArray(body)
                 ? { entries: body, total: body.length, hasMore: false }
                 : body;
+            // A worker older than ?target= ignores it and sends everything; keep
+            // "History of X" from listing other things' entries under it.
+            if (this.auditTarget && page.entries.some((e) => e.target !== this.auditTarget)) {
+                page.entries = page.entries.filter((e) => e.target === this.auditTarget);
+                page.total = page.entries.length;
+            }
+            return page;
         },
         async loadAuditLog() {
             this.auditLoading = true;

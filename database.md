@@ -75,15 +75,12 @@
 > Changes from the real `recent_changes` table, orders editors by `sort_order`, and adds
 > the editor-rename / editor-reorder / recent-changes-CRUD endpoints (section 5).
 >
-> **2026-11-04 revision (edit diffs) — not yet live until pasted.** Run these two
-> lines in the D1 console (they are the last two of `scripts/schema-migrations.sql`;
-> the earlier lines have already been applied and would error), then paste
-> `worker/worker.js` and Deploy:
->
-> ```sql
-> ALTER TABLE audit_log ADD COLUMN changes TEXT;
-> CREATE INDEX IF NOT EXISTS idx_audit_log_target ON audit_log(target);
-> ```
+> **2026-11-04 revision (edit diffs).** Its migration — the last two lines of
+> `scripts/schema-migrations.sql` — **has been applied** to the live D1 database
+> (`audit_log.changes` and `idx_audit_log_target` exist). The earlier lines of that
+> file were applied long ago and would error if re-run. Edits only start recording
+> their diffs once `worker/worker.js` is pasted and deployed; until then the admin
+> panel shows the log as before.
 >
 > The live Worker also serves `GET /api/leaderboard` and `GET /api/upcoming`, which
 > this repo's copy was missing. This frontend calls neither, but they are back in
