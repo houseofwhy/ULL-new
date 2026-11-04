@@ -124,21 +124,78 @@ async function authenticate(req, db) {
 // only for the actions UNDOABLE lists; everything else logs as before. A
 // database that has not had the migration run has no undo_data column, so the
 // insert falls back to the four-column form rather than losing the log line.
-async function log(db, editor, action, target, details = '', undo = null) {
+//
+// `changes` is what an edit did, field by field: { field: [old, new] } (see
+// diffFields). It goes in its own column so the panel can show it and anyone
+// can search it — "who first added X to this level's creators" used to be
+// unanswerable, because an edit was logged as nothing more than "<name> by
+// <host>". A database without the column yet still gets the change, written
+// into `details` as text, so nothing is lost between deploying this and
+// running the migration.
+async function log(db, editor, action, target, details = '', undo = null, changes = null) {
   try {
-    if (undo) {
+    const cols = ['editor_name', 'action', 'target', 'details'];
+    const vals = [editor, action, target, details];
+    if (undo) { cols.push('undo_data'); vals.push(JSON.stringify(undo)); }
+    if (changes) { cols.push('changes'); vals.push(JSON.stringify(changes)); }
+    if (cols.length > 4) {
       try {
         await db.prepare(
-          'INSERT INTO audit_log (editor_name, action, target, details, undo_data) VALUES (?, ?, ?, ?, ?)'
-        ).bind(editor, action, target, details, JSON.stringify(undo)).run();
+          `INSERT INTO audit_log (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(', ')})`
+        ).bind(...vals).run();
         return;
-      } catch { /* no undo_data column → fall through */ }
+      } catch { /* a column is missing → fall through */ }
     }
+    // Without the columns: keep the change readable, drop only the undo row.
+    const text = changes ? describeChanges(changes) : '';
+    const full = text ? (details ? `${details} · ${text}` : text) : details;
     await db.prepare(
       'INSERT INTO audit_log (editor_name, action, target, details) VALUES (?, ?, ?, ?)'
-    ).bind(editor, action, target, details).run();
+    ).bind(editor, action, target, full.length > 2000 ? full.slice(0, 1999) + '…' : full).run();
   } catch { /* never fail the main request */ }
 }
+
+// ── Edit diffs ───────────────────────────────────────────────────────────────
+// { field: [old, new] } for every field whose value differs between `before`
+// and `after`, or null when nothing did. Both sides are rows as the database
+// holds them, so the JSON columns named in `jsonFields` are compared (and
+// stored) parsed — a creators list reads as a list in the log, not as a string
+// with escaped quotes. null, undefined and '' are the same "empty", and a
+// number is equal to its own string, so re-saving a form that turns 50 into
+// "50" does not log a change nobody made.
+function diffFields(before, after, fields, jsonFields = []) {
+  const value = (row, f) => {
+    const v = row ? row[f] : undefined;
+    if (jsonFields.includes(f)) return typeof v === 'string' ? tryJSON(v, v) : (v ?? null);
+    return v === undefined || v === '' ? null : v;
+  };
+  const same = (a, b, f) => jsonFields.includes(f)
+    ? JSON.stringify(a ?? null) === JSON.stringify(b ?? null)
+    : (a === null || b === null ? a === b : String(a) === String(b));
+  const out = {};
+  for (const f of fields) {
+    const a = value(before, f);
+    const b = value(after, f);
+    if (!same(a, b, f)) out[f] = [a, b];
+  }
+  return Object.keys(out).length ? out : null;
+}
+
+// One line of text for a diff, for a database that has no `changes` column.
+function describeChanges(changes) {
+  const show = (v) => (v === null || v === undefined ? '—'
+    : typeof v === 'string' ? v : JSON.stringify(v));
+  return Object.entries(changes).map(([f, [a, b]]) => `${f}: ${show(a)} → ${show(b)}`).join('; ');
+}
+
+const LEVEL_FIELDS = [
+  'name', 'author', 'creators', 'verifier', 'verification', 'showcase',
+  'thumbnail', 'frameCounter', 'id', 'rating', 'length', 'percentToQualify',
+  'percentFinished', 'lastUpd', 'tags', 'records', 'run',
+  'isVerified', 'isMain', 'isFuture', 'benchmark',
+];
+const LEVEL_JSON_FIELDS = ['creators', 'tags', 'records', 'run'];
+
 
 // NOTE: the real `levels` table has NO `password` / `difficulty` columns. Selecting,
 // inserting or updating them throws a SQLite error, which used to surface in the
@@ -393,8 +450,12 @@ const SNAPSHOT_RETENTION = 'Every snapshot for a week, then one a week for a mon
 // can be a quarter of a megabyte, so it never crosses the wire — what the panel
 // needs to know is only whether an undo is available.
 function auditRow(row) {
-  const { undo_data, ...rest } = row;
-  return { ...rest, undoable: !!undo_data && !!UNDOABLE[row.action] && !row.undone_at };
+  const { undo_data, changes, ...rest } = row;
+  return {
+    ...rest,
+    changes: changes ? tryJSON(changes, null) : null,
+    undoable: !!undo_data && !!UNDOABLE[row.action] && !row.undone_at,
+  };
 }
 
 // The 500 an endpoint returns when the snapshots table has not been created.
@@ -534,12 +595,15 @@ async function handle(req, env) {
       const before = parseInt(url.searchParams.get('before') || '0', 10) || 0;
       const who = (url.searchParams.get('editor') || '').trim();
       const action = (url.searchParams.get('action') || '').trim();
+      // One level's (or entry's, or editor's) history: everything logged against it.
+      const target = (url.searchParams.get('target') || '').trim();
 
       const where = [];
       const binds = [];
       if (before) { where.push('id < ?'); binds.push(before); }
       if (who) { where.push('editor_name = ?'); binds.push(who); }
       if (action) { where.push('action = ?'); binds.push(action); }
+      if (target) { where.push('target = ?'); binds.push(target); }
       const clause = where.length ? `WHERE ${where.join(' AND ')}` : '';
 
       // One extra row tells the panel whether there is another page, without a
@@ -558,6 +622,7 @@ async function handle(req, env) {
         const fBinds = [];
         if (who) { filter.push('editor_name = ?'); fBinds.push(who); }
         if (action) { filter.push('action = ?'); fBinds.push(action); }
+        if (target) { filter.push('target = ?'); fBinds.push(target); }
         const row = await db.prepare(
           `SELECT COUNT(*) AS n FROM audit_log ${filter.length ? `WHERE ${filter.join(' AND ')}` : ''}`
         ).bind(...fBinds).first();
@@ -743,6 +808,25 @@ async function handle(req, env) {
       }
     }
 
+    // ── GET /api/leaderboard ───────────────────────────────────
+    // Not called by this frontend; present on the live Worker, so kept here
+    // so that pasting this file does not drop it.
+    if (method === 'GET' && path === '/api/leaderboard') {
+      const { results } = await db.prepare(
+        'SELECT * FROM leaderboard ORDER BY score DESC'
+      ).all();
+      return json(results);
+    }
+
+    // ── GET /api/upcoming ──────────────────────────────────────
+    // Same: live-only, unused by this frontend, kept so a paste does not drop it.
+    if (method === 'GET' && path === '/api/upcoming') {
+      const { results } = await db.prepare(
+        'SELECT * FROM upcoming ORDER BY sort_order ASC'
+      ).all();
+      return json(results.map(r => ({ ...r, tags: tryJSON(r.tags, []) })));
+    }
+
     // ── PUT /api/levels (insert or update) ────────────────────
     if (method === 'PUT' && path === '/api/levels') {
       const editor = await authed(req, db);
@@ -755,7 +839,17 @@ async function handle(req, env) {
         isVerified, isMain, isFuture, benchmark, insertAt,
       } = body;
 
-      const existing = await db.prepare('SELECT sort_order FROM levels WHERE path = ?').bind(lpath).first();
+      const existing = await db.prepare('SELECT * FROM levels WHERE path = ?').bind(lpath).first();
+      // The row as this save writes it, in the database's own shape, so it can
+      // be compared with `existing` field for field.
+      const saved = {
+        name, author, creators: JSON.stringify(creators), verifier, verification, showcase,
+        thumbnail, frameCounter: frameCounter || null, id: String(id), rating,
+        length, percentToQualify, percentFinished, lastUpd, tags: JSON.stringify(tags),
+        records: JSON.stringify(records), run: JSON.stringify(run),
+        isVerified: isVerified ? 1 : 0, isMain: isMain ? 1 : 0,
+        isFuture: isFuture ? 1 : 0, benchmark: benchmark ? 1 : 0,
+      };
 
       if (existing) {
         // Update existing
@@ -774,7 +868,8 @@ async function handle(req, env) {
           isVerified ? 1 : 0, isMain ? 1 : 0, isFuture ? 1 : 0, benchmark ? 1 : 0,
           lpath
         ).run();
-        await log(db, editor, 'UPDATE', lpath, `${name} by ${author}`);
+        await log(db, editor, 'UPDATE', lpath, `${name} by ${author}`, null,
+          diffFields(existing, saved, LEVEL_FIELDS, LEVEL_JSON_FIELDS));
       } else {
         // Insert new — shift everything at insertAt and below down by 1
         const target = insertAt || 1;
@@ -796,7 +891,8 @@ async function handle(req, env) {
           isVerified ? 1 : 0, isMain ? 1 : 0, isFuture ? 1 : 0, benchmark ? 1 : 0,
           target
         ).run();
-        await log(db, editor, 'INSERT', lpath, `${name} at pos ${target}`);
+        await log(db, editor, 'INSERT', lpath, `${name} at pos ${target}`, null,
+          diffFields(null, saved, LEVEL_FIELDS, LEVEL_JSON_FIELDS));
       }
       return json({ ok: true });
     }
@@ -835,7 +931,8 @@ async function handle(req, env) {
       await db.prepare('UPDATE levels SET sort_order = ? WHERE path = ?')
         .bind(targetSortOrder, lpath).run();
 
-      await log(db, editor, 'MOVE', lpath, `to position ${newPosition}`);
+      await log(db, editor, 'MOVE', lpath, `to position ${newPosition}`, null,
+        { position: [currentIndex + 1, targetIndex + 1] });
       return json({ ok: true });
     }
 
@@ -913,10 +1010,13 @@ async function handle(req, env) {
       const { id, name, placement, link, indefinite } = await req.json();
       if (!id) return err('id required');
       if (!name) return err('name required');
+      const before = await db.prepare('SELECT * FROM pending WHERE id = ?').bind(id).first();
+      const after = { name, placement: placement || '?', link: link || '', indefinite: indefinite ? 1 : 0 };
       await db.prepare(
         'UPDATE pending SET name = ?, placement = ?, link = ?, indefinite = ? WHERE id = ?'
-      ).bind(name, placement || '?', link || '', indefinite ? 1 : 0, id).run();
-      await log(db, editor, 'PENDING_EDIT', String(id), `${name} placement=${placement || '?'} indefinite=${indefinite ? 1 : 0}`);
+      ).bind(after.name, after.placement, after.link, after.indefinite, id).run();
+      await log(db, editor, 'PENDING_EDIT', String(id), `${name} placement=${after.placement} indefinite=${after.indefinite}`, null,
+        before ? diffFields(before, after, ['name', 'placement', 'link', 'indefinite']) : null);
       return json({ ok: true });
     }
 
@@ -953,9 +1053,11 @@ async function handle(req, env) {
       const { id, date, change } = await req.json();
       if (!id) return err('id required');
       if (!date || !change) return err('date and change required');
+      const before = await db.prepare('SELECT * FROM recent_changes WHERE id = ?').bind(id).first();
       await db.prepare('UPDATE recent_changes SET date = ?, change = ? WHERE id = ?')
         .bind(date, change, id).run();
-      await log(db, editor, 'CHANGE_EDIT', String(id), `${date} — ${change.slice(0, 100)}`);
+      await log(db, editor, 'CHANGE_EDIT', String(id), `${date} — ${change.slice(0, 100)}`, null,
+        before ? diffFields(before, { date, change }, ['date', 'change']) : null);
       return json({ ok: true });
     }
 
@@ -990,7 +1092,7 @@ async function handle(req, env) {
       if (!editor) return err('Unauthorized', 401);
       const body = await req.json();
       for (const [key, value] of Object.entries(body)) {
-        const existing = await db.prepare('SELECT key FROM config WHERE key = ?').bind(key).first();
+        const existing = await db.prepare('SELECT key, value FROM config WHERE key = ?').bind(key).first();
         if (existing) {
           await db.prepare('UPDATE config SET value = ? WHERE key = ?')
             .bind(JSON.stringify(value), key).run();
@@ -998,7 +1100,8 @@ async function handle(req, env) {
           await db.prepare('INSERT INTO config (key, value) VALUES (?, ?)')
             .bind(key, JSON.stringify(value)).run();
         }
-        await log(db, editor, 'CONFIG_UPDATE', key);
+        await log(db, editor, 'CONFIG_UPDATE', key, '', null,
+          diffFields(existing, { value: JSON.stringify(value) }, ['value'], ['value']));
       }
       return json({ ok: true });
     }
@@ -1013,7 +1116,7 @@ async function handle(req, env) {
       if (!editor) return err('Unauthorized', 401);
       const { name, newName, role, link } = await req.json();
       if (!name) return err('name required');
-      const current = await db.prepare('SELECT id FROM editor_keys WHERE editor_name = ?').bind(name).first();
+      const current = await db.prepare('SELECT * FROM editor_keys WHERE editor_name = ?').bind(name).first();
       if (!current) return err(`Editor "${name}" not found`, 404);
 
       const renamed = typeof newName === 'string' && newName.trim() && newName.trim() !== name;
@@ -1026,7 +1129,8 @@ async function handle(req, env) {
 
       await db.prepare('UPDATE editor_keys SET editor_name = ?, role = ?, link = ? WHERE id = ?')
         .bind(finalName, role || 'mod', link || '', current.id).run();
-      await log(db, editor, 'EDITOR_UPDATE', name, renamed ? `renamed to ${finalName}, role=${role}` : `role=${role}`);
+      await log(db, editor, 'EDITOR_UPDATE', name, renamed ? `renamed to ${finalName}, role=${role}` : `role=${role}`, null,
+        diffFields(current, { editor_name: finalName, role: role || 'mod', link: link || '' }, ['editor_name', 'role', 'link']));
       return json({ ok: true, name: finalName });
     }
 

@@ -603,3 +603,32 @@
     opacity: 0.45;
     max-width: 52rem;
 }
+
+/* ── Audit log: what an edit changed ─────────────────────────────────────── */
+.admin-audit-target {
+    background: none; border: 0; padding: 0; font: inherit; color: inherit;
+    cursor: pointer; text-align: left; text-decoration: underline;
+    text-decoration-color: rgba(128,128,128,0.35); text-underline-offset: 2px;
+}
+.admin-audit-target:hover { text-decoration-color: currentColor; }
+.admin-audit-chip {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.3rem 0.65rem; border-radius: 999px; font: inherit; font-size: 0.75rem;
+    color: inherit; background: rgba(128,128,128,0.12); border: 1px solid rgba(128,128,128,0.25); cursor: pointer;
+}
+.admin-audit-chip span { opacity: 0.6; }
+.admin-audit-details { font-size: 0.72rem; max-width: 26rem; }
+.admin-audit-details__line { opacity: 0.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.admin-audit-diff { list-style: none; margin: 0.3rem 0 0; padding: 0; display: grid; gap: 0.2rem; }
+.admin-audit-diff li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem; overflow-wrap: anywhere; }
+.admin-audit-diff__f { font-weight: 700; opacity: 0.6; }
+.admin-audit-diff__f::after { content: ':'; }
+.admin-audit-diff__old { opacity: 0.55; text-decoration: line-through; }
+.admin-audit-diff__add, .admin-audit-diff__del {
+    padding: 0 0.35rem; border-radius: 0.3rem; font-weight: 600;
+}
+.admin-audit-diff__add { color: #2f9e5b; background: rgba(47,158,91,0.12); }
+.admin-audit-diff__del { color: #d0453a; background: rgba(208,69,58,0.12); text-decoration: line-through; }
+.admin-audit-start { margin-top: 0.3rem; }
+.admin-audit-start summary { cursor: pointer; opacity: 0.6; }
+.admin-audit-start summary:hover { opacity: 0.9; }

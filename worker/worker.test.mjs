@@ -387,5 +387,74 @@ check('thinning is idempotent', await (async () => {
   return db.prepare('SELECT COUNT(*) AS n FROM snapshots').get().n === n + 1;
 })());
 
+console.log('\n── edits log what they changed ──');
+{
+  const latest = async (q) => (await call('GET', `/api/audit-log?${q}&limit=1`, null, KEY)).body.entries[0];
+  const base = {
+    ...level, path: 'centipede', name: 'Centipede', author: 'zander12', creators: ['zander12'],
+    percentFinished: 50, insertAt: 2,
+  };
+  await call('PUT', '/api/levels', base, KEY);
+  let e = await latest('action=INSERT&target=centipede');
+  check('an insert logs what the level started with',
+    JSON.stringify(e.changes?.creators) === '[null,["zander12"]]', JSON.stringify(e.changes));
+  check('an insert leaves empty fields out', e.changes && !('verification' in e.changes), JSON.stringify(e.changes));
+
+  // The form sends numbers back as strings; that is not a change.
+  await call('PUT', '/api/levels', { ...base, percentFinished: '50', creators: ['zander12', 'Renn241', 'Vortrox'] }, 'k-Keres');
+  e = await latest('action=UPDATE&target=centipede');
+  check('an update says who made it', e.editor_name === 'Keres');
+  check('an update logs old and new creators',
+    JSON.stringify(e.changes) === JSON.stringify({ creators: [['zander12'], ['zander12', 'Renn241', 'Vortrox']] }),
+    JSON.stringify(e.changes));
+  check('the details line is unchanged', e.details === 'Centipede by zander12', e.details);
+
+  await call('PUT', '/api/levels', { ...base, creators: ['zander12', 'Renn241'], isVerified: true, lastUpd: '04.11.2026' }, 'k-Keres');
+  e = await latest('action=UPDATE&target=centipede');
+  check('several fields at once, booleans as stored',
+    JSON.stringify(e.changes) === JSON.stringify({
+      creators: [['zander12', 'Renn241', 'Vortrox'], ['zander12', 'Renn241']],
+      lastUpd: ['10.04.2026', '04.11.2026'], isVerified: [0, 1],
+    }), JSON.stringify(e.changes));
+
+  await call('PUT', '/api/levels', { ...base, creators: ['zander12', 'Renn241'], isVerified: true, lastUpd: '04.11.2026' }, KEY);
+  e = await latest('action=UPDATE&target=centipede');
+  check('a save that changes nothing logs no changes', e.changes === null, JSON.stringify(e.changes));
+
+  const hist = (await call('GET', '/api/audit-log?target=centipede', null, KEY)).body;
+  check('?target= is one level\'s whole history', hist.total === 4 && hist.entries.every(x => x.target === 'centipede'),
+    JSON.stringify(hist.entries.map(x => x.action)));
+  check('and the raw column is searchable for "who added X"',
+    db.prepare(`SELECT editor_name FROM audit_log WHERE target = 'centipede' AND changes LIKE '%Vortrox%' ORDER BY id LIMIT 1`).get()?.editor_name === 'Keres');
+
+  await call('POST', '/api/levels/move', { path: 'centipede', newPosition: 1 }, KEY);
+  e = await latest('action=MOVE&target=centipede');
+  check('a move logs where from and where to', JSON.stringify(e.changes) === '{"position":[2,1]}', JSON.stringify(e.changes));
+
+  const pid = db.prepare(`INSERT INTO pending (name, placement, link, indefinite) VALUES ('Foo', '5', '', 0)`).run().lastInsertRowid;
+  await call('PUT', '/api/admin/pending', { id: pid, name: 'Foo', placement: '3', link: '', indefinite: false }, KEY);
+  e = await latest('action=PENDING_EDIT');
+  check('a pending edit logs the placement it changed', JSON.stringify(e.changes) === '{"placement":["5","3"]}', JSON.stringify(e.changes));
+
+  const cid = db.prepare(`SELECT id FROM recent_changes ORDER BY id LIMIT 1`).get().id;
+  const before = db.prepare(`SELECT date, change FROM recent_changes WHERE id = ?`).get(cid);
+  await call('PUT', '/api/admin/changes', { id: cid, date: before.date, change: 'Edited line' }, KEY);
+  e = await latest('action=CHANGE_EDIT');
+  check('a recent-changes edit logs the old text', JSON.stringify(e.changes) === JSON.stringify({ change: [before.change, 'Edited line'] }),
+    JSON.stringify(e.changes));
+
+  await call('PUT', '/api/config', { levelMonth: { name: 'A' } }, KEY);
+  await call('PUT', '/api/config', { levelMonth: { name: 'B' } }, KEY);
+  e = await latest('action=CONFIG_UPDATE');
+  check('a config change logs old and new values', JSON.stringify(e.changes) === '{"value":[{"name":"A"},{"name":"B"}]}', JSON.stringify(e.changes));
+
+  const terra = db.prepare(`SELECT editor_name, role, link FROM editor_keys WHERE editor_name != 'QwidziT' LIMIT 1`).get();
+  const newRole = terra.role === 'admin' ? 'mod' : 'admin';
+  await call('PATCH', '/api/editors', { name: terra.editor_name, role: newRole, link: terra.link }, KEY);
+  e = await latest('action=EDITOR_UPDATE');
+  check('an editor change logs the role', JSON.stringify(e.changes) === JSON.stringify({ role: [terra.role, newRole] }), JSON.stringify(e.changes));
+  check('and never the key hash', !JSON.stringify(e).includes('key_hash'));
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

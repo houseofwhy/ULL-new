@@ -64,3 +64,7 @@ ALTER TABLE audit_log ADD COLUMN undo_data TEXT;
 ALTER TABLE audit_log ADD COLUMN undone_at TEXT;
 
 CREATE INDEX IF NOT EXISTS idx_audit_log_timestamp ON audit_log(timestamp);
+
+ALTER TABLE audit_log ADD COLUMN changes TEXT;
+
+CREATE INDEX IF NOT EXISTS idx_audit_log_target ON audit_log(target);

@@ -84,6 +84,23 @@ r = await call('PATCH', '/api/editors', { name: 'Keres', newName: 'KeresGD', rol
 check('renaming an editor works', r.status === 200, JSON.stringify(r.body));
 check('rename kept the key', db.prepare("SELECT key_hash FROM editor_keys WHERE editor_name='KeresGD'").get().key_hash === db.prepare("SELECT key_hash FROM editor_keys WHERE editor_name='KeresGD'").get().key_hash);
 
+console.log('\n── un-migrated DB: an edit still records what it changed ──');
+{
+  const lvl = {
+    path: 'centipede', name: 'Centipede', author: 'zander12', creators: ['zander12'], verifier: 'x',
+    verification: '', showcase: '', thumbnail: null, frameCounter: null, id: '1', rating: 1, length: 60,
+    percentToQualify: 1, percentFinished: 100, lastUpd: '01.01.2026', tags: [],
+    records: [{ user: 'none', link: '', percent: 0, hz: 0 }], run: [{ user: 'none', link: '', percent: '0', hz: 0 }],
+    isVerified: false, isMain: true, isFuture: false, benchmark: false, insertAt: 1,
+  };
+  check('insert works without the changes column', (await call('PUT', '/api/levels', lvl, KEY)).status === 200);
+  r = await call('PUT', '/api/levels', { ...lvl, creators: ['zander12', 'Vortrox'] }, KEY);
+  check('update works without the changes column', r.status === 200, JSON.stringify(r.body));
+  const row = db.prepare(`SELECT details FROM audit_log WHERE action = 'UPDATE' ORDER BY id DESC LIMIT 1`).get();
+  check('the change goes into details as text instead',
+    row?.details === 'Centipede by zander12 · creators: ["zander12"] → ["zander12","Vortrox"]', row?.details);
+}
+
 console.log('\n── after running the migration, ordering comes to life ──');
 const mig = (await import('node:fs')).readFileSync(new URL('../scripts/schema-migrations.sql', import.meta.url), 'utf8')
   .split('\n').filter(l => !l.trim().startsWith('--')).join('\n');

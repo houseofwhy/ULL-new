@@ -75,6 +75,20 @@
 > Changes from the real `recent_changes` table, orders editors by `sort_order`, and adds
 > the editor-rename / editor-reorder / recent-changes-CRUD endpoints (section 5).
 >
+> **2026-11-04 revision (edit diffs) — not yet live until pasted.** Run these two
+> lines in the D1 console (they are the last two of `scripts/schema-migrations.sql`;
+> the earlier lines have already been applied and would error), then paste
+> `worker/worker.js` and Deploy:
+>
+> ```sql
+> ALTER TABLE audit_log ADD COLUMN changes TEXT;
+> CREATE INDEX IF NOT EXISTS idx_audit_log_target ON audit_log(target);
+> ```
+>
+> The live Worker also serves `GET /api/leaderboard` and `GET /api/upcoming`, which
+> this repo's copy was missing. This frontend calls neither, but they are back in
+> `worker/worker.js` so pasting it does not drop them.
+>
 > **`worker/worker.js` has tests.** `node worker/worker.test.mjs` runs it against an
 > in-memory SQLite DB built from the live schema (Node 22+, no dependencies). Run it
 > before pasting anything into the Cloudflare dashboard.
@@ -226,12 +240,47 @@ CREATE TABLE IF NOT EXISTS audit_log (
     details TEXT,       -- freeform
     timestamp TEXT DEFAULT CURRENT_TIMESTAMP,
     undo_data TEXT,     -- the deleted row, as JSON, on deletions only
-    undone_at TEXT      -- ISO-8601 UTC once somebody put it back
+    undone_at TEXT,     -- ISO-8601 UTC once somebody put it back
+    changes TEXT        -- what an edit changed: {"field": [old, new], ...}
 );
 ```
 
+**`changes` is what an edit did, field by field** (added 2026-11-04). Before it,
+a level save was logged as nothing more than `"<name> by <host>"`, so "who added
+Vortrox to Centipede's creators" could only be answered by digging through git
+history and snapshots. Now:
+
+| Action | `changes` holds |
+|--------|-----------------|
+| `UPDATE` | every level field that differs from the row before the save; `null` if the save changed nothing |
+| `INSERT` | every non-empty field the level started with, as `[null, value]` |
+| `MOVE` | `{"position": [from, to]}` |
+| `PENDING_EDIT` | `name` / `placement` / `link` / `indefinite` |
+| `CHANGE_EDIT` | `date` / `change` |
+| `CONFIG_UPDATE` | `{"value": [old, new]}` (Level of the Month, Closest to Verification) |
+| `EDITOR_UPDATE` | `editor_name` / `role` / `link` — **never** `key_hash` |
+
+JSON columns (`creators`, `tags`, `records`, `run`, config values) are stored
+parsed, so a diff reads as lists, not escaped strings. `null`, `''` and a missing
+value are the same "empty", and `50` equals `"50"`, so re-saving a form logs
+nothing that was not really changed.
+
+Searching it from the D1 console — who first added a name to a level:
+
+```sql
+SELECT id, editor_name, action, timestamp, changes FROM audit_log
+WHERE target = 'centipede' AND changes LIKE '%Vortrox%' ORDER BY id;
+```
+
+**Deploying the Worker before adding the column loses nothing:** `log()` falls back
+to the four-column insert and appends the diff to `details` as text
+(`creators: ["a"] → ["a","b"]`). Entries from before 2026-11-04 have no `changes`;
+for those, compare the snapshots (below) or the `data/*.json` git history, which
+covers everything up to the move to D1 on 2026-08-25.
+
 `GET /api/audit-log` reads it a page at a time — `?limit` (max 500), `?before=<id>`
-to continue, `?editor=` and `?action=` to filter — and answers
+to continue, `?editor=`, `?action=` and `?target=` (one level's whole history) to
+filter — and answers
 `{ entries, total, hasMore }`. It used to be a bare `LIMIT 100` with no way past
 it, so anything older than the last hundred operations could not be read at all.
 
@@ -515,9 +564,9 @@ missing.
   `auth_throttle` in section 3). The 429 carries a `Retry-After` header and applies to
   every authed endpoint, not just this one.
 - `GET /api/audit-log` — the whole log, newest first, a page at a time:
-  `?limit` (default 100, max 500), `?before=<id>`, `?editor=`, `?action=`.
-  Returns `{ entries, total, hasMore }`; `undo_data` is stripped and replaced by
-  an `undoable` flag. **Called with no query string at all it answers the plain
+  `?limit` (default 100, max 500), `?before=<id>`, `?editor=`, `?action=`,
+  `?target=`. Returns `{ entries, total, hasMore }`; `undo_data` is stripped and
+  replaced by an `undoable` flag, and `changes` comes back parsed. **Called with no query string at all it answers the plain
   array of the newest 100 rows it always did** — the live admin panel reads that
   shape, and one Worker serves both sites
 - `GET /api/admin/activity?days=30` — operations per editor over the window,

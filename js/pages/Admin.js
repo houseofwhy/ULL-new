@@ -577,6 +577,8 @@ export default {
                     <option value="">All actions</option>
                     <option v-for="a in AUDIT_ACTIONS" :key="a" :value="a">{{ a }}</option>
                 </select>
+                <button v-if="auditTarget" type="button" class="admin-audit-chip" @click="filterByTarget(auditTarget)"
+                        title="Show every target again">History of <b>{{ auditTarget }}</b> <span aria-hidden="true">×</span></button>
                 <span class="admin-count">{{ auditShownLabel }}</span>
                 <button class="admin-btn admin-btn--move" @click="loadAuditLog()" :disabled="auditLoading" style="margin-left:auto;">{{ auditLoading ? 'Loading…' : 'Refresh' }}</button>
             </div>
@@ -601,7 +603,7 @@ export default {
 
             <div v-if="auditLoading && !auditLog.length" class="admin-loading">Loading audit log…</div>
             <div v-else-if="!auditLog.length" class="admin-empty">
-                {{ auditEditor || auditAction ? 'Nothing matches that filter.' : 'No entries yet. The audit_log table may need to be created — see setup guide.' }}
+                {{ auditEditor || auditAction || auditTarget ? 'Nothing matches that filter.' : 'No entries yet. The audit_log table may need to be created — see setup guide.' }}
             </div>
             <table v-else class="admin-table">
                 <thead>
@@ -619,8 +621,40 @@ export default {
                         <td class="admin-td admin-td--pos" style="font-size:0.72rem;white-space:nowrap;opacity:0.55;">{{ entry.timestamp }}</td>
                         <td class="admin-td" style="font-size:0.8rem;font-weight:600;">{{ entry.editor_name }}</td>
                         <td class="admin-td"><span class="admin-badge admin-badge--main" style="font-size:0.58rem;">{{ entry.action }}</span></td>
-                        <td class="admin-td" style="font-size:0.8rem;">{{ entry.target }}</td>
-                        <td class="admin-td" style="font-size:0.72rem;opacity:0.5;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ entry.details }}</td>
+                        <td class="admin-td" style="font-size:0.8rem;">
+                            <button v-if="entry.target" type="button" class="admin-audit-target"
+                                    :title="'Show the whole history of ' + entry.target" @click="filterByTarget(entry.target)">{{ entry.target }}</button>
+                        </td>
+                        <td class="admin-td admin-audit-details">
+                            <div class="admin-audit-details__line">{{ entry.details }}</div>
+                            <!-- What the edit changed, field by field. Entries from
+                                 before the worker recorded this have none. -->
+                            <!-- An insert's "changes" are every value the level
+                                 started with: worth keeping, too long to show open. -->
+                            <details v-if="entry.changes && entry.action === 'INSERT'" class="admin-audit-start">
+                                <summary>Starting values ({{ Object.keys(entry.changes).length }} fields)</summary>
+                                <ul class="admin-audit-diff">
+                                    <li v-for="line in auditChangeLines(entry)" :key="line.field">
+                                        <span class="admin-audit-diff__f">{{ line.field }}</span>
+                                        <span class="admin-audit-diff__new">{{ line.to }}</span>
+                                    </li>
+                                </ul>
+                            </details>
+                            <ul v-else-if="entry.changes" class="admin-audit-diff">
+                                <li v-for="line in auditChangeLines(entry)" :key="line.field">
+                                    <span class="admin-audit-diff__f">{{ line.field }}</span>
+                                    <template v-if="line.added || line.removed">
+                                        <span v-for="v in line.added" :key="'+' + v" class="admin-audit-diff__add">+ {{ v }}</span>
+                                        <span v-for="v in line.removed" :key="'-' + v" class="admin-audit-diff__del">− {{ v }}</span>
+                                    </template>
+                                    <template v-else>
+                                        <span class="admin-audit-diff__old">{{ line.from }}</span>
+                                        <span aria-hidden="true">→</span>
+                                        <span class="admin-audit-diff__new">{{ line.to }}</span>
+                                    </template>
+                                </li>
+                            </ul>
+                        </td>
                         <td class="admin-td admin-td--move">
                             <button v-if="entry.undoable" class="admin-btn admin-btn--move" style="font-size:0.68rem;"
                                     :disabled="undoing === entry.id" @click="undoDeletion(entry)">
@@ -1008,6 +1042,7 @@ export default {
         auditFilterText: '',
         auditEditor: '',
         auditAction: '',
+        auditTarget: '',
         activity: { days: 30, editors: [] },
         undoing: 0,
         AUDIT_ACTIONS,
@@ -1026,7 +1061,7 @@ export default {
             if (!this.auditTotal) return '';
             const shown = this.auditLog.length;
             const of = this.auditTotal.toLocaleString();
-            const scope = this.auditEditor || this.auditAction ? ' matching' : '';
+            const scope = this.auditEditor || this.auditAction || this.auditTarget ? ' matching' : '';
             return shown >= this.auditTotal ? `${of}${scope} operation${this.auditTotal === 1 ? '' : 's'}`
                 : `showing ${shown.toLocaleString()} of ${of}${scope}`;
         },
@@ -1617,6 +1652,7 @@ export default {
             if (before) q.set('before', String(before));
             if (this.auditEditor) q.set('editor', this.auditEditor);
             if (this.auditAction) q.set('action', this.auditAction);
+            if (this.auditTarget) q.set('target', this.auditTarget);
             return q.toString();
         },
         async fetchAuditPage(before) {
@@ -1661,6 +1697,43 @@ export default {
             if (asAction) { this.auditAction = asAction; this.auditEditor = ''; }
             else { this.auditEditor = text; }
             this.loadAuditLog();
+        },
+        // Everything ever logged against one level (or pending entry, or
+        // editor): the history of that one thing. Clicking it again clears it.
+        filterByTarget(target) {
+            this.auditTarget = this.auditTarget === target ? '' : target;
+            this.loadAuditLog();
+        },
+        // An entry's `changes` ({ field: [old, new] }) as lines to print. A list
+        // of names (creators, tags) reads as what was added and removed — the
+        // whole before-and-after of a twenty-name creators list hides the one
+        // name that changed. Everything else reads old → new.
+        auditChangeLines(entry) {
+            const text = (v) => {
+                if (v === null || v === undefined || v === '') return '—';
+                if (Array.isArray(v)) {
+                    const rows = v.filter((r) => !(r && typeof r === 'object' && r.user === 'none'));
+                    if (!rows.length) return 'none';
+                    return rows.map((r) => (r && typeof r === 'object'
+                        ? `${r.user} ${r.percent}%${r.hz ? ` (${r.hz}Hz)` : ''}`
+                        : String(r))).join(', ');
+                }
+                if (typeof v === 'object') return v.name ? `${v.name}${v.author ? ` by ${v.author}` : ''}` : JSON.stringify(v);
+                return String(v);
+            };
+            const names = (v) => Array.isArray(v) && v.every((x) => typeof x === 'string');
+            return Object.entries(entry.changes || {}).map(([field, pair]) => {
+                const [from, to] = Array.isArray(pair) ? pair : [null, pair];
+                if (entry.action === 'INSERT') return { field, to: Array.isArray(to) && names(to) ? to.join(', ') : text(to) };
+                if (names(from) && names(to)) {
+                    return {
+                        field,
+                        added: to.filter((x) => !from.includes(x)),
+                        removed: from.filter((x) => !to.includes(x)),
+                    };
+                }
+                return { field, from: text(from), to: text(to) };
+            });
         },
         filterByEditor(name) {
             this.auditEditor = this.auditEditor === name ? '' : name;
