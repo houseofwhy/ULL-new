@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ull.pages.dev/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://ull.pages.dev/information</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -841,6 +841,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/diebtch</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/diffraction</loc>
     <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1381,6 +1387,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/infernis</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/inferno-ruins</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -1407,6 +1419,12 @@
   <url>
     <loc>https://ull.pages.dev/level/innards-xarve</loc>
     <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/irridiated-planet</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1665,6 +1683,12 @@
   <url>
     <loc>https://ull.pages.dev/level/max-nrg</loc>
     <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/maximum-dosage</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2397,6 +2421,12 @@
   <url>
     <loc>https://ull.pages.dev/level/slaughterhouse</loc>
     <lastmod>2021-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/smia</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

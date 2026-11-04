@@ -1073,6 +1073,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "diebtch": {
+      "path": "diebtch",
+      "name": "DIEbtch",
+      "firstSeen": "2026-11-04",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "diffraction": {
       "path": "diffraction",
       "name": "Diffraction",
@@ -1833,6 +1841,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "infernis": {
+      "path": "infernis",
+      "name": "Infernis",
+      "firstSeen": "2026-11-04",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "inferno-ruins": {
       "path": "inferno ruins",
       "name": "Inferno Ruins",
@@ -1877,6 +1893,14 @@
       "path": "innards xarve",
       "name": "unnerfed innards",
       "firstSeen": "2026-10-13",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "irridiated-planet": {
+      "path": "irridiated planet",
+      "name": "Irradiated Planet",
+      "firstSeen": "2026-11-04",
       "lastSeen": "2026-11-04",
       "retiredAt": null,
       "redirectTo": null
@@ -2221,6 +2245,14 @@
       "path": "max_nrg",
       "name": "MAX NRG",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "maximum-dosage": {
+      "path": "maximum dosage",
+      "name": "MAXIMUM DOSAGE",
+      "firstSeen": "2026-11-04",
       "lastSeen": "2026-11-04",
       "retiredAt": null,
       "redirectTo": null
@@ -3261,6 +3293,14 @@
       "path": "slaughterhouse",
       "name": "Slaughterhouse",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "smia": {
+      "path": "smia",
+      "name": "Smia",
+      "firstSeen": "2026-11-04",
       "lastSeen": "2026-11-04",
       "retiredAt": null,
       "redirectTo": null
