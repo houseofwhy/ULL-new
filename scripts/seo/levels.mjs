@@ -37,13 +37,17 @@ export function statusOf(level) {
 
 const num = (v) => (Number.isFinite(Number(v)) ? Number(v) : 0);
 
+// A verified level's old records are history — the verification replaces them
+// (js/util.js says the same for the live pages).
 export function bestRecord(level) {
+    if (level.isVerified) return null;
     const best = (level.records || []).filter((r) => r.user && r.user !== 'none' && num(r.percent) > 0)
         .sort((a, b) => num(b.percent) - num(a.percent))[0];
     return best || null;
 }
 
 export function bestRun(level) {
+    if (level.isVerified) return null;
     const best = (level.run || []).filter((r) => r.user && r.user !== 'none' && String(r.percent) !== '0')[0];
     return best || null;
 }

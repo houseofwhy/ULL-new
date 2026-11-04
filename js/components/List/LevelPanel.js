@@ -1,7 +1,7 @@
 import {
     embed, levelThumbnail, levelSlug,
     decorationPercent, verificationPercent, verificationBarStyle, verificationLabel, levelStatus,
-    bestRecord, bestRun, recordLink, levelLength, levelId, hasVerifier,
+    bestRecord, bestRun, verifiedRecord, recordLink, levelLength, levelId, hasVerifier,
     verifierLabel, verifierLine, levelRanks,
 } from '../../util.js';
 
@@ -112,7 +112,15 @@ export default {
             <div class="lp-col">
                 <div class="u-card">
                     <h3 class="u-eyebrow">World records</h3>
-                    <div class="u-stats">
+                    <div v-if="verified" class="u-stats">
+                        <div class="u-stat">
+                            <div class="u-stat__k">Verification</div>
+                            <a v-if="verifiedHref" class="u-stat__v" :href="verifiedHref" target="_blank" rel="noopener">100%</a>
+                            <span v-else class="u-stat__v">100%</span>
+                            <div v-if="verified.user" class="u-stat__u">{{ verified.user }}</div>
+                        </div>
+                    </div>
+                    <div v-else class="u-stats">
                         <div class="u-stat">
                             <div class="u-stat__k">From 0%</div>
                             <template v-if="record">
@@ -180,6 +188,8 @@ export default {
         run() { return bestRun(this.level); },
         recordHref() { return recordLink(this.record); },
         runHref() { return recordLink(this.run); },
+        verified() { return verifiedRecord(this.level); },
+        verifiedHref() { return recordLink(this.verified); },
         slug() {
             return this.level?.path ? levelSlug(this.level.path, this.allPaths) : '';
         },

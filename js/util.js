@@ -316,14 +316,34 @@ export function levelStatus(level) {
 
 // The list stores a placeholder row rather than an empty array when there is no
 // record yet, so "none" and 0 both mean nothing has been set.
+//
+// A verified level's records are history: staff rarely clear them when the
+// level is verified, so a 92% from before the verification would otherwise
+// sit beside "Verified" as if it were still the furthest anyone had got. Both
+// readings are empty for a verified level; `verifiedRecord` is what stands in
+// their place.
 export function bestRecord(level) {
-    return (level?.records || [])
+    if (!level || level.isVerified) return null;
+    return (level.records || [])
         .filter((r) => r.user && r.user !== 'none' && Number(r.percent) > 0)
         .sort((a, b) => Number(b.percent) - Number(a.percent))[0] || null;
 }
 
 export function bestRun(level) {
-    return (level?.run || []).find((r) => r.user && r.user !== 'none' && String(r.percent) !== '0' && String(r.percent) !== '') || null;
+    if (!level || level.isVerified) return null;
+    return (level.run || []).find((r) => r.user && r.user !== 'none' && String(r.percent) !== '0' && String(r.percent) !== '') || null;
+}
+
+// The one record a verified level has: 100% by its verifier, linked to the
+// verification video. Shaped like a record row so the same markup and
+// `recordLink` read it. Null for a level that is not verified.
+export function verifiedRecord(level) {
+    if (!level?.isVerified) return null;
+    return {
+        user: hasVerifier(level) ? level.verifier : '',
+        link: level.verification || '',
+        percent: 100,
+    };
 }
 
 // A record's link is '#' when there is no video for it.

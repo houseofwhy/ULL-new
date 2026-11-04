@@ -312,6 +312,8 @@
     overflow-wrap: anywhere;
 }
 a.lvl-wr__v:hover { text-decoration: underline; }
+/* A verified level has one record, the verification, and it takes the row. */
+.lvl-wr__card--wide { grid-column: 1 / -1; }
 .lvl-wr__v--none { color: inherit; opacity: 0.28; font-size: 1.05rem; }
 .lvl-wr__u { font-size: 0.72rem; opacity: 0.5; margin-top: 0.15rem; overflow-wrap: anywhere; }
 

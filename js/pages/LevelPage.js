@@ -3,7 +3,7 @@ import { fetchList } from '../content.js';
 import {
     embed, levelThumbnail, levelForSlug,
     decorationPercent, verificationPercent, verificationBarStyle, verificationLabel, levelStatus,
-    bestRecord, bestRun, recordLink, levelLength, levelId, hasVerifier,
+    bestRecord, bestRun, verifiedRecord, recordLink, levelLength, levelId, hasVerifier,
     verifierLabel, verifierLine, levelRanks,
 } from '../util.js';
 import Spinner from '../components/Spinner.js';
@@ -99,7 +99,15 @@ export default {
 
                     <div class="lvl-card">
                         <h3 class="lvl-h3">World records</h3>
-                        <div class="lvl-wr">
+                        <div v-if="verified" class="lvl-wr">
+                            <div class="lvl-wr__card lvl-wr__card--wide">
+                                <div class="lvl-wr__k">Verification</div>
+                                <a v-if="verifiedLink" class="lvl-wr__v" :href="verifiedLink" target="_blank" rel="noopener">100%</a>
+                                <div v-else class="lvl-wr__v">100%</div>
+                                <div v-if="verified.user" class="lvl-wr__u">{{ verified.user }}</div>
+                            </div>
+                        </div>
+                        <div v-else class="lvl-wr">
                             <div class="lvl-wr__card">
                                 <div class="lvl-wr__k">From 0%</div>
                                 <template v-if="record">
@@ -218,6 +226,12 @@ export default {
         },
         runLink() {
             return recordLink(this.run);
+        },
+        verified() {
+            return verifiedRecord(this.level);
+        },
+        verifiedLink() {
+            return recordLink(this.verified);
         },
         // The status pill already says what these tags say.
         tags() {

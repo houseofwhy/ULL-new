@@ -2971,6 +2971,8 @@ a.pending-row__name:hover { text-decoration: underline; }
     overflow-wrap: anywhere;
 }
 a.lvl-wr__v:hover { text-decoration: underline; }
+/* A verified level has one record, the verification, and it takes the row. */
+.lvl-wr__card--wide { grid-column: 1 / -1; }
 .lvl-wr__v--none { color: inherit; opacity: 0.28; font-size: 1.05rem; }
 .lvl-wr__u { font-size: 0.72rem; opacity: 0.5; margin-top: 0.15rem; overflow-wrap: anywhere; }
 
@@ -3920,6 +3922,7 @@ button.m2-fig:active { background: var(--u-fill-2); }
 .m2-sum__meters .u-meter + .u-meter { margin-top: 0; }
 .m2-sum__recs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
 .m2-sum__rec { min-width: 0; }
+.m2-sum__rec--wide { grid-column: 1 / -1; }
 .m2-sum__k { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; }
 .m2-sum__v {
     display: block;

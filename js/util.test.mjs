@@ -6,6 +6,7 @@
 import {
     thumbnailUrl, youtubeThumbnail, levelThumbnail, getYoutubeIdFromUrl,
     verificationPercent, verificationLabel, verificationSpan,
+    bestRecord, bestRun, verifiedRecord,
 } from './util.js';
 
 let failed = 0;
@@ -90,6 +91,23 @@ is('a backwards range is read low-to-high',
     span({ records: [], run: [{ user: 'x', percent: '100-72' }] }), '{"from":72,"to":100}');
 is('a range beyond the level is clamped',
     span({ records: [], run: [{ user: 'x', percent: '80-140' }] }), '{"from":80,"to":100}');
+
+// Staff rarely clear a level's records when it is verified. Those records are
+// history: the panels must not show a 92% beside "Verified", and the
+// verification is the one record that stands in their place.
+const OLD = {
+    isVerified: true, verifier: 'Zoink', verification: 'https://youtu.be/abc',
+    records: [{ user: 'a', link: '#', percent: 92, hz: 240 }],
+    run: [{ user: 'b', link: '#', percent: '30-100', hz: 240 }],
+};
+is('a verified level has no best record', bestRecord(OLD), null);
+is('a verified level has no best run', bestRun(OLD), null);
+is('the verification stands in for them', JSON.stringify(verifiedRecord(OLD)),
+    '{"user":"Zoink","link":"https://youtu.be/abc","percent":100}');
+is('an unknown verifier is left blank', verifiedRecord({ ...OLD, verifier: 'unknown' }).user, '');
+is('an unverified level has no verification record', verifiedRecord({ ...OLD, isVerified: false }), null);
+is('an unverified level keeps its record', bestRecord({ ...OLD, isVerified: false })?.percent, 92);
+is('an unverified level keeps its run', bestRun({ ...OLD, isVerified: false })?.percent, '30-100');
 
 console.log(failed ? `\n${failed} failed` : '\nall passed');
 process.exit(failed ? 1 : 0);

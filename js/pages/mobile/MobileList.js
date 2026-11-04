@@ -96,7 +96,15 @@ export default {
                                         <div class="u-bar u-bar--alt"><i :style="verifBar(level)"></i></div>
                                     </div>
                                 </div>
-                                <div class="m2-sum__recs">
+                                <div v-if="level.isVerified" class="m2-sum__recs">
+                                    <div class="m2-sum__rec m2-sum__rec--wide">
+                                        <div class="m2-sum__k">Verification</div>
+                                        <a v-if="level.verification" class="m2-sum__v" :href="level.verification" target="_blank" rel="noopener">100%</a>
+                                        <span v-else class="m2-sum__v">100%</span>
+                                        <div v-if="verifierKnown(level)" class="m2-sum__u">{{ level.verifier }}</div>
+                                    </div>
+                                </div>
+                                <div v-else class="m2-sum__recs">
                                     <div class="m2-sum__rec">
                                         <div class="m2-sum__k">From 0%</div>
                                         <template v-if="record(level)">

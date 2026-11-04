@@ -407,6 +407,7 @@ button.m2-fig:active { background: var(--u-fill-2); }
 .m2-sum__meters .u-meter + .u-meter { margin-top: 0; }
 .m2-sum__recs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
 .m2-sum__rec { min-width: 0; }
+.m2-sum__rec--wide { grid-column: 1 / -1; }
 .m2-sum__k { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.45; }
 .m2-sum__v {
     display: block;
