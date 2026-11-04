@@ -202,17 +202,18 @@ Generated — **do not edit by hand**:
 | `sitemap.xml` | All public URLs with `lastmod` |
 | `llms.txt` | Plain-text brief for AI crawlers and answer engines |
 | `js/seo-meta.js` | Titles/descriptions for client-side navigations |
+| `data/_daily-levels.json` | The Level of the Day archive (see below) — appended to, never regenerated |
 
 ### Refreshing the pre-rendered HTML
 
-There is no CI — this repository has no `.github/` directory and nothing runs on a
-schedule. Keeping the pre-rendered HTML in step with the live list is three commands,
-run by hand and committed:
+`.github/workflows/refresh-content.yml` does this every hour (at :25) and commits
+the result as "Refresh static list content". By hand it is:
 
 ```bash
-node scripts/fetch-data.mjs     # API -> data/_seo-snapshot.json
-node scripts/build-css.mjs      # css/*.css -> css/bundle.css
-node scripts/build-seo.mjs      # snapshot -> static pages
+node scripts/fetch-data.mjs           # API -> data/_seo-snapshot.json
+node scripts/record-daily-level.mjs   # today's Level of the Day -> data/_daily-levels.json
+node scripts/build-css.mjs            # css/*.css -> css/bundle.css
+node scripts/build-seo.mjs            # snapshot -> static pages
 ```
 
 Fetching and generating are **separate steps on purpose**. `fetch-data.mjs`
@@ -227,6 +228,21 @@ page load. Only the copy that crawlers read is up to an hour behind.
 
 Run `node scripts/fetch-data.mjs --fixture` to build a snapshot from the legacy
 `data/` directory when you have no network.
+
+### Level of the Day archive
+
+The Events page's **Past Levels of the Day** window lists every day's level with its
+name and All Levels position *on that day*. The pick itself is a hash of the date over
+the unverified levels (`js/daily-level.js`), which used to change mid-day whenever a
+level was added, removed or verified. Now the first hourly run after midnight UTC
+records the day's pick in `data/_daily-levels.json`, and the Events pages show the
+recorded pick, so a day's level stays put.
+
+Days from 2026-08-30 to 2026-11-04 were rebuilt from the git history of
+`data/_seo-snapshot.json` by `scripts/backfill-daily-levels.mjs` (the list as it stood
+at the start of each UTC day). Earlier days can't be rebuilt: the list wasn't copied
+into git before then. If the hourly job misses days, rerunning the backfill fills them
+from history and leaves recorded days alone.
 
 ### Level pages
 

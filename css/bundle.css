@@ -1901,6 +1901,187 @@ main.page-list--pending .list-container {
     .events-pair, .events-cols { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* ── Level of the Day archive ─────────────────────────────────────────────
+   The button that opens it closes the Level of the Day card the way the
+   Discord button closes Level of the Month's. */
+.events-foot { padding: 0 1.5rem 1.35rem; }
+.events-archive-btn { width: 100%; gap: 0.5rem; }
+.events-archive-btn .u-count { margin-left: 0.1rem; }
+
+/* The window: the same shape as the "What the marks mean" reader. */
+body.da-locked { overflow: hidden; }
+.da-win {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: flex;
+    padding: 2.5rem 1.5rem;
+    background: color-mix(in srgb, var(--color-background) 82%, transparent);
+    backdrop-filter: blur(0.35rem);
+}
+.da-box {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: min(40rem, 100%);
+    height: min(44rem, 100%);
+    border-radius: var(--u-r, 0.75rem);
+    border: 1px solid var(--u-line-2, rgba(128, 128, 128, 0.38));
+    background: var(--color-background);
+    color: var(--color-on-background);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+.da-box:focus { outline: none; }
+.root.dark .da-box { box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.18); }
+
+.da-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    padding: 0.95rem 1.35rem;
+    border-bottom: 1px solid var(--u-line, rgba(128, 128, 128, 0.22));
+}
+.da-bar__t { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+.da-bar__t b { font-size: 0.98rem; font-weight: 700; letter-spacing: -0.01em; }
+.da-k { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.4; }
+.da-x {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    font-size: 0.74rem;
+    opacity: 0.55;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.da-x:hover, .da-x:focus-visible { opacity: 0.95; }
+
+.da-searchrow { flex-shrink: 0; padding: 0.9rem 1.35rem 0.75rem; }
+.da-search {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: var(--u-r-sm, 0.5rem);
+    background: var(--u-fill, rgba(128, 128, 128, 0.09));
+    border: 1px solid var(--u-line-2, rgba(128, 128, 128, 0.38));
+    transition: border-color 120ms ease;
+}
+.da-search:focus-within { border-color: var(--color-primary); }
+.da-search__f {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: 0;
+    outline: none;
+    color: var(--color-on-background);
+    font: inherit;
+    font-size: 0.85rem;
+}
+.da-search__f::placeholder { color: var(--color-on-background); opacity: 0.42; }
+.da-search__f::-webkit-search-cancel-button { -webkit-appearance: none; }
+.da-search__n { font-size: 0.68rem; opacity: 0.45; font-variant-numeric: tabular-nums; }
+.da-mag { position: relative; flex-shrink: 0; width: 1rem; height: 1rem; opacity: 0.5; }
+.da-mag::before {
+    content: ""; position: absolute; left: 0; top: 0; width: 0.7rem; height: 0.7rem;
+    border: 1.5px solid currentColor; border-radius: 50%;
+}
+.da-mag::after {
+    content: ""; position: absolute; right: 0.03rem; bottom: 0.06rem; width: 0.42rem; height: 1.5px;
+    background: currentColor; border-radius: 1px; transform: rotate(45deg); transform-origin: right center;
+}
+
+/* Date · level · position, as columns, so a long name never pushes the
+   position out of line with the ones above it. */
+.da-head, .da-row {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0 1.35rem;
+}
+.da-head {
+    flex-shrink: 0;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--u-line, rgba(128, 128, 128, 0.22));
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+}
+.da-head__r { text-align: right; }
+.da-list {
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+    padding: 0.3rem 0 0.8rem;
+    list-style: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+}
+.da-row { padding-top: 0.62rem; padding-bottom: 0.62rem; }
+.da-row + .da-row { border-top: 1px solid var(--u-line, rgba(128, 128, 128, 0.22)); }
+.da-row.is-today { background: color-mix(in srgb, var(--color-primary) 9%, transparent); }
+.da-date {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.76rem;
+    opacity: 0.6;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+.da-today {
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.3rem;
+    color: var(--color-on-primary, white);
+    background: var(--color-primary);
+}
+.da-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+a.da-name:hover, a.da-name:focus-visible { color: var(--u-accent, var(--color-primary)); text-decoration: underline; text-underline-offset: 0.15em; }
+.da-name--gone { font-weight: 500; opacity: 0.55; }
+.da-rank {
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--u-accent, var(--color-primary));
+}
+.da-empty { flex: 1; padding: 2.5rem 1.35rem; text-align: center; font-size: 0.82rem; opacity: 0.5; }
+
+@media (max-width: 600px) {
+    .da-win { padding: 0; }
+    .da-box { width: 100%; height: 100%; border-radius: 0; border: 0; }
+    .da-head, .da-row { grid-template-columns: 5.6rem minmax(0, 1fr) auto; gap: 0.75rem; padding-left: 1rem; padding-right: 1rem; }
+    .da-bar, .da-searchrow { padding-left: 1rem; padding-right: 1rem; }
+    /* "Today" goes under the date: beside it, the narrow column ran it into the name. */
+    .da-date { font-size: 0.7rem; flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .da-search { transition: none; }
+}
+
 /* ── css/pages/list-hero.css ── */
 /* Page-hero placement.
 

@@ -5,17 +5,10 @@ import {
     verifierLabel, verifierLine,
 } from '../util.js';
 import { fetchLevelMonth, fetchLevelVerif, fetchList } from '../content.js';
+import { dateKey, todaysLevel, fetchDailyArchive, archiveRows } from '../daily-level.js';
 import Footer from '../components/Footer.js';
 import Spinner from '../components/Spinner.js';
-
-function pickDailyLevel(list) {
-    const valid = list.filter(([l, e]) => l && !e && !l.isVerified);
-    if (!valid.length) return null;
-    const d = new Date();
-    const seed = (d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()) >>> 0;
-    const hash = Math.imul(seed ^ (seed >>> 16), 0x45d9f3b) >>> 0;
-    return valid[hash % valid.length][0];
-}
+import DailyArchive from '../components/DailyArchive.js';
 
 // Three features that are the same kind of thing — a level the list is pointing
 // at — drawn three different ways: Level of the Day had a two-column card with
@@ -28,7 +21,7 @@ function pickDailyLevel(list) {
 // records (data/_levelMonth.json, data/_levelVerif.json) rather than the level
 // list, so they show what those records hold and nothing more.
 export default {
-    components: { Footer, Spinner },
+    components: { Footer, Spinner, DailyArchive },
     template: `
 <main v-if="loading" class="events-page surface" style="display:flex;align-items:center;justify-content:center;">
     <Spinner></Spinner>
@@ -54,9 +47,9 @@ export default {
                             <template v-if="dayLine"> &middot; {{ dayLine.lead }} <b>{{ dayLine.name }}</b></template>
                         </p>
                     </div>
-                    <div v-if="levelDay.rankNum" class="u-ranks">
+                    <div v-if="dayRank" class="u-ranks">
                         <router-link class="u-rank u-rank--lead" to="/list">
-                            <span class="u-rank__n">{{ levelDay.rankNum }}</span>
+                            <span class="u-rank__n">#{{ dayRank }}</span>
                             <span class="u-rank__l">All Levels</span>
                         </router-link>
                     </div>
@@ -101,7 +94,14 @@ export default {
                     </dl>
                 </div>
             </div>
+            <div class="events-foot">
+                <button type="button" class="u-btn u-btn--ghost events-archive-btn" @click="showArchive = true"
+                        aria-haspopup="dialog">
+                    Past Levels of the Day <span class="u-count">{{ archive.length }}</span>
+                </button>
+            </div>
         </article>
+        <DailyArchive :open="showArchive" :entries="archive" @close="showArchive = false" />
 
         <div class="events-pair">
 
@@ -190,6 +190,9 @@ export default {
         levelMonth: null,
         levelVerif: null,
         levelDay: null,
+        dayRank: 0,
+        archive: [],
+        showArchive: false,
     }),
     computed: {
         dayThumb() { return this.levelDay ? levelThumbnail(this.levelDay) : ''; },
@@ -219,14 +222,21 @@ export default {
         },
     },
     async mounted() {
-        const [lm, lv, list] = await Promise.all([
+        const [lm, lv, list, archive] = await Promise.all([
             fetchLevelMonth(),
             fetchLevelVerif(),
             fetchList(),
+            fetchDailyArchive(),
         ]);
         this.levelMonth = lm;
         this.levelVerif = lv;
-        if (list?.length) this.levelDay = pickDailyLevel(list);
+        if (list?.length) {
+            const key = dateKey();
+            const today = todaysLevel(list, archive, key);
+            this.levelDay = today?.level || null;
+            this.dayRank = today?.rank || 0;
+            this.archive = archiveRows(archive, today, key, list);
+        }
         this.loading = false;
     },
 };

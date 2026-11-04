@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "days": [
+    {
+      "date": "2026-08-30",
+      "path": "waru",
+      "name": "Waru",
+      "rank": 48
+    },
+    {
+      "date": "2026-08-31",
+      "path": "layers",
+      "name": "LAYERS",
+      "rank": 132
+    },
+    {
+      "date": "2026-09-01",
+      "path": "gameend",
+      "name": "GAMEEND",
+      "rank": 19
+    },
+    {
+      "date": "2026-09-02",
+      "path": "epimethean",
+      "name": "EPIMETHEAN",
+      "rank": 422
+    },
+    {
+      "date": "2026-09-03",
+      "path": "medusa",
+      "name": "MEDUSA",
+      "rank": 315
+    },
+    {
+      "date": "2026-09-04",
+      "path": "aquavious lights",
+      "name": "Aquavious Lights",
+      "rank": 228
+    },
+    {
+      "date": "2026-09-05",
+      "path": "rest_in_peace",
+      "name": "Rest in Peace",
+      "rank": 389
+    },
+    {
+      "date": "2026-09-06",
+      "path": "grief",
+      "name": "GRIEF",
+      "rank": 30
+    },
+    {
+      "date": "2026-09-07",
+      "path": "the_aether_trial",
+      "name": "The Aether Trial",
+      "rank": 349
+    },
+    {
+      "date": "2026-09-08",
+      "path": "snowdrive",
+      "name": "SNOWDRIVE",
+      "rank": 284
+    },
+    {
+      "date": "2026-09-09",
+      "path": "the loss of life",
+      "name": "THE LOSS OF LIFE",
+      "rank": 220
+    },
+    {
+      "date": "2026-09-10",
+      "path": "kingdom of miracles",
+      "name": "Kingdom of Miracalis",
+      "rank": 2
+    },
+    {
+      "date": "2026-09-11",
+      "path": "fatebreaker",
+      "name": "Fatebreaker",
+      "rank": 377
+    },
+    {
+      "date": "2026-09-12",
+      "path": "manray",
+      "name": "M A N R A Y",
+      "rank": 5
+    },
+    {
+      "date": "2026-09-13",
+      "path": "theory_of_silence",
+      "name": "Theory of Silence",
+      "rank": 384
+    },
+    {
+      "date": "2026-09-14",
+      "path": "bloom",
+      "name": "BLOOM",
+      "rank": 96
+    },
+    {
+      "date": "2026-09-15",
+      "path": "infinite silence",
+      "name": "Infinite Silence",
+      "rank": 48
+    },
+    {
+      "date": "2026-09-16",
+      "path": "spammer",
+      "name": "Spammer",
+      "rank": 169
+    },
+    {
+      "date": "2026-09-17",
+      "path": "ego",
+      "name": "EGO",
+      "rank": 23
+    },
+    {
+      "date": "2026-09-18",
+      "path": "her funeral",
+      "name": "Her Funeral",
+      "rank": 64
+    },
+    {
+      "date": "2026-09-19",
+      "path": "diffraction",
+      "name": "Diffraction",
+      "rank": 341
+    },
+    {
+      "date": "2026-09-20",
+      "path": "ikea_level",
+      "name": "IKEA LEVEL",
+      "rank": 436
+    },
+    {
+      "date": "2026-09-21",
+      "path": "ranshin",
+      "name": "Ranshin",
+      "rank": 201
+    },
+    {
+      "date": "2026-09-22",
+      "path": "snowblind",
+      "name": "Snowblind",
+      "rank": 252
+    },
+    {
+      "date": "2026-09-23",
+      "path": "eviscerate",
+      "name": "EVISCERATE",
+      "rank": 104
+    },
+    {
+      "date": "2026-09-24",
+      "path": "when i fall",
+      "name": "When I Fall",
+      "rank": 155
+    },
+    {
+      "date": "2026-09-25",
+      "path": "labyrinth",
+      "name": "Labyrinth",
+      "rank": 97
+    },
+    {
+      "date": "2026-09-26",
+      "path": "flashbang",
+      "name": "Flashbang",
+      "rank": 169
+    },
+    {
+      "date": "2026-09-27",
+      "path": "the ben",
+      "name": "the ben",
+      "rank": 159
+    },
+    {
+      "date": "2026-09-28",
+      "path": "memorized",
+      "name": "Memorized",
+      "rank": 288
+    },
+    {
+      "date": "2026-09-29",
+      "path": "notartarus",
+      "name": "NOTARTARUS",
+      "rank": 437
+    },
+    {
+      "date": "2026-09-30",
+      "path": "furioso",
+      "name": "Furioso",
+      "rank": 116
+    },
+    {
+      "date": "2026-10-01",
+      "path": "yharon",
+      "name": "Yharon",
+      "rank": 53
+    },
+    {
+      "date": "2026-10-02",
+      "path": "furioso",
+      "name": "Furioso",
+      "rank": 116
+    },
+    {
+      "date": "2026-10-03",
+      "path": "ouroboros",
+      "name": "OUROBOROS",
+      "rank": 125
+    },
+    {
+      "date": "2026-10-04",
+      "path": "snowdrive",
+      "name": "SNOWDRIVE",
+      "rank": 281
+    },
+    {
+      "date": "2026-10-05",
+      "path": "shredder",
+      "name": "SHREDDER",
+      "rank": 220
+    },
+    {
+      "date": "2026-10-06",
+      "path": "zanbot",
+      "name": "ZANBOT",
+      "rank": 302
+    },
+    {
+      "date": "2026-10-07",
+      "path": "cyberian",
+      "name": "Cyberian",
+      "rank": 493
+    },
+    {
+      "date": "2026-10-08",
+      "path": "heavy energizer",
+      "name": "Heavy Energizer",
+      "rank": 298
+    },
+    {
+      "date": "2026-10-09",
+      "path": "ballistic ballpit",
+      "name": "BALLISTIC BALLPIT",
+      "rank": 381
+    },
+    {
+      "date": "2026-10-10",
+      "path": "eviscerate",
+      "name": "EVISCERATE",
+      "rank": 104
+    },
+    {
+      "date": "2026-10-11",
+      "path": "absolute end",
+      "name": "Absolute End",
+      "rank": 194
+    },
+    {
+      "date": "2026-10-12",
+      "path": "anomaly",
+      "name": "ANOMALY",
+      "rank": 204
+    },
+    {
+      "date": "2026-10-13",
+      "path": "lirile",
+      "name": "Lirile",
+      "rank": 172
+    },
+    {
+      "date": "2026-10-14",
+      "path": "azure flare_endlevel",
+      "name": "Azure Flare (VERTOP)",
+      "rank": 12
+    },
+    {
+      "date": "2026-10-15",
+      "path": "taron",
+      "name": "Taron",
+      "rank": 127
+    },
+    {
+      "date": "2026-10-16",
+      "path": "vehemence",
+      "name": "Vehemence",
+      "rank": 50
+    },
+    {
+      "date": "2026-10-17",
+      "path": "sweeping demon 2",
+      "name": "Sweeping Demon 2",
+      "rank": 29
+    },
+    {
+      "date": "2026-10-18",
+      "path": "teeth fortress ii",
+      "name": "TEETH FORTRESS II",
+      "rank": 167
+    },
+    {
+      "date": "2026-10-19",
+      "path": "kurayami",
+      "name": "KURAYAMI",
+      "rank": 115
+    },
+    {
+      "date": "2026-10-20",
+      "path": "flyleaf",
+      "name": "Flyleaf",
+      "rank": 272
+    },
+    {
+      "date": "2026-10-21",
+      "path": "fingerdash v5",
+      "name": "Fingerdash V5",
+      "rank": 211
+    },
+    {
+      "date": "2026-10-22",
+      "path": "k4l1b3r",
+      "name": "KALIBER",
+      "rank": 451
+    },
+    {
+      "date": "2026-10-23",
+      "path": "luminite",
+      "name": "Luminite",
+      "rank": 352
+    },
+    {
+      "date": "2026-10-24",
+      "path": "packetloss",
+      "name": "PACKETLOSS",
+      "rank": 192
+    },
+    {
+      "date": "2026-10-25",
+      "path": "hymn for the weekend",
+      "name": "Hymn For The Weekend",
+      "rank": 137
+    },
+    {
+      "date": "2026-10-26",
+      "path": "zanbot",
+      "name": "ZANBOT",
+      "rank": 304
+    },
+    {
+      "date": "2026-10-27",
+      "path": "enceladus",
+      "name": "ENCELADUS",
+      "rank": 243
+    },
+    {
+      "date": "2026-10-28",
+      "path": "necrofantasia",
+      "name": "Necrofantasia",
+      "rank": 7
+    },
+    {
+      "date": "2026-10-29",
+      "path": "amanojaku",
+      "name": "Amanojaku",
+      "rank": 391
+    },
+    {
+      "date": "2026-10-30",
+      "path": "cyberpsychosis_karma287",
+      "name": "Arasaka",
+      "rank": 90
+    },
+    {
+      "date": "2026-10-31",
+      "path": "waru",
+      "name": "Waru",
+      "rank": 48
+    },
+    {
+      "date": "2026-11-01",
+      "path": "patina",
+      "name": "Patina",
+      "rank": 240
+    },
+    {
+      "date": "2026-11-02",
+      "path": "nebulabrasque",
+      "name": "Nebulabrasque",
+      "rank": 8
+    },
+    {
+      "date": "2026-11-03",
+      "path": "rest_in_peace",
+      "name": "Rest in Peace",
+      "rank": 394
+    },
+    {
+      "date": "2026-11-04",
+      "path": "theory of sevvend",
+      "name": "Theory of Sevvend",
+      "rank": 81
+    }
+  ]
+}

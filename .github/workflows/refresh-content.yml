@@ -40,6 +40,13 @@ jobs:
       - name: Fetch the live list
         run: node scripts/fetch-data.mjs
 
+      # Pins today's Level of the Day in data/_daily-levels.json the first time
+      # this runs after midnight UTC; the Events archive reads that file. Only
+      # reached when the fetch above succeeded, and it only records from a
+      # snapshot fetched today.
+      - name: Record the Level of the Day
+        run: node scripts/record-daily-level.mjs
+
       - name: Regenerate static pages
         run: |
           node scripts/build-css.mjs
@@ -51,7 +58,7 @@ jobs:
           git config user.email "actions@github.com"
           # Only the generated surfaces — never anything hand-maintained.
           git add -A \
-            data/_seo-snapshot.json data/_level-registry.json \
+            data/_seo-snapshot.json data/_level-registry.json data/_daily-levels.json \
             level index.html list listmain listfuture upcoming pending leaderboard events information \
             sitemap.xml llms.txt _redirects js/seo-meta.js css/bundle.css
           if git diff --cached --quiet; then

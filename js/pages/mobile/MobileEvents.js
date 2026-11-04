@@ -5,17 +5,11 @@ import {
     verifierLabel, verifierLine,
 } from '../../util.js';
 import { mobileStore } from './mobileStore.js';
-
-function pickDailyLevel(list) {
-    const valid = list.filter(([l, e]) => l && !e && !l.isVerified);
-    if (!valid.length) return null;
-    const d = new Date();
-    const seed = (d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()) >>> 0;
-    const hash = Math.imul(seed ^ (seed >>> 16), 0x45d9f3b) >>> 0;
-    return valid[hash % valid.length][0];
-}
+import { dateKey, todaysLevel, fetchDailyArchive, archiveRows } from '../../daily-level.js';
+import DailyArchive from '../../components/DailyArchive.js';
 
 export default {
+    components: { DailyArchive },
     template: `
         <div class="mob-events-page m2-page-body">
             <section class="m2-hero">
@@ -38,9 +32,9 @@ export default {
                                     by <b>{{ levelDay.author }}</b>
                                     <template v-if="dayLine"> · {{ dayLine.lead }} <b>{{ dayLine.name }}</b></template>
                                 </p>
-                                <div v-if="levelDay.rankNum" class="m2-ranks">
+                                <div v-if="dayRank" class="m2-ranks">
                                     <router-link class="u-rank u-rank--lead" to="/mobile/all">
-                                        <span class="u-rank__n">{{ levelDay.rankNum }}</span>
+                                        <span class="u-rank__n">#{{ dayRank }}</span>
                                         <span class="u-rank__l">All Levels</span>
                                     </router-link>
                                 </div>
@@ -82,6 +76,10 @@ export default {
                                 <dt>Updated</dt><dd>{{ levelDay.lastUpd }}</dd>
                             </dl>
                         </div>
+                        <button type="button" class="u-btn u-btn--ghost events-archive-btn" @click="showArchive = true"
+                                aria-haspopup="dialog">
+                            Past Levels of the Day <span class="u-count">{{ archive.length }}</span>
+                        </button>
                     </div>
                 </article>
 
@@ -157,17 +155,29 @@ export default {
                     </div>
                 </article>
 
+                <DailyArchive :open="showArchive" :entries="archive" @close="showArchive = false" />
+
                 <div v-if="!mobileStore.levelMonth && !mobileStore.levelVerif && !levelDay && !mobileStore.loading" class="u-empty">
                     <div class="u-empty__t">Nothing featured right now</div>
                 </div>
             </div>
         </div>
     `,
-    data: () => ({ store, mobileStore }),
+    data: () => ({ store, mobileStore, archiveData: null, showArchive: false }),
     computed: {
         monthThumb() { return thumbnailUrl(mobileStore.levelMonth?.thumbnail); },
         verifThumb() { return thumbnailUrl(mobileStore.levelVerif?.thumbnail); },
-        levelDay() { return mobileStore.rawList.length ? pickDailyLevel(mobileStore.rawList) : null; },
+        // Waits for the archive, so the card does not show the computed pick and
+        // then swap to the recorded one a moment later.
+        today() {
+            if (!mobileStore.rawList.length || !this.archiveData) return null;
+            return todaysLevel(mobileStore.rawList, this.archiveData, dateKey());
+        },
+        levelDay() { return this.today?.level || null; },
+        dayRank() { return this.today?.rank || 0; },
+        archive() {
+            return this.archiveData ? archiveRows(this.archiveData, this.today, dateKey(), mobileStore.rawList) : [];
+        },
         lotdThumb() { return levelThumbnail(this.levelDay); },
         dayVerifier() { return hasVerifier(this.levelDay); },
         dayLine() { return verifierLine(this.levelDay); },
@@ -191,5 +201,8 @@ export default {
         thisMonth() {
             return new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
         },
+    },
+    async mounted() {
+        this.archiveData = await fetchDailyArchive();
     },
 };
