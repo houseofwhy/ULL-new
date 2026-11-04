@@ -489,6 +489,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "belowzero": {
+      "path": "belowzero",
+      "name": "belowZERO",
+      "firstSeen": "2026-11-04",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "betaxh": {
       "path": "betaxh",
       "name": "BethxH",
@@ -886,7 +894,7 @@
       "name": "Cruel World",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-04",
-      "retiredAt": null,
+      "retiredAt": "2026-11-04",
       "redirectTo": null
     },
     "cryostasis": {
@@ -1662,7 +1670,7 @@
       "name": "HARD WHITE AND LONG",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-04",
-      "retiredAt": null,
+      "retiredAt": "2026-11-04",
       "redirectTo": null
     },
     "hateomania": {
@@ -3654,7 +3662,7 @@
       "name": "The Seventh Sun",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-04",
-      "retiredAt": null,
+      "retiredAt": "2026-11-04",
       "redirectTo": null
     },
     "the-silent-zone": {
@@ -3773,6 +3781,14 @@
       "path": "time to say goodbye",
       "name": "Time To Say Goodbye",
       "firstSeen": "2026-10-02",
+      "lastSeen": "2026-11-04",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "top-0": {
+      "path": "top 0",
+      "name": "Top 0 (Human Limit)",
+      "firstSeen": "2026-11-04",
       "lastSeen": "2026-11-04",
       "retiredAt": null,
       "redirectTo": null

@@ -409,6 +409,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/belowzero</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/betaxh</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -699,12 +705,6 @@
   <url>
     <loc>https://ull.pages.dev/level/critical-heat-zeniux</loc>
     <lastmod>2023-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/cruel-world</loc>
-    <lastmod>2025-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1257,12 +1257,6 @@
   <url>
     <loc>https://ull.pages.dev/level/hail</loc>
     <lastmod>2026-10-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/hard-white-and-long</loc>
-    <lastmod>2025-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2683,12 +2677,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/the-seventh-sun</loc>
-    <lastmod>2025-10-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/the-silent-zone</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -2763,6 +2751,12 @@
   <url>
     <loc>https://ull.pages.dev/level/time-to-say-goodbye</loc>
     <lastmod>2026-09-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/top-0</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
