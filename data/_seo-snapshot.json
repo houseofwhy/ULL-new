@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-04T22:41:44.945Z",
+  "fetchedAt": "2026-11-05T03:34:06.431Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -8292,50 +8292,6 @@
       "sort_order": 165
     },
     {
-      "path": "smia",
-      "name": "Smia",
-      "author": "Sobeann",
-      "creators": [
-        "Sobeann"
-      ],
-      "verifier": "Sobeann",
-      "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=wC_xq-fLwbw",
-      "thumbnail": null,
-      "frameCounter": null,
-      "id": "private",
-      "rating": 1,
-      "length": 40,
-      "percentToQualify": 1,
-      "percentFinished": 0,
-      "lastUpd": "15.07.2026",
-      "tags": [
-        "Finished",
-        "Medium"
-      ],
-      "records": [
-        {
-          "user": "none",
-          "link": "",
-          "percent": 0,
-          "hz": 0
-        }
-      ],
-      "run": [
-        {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
-        }
-      ],
-      "isVerified": false,
-      "isMain": true,
-      "isFuture": false,
-      "benchmark": false,
-      "sort_order": 166
-    },
-    {
       "path": "azure_flare_itshybrid",
       "name": "Azure Flare (ItsHybrid)",
       "author": "ItsHybrid",
@@ -8382,6 +8338,50 @@
       "isVerified": true,
       "isMain": true,
       "isFuture": true,
+      "benchmark": false,
+      "sort_order": 166
+    },
+    {
+      "path": "smia",
+      "name": "Smia",
+      "author": "Sobeann",
+      "creators": [
+        "Sobeann"
+      ],
+      "verifier": "Sobeann",
+      "verification": "",
+      "showcase": "https://www.youtube.com/watch?v=wC_xq-fLwbw",
+      "thumbnail": null,
+      "frameCounter": null,
+      "id": "private",
+      "rating": 1,
+      "length": 40,
+      "percentToQualify": 1,
+      "percentFinished": 0,
+      "lastUpd": "15.07.2026",
+      "tags": [
+        "Finished",
+        "Medium"
+      ],
+      "records": [
+        {
+          "user": "none",
+          "link": "",
+          "percent": 0,
+          "hz": 0
+        }
+      ],
+      "run": [
+        {
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
+        }
+      ],
+      "isVerified": false,
+      "isMain": true,
+      "isFuture": false,
       "benchmark": false,
       "sort_order": 167
     },
@@ -25597,14 +25597,6 @@
       "indefinite": 0
     },
     {
-      "id": 363,
-      "name": "MAXIMUM DOSAGE",
-      "placement": "?",
-      "link": "https://youtu.be/dYGgzf7i_Ak",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
       "id": 364,
       "name": "Lunatic Circuit",
       "placement": "?",
@@ -25625,14 +25617,6 @@
       "name": "too Much processing",
       "placement": "?",
       "link": "https://www.youtube.com/watch?v=yAIdKH_zsrQ",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
-      "id": 367,
-      "name": "Infernis",
-      "placement": "?",
-      "link": "https://www.youtube.com/watch?v=bk1L0maqd3k",
       "sort_order": null,
       "indefinite": 0
     },
@@ -25677,14 +25661,6 @@
       "indefinite": 0
     },
     {
-      "id": 378,
-      "name": "Smia",
-      "placement": "?",
-      "link": "https://www.youtube.com/watch?v=wC_xq-fLwbw&pp=ygUHc21pYSBnZA%3D%3D",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
       "id": 381,
       "name": "T O N 618",
       "placement": "1",
@@ -25699,14 +25675,6 @@
       "link": "https://youtu.be/60-JsK6b7pA?is=vFc2F7y1YrDeAKme",
       "sort_order": null,
       "indefinite": 1
-    },
-    {
-      "id": 384,
-      "name": "DIEbtch",
-      "placement": "?",
-      "link": "https://www.youtube.com/watch?v=9x-RfjvSlG4",
-      "sort_order": null,
-      "indefinite": 0
     },
     {
       "id": 386,
@@ -25953,14 +25921,6 @@
       "name": "Celestial Showdown X",
       "placement": "?",
       "link": "https://www.youtube.com/watch?v=FZ2lyW_5pAY",
-      "sort_order": null,
-      "indefinite": 0
-    },
-    {
-      "id": 419,
-      "name": "Irradiated Planet",
-      "placement": "20",
-      "link": "https://www.youtube.com/watch?v=r0-A2S9HqUY",
       "sort_order": null,
       "indefinite": 0
     },
