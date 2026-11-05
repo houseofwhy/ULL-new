@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-05T12:33:26.332Z",
+  "fetchedAt": "2026-11-05T20:43:28.354Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -670,9 +670,9 @@
       ],
       "records": [
         {
-          "user": "loovi",
-          "link": "https://youtu.be/xzOikULCo7A?si=NBFZr8aTH-XnfLYq",
-          "percent": 31,
+          "user": "Beemschurger67",
+          "link": "https://www.youtube.com/watch?v=_oB8fRos1Es",
+          "percent": 34,
           "hz": 240
         }
       ],
@@ -9494,10 +9494,10 @@
       ],
       "run": [
         {
-          "user": "none",
-          "link": "",
-          "percent": "0",
-          "hz": 0
+          "user": "noxell",
+          "link": "https://youtu.be/X2Mzv3wSjM8",
+          "percent": "72-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
