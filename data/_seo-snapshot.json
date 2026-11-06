@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-05T20:43:28.354Z",
+  "fetchedAt": "2026-11-06T01:39:48.347Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -4201,14 +4201,13 @@
     {
       "path": "infernis",
       "name": "Infernis",
-      "author": "silence, Aquix",
+      "author": "silence",
       "creators": [
         "silence",
-        "Aquix",
         "nxhtrise",
         "CerrunoGMD"
       ],
-      "verifier": "unknown",
+      "verifier": "Playlino",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=AfcA5oiGKtM",
       "thumbnail": null,
