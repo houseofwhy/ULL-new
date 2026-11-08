@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-07T20:59:05.710Z",
+  "fetchedAt": "2026-11-08T00:47:44.024Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -1675,14 +1675,14 @@
       "creators": [],
       "verifier": "Denni",
       "verification": "",
-      "showcase": "https://www.youtube.com/watch?v=djbJThMU2xE",
+      "showcase": "https://www.youtube.com/watch?v=A8XtpakYflA",
       "thumbnail": "https://i.ytimg.com/vi/pbEjR_3frRg/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDmOgWYcQwMaWTsh1AdeaFgM6Tr6A",
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 300,
       "percentToQualify": 1,
-      "percentFinished": 60,
+      "percentFinished": 90,
       "lastUpd": "16.10.2026",
       "tags": [
         "XXL",
@@ -2052,9 +2052,9 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/r19XDJWxYCc?si=yZpdnJVopK0ex_HL",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
-      "id": "private",
+      "id": "148158926",
       "rating": 1,
       "length": 76,
       "percentToQualify": 1,
@@ -2064,7 +2064,8 @@
         "Long",
         "NONG",
         "Finished",
-        "Verifying"
+        "Verifying",
+        "Public"
       ],
       "records": [
         {
@@ -4154,27 +4155,34 @@
       "name": "Theory of Sevvend",
       "author": "[cherry] team",
       "creators": [
-        "Nickname09",
-        "Sayonar",
-        "Ego11",
-        "Genoxide",
-        "mitonimya"
+        "nicknamegd",
+        "MinAy",
+        "lGenoxide",
+        "ego11",
+        "kisssyourself",
+        "Mitonimiya",
+        "Ynvie",
+        "sayonarofc",
+        "creeperus1217",
+        "peseleven",
+        "ps1h0"
       ],
       "verifier": "Vorten",
       "verification": "",
-      "showcase": "https://youtu.be/NKkErHaVpvk",
+      "showcase": "https://www.youtube.com/watch?v=O6Hb5-hD4AU",
       "thumbnail": "https://i.ytimg.com/vi/-JKx1KL53r4/hqdefault.jpg?sqp=-oaymwEnCOADEI4CSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDg7zqkLnjJrmC03OwALAEf1YB-4Q",
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 64,
       "percentToQualify": 1,
-      "percentFinished": 95,
+      "percentFinished": 100,
       "lastUpd": "06.07.2026",
       "tags": [
         "Long",
         "Quality",
-        "Remake"
+        "Remake",
+        "Finished"
       ],
       "records": [
         {
@@ -20241,10 +20249,10 @@
       ],
       "records": [
         {
-          "user": "none",
+          "user": "manugrk",
           "link": "",
-          "percent": 0,
-          "hz": 0
+          "percent": 17,
+          "hz": 240
         }
       ],
       "run": [
@@ -26047,20 +26055,20 @@
     }
   ],
   "levelMonth": {
-    "name": "Rainy",
-    "author": "DemOne",
-    "rank": 165,
-    "id": "110566657",
-    "thumbnail": "https://www.youtube.com/watch?v=qDXCBRs8BGc",
+    "name": "ULTIMATUM",
+    "author": "Surjaco",
+    "rank": 43,
+    "id": "148158926",
+    "thumbnail": "https://www.youtube.com/watch?v=r19XDJWxYCc",
     "record": {
-      "percent": "20%",
-      "player": "Shurikon",
-      "link": "https://www.youtube.com/watch?v=cMSX4le97I4&pp=0gcJCcYJAYcqIYzv"
+      "percent": "",
+      "player": "",
+      "link": ""
     },
     "run": {
-      "percent": "80-100",
-      "player": "Shurikon",
-      "link": "https://www.youtube.com/watch?v=S09NlADp5Hk"
+      "percent": "",
+      "player": "",
+      "link": ""
     },
     "periodStart": "2026-04-29"
   },
