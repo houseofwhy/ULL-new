@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-08T23:49:39.543Z",
+  "fetchedAt": "2026-11-09T06:54:34.116Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -2054,7 +2054,7 @@
       "showcase": "https://youtu.be/r19XDJWxYCc?si=yZpdnJVopK0ex_HL",
       "thumbnail": null,
       "frameCounter": null,
-      "id": "148158926",
+      "id": "private",
       "rating": 1,
       "length": 76,
       "percentToQualify": 1,
@@ -2064,8 +2064,7 @@
         "Long",
         "NONG",
         "Finished",
-        "Verifying",
-        "Public"
+        "Verifying"
       ],
       "records": [
         {
@@ -26055,20 +26054,20 @@
     }
   ],
   "levelMonth": {
-    "name": "ULTIMATUM",
-    "author": "Surjaco",
-    "rank": 43,
-    "id": "148158926",
-    "thumbnail": "https://www.youtube.com/watch?v=r19XDJWxYCc",
+    "name": "Energy Wave",
+    "author": "Metalface221",
+    "rank": 95,
+    "id": "130734729",
+    "thumbnail": "https://youtu.be/PtsyAeDLSws?si=4kX46cNbadPGgoGc",
     "record": {
-      "percent": "",
-      "player": "",
-      "link": ""
+      "percent": "23%",
+      "player": "lolwut",
+      "link": "https://www.youtube.com/watch?v=KMhUCXyUHVs"
     },
     "run": {
-      "percent": "",
-      "player": "",
-      "link": ""
+      "percent": "78-100%",
+      "player": "lolwut",
+      "link": "https://www.youtube.com/watch?si=E87vWaoheaqjGNjc&t=100&v=PYCSbl3fycM&feature=youtu.be"
     },
     "periodStart": "2026-04-29"
   },
