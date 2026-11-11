@@ -129,6 +129,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "amy": {
+      "path": "amy",
+      "name": "AMY",
+      "firstSeen": "2026-11-11",
+      "lastSeen": "2026-11-11",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "anathema": {
       "path": "anathema",
       "name": "Anathema",
