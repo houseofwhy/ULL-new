@@ -438,6 +438,12 @@
       "path": "forgotten power",
       "name": "Forgotten Power",
       "rank": 296
+    },
+    {
+      "date": "2026-11-11",
+      "path": "final_level",
+      "name": "Magnetic Maelstrom",
+      "rank": 432
     }
   ]
 }
