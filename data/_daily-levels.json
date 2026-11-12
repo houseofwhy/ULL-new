@@ -444,6 +444,12 @@
       "path": "final_level",
       "name": "Magnetic Maelstrom",
       "rank": 432
+    },
+    {
+      "date": "2026-11-12",
+      "path": "atropos",
+      "name": "Atropos",
+      "rank": 445
     }
   ]
 }
