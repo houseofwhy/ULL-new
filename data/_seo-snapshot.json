@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T17:54:02.753Z",
+  "fetchedAt": "2026-11-13T23:43:32.177Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -3274,8 +3274,8 @@
       "name": "IT MEANS EVERYTHING",
       "author": "Velyt",
       "creators": [],
-      "verifier": "Stefan Boss, Waltty",
-      "verification": "",
+      "verifier": "Waltty",
+      "verification": "https://youtu.be/_QV11PEwiIo",
       "showcase": "https://youtu.be/9nSkkXZ628E",
       "thumbnail": "https://i.redd.it/demonlist-in-31-12-2030-prediction-v0-e2ja9ch739zg1.jpg?width=686&format=pjpg&auto=webp&s=9aa971d5f8136b3f7cffc9bdc9ed75fa091723df",
       "frameCounter": "https://youtu.be/IOb4NJ4qGKY?si=ZvBCZlyYRK5k6Tqi",
@@ -3294,20 +3294,20 @@
       "records": [
         {
           "user": "Waltty",
-          "link": "https://youtu.be/XpBPEftY2BU?si=lqbtmgAsut4pLDbX",
-          "percent": 96,
+          "link": "https://youtu.be/_QV11PEwiIo",
+          "percent": 100,
           "hz": 240
         }
       ],
       "run": [
         {
-          "user": "Waltty",
-          "link": "https://youtu.be/GiykgnJa6JQ?is=BShI7Fj8VRWbiJ1R",
-          "percent": "14-100",
-          "hz": 240
+          "user": "none",
+          "link": "",
+          "percent": "0",
+          "hz": 0
         }
       ],
-      "isVerified": false,
+      "isVerified": true,
       "isMain": true,
       "isFuture": true,
       "benchmark": false,
