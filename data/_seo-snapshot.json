@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T23:43:32.177Z",
+  "fetchedAt": "2026-11-14T06:46:07.278Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -3277,7 +3277,7 @@
       "verifier": "Waltty",
       "verification": "https://youtu.be/_QV11PEwiIo",
       "showcase": "https://youtu.be/9nSkkXZ628E",
-      "thumbnail": "https://i.redd.it/demonlist-in-31-12-2030-prediction-v0-e2ja9ch739zg1.jpg?width=686&format=pjpg&auto=webp&s=9aa971d5f8136b3f7cffc9bdc9ed75fa091723df",
+      "thumbnail": null,
       "frameCounter": "https://youtu.be/IOb4NJ4qGKY?si=ZvBCZlyYRK5k6Tqi",
       "id": "126177603",
       "rating": 1,
@@ -17488,17 +17488,17 @@
       "creators": [
         "Xunarns"
       ],
-      "verifier": "Zombie_Gaming / BlueOrbe",
+      "verifier": "",
       "verification": "",
       "showcase": "https://youtu.be/WFXgrnrdURA?si=oLObG5sShOmhlDgM",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 153,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "07.03.2026",
+      "lastUpd": "13.11.2026",
       "tags": [
         "XL",
         "Finished",
@@ -17507,16 +17507,16 @@
       "records": [
         {
           "user": "BlueOrbe",
-          "link": "https://www.youtube.com/watch?v=1KOlr2qX5iM",
-          "percent": 64,
+          "link": "",
+          "percent": 67,
           "hz": 0
         }
       ],
       "run": [
         {
           "user": "BlueOrbe",
-          "link": "https://www.youtube.com/watch?v=Wjtn4YvMuOY&t=82",
-          "percent": "53-100",
+          "link": "",
+          "percent": "23-100",
           "hz": 0
         }
       ],
