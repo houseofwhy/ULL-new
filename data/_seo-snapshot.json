@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-15T11:15:54.876Z",
+  "fetchedAt": "2026-11-15T17:51:57.212Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -25642,7 +25642,7 @@
     {
       "id": 370,
       "name": "Blood in the Water",
-      "placement": "?",
+      "placement": "30",
       "link": "https://youtu.be/0kkfxPIL1NQ?si=SSSxTxzLOqElDhbC",
       "sort_order": null,
       "indefinite": 0
@@ -25686,14 +25686,6 @@
       "link": "https://youtu.be/60-JsK6b7pA?is=vFc2F7y1YrDeAKme",
       "sort_order": null,
       "indefinite": 1
-    },
-    {
-      "id": 386,
-      "name": "A N G E L I C",
-      "placement": "1",
-      "link": "https://www.youtube.com/watch?v=Kw21hj6znj8",
-      "sort_order": null,
-      "indefinite": 0
     },
     {
       "id": 387,
@@ -25938,7 +25930,7 @@
     {
       "id": 420,
       "name": "Mindflow",
-      "placement": "?",
+      "placement": "1",
       "link": "https://www.youtube.com/watch?v=JlbF4XzUyQE",
       "sort_order": null,
       "indefinite": 0
@@ -25958,6 +25950,22 @@
       "link": "",
       "sort_order": null,
       "indefinite": 1
+    },
+    {
+      "id": 423,
+      "name": "Floral Frenzy",
+      "placement": "75",
+      "link": "https://www.youtube.com/watch?v=8OuAqgeqgS4",
+      "sort_order": null,
+      "indefinite": 0
+    },
+    {
+      "id": 424,
+      "name": "AMBUSHAL",
+      "placement": "20",
+      "link": "https://youtu.be/vXLIXI6MYSA",
+      "sort_order": null,
+      "indefinite": 0
     }
   ],
   "editors": [
