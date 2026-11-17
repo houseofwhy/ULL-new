@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-17T14:42:20.851Z",
+  "fetchedAt": "2026-11-17T23:00:06.053Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -662,7 +662,7 @@
       "length": 71,
       "percentToQualify": 32,
       "percentFinished": 35,
-      "lastUpd": "30.09.2025",
+      "lastUpd": "02.11.2026",
       "tags": [
         "Long",
         "Remake",
@@ -4403,7 +4403,7 @@
       "length": 91,
       "percentToQualify": 78,
       "percentFinished": 100,
-      "lastUpd": "10.11.2025",
+      "lastUpd": "11.10.2026",
       "tags": [
         "Long",
         "Verifying",
@@ -13257,14 +13257,14 @@
       "verifier": "unknown",
       "verification": "",
       "showcase": "https://youtu.be/AvU0VGU8PIg?si=7A-veXMEw9eBiwP7",
-      "thumbnail": "",
+      "thumbnail": null,
       "frameCounter": null,
       "id": "private",
       "rating": 1,
       "length": 156,
       "percentToQualify": 1,
-      "percentFinished": 20,
-      "lastUpd": "05.10.2025",
+      "percentFinished": 30,
+      "lastUpd": "26.09.2026",
       "tags": [
         "XL"
       ],
@@ -15048,8 +15048,7 @@
         "Filqh",
         "Randum",
         "Rynoxious",
-        "Duke",
-        "Artaire"
+        "Duke"
       ],
       "verifier": "MatsuoIsHere",
       "verification": "",
@@ -25226,7 +25225,7 @@
     {
       "id": 285,
       "name": "ByteShift",
-      "placement": "10",
+      "placement": "75",
       "link": "https://youtu.be/HlLi-WAVeRk?si=gaxEPnZZ3DxorCfh",
       "sort_order": null,
       "indefinite": 0
@@ -25869,7 +25868,7 @@
       "placement": "1",
       "link": "https://www.youtube.com/watch?v=KlZV5RoNG84",
       "sort_order": null,
-      "indefinite": 0
+      "indefinite": 1
     },
     {
       "id": 411,
@@ -25933,7 +25932,7 @@
       "placement": "1",
       "link": "https://www.youtube.com/watch?v=JlbF4XzUyQE",
       "sort_order": null,
-      "indefinite": 0
+      "indefinite": 1
     },
     {
       "id": 421,
