@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T13:34:25.563Z",
+  "fetchedAt": "2026-11-19T22:18:56.361Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -446,13 +446,13 @@
     },
     {
       "path": "angelicide",
-      "name": "Angelicide (Xtra8nuggies)",
+      "name": "Angelicide (Druki)",
       "author": "MadisonYuko",
       "creators": [
         "MadisonYuko",
         "lexycat"
       ],
-      "verifier": "Verification race",
+      "verifier": "Open verification",
       "verification": "",
       "showcase": "https://youtu.be/czV24THGlA4",
       "thumbnail": "https://i.ytimg.com/vi/UvLvEh_xN5A/hq720.jpg?sqp=-oaymwEnCOgCEMoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCXGdGCT4WNzFGKE45JcTz5EkKPUA",
@@ -467,11 +467,12 @@
         "Public",
         "Finished",
         "Long",
-        "Verifying"
+        "Verifying",
+        "NONG"
       ],
       "records": [
         {
-          "user": "Xtra8nuggies",
+          "user": "Druki",
           "link": "https://www.youtube.com/watch?v=rJ_3cOtkXr0",
           "percent": 41,
           "hz": 240
@@ -479,7 +480,7 @@
       ],
       "run": [
         {
-          "user": "Xtra8nuggies",
+          "user": "Druki",
           "link": "https://youtu.be/TaWJUvDdTT8?is=jggHCpuPCvYujkC8",
           "percent": "6-59",
           "hz": 240
