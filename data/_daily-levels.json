@@ -486,6 +486,12 @@
       "path": "irridiated planet",
       "name": "Irradiated Planet",
       "rank": 129
+    },
+    {
+      "date": "2026-11-19",
+      "path": "stoicism",
+      "name": "Stoicism",
+      "rank": 150
     }
   ]
 }
