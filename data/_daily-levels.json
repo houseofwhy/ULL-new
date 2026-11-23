@@ -510,6 +510,12 @@
       "path": "scream_attack",
       "name": "Scream Attack",
       "rank": 411
+    },
+    {
+      "date": "2026-11-23",
+      "path": "critical_heat_maxfs",
+      "name": "CRITICAL HEAT (maxfs)",
+      "rank": 200
     }
   ]
 }
