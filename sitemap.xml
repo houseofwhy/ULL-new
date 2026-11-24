@@ -1975,12 +1975,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ull.pages.dev/level/overdrive</loc>
-    <lastmod>2025-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://ull.pages.dev/level/packetloss</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -2144,7 +2138,7 @@
   </url>
   <url>
     <loc>https://ull.pages.dev/level/remorse</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2397,12 +2391,6 @@
   <url>
     <loc>https://ull.pages.dev/level/silentlocked</loc>
     <lastmod>2025-01-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/sin</loc>
-    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2679,12 +2667,6 @@
   <url>
     <loc>https://ull.pages.dev/level/the-lightning-rod</loc>
     <lastmod>2023-08-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://ull.pages.dev/level/the-loss-of-life</loc>
-    <lastmod>2025-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

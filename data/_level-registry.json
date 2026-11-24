@@ -2670,7 +2670,7 @@
       "name": "OVERDRIVE",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-24",
-      "retiredAt": null,
+      "retiredAt": "2026-11-24",
       "redirectTo": null
     },
     "packetloss": {
@@ -3270,7 +3270,7 @@
       "name": "SIN",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-24",
-      "retiredAt": null,
+      "retiredAt": "2026-11-24",
       "redirectTo": null
     },
     "sinister-silence": {
@@ -3670,7 +3670,7 @@
       "name": "THE LOSS OF LIFE",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-24",
-      "retiredAt": null,
+      "retiredAt": "2026-11-24",
       "redirectTo": null
     },
     "the-national-anthem": {
