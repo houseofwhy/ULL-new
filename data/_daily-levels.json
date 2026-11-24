@@ -516,6 +516,12 @@
       "path": "critical_heat_maxfs",
       "name": "CRITICAL HEAT (maxfs)",
       "rank": 200
+    },
+    {
+      "date": "2026-11-24",
+      "path": "despair",
+      "name": "Despair",
+      "rank": 254
     }
   ]
 }
