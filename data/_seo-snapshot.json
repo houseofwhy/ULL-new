@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T11:08:50.551Z",
+  "fetchedAt": "2026-11-26T20:18:39.404Z",
   "source": "https://d1-wrkr.ullteam.workers.dev",
   "levels": [
     {
@@ -3860,7 +3860,7 @@
         "Akoru",
         "Hypoxic"
       ],
-      "verifier": "Sharkified",
+      "verifier": "W3rty",
       "verification": "",
       "showcase": "https://www.youtube.com/watch?v=MczAL-lRpMI",
       "thumbnail": null,
@@ -3870,7 +3870,7 @@
       "length": 0,
       "percentToQualify": 1,
       "percentFinished": 100,
-      "lastUpd": "05.09.2026",
+      "lastUpd": "26.11.2026",
       "tags": [
         "Finished",
         "Long",
@@ -3887,10 +3887,10 @@
       ],
       "run": [
         {
-          "user": "none",
+          "user": "W3rty",
           "link": "",
-          "percent": "0",
-          "hz": 0
+          "percent": "58-100",
+          "hz": 240
         }
       ],
       "isVerified": false,
