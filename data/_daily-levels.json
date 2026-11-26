@@ -528,6 +528,12 @@
       "path": "pigstep",
       "name": "PigStep",
       "rank": 249
+    },
+    {
+      "date": "2026-11-26",
+      "path": "nebulous",
+      "name": "NEBULOUS",
+      "rank": 77
     }
   ]
 }
