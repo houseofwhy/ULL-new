@@ -133,6 +133,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/ambushal</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/amethyst</loc>
     <lastmod>2025-05-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -457,6 +463,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/blood-in-the-water</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/bloodengine</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -549,6 +561,12 @@
   <url>
     <loc>https://ull.pages.dev/level/capyhouse</loc>
     <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/carcion</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1387,6 +1405,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/in-stasis</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/indigo-nightmare</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1863,6 +1887,12 @@
   <url>
     <loc>https://ull.pages.dev/level/nightfall</loc>
     <lastmod>2026-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ull.pages.dev/level/nihilistic-space</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2395,6 +2425,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://ull.pages.dev/level/silverrot</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ull.pages.dev/level/sinister-silence</loc>
     <lastmod>2023-08-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -2870,7 +2906,7 @@
   </url>
   <url>
     <loc>https://ull.pages.dev/level/ultra-realistik</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

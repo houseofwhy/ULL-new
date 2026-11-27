@@ -121,6 +121,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "ambushal": {
+      "path": "ambushal",
+      "name": "AMBUSHAL",
+      "firstSeen": "2026-11-27",
+      "lastSeen": "2026-11-27",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "amethyst": {
       "path": "amethyst",
       "name": "Amethyst",
@@ -553,6 +561,14 @@
       "retiredAt": null,
       "redirectTo": null
     },
+    "blood-in-the-water": {
+      "path": "blood in the water",
+      "name": "Blood In The Water",
+      "firstSeen": "2026-11-27",
+      "lastSeen": "2026-11-27",
+      "retiredAt": null,
+      "redirectTo": null
+    },
     "bloodengine": {
       "path": "bloodengine",
       "name": "BloodEngine",
@@ -677,6 +693,14 @@
       "path": "capyhouse",
       "name": "Capyhouse",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-11-27",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "carcion": {
+      "path": "carcion",
+      "name": "Carcion",
+      "firstSeen": "2026-11-27",
       "lastSeen": "2026-11-27",
       "retiredAt": null,
       "redirectTo": null
@@ -1427,7 +1451,7 @@
     },
     "fiberglass": {
       "path": "fiberglass",
-      "name": "FIBERGLASS",
+      "name": "Fiberglass",
       "firstSeen": "2026-08-30",
       "lastSeen": "2026-11-27",
       "retiredAt": null,
@@ -1837,6 +1861,14 @@
       "path": "imnotsorry",
       "name": "IMNOTSORRY",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-11-27",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "in-stasis": {
+      "path": "in stasis",
+      "name": "In Stasis",
+      "firstSeen": "2026-11-27",
       "lastSeen": "2026-11-27",
       "retiredAt": null,
       "redirectTo": null
@@ -2509,6 +2541,14 @@
       "path": "nightfall",
       "name": "NIGHTFALL",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-11-27",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "nihilistic-space": {
+      "path": "nihilistic space",
+      "name": "Nihilistic Space",
+      "firstSeen": "2026-11-27",
       "lastSeen": "2026-11-27",
       "retiredAt": null,
       "redirectTo": null
@@ -3261,6 +3301,14 @@
       "path": "silentlocked",
       "name": "Silentlocked",
       "firstSeen": "2026-08-30",
+      "lastSeen": "2026-11-27",
+      "retiredAt": null,
+      "redirectTo": null
+    },
+    "silverrot": {
+      "path": "silverrot",
+      "name": "SILVERROT",
+      "firstSeen": "2026-11-27",
       "lastSeen": "2026-11-27",
       "retiredAt": null,
       "redirectTo": null
